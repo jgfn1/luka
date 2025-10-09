@@ -560,127 +560,243 @@
 
       /* Countdown section */
       #countdown-section {
-        background: linear-gradient(135deg, var(--secondary) 0%, #4d9644 100%);
+        background: linear-gradient(135deg, #63b45a 0%, #4a9641 50%, #3d7a35 100%);
         color: #fff;
-        padding: 4rem 2rem;
+        padding: 5rem 2rem;
         text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #countdown-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        pointer-events: none;
+      }
+
+      #countdown-section .container {
+        position: relative;
+        z-index: 1;
       }
 
       #countdown-section h2 {
         color: #fff;
-        margin-bottom: 1rem;
-        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
       }
 
       #countdown-section p {
-        font-size: 1.1rem;
-        margin-bottom: 2.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
         opacity: 0.95;
+        font-weight: 500;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
       }
 
       .countdown-timer {
         display: flex;
         justify-content: center;
-        gap: 2rem;
+        gap: 2.5rem;
         flex-wrap: wrap;
+        max-width: 900px;
+        margin: 0 auto;
       }
 
       .countdown-item {
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(10px);
-        border-radius: 16px;
-        padding: 2rem 2.5rem;
-        min-width: 120px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+        backdrop-filter: blur(20px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        padding: 2.5rem 3rem;
+        min-width: 140px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+      }
+
+      .countdown-item::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), transparent);
+        border-radius: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
       }
 
       .countdown-item:hover {
-        transform: translateY(-5px);
-        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-10px) scale(1.05);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.15));
+        border-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      }
+
+      .countdown-item:hover::before {
+        opacity: 1;
       }
 
       .countdown-number {
-        font-size: 3.5rem;
-        font-weight: 700;
+        font-size: 4.5rem;
+        font-weight: 800;
         display: block;
         line-height: 1;
-        margin-bottom: 0.5rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        margin-bottom: 0.75rem;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -2px;
       }
 
       .countdown-label {
-        font-size: 1rem;
+        font-size: 1.05rem;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        opacity: 0.9;
-        font-weight: 600;
+        letter-spacing: 2px;
+        opacity: 0.95;
+        font-weight: 700;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
       }
 
       @media (max-width: 768px) {
+        #countdown-section {
+          padding: 4rem 1.5rem;
+        }
+
         #countdown-section h2 {
-          font-size: 1.8rem;
+          font-size: 2rem;
+        }
+
+        #countdown-section p {
+          font-size: 1rem;
         }
 
         .countdown-timer {
-          gap: 1rem;
+          gap: 1.25rem;
         }
 
         .countdown-item {
-          padding: 1.5rem 1.75rem;
-          min-width: 100px;
+          padding: 1.75rem 2rem;
+          min-width: 110px;
         }
 
         .countdown-number {
-          font-size: 2.5rem;
+          font-size: 3rem;
         }
 
         .countdown-label {
-          font-size: 0.85rem;
+          font-size: 0.9rem;
+          letter-spacing: 1.5px;
         }
       }
 
       /* Committee grid */
       .committee-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1.5rem;
         margin: 2rem 0;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .committee-item {
         text-align: center;
-        padding: 1.5rem;
+        padding: 1.5rem 1rem;
         background: white;
-        border-radius: 12px;
+        border-radius: 16px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
 
       .committee-item:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        transform: translateY(-12px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
       }
 
       .committee-item img {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
         border-radius: 50%;
         object-fit: cover;
         margin: 0 auto 1rem;
-        border: 4px solid var(--primary);
-        transition: all 0.3s ease;
+        border: 5px solid var(--primary);
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
 
       .committee-item:hover img {
         border-color: var(--secondary);
-        transform: scale(1.05);
+        transform: scale(1.08);
+        box-shadow: 0 8px 20px rgba(99, 180, 90, 0.4);
       }
 
       .committee-item h4 {
         color: var(--primary);
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         margin: 0.5rem 0;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      @media (max-width: 1200px) {
+        .committee-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+        }
+
+        .committee-item img {
+          width: 130px;
+          height: 130px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .committee-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+
+        .committee-item {
+          padding: 1.25rem 0.75rem;
+        }
+
+        .committee-item img {
+          width: 110px;
+          height: 110px;
+          border-width: 4px;
+        }
+
+        .committee-item h4 {
+          font-size: 0.95rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .committee-grid {
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
+        }
+
+        .committee-item img {
+          width: 120px;
+          height: 120px;
+        }
       }
 
       /* Location section */
@@ -936,8 +1052,8 @@
         <h2 data-i18n="about.title">Sobre o Simpósio</h2>
         <p data-i18n="about.intro">
           O
-          <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong>,
-          na condição de promotor do evento, ressalta que o principal objetivo
+          <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong>, na
+          condição de promotor do evento, ressalta que o principal objetivo
           desse encontro é promover a atualização, discussão e troca de
           experiências voltado à área da oncologia do trato gastrointestinal.
         </p>
@@ -979,7 +1095,7 @@
       <div class="container">
         <h2 data-i18n="countdown.title">Contagem Regressiva</h2>
         <p data-i18n="countdown.subtitle">Faltam apenas:</p>
-        
+
         <div class="countdown-timer">
           <div class="countdown-item">
             <span id="days" class="countdown-number">00</span>
@@ -987,15 +1103,21 @@
           </div>
           <div class="countdown-item">
             <span id="hours" class="countdown-number">00</span>
-            <span class="countdown-label" data-i18n="countdown.hours">Horas</span>
+            <span class="countdown-label" data-i18n="countdown.hours"
+              >Horas</span
+            >
           </div>
           <div class="countdown-item">
             <span id="minutes" class="countdown-number">00</span>
-            <span class="countdown-label" data-i18n="countdown.minutes">Minutos</span>
+            <span class="countdown-label" data-i18n="countdown.minutes"
+              >Minutos</span
+            >
           </div>
           <div class="countdown-item">
             <span id="seconds" class="countdown-number">00</span>
-            <span class="countdown-label" data-i18n="countdown.seconds">Segundos</span>
+            <span class="countdown-label" data-i18n="countdown.seconds"
+              >Segundos</span
+            >
           </div>
         </div>
       </div>
@@ -1004,8 +1126,14 @@
     <!-- Committee section -->
     <section id="comissao" class="fade-in">
       <div class="container">
-        <h2 class="text-center" data-i18n="committee.title">Comissão Organizadora</h2>
-        <p class="text-center" style="font-size: 1.1rem; margin-bottom: 3rem" data-i18n="committee.intro">
+        <h2 class="text-center" data-i18n="committee.title">
+          Comissão Organizadora
+        </h2>
+        <p
+          class="text-center"
+          style="font-size: 1.1rem; margin-bottom: 3rem"
+          data-i18n="committee.intro"
+        >
           A programação científica está sob responsabilidade de um time
           multidisciplinar de especialistas:
         </p>
@@ -1793,27 +1921,39 @@
 
       // Countdown timer
       function updateCountdown() {
-        const eventDate = new Date('2025-10-31T08:00:00-03:00').getTime();
+        const eventDate = new Date("2025-10-31T08:00:00-03:00").getTime();
         const now = new Date().getTime();
         const distance = eventDate - now;
 
         if (distance < 0) {
-          document.getElementById('days').textContent = '00';
-          document.getElementById('hours').textContent = '00';
-          document.getElementById('minutes').textContent = '00';
-          document.getElementById('seconds').textContent = '00';
+          document.getElementById("days").textContent = "00";
+          document.getElementById("hours").textContent = "00";
+          document.getElementById("minutes").textContent = "00";
+          document.getElementById("seconds").textContent = "00";
           return;
         }
 
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById('days').textContent = String(days).padStart(2, '0');
-        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        document.getElementById("days").textContent = String(days).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("hours").textContent = String(hours).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("minutes").textContent = String(
+          minutes
+        ).padStart(2, "0");
+        document.getElementById("seconds").textContent = String(
+          seconds
+        ).padStart(2, "0");
       }
 
       // Update countdown every second
