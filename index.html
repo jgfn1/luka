@@ -143,14 +143,14 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
 
-       nav .logo-small {
-         height: 60px;
-         transition: height 0.3s ease;
-       }
+      nav .logo-small {
+        height: 70px;
+        transition: height 0.3s ease;
+      }
 
-       nav.scrolled .logo-small {
-         height: 50px;
-       }
+      nav.scrolled .logo-small {
+        height: 60px;
+      }
 
       nav ul {
         list-style: none;
@@ -179,6 +179,56 @@
 
       nav ul li a:hover::after {
         width: 100%;
+      }
+
+      /* Language selector in nav */
+      .nav-lang-selector {
+        position: relative;
+        display: inline-block;
+      }
+
+      .nav-lang-selector select {
+        appearance: none;
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        padding: 0.5rem 2rem 0.5rem 0.75rem;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%236f2da8" d="M6 9L1 4h10z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 0.5rem center;
+      }
+
+      .nav-lang-selector select:hover {
+        background-color: var(--primary);
+        color: white;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="white" d="M6 9L1 4h10z"/></svg>');
+      }
+
+      /* Nav CTA button (match hero .btn-primary) */
+      .nav-cta {
+        display: inline-block;
+        background: var(--secondary);
+        color: #fff !important;
+        padding: 0.8rem 1.6rem;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 14px rgba(99, 180, 90, 0.4);
+        text-transform: uppercase;
+      }
+
+      .nav-cta:hover {
+        background: #519447;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(99, 180, 90, 0.5);
+        color: #fff;
       }
 
       /* Hero section */
@@ -623,6 +673,81 @@
         }
       }
 
+      /* Social media icons */
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: #fff;
+        font-size: 1.3rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: var(--secondary);
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(99, 180, 90, 0.4);
+      }
+
+      .social-link svg {
+        width: 24px;
+        height: 24px;
+        fill: currentColor;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 1024px) {
+        nav ul {
+          gap: 1rem;
+        }
+
+        nav ul li a {
+          font-size: 0.85rem;
+        }
+
+        .nav-lang-selector select {
+          font-size: 0.85rem;
+          padding: 0.4rem 1.75rem 0.4rem 0.65rem;
+        }
+
+        .nav-cta {
+          padding: 0.5rem 1rem;
+          font-size: 0.85rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: column;
+          gap: 1rem;
+          padding: 1rem;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 0.75rem;
+        }
+
+        .nav-lang-selector select {
+          font-size: 0.8rem;
+        }
+
+        .nav-cta {
+          font-size: 0.8rem;
+        }
+      }
+
       /* Utility classes */
       .text-center {
         text-align: center;
@@ -642,24 +767,42 @@
         ><img src="tgi/LOGO-TGI.png" alt="Logo TGI" class="logo-small"
       /></a>
       <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#programacao">Programação</a></li>
-        <li><a href="#realizacao">Realização</a></li>
-        <li><a href="#local">Local</a></li>
-        <li><a href="#inscricao">Inscrição</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a data-i18n="nav.about" href="#sobre">Sobre</a></li>
+        <li><a data-i18n="nav.schedule" href="#programacao">Programação</a></li>
+        <li><a data-i18n="nav.orgs" href="#realizacao">Realização</a></li>
+        <li><a data-i18n="nav.venue" href="#local">Local</a></li>
+        <li><a data-i18n="nav.contact" href="#contato">Contato</a></li>
+        <li class="nav-lang-selector">
+          <select id="language-selector" aria-label="Selecione o idioma">
+            <option value="pt">🇧🇷 PT</option>
+            <option value="en">🇺🇸 EN</option>
+            <option value="es">🇪🇸 ES</option>
+            <option value="fr">🇫🇷 FR</option>
+          </select>
+        </li>
+        <li>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdmjHvtwccoLV5AWAFi3aEKA6ef76x9n_XdlA8gCuisNHLioA/viewform?usp=header"
+            target="_blank"
+            rel="noopener"
+            class="nav-cta"
+            data-i18n="nav.cta"
+            >Inscreva-se</a
+          >
+        </li>
       </ul>
     </nav>
 
     <!-- Hero section -->
     <header class="hero" id="top">
       <div class="hero-content">
-        <img src="tgi/LOGO-TGI.png" alt="Logo III Simpósio TGI" class="logo" />
-        <h1>III Simpósio do Trato Gastrointestinal</h1>
-        <p>31 de outubro e 1º de novembro de 2025<br />Novotel Recife Marina</p>
+        <h1 data-i18n="hero.title">III Simpósio do Trato Gastrointestinal</h1>
+        <p data-i18n="hero.subtitle">
+          31 de outubro e 1º de novembro de 2025<br />Novotel Recife Marina
+        </p>
 
         <div class="hero-logos-section">
-          <h3>Realização</h3>
+          <h3 data-i18n="hero.orgs">Realização</h3>
           <div class="hero-logo-grid">
             <img
               src="assets/logos/santajoana_W.png"
@@ -681,6 +824,7 @@
           target="_blank"
           rel="noopener"
           class="btn-primary"
+          data-i18n="hero.cta"
           >Inscreva-se Gratuitamente</a
         >
       </div>
@@ -690,8 +834,8 @@
     <section id="sobre" class="fade-in">
       <div class="container two-column">
         <div>
-          <h2>Sobre o Simpósio</h2>
-          <p>
+          <h2 data-i18n="about.title">Sobre o Simpósio</h2>
+          <p data-i18n="about.intro">
             O
             <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong>,
             na condição de promotor do evento, ressalta que o principal objetivo
@@ -699,29 +843,34 @@
             experiências voltado à área da oncologia do trato gastrointestinal.
           </p>
 
-          <h3>Público-Alvo</h3>
-          <p>
+          <h3 data-i18n="about.audienceTitle">Público-Alvo</h3>
+          <p data-i18n="about.audience">
             O simpósio é destinado a oncologistas clínicos, cirurgiões
             oncológicos, proctologistas, endocrinologistas, patologistas,
             radiologistas, radioncologistas, oncogeneticistas, médicos
             nucleares, cardiologistas e geriatras de todo o Brasil.
           </p>
 
-          <h3>Objetivo</h3>
-          <p>
+          <h3 data-i18n="about.objectiveTitle">Objetivo</h3>
+          <p data-i18n="about.objective">
             Apresentar as principais novidades e promover a troca de
             experiências na oncologia gastrointestinal.
           </p>
 
           <p style="margin-top: 1.5rem">
-            <strong>Modalidade:</strong> Aberto para todas as instituições<br />
-            <strong>Número de participantes:</strong> 80 vagas
+            <span data-i18n="about.format"
+              ><strong>Modalidade:</strong> Aberto para todas as
+              instituições</span
+            ><br />
+            <span data-i18n="about.capacity"
+              ><strong>Número de participantes:</strong> 80 vagas</span
+            >
           </p>
         </div>
 
         <div>
-          <h2>Comissão Organizadora</h2>
-          <p>
+          <h2 data-i18n="committee.title">Comissão Organizadora</h2>
+          <p data-i18n="committee.intro">
             A programação científica está sob responsabilidade de um time
             multidisciplinar de especialistas:
           </p>
@@ -753,8 +902,11 @@
     <!-- Realization section -->
     <section id="realizacao" class="fade-in">
       <div class="container text-center">
-        <h2>Realização</h2>
-        <p style="font-size: 1.1rem; margin-bottom: 2rem">
+        <h2 data-i18n="orgs.title">Realização</h2>
+        <p
+          style="font-size: 1.1rem; margin-bottom: 2rem"
+          data-i18n="orgs.intro"
+        >
           O III Simpósio TGI é realizado pelas seguintes instituições:
         </p>
 
@@ -770,11 +922,11 @@
           <img src="assets/logos/cancer-center-white.png" alt="Rede Américas" />
         </div>
 
-        <h3 class="mt-2">Patrocínio</h3>
+        <h3 class="mt-2" data-i18n="orgs.sponsorship">Patrocínio</h3>
         <p>
-          <em>Patrocinadores:</em> AstraZeneca, Roche, Bristol, Merck, Pfizer,
-          Servier, Ipsen<br />
-          <small style="color: var(--muted-text)"
+          <em data-i18n="orgs.sponsorsLabel">Patrocinadores:</em> AstraZeneca,
+          Roche, Bristol, Merck, Pfizer, Servier, Ipsen<br />
+          <small style="color: var(--muted-text)" data-i18n="orgs.pending"
             >(Aguardando confirmação de participação)</small
           >
         </p>
@@ -784,13 +936,24 @@
     <!-- Schedule section -->
     <section id="programacao" class="fade-in">
       <div class="container">
-        <h2 class="text-center mb-2">Programação Científica</h2>
+        <h2 class="text-center mb-2" data-i18n="schedule.title">
+          Programação Científica
+        </h2>
 
         <div class="tabs">
-          <button id="tab-day1" class="active" onclick="showDay('day1')">
+          <button
+            id="tab-day1"
+            class="active"
+            onclick="showDay('day1')"
+            data-i18n="schedule.day1"
+          >
             Sexta-feira 31/10/2025
           </button>
-          <button id="tab-day2" onclick="showDay('day2')">
+          <button
+            id="tab-day2"
+            onclick="showDay('day2')"
+            data-i18n="schedule.day2"
+          >
             Sábado 01/11/2025
           </button>
         </div>
@@ -800,9 +963,13 @@
           <table class="schedule-table">
             <thead>
               <tr>
-                <th style="width: 130px">Horário</th>
-                <th>Atividade</th>
-                <th style="width: 220px">Apresentador</th>
+                <th style="width: 130px" data-i18n="schedule.timeHeader">
+                  Horário
+                </th>
+                <th data-i18n="schedule.activityHeader">Atividade</th>
+                <th style="width: 220px" data-i18n="schedule.presenterHeader">
+                  Apresentador
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -1063,9 +1230,13 @@
           <table class="schedule-table">
             <thead>
               <tr>
-                <th style="width: 130px">Horário</th>
-                <th>Atividade</th>
-                <th style="width: 220px">Apresentador</th>
+                <th style="width: 130px" data-i18n="schedule.timeHeader">
+                  Horário
+                </th>
+                <th data-i18n="schedule.activityHeader">Atividade</th>
+                <th style="width: 220px" data-i18n="schedule.presenterHeader">
+                  Apresentador
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -1224,8 +1395,8 @@
     <section id="local" class="fade-in">
       <div class="container two-column">
         <div>
-          <h2>Local do Evento</h2>
-          <p>
+          <h2 data-i18n="venue.title">Local do Evento</h2>
+          <p data-i18n="venue.description">
             O simpósio acontecerá no <strong>Novotel Recife Marina</strong>,
             hotel que se destaca pelo projeto arquitetônico inspirado em um
             transatlântico e oferece acomodações modernas com vista para o mar,
@@ -1233,18 +1404,18 @@
           </p>
 
           <p style="margin-top: 1.5rem">
-            <strong>Endereço:</strong><br />
+            <strong data-i18n="venue.addressLabel">Endereço:</strong><br />
             Cais de Santa Rita, 46 – Bairro São José<br />
             Recife – PE, CEP 50.020-455
           </p>
 
-          <p>
+          <p data-i18n="venue.location">
             Localizado no coração de Recife, no complexo Porto Novo Recife, o
             hotel facilita o acesso às principais atrações turísticas da cidade.
           </p>
 
           <p style="margin-top: 1.5rem">
-            <em
+            <em data-i18n="venue.tip"
               ><strong>Dica:</strong> Aproveite o rooftop do hotel para
               contemplar a vista da marina e desfrutar de momentos de
               convivência com os colegas participantes.</em
@@ -1266,7 +1437,7 @@
     <!-- Registration CTA section -->
     <section id="inscricao" class="fade-in">
       <div class="container text-center">
-        <h2>Garanta sua vaga</h2>
+        <h2 data-i18n="cta.title">Garanta sua vaga</h2>
         <p
           style="
             font-size: 1.15rem;
@@ -1275,15 +1446,18 @@
             color: var(--dark-text);
           "
         >
-          O número de participantes é limitado a <strong>80 vagas</strong>. Faça
-          sua inscrição <strong>gratuitamente</strong> através do formulário
-          oficial.
+          <span data-i18n="cta.text">
+            O número de participantes é limitado a <strong>80 vagas</strong>.
+            Faça sua inscrição <strong>gratuitamente</strong> através do
+            formulário oficial.
+          </span>
         </p>
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSdmjHvtwccoLV5AWAFi3aEKA6ef76x9n_XdlA8gCuisNHLioA/viewform?usp=header"
           target="_blank"
           rel="noopener"
           class="btn-primary"
+          data-i18n="cta.button"
           >Inscrever-me agora</a
         >
       </div>
@@ -1293,20 +1467,23 @@
     <section id="contato" class="fade-in">
       <div class="container two-column">
         <div>
-          <h2>Contato</h2>
+          <h2 data-i18n="contact.title">Contato</h2>
           <p>
-            Para dúvidas sobre o simpósio ou suporte na inscrição, entre em
-            contato com a organização:
+            <span data-i18n="contact.intro">
+              Para dúvidas sobre o simpósio ou suporte na inscrição, entre em
+              contato com a organização:
+            </span>
           </p>
 
-          <h3>Luka Plan Promoções e Eventos</h3>
+          <h3 data-i18n="contact.org">Luka Plan Promoções e Eventos</h3>
           <p>
-            <strong>Endereço:</strong><br />
+            <strong data-i18n="contact.addressLabel">Endereço:</strong><br />
             Rua João Eugênio de Lima, 143 – Sala 01<br />
             Boa Viagem – Recife – CEP 51.030-360
           </p>
           <p>
-            <strong>Telefone/WhatsApp:</strong><br />
+            <strong data-i18n="contact.phoneLabel">Telefone/WhatsApp:</strong
+            ><br />
             <a href="https://wa.me/5581999851712" target="_blank" rel="noopener"
               >(81) 99985-1712</a
             ><br />
@@ -1315,7 +1492,7 @@
             >
           </p>
           <p>
-            <strong>E-mail:</strong><br />
+            <strong data-i18n="contact.emailLabel">E-mail:</strong><br />
             <a href="mailto:eventos@lukaplan.com.br">eventos@lukaplan.com.br</a
             ><br />
             <a href="mailto:simposiodeongologiadohsj@gmail.com"
@@ -1323,31 +1500,66 @@
             >
           </p>
           <p style="margin-top: 1.5rem">
-            <strong>Instagram:</strong>
+            <strong data-i18n="contact.socialLabel">Redes Sociais:</strong>
+          </p>
+          <div class="social-links">
             <a
               href="https://instagram.com/lukaplan_"
               target="_blank"
               rel="noopener"
-              >@lukaplan_</a
+              class="social-link"
+              title="Instagram"
             >
-          </p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://wa.me/5581999851712"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              title="WhatsApp"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+            </a>
+            <a
+              href="mailto:eventos@lukaplan.com.br"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              title="E-mail"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
 
         <div>
-          <h2>Informações Adicionais</h2>
-          <p>
+          <h2 data-i18n="info.title">Informações Adicionais</h2>
+          <p data-i18n="info.series">
             Esta terceira edição do simpósio faz parte de uma série de encontros
             temáticos realizados pelo ISEP para fomentar a atualização contínua
             em oncologia.
           </p>
 
-          <p>
+          <p data-i18n="info.cancellation">
             <strong>Importante:</strong> Se precisar cancelar a inscrição, avise
             a organização com antecedência para permitir que outro profissional
             ocupe a vaga.
           </p>
 
-          <p style="margin-top: 2rem">
+          <p style="margin-top: 2rem" data-i18n="info.events">
             Consulte a agenda de eventos do Instituto para outras iniciativas na
             área da oncologia gastrointestinal e acompanhe as novidades através
             dos canais oficiais.
@@ -1358,17 +1570,22 @@
 
     <!-- Footer -->
     <footer>
-      <p style="font-size: 1.1rem; font-weight: 600">
+      <p
+        style="font-size: 1.1rem; font-weight: 600"
+        data-i18n="footer.copyright"
+      >
         &copy; 2025 III Simpósio do Trato Gastrointestinal
       </p>
-      <p>Hospital Santa Joana Recife & ISEP</p>
+      <p data-i18n="footer.orgs">Hospital Santa Joana Recife & ISEP</p>
       <p style="margin-top: 2rem; font-size: 0.9rem">
-        Desenvolvido por
+        <span data-i18n="footer.developedBy">Desenvolvido por</span>
         <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener"
           >Luka Plan Promoções e Eventos</a
         >
       </p>
-      <p style="margin-top: 1.5rem"><a href="#top">↑ Voltar ao topo</a></p>
+      <p style="margin-top: 1.5rem">
+        <a href="#top" data-i18n="footer.backToTop">↑ Voltar ao topo</a>
+      </p>
     </footer>
 
     <!-- Scripts -->
@@ -1417,6 +1634,327 @@
         }
 
         lastScroll = currentScroll;
+      });
+
+      // Comprehensive i18n implementation
+      const translations = {
+        pt: {
+          "nav.about": "Sobre",
+          "nav.schedule": "Programação",
+          "nav.orgs": "Realização",
+          "nav.venue": "Local",
+          "nav.contact": "Contato",
+          "nav.cta": "Inscreva-se",
+          "hero.title": "III Simpósio do Trato Gastrointestinal",
+          "hero.subtitle":
+            "31 de outubro e 1º de novembro de 2025<br />Novotel Recife Marina",
+          "hero.orgs": "Realização",
+          "hero.cta": "Inscreva-se Gratuitamente",
+          "about.title": "Sobre o Simpósio",
+          "about.intro":
+            "O <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong>, na condição de promotor do evento, ressalta que o principal objetivo desse encontro é promover a atualização, discussão e troca de experiências voltado à área da oncologia do trato gastrointestinal.",
+          "about.audienceTitle": "Público-Alvo",
+          "about.audience":
+            "O simpósio é destinado a oncologistas clínicos, cirurgiões oncológicos, proctologistas, endocrinologistas, patologistas, radiologistas, radioncologistas, oncogeneticistas, médicos nucleares, cardiologistas e geriatras de todo o Brasil.",
+          "about.objectiveTitle": "Objetivo",
+          "about.objective":
+            "Apresentar as principais novidades e promover a troca de experiências na oncologia gastrointestinal.",
+          "about.format":
+            "<strong>Modalidade:</strong> Aberto para todas as instituições",
+          "about.capacity":
+            "<strong>Número de participantes:</strong> 80 vagas",
+          "committee.title": "Comissão Organizadora",
+          "committee.intro":
+            "A programação científica está sob responsabilidade de um time multidisciplinar de especialistas:",
+          "orgs.title": "Realização",
+          "orgs.intro":
+            "O III Simpósio TGI é realizado pelas seguintes instituições:",
+          "orgs.sponsorship": "Patrocínio",
+          "orgs.sponsorsLabel": "Patrocinadores:",
+          "orgs.pending": "(Aguardando confirmação de participação)",
+          "schedule.title": "Programação Científica",
+          "schedule.day1": "Sexta-feira 31/10/2025",
+          "schedule.day2": "Sábado 01/11/2025",
+          "schedule.timeHeader": "Horário",
+          "schedule.activityHeader": "Atividade",
+          "schedule.presenterHeader": "Apresentador",
+          "venue.title": "Local do Evento",
+          "venue.description":
+            "O simpósio acontecerá no <strong>Novotel Recife Marina</strong>, hotel que se destaca pelo projeto arquitetônico inspirado em um transatlântico e oferece acomodações modernas com vista para o mar, piscina de borda infinita, spa e excelentes opções gastronômicas.",
+          "venue.addressLabel": "Endereço:",
+          "venue.location":
+            "Localizado no coração de Recife, no complexo Porto Novo Recife, o hotel facilita o acesso às principais atrações turísticas da cidade.",
+          "venue.tip":
+            "<strong>Dica:</strong> Aproveite o rooftop do hotel para contemplar a vista da marina e desfrutar de momentos de convivência com os colegas participantes.",
+          "cta.title": "Garanta sua vaga",
+          "cta.text":
+            "O número de participantes é limitado a <strong>80 vagas</strong>. Faça sua inscrição <strong>gratuitamente</strong> através do formulário oficial.",
+          "cta.button": "Inscrever-me agora",
+          "contact.title": "Contato",
+          "contact.intro":
+            "Para dúvidas sobre o simpósio ou suporte na inscrição, entre em contato com a organização:",
+          "contact.org": "Luka Plan Promoções e Eventos",
+          "contact.addressLabel": "Endereço:",
+          "contact.phoneLabel": "Telefone/WhatsApp:",
+          "contact.emailLabel": "E-mail:",
+          "contact.socialLabel": "Redes Sociais:",
+          "info.title": "Informações Adicionais",
+          "info.series":
+            "Esta terceira edição do simpósio faz parte de uma série de encontros temáticos realizados pelo ISEP para fomentar a atualização contínua em oncologia.",
+          "info.cancellation":
+            "<strong>Importante:</strong> Se precisar cancelar a inscrição, avise a organização com antecedência para permitir que outro profissional ocupe a vaga.",
+          "info.events":
+            "Consulte a agenda de eventos do Instituto para outras iniciativas na área da oncologia gastrointestinal e acompanhe as novidades através dos canais oficiais.",
+          "footer.copyright":
+            "&copy; 2025 III Simpósio do Trato Gastrointestinal",
+          "footer.orgs": "Hospital Santa Joana Recife & ISEP",
+          "footer.developedBy": "Desenvolvido por",
+          "footer.backToTop": "↑ Voltar ao topo",
+        },
+        en: {
+          "nav.about": "About",
+          "nav.schedule": "Schedule",
+          "nav.orgs": "Organizers",
+          "nav.venue": "Venue",
+          "nav.contact": "Contact",
+          "nav.cta": "Register",
+          "hero.title": "3rd Gastrointestinal Tract Symposium",
+          "hero.subtitle":
+            "October 31 and November 1, 2025<br />Novotel Recife Marina",
+          "hero.orgs": "Organizers",
+          "hero.cta": "Register for Free",
+          "about.title": "About the Symposium",
+          "about.intro":
+            "The <strong>Santa Joana Institute for Education and Research – ISEP</strong>, as the event promoter, emphasizes that the main objective of this meeting is to promote updates, discussion, and exchange of experiences focused on gastrointestinal oncology.",
+          "about.audienceTitle": "Target Audience",
+          "about.audience":
+            "The symposium is intended for clinical oncologists, oncological surgeons, proctologists, endocrinologists, pathologists, radiologists, radiation oncologists, oncogeneticists, nuclear medicine physicians, cardiologists, and geriatricians from all over Brazil.",
+          "about.objectiveTitle": "Objective",
+          "about.objective":
+            "Present the latest developments and promote the exchange of experiences in gastrointestinal oncology.",
+          "about.format": "<strong>Format:</strong> Open to all institutions",
+          "about.capacity": "<strong>Number of participants:</strong> 80 seats",
+          "committee.title": "Organizing Committee",
+          "committee.intro":
+            "The scientific program is under the responsibility of a multidisciplinary team of experts:",
+          "orgs.title": "Organizers",
+          "orgs.intro":
+            "The 3rd GIT Symposium is organized by the following institutions:",
+          "orgs.sponsorship": "Sponsorship",
+          "orgs.sponsorsLabel": "Sponsors:",
+          "orgs.pending": "(Awaiting participation confirmation)",
+          "schedule.title": "Scientific Program",
+          "schedule.day1": "Friday 10/31/2025",
+          "schedule.day2": "Saturday 11/01/2025",
+          "schedule.timeHeader": "Time",
+          "schedule.activityHeader": "Activity",
+          "schedule.presenterHeader": "Presenter",
+          "venue.title": "Event Venue",
+          "venue.description":
+            "The symposium will take place at <strong>Novotel Recife Marina</strong>, a hotel renowned for its transatlantic-inspired architectural design, offering modern accommodations with sea views, infinity pool, spa, and excellent dining options.",
+          "venue.addressLabel": "Address:",
+          "venue.location":
+            "Located in the heart of Recife, in the Porto Novo Recife complex, the hotel provides easy access to the city's main tourist attractions.",
+          "venue.tip":
+            "<strong>Tip:</strong> Enjoy the hotel rooftop for great marina views and networking moments.",
+          "cta.title": "Secure your spot",
+          "cta.text":
+            "The number of participants is limited to <strong>80 seats</strong>. Register <strong>for free</strong> using the official form.",
+          "cta.button": "Register now",
+          "contact.title": "Contact",
+          "contact.intro":
+            "For questions about the symposium or registration support, contact the organizers:",
+          "contact.org": "Luka Plan Promotions & Events",
+          "contact.addressLabel": "Address:",
+          "contact.phoneLabel": "Phone/WhatsApp:",
+          "contact.emailLabel": "Email:",
+          "contact.socialLabel": "Social Media:",
+          "info.title": "Additional Information",
+          "info.series":
+            "This third edition of the symposium is part of a series of thematic meetings organized by ISEP to foster continuous updates in oncology.",
+          "info.cancellation":
+            "<strong>Important:</strong> If you need to cancel your registration, please notify the organization in advance to allow another professional to fill the spot.",
+          "info.events":
+            "Check the Institute's event calendar for other initiatives in gastrointestinal oncology and follow news through official channels.",
+          "footer.copyright":
+            "&copy; 2025 3rd Gastrointestinal Tract Symposium",
+          "footer.orgs": "Santa Joana Hospital Recife & ISEP",
+          "footer.developedBy": "Developed by",
+          "footer.backToTop": "↑ Back to top",
+        },
+        es: {
+          "nav.about": "Acerca de",
+          "nav.schedule": "Programa",
+          "nav.orgs": "Organización",
+          "nav.venue": "Sede",
+          "nav.contact": "Contacto",
+          "nav.cta": "Inscribirse",
+          "hero.title": "III Simposio del Tracto Gastrointestinal",
+          "hero.subtitle":
+            "31 de octubre y 1 de noviembre de 2025<br />Novotel Recife Marina",
+          "hero.orgs": "Organización",
+          "hero.cta": "Inscríbete gratis",
+          "about.title": "Sobre el Simposio",
+          "about.intro":
+            "El <strong>Instituto Santa Joana de Enseñanza e Investigación – ISEP</strong>, como promotor del evento, enfatiza que el objetivo principal de este encuentro es promover la actualización, discusión e intercambio de experiencias enfocadas en oncología gastrointestinal.",
+          "about.audienceTitle": "Público Objetivo",
+          "about.audience":
+            "El simposio está dirigido a oncólogos clínicos, cirujanos oncológicos, proctólogos, endocrinólogos, patólogos, radiólogos, radioncólogos, oncogeneticistas, médicos nucleares, cardiólogos y geriatras de todo Brasil.",
+          "about.objectiveTitle": "Objetivo",
+          "about.objective":
+            "Presentar las últimas novedades y promover el intercambio de experiencias en oncología gastrointestinal.",
+          "about.format":
+            "<strong>Modalidad:</strong> Abierto a todas las instituciones",
+          "about.capacity":
+            "<strong>Número de participantes:</strong> 80 plazas",
+          "committee.title": "Comisión Organizadora",
+          "committee.intro":
+            "El programa científico está bajo la responsabilidad de un equipo multidisciplinario de expertos:",
+          "orgs.title": "Organización",
+          "orgs.intro":
+            "El III Simposio TGI es organizado por las siguientes instituciones:",
+          "orgs.sponsorship": "Patrocinio",
+          "orgs.sponsorsLabel": "Patrocinadores:",
+          "orgs.pending": "(Esperando confirmación de participación)",
+          "schedule.title": "Programa Científico",
+          "schedule.day1": "Viernes 31/10/2025",
+          "schedule.day2": "Sábado 01/11/2025",
+          "schedule.timeHeader": "Horario",
+          "schedule.activityHeader": "Actividad",
+          "schedule.presenterHeader": "Presentador",
+          "venue.title": "Lugar del Evento",
+          "venue.description":
+            "El simposio tendrá lugar en el <strong>Novotel Recife Marina</strong>, un hotel destacado por su diseño arquitectónico inspirado en un transatlántico, ofreciendo alojamiento moderno con vistas al mar, piscina infinita, spa y excelentes opciones gastronómicas.",
+          "venue.addressLabel": "Dirección:",
+          "venue.location":
+            "Ubicado en el corazón de Recife, en el complejo Porto Novo Recife, el hotel facilita el acceso a las principales atracciones turísticas de la ciudad.",
+          "venue.tip":
+            "<strong>Consejo:</strong> Disfruta del rooftop del hotel para contemplar las vistas de la marina y hacer networking.",
+          "cta.title": "Asegura tu plaza",
+          "cta.text":
+            "El número de participantes está limitado a <strong>80 plazas</strong>. Inscríbete <strong>gratis</strong> mediante el formulario oficial.",
+          "cta.button": "Inscribirme ahora",
+          "contact.title": "Contacto",
+          "contact.intro":
+            "Para dudas sobre el simposio o soporte de inscripción, contacta con la organización:",
+          "contact.org": "Luka Plan Promociones y Eventos",
+          "contact.addressLabel": "Dirección:",
+          "contact.phoneLabel": "Teléfono/WhatsApp:",
+          "contact.emailLabel": "Correo electrónico:",
+          "contact.socialLabel": "Redes Sociales:",
+          "info.title": "Información Adicional",
+          "info.series":
+            "Esta tercera edición del simposio es parte de una serie de encuentros temáticos organizados por ISEP para fomentar la actualización continua en oncología.",
+          "info.cancellation":
+            "<strong>Importante:</strong> Si necesitas cancelar la inscripción, avisa a la organización con anticipación para permitir que otro profesional ocupe la plaza.",
+          "info.events":
+            "Consulta el calendario de eventos del Instituto para otras iniciativas en oncología gastrointestinal y síguenos por los canales oficiales.",
+          "footer.copyright":
+            "&copy; 2025 III Simposio del Tracto Gastrointestinal",
+          "footer.orgs": "Hospital Santa Joana Recife & ISEP",
+          "footer.developedBy": "Desarrollado por",
+          "footer.backToTop": "↑ Volver arriba",
+        },
+        fr: {
+          "nav.about": "À propos",
+          "nav.schedule": "Programme",
+          "nav.orgs": "Organisation",
+          "nav.venue": "Lieu",
+          "nav.contact": "Contact",
+          "nav.cta": "S'inscrire",
+          "hero.title": "3e Symposium du Tractus Gastro-intestinal",
+          "hero.subtitle":
+            "31 octobre et 1er novembre 2025<br />Novotel Recife Marina",
+          "hero.orgs": "Organisation",
+          "hero.cta": "Inscription gratuite",
+          "about.title": "À propos du Symposium",
+          "about.intro":
+            "<strong>L'Institut Santa Joana d'Enseignement et de Recherche – ISEP</strong>, en tant que promoteur de l'événement, souligne que l'objectif principal de cette rencontre est de promouvoir la mise à jour, la discussion et l'échange d'expériences axées sur l'oncologie gastro-intestinale.",
+          "about.audienceTitle": "Public cible",
+          "about.audience":
+            "Le symposium s'adresse aux oncologues cliniques, chirurgiens oncologues, proctologues, endocrinologues, pathologistes, radiologues, radio-oncologues, oncogénéticiens, médecins nucléaires, cardiologues et gériatres de tout le Brésil.",
+          "about.objectiveTitle": "Objectif",
+          "about.objective":
+            "Présenter les dernières nouveautés et promouvoir l'échange d'expériences en oncologie gastro-intestinale.",
+          "about.format":
+            "<strong>Modalité :</strong> Ouvert à toutes les institutions",
+          "about.capacity":
+            "<strong>Nombre de participants :</strong> 80 places",
+          "committee.title": "Commission d'organisation",
+          "committee.intro":
+            "Le programme scientifique est sous la responsabilité d'une équipe multidisciplinaire d'experts :",
+          "orgs.title": "Organisation",
+          "orgs.intro":
+            "Le 3e Symposium TGI est organisé par les institutions suivantes :",
+          "orgs.sponsorship": "Parrainage",
+          "orgs.sponsorsLabel": "Sponsors :",
+          "orgs.pending": "(En attente de confirmation de participation)",
+          "schedule.title": "Programme scientifique",
+          "schedule.day1": "Vendredi 31/10/2025",
+          "schedule.day2": "Samedi 01/11/2025",
+          "schedule.timeHeader": "Horaire",
+          "schedule.activityHeader": "Activité",
+          "schedule.presenterHeader": "Présentateur",
+          "venue.title": "Lieu de l'événement",
+          "venue.description":
+            "Le symposium se déroulera au <strong>Novotel Recife Marina</strong>, un hôtel réputé pour son design architectural inspiré d'un transatlantique, offrant un hébergement moderne avec vue sur la mer, piscine à débordement, spa et d'excellentes options gastronomiques.",
+          "venue.addressLabel": "Adresse :",
+          "venue.location":
+            "Situé au cœur de Recife, dans le complexe Porto Novo Recife, l'hôtel facilite l'accès aux principales attractions touristiques de la ville.",
+          "venue.tip":
+            "<strong>Astuce :</strong> Profitez du rooftop de l'hôtel pour admirer la marina et réseauter.",
+          "cta.title": "Réservez votre place",
+          "cta.text":
+            "Le nombre de participants est limité à <strong>80 places</strong>. Inscrivez-vous <strong>gratuitement</strong> via le formulaire officiel.",
+          "cta.button": "M'inscrire maintenant",
+          "contact.title": "Contact",
+          "contact.intro":
+            "Pour des questions sur le symposium ou de l'aide à l'inscription, contactez l'organisation :",
+          "contact.org": "Luka Plan Promotions et Événements",
+          "contact.addressLabel": "Adresse :",
+          "contact.phoneLabel": "Téléphone/WhatsApp :",
+          "contact.emailLabel": "E-mail :",
+          "contact.socialLabel": "Réseaux sociaux :",
+          "info.title": "Informations supplémentaires",
+          "info.series":
+            "Cette troisième édition du symposium fait partie d'une série de rencontres thématiques organisées par l'ISEP pour favoriser la mise à jour continue en oncologie.",
+          "info.cancellation":
+            "<strong>Important :</strong> Si vous devez annuler votre inscription, prévenez l'organisation à l'avance pour permettre à un autre professionnel de prendre la place.",
+          "info.events":
+            "Consultez le calendrier des événements de l'Institut pour d'autres initiatives en oncologie gastro-intestinale et suivez les actualités via les canaux officiels.",
+          "footer.copyright":
+            "&copy; 2025 3e Symposium du Tractus Gastro-intestinal",
+          "footer.orgs": "Hôpital Santa Joana Recife & ISEP",
+          "footer.developedBy": "Développé par",
+          "footer.backToTop": "↑ Retour en haut",
+        },
+      };
+
+      function applyTranslations(lang) {
+        const dict = translations[lang] || translations.pt;
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          const value = dict[key];
+          if (!value) return;
+          if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            el.placeholder = value;
+          } else {
+            el.innerHTML = value;
+          }
+        });
+        document.documentElement.lang = lang === "pt" ? "pt-BR" : lang;
+      }
+
+      // Language selector handler
+      const languageSelector = document.getElementById("language-selector");
+      const savedLang = localStorage.getItem("preferredLanguage") || "pt";
+      languageSelector.value = savedLang;
+      applyTranslations(savedLang);
+
+      languageSelector.addEventListener("change", (e) => {
+        const selectedLang = e.target.value;
+        localStorage.setItem("preferredLanguage", selectedLang);
+        applyTranslations(selectedLang);
       });
     </script>
   </body>
