@@ -1,1059 +1,1351 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>III Simpósio TGI - Oncologia Gastrointestinal | 31 Out - 01 Nov 2025</title>
-  <meta name="description" content="III Simpósio do Trato Gastrointestinal. 31 de outubro e 1º de novembro de 2025 no Novotel Recife Marina. Promovido por Hospital Santa Joana Recife e ISEP.">
-  <meta name="keywords" content="oncologia, gastrointestinal, simpósio, TGI, Recife, ISEP, Hospital Santa Joana">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://simposiotgi.com.br/">
-  <meta property="og:title" content="III Simpósio TGI - Oncologia Gastrointestinal">
-  <meta property="og:description" content="31 de outubro e 1º de novembro de 2025 no Novotel Recife Marina">
-  <meta property="og:image" content="https://simposiotgi.com.br/tgi/LOGO-TGI.png">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      III Simpósio TGI - Oncologia Gastrointestinal | 31 Out - 01 Nov 2025
+    </title>
+    <meta
+      name="description"
+      content="III Simpósio do Trato Gastrointestinal. 31 de outubro e 1º de novembro de 2025 no Novotel Recife Marina. Promovido por Hospital Santa Joana Recife e ISEP."
+    />
+    <meta
+      name="keywords"
+      content="oncologia, gastrointestinal, simpósio, TGI, Recife, ISEP, Hospital Santa Joana"
+    />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://simposiotgi.com.br/">
-  <meta property="twitter:title" content="III Simpósio TGI - Oncologia Gastrointestinal">
-  <meta property="twitter:description" content="31 de outubro e 1º de novembro de 2025 no Novotel Recife Marina">
-  <meta property="twitter:image" content="https://simposiotgi.com.br/tgi/LOGO-TGI.png">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="tgi/LOGO-TGI.png">
-  
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  
-  <style>
-    /* Color palette inspired by TGI branding */
-    :root {
-      --primary: #6f2da8;       /* rich purple */
-      --secondary: #63b45a;     /* fresh green */
-      --light-bg: #f8f9fa;
-      --dark-text: #333333;
-      --muted-text: #666666;
-    }
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://simposiotgi.com.br/" />
+    <meta
+      property="og:title"
+      content="III Simpósio TGI - Oncologia Gastrointestinal"
+    />
+    <meta
+      property="og:description"
+      content="31 de outubro e 1º de novembro de 2025 no Novotel Recife Marina"
+    />
+    <meta
+      property="og:image"
+      content="https://simposiotgi.com.br/tgi/LOGO-TGI.png"
+    />
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    body {
-      font-family: 'Open Sans', Arial, sans-serif;
-      color: var(--dark-text);
-      line-height: 1.6;
-    }
-    
-    h1, h2, h3 {
-      font-family: 'Montserrat', sans-serif;
-      color: var(--primary);
-    }
-    
-    h1 { font-size: 2.5rem; font-weight: 700; }
-    h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; }
-    h3 { font-size: 1.4rem; font-weight: 600; margin: 1.5rem 0 1rem; }
-    
-    p { margin: 0.5rem 0 1rem; }
-    
-    a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    
-    a:hover, a:focus { color: var(--secondary); }
-    
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 0.75rem 2rem;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-    
-    nav.scrolled {
-      padding: 0.5rem 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-    
-    nav .logo-small {
-      height: 45px;
-      transition: height 0.3s ease;
-    }
-    
-    nav.scrolled .logo-small {
-      height: 40px;
-    }
-    
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
-    
-    nav ul li a {
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 0.5rem 0;
-      position: relative;
-    }
-    
-    nav ul li a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--secondary);
-      transition: width 0.3s ease;
-    }
-    
-    nav ul li a:hover::after {
-      width: 100%;
-    }
-    
-    /* Hero section */
-    header.hero {
-      position: relative;
-      min-height: 85vh;
-      background: linear-gradient(135deg, #6f2da8 0%, #9b4dca 50%, #63b45a 100%);
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 1rem 2rem;
-      overflow: hidden;
-    }
-    
-    header.hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(99, 180, 90, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(111, 45, 168, 0.4) 0%, transparent 50%);
-      animation: pulse 8s ease-in-out infinite;
-    }
-    
-    @keyframes pulse {
-      0%, 100% { opacity: 0.7; }
-      50% { opacity: 1; }
-    }
-    
-    header.hero .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-      animation: fadeInUp 1s ease-out;
-    }
-    
-    @keyframes fadeInUp {
-      from {
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://simposiotgi.com.br/" />
+    <meta
+      property="twitter:title"
+      content="III Simpósio TGI - Oncologia Gastrointestinal"
+    />
+    <meta
+      property="twitter:description"
+      content="31 de outubro e 1º de novembro de 2025 no Novotel Recife Marina"
+    />
+    <meta
+      property="twitter:image"
+      content="https://simposiotgi.com.br/tgi/LOGO-TGI.png"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="tgi/LOGO-TGI.png" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Color palette inspired by TGI branding */
+      :root {
+        --primary: #6f2da8; /* rich purple */
+        --secondary: #63b45a; /* fresh green */
+        --light-bg: #f8f9fa;
+        --dark-text: #333333;
+        --muted-text: #666666;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Open Sans", Arial, sans-serif;
+        color: var(--dark-text);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Montserrat", sans-serif;
+        color: var(--primary);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+      h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+      h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 1.5rem 0 1rem;
+      }
+
+      p {
+        margin: 0.5rem 0 1rem;
+      }
+
+      a {
+        color: var(--primary);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover,
+      a:focus {
+        color: var(--secondary);
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0.75rem 2rem;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      nav.scrolled {
+        padding: 0.5rem 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      nav .logo-small {
+        height: 45px;
+        transition: height 0.3s ease;
+      }
+
+      nav.scrolled .logo-small {
+        height: 40px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      nav ul li a {
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 0.5rem 0;
+        position: relative;
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--secondary);
+        transition: width 0.3s ease;
+      }
+
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+
+      /* Hero section */
+      header.hero {
+        position: relative;
+        min-height: 85vh;
+        background: linear-gradient(
+          135deg,
+          #6f2da8 0%,
+          #9b4dca 50%,
+          #63b45a 100%
+        );
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 80px 1rem 2rem;
+        overflow: hidden;
+      }
+
+      header.hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            circle at 20% 50%,
+            rgba(99, 180, 90, 0.3) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(111, 45, 168, 0.4) 0%,
+            transparent 50%
+          );
+        animation: pulse 8s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.7;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      header.hero .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      header.hero .hero-content img.logo {
+        width: 220px;
+        height: auto;
+        margin-bottom: 2rem;
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+        animation: fadeIn 1.2s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      header.hero h1 {
+        color: #fff;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        animation: fadeInUp 1s ease-out 0.2s both;
+      }
+
+      header.hero p {
+        color: #f2f2f2;
+        font-size: 1.25rem;
+        margin-bottom: 2.5rem;
+        animation: fadeInUp 1s ease-out 0.4s both;
+      }
+
+      .btn-primary {
+        display: inline-block;
+        background: var(--secondary);
+        color: #fff !important;
+        padding: 1.1rem 2.5rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 20px rgba(99, 180, 90, 0.5);
+        animation: fadeInUp 1s ease-out 0.6s both;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .btn-primary:hover {
+        background: #519447;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(99, 180, 90, 0.6);
+      }
+
+      /* Section styles */
+      section {
+        padding: 5rem 2rem;
+      }
+
+      section:nth-of-type(even) {
+        background: var(--light-bg);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .two-column {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+      }
+
+      /* Fade-in on scroll animation */
+      .fade-in {
         opacity: 0;
         transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
       }
-      to {
+
+      .fade-in.visible {
         opacity: 1;
         transform: translateY(0);
       }
-    }
-    
-    header.hero .hero-content img.logo {
-      width: 220px;
-      height: auto;
-      margin-bottom: 2rem;
-      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
-      animation: fadeIn 1.2s ease-out;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    header.hero h1 {
-      color: #fff;
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      animation: fadeInUp 1s ease-out 0.2s both;
-    }
-    
-    header.hero p {
-      color: #f2f2f2;
-      font-size: 1.25rem;
-      margin-bottom: 2.5rem;
-      animation: fadeInUp 1s ease-out 0.4s both;
-    }
-    
-    .btn-primary {
-      display: inline-block;
-      background: var(--secondary);
-      color: #fff !important;
-      padding: 1.1rem 2.5rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      transition: all 0.4s ease;
-      box-shadow: 0 4px 20px rgba(99, 180, 90, 0.5);
-      animation: fadeInUp 1s ease-out 0.6s both;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    
-    .btn-primary:hover {
-      background: #519447;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(99, 180, 90, 0.6);
-    }
-    
-    /* Section styles */
-    section {
-      padding: 5rem 2rem;
-    }
-    
-    section:nth-of-type(even) {
-      background: var(--light-bg);
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .two-column {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 3rem;
-    }
-    
-    /* Fade-in on scroll animation */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    /* Schedule tabs */
-    .tabs {
-      display: flex;
-      border-bottom: 3px solid var(--primary);
-      margin-bottom: 2rem;
-      gap: 0.5rem;
-    }
-    
-    .tabs button {
-      flex: 1;
-      padding: 1.2rem 1rem;
-      background: none;
-      border: none;
-      font-weight: 700;
-      font-size: 1.05rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      color: var(--primary);
-      position: relative;
-    }
-    
-    .tabs button::before {
-      content: '';
-      position: absolute;
-      bottom: -3px;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--secondary);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-    
-    .tabs button.active {
-      background: var(--primary);
-      color: #fff;
-    }
-    
-    .tabs button.active::before {
-      transform: scaleX(1);
-      background: var(--secondary);
-    }
-    
-    .tabs button:hover:not(.active) {
-      background: rgba(111, 45, 168, 0.1);
-    }
-    
-    .schedule-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 2rem;
-      font-size: 0.95rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    
-    .schedule-table th,
-    .schedule-table td {
-      padding: 1rem 0.75rem;
-      border: 1px solid #e0e0e0;
-      text-align: left;
-    }
-    
-    .schedule-table th {
-      background: var(--primary);
-      color: #fff;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
-    }
-    
-    .schedule-table tbody tr {
-      transition: background 0.2s ease;
-    }
-    
-    .schedule-table tbody tr:nth-child(odd) {
-      background: #f9f9f9;
-    }
-    
-    .schedule-table tbody tr:hover {
-      background: rgba(111, 45, 168, 0.08);
-    }
-    
-    .session-header {
-      background: var(--secondary) !important;
-      color: #fff !important;
-      font-weight: 700 !important;
-      font-size: 1.05rem !important;
-    }
-    
-    .session-break {
-      background: #fff3cd !important;
-      font-weight: 700;
-      text-align: center;
-      color: #856404;
-    }
-    
-    .speaker-name {
-      font-weight: 700;
-      color: var(--primary);
-    }
-    
-    /* Organizers logo grid */
-    .logo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 2rem;
-      align-items: center;
-      margin: 2rem 0;
-    }
-    
-    .logo-grid img {
-      width: 100%;
-      max-width: 180px;
-      height: auto;
-      margin: 0 auto;
-      display: block;
-      filter: grayscale(20%);
-      transition: all 0.3s ease;
-    }
-    
-    .logo-grid img:hover {
-      filter: grayscale(0%);
-      transform: scale(1.05);
-    }
-    
-    /* Committee grid */
-    .committee-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    
-    .committee-item {
-      text-align: center;
-      padding: 1.5rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
-    }
-    
-    .committee-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    }
-    
-    .committee-item h4 {
-      color: var(--primary);
-      font-size: 1.1rem;
-      margin: 0.5rem 0;
-    }
-    
-    /* Location section */
-    .map-frame {
-      border: 0;
-      width: 100%;
-      height: 400px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    }
-    
-    /* Footer */
-    footer {
-      background: linear-gradient(135deg, var(--primary) 0%, #5a2485 100%);
-      color: #fff;
-      padding: 3rem 2rem 2rem;
-      text-align: center;
-    }
-    
-    footer a {
-      color: var(--secondary);
-      font-weight: 600;
-    }
-    
-    footer a:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
-    
-    footer p {
-      margin: 0.75rem 0;
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav {
-        padding: 0.75rem 1rem;
-      }
-      
-      nav ul {
-        display: none;
-      }
-      
-      header.hero {
-        min-height: 70vh;
-        padding-top: 60px;
-      }
-      
-      header.hero h1 {
-        font-size: 1.8rem;
-      }
-      
-      header.hero p {
-        font-size: 1.05rem;
-      }
-      
-      section {
-        padding: 3rem 1rem;
-      }
-      
-      h2 {
-        font-size: 1.6rem;
-      }
-      
+
+      /* Schedule tabs */
       .tabs {
-        flex-direction: column;
+        display: flex;
+        border-bottom: 3px solid var(--primary);
+        margin-bottom: 2rem;
+        gap: 0.5rem;
       }
-      
+
       .tabs button {
-        padding: 1rem;
+        flex: 1;
+        padding: 1.2rem 1rem;
+        background: none;
+        border: none;
+        font-weight: 700;
+        font-size: 1.05rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: var(--primary);
+        position: relative;
       }
-      
+
+      .tabs button::before {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--secondary);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .tabs button.active {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      .tabs button.active::before {
+        transform: scaleX(1);
+        background: var(--secondary);
+      }
+
+      .tabs button:hover:not(.active) {
+        background: rgba(111, 45, 168, 0.1);
+      }
+
       .schedule-table {
-        font-size: 0.85rem;
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 2rem;
+        font-size: 0.95rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
       }
-      
+
       .schedule-table th,
       .schedule-table td {
-        padding: 0.6rem 0.4rem;
+        padding: 1rem 0.75rem;
+        border: 1px solid #e0e0e0;
+        text-align: left;
       }
-      
-      .btn-primary {
-        padding: 1rem 2rem;
-        font-size: 1rem;
+
+      .schedule-table th {
+        background: var(--primary);
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
       }
-    }
-    
-    /* Utility classes */
-    .text-center { text-align: center; }
-    .mb-2 { margin-bottom: 2rem; }
-    .mt-2 { margin-top: 2rem; }
-  </style>
-</head>
-<body>
-  <!-- Fixed navigation bar -->
-  <nav id="main-nav">
-    <a href="#top"><img src="tgi/LOGO-TGI.png" alt="Logo TGI" class="logo-small"></a>
-    <ul>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#programacao">Programação</a></li>
-      <li><a href="#realizacao">Realização</a></li>
-      <li><a href="#local">Local</a></li>
-      <li><a href="#inscricao">Inscrição</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
 
-  <!-- Hero section -->
-  <header class="hero" id="top">
-    <div class="hero-content">
-      <img src="tgi/LOGO-TGI.png" alt="Logo III Simpósio TGI" class="logo">
-      <h1>III Simpósio do Trato Gastrointestinal</h1>
-      <p>31 de outubro e 1º de novembro de 2025<br>Novotel Recife Marina</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdmjHvtwccoLV5AWAFi3aEKA6ef76x9n_XdlA8gCuisNHLioA/viewform?usp=header" target="_blank" rel="noopener" class="btn-primary">Inscreva-se Gratuitamente</a>
-    </div>
-  </header>
+      .schedule-table tbody tr {
+        transition: background 0.2s ease;
+      }
 
-  <!-- About section -->
-  <section id="sobre" class="fade-in">
-    <div class="container two-column">
-      <div>
-        <h2>Sobre o Simpósio</h2>
-        <p>O <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong>, na condição de promotor do evento, ressalta que o principal objetivo desse encontro é promover a atualização, discussão e troca de experiências voltado à área da oncologia do trato gastrointestinal.</p>
-        
-        <h3>Público-Alvo</h3>
-        <p>O simpósio é destinado a oncologistas clínicos, cirurgiões oncológicos, proctologistas, endocrinologistas, patologistas, radiologistas, radioncologistas, oncogeneticistas, médicos nucleares, cardiologistas e geriatras de todo o Brasil.</p>
-        
-        <h3>Objetivo</h3>
-        <p>Apresentar as principais novidades e promover a troca de experiências na oncologia gastrointestinal.</p>
-        
-        <p style="margin-top: 1.5rem;"><strong>Modalidade:</strong> Aberto para todas as instituições<br>
-        <strong>Número de participantes:</strong> 80 vagas</p>
+      .schedule-table tbody tr:nth-child(odd) {
+        background: #f9f9f9;
+      }
+
+      .schedule-table tbody tr:hover {
+        background: rgba(111, 45, 168, 0.08);
+      }
+
+      .session-header {
+        background: var(--secondary) !important;
+        color: #fff !important;
+        font-weight: 700 !important;
+        font-size: 1.05rem !important;
+      }
+
+      .session-break {
+        background: #fff3cd !important;
+        font-weight: 700;
+        text-align: center;
+        color: #856404;
+      }
+
+      .speaker-name {
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      /* Organizers logo grid */
+      .logo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 2rem;
+        align-items: center;
+        margin: 2rem 0;
+      }
+
+      .logo-grid img {
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+        filter: grayscale(20%);
+        transition: all 0.3s ease;
+      }
+
+      .logo-grid img:hover {
+        filter: grayscale(0%);
+        transform: scale(1.05);
+      }
+
+      /* Committee grid */
+      .committee-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .committee-item {
+        text-align: center;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .committee-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .committee-item h4 {
+        color: var(--primary);
+        font-size: 1.1rem;
+        margin: 0.5rem 0;
+      }
+
+      /* Location section */
+      .map-frame {
+        border: 0;
+        width: 100%;
+        height: 400px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(135deg, var(--primary) 0%, #5a2485 100%);
+        color: #fff;
+        padding: 3rem 2rem 2rem;
+        text-align: center;
+      }
+
+      footer a {
+        color: var(--secondary);
+        font-weight: 600;
+      }
+
+      footer a:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+
+      footer p {
+        margin: 0.75rem 0;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        nav {
+          padding: 0.75rem 1rem;
+        }
+
+        nav ul {
+          display: none;
+        }
+
+        header.hero {
+          min-height: 70vh;
+          padding-top: 60px;
+        }
+
+        header.hero h1 {
+          font-size: 1.8rem;
+        }
+
+        header.hero p {
+          font-size: 1.05rem;
+        }
+
+        section {
+          padding: 3rem 1rem;
+        }
+
+        h2 {
+          font-size: 1.6rem;
+        }
+
+        .tabs {
+          flex-direction: column;
+        }
+
+        .tabs button {
+          padding: 1rem;
+        }
+
+        .schedule-table {
+          font-size: 0.85rem;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+          padding: 0.6rem 0.4rem;
+        }
+
+        .btn-primary {
+          padding: 1rem 2rem;
+          font-size: 1rem;
+        }
+      }
+
+      /* Utility classes */
+      .text-center {
+        text-align: center;
+      }
+      .mb-2 {
+        margin-bottom: 2rem;
+      }
+      .mt-2 {
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Fixed navigation bar -->
+    <nav id="main-nav">
+      <a href="#top"
+        ><img src="tgi/LOGO-TGI.png" alt="Logo TGI" class="logo-small"
+      /></a>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#programacao">Programação</a></li>
+        <li><a href="#realizacao">Realização</a></li>
+        <li><a href="#local">Local</a></li>
+        <li><a href="#inscricao">Inscrição</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero section -->
+    <header class="hero" id="top">
+      <div class="hero-content">
+        <img src="tgi/LOGO-TGI.png" alt="Logo III Simpósio TGI" class="logo" />
+        <h1>III Simpósio do Trato Gastrointestinal</h1>
+        <p>31 de outubro e 1º de novembro de 2025<br />Novotel Recife Marina</p>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdmjHvtwccoLV5AWAFi3aEKA6ef76x9n_XdlA8gCuisNHLioA/viewform?usp=header"
+          target="_blank"
+          rel="noopener"
+          class="btn-primary"
+          >Inscreva-se Gratuitamente</a
+        >
       </div>
-      
-      <div>
-        <h2>Comissão Organizadora</h2>
-        <p>A programação científica está sob responsabilidade de um time multidisciplinar de especialistas:</p>
-        
-        <div class="committee-grid mt-2">
-          <div class="committee-item">
-            <h4>Dr. Antonio Douglas</h4>
-          </div>
-          <div class="committee-item">
-            <h4>Dr. Ilan Pedrosa</h4>
-          </div>
-          <div class="committee-item">
-            <h4>Dra. Cristiana Tavares</h4>
-          </div>
-          <div class="committee-item">
-            <h4>Dr. Nildevande Firmino</h4>
-          </div>
-          <div class="committee-item">
-            <h4>Dr. Thiago Apolinário</h4>
-          </div>
-          <div class="committee-item">
-            <h4>Dr. Rommel Pierre</h4>
+    </header>
+
+    <!-- About section -->
+    <section id="sobre" class="fade-in">
+      <div class="container two-column">
+        <div>
+          <h2>Sobre o Simpósio</h2>
+          <p>
+            O
+            <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong>,
+            na condição de promotor do evento, ressalta que o principal objetivo
+            desse encontro é promover a atualização, discussão e troca de
+            experiências voltado à área da oncologia do trato gastrointestinal.
+          </p>
+
+          <h3>Público-Alvo</h3>
+          <p>
+            O simpósio é destinado a oncologistas clínicos, cirurgiões
+            oncológicos, proctologistas, endocrinologistas, patologistas,
+            radiologistas, radioncologistas, oncogeneticistas, médicos
+            nucleares, cardiologistas e geriatras de todo o Brasil.
+          </p>
+
+          <h3>Objetivo</h3>
+          <p>
+            Apresentar as principais novidades e promover a troca de
+            experiências na oncologia gastrointestinal.
+          </p>
+
+          <p style="margin-top: 1.5rem">
+            <strong>Modalidade:</strong> Aberto para todas as instituições<br />
+            <strong>Número de participantes:</strong> 80 vagas
+          </p>
+        </div>
+
+        <div>
+          <h2>Comissão Organizadora</h2>
+          <p>
+            A programação científica está sob responsabilidade de um time
+            multidisciplinar de especialistas:
+          </p>
+
+          <div class="committee-grid mt-2">
+            <div class="committee-item">
+              <h4>Dr. Antonio Douglas</h4>
+            </div>
+            <div class="committee-item">
+              <h4>Dr. Ilan Pedrosa</h4>
+            </div>
+            <div class="committee-item">
+              <h4>Dra. Cristiana Tavares</h4>
+            </div>
+            <div class="committee-item">
+              <h4>Dr. Nildevande Firmino</h4>
+            </div>
+            <div class="committee-item">
+              <h4>Dr. Thiago Apolinário</h4>
+            </div>
+            <div class="committee-item">
+              <h4>Dr. Rommel Pierre</h4>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Realization section -->
-  <section id="realizacao" class="fade-in">
-    <div class="container text-center">
-      <h2>Realização</h2>
-      <p style="font-size: 1.1rem; margin-bottom: 2rem;">O III Simpósio TGI é realizado pelas seguintes instituições:</p>
-      
-      <div class="logo-grid">
-        <img src="assets/logos/santajoana_W.png" alt="Hospital Santa Joana Recife">
-        <img src="assets/logos/isep_W.png" alt="ISEP - Instituto Santa Joana de Ensino e Pesquisa">
-        <img src="assets/logos/cancer-center-white.png" alt="Rede Américas">
-      </div>
-      
-      <h3 class="mt-2">Patrocínio</h3>
-      <p><em>Patrocinadores:</em> AstraZeneca, Roche, Bristol, Merck, Pfizer, Servier, Ipsen<br>
-      <small style="color: var(--muted-text);">(Aguardando confirmação de participação)</small></p>
-    </div>
-  </section>
+    <!-- Realization section -->
+    <section id="realizacao" class="fade-in">
+      <div class="container text-center">
+        <h2>Realização</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem">
+          O III Simpósio TGI é realizado pelas seguintes instituições:
+        </p>
 
-  <!-- Schedule section -->
-  <section id="programacao" class="fade-in">
-    <div class="container">
-      <h2 class="text-center mb-2">Programação Científica</h2>
-      
-      <div class="tabs">
-        <button id="tab-day1" class="active" onclick="showDay('day1')">Sexta-feira 31/10/2025</button>
-        <button id="tab-day2" onclick="showDay('day2')">Sábado 01/11/2025</button>
-      </div>
-      
-      <!-- Day 1: Friday October 31 -->
-      <div id="day1" class="schedule-day">
-        <table class="schedule-table">
-          <thead>
-            <tr>
-              <th style="width: 130px;">Horário</th>
-              <th>Atividade</th>
-              <th style="width: 220px;">Apresentador</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>08:00</td>
-              <td colspan="2" class="session-break"><strong>ABERTURA</strong></td>
-            </tr>
-            
-            <tr>
-              <td colspan="3" class="session-header">
-                Mesa 1 – Multidisciplinariedade em tumores Gastrointestinais<br>
-                <small>Presidente: Rossano Araújo | Moderadores: Cirurgia, Edith Magalhães, Rafaela Ralph</small>
-              </td>
-            </tr>
-            <tr>
-              <td>08:15 - 08:30</td>
-              <td>Modulação do microbioma intestinal e câncer do TGI</td>
-              <td><span class="speaker-name">Cristiana Tavares</span></td>
-            </tr>
-            <tr>
-              <td>08:30 - 08:45</td>
-              <td>A importância da nutrição do pré e pós-operatório do câncer esofágico</td>
-              <td><span class="speaker-name">Natália Fernandes</span></td>
-            </tr>
-            <tr>
-              <td>08:45 - 09:00</td>
-              <td>Inibidor de GLP1 x câncer</td>
-              <td><span class="speaker-name">Endocrinologista</span> <em>(a confirmar)</em></td>
-            </tr>
-            <tr>
-              <td>09:00 - 09:15</td>
-              <td>Tratamento da obesidade durante o câncer: até onde devemos investir?</td>
-              <td><span class="speaker-name">José Câmara</span></td>
-            </tr>
-            <tr>
-              <td>09:15 - 09:30</td>
-              <td>Navegação e Tumores gastrointestinais</td>
-              <td><span class="speaker-name">Amanda (Enf.)</span></td>
-            </tr>
-            <tr>
-              <td>09:30 - 09:45</td>
-              <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-            </tr>
-            
-            <tr>
-              <td colspan="3" class="session-header">
-                Mesa 2 – ESÔFAGO E ESTÔMAGO<br>
-                <small>Presidente: Antônio de Pádua | Moderadores: Patologista, Ricardo Machado, Thiago Apolinário</small>
-              </td>
-            </tr>
-            <tr>
-              <td>09:45 - 10:00</td>
-              <td>CASO CLÍNICO - Esôfago - Doença localizada</td>
-              <td><span class="speaker-name">Rodrigo Arruda</span></td>
-            </tr>
-            <tr>
-              <td>10:00 - 10:15</td>
-              <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-            </tr>
-            <tr>
-              <td>10:15 - 10:30</td>
-              <td>Classificação Molecular câncer de estômago</td>
-              <td><span class="speaker-name">Gustavo Ferreira</span></td>
-            </tr>
-            <tr>
-              <td>10:30 - 10:45</td>
-              <td>CASO CLÍNICO - Tratamento perioperatório</td>
-              <td><span class="speaker-name">Cristiana Tavares</span></td>
-            </tr>
-            <tr>
-              <td>10:45 - 11:00</td>
-              <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-            </tr>
-            <tr>
-              <td>11:00 - 11:20</td>
-              <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
-            </tr>
-            
-            <tr>
-              <td colspan="3" class="session-header">
-                Mesa 3 – Câncer de estômago AVANÇADO<br>
-                <small>Presidente: Sandra Oliveira | Moderadores: Rommel Pierre, Tien Chang, Patologista</small>
-              </td>
-            </tr>
-            <tr>
-              <td>11:20 - 11:35</td>
-              <td>CASO CLÍNICO METASTÁTICO NÃO HER 2</td>
-              <td><span class="speaker-name">Luis Felipe Carvalho</span></td>
-            </tr>
-            <tr>
-              <td>11:35 - 11:50</td>
-              <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-            </tr>
-            <tr>
-              <td>11:50 - 12:05</td>
-              <td>Tratamento de doença HER 2+</td>
-              <td><span class="speaker-name">Ilan Pedrosa</span></td>
-            </tr>
-            <tr>
-              <td>12:05 - 12:20</td>
-              <td>Tratamento cirúrgico na doença metastática</td>
-              <td><span class="speaker-name">Flávio Fernandes</span></td>
-            </tr>
-            <tr>
-              <td>12:20 - 12:35</td>
-              <td>Tratamento cirúrgico da carcinomatose peritoneal dos tumores gástricos</td>
-              <td><span class="speaker-name">Graice Abreu</span></td>
-            </tr>
-            <tr>
-              <td>12:35 - 12:50</td>
-              <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-            </tr>
-            <tr>
-              <td>12:50 - 13:50</td>
-              <td colspan="2" class="session-break"><strong>INTERVALO</strong></td>
-            </tr>
-            
-            <tr>
-              <td>13:50 - 14:20</td>
-              <td><strong>Simpósio Satélite ROCHE</strong> - Tratamento sistêmico do CHC</td>
-              <td><span class="speaker-name">Anelise Coutinho</span></td>
-            </tr>
-            
-            <tr>
-              <td colspan="3" class="session-header">
-                Mesa 4 – Carcinoma Hepatocelular<br>
-                <small>Presidente: Leila Beltrão | Moderadores: Anelise Coutinho, Fernando Cavalcanti</small>
-              </td>
-            </tr>
-            <tr>
-              <td>14:20 - 14:35</td>
-              <td>CASO CLÍNICO - HCC e Transplante - HEPATO</td>
-              <td><span class="speaker-name">Tibério Medeiros</span></td>
-            </tr>
-            <tr>
-              <td>14:35 - 14:50</td>
-              <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-            </tr>
-            <tr>
-              <td>14:50 - 15:05</td>
-              <td>Quando optar por terapia local?</td>
-              <td><span class="speaker-name">João Paulo Ayub</span></td>
-            </tr>
-            <tr>
-              <td>15:05 - 15:20</td>
-              <td>CASO CLÍNICO - HCC e TTO local e sistêmico</td>
-              <td><span class="speaker-name">Antônio Douglas</span></td>
-            </tr>
-            <tr>
-              <td>15:20 - 15:35</td>
-              <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-            </tr>
-            <tr>
-              <td>15:35 - 16:20</td>
-              <td><strong>Simpósio Satélite ASTRAZENECA</strong> - Tratamento sistêmico do CHC</td>
-              <td><span class="speaker-name">Rodrigo Taboada</span></td>
-            </tr>
-            <tr>
-              <td>16:20 - 16:35</td>
-              <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
-            </tr>
-            
-            <tr>
-              <td colspan="3" class="session-header">
-                Mesa 5 – Metástase hepáticas e câncer de vias biliares<br>
-                <small>Presidente: Américo | Moderadores: Gustavo Rivera, Lilian Rose, Diogo Sales</small>
-              </td>
-            </tr>
-            <tr>
-              <td>16:35 - 16:50</td>
-              <td>E o Tx hepático? Um novo horizonte?</td>
-              <td><span class="speaker-name">Olival Lucena</span></td>
-            </tr>
-            <tr>
-              <td>16:50 - 17:20</td>
-              <td>CASO CLÍNICO - Colangio - TTO cirúrgico e sistêmico</td>
-              <td><span class="speaker-name">Ilan Pedrosa</span></td>
-            </tr>
-            <tr>
-              <td>17:20 - 17:35</td>
-              <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-            </tr>
-            <tr>
-              <td>17:35 - 18:05</td>
-              <td><strong>CONFERÊNCIA</strong> - Transplante Hepático</td>
-              <td><span class="speaker-name">Ben Hur</span></td>
-            </tr>
-            <tr>
-              <td>18:05</td>
-              <td colspan="2" class="session-break"><strong>ENCERRAMENTO</strong></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      
-      <!-- Day 2: Saturday November 1 -->
-      <div id="day2" class="schedule-day" style="display:none;">
-        <table class="schedule-table">
-          <thead>
-            <tr>
-              <th style="width: 130px;">Horário</th>
-              <th>Atividade</th>
-              <th style="width: 220px;">Apresentador</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td colspan="3" class="session-header">
-                Mesa 6 – Câncer colorretal – diagnóstico e patologia<br>
-                <small>Presidente: Rommel Pierre | Moderadores: Carol Mathias, Joyce Cavalcanti, Antônio de Pádua</small>
-              </td>
-            </tr>
-            <tr>
-              <td>08:00 - 08:15</td>
-              <td>Rastreamento do câncer colorretal: o que há de novo?</td>
-              <td><span class="speaker-name">Marcos Saturnino</span></td>
-            </tr>
-            <tr>
-              <td>08:15 - 08:30</td>
-              <td>Terapia endoscópica no câncer colorretal inicial</td>
-              <td><span class="speaker-name">Leliane Alencar</span></td>
-            </tr>
-            <tr>
-              <td>08:30 - 08:45</td>
-              <td>Imunoterapia em Câncer colorretal: O que há de novo?</td>
-              <td><span class="speaker-name">Thiago Apolinário</span></td>
-            </tr>
-            <tr>
-              <td>08:45 - 09:00</td>
-              <td>Drivers em CCR: velhos conhecidos, novas possibilidades</td>
-              <td><span class="speaker-name">Roberto Borges</span></td>
-            </tr>
-            <tr>
-              <td>09:00 - 09:15</td>
-              <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-            </tr>
-            <tr>
-              <td>09:15 - 09:45</td>
-              <td><strong>Simpósio Satélite PFIZER/MERCK</strong> - Tratamento sistêmico do câncer de cólon metastático BRAF mutado</td>
-              <td><span class="speaker-name">Antônio Douglas</span></td>
-            </tr>
-            
-            <tr>
-              <td colspan="3" class="session-header">
-                Mesa 7 – Câncer de reto<br>
-                <small>Presidente: Mauricio Mattos | Moderadores: João Paulo Pontual, Jenna, Jamylle Cabral</small>
-              </td>
-            </tr>
-            <tr>
-              <td>09:45 - 10:00</td>
-              <td>Impacto da radiologia na avaliação de resposta ao tratamento</td>
-              <td><span class="speaker-name">Ítalo Cruz</span></td>
-            </tr>
-            <tr>
-              <td>10:00 - 10:15</td>
-              <td>Terapia neoadjuvante e imunoterapia - Como estamos?</td>
-              <td><span class="speaker-name">Thiago Apolinário</span></td>
-            </tr>
-            <tr>
-              <td>10:15 - 10:30</td>
-              <td>Seguimento do paciente após Watch and Wait: como conduzir?</td>
-              <td><span class="speaker-name">Joyce Cavalcanti</span></td>
-            </tr>
-            <tr>
-              <td>10:30 - 10:45</td>
-              <td>Ressecção multi visceral no câncer de reto: indicações e limites</td>
-              <td><span class="speaker-name">Manoel</span></td>
-            </tr>
-            <tr>
-              <td>10:45 - 11:00</td>
-              <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-            </tr>
-            <tr>
-              <td>11:00 - 11:30</td>
-              <td><strong>Simpósio Satélite IPSEN</strong> - Tratamento sistêmico do TNE</td>
-              <td><span class="speaker-name">Ana Paula Vitorino</span></td>
-            </tr>
-            <tr>
-              <td>11:30 - 11:50</td>
-              <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
-            </tr>
-            
-            <tr>
-              <td colspan="3" class="session-header">
-                Mesa 8 – Tumores neuroendócrinos e câncer de pâncreas<br>
-                <small>Presidente: Cristiane Violet | Moderadores: Ilan Pedrosa, Omar Jacobina, Franciane</small>
-              </td>
-            </tr>
-            <tr>
-              <td>11:50 - 12:20</td>
-              <td><strong>Simpósio Satélite SERVIER</strong> - Tratamento sistêmico do Câncer de Pâncreas metastático</td>
-              <td><span class="speaker-name">Felipe Moreira</span></td>
-            </tr>
-            <tr>
-              <td>12:20 - 12:35</td>
-              <td>Neoadjuvância em Câncer de Pâncreas</td>
-              <td><span class="speaker-name">Luiz José Batista</span></td>
-            </tr>
-            <tr>
-              <td>12:35 - 12:50</td>
-              <td>Critérios de Ressecabilidade</td>
-              <td><span class="speaker-name">Pedro Pinheiro</span></td>
-            </tr>
-            <tr>
-              <td>12:50 - 13:05</td>
-              <td>Insuficiência pancreática pós-cirúrgica: como manejar</td>
-              <td><span class="speaker-name">Gustavo Lima</span></td>
-            </tr>
-            <tr>
-              <td>13:05 - 13:20</td>
-              <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-            </tr>
-            <tr>
-              <td>13:20</td>
-              <td colspan="2" class="session-break"><strong>ENCERRAMENTO</strong></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
+        <div class="logo-grid">
+          <img
+            src="assets/logos/santajoana_W.png"
+            alt="Hospital Santa Joana Recife"
+          />
+          <img
+            src="assets/logos/isep_W.png"
+            alt="ISEP - Instituto Santa Joana de Ensino e Pesquisa"
+          />
+          <img src="assets/logos/cancer-center-white.png" alt="Rede Américas" />
+        </div>
 
-  <!-- Location section -->
-  <section id="local" class="fade-in">
-    <div class="container two-column">
-      <div>
-        <h2>Local do Evento</h2>
-        <p>O simpósio acontecerá no <strong>Novotel Recife Marina</strong>, hotel que se destaca pelo projeto arquitetônico inspirado em um transatlântico e oferece acomodações modernas com vista para o mar, piscina de borda infinita, spa e excelentes opções gastronômicas.</p>
-        
-        <p style="margin-top: 1.5rem;"><strong>Endereço:</strong><br>
-        Cais de Santa Rita, 46 – Bairro São José<br>
-        Recife – PE, CEP 50.020-455</p>
-        
-        <p>Localizado no coração de Recife, no complexo Porto Novo Recife, o hotel facilita o acesso às principais atrações turísticas da cidade.</p>
-        
-        <p style="margin-top: 1.5rem;"><em><strong>Dica:</strong> Aproveite o rooftop do hotel para contemplar a vista da marina e desfrutar de momentos de convivência com os colegas participantes.</em></p>
-      </div>
-      
-      <div>
-        <iframe class="map-frame" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.3907876687876!2d-34.87186988573474!3d-8.063748794213467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18a2e6e7e3e5%3A0x8b6e9e5e5e5e5e5e!2sNovotel%20Recife%20Marina!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- Registration CTA section -->
-  <section id="inscricao" class="fade-in">
-    <div class="container text-center">
-      <h2>Garanta sua vaga</h2>
-      <p style="font-size: 1.15rem; max-width: 700px; margin: 0 auto 2.5rem; color: var(--dark-text);">O número de participantes é limitado a <strong>80 vagas</strong>. Faça sua inscrição <strong>gratuitamente</strong> através do formulário oficial.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdmjHvtwccoLV5AWAFi3aEKA6ef76x9n_XdlA8gCuisNHLioA/viewform?usp=header" target="_blank" rel="noopener" class="btn-primary">Inscrever-me agora</a>
-    </div>
-  </section>
-
-  <!-- Contact section -->
-  <section id="contato" class="fade-in">
-    <div class="container two-column">
-      <div>
-        <h2>Contato</h2>
-        <p>Para dúvidas sobre o simpósio ou suporte na inscrição, entre em contato com a organização:</p>
-        
-        <h3>Luka Plan Promoções e Eventos</h3>
+        <h3 class="mt-2">Patrocínio</h3>
         <p>
-          <strong>Endereço:</strong><br>
-          Rua João Eugênio de Lima, 143 – Sala 01<br>
-          Boa Viagem – Recife – CEP 51.030-360
-        </p>
-        <p>
-          <strong>Telefone/WhatsApp:</strong><br>
-          <a href="https://wa.me/5581999851712" target="_blank" rel="noopener">(81) 99985-1712</a><br>
-          <a href="https://wa.me/5581992325922" target="_blank" rel="noopener">(81) 9232-5922</a>
-        </p>
-        <p>
-          <strong>E-mail:</strong><br>
-          <a href="mailto:eventos@lukaplan.com.br">eventos@lukaplan.com.br</a><br>
-          <a href="mailto:simposiodeongologiadohsj@gmail.com">simposiodeongologiadohsj@gmail.com</a>
-        </p>
-        <p style="margin-top: 1.5rem;">
-          <strong>Instagram:</strong> <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener">@lukaplan_</a>
+          <em>Patrocinadores:</em> AstraZeneca, Roche, Bristol, Merck, Pfizer,
+          Servier, Ipsen<br />
+          <small style="color: var(--muted-text)"
+            >(Aguardando confirmação de participação)</small
+          >
         </p>
       </div>
-      
-      <div>
-        <h2>Informações Adicionais</h2>
-        <p>Esta terceira edição do simpósio faz parte de uma série de encontros temáticos realizados pelo ISEP para fomentar a atualização contínua em oncologia.</p>
-        
-        <p><strong>Importante:</strong> Se precisar cancelar a inscrição, avise a organização com antecedência para permitir que outro profissional ocupe a vaga.</p>
-        
-        <p style="margin-top: 2rem;">Consulte a agenda de eventos do Instituto para outras iniciativas na área da oncologia gastrointestinal e acompanhe as novidades através dos canais oficiais.</p>
+    </section>
+
+    <!-- Schedule section -->
+    <section id="programacao" class="fade-in">
+      <div class="container">
+        <h2 class="text-center mb-2">Programação Científica</h2>
+
+        <div class="tabs">
+          <button id="tab-day1" class="active" onclick="showDay('day1')">
+            Sexta-feira 31/10/2025
+          </button>
+          <button id="tab-day2" onclick="showDay('day2')">
+            Sábado 01/11/2025
+          </button>
+        </div>
+
+        <!-- Day 1: Friday October 31 -->
+        <div id="day1" class="schedule-day">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th style="width: 130px">Horário</th>
+                <th>Atividade</th>
+                <th style="width: 220px">Apresentador</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>08:00</td>
+                <td colspan="2" class="session-break">
+                  <strong>ABERTURA</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 1 – Multidisciplinariedade em tumores
+                  Gastrointestinais<br />
+                  <small
+                    >Presidente: Rossano Araújo | Moderadores: Cirurgia, Edith
+                    Magalhães, Rafaela Ralph</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>08:15 - 08:30</td>
+                <td>Modulação do microbioma intestinal e câncer do TGI</td>
+                <td><span class="speaker-name">Cristiana Tavares</span></td>
+              </tr>
+              <tr>
+                <td>08:30 - 08:45</td>
+                <td>
+                  A importância da nutrição do pré e pós-operatório do câncer
+                  esofágico
+                </td>
+                <td><span class="speaker-name">Natália Fernandes</span></td>
+              </tr>
+              <tr>
+                <td>08:45 - 09:00</td>
+                <td>Inibidor de GLP1 x câncer</td>
+                <td>
+                  <span class="speaker-name">Endocrinologista</span>
+                  <em>(a confirmar)</em>
+                </td>
+              </tr>
+              <tr>
+                <td>09:00 - 09:15</td>
+                <td>
+                  Tratamento da obesidade durante o câncer: até onde devemos
+                  investir?
+                </td>
+                <td><span class="speaker-name">José Câmara</span></td>
+              </tr>
+              <tr>
+                <td>09:15 - 09:30</td>
+                <td>Navegação e Tumores gastrointestinais</td>
+                <td><span class="speaker-name">Amanda (Enf.)</span></td>
+              </tr>
+              <tr>
+                <td>09:30 - 09:45</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 2 – ESÔFAGO E ESTÔMAGO<br />
+                  <small
+                    >Presidente: Antônio de Pádua | Moderadores: Patologista,
+                    Ricardo Machado, Thiago Apolinário</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>09:45 - 10:00</td>
+                <td>CASO CLÍNICO - Esôfago - Doença localizada</td>
+                <td><span class="speaker-name">Rodrigo Arruda</span></td>
+              </tr>
+              <tr>
+                <td>10:00 - 10:15</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>10:15 - 10:30</td>
+                <td>Classificação Molecular câncer de estômago</td>
+                <td><span class="speaker-name">Gustavo Ferreira</span></td>
+              </tr>
+              <tr>
+                <td>10:30 - 10:45</td>
+                <td>CASO CLÍNICO - Tratamento perioperatório</td>
+                <td><span class="speaker-name">Cristiana Tavares</span></td>
+              </tr>
+              <tr>
+                <td>10:45 - 11:00</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>11:00 - 11:20</td>
+                <td colspan="2" class="session-break">
+                  <strong>COFFEE BREAK</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 3 – Câncer de estômago AVANÇADO<br />
+                  <small
+                    >Presidente: Sandra Oliveira | Moderadores: Rommel Pierre,
+                    Tien Chang, Patologista</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>11:20 - 11:35</td>
+                <td>CASO CLÍNICO METASTÁTICO NÃO HER 2</td>
+                <td><span class="speaker-name">Luis Felipe Carvalho</span></td>
+              </tr>
+              <tr>
+                <td>11:35 - 11:50</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>11:50 - 12:05</td>
+                <td>Tratamento de doença HER 2+</td>
+                <td><span class="speaker-name">Ilan Pedrosa</span></td>
+              </tr>
+              <tr>
+                <td>12:05 - 12:20</td>
+                <td>Tratamento cirúrgico na doença metastática</td>
+                <td><span class="speaker-name">Flávio Fernandes</span></td>
+              </tr>
+              <tr>
+                <td>12:20 - 12:35</td>
+                <td>
+                  Tratamento cirúrgico da carcinomatose peritoneal dos tumores
+                  gástricos
+                </td>
+                <td><span class="speaker-name">Graice Abreu</span></td>
+              </tr>
+              <tr>
+                <td>12:35 - 12:50</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>12:50 - 13:50</td>
+                <td colspan="2" class="session-break">
+                  <strong>INTERVALO</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>13:50 - 14:20</td>
+                <td>
+                  <strong>Simpósio Satélite ROCHE</strong> - Tratamento
+                  sistêmico do CHC
+                </td>
+                <td><span class="speaker-name">Anelise Coutinho</span></td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 4 – Carcinoma Hepatocelular<br />
+                  <small
+                    >Presidente: Leila Beltrão | Moderadores: Anelise Coutinho,
+                    Fernando Cavalcanti</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>14:20 - 14:35</td>
+                <td>CASO CLÍNICO - HCC e Transplante - HEPATO</td>
+                <td><span class="speaker-name">Tibério Medeiros</span></td>
+              </tr>
+              <tr>
+                <td>14:35 - 14:50</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>14:50 - 15:05</td>
+                <td>Quando optar por terapia local?</td>
+                <td><span class="speaker-name">João Paulo Ayub</span></td>
+              </tr>
+              <tr>
+                <td>15:05 - 15:20</td>
+                <td>CASO CLÍNICO - HCC e TTO local e sistêmico</td>
+                <td><span class="speaker-name">Antônio Douglas</span></td>
+              </tr>
+              <tr>
+                <td>15:20 - 15:35</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>15:35 - 16:20</td>
+                <td>
+                  <strong>Simpósio Satélite ASTRAZENECA</strong> - Tratamento
+                  sistêmico do CHC
+                </td>
+                <td><span class="speaker-name">Rodrigo Taboada</span></td>
+              </tr>
+              <tr>
+                <td>16:20 - 16:35</td>
+                <td colspan="2" class="session-break">
+                  <strong>COFFEE BREAK</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 5 – Metástase hepáticas e câncer de vias biliares<br />
+                  <small
+                    >Presidente: Américo | Moderadores: Gustavo Rivera, Lilian
+                    Rose, Diogo Sales</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>16:35 - 16:50</td>
+                <td>E o Tx hepático? Um novo horizonte?</td>
+                <td><span class="speaker-name">Olival Lucena</span></td>
+              </tr>
+              <tr>
+                <td>16:50 - 17:20</td>
+                <td>CASO CLÍNICO - Colangio - TTO cirúrgico e sistêmico</td>
+                <td><span class="speaker-name">Ilan Pedrosa</span></td>
+              </tr>
+              <tr>
+                <td>17:20 - 17:35</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>17:35 - 18:05</td>
+                <td><strong>CONFERÊNCIA</strong> - Transplante Hepático</td>
+                <td><span class="speaker-name">Ben Hur</span></td>
+              </tr>
+              <tr>
+                <td>18:05</td>
+                <td colspan="2" class="session-break">
+                  <strong>ENCERRAMENTO</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Day 2: Saturday November 1 -->
+        <div id="day2" class="schedule-day" style="display: none">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th style="width: 130px">Horário</th>
+                <th>Atividade</th>
+                <th style="width: 220px">Apresentador</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 6 – Câncer colorretal – diagnóstico e patologia<br />
+                  <small
+                    >Presidente: Rommel Pierre | Moderadores: Carol Mathias,
+                    Joyce Cavalcanti, Antônio de Pádua</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>08:00 - 08:15</td>
+                <td>Rastreamento do câncer colorretal: o que há de novo?</td>
+                <td><span class="speaker-name">Marcos Saturnino</span></td>
+              </tr>
+              <tr>
+                <td>08:15 - 08:30</td>
+                <td>Terapia endoscópica no câncer colorretal inicial</td>
+                <td><span class="speaker-name">Leliane Alencar</span></td>
+              </tr>
+              <tr>
+                <td>08:30 - 08:45</td>
+                <td>Imunoterapia em Câncer colorretal: O que há de novo?</td>
+                <td><span class="speaker-name">Thiago Apolinário</span></td>
+              </tr>
+              <tr>
+                <td>08:45 - 09:00</td>
+                <td>Drivers em CCR: velhos conhecidos, novas possibilidades</td>
+                <td><span class="speaker-name">Roberto Borges</span></td>
+              </tr>
+              <tr>
+                <td>09:00 - 09:15</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>09:15 - 09:45</td>
+                <td>
+                  <strong>Simpósio Satélite PFIZER/MERCK</strong> - Tratamento
+                  sistêmico do câncer de cólon metastático BRAF mutado
+                </td>
+                <td><span class="speaker-name">Antônio Douglas</span></td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 7 – Câncer de reto<br />
+                  <small
+                    >Presidente: Mauricio Mattos | Moderadores: João Paulo
+                    Pontual, Jenna, Jamylle Cabral</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>09:45 - 10:00</td>
+                <td>
+                  Impacto da radiologia na avaliação de resposta ao tratamento
+                </td>
+                <td><span class="speaker-name">Ítalo Cruz</span></td>
+              </tr>
+              <tr>
+                <td>10:00 - 10:15</td>
+                <td>Terapia neoadjuvante e imunoterapia - Como estamos?</td>
+                <td><span class="speaker-name">Thiago Apolinário</span></td>
+              </tr>
+              <tr>
+                <td>10:15 - 10:30</td>
+                <td>
+                  Seguimento do paciente após Watch and Wait: como conduzir?
+                </td>
+                <td><span class="speaker-name">Joyce Cavalcanti</span></td>
+              </tr>
+              <tr>
+                <td>10:30 - 10:45</td>
+                <td>
+                  Ressecção multi visceral no câncer de reto: indicações e
+                  limites
+                </td>
+                <td><span class="speaker-name">Manoel</span></td>
+              </tr>
+              <tr>
+                <td>10:45 - 11:00</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>11:00 - 11:30</td>
+                <td>
+                  <strong>Simpósio Satélite IPSEN</strong> - Tratamento
+                  sistêmico do TNE
+                </td>
+                <td><span class="speaker-name">Ana Paula Vitorino</span></td>
+              </tr>
+              <tr>
+                <td>11:30 - 11:50</td>
+                <td colspan="2" class="session-break">
+                  <strong>COFFEE BREAK</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 8 – Tumores neuroendócrinos e câncer de pâncreas<br />
+                  <small
+                    >Presidente: Cristiane Violet | Moderadores: Ilan Pedrosa,
+                    Omar Jacobina, Franciane</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>11:50 - 12:20</td>
+                <td>
+                  <strong>Simpósio Satélite SERVIER</strong> - Tratamento
+                  sistêmico do Câncer de Pâncreas metastático
+                </td>
+                <td><span class="speaker-name">Felipe Moreira</span></td>
+              </tr>
+              <tr>
+                <td>12:20 - 12:35</td>
+                <td>Neoadjuvância em Câncer de Pâncreas</td>
+                <td><span class="speaker-name">Luiz José Batista</span></td>
+              </tr>
+              <tr>
+                <td>12:35 - 12:50</td>
+                <td>Critérios de Ressecabilidade</td>
+                <td><span class="speaker-name">Pedro Pinheiro</span></td>
+              </tr>
+              <tr>
+                <td>12:50 - 13:05</td>
+                <td>Insuficiência pancreática pós-cirúrgica: como manejar</td>
+                <td><span class="speaker-name">Gustavo Lima</span></td>
+              </tr>
+              <tr>
+                <td>13:05 - 13:20</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>13:20</td>
+                <td colspan="2" class="session-break">
+                  <strong>ENCERRAMENTO</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p style="font-size: 1.1rem; font-weight: 600;">&copy; 2025 III Simpósio do Trato Gastrointestinal</p>
-    <p>Hospital Santa Joana Recife & ISEP</p>
-    <p style="margin-top: 2rem; font-size: 0.9rem;">Desenvolvido por <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener">Luka Plan Promoções e Eventos</a></p>
-    <p style="margin-top: 1.5rem;"><a href="#top">↑ Voltar ao topo</a></p>
-  </footer>
+    <!-- Location section -->
+    <section id="local" class="fade-in">
+      <div class="container two-column">
+        <div>
+          <h2>Local do Evento</h2>
+          <p>
+            O simpósio acontecerá no <strong>Novotel Recife Marina</strong>,
+            hotel que se destaca pelo projeto arquitetônico inspirado em um
+            transatlântico e oferece acomodações modernas com vista para o mar,
+            piscina de borda infinita, spa e excelentes opções gastronômicas.
+          </p>
 
-  <!-- Scripts -->
-  <script>
-    // Tab switching
-    function showDay(day) {
-      document.querySelectorAll('.schedule-day').forEach(el => el.style.display = 'none');
-      document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active'));
-      document.getElementById(day).style.display = 'block';
-      document.getElementById('tab-' + day).classList.add('active');
-    }
-    
-    // Scroll animations with Intersection Observer
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-    
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-    
-    // Nav scroll effect
-    const nav = document.getElementById('main-nav');
-    let lastScroll = 0;
-    
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      
-      if (currentScroll > 100) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
+          <p style="margin-top: 1.5rem">
+            <strong>Endereço:</strong><br />
+            Cais de Santa Rita, 46 – Bairro São José<br />
+            Recife – PE, CEP 50.020-455
+          </p>
+
+          <p>
+            Localizado no coração de Recife, no complexo Porto Novo Recife, o
+            hotel facilita o acesso às principais atrações turísticas da cidade.
+          </p>
+
+          <p style="margin-top: 1.5rem">
+            <em
+              ><strong>Dica:</strong> Aproveite o rooftop do hotel para
+              contemplar a vista da marina e desfrutar de momentos de
+              convivência com os colegas participantes.</em
+            >
+          </p>
+        </div>
+
+        <div>
+           <iframe
+             class="map-frame"
+             loading="lazy"
+             allowfullscreen
+             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.3879682926814!2d-34.87151572406698!3d-8.063882891922634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18a61da5eb8b%3A0x5c3db0c4a89c3b76!2sNovotel%20Recife%20Marina!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr"
+           ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration CTA section -->
+    <section id="inscricao" class="fade-in">
+      <div class="container text-center">
+        <h2>Garanta sua vaga</h2>
+        <p
+          style="
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: var(--dark-text);
+          "
+        >
+          O número de participantes é limitado a <strong>80 vagas</strong>. Faça
+          sua inscrição <strong>gratuitamente</strong> através do formulário
+          oficial.
+        </p>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdmjHvtwccoLV5AWAFi3aEKA6ef76x9n_XdlA8gCuisNHLioA/viewform?usp=header"
+          target="_blank"
+          rel="noopener"
+          class="btn-primary"
+          >Inscrever-me agora</a
+        >
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contato" class="fade-in">
+      <div class="container two-column">
+        <div>
+          <h2>Contato</h2>
+          <p>
+            Para dúvidas sobre o simpósio ou suporte na inscrição, entre em
+            contato com a organização:
+          </p>
+
+          <h3>Luka Plan Promoções e Eventos</h3>
+          <p>
+            <strong>Endereço:</strong><br />
+            Rua João Eugênio de Lima, 143 – Sala 01<br />
+            Boa Viagem – Recife – CEP 51.030-360
+          </p>
+          <p>
+            <strong>Telefone/WhatsApp:</strong><br />
+            <a href="https://wa.me/5581999851712" target="_blank" rel="noopener"
+              >(81) 99985-1712</a
+            ><br />
+            <a href="https://wa.me/5581992325922" target="_blank" rel="noopener"
+              >(81) 9232-5922</a
+            >
+          </p>
+          <p>
+            <strong>E-mail:</strong><br />
+            <a href="mailto:eventos@lukaplan.com.br">eventos@lukaplan.com.br</a
+            ><br />
+            <a href="mailto:simposiodeongologiadohsj@gmail.com"
+              >simposiodeongologiadohsj@gmail.com</a
+            >
+          </p>
+          <p style="margin-top: 1.5rem">
+            <strong>Instagram:</strong>
+            <a
+              href="https://instagram.com/lukaplan_"
+              target="_blank"
+              rel="noopener"
+              >@lukaplan_</a
+            >
+          </p>
+        </div>
+
+        <div>
+          <h2>Informações Adicionais</h2>
+          <p>
+            Esta terceira edição do simpósio faz parte de uma série de encontros
+            temáticos realizados pelo ISEP para fomentar a atualização contínua
+            em oncologia.
+          </p>
+
+          <p>
+            <strong>Importante:</strong> Se precisar cancelar a inscrição, avise
+            a organização com antecedência para permitir que outro profissional
+            ocupe a vaga.
+          </p>
+
+          <p style="margin-top: 2rem">
+            Consulte a agenda de eventos do Instituto para outras iniciativas na
+            área da oncologia gastrointestinal e acompanhe as novidades através
+            dos canais oficiais.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p style="font-size: 1.1rem; font-weight: 600">
+        &copy; 2025 III Simpósio do Trato Gastrointestinal
+      </p>
+      <p>Hospital Santa Joana Recife & ISEP</p>
+      <p style="margin-top: 2rem; font-size: 0.9rem">
+        Desenvolvido por
+        <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener"
+          >Luka Plan Promoções e Eventos</a
+        >
+      </p>
+      <p style="margin-top: 1.5rem"><a href="#top">↑ Voltar ao topo</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Tab switching
+      function showDay(day) {
+        document
+          .querySelectorAll(".schedule-day")
+          .forEach((el) => (el.style.display = "none"));
+        document
+          .querySelectorAll(".tabs button")
+          .forEach((btn) => btn.classList.remove("active"));
+        document.getElementById(day).style.display = "block";
+        document.getElementById("tab-" + day).classList.add("active");
       }
-      
-      lastScroll = currentScroll;
-    });
-  </script>
-</body>
+
+      // Scroll animations with Intersection Observer
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
+
+      // Nav scroll effect
+      const nav = document.getElementById("main-nav");
+      let lastScroll = 0;
+
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 100) {
+          nav.classList.add("scrolled");
+        } else {
+          nav.classList.remove("scrolled");
+        }
+
+        lastScroll = currentScroll;
+      });
+    </script>
+  </body>
 </html>
