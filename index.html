@@ -535,24 +535,25 @@
       .logo-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 2rem;
+        gap: 3rem;
         align-items: center;
-        margin: 2rem 0;
+        margin: 2rem auto;
+        max-width: 800px;
       }
 
       .logo-grid img {
         width: 100%;
-        max-width: 180px;
+        max-width: 200px;
         height: auto;
         margin: 0 auto;
         display: block;
-        filter: grayscale(20%);
+        filter: brightness(0) invert(1) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
         transition: all 0.3s ease;
       }
 
       .logo-grid img:hover {
-        filter: grayscale(0%);
-        transform: scale(1.05);
+        transform: scale(1.08);
+        filter: brightness(0) invert(1) drop-shadow(0 6px 16px rgba(255, 255, 255, 0.3));
       }
 
       /* Committee grid */
@@ -900,11 +901,11 @@
     </section>
 
     <!-- Realization section -->
-    <section id="realizacao" class="fade-in">
+    <section id="realizacao" class="fade-in" style="background: linear-gradient(135deg, var(--primary) 0%, #5a2485 100%);">
       <div class="container text-center">
-        <h2 data-i18n="orgs.title">Realização</h2>
+        <h2 data-i18n="orgs.title" style="color: #fff;">Realização</h2>
         <p
-          style="font-size: 1.1rem; margin-bottom: 2rem"
+          style="font-size: 1.1rem; margin-bottom: 3rem; color: #f0f0f0;"
           data-i18n="orgs.intro"
         >
           O III Simpósio TGI é realizado pelas seguintes instituições:
@@ -921,15 +922,6 @@
           />
           <img src="assets/logos/cancer-center-white.png" alt="Rede Américas" />
         </div>
-
-        <h3 class="mt-2" data-i18n="orgs.sponsorship">Patrocínio</h3>
-        <p>
-          <em data-i18n="orgs.sponsorsLabel">Patrocinadores:</em> AstraZeneca,
-          Roche, Bristol, Merck, Pfizer, Servier, Ipsen<br />
-          <small style="color: var(--muted-text)" data-i18n="orgs.pending"
-            >(Aguardando confirmação de participação)</small
-          >
-        </p>
       </div>
     </section>
 
@@ -1495,8 +1487,8 @@
             <strong data-i18n="contact.emailLabel">E-mail:</strong><br />
             <a href="mailto:eventos@lukaplan.com.br">eventos@lukaplan.com.br</a
             ><br />
-            <a href="mailto:simposiodeongologiadohsj@gmail.com"
-              >simposiodeongologiadohsj@gmail.com</a
+            <a href="mailto:simposiodeoncologiadohsj@gmail.com"
+              >simposiodeoncologiadohsj@gmail.com</a
             >
           </p>
           <p style="margin-top: 1.5rem">
