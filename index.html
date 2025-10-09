@@ -1009,8 +1009,9 @@
       /></a>
       <ul>
         <li><a data-i18n="nav.about" href="#sobre">Sobre</a></li>
-        <li><a data-i18n="nav.schedule" href="#programacao">Programação</a></li>
+        <li><a data-i18n="nav.committee" href="#comissao">Comissão</a></li>
         <li><a data-i18n="nav.orgs" href="#realizacao">Realização</a></li>
+        <li><a data-i18n="nav.schedule" href="#programacao">Programação</a></li>
         <li><a data-i18n="nav.venue" href="#local">Local</a></li>
         <li><a data-i18n="nav.contact" href="#contato">Contato</a></li>
         <li class="nav-lang-selector">
@@ -1989,6 +1990,7 @@
       const translations = {
         pt: {
           "nav.about": "Sobre",
+          "nav.committee": "Comissão",
           "nav.schedule": "Programação",
           "nav.orgs": "Realização",
           "nav.venue": "Local",
@@ -2068,6 +2070,7 @@
         },
         en: {
           "nav.about": "About",
+          "nav.committee": "Committee",
           "nav.schedule": "Schedule",
           "nav.orgs": "Organizers",
           "nav.venue": "Venue",
@@ -2145,6 +2148,7 @@
         },
         es: {
           "nav.about": "Acerca de",
+          "nav.committee": "Comisión",
           "nav.schedule": "Programa",
           "nav.orgs": "Organización",
           "nav.venue": "Sede",
@@ -2224,6 +2228,7 @@
         },
         fr: {
           "nav.about": "À propos",
+          "nav.committee": "Commission",
           "nav.schedule": "Programme",
           "nav.orgs": "Organisation",
           "nav.venue": "Lieu",
@@ -2328,6 +2333,32 @@
         const selectedLang = e.target.value;
         localStorage.setItem("preferredLanguage", selectedLang);
         applyTranslations(selectedLang);
+      });
+
+      // Smooth scroll with offset for fixed navbar
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          
+          // Skip if it's just "#" or external link
+          if (href === '#' || href.startsWith('http')) return;
+          
+          e.preventDefault();
+          
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            const navHeight = document.getElementById('main-nav').offsetHeight;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navHeight - 20;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
       });
     </script>
   </body>
