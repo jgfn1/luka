@@ -558,6 +558,88 @@
           drop-shadow(0 6px 16px rgba(255, 255, 255, 0.3));
       }
 
+      /* Countdown section */
+      #countdown-section {
+        background: linear-gradient(135deg, var(--secondary) 0%, #4d9644 100%);
+        color: #fff;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+
+      #countdown-section h2 {
+        color: #fff;
+        margin-bottom: 1rem;
+        font-size: 2.2rem;
+      }
+
+      #countdown-section p {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+        opacity: 0.95;
+      }
+
+      .countdown-timer {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .countdown-item {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 2rem 2.5rem;
+        min-width: 120px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .countdown-item:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      .countdown-number {
+        font-size: 3.5rem;
+        font-weight: 700;
+        display: block;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .countdown-label {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.9;
+        font-weight: 600;
+      }
+
+      @media (max-width: 768px) {
+        #countdown-section h2 {
+          font-size: 1.8rem;
+        }
+
+        .countdown-timer {
+          gap: 1rem;
+        }
+
+        .countdown-item {
+          padding: 1.5rem 1.75rem;
+          min-width: 100px;
+        }
+
+        .countdown-number {
+          font-size: 2.5rem;
+        }
+
+        .countdown-label {
+          font-size: 0.85rem;
+        }
+      }
+
       /* Committee grid */
       .committee-grid {
         display: grid;
@@ -850,74 +932,126 @@
 
     <!-- About section -->
     <section id="sobre" class="fade-in">
-      <div class="container two-column">
-        <div>
-          <h2 data-i18n="about.title">Sobre o Simpósio</h2>
-          <p data-i18n="about.intro">
-            O
-            <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong>,
-            na condição de promotor do evento, ressalta que o principal objetivo
-            desse encontro é promover a atualização, discussão e troca de
-            experiências voltado à área da oncologia do trato gastrointestinal.
-          </p>
+      <div class="container">
+        <h2 data-i18n="about.title">Sobre o Simpósio</h2>
+        <p data-i18n="about.intro">
+          O
+          <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong>,
+          na condição de promotor do evento, ressalta que o principal objetivo
+          desse encontro é promover a atualização, discussão e troca de
+          experiências voltado à área da oncologia do trato gastrointestinal.
+        </p>
 
-          <h3 data-i18n="about.audienceTitle">Público-Alvo</h3>
-          <p data-i18n="about.audience">
-            O simpósio é destinado a oncologistas clínicos, cirurgiões
-            oncológicos, proctologistas, endocrinologistas, patologistas,
-            radiologistas, radioncologistas, oncogeneticistas, médicos
-            nucleares, cardiologistas e geriatras de todo o Brasil.
-          </p>
+        <div class="two-column" style="margin-top: 2.5rem">
+          <div>
+            <h3 data-i18n="about.audienceTitle">Público-Alvo</h3>
+            <p data-i18n="about.audience">
+              O simpósio é destinado a oncologistas clínicos, cirurgiões
+              oncológicos, proctologistas, endocrinologistas, patologistas,
+              radiologistas, radioncologistas, oncogeneticistas, médicos
+              nucleares, cardiologistas e geriatras de todo o Brasil.
+            </p>
+          </div>
 
-          <h3 data-i18n="about.objectiveTitle">Objetivo</h3>
-          <p data-i18n="about.objective">
-            Apresentar as principais novidades e promover a troca de
-            experiências na oncologia gastrointestinal.
-          </p>
-
-          <p style="margin-top: 1.5rem">
-            <span data-i18n="about.format"
-              ><strong>Modalidade:</strong> Aberto para todas as
-              instituições</span
-            ><br />
-            <span data-i18n="about.capacity"
-              ><strong>Número de participantes:</strong> 80 vagas</span
-            >
-          </p>
+          <div>
+            <h3 data-i18n="about.objectiveTitle">Objetivo</h3>
+            <p data-i18n="about.objective">
+              Apresentar as principais novidades e promover a troca de
+              experiências na oncologia gastrointestinal.
+            </p>
+          </div>
         </div>
 
-        <div>
-          <h2 data-i18n="committee.title">Comissão Organizadora</h2>
-          <p data-i18n="committee.intro">
-            A programação científica está sob responsabilidade de um time
-            multidisciplinar de especialistas:
-          </p>
+        <p style="margin-top: 2rem; text-align: center; font-size: 1.1rem">
+          <span data-i18n="about.format"
+            ><strong>Modalidade:</strong> Aberto para todas as
+            instituições</span
+          ><br />
+          <span data-i18n="about.capacity"
+            ><strong>Número de participantes:</strong> 80 vagas</span
+          >
+        </p>
+      </div>
+    </section>
 
-          <div class="committee-grid mt-2">
-            <div class="committee-item">
-              <img src="assets/committee/Antonio-Douglas.webp" alt="Dr. Antonio Douglas" />
-              <h4>Dr. Antonio Douglas</h4>
-            </div>
-            <div class="committee-item">
-              <img src="assets/committee/Ilan Pedrosa.jfif" alt="Dr. Ilan Pedrosa" />
-              <h4>Dr. Ilan Pedrosa</h4>
-            </div>
-            <div class="committee-item">
-              <img src="assets/committee/Cristiana-Tavares.webp" alt="Dra. Cristiana Tavares" />
-              <h4>Dra. Cristiana Tavares</h4>
-            </div>
-            <div class="committee-item">
-              <img src="assets/committee/Nildevande Firminio.jfif" alt="Dr. Nildevande Firmino" />
-              <h4>Dr. Nildevande Firmino</h4>
-            </div>
-            <div class="committee-item">
-              <img src="assets/committee/Thiago Apolinário.webp" alt="Dr. Thiago Apolinário" />
-              <h4>Dr. Thiago Apolinário</h4>
-            </div>
-            <div class="committee-item">
-              <img src="assets/committee/Rommel Pierre.jpeg" alt="Dr. Rommel Pierre" />
-              <h4>Dr. Rommel Pierre</h4>
-            </div>
+    <!-- Countdown section -->
+    <section id="countdown-section" class="fade-in">
+      <div class="container">
+        <h2 data-i18n="countdown.title">Contagem Regressiva</h2>
+        <p data-i18n="countdown.subtitle">Faltam apenas:</p>
+        
+        <div class="countdown-timer">
+          <div class="countdown-item">
+            <span id="days" class="countdown-number">00</span>
+            <span class="countdown-label" data-i18n="countdown.days">Dias</span>
+          </div>
+          <div class="countdown-item">
+            <span id="hours" class="countdown-number">00</span>
+            <span class="countdown-label" data-i18n="countdown.hours">Horas</span>
+          </div>
+          <div class="countdown-item">
+            <span id="minutes" class="countdown-number">00</span>
+            <span class="countdown-label" data-i18n="countdown.minutes">Minutos</span>
+          </div>
+          <div class="countdown-item">
+            <span id="seconds" class="countdown-number">00</span>
+            <span class="countdown-label" data-i18n="countdown.seconds">Segundos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Committee section -->
+    <section id="comissao" class="fade-in">
+      <div class="container">
+        <h2 class="text-center" data-i18n="committee.title">Comissão Organizadora</h2>
+        <p class="text-center" style="font-size: 1.1rem; margin-bottom: 3rem" data-i18n="committee.intro">
+          A programação científica está sob responsabilidade de um time
+          multidisciplinar de especialistas:
+        </p>
+
+        <div class="committee-grid">
+          <div class="committee-item">
+            <img
+              src="assets/committee/Antonio-Douglas.webp"
+              alt="Dr. Antonio Douglas"
+            />
+            <h4>Dr. Antonio Douglas</h4>
+          </div>
+          <div class="committee-item">
+            <img
+              src="assets/committee/Ilan Pedrosa.jfif"
+              alt="Dr. Ilan Pedrosa"
+            />
+            <h4>Dr. Ilan Pedrosa</h4>
+          </div>
+          <div class="committee-item">
+            <img
+              src="assets/committee/Cristiana-Tavares.webp"
+              alt="Dra. Cristiana Tavares"
+            />
+            <h4>Dra. Cristiana Tavares</h4>
+          </div>
+          <div class="committee-item">
+            <img
+              src="assets/committee/Nildevande Firminio.jfif"
+              alt="Dr. Nildevande Firmino"
+            />
+            <h4>Dr. Nildevande Firmino</h4>
+          </div>
+          <div class="committee-item">
+            <img
+              src="assets/committee/Thiago Apolinário.webp"
+              alt="Dr. Thiago Apolinário"
+            />
+            <h4>Dr. Thiago Apolinário</h4>
+          </div>
+          <div class="committee-item">
+            <img
+              src="assets/committee/Rommel Pierre.jpeg"
+              alt="Dr. Rommel Pierre"
+            />
+            <h4>Dr. Rommel Pierre</h4>
           </div>
         </div>
       </div>
@@ -1657,6 +1791,35 @@
         lastScroll = currentScroll;
       });
 
+      // Countdown timer
+      function updateCountdown() {
+        const eventDate = new Date('2025-10-31T08:00:00-03:00').getTime();
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        if (distance < 0) {
+          document.getElementById('days').textContent = '00';
+          document.getElementById('hours').textContent = '00';
+          document.getElementById('minutes').textContent = '00';
+          document.getElementById('seconds').textContent = '00';
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+      }
+
+      // Update countdown every second
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
       // Comprehensive i18n implementation
       const translations = {
         pt: {
@@ -1684,6 +1847,12 @@
             "<strong>Modalidade:</strong> Aberto para todas as instituições",
           "about.capacity":
             "<strong>Número de participantes:</strong> 80 vagas",
+          "countdown.title": "Contagem Regressiva",
+          "countdown.subtitle": "Faltam apenas:",
+          "countdown.days": "Dias",
+          "countdown.hours": "Horas",
+          "countdown.minutes": "Minutos",
+          "countdown.seconds": "Segundos",
           "committee.title": "Comissão Organizadora",
           "committee.intro":
             "A programação científica está sob responsabilidade de um time multidisciplinar de especialistas:",
@@ -1755,6 +1924,12 @@
             "Present the latest developments and promote the exchange of experiences in gastrointestinal oncology.",
           "about.format": "<strong>Format:</strong> Open to all institutions",
           "about.capacity": "<strong>Number of participants:</strong> 80 seats",
+          "countdown.title": "Countdown",
+          "countdown.subtitle": "Time remaining:",
+          "countdown.days": "Days",
+          "countdown.hours": "Hours",
+          "countdown.minutes": "Minutes",
+          "countdown.seconds": "Seconds",
           "committee.title": "Organizing Committee",
           "committee.intro":
             "The scientific program is under the responsibility of a multidisciplinary team of experts:",
@@ -1828,6 +2003,12 @@
             "<strong>Modalidad:</strong> Abierto a todas las instituciones",
           "about.capacity":
             "<strong>Número de participantes:</strong> 80 plazas",
+          "countdown.title": "Cuenta Regresiva",
+          "countdown.subtitle": "Tiempo restante:",
+          "countdown.days": "Días",
+          "countdown.hours": "Horas",
+          "countdown.minutes": "Minutos",
+          "countdown.seconds": "Segundos",
           "committee.title": "Comisión Organizadora",
           "committee.intro":
             "El programa científico está bajo la responsabilidad de un equipo multidisciplinario de expertos:",
@@ -1901,6 +2082,12 @@
             "<strong>Modalité :</strong> Ouvert à toutes les institutions",
           "about.capacity":
             "<strong>Nombre de participants :</strong> 80 places",
+          "countdown.title": "Compte à rebours",
+          "countdown.subtitle": "Temps restant :",
+          "countdown.days": "Jours",
+          "countdown.hours": "Heures",
+          "countdown.minutes": "Minutes",
+          "countdown.seconds": "Secondes",
           "committee.title": "Commission d'organisation",
           "committee.intro":
             "Le programme scientifique est sous la responsabilité d'une équipe multidisciplinaire d'experts :",
