@@ -547,20 +547,22 @@
         height: auto;
         margin: 0 auto;
         display: block;
-        filter: brightness(0) invert(1) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+        filter: brightness(0) invert(1)
+          drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
         transition: all 0.3s ease;
       }
 
       .logo-grid img:hover {
         transform: scale(1.08);
-        filter: brightness(0) invert(1) drop-shadow(0 6px 16px rgba(255, 255, 255, 0.3));
+        filter: brightness(0) invert(1)
+          drop-shadow(0 6px 16px rgba(255, 255, 255, 0.3));
       }
 
       /* Committee grid */
       .committee-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
+        gap: 2rem;
         margin: 2rem 0;
       }
 
@@ -574,8 +576,23 @@
       }
 
       .committee-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      .committee-item img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1rem;
+        border: 4px solid var(--primary);
+        transition: all 0.3s ease;
+      }
+
+      .committee-item:hover img {
+        border-color: var(--secondary);
+        transform: scale(1.05);
       }
 
       .committee-item h4 {
@@ -878,21 +895,27 @@
 
           <div class="committee-grid mt-2">
             <div class="committee-item">
+              <img src="assets/committee/Antonio-Douglas.webp" alt="Dr. Antonio Douglas" />
               <h4>Dr. Antonio Douglas</h4>
             </div>
             <div class="committee-item">
+              <img src="assets/committee/Ilan Pedrosa.jfif" alt="Dr. Ilan Pedrosa" />
               <h4>Dr. Ilan Pedrosa</h4>
             </div>
             <div class="committee-item">
+              <img src="assets/committee/Cristiana-Tavares.webp" alt="Dra. Cristiana Tavares" />
               <h4>Dra. Cristiana Tavares</h4>
             </div>
             <div class="committee-item">
+              <img src="assets/committee/Nildevande Firminio.jfif" alt="Dr. Nildevande Firmino" />
               <h4>Dr. Nildevande Firmino</h4>
             </div>
             <div class="committee-item">
+              <img src="assets/committee/Thiago Apolinário.webp" alt="Dr. Thiago Apolinário" />
               <h4>Dr. Thiago Apolinário</h4>
             </div>
             <div class="committee-item">
+              <img src="assets/committee/Rommel Pierre.jpeg" alt="Dr. Rommel Pierre" />
               <h4>Dr. Rommel Pierre</h4>
             </div>
           </div>
@@ -901,11 +924,17 @@
     </section>
 
     <!-- Realization section -->
-    <section id="realizacao" class="fade-in" style="background: linear-gradient(135deg, var(--primary) 0%, #5a2485 100%);">
+    <section
+      id="realizacao"
+      class="fade-in"
+      style="
+        background: linear-gradient(135deg, var(--primary) 0%, #5a2485 100%);
+      "
+    >
       <div class="container text-center">
-        <h2 data-i18n="orgs.title" style="color: #fff;">Realização</h2>
+        <h2 data-i18n="orgs.title" style="color: #fff">Realização</h2>
         <p
-          style="font-size: 1.1rem; margin-bottom: 3rem; color: #f0f0f0;"
+          style="font-size: 1.1rem; margin-bottom: 3rem; color: #f0f0f0"
           data-i18n="orgs.intro"
         >
           O III Simpósio TGI é realizado pelas seguintes instituições:
