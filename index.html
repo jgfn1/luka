@@ -855,19 +855,110 @@
         margin: 0.75rem 0;
       }
 
+      /* Mobile menu toggle button */
+      .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 1001;
+      }
+
+      .mobile-menu-toggle span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: var(--primary);
+        transition: all 0.3s ease;
+        border-radius: 3px;
+      }
+
+      .mobile-menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
       /* Responsive */
       @media (max-width: 768px) {
         nav {
           padding: 0.75rem 1rem;
+          justify-content: space-between;
+        }
+
+        .mobile-menu-toggle {
+          display: flex;
         }
 
         nav ul {
-          display: none;
+          position: fixed;
+          top: 80px;
+          left: 0;
+          right: 0;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(10px);
+          flex-direction: column;
+          align-items: stretch;
+          padding: 1rem 0;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+
+        nav ul.active {
+          max-height: 500px;
+          opacity: 1;
+        }
+
+        nav ul li {
+          margin: 0;
+          padding: 0;
+          border-bottom: 1px solid rgba(111, 45, 168, 0.1);
+        }
+
+        nav ul li:last-child {
+          border-bottom: none;
+        }
+
+        nav ul li a {
+          display: block;
+          padding: 1rem 2rem;
+          text-align: left;
+          font-size: 1rem;
+        }
+
+        .nav-lang-selector {
+          padding: 1rem 2rem;
+        }
+
+        .nav-lang-selector select {
+          width: 100%;
+          padding: 0.75rem;
+          font-size: 1rem;
+        }
+
+        nav ul li .nav-cta {
+          margin: 1rem 2rem;
+          padding: 1rem;
+          text-align: center;
+          display: block;
+          width: calc(100% - 4rem);
         }
 
         header.hero {
           min-height: 70vh;
-          padding-top: 60px;
+          padding-top: 100px;
         }
 
         header.hero .hero-content img.logo {
@@ -967,28 +1058,6 @@
         }
       }
 
-      @media (max-width: 768px) {
-        nav {
-          flex-direction: column;
-          gap: 1rem;
-          padding: 1rem;
-        }
-
-        nav ul {
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 0.75rem;
-        }
-
-        .nav-lang-selector select {
-          font-size: 0.8rem;
-        }
-
-        .nav-cta {
-          font-size: 0.8rem;
-        }
-      }
-
       /* Utility classes */
       .text-center {
         text-align: center;
@@ -1007,7 +1076,15 @@
       <a href="#top"
         ><img src="tgi/LOGO-TGI.png" alt="Logo TGI" class="logo-small"
       /></a>
-      <ul>
+      
+      <!-- Hamburger menu button -->
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul id="nav-menu">
         <li><a data-i18n="nav.about" href="#sobre">Sobre</a></li>
         <li><a data-i18n="nav.orgs" href="#realizacao">Realização</a></li>
         <li><a data-i18n="nav.schedule" href="#programacao">Programação</a></li>
@@ -2357,8 +2434,33 @@
               top: offsetPosition,
               behavior: "smooth",
             });
+
+            // Close mobile menu after clicking a link
+            const navMenu = document.getElementById("nav-menu");
+            const menuToggle = document.getElementById("mobile-menu-toggle");
+            if (navMenu.classList.contains("active")) {
+              navMenu.classList.remove("active");
+              menuToggle.classList.remove("active");
+            }
           }
         });
+      });
+
+      // Mobile menu toggle
+      const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+
+      mobileMenuToggle.addEventListener("click", () => {
+        mobileMenuToggle.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest("nav")) {
+          navMenu.classList.remove("active");
+          mobileMenuToggle.classList.remove("active");
+        }
       });
     </script>
   </body>
