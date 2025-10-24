@@ -833,6 +833,137 @@
         margin-right: auto;
       }
 
+      /* Sponsors grid */
+      .sponsors-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        margin: 2rem auto;
+        max-width: 1400px;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .sponsor-item {
+        text-align: center;
+        padding: 2rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        width: 100%;
+        max-width: 300px;
+        min-height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Special container sizing for Knight logo */
+      .knight-container {
+        max-width: 360px !important;
+        min-height: 200px !important;
+      }
+
+      .sponsor-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .sponsor-logo {
+        max-width: 216px;
+        max-height: 120px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        filter: grayscale(0.2);
+        transition: all 0.3s ease;
+      }
+
+      .sponsor-item:hover .sponsor-logo {
+        filter: grayscale(0);
+        transform: scale(1.05);
+      }
+
+      /* Special styling for Knight logo - 30% larger */
+      .knight-logo {
+        max-width: 280px !important;
+        max-height: 156px !important;
+        transform: scale(1.3);
+      }
+
+      .sponsor-item:hover .knight-logo {
+        transform: scale(1.3) scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        .sponsors-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+          max-width: 800px;
+        }
+
+        .sponsor-item {
+          padding: 1.5rem;
+          max-width: 250px;
+          min-height: 140px;
+        }
+
+        .knight-container {
+          max-width: 300px !important;
+          min-height: 180px !important;
+        }
+
+        .sponsor-logo {
+          max-width: 180px;
+          max-height: 100px;
+        }
+
+        .knight-logo {
+          max-width: 234px !important;
+          max-height: 130px !important;
+          transform: scale(1.3) !important;
+        }
+
+        .sponsor-item:hover .knight-logo {
+          transform: scale(1.3) scale(1.05) !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .sponsors-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+          max-width: 350px;
+        }
+
+        .sponsor-item {
+          padding: 1.5rem;
+          max-width: 280px;
+          min-height: 140px;
+        }
+
+        .knight-container {
+          max-width: 320px !important;
+          min-height: 180px !important;
+        }
+
+        .sponsor-logo {
+          max-width: 180px;
+          max-height: 100px;
+        }
+
+        .knight-logo {
+          max-width: 234px !important;
+          max-height: 130px !important;
+          transform: scale(1.3) !important;
+        }
+
+        .sponsor-item:hover .knight-logo {
+          transform: scale(1.3) scale(1.05) !important;
+        }
+      }
+
       .committee-item {
         text-align: center;
         padding: 1.5rem 1rem;
@@ -1984,6 +2115,74 @@
       </div>
     </section>
 
+    <!-- Sponsors section -->
+    <section id="patrocinadores" class="fade-in">
+      <div class="container">
+        <h2 class="text-center" data-i18n="sponsors.title">Patrocinadores</h2>
+        <p
+          class="text-center"
+          style="font-size: 1.1rem; margin-bottom: 3rem"
+          data-i18n="sponsors.intro"
+        >
+          Agradecemos o apoio dos nossos patrocinadores que tornam este evento
+          possível:
+        </p>
+
+        <div class="sponsors-grid">
+          <div class="sponsor-item">
+            <img
+              src="assets/sponsors/Astrazeneca.png"
+              alt="AstraZeneca"
+              class="sponsor-logo"
+            />
+          </div>
+          <div class="sponsor-item">
+            <img
+              src="assets/sponsors/Logo Roche.png"
+              alt="Roche"
+              class="sponsor-logo"
+            />
+          </div>
+          <div class="sponsor-item">
+            <img
+              src="assets/sponsors/LOGO MERCK.png"
+              alt="Merck"
+              class="sponsor-logo"
+            />
+          </div>
+          <div class="sponsor-item">
+            <img
+              src="assets/sponsors/Logo Pfizer/Pfizer Logo_RGB/PNG/Pfizer_Logo_Color_RGB.png"
+              alt="Pfizer"
+              class="sponsor-logo"
+            />
+          </div>
+          <div class="sponsor-item">
+            <img
+              src="assets/sponsors/Servier_Logo_Sign_RVB (3).png"
+              alt="Servier"
+              class="sponsor-logo"
+            />
+          </div>
+          <div class="sponsor-item knight-container">
+            <img
+              src="assets/sponsors/LOGO-KNIGHT-UNITED-MEDICAL.png"
+              alt="Knight"
+              class="sponsor-logo knight-logo"
+              onerror="this.src='assets/sponsors/LOGO-KNIGHT-UNITED-MEDICAL-removebg-preview_1.png'"
+            />
+          </div>
+          <div class="sponsor-item">
+            <img
+              src="assets/sponsors/Logo-Ipsen-RGB.png"
+              alt="Ipsen"
+              class="sponsor-logo"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact section -->
     <section id="contato" class="fade-in">
       <div class="container two-column">
@@ -2233,6 +2432,9 @@
           "committee.title": "Comissão Organizadora",
           "committee.intro":
             "A programação científica está sob responsabilidade de um time multidisciplinar de especialistas:",
+          "sponsors.title": "Patrocinadores",
+          "sponsors.intro":
+            "Agradecemos o apoio dos nossos patrocinadores que tornam este evento possível:",
           "schedule.title": "Programação Científica",
           "schedule.download": "Baixe aqui a sua programação",
           "schedule.day1": "Sexta-feira 31/10/2025",
@@ -2304,6 +2506,9 @@
           "committee.title": "Organizing Committee",
           "committee.intro":
             "The scientific program is under the responsibility of a multidisciplinary team of experts:",
+          "sponsors.title": "Sponsors",
+          "sponsors.intro":
+            "We thank our sponsors for their support that makes this event possible:",
           "schedule.title": "Scientific Program",
           "schedule.download": "Download the program here",
           "schedule.day1": "Friday 10/31/2025",
@@ -2377,6 +2582,9 @@
           "committee.title": "Comisión Organizadora",
           "committee.intro":
             "El programa científico está bajo la responsabilidad de un equipo multidisciplinario de expertos:",
+          "sponsors.title": "Patrocinadores",
+          "sponsors.intro":
+            "Agradecemos el apoyo de nuestros patrocinadores que hacen posible este evento:",
           "schedule.title": "Programa Científico",
           "schedule.download": "Descargue aquí su programación",
           "schedule.day1": "Viernes 31/10/2025",
@@ -2450,6 +2658,9 @@
           "committee.title": "Commission d'organisation",
           "committee.intro":
             "Le programme scientifique est sous la responsabilité d'une équipe multidisciplinaire d'experts :",
+          "sponsors.title": "Partenaires",
+          "sponsors.intro":
+            "Nous remercions nos partenaires pour leur soutien qui rend cet événement possible :",
           "schedule.title": "Programme scientifique",
           "schedule.download": "Téléchargez votre programme ici",
           "schedule.day1": "Vendredi 31/10/2025",
