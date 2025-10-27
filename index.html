@@ -509,7 +509,7 @@
 
       .fade-in.visible {
         opacity: 1;
-        transform: translateY(0);
+        transform: none;
       }
 
       /* Schedule tabs */
@@ -829,6 +829,7 @@
         gap: 1.5rem;
         margin: 2rem 0;
         max-width: 1400px;
+        justify-content: space-between;
         margin-left: auto;
         margin-right: auto;
       }
@@ -1312,6 +1313,77 @@
       .mt-2 {
         margin-top: 2rem;
       }
+
+      .modal {
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        background: rgba(34, 30, 60, 0.68);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .modal.show {
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+      .modal-content {
+        background: #fff;
+        color: var(--dark-text, #222);
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(111, 45, 168, 0.15);
+        max-width: 410px;
+        width: 90vw;
+        padding: 2.5rem 1.8rem 1.4rem;
+        position: relative;
+        text-align: center;
+        opacity: 0;
+        animation: fadeIn 0.3s ease-out forwards;
+      }
+      .close-modal {
+        position: absolute;
+        top: 22px;
+        right: 30px;
+        font-size: 2rem;
+        color: var(--primary, #892db1);
+        cursor: pointer;
+        background: none;
+        border: none;
+      }
+      .modal-bio {
+        font-size: 1.07rem;
+        margin-top: 1.4rem;
+        color: #444;
+        text-align: left;
+      }
+      .saiba-mais-btn {
+        margin-top: 1.2rem;
+        background: var(--secondary, #63b45a);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 0.6rem 1.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+        font-size: 1rem;
+      }
+      .saiba-mais-btn:hover {
+        background: #519447;
+      }
+      @media (max-width: 628px) {
+        .modal-content {
+          padding: 1.5rem 0.7rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1546,6 +1618,507 @@
         </div>
       </div>
     </section>
+
+    <!-- Speakers section -->
+    <section id="palestrantes" class="fade-in">
+      <div class="container">
+        <h2 class="text-center" data-i18n="speakers.title">Palestrantes</h2>
+        <p
+          class="text-center"
+          style="font-size: 1.1rem; margin-bottom: 3rem"
+          data-i18n="speakers.intro"
+        >
+          Conheça nossos palestrantes e convidados:
+        </p>
+        <div class="committee-grid speakers-grid">
+          <div class="committee-item speaker-item">
+            <img
+              src="assets/speakers/Gustavo Ferreira.jpeg"
+              alt="Dr. Gustavo Ferreira"
+              style="object-fit: cover"
+            />
+            <h4>Dr. Gustavo Ferreira</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-gustavo-ferreira"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="committee-item speaker-item">
+            <img
+              src="assets/speakers/Rodrigo Arruda.jpeg"
+              alt="Dr. Rodrigo Arruda"
+              style="object-fit: cover"
+            />
+            <h4>Dr. Rodrigo Arruda</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-rodrigo-arruda"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="committee-item speaker-item">
+            <img
+              src="assets/speakers/José Câmara.jfif"
+              alt="Dr. José Câmara"
+              style="object-fit: cover"
+            />
+            <h4>Dr. José Câmara</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-jose-camara"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="committee-item speaker-item">
+            <img
+              src="assets/speakers/Olival Lucena.jfif"
+              alt="Dr. Olival Lucena"
+              style="object-fit: cover"
+            />
+            <h4>Dr. Olival Lucena</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-olival-lucena"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="committee-item speaker-item">
+            <img
+              src="assets/speakers/Rodrigo Taboada.jfif"
+              alt="Dr. Rodrigo Taboada"
+              style="object-fit: cover"
+            />
+            <h4>Dr. Rodrigo Taboada</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-rodrigo-taboada"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="committee-item speaker-item">
+            <img
+              src="assets/speakers/João Paulo Ayub.jfif"
+              alt="Dr. João Paulo Ayub"
+              style="object-fit: cover"
+            />
+            <h4>Dr. João Paulo Ayub</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-joao-paulo-ayub"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="committee-item speaker-item">
+            <img
+              src="assets/speakers/Gustavo Lima.jfif"
+              alt="Dr. Gustavo Lima"
+              style="object-fit: cover"
+            />
+            <h4>Dr. Gustavo Lima</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-gustavo-lima"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="committee-item speaker-item">
+            <img
+              src="assets/speakers/Ítalo Cruz.jfif"
+              alt="Dr. Ítalo Cruz"
+              style="object-fit: cover"
+            />
+            <h4>Dr. Ítalo Cruz</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-italo-cruz"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="committee-item speaker-item">
+            <img
+              src="assets/speakers/Leiliane  Alencar Bonates .jfif"
+              alt="Dra. Leliane Alencar"
+              style="object-fit: cover"
+            />
+            <h4>Dra. Leliane Alencar</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-leliane-alencar"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="committee-item speaker-item">
+            <img
+              src="assets/speakers/Tibério Medeiros.jfif"
+              alt="Dr. Tibério Medeiros"
+              style="object-fit: cover"
+            />
+            <h4>Dr. Tibério Medeiros</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-tiberio-medeiros"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="committee-item speaker-item">
+            <img
+              src="assets/speakers/BEN-HUR.jpg"
+              alt="Dr. Ben-Hur Ferraz Neto"
+              style="object-fit: cover"
+            />
+            <h4>Dr. Ben-Hur Ferraz Neto</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-ben-hur"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="committee-item speaker-item">
+            <img
+              src="assets/speakers/Antonio-Douglas.webp"
+              alt="Dr. Antonio Douglas"
+              style="object-fit: cover"
+            />
+            <h4>Dr. Antonio Douglas</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-antonio-douglas"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="committee-item speaker-item">
+            <img
+              src="assets/speakers/Ilan Pedrosa.jfif"
+              alt="Dr. Ilan Pedrosa"
+              style="object-fit: cover"
+            />
+            <h4>Dr. Ilan Pedrosa</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-ilan-pedrosa"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="committee-item speaker-item">
+            <img
+              src="assets/speakers/Cristiana-Tavares.webp"
+              alt="Dra. Cristiana Tavares"
+              style="object-fit: cover"
+            />
+            <h4>Dra. Cristiana Tavares</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-cristiana-tavares"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="committee-item speaker-item">
+            <img
+              src="assets/speakers/Thiago Apolinário.webp"
+              alt="Dr. Thiago Apolinário"
+              style="object-fit: cover"
+            />
+            <h4>Dr. Thiago Apolinário</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-thiago-apolinario"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+        </div>
+
+        <!-- Modals -->
+      </div>
+    </section>
+    <!-- End Speakers section -->
+
+    <!-- Speaker Modals (moved to body level for reliable centering) -->
+    <div class="modal" id="modal-gustavo-ferreira">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="assets/speakers/Gustavo Ferreira.jpeg"
+          alt="Dr. Gustavo Ferreira"
+          style="object-fit: cover; max-width: 120px; margin-bottom: 1rem"
+        />
+        <h3>Dr. Gustavo Ferreira</h3>
+        <div class="modal-bio">
+          Graduação pela UFPE, mestrando e professor substituto na mesma
+          instituição. Residência médica na EPM (Escola Paulista de
+          Medicina)/UNIFESP. Trabalha nos laboratórios SPAC, Citomaxx e Hospital
+          Otavio de Freitas.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-rodrigo-arruda">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="assets/speakers/Rodrigo Arruda.jpeg"
+          alt="Dr. Rodrigo Arruda"
+          style="object-fit: cover; max-width: 120px; margin-bottom: 1rem"
+        />
+        <h3>Dr. Rodrigo Arruda</h3>
+        <div class="modal-bio">
+          Coordenador Oncologia Clínica do Hospital do Câncer de Pernambuco.<br />
+          Oncologista Clínico do IMIP.<br />
+          Mestre pelo IMIP.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-jose-camara">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="assets/speakers/José Câmara.jfif"
+          alt="Dr. José Câmara"
+          style="object-fit: cover; max-width: 120px; margin-bottom: 1rem"
+        />
+        <h3>Dr. José Câmara</h3>
+        <div class="modal-bio">
+          Presidente da Sociedade Brasileira de Cirurgia Bariátrica e Metabólica
+          (SBCBM) - Capítulo Pernambuco, Biênios 2023/24 e 2025/26.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-olival-lucena">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="assets/speakers/Olival Lucena.jfif"
+          alt="Dr. Olival Lucena"
+          style="object-fit: cover; max-width: 120px; margin-bottom: 1rem"
+        />
+        <h3>Dr. Olival Lucena</h3>
+        <div class="modal-bio">
+          Professor Adjunto de Cirurgia da UPE e UNINASSAU.<br />
+          Cirurgião do Aparelho Digestivo e Transplante de Fígado.<br />
+          HUOC - UTF - HSJ.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-rodrigo-taboada">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="assets/speakers/Rodrigo Taboada.jfif"
+          alt="Dr. Rodrigo Taboada"
+          style="object-fit: cover; max-width: 120px; margin-bottom: 1rem"
+        />
+        <h3>Dr. Rodrigo Taboada</h3>
+        <div class="modal-bio">
+          Oncologista Clínico no A.C.Camargo Cancer Center.<br />
+          Mestrado em Oncologia, concluído em 2021, pelo A.C.Camargo Cancer
+          Center.<br />
+          Foco em Tumores Gastrointestinais e Neuroendócrinos.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-joao-paulo-ayub">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="assets/speakers/João Paulo Ayub.jfif"
+          alt="Dr. João Paulo Ayub"
+          style="object-fit: cover; max-width: 120px; margin-bottom: 1rem"
+        />
+        <h3>Dr. João Paulo Ayub</h3>
+        <div class="modal-bio">
+          Membro Titular da Sociedade Brasileira de Radiologia Intervencionista
+          e Cirurgia Endovascular - SOBRICE.<br />
+          Radiologista Intervencionista e Cirurgião Vascular do IMIP, Barão de
+          Lucena e Angiorad.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-gustavo-lima">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="assets/speakers/Gustavo Lima.jfif"
+          alt="Dr. Gustavo Lima"
+          style="object-fit: cover; max-width: 120px; margin-bottom: 1rem"
+        />
+        <h3>Dr. Gustavo Lima</h3>
+        <div class="modal-bio">Currículo em atualização.</div>
+      </div>
+    </div>
+    <div class="modal" id="modal-italo-cruz">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="assets/speakers/Ítalo Cruz.jfif"
+          alt="Dr. Ítalo Cruz"
+          style="object-fit: cover; max-width: 120px; margin-bottom: 1rem"
+        />
+        <h3>Dr. Ítalo Cruz</h3>
+        <div class="modal-bio">
+          Médico Radiologista.<br />
+          Radiologista Abdominal.<br />
+          Radiologista do Hospital da Restauração, Hospital Santa Joana e Boris
+          Bereinstein.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-leliane-alencar">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="assets/speakers/Leiliane  Alencar Bonates .jfif"
+          alt="Dra. Leliane Alencar"
+          style="object-fit: cover; max-width: 120px; margin-bottom: 1rem"
+        />
+        <h3>Dra. Leliane Alencar</h3>
+        <div class="modal-bio">
+          Graduação em Medicina pela UPE. Cirurgiã Geral pelo Hospital da
+          Restauração.<br />
+          Endoscopia Digestiva pelo Hospital da Restauração.<br />
+          Fellowship observer em ESD pelo Kobe University Hospital – Kobe,
+          Hyogo, Japão.<br />
+          Membro Titular da SOBED. Membro da ASGE. Membro do Núcleo SOBED
+          Mulher.<br />
+          Coordenadora do serviço de Endoscopia Digestiva do Hospital Barão de
+          Lucena e do Hospital Universitário Osvaldo Cruz. Diretora Médica
+          Endogastro.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-tiberio-medeiros">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="assets/speakers/Tibério Medeiros.jfif"
+          alt="Dr. Tibério Medeiros"
+          style="object-fit: cover; max-width: 120px; margin-bottom: 1rem"
+        />
+        <h3>Dr. Tibério Medeiros</h3>
+        <div class="modal-bio">
+          Médico Gastrohepatologista e Coordenador do Instituto do Fígado do
+          Hospital Santa Joana.<br />
+          Médico Hepatologista do Hospital Oswaldo Cruz.<br />
+          Professor de Gastroenterologia da Faculdade de Ciências Médicas - PB.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-ben-hur">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="assets/speakers/BEN-HUR.jpg"
+          alt="Dr. Ben-Hur Ferraz Neto"
+          style="object-fit: cover; max-width: 120px; margin-bottom: 1rem"
+        />
+        <h3>Dr. Ben-Hur Ferraz Neto</h3>
+        <div class="modal-bio">
+          Mestre e Doutor em Cirurgia pela Unicamp e University of
+          Birmingham.<br />
+          Livre Docente pela USP.<br />
+          Diretor do Instituto do Fígado Rede Americas.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-antonio-douglas">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="assets/speakers/Antonio-Douglas.webp"
+          alt="Dr. Antonio Douglas"
+          style="object-fit: cover; max-width: 120px; margin-bottom: 1rem"
+        />
+        <h3>Dr. Antonio Douglas</h3>
+        <div class="modal-bio">
+          Oncologista Clínico do Hospital Santa Joana – Rede Américas.<br />
+          Oncologista Clínico do Hospital das Clínicas UFPE.<br />
+          Professor da UPE e Uninassau.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-ilan-pedrosa">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="assets/speakers/Ilan Pedrosa.jfif"
+          alt="Dr. Ilan Pedrosa"
+          style="object-fit: cover; max-width: 120px; margin-bottom: 1rem"
+        />
+        <h3>Dr. Ilan Pedrosa</h3>
+        <div class="modal-bio">
+          Oncologista clínico do Hospital Santa Joana e Onkos.<br />
+          Preceptor da Residência médica em Oncologia do Hospital de Câncer de
+          Pernambuco.<br />
+          Coordenador da Residência médica em Oncologia Clínica do Santa Joana.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-cristiana-tavares">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="assets/speakers/Cristiana-Tavares.webp"
+          alt="Dra. Cristiana Tavares"
+          style="object-fit: cover; max-width: 120px; margin-bottom: 1rem"
+        />
+        <h3>Dra. Cristiana Tavares</h3>
+        <div class="modal-bio">
+          Oncologista do Hospital Santa Joana e do Hospital Universitário
+          Oswaldo Cruz / UPE.<br />
+          Preceptora de graduação e pós-graduação da FCM - Faculdade de Ciências
+          Médicas / UPE.<br />
+          Mestre pela UPE.<br />
+          Doutoranda em medicina translacional pela UNIFESP.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-thiago-apolinario">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="assets/speakers/Thiago Apolinário.webp"
+          alt="Dr. Thiago Apolinário"
+          style="object-fit: cover; max-width: 120px; margin-bottom: 1rem"
+        />
+        <h3>Dr. Thiago Apolinário</h3>
+        <div class="modal-bio">
+          Oncologista clínico do Hospital Santa Joana.<br />
+          Oncologista clínico do Hospital Universitário Oswaldo Cruz -
+          Universidade de Pernambuco.<br />
+          Fellowship em Oncologia Mamária, Fundação Champalimaud, Lisboa,
+          Portugal.
+        </div>
+      </div>
+    </div>
+    <!-- End Modals -->
 
     <!-- Schedule section -->
     <section id="programacao" class="fade-in">
@@ -2780,6 +3353,48 @@
           navMenu.classList.remove("active");
           mobileMenuToggle.classList.remove("active");
         }
+      });
+    </script>
+
+    <script>
+      // Modal logic for speakers
+      document.addEventListener("DOMContentLoaded", function () {
+        // Handle button clicks to open modals
+        document.addEventListener("click", function (e) {
+          if (e.target.classList.contains("saiba-mais-btn")) {
+            const modalId = e.target.dataset.modal;
+            const modal = document.getElementById(modalId);
+            if (modal) {
+              modal.classList.add("show");
+              document.body.style.overflow = "hidden";
+            }
+          }
+        });
+
+        // Handle modal close (backdrop click, close button, escape key)
+        document.addEventListener("click", function (e) {
+          if (e.target.classList.contains("close-modal")) {
+            const modal = e.target.closest(".modal");
+            modal.classList.remove("show");
+            document.body.style.overflow = "";
+          } else if (
+            e.target.classList.contains("modal") &&
+            e.target.classList.contains("show")
+          ) {
+            e.target.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        });
+
+        // Handle escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            document.querySelectorAll(".modal.show").forEach((modal) => {
+              modal.classList.remove("show");
+              document.body.style.overflow = "";
+            });
+          }
+        });
       });
     </script>
   </body>
