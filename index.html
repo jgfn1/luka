@@ -1004,6 +1004,18 @@
         line-height: 1.3;
       }
 
+      /* Speaker cards: keep button aligned at the bottom */
+      .speakers-grid .speaker-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+      }
+
+      .speakers-grid .speaker-item .saiba-mais-btn {
+        margin-top: auto;
+      }
+
       @media (max-width: 1200px) {
         .committee-grid {
           grid-template-columns: repeat(3, 1fr);
