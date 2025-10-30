@@ -227,11 +227,20 @@
         text-transform: uppercase;
       }
 
-      .nav-cta:hover {
+      .nav-cta:hover:not(.nav-cta-disabled) {
         background: #519447;
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(99, 180, 90, 0.5);
         color: #fff;
+      }
+
+      .nav-cta.nav-cta-disabled {
+        background: rgba(102, 102, 102, 0.25);
+        color: var(--muted-text) !important;
+        cursor: default;
+        box-shadow: none;
+        border: 1px solid rgba(102, 102, 102, 0.2);
+        text-transform: none;
       }
 
       /* Hero section */
@@ -434,6 +443,21 @@
         background: #519447;
         transform: translateY(-3px);
         box-shadow: 0 8px 30px rgba(99, 180, 90, 0.6);
+      }
+
+      .registration-status {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--dark-text);
+        padding: 1.1rem 2.2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero .registration-status {
+        color: var(--dark-text);
       }
 
       /* Section styles */
@@ -1442,12 +1466,11 @@
         </li>
         <li>
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdmjHvtwccoLV5AWAFi3aEKA6ef76x9n_XdlA8gCuisNHLioA/viewform?usp=header"
-            target="_blank"
-            rel="noopener"
-            class="nav-cta"
+            class="nav-cta nav-cta-disabled"
             data-i18n="nav.cta"
-            >Inscrições</a
+            aria-disabled="true"
+            tabindex="-1"
+            >Inscrições encerradas</a
           >
         </li>
       </ul>
@@ -1493,14 +1516,9 @@
           </div>
         </div>
 
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdmjHvtwccoLV5AWAFi3aEKA6ef76x9n_XdlA8gCuisNHLioA/viewform?usp=header"
-          target="_blank"
-          rel="noopener"
-          class="btn-primary"
-          data-i18n="hero.cta"
-          >Inscrições Gratuitas e Limitadas</a
-        >
+        <p class="registration-status" data-i18n="hero.registrationClosed">
+          Inscrições encerradas! Agradecemos e até o próximo evento.
+        </p>
       </div>
     </header>
 
@@ -2223,8 +2241,8 @@
                   Mesa 1 – Multidisciplinariedade em tumores
                   Gastrointestinais<br />
                   <small
-                    >Presidente: Rossano Araújo | Moderadores: Jenna, Rosaura
-                    Campos, Fernanda (enf)</small
+                    >Presidente: Rossano Araújo | Moderadores: Jenna Kadja,
+                    Rosaura Campos, Fernanda (enf)</small
                   >
                 </td>
               </tr>
@@ -2685,7 +2703,7 @@
     <!-- Registration CTA section -->
     <section id="inscricao" class="fade-in">
       <div class="container text-center">
-        <h2 data-i18n="cta.title">Garanta sua vaga</h2>
+        <h2 data-i18n="cta.title">Inscrições encerradas</h2>
         <p
           style="
             font-size: 1.15rem;
@@ -2694,20 +2712,10 @@
             color: var(--dark-text);
           "
         >
-          <span data-i18n="cta.text">
-            O número de participantes é limitado a <strong>80 vagas</strong>.
-            Faça sua inscrição <strong>gratuitamente</strong> através do
-            formulário oficial.
+          <span class="registration-status" data-i18n="cta.text">
+            Inscrições encerradas! Agradecemos e até o próximo evento.
           </span>
         </p>
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdmjHvtwccoLV5AWAFi3aEKA6ef76x9n_XdlA8gCuisNHLioA/viewform?usp=header"
-          target="_blank"
-          rel="noopener"
-          class="btn-primary"
-          data-i18n="cta.button"
-          >Inscrever-me agora</a
-        >
       </div>
     </section>
 
@@ -3000,12 +3008,14 @@
           "nav.schedule": "Programação",
           "nav.venue": "Local",
           "nav.contact": "Contato",
-          "nav.cta": "Inscrições",
+          "nav.cta": "Inscrições encerradas",
           "hero.title": "III Simpósio do Trato Gastrointestinal",
           "hero.subtitle":
             "31 de outubro e 1º de novembro de 2025<br />Novotel Recife Marina",
           "hero.orgs": "Realização",
           "hero.cta": "Inscrições Gratuitas e Limitadas",
+          "hero.registrationClosed":
+            "Inscrições encerradas! Agradecemos e até o próximo evento.",
           "about.title": "Sobre o Simpósio",
           "about.intro":
             "O <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong>, na condição de promotor do evento, ressalta que o principal objetivo desse encontro é promover a atualização, discussão e troca de experiências voltado à área da oncologia do trato gastrointestinal.",
@@ -3046,9 +3056,9 @@
             "Localizado no coração de Recife, no complexo Porto Novo Recife, o hotel facilita o acesso às principais atrações turísticas da cidade.",
           "venue.tip":
             "<strong>Dica:</strong> Aproveite o rooftop do hotel para contemplar a vista da marina e desfrutar de momentos de convivência com os colegas participantes.",
-          "cta.title": "Garanta sua vaga",
+          "cta.title": "Inscrições encerradas",
           "cta.text":
-            "O número de participantes é limitado a <strong>80 vagas</strong>. Faça sua inscrição <strong>gratuitamente</strong> através do formulário oficial.",
+            "Inscrições encerradas! Agradecemos e até o próximo evento.",
           "cta.button": "Inscrever-me agora",
           "contact.title": "Contato",
           "contact.intro":
@@ -3076,12 +3086,14 @@
           "nav.schedule": "Schedule",
           "nav.venue": "Venue",
           "nav.contact": "Contact",
-          "nav.cta": "Register",
+          "nav.cta": "Registration closed",
           "hero.title": "3rd Gastrointestinal Tract Symposium",
           "hero.subtitle":
             "October 31 and November 1, 2025<br />Novotel Recife Marina",
           "hero.orgs": "Organizers",
           "hero.cta": "Free and Limited Registration",
+          "hero.registrationClosed":
+            "Registration closed! Thank you and see you at the next event.",
           "about.title": "About the Symposium",
           "about.intro":
             "The <strong>Santa Joana Institute for Education and Research – ISEP</strong>, as the event promoter, emphasizes that the main objective of this meeting is to promote updates, discussion, and exchange of experiences focused on gastrointestinal oncology.",
@@ -3120,9 +3132,9 @@
             "Located in the heart of Recife, in the Porto Novo Recife complex, the hotel provides easy access to the city's main tourist attractions.",
           "venue.tip":
             "<strong>Tip:</strong> Enjoy the hotel rooftop for great marina views and networking moments.",
-          "cta.title": "Secure your spot",
+          "cta.title": "Registration closed",
           "cta.text":
-            "The number of participants is limited to <strong>80 seats</strong>. Register <strong>for free</strong> using the official form.",
+            "Registration closed! Thank you and see you at the next event.",
           "cta.button": "Register now",
           "contact.title": "Contact",
           "contact.intro":
@@ -3150,12 +3162,14 @@
           "nav.schedule": "Programa",
           "nav.venue": "Sede",
           "nav.contact": "Contacto",
-          "nav.cta": "Inscribirse",
+          "nav.cta": "Inscripciones cerradas",
           "hero.title": "III Simposio del Tracto Gastrointestinal",
           "hero.subtitle":
             "31 de octubre y 1 de noviembre de 2025<br />Novotel Recife Marina",
           "hero.orgs": "Organización",
           "hero.cta": "Inscripciones Gratuitas y Limitadas",
+          "hero.registrationClosed":
+            "¡Inscripciones cerradas! Gracias y hasta el próximo evento.",
           "about.title": "Sobre el Simposio",
           "about.intro":
             "El <strong>Instituto Santa Joana de Enseñanza e Investigación – ISEP</strong>, como promotor del evento, enfatiza que el objetivo principal de este encuentro es promover la actualización, discusión e intercambio de experiencias enfocadas en oncología gastrointestinal.",
@@ -3196,9 +3210,9 @@
             "Ubicado en el corazón de Recife, en el complejo Porto Novo Recife, el hotel facilita el acceso a las principales atracciones turísticas de la ciudad.",
           "venue.tip":
             "<strong>Consejo:</strong> Disfruta del rooftop del hotel para contemplar las vistas de la marina y hacer networking.",
-          "cta.title": "Asegura tu plaza",
+          "cta.title": "Inscripciones cerradas",
           "cta.text":
-            "El número de participantes está limitado a <strong>80 plazas</strong>. Inscríbete <strong>gratis</strong> mediante el formulario oficial.",
+            "¡Inscripciones cerradas! Gracias y hasta el próximo evento.",
           "cta.button": "Inscribirme ahora",
           "contact.title": "Contacto",
           "contact.intro":
@@ -3226,12 +3240,14 @@
           "nav.schedule": "Programme",
           "nav.venue": "Lieu",
           "nav.contact": "Contact",
-          "nav.cta": "S'inscrire",
+          "nav.cta": "Inscriptions clôturées",
           "hero.title": "3e Symposium du Tractus Gastro-intestinal",
           "hero.subtitle":
             "31 octobre et 1er novembre 2025<br />Novotel Recife Marina",
           "hero.orgs": "Organisation",
           "hero.cta": "Inscriptions Gratuites et Limitées",
+          "hero.registrationClosed":
+            "Inscriptions clôturées ! Merci et à très bientôt.",
           "about.title": "À propos du Symposium",
           "about.intro":
             "<strong>L'Institut Santa Joana d'Enseignement et de Recherche – ISEP</strong>, en tant que promoteur de l'événement, souligne que l'objectif principal de cette rencontre est de promouvoir la mise à jour, la discussion et l'échange d'expériences axées sur l'oncologie gastro-intestinale.",
@@ -3272,9 +3288,8 @@
             "Situé au cœur de Recife, dans le complexe Porto Novo Recife, l'hôtel facilite l'accès aux principales attractions touristiques de la ville.",
           "venue.tip":
             "<strong>Astuce :</strong> Profitez du rooftop de l'hôtel pour admirer la marina et réseauter.",
-          "cta.title": "Réservez votre place",
-          "cta.text":
-            "Le nombre de participants est limité à <strong>80 places</strong>. Inscrivez-vous <strong>gratuitement</strong> via le formulaire officiel.",
+          "cta.title": "Inscriptions clôturées",
+          "cta.text": "Inscriptions clôturées ! Merci et à très bientôt.",
           "cta.button": "M'inscrire maintenant",
           "contact.title": "Contact",
           "contact.intro":
