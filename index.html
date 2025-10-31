@@ -474,6 +474,34 @@
         margin: 0 auto;
       }
 
+      .photo-gallery {
+        margin-top: 2rem;
+      }
+
+      .photo-embed {
+        position: relative;
+        width: 100%;
+        padding-top: 62.5%;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(17, 17, 17, 0.12);
+        background: #fff;
+      }
+
+      .photo-embed iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      @media (max-width: 768px) {
+        .photo-embed {
+          border-radius: 12px;
+        }
+      }
+
       .two-column {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1454,6 +1482,7 @@
       <ul id="nav-menu">
         <li><a data-i18n="nav.about" href="#sobre">Sobre</a></li>
         <li><a data-i18n="nav.schedule" href="#programacao">Programação</a></li>
+        <li><a data-i18n="nav.photos" href="#fotos">Fotos</a></li>
         <li><a data-i18n="nav.venue" href="#local">Local</a></li>
         <li><a data-i18n="nav.contact" href="#contato">Contato</a></li>
         <li class="nav-lang-selector">
@@ -2787,6 +2816,30 @@
       </div>
     </section>
 
+    <!-- Photos section -->
+    <section id="fotos" class="fade-in">
+      <div class="container">
+        <h2 class="text-center" data-i18n="photos.title">Galeria de Fotos</h2>
+        <p
+          class="text-center"
+          style="font-size: 1.1rem; margin-bottom: 2.5rem"
+          data-i18n="photos.description"
+        >
+          Reviva os melhores momentos com os registros oficiais do evento.
+        </p>
+
+        <div class="photo-gallery">
+          <div class="photo-embed">
+            <iframe
+              src="https://drive.google.com/embeddedfolderview?id=16Ab5zKmTEofxyEaHS5Z3tfdufNGgnIFD#grid"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact section -->
     <section id="contato" class="fade-in">
       <div class="container two-column">
@@ -3006,6 +3059,7 @@
         pt: {
           "nav.about": "Sobre",
           "nav.schedule": "Programação",
+          "nav.photos": "Fotos",
           "nav.venue": "Local",
           "nav.contact": "Contato",
           "nav.cta": "Inscrições encerradas",
@@ -3041,6 +3095,9 @@
           "sponsors.title": "Patrocinadores",
           "sponsors.intro":
             "Agradecemos o apoio dos nossos patrocinadores que tornam este evento possível:",
+          "photos.title": "Galeria de Fotos",
+          "photos.description":
+            "Reviva os melhores momentos com os registros oficiais do evento.",
           "schedule.title": "Programação Científica",
           "schedule.download": "Baixe aqui a sua programação",
           "schedule.day1": "Sexta-feira 31/10/2025",
@@ -3084,6 +3141,7 @@
         en: {
           "nav.about": "About",
           "nav.schedule": "Schedule",
+          "nav.photos": "Photos",
           "nav.venue": "Venue",
           "nav.contact": "Contact",
           "nav.cta": "Registration closed",
@@ -3117,6 +3175,9 @@
           "sponsors.title": "Sponsors",
           "sponsors.intro":
             "We thank our sponsors for their support that makes this event possible:",
+          "photos.title": "Photo Gallery",
+          "photos.description":
+            "Relive the best moments with the official event photos.",
           "schedule.title": "Scientific Program",
           "schedule.download": "Download the program here",
           "schedule.day1": "Friday 10/31/2025",
@@ -3160,6 +3221,7 @@
         es: {
           "nav.about": "Acerca de",
           "nav.schedule": "Programa",
+          "nav.photos": "Fotos",
           "nav.venue": "Sede",
           "nav.contact": "Contacto",
           "nav.cta": "Inscripciones cerradas",
@@ -3195,6 +3257,9 @@
           "sponsors.title": "Patrocinadores",
           "sponsors.intro":
             "Agradecemos el apoyo de nuestros patrocinadores que hacen posible este evento:",
+          "photos.title": "Galería de Fotos",
+          "photos.description":
+            "Revive los mejores momentos con los registros oficiales del evento.",
           "schedule.title": "Programa Científico",
           "schedule.download": "Descargue aquí su programación",
           "schedule.day1": "Viernes 31/10/2025",
@@ -3238,6 +3303,7 @@
         fr: {
           "nav.about": "À propos",
           "nav.schedule": "Programme",
+          "nav.photos": "Photos",
           "nav.venue": "Lieu",
           "nav.contact": "Contact",
           "nav.cta": "Inscriptions clôturées",
@@ -3273,6 +3339,9 @@
           "sponsors.title": "Partenaires",
           "sponsors.intro":
             "Nous remercions nos partenaires pour leur soutien qui rend cet événement possible :",
+          "photos.title": "Galerie de Photos",
+          "photos.description":
+            "Revivez les meilleurs moments grâce aux photos officielles de l'événement.",
           "schedule.title": "Programme scientifique",
           "schedule.download": "Téléchargez votre programme ici",
           "schedule.day1": "Vendredi 31/10/2025",
