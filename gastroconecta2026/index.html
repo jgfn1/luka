@@ -434,6 +434,143 @@
         transform: none;
       }
 
+      /* Countdown section */
+      #countdown-section {
+        background: linear-gradient(
+          135deg,
+          var(--secondary) 0%,
+          var(--primary) 50%,
+          var(--accent) 100%
+        );
+        padding: 2rem 1.5rem;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #countdown-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 20% 80%,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+
+      #countdown-section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      #countdown-section h2 {
+        color: #fff;
+        margin-bottom: 0.3rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      #countdown-section p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        opacity: 0.95;
+        color: #fff;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .countdown-timer {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .countdown-item {
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.25),
+          rgba(255, 255, 255, 0.1)
+        );
+        backdrop-filter: blur(10px);
+        padding: 0.8rem 1rem;
+        border-radius: 16px;
+        min-width: 90px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+      }
+
+      .countdown-item::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.4),
+          transparent,
+          rgba(255, 255, 255, 0.4)
+        );
+        border-radius: 17px;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: -1;
+      }
+
+      .countdown-item:hover {
+        transform: translateY(-10px) scale(1.05);
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.35),
+          rgba(255, 255, 255, 0.15)
+        );
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25),
+          inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      }
+
+      .countdown-item:hover::before {
+        opacity: 1;
+      }
+
+      .countdown-number {
+        font-size: 2.2rem;
+        font-weight: 800;
+        display: block;
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 0.3rem;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2),
+          0 4px 16px rgba(0, 0, 0, 0.15);
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: -1px;
+      }
+
+      .countdown-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: rgba(255, 255, 255, 0.95);
+        font-weight: 600;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+      }
+
       /* Events grid - adapted from TGI structure */
       .events-grid {
         display: grid;
@@ -1252,8 +1389,8 @@
               <div>
                 <h4 data-i18n="location.address">Endereço</h4>
                 <p data-i18n="location.addressText">
-                  Av. República do Líbano, 251<br />
-                  Pina, Recife - PE
+                  Cais de Santa Rita, 46 – Bairro São José<br />
+                  Recife – PE, CEP 50.020-455
                 </p>
               </div>
             </div>
@@ -1515,7 +1652,7 @@
           "location.venue": "Novotel Recife Marina",
           "location.address": "Endereço",
           "location.addressText":
-            "Av. República do Líbano, 251<br />Pina, Recife - PE",
+            "Cais de Santa Rita, 46 – Bairro São José<br />Recife – PE, CEP 50.020-455",
           "location.date": "Data",
           "location.dateText": "27 de Março de 2026 (Sexta-feira)",
           "location.structure": "Estrutura",
@@ -1636,7 +1773,7 @@
           "location.venue": "Novotel Recife Marina",
           "location.address": "Address",
           "location.addressText":
-            "Av. República do Líbano, 251<br />Pina, Recife - PE",
+            "Cais de Santa Rita, 46 – Bairro São José<br />Recife – PE, CEP 50.020-455",
           "location.date": "Date",
           "location.dateText": "March 27, 2026 (Friday)",
           "location.structure": "Structure",
@@ -1763,7 +1900,7 @@
           "location.venue": "Novotel Recife Marina",
           "location.address": "Adresse",
           "location.addressText":
-            "Av. República do Líbano, 251<br />Pina, Recife - PE",
+            "Cais de Santa Rita, 46 – Bairro São José<br />Recife – PE, CEP 50.020-455",
           "location.date": "Date",
           "location.dateText": "27 mars 2026 (Vendredi)",
           "location.structure": "Structure",
