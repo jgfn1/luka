@@ -1,66 +1,28 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/",
+      "source": "/:path((?!gastroconecta2026).*)*",
       "has": [
         {
           "type": "host",
           "value": "gastroconecta2026.com.br"
         }
       ],
-      "destination": "/gastroconecta2026/index.html"
+      "destination": "/gastroconecta2026/:path*",
+      "permanent": false
     },
     {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "gastroconecta2026.com.br"
-        }
-      ],
-      "destination": "/gastroconecta2026/:path*"
-    },
-    {
-      "source": "/",
+      "source": "/:path((?!gastroconecta2026).*)*",
       "has": [
         {
           "type": "host",
           "value": "www.gastroconecta2026.com.br"
         }
       ],
-      "destination": "/gastroconecta2026/index.html"
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.gastroconecta2026.com.br"
-        }
-      ],
-      "destination": "/gastroconecta2026/:path*"
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "tgirecife.com.br"
-        }
-      ],
-      "destination": "/index.html"
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.tgirecife.com.br"
-        }
-      ],
-      "destination": "/index.html"
+      "destination": "/gastroconecta2026/:path*",
+      "permanent": false
     }
   ],
   "headers": [
