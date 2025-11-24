@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gastro Conecta & Nutri Conecta 2026 | 27 de Março 2026</title>
+    <meta
+      name="description"
+      content="Gastro Conecta & Nutri Conecta 2026. 27 de março de 2026 no Novotel Recife Marina. Promovido por Instituto Endogastro Academy."
+    />
+    <meta
+      name="keywords"
+      content="gastroenterologia, nutrição, simpósio, Recife, Endogastro Academy"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.gastroconecta2026.com.br/" />
+    <meta property="og:title" content="Gastro Conecta & Nutri Conecta 2026" />
+    <meta
+      property="og:description"
+      content="27 de março de 2026 no Novotel Recife Marina"
+    />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      /* Color palette inspired by gastroconecta2026 branding */
+      :root {
+        --primary: #2c5f7d; /* rich blue */
+        --secondary: #4a9eba; /* sky blue */
+        --accent: #e8a838; /* gold */
+        --accent-green: #6fa83e; /* nutri green */
+        --light-bg: #f8f9fa;
+        --dark-text: #333333;
+        --muted-text: #666666;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Open Sans", Arial, sans-serif;
+        color: var(--dark-text);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Montserrat", sans-serif;
+        color: var(--primary);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+      h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+      h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 1.5rem 0 1rem;
+      }
+
+      p {
+        margin: 0.5rem 0 1rem;
+      }
+
+      a {
+        color: var(--primary);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover,
+      a:focus {
+        color: var(--secondary);
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0.75rem 2rem;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      nav.scrolled {
+        padding: 0.5rem 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      nav .logo-small {
+        height: 70px;
+        transition: height 0.3s ease;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      nav .logo-small span {
+        background: linear-gradient(135deg, var(--accent) 0%, #f5c563 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      nav.scrolled .logo-small {
+        height: 60px;
+        font-size: 1.3rem;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      nav ul li a {
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 0.5rem 0;
+        position: relative;
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent);
+        transition: width 0.3s ease;
+      }
+
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+
+      /* Language selector in nav */
+      .nav-lang-selector {
+        position: relative;
+        display: inline-block;
+      }
+
+      .nav-lang-selector select {
+        appearance: none;
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        padding: 0.5rem 2rem 0.5rem 0.75rem;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .nav-lang-selector select:hover {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      .nav-lang-selector::after {
+        content: "▼";
+        position: absolute;
+        right: 0.7rem;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        font-size: 0.7rem;
+        color: var(--primary);
+      }
+
+      .nav-lang-selector:hover::after {
+        color: #fff;
+      }
+
+      /* Nav CTA button */
+      .nav-cta {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--accent) 0%, #f5c563 100%);
+        color: var(--dark-text) !important;
+        padding: 0.8rem 1.6rem;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 14px rgba(232, 168, 56, 0.4);
+        text-transform: uppercase;
+      }
+
+      .nav-cta:hover:not(.nav-cta-disabled) {
+        background: linear-gradient(135deg, #f5c563 0%, var(--accent) 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(232, 168, 56, 0.5);
+        color: var(--dark-text);
+      }
+
+      .nav-cta.nav-cta-disabled {
+        background: rgba(102, 102, 102, 0.25);
+        color: var(--muted-text) !important;
+        cursor: default;
+        box-shadow: none;
+        border: 1px solid rgba(102, 102, 102, 0.2);
+        text-transform: none;
+      }
+
+      /* Hero section */
+      header.hero {
+        position: relative;
+        min-height: 90vh;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 100px 1rem 3rem;
+        overflow: hidden;
+      }
+
+      /* Video background */
+      .hero-video-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .hero-video-bg iframe {
+        width: 100vw;
+        height: 56.25vw; /* 16:9 aspect ratio */
+        min-height: 100vh;
+        min-width: 177.77vh; /* 16:9 aspect ratio */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Overlay on video */
+      header.hero .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(44, 95, 125, 0.75) 0%,
+          rgba(74, 158, 186, 0.7) 50%,
+          rgba(232, 168, 56, 0.65) 100%
+        );
+        z-index: 1;
+      }
+
+      header.hero .hero-overlay::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            circle at 20% 50%,
+            rgba(232, 168, 56, 0.2) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(44, 95, 125, 0.3) 0%,
+            transparent 50%
+          );
+        animation: pulse 8s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.7;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      header.hero .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1000px;
+        width: 100%;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      header.hero h1 {
+        color: #fff;
+        margin-bottom: 1rem;
+        font-size: 2.8rem;
+        text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+        animation: fadeInUp 1s ease-out 0.2s both;
+      }
+
+      header.hero h1 span {
+        background: linear-gradient(135deg, var(--accent) 0%, #f5c563 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      header.hero p {
+        color: #f2f2f2;
+        font-size: 1.25rem;
+        margin-bottom: 2.5rem;
+        animation: fadeInUp 1s ease-out 0.4s both;
+      }
+
+      .btn-primary {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--accent) 0%, #f5c563 100%);
+        color: var(--dark-text) !important;
+        padding: 1.1rem 2.5rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 20px rgba(232, 168, 56, 0.5);
+        animation: fadeInUp 1s ease-out 0.6s both;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .btn-primary:hover {
+        background: linear-gradient(135deg, #f5c563 0%, var(--accent) 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(232, 168, 56, 0.6);
+        color: var(--dark-text);
+      }
+
+      .registration-status {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--dark-text);
+        padding: 1.1rem 2.2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero .registration-status {
+        color: var(--dark-text);
+      }
+
+      /* Section styles */
+      section {
+        padding: 5rem 2rem;
+      }
+
+      section:nth-of-type(even) {
+        background: var(--light-bg);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .two-column {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+      }
+
+      /* Fade-in on scroll animation */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* Events grid - adapted from TGI structure */
+      .events-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+
+      .event-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border-top: 4px solid var(--primary);
+      }
+
+      .event-card.gastro {
+        border-top-color: var(--primary);
+      }
+
+      .event-card.nutri {
+        border-top-color: var(--accent-green);
+      }
+
+      .event-card.curso {
+        border-top-color: var(--accent);
+      }
+
+      .event-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .event-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .event-card h3 i {
+        font-size: 2rem;
+      }
+
+      .event-card .badge {
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .badge-free {
+        background: #e8f5e9;
+        color: #2e7d32;
+      }
+
+      .badge-paid {
+        background: #fff3e0;
+        color: #e65100;
+      }
+
+      /* Committee grid */
+      .committee-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1.5rem;
+        margin: 2rem 0;
+        max-width: 1400px;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .committee-member {
+        text-align: center;
+      }
+
+      .committee-photo {
+        width: 100%;
+        max-width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        background: #e0e0e0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 3rem;
+      }
+
+      .committee-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .committee-member h4 {
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+        color: var(--primary);
+      }
+
+      .committee-member p {
+        font-size: 0.85rem;
+        color: var(--muted-text);
+      }
+
+      /* Topics section */
+      .topics-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .topic-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .topic-card h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+      }
+
+      .topic-card h3 i {
+        font-size: 2rem;
+        color: var(--accent);
+      }
+
+      .topic-card h4 {
+        color: var(--secondary);
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .topic-card li {
+        padding: 0.5rem 0 0.5rem 1.5rem;
+        position: relative;
+        color: var(--dark-text);
+      }
+
+      .topic-card li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 1.2rem;
+      }
+
+      /* Location section */
+      .location-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin: 2rem 0;
+      }
+
+      .location-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .location-item {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .location-item i {
+        font-size: 1.5rem;
+        color: var(--accent);
+        margin-top: 0.25rem;
+      }
+
+      .location-item h4 {
+        color: var(--primary);
+        margin-bottom: 0.25rem;
+      }
+
+      .location-item p {
+        color: var(--muted-text);
+      }
+
+      .map-container {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        height: 400px;
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--primary);
+        color: rgba(255, 255, 255, 0.9);
+        padding: 3rem 2rem 1.5rem;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto 2rem;
+      }
+
+      .footer-section h4 {
+        color: #fff;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: rgba(255, 255, 255, 0.8);
+        display: block;
+        margin-bottom: 0.5rem;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section a:hover {
+        color: var(--accent);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background: var(--accent);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+      }
+
+      /* Mobile menu */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--primary);
+        cursor: pointer;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .events-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .committee-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .topics-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .location-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          display: none;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        header.hero h1 {
+          font-size: 2rem;
+        }
+
+        header.hero p {
+          font-size: 1rem;
+        }
+
+        section {
+          padding: 3rem 1.5rem;
+        }
+
+        .committee-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="logo-small">
+        <i class="fas fa-stethoscope"></i>
+        Gastro <span>&</span> Nutri Conecta
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul id="nav-menu">
+        <li><a href="#top" data-i18n="nav.home">Início</a></li>
+        <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#eventos" data-i18n="nav.events">Eventos</a></li>
+        <li><a href="#temas" data-i18n="nav.topics">Temas</a></li>
+        <li><a href="#comissao" data-i18n="nav.committee">Comissão</a></li>
+        <li><a href="#local" data-i18n="nav.location">Local</a></li>
+        <li class="nav-lang-selector">
+          <select id="language-select" onchange="changeLanguage()">
+            <option value="pt">PT</option>
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+          </select>
+        </li>
+        <li>
+          <a href="#inscricoes" class="nav-cta" data-i18n="nav.register">
+            Inscreva-se
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Hero section -->
+    <header class="hero" id="top">
+      <!-- Video Background -->
+      <div class="hero-video-bg">
+        <iframe
+          src="https://www.youtube.com/embed/NnET9qG9Bhw?autoplay=1&mute=1&loop=1&playlist=NnET9qG9Bhw&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <!-- Overlay -->
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <h1 data-i18n="hero.title">
+          Gastro Conecta <span>&</span> Nutri Conecta <span>2026</span>
+        </h1>
+        <p data-i18n="hero.subtitle">
+          27 de março de 2026<br />Novotel Recife Marina
+        </p>
+
+        <p class="registration-status" data-i18n="hero.registrationSoon">
+          Inscrições em breve! Mantenha-se atualizado.
+        </p>
+      </div>
+    </header>
+
+    <!-- About section -->
+    <section id="sobre" class="fade-in">
+      <div class="container">
+        <h2 data-i18n="about.title">Sobre os Eventos</h2>
+        <p data-i18n="about.intro">
+          O Instituto Endogastro Academy tem a honra de anunciar os Simpósios
+          <strong>GastroConecta</strong> e <strong>NutriConecta 2026</strong>.
+          Eventos científicos de excelência voltados à discussão de temas
+          contemporâneos e relevantes sobre o trato gastrointestinal, obesidade,
+          medicina de precisão, genética, saúde, comportamento alimentar e
+          bem-estar.
+        </p>
+        <p data-i18n="about.specialists">
+          Os simpósios reunirão especialistas renomados de diversas áreas para
+          promover o compartilhamento de conhecimentos, experiências e inovações
+          que impactam diretamente a prática clínica e cirúrgica.
+        </p>
+        <p data-i18n="about.opportunity">
+          Será uma oportunidade única para profissionais de saúde de diversas
+          regiões discutirem as melhores práticas, explorarem as mais recentes
+          evidências científicas e fortalecerem o trabalho em equipe no cuidado
+          ao paciente.
+        </p>
+        <h3 style="text-align: center; margin-top: 3rem">
+          <span data-i18n="about.organizer">Realização:</span>
+          <span style="color: var(--accent)">Instituto Endogastro Academy</span>
+        </h3>
+      </div>
+    </section>
+
+    <!-- Events section -->
+    <section id="eventos" class="fade-in">
+      <div class="container">
+        <h2 data-i18n="events.title">Três Eventos em Um Único Dia</h2>
+        <p
+          style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem"
+          data-i18n="events.subtitle"
+        >
+          Escolha o evento que melhor atende suas necessidades profissionais
+        </p>
+
+        <div class="events-grid">
+          <!-- Gastro Conecta -->
+          <div class="event-card gastro">
+            <h3>
+              <i class="fas fa-stomach"></i>
+              <span data-i18n="events.gastro.title">Gastro Conecta</span>
+            </h3>
+            <span class="badge badge-free" data-i18n="events.gastro.badge">
+              Inscrições Gratuitas
+            </span>
+            <p data-i18n="events.gastro.description">
+              Simpósio focado nas mais recentes atualizações em
+              gastroenterologia, endoscopia e cirurgia do aparelho digestivo.
+            </p>
+            <p style="margin-top: 1rem">
+              <strong data-i18n="events.gastro.audience">Público-Alvo:</strong
+              ><br />
+              <span data-i18n="events.gastro.audienceText">
+                Gastroenterologistas, endoscopistas, cirurgiões e profissionais
+                da área
+              </span>
+            </p>
+          </div>
+
+          <!-- Nutri Conecta -->
+          <div class="event-card nutri">
+            <h3>
+              <i class="fas fa-apple-alt"></i>
+              <span data-i18n="events.nutri.title">Nutri Conecta</span>
+            </h3>
+            <span class="badge badge-free" data-i18n="events.nutri.badge">
+              Inscrições Gratuitas
+            </span>
+            <p data-i18n="events.nutri.description">
+              Evento dedicado à nutrição clínica, nutrologia e medicina de
+              precisão aplicada ao comportamento alimentar.
+            </p>
+            <p style="margin-top: 1rem">
+              <strong data-i18n="events.nutri.audience">Público-Alvo:</strong
+              ><br />
+              <span data-i18n="events.nutri.audienceText">
+                Nutricionistas, nutrólogos, médicos e profissionais da saúde
+              </span>
+            </p>
+          </div>
+
+          <!-- Curso Especial -->
+          <div class="event-card curso">
+            <h3>
+              <i class="fas fa-graduation-cap"></i>
+              <span data-i18n="events.curso.title">Curso Especializado</span>
+            </h3>
+            <span class="badge badge-paid" data-i18n="events.curso.badge">
+              Vagas Limitadas
+            </span>
+            <p data-i18n="events.curso.description">
+              Curso intensivo com turma reduzida para aprofundamento em técnicas
+              avançadas.
+            </p>
+            <p style="margin-top: 1rem">
+              <strong data-i18n="events.curso.spots">Vagas:</strong><br />
+              <span data-i18n="events.curso.spotsText">
+                Limitadas a 15 participantes
+              </span>
+            </p>
+            <p>
+              <strong data-i18n="events.curso.registration">Inscrições:</strong
+              ><br />
+              <span data-i18n="events.curso.registrationText">
+                Via Sympla (Em breve)
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topics section -->
+    <section id="temas" class="fade-in">
+      <div class="container">
+        <h2 data-i18n="topics.title">Principais Temas em Destaque</h2>
+
+        <div class="topics-grid">
+          <!-- Gastro Topics -->
+          <div class="topic-card">
+            <h3>
+              <i class="fas fa-microscope"></i>
+              <span data-i18n="topics.gastro.title">Gastro Conecta</span>
+            </h3>
+
+            <h4 data-i18n="topics.gastro.esophagus">Esôfago e Estômago:</h4>
+            <ul>
+              <li data-i18n="topics.gastro.esophagus1">
+                Prevenção com exames endoscópicos e a inovação da IA
+              </li>
+              <li data-i18n="topics.gastro.esophagus2">Cirurgia endoscópica</li>
+              <li data-i18n="topics.gastro.esophagus3">
+                Tratamento das doenças oncológicas
+              </li>
+            </ul>
+
+            <h4 data-i18n="topics.gastro.intestine">Intestino:</h4>
+            <ul>
+              <li data-i18n="topics.gastro.intestine1">
+                Exames e procedimentos endoscópicos
+              </li>
+              <li data-i18n="topics.gastro.intestine2">
+                Repercussão da IA na prevenção
+              </li>
+              <li data-i18n="topics.gastro.intestine3">
+                Proctologia e suas proporções clínicas
+              </li>
+              <li data-i18n="topics.gastro.intestine4">
+                Doenças inflamatórias intestinais
+              </li>
+              <li data-i18n="topics.gastro.intestine5">
+                Tratamento do câncer colorretal
+              </li>
+            </ul>
+
+            <h4 data-i18n="topics.gastro.emergency">
+              Emergências e Urgências:
+            </h4>
+            <ul>
+              <li data-i18n="topics.gastro.emergency1">
+                Abordagem na hepatologia
+              </li>
+              <li data-i18n="topics.gastro.emergency2">Endoscopia</li>
+              <li data-i18n="topics.gastro.emergency3">Radiologia</li>
+            </ul>
+
+            <h4 data-i18n="topics.gastro.obesity">Obesidade:</h4>
+            <ul>
+              <li data-i18n="topics.gastro.obesity1">
+                A epidemia da obesidade
+              </li>
+              <li data-i18n="topics.gastro.obesity2">
+                Atualizações no tratamento clínico e cirúrgico
+              </li>
+              <li data-i18n="topics.gastro.obesity3">
+                Repercussões metabólicas
+              </li>
+            </ul>
+          </div>
+
+          <!-- Nutri Topics -->
+          <div class="topic-card">
+            <h3>
+              <i class="fas fa-dna"></i>
+              <span data-i18n="topics.nutri.title">Nutri Conecta</span>
+            </h3>
+
+            <h4 data-i18n="topics.nutri.precision">Medicina de Precisão:</h4>
+            <ul>
+              <li data-i18n="topics.nutri.precision1">
+                Uso do perfil genético do paciente
+              </li>
+              <li data-i18n="topics.nutri.precision2">
+                Tratamento personalizado de acordo com sua genética
+              </li>
+              <li data-i18n="topics.nutri.precision3">Terapias assertivas</li>
+            </ul>
+
+            <h4 data-i18n="topics.nutri.women">Saúde da Mulher:</h4>
+            <ul>
+              <li data-i18n="topics.nutri.women1">Climatério e Menopausa</li>
+              <li data-i18n="topics.nutri.women2">
+                Avaliação em cada comportamento desse ciclo
+              </li>
+              <li data-i18n="topics.nutri.women3">
+                Escolha de suplementação adequada
+              </li>
+              <li data-i18n="topics.nutri.women4">
+                Manutenção da saúde mental e física
+              </li>
+            </ul>
+
+            <h4 data-i18n="topics.nutri.behavior">Comportamento Alimentar:</h4>
+            <ul>
+              <li data-i18n="topics.nutri.behavior1">
+                Diferença entre comer fisiológico e emocional
+              </li>
+              <li data-i18n="topics.nutri.behavior2">
+                Mecanismos de fome, saciedade e recompensa
+              </li>
+              <li data-i18n="topics.nutri.behavior3">Neurobiologia do comer</li>
+              <li data-i18n="topics.nutri.behavior4">
+                Identificação de gatilhos emocionais
+              </li>
+              <li data-i18n="topics.nutri.behavior5">
+                Abordagem interdisciplinar
+              </li>
+            </ul>
+
+            <h4 data-i18n="topics.nutri.supplements">Suplementação:</h4>
+            <ul>
+              <li data-i18n="topics.nutri.supplements1">
+                Quando há real necessidade de suplementar
+              </li>
+              <li data-i18n="topics.nutri.supplements2">
+                Bases fisiológicas e nutricionais
+              </li>
+              <li data-i18n="topics.nutri.supplements3">
+                Modulação Metabólica
+              </li>
+              <li data-i18n="topics.nutri.supplements4">
+                Suplementação como complemento
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+    ============================================================
+    SCHEDULE SECTION - TO BE ADDED WHEN DATA IS AVAILABLE
+    ============================================================
+    <section id="programacao" class="fade-in">
+      <div class="container">
+        <h2 data-i18n="schedule.title">Programação Completa</h2>
+        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem;" data-i18n="schedule.subtitle">
+          Confira a programação detalhada do evento
+        </p>
+        
+        <div class="schedule-container">
+          Schedule tabs and content will go here
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- 
+    ============================================================
+    SPEAKERS SECTION - TO BE ADDED WHEN DATA IS AVAILABLE
+    ============================================================
+    <section id="palestrantes" class="fade-in">
+      <div class="container">
+        <h2 data-i18n="speakers.title">Palestrantes</h2>
+        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem;" data-i18n="speakers.subtitle">
+          Especialistas de renome nacional e internacional
+        </p>
+        
+        <div class="speakers-grid">
+          Speaker cards will go here
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- Committee section -->
+    <section id="comissao" class="fade-in">
+      <div class="container">
+        <h2 data-i18n="committee.title">Comissão Organizadora</h2>
+
+        <h3
+          style="
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+          "
+        >
+          <span data-i18n="committee.gastro">Gastro Conecta</span>
+        </h3>
+        <div class="committee-grid">
+          <div class="committee-member">
+            <div class="committee-photo">
+              <i class="fas fa-user-md"></i>
+            </div>
+            <h4>Dr. José Bezerra Câmara Neto</h4>
+            <p data-i18n="committee.role">Comissão Organizadora</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo">
+              <i class="fas fa-user-md"></i>
+            </div>
+            <h4>Dra. Leliane Alencar Bonates</h4>
+            <p data-i18n="committee.role">Comissão Organizadora</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo">
+              <i class="fas fa-user-md"></i>
+            </div>
+            <h4>Dr. Marcos Saturnino</h4>
+            <p data-i18n="committee.role">Comissão Organizadora</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo">
+              <i class="fas fa-user-md"></i>
+            </div>
+            <h4>Dr. Nildevande Firmino</h4>
+            <p data-i18n="committee.role">Comissão Organizadora</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo">
+              <i class="fas fa-user-md"></i>
+            </div>
+            <h4>Dr. Justiniano Othon de Luna</h4>
+            <p data-i18n="committee.role">Comissão Organizadora</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo">
+              <i class="fas fa-user-md"></i>
+            </div>
+            <h4>Dr. Leonardo Bandeira</h4>
+            <p data-i18n="committee.role">Comissão Organizadora</p>
+          </div>
+        </div>
+
+        <h3
+          style="
+            text-align: center;
+            color: var(--accent-green);
+            margin: 4rem 0 2rem;
+            font-size: 1.5rem;
+          "
+        >
+          <span data-i18n="committee.nutri">Nutri Conecta</span>
+        </h3>
+        <div
+          class="committee-grid"
+          style="grid-template-columns: repeat(4, 1fr); max-width: 900px"
+        >
+          <div class="committee-member">
+            <div class="committee-photo">
+              <i class="fas fa-user-md"></i>
+            </div>
+            <h4>Maria Pimentel</h4>
+            <p data-i18n="committee.nutritionist">Nutricionista</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo">
+              <i class="fas fa-user-md"></i>
+            </div>
+            <h4>Dra. Edite Magalhães</h4>
+            <p data-i18n="committee.nutritionist_md">Nutróloga</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo">
+              <i class="fas fa-user-md"></i>
+            </div>
+            <h4>Dra. Renata Martins</h4>
+            <p data-i18n="committee.nutritionist_md">Nutróloga</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo">
+              <i class="fas fa-user-md"></i>
+            </div>
+            <h4>Rebeca Pessoa</h4>
+            <p data-i18n="committee.nutritionist">Nutricionista</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location section -->
+    <section id="local" class="fade-in" style="background: white">
+      <div class="container">
+        <h2 data-i18n="location.title">Local do Evento</h2>
+        <h3
+          style="text-align: center; color: var(--accent); margin-bottom: 3rem"
+          data-i18n="location.venue"
+        >
+          Novotel Recife Marina
+        </h3>
+
+        <div class="location-grid">
+          <div class="location-info">
+            <div class="location-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4 data-i18n="location.address">Endereço</h4>
+                <p data-i18n="location.addressText">
+                  Av. República do Líbano, 251<br />
+                  Pina, Recife - PE
+                </p>
+              </div>
+            </div>
+
+            <div class="location-item">
+              <i class="fas fa-calendar-check"></i>
+              <div>
+                <h4 data-i18n="location.date">Data</h4>
+                <p data-i18n="location.dateText">
+                  27 de Março de 2026 (Sexta-feira)
+                </p>
+              </div>
+            </div>
+
+            <div class="location-item">
+              <i class="fas fa-door-open"></i>
+              <div>
+                <h4 data-i18n="location.structure">Estrutura</h4>
+                <p data-i18n="location.structureText">
+                  3 salas simultâneas com toda infraestrutura necessária
+                </p>
+              </div>
+            </div>
+
+            <div class="location-item">
+              <i class="fas fa-parking"></i>
+              <div>
+                <h4 data-i18n="location.parking">Estacionamento</h4>
+                <p data-i18n="location.parkingText">
+                  Amplo estacionamento disponível no local
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.3385932345827!2d-34.88577148523938!3d-8.080769694217473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18eb4e86ed5d%3A0xd8c8f48b8e8c2b57!2sNovotel%20Recife%20Marina!5e0!3m2!1spt-BR!2sbr!4v1635878945632!5m2!1spt-BR!2sbr"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration section -->
+    <section
+      id="inscricoes"
+      class="fade-in"
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--secondary) 100%
+        );
+        color: white;
+      "
+    >
+      <div class="container" style="text-align: center">
+        <h2 style="color: white" data-i18n="registration.title">
+          Inscrições em Breve
+        </h2>
+        <p
+          style="
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: rgba(255, 255, 255, 0.95);
+          "
+          data-i18n="registration.text"
+        >
+          As inscrições para o Gastro Conecta e Nutri Conecta são gratuitas e
+          serão abertas em breve. Mantenha-se atualizado através de nossas redes
+          sociais!
+        </p>
+        <a
+          href="https://wa.me/5581989529712"
+          class="btn-primary"
+          target="_blank"
+        >
+          <i class="fab fa-whatsapp"></i>
+          <span data-i18n="registration.contact">Entre em Contato</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 
+    ============================================================
+    SPONSORS SECTION - TO BE ADDED WHEN DATA IS AVAILABLE
+    ============================================================
+    <section id="patrocinadores" class="fade-in">
+      <div class="container">
+        <h2 data-i18n="sponsors.title">Patrocinadores</h2>
+        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem;" data-i18n="sponsors.subtitle">
+          Agradecemos o apoio de nossos patrocinadores
+        </p>
+        
+        <div class="sponsors-grid">
+          Sponsor logos will go here
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4 data-i18n="footer.about">Sobre o Evento</h4>
+          <p data-i18n="footer.aboutText">
+            Eventos científicos de excelência voltados para profissionais de
+            gastroenterologia, nutrição e áreas relacionadas.
+          </p>
+          <div class="social-links">
+            <a
+              href="https://www.instagram.com/assessoreventos/"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.assessoreventos.com.br/"
+              target="_blank"
+              aria-label="Website"
+            >
+              <i class="fas fa-globe"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="footer.contact">Contato</h4>
+          <p><i class="fas fa-phone"></i> (81) 98952-9712</p>
+          <p><i class="fas fa-envelope"></i> eventos@assessoreventos.com.br</p>
+          <p><i class="fas fa-map-marker-alt"></i> Recife - PE, Brasil</p>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="footer.organizer">Realização</h4>
+          <p><strong>Instituto Endogastro Academy</strong></p>
+          <p data-i18n="footer.organizerText">
+            Comprometidos com a excelência na educação médica continuada.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © 2026 Gastro Conecta & Nutri Conecta.
+          <span data-i18n="footer.rights">Todos os direitos reservados.</span>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Translations
+      const translations = {
+        pt: {
+          "nav.home": "Início",
+          "nav.about": "Sobre",
+          "nav.events": "Eventos",
+          "nav.topics": "Temas",
+          "nav.committee": "Comissão",
+          "nav.location": "Local",
+          "nav.register": "Inscreva-se",
+          "hero.title": "Gastro Conecta & Nutri Conecta 2026",
+          "hero.subtitle": "27 de março de 2026<br />Novotel Recife Marina",
+          "hero.registrationSoon":
+            "Inscrições em breve! Mantenha-se atualizado.",
+          "about.title": "Sobre os Eventos",
+          "about.intro":
+            "O Instituto Endogastro Academy tem a honra de anunciar os Simpósios GastroConecta e NutriConecta 2026. Eventos científicos de excelência voltados à discussão de temas contemporâneos e relevantes sobre o trato gastrointestinal, obesidade, medicina de precisão, genética, saúde, comportamento alimentar e bem-estar.",
+          "about.specialists":
+            "Os simpósios reunirão especialistas renomados de diversas áreas para promover o compartilhamento de conhecimentos, experiências e inovações que impactam diretamente a prática clínica e cirúrgica.",
+          "about.opportunity":
+            "Será uma oportunidade única para profissionais de saúde de diversas regiões discutirem as melhores práticas, explorarem as mais recentes evidências científicas e fortalecerem o trabalho em equipe no cuidado ao paciente.",
+          "about.organizer": "Realização:",
+          "events.title": "Três Eventos em Um Único Dia",
+          "events.subtitle":
+            "Escolha o evento que melhor atende suas necessidades profissionais",
+          "events.gastro.title": "Gastro Conecta",
+          "events.gastro.badge": "Inscrições Gratuitas",
+          "events.gastro.description":
+            "Simpósio focado nas mais recentes atualizações em gastroenterologia, endoscopia e cirurgia do aparelho digestivo.",
+          "events.gastro.audience": "Público-Alvo:",
+          "events.gastro.audienceText":
+            "Gastroenterologistas, endoscopistas, cirurgiões e profissionais da área",
+          "events.nutri.title": "Nutri Conecta",
+          "events.nutri.badge": "Inscrições Gratuitas",
+          "events.nutri.description":
+            "Evento dedicado à nutrição clínica, nutrologia e medicina de precisão aplicada ao comportamento alimentar.",
+          "events.nutri.audience": "Público-Alvo:",
+          "events.nutri.audienceText":
+            "Nutricionistas, nutrólogos, médicos e profissionais da saúde",
+          "events.curso.title": "Curso Especializado",
+          "events.curso.badge": "Vagas Limitadas",
+          "events.curso.description":
+            "Curso intensivo com turma reduzida para aprofundamento em técnicas avançadas.",
+          "events.curso.spots": "Vagas:",
+          "events.curso.spotsText": "Limitadas a 15 participantes",
+          "events.curso.registration": "Inscrições:",
+          "events.curso.registrationText": "Via Sympla (Em breve)",
+          "topics.title": "Principais Temas em Destaque",
+          "topics.gastro.title": "Gastro Conecta",
+          "topics.gastro.esophagus": "Esôfago e Estômago:",
+          "topics.gastro.esophagus1":
+            "Prevenção com exames endoscópicos e a inovação da IA",
+          "topics.gastro.esophagus2": "Cirurgia endoscópica",
+          "topics.gastro.esophagus3": "Tratamento das doenças oncológicas",
+          "topics.gastro.intestine": "Intestino:",
+          "topics.gastro.intestine1": "Exames e procedimentos endoscópicos",
+          "topics.gastro.intestine2": "Repercussão da IA na prevenção",
+          "topics.gastro.intestine3": "Proctologia e suas proporções clínicas",
+          "topics.gastro.intestine4": "Doenças inflamatórias intestinais",
+          "topics.gastro.intestine5": "Tratamento do câncer colorretal",
+          "topics.gastro.emergency": "Emergências e Urgências:",
+          "topics.gastro.emergency1": "Abordagem na hepatologia",
+          "topics.gastro.emergency2": "Endoscopia",
+          "topics.gastro.emergency3": "Radiologia",
+          "topics.gastro.obesity": "Obesidade:",
+          "topics.gastro.obesity1": "A epidemia da obesidade",
+          "topics.gastro.obesity2":
+            "Atualizações no tratamento clínico e cirúrgico",
+          "topics.gastro.obesity3": "Repercussões metabólicas",
+          "topics.nutri.title": "Nutri Conecta",
+          "topics.nutri.precision": "Medicina de Precisão:",
+          "topics.nutri.precision1": "Uso do perfil genético do paciente",
+          "topics.nutri.precision2":
+            "Tratamento personalizado de acordo com sua genética",
+          "topics.nutri.precision3": "Terapias assertivas",
+          "topics.nutri.women": "Saúde da Mulher:",
+          "topics.nutri.women1": "Climatério e Menopausa",
+          "topics.nutri.women2": "Avaliação em cada comportamento desse ciclo",
+          "topics.nutri.women3": "Escolha de suplementação adequada",
+          "topics.nutri.women4": "Manutenção da saúde mental e física",
+          "topics.nutri.behavior": "Comportamento Alimentar:",
+          "topics.nutri.behavior1":
+            "Diferença entre comer fisiológico e emocional",
+          "topics.nutri.behavior2":
+            "Mecanismos de fome, saciedade e recompensa",
+          "topics.nutri.behavior3": "Neurobiologia do comer",
+          "topics.nutri.behavior4": "Identificação de gatilhos emocionais",
+          "topics.nutri.behavior5": "Abordagem interdisciplinar",
+          "topics.nutri.supplements": "Suplementação:",
+          "topics.nutri.supplements1":
+            "Quando há real necessidade de suplementar",
+          "topics.nutri.supplements2": "Bases fisiológicas e nutricionais",
+          "topics.nutri.supplements3": "Modulação Metabólica",
+          "topics.nutri.supplements4": "Suplementação como complemento",
+          "committee.title": "Comissão Organizadora",
+          "committee.gastro": "Gastro Conecta",
+          "committee.nutri": "Nutri Conecta",
+          "committee.role": "Comissão Organizadora",
+          "committee.nutritionist": "Nutricionista",
+          "committee.nutritionist_md": "Nutróloga",
+          "location.title": "Local do Evento",
+          "location.venue": "Novotel Recife Marina",
+          "location.address": "Endereço",
+          "location.addressText":
+            "Av. República do Líbano, 251<br />Pina, Recife - PE",
+          "location.date": "Data",
+          "location.dateText": "27 de Março de 2026 (Sexta-feira)",
+          "location.structure": "Estrutura",
+          "location.structureText":
+            "3 salas simultâneas com toda infraestrutura necessária",
+          "location.parking": "Estacionamento",
+          "location.parkingText": "Amplo estacionamento disponível no local",
+          "registration.title": "Inscrições em Breve",
+          "registration.text":
+            "As inscrições para o Gastro Conecta e Nutri Conecta são gratuitas e serão abertas em breve. Mantenha-se atualizado através de nossas redes sociais!",
+          "registration.contact": "Entre em Contato",
+          "footer.about": "Sobre o Evento",
+          "footer.aboutText":
+            "Eventos científicos de excelência voltados para profissionais de gastroenterologia, nutrição e áreas relacionadas.",
+          "footer.contact": "Contato",
+          "footer.organizer": "Realização",
+          "footer.organizerText":
+            "Comprometidos com a excelência na educação médica continuada.",
+          "footer.rights": "Todos os direitos reservados.",
+        },
+        en: {
+          "nav.home": "Home",
+          "nav.about": "About",
+          "nav.events": "Events",
+          "nav.topics": "Topics",
+          "nav.committee": "Committee",
+          "nav.location": "Location",
+          "nav.register": "Register",
+          "hero.title": "Gastro Conecta & Nutri Conecta 2026",
+          "hero.subtitle": "March 27, 2026<br />Novotel Recife Marina",
+          "hero.registrationSoon": "Registration coming soon! Stay updated.",
+          "about.title": "About the Events",
+          "about.intro":
+            "The Endogastro Academy Institute is honored to announce the GastroConecta and NutriConecta 2026 Symposiums. Scientific events of excellence focused on discussing contemporary and relevant topics about the gastrointestinal tract, obesity, precision medicine, genetics, health, eating behavior and well-being.",
+          "about.specialists":
+            "The symposiums will bring together renowned specialists from various areas to promote the sharing of knowledge, experiences and innovations that directly impact clinical and surgical practice.",
+          "about.opportunity":
+            "It will be a unique opportunity for health professionals from various regions to discuss best practices, explore the latest scientific evidence and strengthen teamwork in patient care.",
+          "about.organizer": "Organization:",
+          "events.title": "Three Events in One Day",
+          "events.subtitle":
+            "Choose the event that best meets your professional needs",
+          "events.gastro.title": "Gastro Conecta",
+          "events.gastro.badge": "Free Registration",
+          "events.gastro.description":
+            "Symposium focused on the latest updates in gastroenterology, endoscopy and digestive system surgery.",
+          "events.gastro.audience": "Target Audience:",
+          "events.gastro.audienceText":
+            "Gastroenterologists, endoscopists, surgeons and area professionals",
+          "events.nutri.title": "Nutri Conecta",
+          "events.nutri.badge": "Free Registration",
+          "events.nutri.description":
+            "Event dedicated to clinical nutrition, nutrology and precision medicine applied to eating behavior.",
+          "events.nutri.audience": "Target Audience:",
+          "events.nutri.audienceText":
+            "Nutritionists, nutrologists, doctors and health professionals",
+          "events.curso.title": "Specialized Course",
+          "events.curso.badge": "Limited Spots",
+          "events.curso.description":
+            "Intensive course with reduced class size for advanced techniques.",
+          "events.curso.spots": "Spots:",
+          "events.curso.spotsText": "Limited to 15 participants",
+          "events.curso.registration": "Registration:",
+          "events.curso.registrationText": "Via Sympla (Coming soon)",
+          "topics.title": "Main Featured Topics",
+          "topics.gastro.title": "Gastro Conecta",
+          "topics.gastro.esophagus": "Esophagus and Stomach:",
+          "topics.gastro.esophagus1":
+            "Prevention with endoscopic exams and AI innovation",
+          "topics.gastro.esophagus2": "Endoscopic surgery",
+          "topics.gastro.esophagus3": "Treatment of oncological diseases",
+          "topics.gastro.intestine": "Intestine:",
+          "topics.gastro.intestine1": "Endoscopic exams and procedures",
+          "topics.gastro.intestine2": "AI impact on prevention",
+          "topics.gastro.intestine3": "Proctology and its clinical proportions",
+          "topics.gastro.intestine4": "Inflammatory bowel diseases",
+          "topics.gastro.intestine5": "Colorectal cancer treatment",
+          "topics.gastro.emergency": "Emergencies:",
+          "topics.gastro.emergency1": "Approach in hepatology",
+          "topics.gastro.emergency2": "Endoscopy",
+          "topics.gastro.emergency3": "Radiology",
+          "topics.gastro.obesity": "Obesity:",
+          "topics.gastro.obesity1": "The obesity epidemic",
+          "topics.gastro.obesity2":
+            "Updates in clinical and surgical treatment",
+          "topics.gastro.obesity3": "Metabolic repercussions",
+          "topics.nutri.title": "Nutri Conecta",
+          "topics.nutri.precision": "Precision Medicine:",
+          "topics.nutri.precision1": "Use of patient genetic profile",
+          "topics.nutri.precision2":
+            "Personalized treatment according to genetics",
+          "topics.nutri.precision3": "Assertive therapies",
+          "topics.nutri.women": "Women's Health:",
+          "topics.nutri.women1": "Climacteric and Menopause",
+          "topics.nutri.women2": "Assessment of each behavior in this cycle",
+          "topics.nutri.women3": "Choosing appropriate supplementation",
+          "topics.nutri.women4": "Maintenance of mental and physical health",
+          "topics.nutri.behavior": "Eating Behavior:",
+          "topics.nutri.behavior1":
+            "Difference between physiological and emotional eating",
+          "topics.nutri.behavior2": "Mechanisms of hunger, satiety and reward",
+          "topics.nutri.behavior3": "Neurobiology of eating",
+          "topics.nutri.behavior4": "Identification of emotional triggers",
+          "topics.nutri.behavior5": "Interdisciplinary approach",
+          "topics.nutri.supplements": "Supplementation:",
+          "topics.nutri.supplements1":
+            "When there is a real need to supplement",
+          "topics.nutri.supplements2": "Physiological and nutritional bases",
+          "topics.nutri.supplements3": "Metabolic Modulation",
+          "topics.nutri.supplements4": "Supplementation as a complement",
+          "committee.title": "Organizing Committee",
+          "committee.gastro": "Gastro Conecta",
+          "committee.nutri": "Nutri Conecta",
+          "committee.role": "Organizing Committee",
+          "committee.nutritionist": "Nutritionist",
+          "committee.nutritionist_md": "Nutrologist",
+          "location.title": "Event Location",
+          "location.venue": "Novotel Recife Marina",
+          "location.address": "Address",
+          "location.addressText":
+            "Av. República do Líbano, 251<br />Pina, Recife - PE",
+          "location.date": "Date",
+          "location.dateText": "March 27, 2026 (Friday)",
+          "location.structure": "Structure",
+          "location.structureText":
+            "3 simultaneous rooms with all necessary infrastructure",
+          "location.parking": "Parking",
+          "location.parkingText": "Ample parking available on site",
+          "registration.title": "Registration Coming Soon",
+          "registration.text":
+            "Registration for Gastro Conecta and Nutri Conecta is free and will open soon. Stay updated through our social media!",
+          "registration.contact": "Contact Us",
+          "footer.about": "About the Event",
+          "footer.aboutText":
+            "Scientific events of excellence for professionals in gastroenterology, nutrition and related areas.",
+          "footer.contact": "Contact",
+          "footer.organizer": "Organization",
+          "footer.organizerText":
+            "Committed to excellence in continuing medical education.",
+          "footer.rights": "All rights reserved.",
+        },
+        fr: {
+          "nav.home": "Accueil",
+          "nav.about": "À propos",
+          "nav.events": "Événements",
+          "nav.topics": "Thèmes",
+          "nav.committee": "Comité",
+          "nav.location": "Lieu",
+          "nav.register": "S'inscrire",
+          "hero.title": "Gastro Conecta & Nutri Conecta 2026",
+          "hero.subtitle": "27 mars 2026<br />Novotel Recife Marina",
+          "hero.registrationSoon":
+            "Inscriptions bientôt disponibles! Restez informé.",
+          "about.title": "À propos des Événements",
+          "about.intro":
+            "L'Institut Endogastro Academy a l'honneur d'annoncer les Symposiums GastroConecta et NutriConecta 2026. Événements scientifiques d'excellence axés sur la discussion de sujets contemporains et pertinents sur le tractus gastro-intestinal, l'obésité, la médecine de précision, la génétique, la santé, le comportement alimentaire et le bien-être.",
+          "about.specialists":
+            "Les symposiums rassembleront des spécialistes renommés de divers domaines pour promouvoir le partage de connaissances, d'expériences et d'innovations qui impactent directement la pratique clinique et chirurgicale.",
+          "about.opportunity":
+            "Ce sera une opportunité unique pour les professionnels de santé de diverses régions de discuter des meilleures pratiques, d'explorer les dernières preuves scientifiques et de renforcer le travail d'équipe dans les soins aux patients.",
+          "about.organizer": "Organisation:",
+          "events.title": "Trois Événements en Un Jour",
+          "events.subtitle":
+            "Choisissez l'événement qui répond le mieux à vos besoins professionnels",
+          "events.gastro.title": "Gastro Conecta",
+          "events.gastro.badge": "Inscription Gratuite",
+          "events.gastro.description":
+            "Symposium axé sur les dernières mises à jour en gastroentérologie, endoscopie et chirurgie du système digestif.",
+          "events.gastro.audience": "Public cible:",
+          "events.gastro.audienceText":
+            "Gastroentérologues, endoscopistes, chirurgiens et professionnels du domaine",
+          "events.nutri.title": "Nutri Conecta",
+          "events.nutri.badge": "Inscription Gratuite",
+          "events.nutri.description":
+            "Événement dédié à la nutrition clinique, à la nutrologie et à la médecine de précision appliquée au comportement alimentaire.",
+          "events.nutri.audience": "Public cible:",
+          "events.nutri.audienceText":
+            "Nutritionnistes, nutrologues, médecins et professionnels de santé",
+          "events.curso.title": "Cours Spécialisé",
+          "events.curso.badge": "Places Limitées",
+          "events.curso.description":
+            "Cours intensif avec une classe réduite pour approfondir les techniques avancées.",
+          "events.curso.spots": "Places:",
+          "events.curso.spotsText": "Limité à 15 participants",
+          "events.curso.registration": "Inscription:",
+          "events.curso.registrationText": "Via Sympla (Bientôt disponible)",
+          "topics.title": "Principaux Thèmes en Vedette",
+          "topics.gastro.title": "Gastro Conecta",
+          "topics.gastro.esophagus": "Œsophage et Estomac:",
+          "topics.gastro.esophagus1":
+            "Prévention avec examens endoscopiques et innovation de l'IA",
+          "topics.gastro.esophagus2": "Chirurgie endoscopique",
+          "topics.gastro.esophagus3": "Traitement des maladies oncologiques",
+          "topics.gastro.intestine": "Intestin:",
+          "topics.gastro.intestine1": "Examens et procédures endoscopiques",
+          "topics.gastro.intestine2": "Impact de l'IA sur la prévention",
+          "topics.gastro.intestine3":
+            "Proctologie et ses proportions cliniques",
+          "topics.gastro.intestine4": "Maladies inflammatoires de l'intestin",
+          "topics.gastro.intestine5": "Traitement du cancer colorectal",
+          "topics.gastro.emergency": "Urgences:",
+          "topics.gastro.emergency1": "Approche en hépatologie",
+          "topics.gastro.emergency2": "Endoscopie",
+          "topics.gastro.emergency3": "Radiologie",
+          "topics.gastro.obesity": "Obésité:",
+          "topics.gastro.obesity1": "L'épidémie d'obésité",
+          "topics.gastro.obesity2":
+            "Mises à jour du traitement clinique et chirurgical",
+          "topics.gastro.obesity3": "Répercussions métaboliques",
+          "topics.nutri.title": "Nutri Conecta",
+          "topics.nutri.precision": "Médecine de Précision:",
+          "topics.nutri.precision1":
+            "Utilisation du profil génétique du patient",
+          "topics.nutri.precision2":
+            "Traitement personnalisé selon la génétique",
+          "topics.nutri.precision3": "Thérapies assertives",
+          "topics.nutri.women": "Santé des Femmes:",
+          "topics.nutri.women1": "Climatère et Ménopause",
+          "topics.nutri.women2":
+            "Évaluation de chaque comportement de ce cycle",
+          "topics.nutri.women3": "Choix de la supplémentation appropriée",
+          "topics.nutri.women4": "Maintien de la santé mentale et physique",
+          "topics.nutri.behavior": "Comportement Alimentaire:",
+          "topics.nutri.behavior1":
+            "Différence entre manger physiologique et émotionnel",
+          "topics.nutri.behavior2": "Mécanismes de faim, satiété et récompense",
+          "topics.nutri.behavior3": "Neurobiologie de l'alimentation",
+          "topics.nutri.behavior4":
+            "Identification des déclencheurs émotionnels",
+          "topics.nutri.behavior5": "Approche interdisciplinaire",
+          "topics.nutri.supplements": "Supplémentation:",
+          "topics.nutri.supplements1":
+            "Quand il y a un réel besoin de supplémenter",
+          "topics.nutri.supplements2":
+            "Bases physiologiques et nutritionnelles",
+          "topics.nutri.supplements3": "Modulation Métabolique",
+          "topics.nutri.supplements4": "Supplémentation en complément",
+          "committee.title": "Comité d'Organisation",
+          "committee.gastro": "Gastro Conecta",
+          "committee.nutri": "Nutri Conecta",
+          "committee.role": "Comité d'Organisation",
+          "committee.nutritionist": "Nutritionniste",
+          "committee.nutritionist_md": "Nutrologue",
+          "location.title": "Lieu de l'Événement",
+          "location.venue": "Novotel Recife Marina",
+          "location.address": "Adresse",
+          "location.addressText":
+            "Av. República do Líbano, 251<br />Pina, Recife - PE",
+          "location.date": "Date",
+          "location.dateText": "27 mars 2026 (Vendredi)",
+          "location.structure": "Structure",
+          "location.structureText":
+            "3 salles simultanées avec toute l'infrastructure nécessaire",
+          "location.parking": "Parking",
+          "location.parkingText": "Grand parking disponible sur place",
+          "registration.title": "Inscriptions Bientôt Disponibles",
+          "registration.text":
+            "L'inscription pour Gastro Conecta et Nutri Conecta est gratuite et ouvrira bientôt. Restez informé via nos réseaux sociaux!",
+          "registration.contact": "Contactez-nous",
+          "footer.about": "À propos de l'Événement",
+          "footer.aboutText":
+            "Événements scientifiques d'excellence pour les professionnels de la gastroentérologie, de la nutrition et des domaines connexes.",
+          "footer.contact": "Contact",
+          "footer.organizer": "Organisation",
+          "footer.organizerText":
+            "Engagé pour l'excellence dans la formation médicale continue.",
+          "footer.rights": "Tous droits réservés.",
+        },
+      };
+
+      // Change language function
+      function changeLanguage() {
+        const lang = document.getElementById("language-select").value;
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const key = element.getAttribute("data-i18n");
+          if (translations[lang] && translations[lang][key]) {
+            element.innerHTML = translations[lang][key];
+          }
+        });
+        localStorage.setItem("selectedLanguage", lang);
+      }
+
+      // Load saved language
+      window.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem("selectedLanguage") || "pt";
+        document.getElementById("language-select").value = savedLang;
+        if (savedLang !== "pt") changeLanguage();
+      });
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Fade-in animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            const navHeight = document.getElementById("navbar").offsetHeight;
+            const targetPosition = target.offsetTop - navHeight;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const menu = document.getElementById("nav-menu");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      }
+    </script>
+  </body>
+</html>
