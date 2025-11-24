@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/",
       "has": [
         {
           "type": "host",
@@ -13,7 +13,17 @@
       "destination": "/gastroconecta2026/index.html"
     },
     {
-      "source": "/(.*)",
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "gastroconecta2026.com.br"
+        }
+      ],
+      "destination": "/gastroconecta2026/:path*"
+    },
+    {
+      "source": "/",
       "has": [
         {
           "type": "host",
@@ -21,6 +31,16 @@
         }
       ],
       "destination": "/gastroconecta2026/index.html"
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.gastroconecta2026.com.br"
+        }
+      ],
+      "destination": "/gastroconecta2026/:path*"
     },
     {
       "source": "/(.*)",
