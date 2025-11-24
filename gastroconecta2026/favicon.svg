@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c5f7d;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4a9eba;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8a838;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad)"/>
+  
+  <!-- Stethoscope icon in white -->
+  <g fill="#ffffff">
+    <!-- Stethoscope head -->
+    <circle cx="50" cy="30" r="8" fill="none" stroke="#ffffff" stroke-width="3"/>
+    
+    <!-- Stethoscope tube -->
+    <path d="M 50 38 Q 35 50 35 65 L 35 75" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 50 38 Q 65 50 65 65 L 65 75" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- Earpieces -->
+    <circle cx="35" cy="78" r="5" fill="#ffffff"/>
+    <circle cx="65" cy="78" r="5" fill="#ffffff"/>
+  </g>
+</svg>
+
