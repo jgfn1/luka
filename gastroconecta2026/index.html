@@ -647,6 +647,12 @@
         font-size: 2rem;
       }
 
+      .event-card h3 .event-icon {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+      }
+
       .event-card .badge {
         display: inline-block;
         padding: 0.4rem 1rem;
@@ -774,6 +780,11 @@
       .topic-card h3 i {
         font-size: 2rem;
         color: var(--accent);
+      }
+
+      .topic-card h3 .gastro-icon {
+        color: var(--accent);
+        flex-shrink: 0;
       }
 
       .topic-card h4 {
@@ -1139,7 +1150,9 @@
           <!-- Gastro Conecta -->
           <div class="event-card gastro">
             <h3>
-              <i class="fas fa-stomach"></i>
+              <svg class="event-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C9.5 2 7.5 3.5 7 6C6.5 8.5 7 10 8 12C9 14 9 16 8 18C7.5 19 7 20 7 21C7 22 7.5 22 8 22H16C16.5 22 17 22 17 21C17 20 16.5 19 16 18C15 16 15 14 16 12C17 10 17.5 8.5 17 6C16.5 3.5 14.5 2 12 2ZM12 4C13.5 4 14.5 5 15 6.5C15.5 8 15 9 14 11C13 13 13 15.5 14 18H10C11 15.5 11 13 10 11C9 9 8.5 8 9 6.5C9.5 5 10.5 4 12 4Z"/>
+              </svg>
               <span data-i18n="events.gastro.title">Gastro Conecta</span>
             </h3>
             <span class="badge badge-free" data-i18n="events.gastro.badge">
@@ -1153,8 +1166,7 @@
               <strong data-i18n="events.gastro.audience">Público-Alvo:</strong
               ><br />
               <span data-i18n="events.gastro.audienceText">
-                Gastroenterologistas, endoscopistas, cirurgiões e profissionais
-                da área
+                Gastroenterologistas, endoscopistas, endocrinologistas, cirurgiões do aparelho digestivo, bariátricos e profissionais da área (multidisciplinar)
               </span>
             </p>
           </div>
@@ -1221,19 +1233,21 @@
           <!-- Gastro Topics -->
           <div class="topic-card">
             <h3>
-              <i class="fas fa-microscope"></i>
+              <svg class="gastro-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C9.5 2 7.5 3.5 7 6C6.5 8.5 7 10 8 12C9 14 9 16 8 18C7.5 19 7 20 7 21C7 22 7.5 22 8 22H16C16.5 22 17 22 17 21C17 20 16.5 19 16 18C15 16 15 14 16 12C17 10 17.5 8.5 17 6C16.5 3.5 14.5 2 12 2ZM12 4C13.5 4 14.5 5 15 6.5C15.5 8 15 9 14 11C13 13 13 15.5 14 18H10C11 15.5 11 13 10 11C9 9 8.5 8 9 6.5C9.5 5 10.5 4 12 4Z"/>
+              </svg>
               <span data-i18n="topics.gastro.title">Gastro Conecta</span>
             </h3>
 
             <h4 data-i18n="topics.gastro.esophagus">Esôfago e Estômago:</h4>
             <ul>
               <li data-i18n="topics.gastro.esophagus1">
-                Prevenção com exames endoscópicos e a inovação da IA
+                Inovação a IA na prevenção e diagnóstico
               </li>
-              <li data-i18n="topics.gastro.esophagus2">Cirurgia endoscópica</li>
-              <li data-i18n="topics.gastro.esophagus3">
+              <li data-i18n="topics.gastro.esophagus2">
                 Tratamento das doenças oncológicas
               </li>
+              <li data-i18n="topics.gastro.esophagus3">Cirurgia endoscópica</li>
             </ul>
 
             <h4 data-i18n="topics.gastro.intestine">Intestino:</h4>
@@ -1738,7 +1752,7 @@
             "Simpósio focado nas mais recentes atualizações em gastroenterologia, endoscopia e cirurgia do aparelho digestivo.",
           "events.gastro.audience": "Público-Alvo:",
           "events.gastro.audienceText":
-            "Gastroenterologistas, endoscopistas, cirurgiões e profissionais da área",
+            "Gastroenterologistas, endoscopistas, endocrinologistas, cirurgiões do aparelho digestivo, bariátricos e profissionais da área (multidisciplinar)",
           "events.nutri.title": "Nutri Conecta",
           "events.nutri.badge": "Inscrições Gratuitas",
           "events.nutri.description":
@@ -1758,9 +1772,9 @@
           "topics.gastro.title": "Gastro Conecta",
           "topics.gastro.esophagus": "Esôfago e Estômago:",
           "topics.gastro.esophagus1":
-            "Prevenção com exames endoscópicos e a inovação da IA",
-          "topics.gastro.esophagus2": "Cirurgia endoscópica",
-          "topics.gastro.esophagus3": "Tratamento das doenças oncológicas",
+            "Inovação a IA na prevenção e diagnóstico",
+          "topics.gastro.esophagus2": "Tratamento das doenças oncológicas",
+          "topics.gastro.esophagus3": "Cirurgia endoscópica",
           "topics.gastro.intestine": "Intestino:",
           "topics.gastro.intestine1": "Exames e procedimentos endoscópicos",
           "topics.gastro.intestine2": "Repercussão da IA na prevenção",
@@ -1865,7 +1879,7 @@
             "Symposium focused on the latest updates in gastroenterology, endoscopy and digestive system surgery.",
           "events.gastro.audience": "Target Audience:",
           "events.gastro.audienceText":
-            "Gastroenterologists, endoscopists, surgeons and area professionals",
+            "Gastroenterologists, endoscopists, endocrinologists, digestive system surgeons, bariatric specialists and multidisciplinary professionals",
           "events.nutri.title": "Nutri Conecta",
           "events.nutri.badge": "Free Registration",
           "events.nutri.description":
@@ -1885,9 +1899,9 @@
           "topics.gastro.title": "Gastro Conecta",
           "topics.gastro.esophagus": "Esophagus and Stomach:",
           "topics.gastro.esophagus1":
-            "Prevention with endoscopic exams and AI innovation",
-          "topics.gastro.esophagus2": "Endoscopic surgery",
-          "topics.gastro.esophagus3": "Treatment of oncological diseases",
+            "AI innovation in prevention and diagnosis",
+          "topics.gastro.esophagus2": "Treatment of oncological diseases",
+          "topics.gastro.esophagus3": "Endoscopic surgery",
           "topics.gastro.intestine": "Intestine:",
           "topics.gastro.intestine1": "Endoscopic exams and procedures",
           "topics.gastro.intestine2": "AI impact on prevention",
@@ -1992,7 +2006,7 @@
             "Symposium axé sur les dernières mises à jour en gastroentérologie, endoscopie et chirurgie du système digestif.",
           "events.gastro.audience": "Public cible:",
           "events.gastro.audienceText":
-            "Gastroentérologues, endoscopistes, chirurgiens et professionnels du domaine",
+            "Gastroentérologues, endoscopistes, endocrinologues, chirurgiens digestifs, spécialistes bariatriques et professionnels multidisciplinaires",
           "events.nutri.title": "Nutri Conecta",
           "events.nutri.badge": "Inscription Gratuite",
           "events.nutri.description":
@@ -2012,9 +2026,9 @@
           "topics.gastro.title": "Gastro Conecta",
           "topics.gastro.esophagus": "Œsophage et Estomac:",
           "topics.gastro.esophagus1":
-            "Prévention avec examens endoscopiques et innovation de l'IA",
-          "topics.gastro.esophagus2": "Chirurgie endoscopique",
-          "topics.gastro.esophagus3": "Traitement des maladies oncologiques",
+            "Innovation de l'IA dans la prévention et le diagnostic",
+          "topics.gastro.esophagus2": "Traitement des maladies oncologiques",
+          "topics.gastro.esophagus3": "Chirurgie endoscopique",
           "topics.gastro.intestine": "Intestin:",
           "topics.gastro.intestine1": "Examens et procédures endoscopiques",
           "topics.gastro.intestine2": "Impact de l'IA sur la prévention",
