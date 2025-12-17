@@ -670,11 +670,11 @@
       /* Committee grid */
       .committee-grid {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 1.5rem;
         margin: 2rem 0;
         max-width: 1400px;
-        justify-content: space-between;
+        justify-content: center;
         margin-left: auto;
         margin-right: auto;
       }
@@ -1425,10 +1425,17 @@
             <p data-i18n="committee.role">Comissão Organizadora</p>
           </div>
           <div class="committee-member">
-            <div class="committee-photo">
-              <i class="fas fa-user-md"></i>
+            <div class="committee-photo has-image">
+              <img src="committee/leonardo-bandeira.jpeg" alt="Dr. Leonardo Bandeira" />
             </div>
             <h4>Dr. Leonardo Bandeira</h4>
+            <p data-i18n="committee.role">Comissão Organizadora</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo has-image">
+              <img src="committee/fatima-sampaio.jpeg" alt="Dra. Fátima Sampaio" />
+            </div>
+            <h4>Dra. Fátima Sampaio</h4>
             <p data-i18n="committee.role">Comissão Organizadora</p>
           </div>
         </div>
