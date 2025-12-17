@@ -30,8 +30,14 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://www.gastroconecta2026.com.br/" />
-    <meta property="twitter:title" content="Gastro Conecta & Nutri Conecta 2026" />
+    <meta
+      property="twitter:url"
+      content="https://www.gastroconecta2026.com.br/"
+    />
+    <meta
+      property="twitter:title"
+      content="Gastro Conecta & Nutri Conecta 2026"
+    />
     <meta
       property="twitter:description"
       content="27 de março de 2026 no Novotel Recife Marina"
@@ -685,12 +691,18 @@
         margin: 0 auto 1rem;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        background: #e0e0e0;
+        background: linear-gradient(135deg, var(--primary-light), var(--secondary));
         display: flex;
         align-items: center;
         justify-content: center;
         color: var(--primary);
         font-size: 3rem;
+      }
+
+      .committee-photo.has-image {
+        background: none;
+        border: 3px solid var(--primary);
+        box-shadow: 0 4px 15px rgba(44, 95, 125, 0.25);
       }
 
       .committee-photo img {
@@ -1365,15 +1377,15 @@
         </h3>
         <div class="committee-grid">
           <div class="committee-member">
-            <div class="committee-photo">
-              <i class="fas fa-user-md"></i>
+            <div class="committee-photo has-image">
+              <img src="committee/Jose-Camara.png" alt="Dr. José Bezerra Câmara Neto" />
             </div>
             <h4>Dr. José Bezerra Câmara Neto</h4>
             <p data-i18n="committee.role">Comissão Organizadora</p>
           </div>
           <div class="committee-member">
-            <div class="committee-photo">
-              <i class="fas fa-user-md"></i>
+            <div class="committee-photo has-image">
+              <img src="committee/Leliane-Alencar.png" alt="Dra. Leliane Alencar Bonates" />
             </div>
             <h4>Dra. Leliane Alencar Bonates</h4>
             <p data-i18n="committee.role">Comissão Organizadora</p>
@@ -1393,8 +1405,8 @@
             <p data-i18n="committee.role">Comissão Organizadora</p>
           </div>
           <div class="committee-member">
-            <div class="committee-photo">
-              <i class="fas fa-user-md"></i>
+            <div class="committee-photo has-image">
+              <img src="committee/Justiniano-Luna.png" alt="Dr. Justiniano Othon de Luna" />
             </div>
             <h4>Dr. Justiniano Othon de Luna</h4>
             <p data-i18n="committee.role">Comissão Organizadora</p>
@@ -1423,15 +1435,15 @@
           style="grid-template-columns: repeat(4, 1fr); max-width: 900px"
         >
           <div class="committee-member">
-            <div class="committee-photo">
-              <i class="fas fa-user-md"></i>
+            <div class="committee-photo has-image">
+              <img src="committee/Maria-Pimentel.png" alt="Maria Pimentel" />
             </div>
             <h4>Maria Pimentel</h4>
             <p data-i18n="committee.nutritionist">Nutricionista</p>
           </div>
           <div class="committee-member">
-            <div class="committee-photo">
-              <i class="fas fa-user-md"></i>
+            <div class="committee-photo has-image">
+              <img src="committee/Edite-Magalhaes.png" alt="Dra. Edite Magalhães" />
             </div>
             <h4>Dra. Edite Magalhães</h4>
             <p data-i18n="committee.nutritionist_md">Nutróloga</p>
