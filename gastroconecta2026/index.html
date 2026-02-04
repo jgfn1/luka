@@ -137,7 +137,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        padding: 0.75rem 2rem;
+        padding: 0.83rem 2rem;
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(10px);
         display: flex;
@@ -149,45 +149,44 @@
       }
 
       nav.scrolled {
-        padding: 0.5rem 2rem;
+        padding: 0.55rem 2rem;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
 
       nav .logo-small {
-        height: 70px;
+        height: 100px;
         transition: height 0.3s ease;
-        font-family: "Montserrat", sans-serif;
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: var(--primary);
         display: flex;
         align-items: center;
-        gap: 10px;
       }
 
-      nav .logo-small span {
-        background: linear-gradient(135deg, var(--accent) 0%, #f5c563 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+      nav .logo-small img {
+        height: 100%;
+        width: auto;
+        max-width: 315px;
+        object-fit: contain;
+        object-position: left center;
       }
 
       nav.scrolled .logo-small {
-        height: 60px;
-        font-size: 1.3rem;
+        height: 86px;
+      }
+
+      nav.scrolled .logo-small img {
+        max-width: 286px;
       }
 
       nav ul {
         list-style: none;
         display: flex;
-        gap: 2rem;
+        gap: 2.2rem;
         align-items: center;
       }
 
       nav ul li a {
         font-weight: 600;
-        font-size: 0.95rem;
-        padding: 0.5rem 0;
+        font-size: 1.05rem;
+        padding: 0.55rem 0;
         position: relative;
       }
 
@@ -217,10 +216,10 @@
         background: transparent;
         border: 2px solid var(--primary);
         color: var(--primary);
-        padding: 0.5rem 2rem 0.5rem 0.75rem;
+        padding: 0.55rem 2rem 0.55rem 0.83rem;
         border-radius: 6px;
         font-weight: 600;
-        font-size: 0.95rem;
+        font-size: 1.05rem;
         cursor: pointer;
         transition: all 0.3s ease;
       }
@@ -233,11 +232,11 @@
       .nav-lang-selector::after {
         content: "▼";
         position: absolute;
-        right: 0.7rem;
+        right: 0.77rem;
         top: 50%;
         transform: translateY(-50%);
         pointer-events: none;
-        font-size: 0.7rem;
+        font-size: 0.77rem;
         color: var(--primary);
       }
 
@@ -250,10 +249,10 @@
         display: inline-block;
         background: linear-gradient(135deg, var(--accent) 0%, #f5c563 100%);
         color: var(--dark-text) !important;
-        padding: 0.8rem 1.6rem;
+        padding: 0.88rem 1.76rem;
         border-radius: 999px;
         font-weight: 700;
-        font-size: 0.95rem;
+        font-size: 1.05rem;
         letter-spacing: 0.5px;
         transition: all 0.3s ease;
         box-shadow: 0 3px 14px rgba(232, 168, 56, 0.4);
@@ -604,9 +603,10 @@
       /* Events grid - adapted from TGI structure */
       .events-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
-        margin: 3rem 0;
+        max-width: 900px;
+        margin: 3rem auto;
       }
 
       .event-card {
@@ -635,23 +635,15 @@
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       }
 
-      .event-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
+      .event-card-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
       }
 
-      .event-card h3 i {
-        font-size: 2rem;
-      }
-
-      .event-card h3 .event-icon {
-        width: 32px;
-        height: 32px;
-        flex-shrink: 0;
-        filter: invert(27%) sepia(51%) saturate(500%) hue-rotate(160deg) brightness(87%) contrast(87%);
+      .event-card-logo {
+        max-width: 200px;
+        height: auto;
+        object-fit: contain;
       }
 
       .event-card .badge {
@@ -780,7 +772,8 @@
 
       .topic-card h3 .gastro-icon {
         flex-shrink: 0;
-        filter: invert(59%) sepia(85%) saturate(399%) hue-rotate(2deg) brightness(97%) contrast(87%);
+        filter: invert(59%) sepia(85%) saturate(399%) hue-rotate(2deg)
+          brightness(97%) contrast(87%);
       }
 
       .topic-card h4 {
@@ -925,9 +918,377 @@
         display: none;
         background: none;
         border: none;
-        font-size: 1.5rem;
+        font-size: 1.65rem;
         color: var(--primary);
         cursor: pointer;
+      }
+
+      /* Schedule tabs */
+      .tabs {
+        display: flex;
+        border-bottom: 3px solid var(--primary);
+        margin-bottom: 2rem;
+        gap: 0.5rem;
+      }
+
+      .tabs button {
+        flex: 1;
+        padding: 1.2rem 1rem;
+        background: none;
+        border: none;
+        font-weight: 700;
+        font-size: 1.05rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: var(--primary);
+        position: relative;
+      }
+
+      .tabs button::before {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--secondary);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .tabs button.active {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      .tabs button.active::before {
+        transform: scaleX(1);
+        background: var(--secondary);
+      }
+
+      .tabs button:hover:not(.active) {
+        background: rgba(44, 95, 125, 0.1);
+      }
+
+      .schedule-day {
+        overflow-x: auto;
+      }
+
+      .schedule-table {
+        width: 100%;
+        min-width: 500px;
+        border-collapse: collapse;
+        margin-bottom: 2rem;
+        font-size: 0.95rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .schedule-table th,
+      .schedule-table td {
+        padding: 1rem 0.75rem;
+        border: 1px solid #e0e0e0;
+        text-align: left;
+      }
+
+      .schedule-table th {
+        background: var(--primary);
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+      }
+
+      .schedule-table tbody tr {
+        transition: background 0.2s ease;
+      }
+
+      .schedule-table tbody tr:nth-child(odd) {
+        background: #f9f9f9;
+      }
+
+      .schedule-table tbody tr:hover {
+        background: rgba(44, 95, 125, 0.08);
+      }
+
+      .session-header {
+        background: var(--secondary) !important;
+        color: #fff !important;
+        font-weight: 700 !important;
+        font-size: 1.05rem !important;
+      }
+
+      .session-break {
+        background: #fff3cd !important;
+        font-weight: 700;
+        text-align: center;
+        color: #856404;
+      }
+
+      .speaker-name {
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      /* Speakers section */
+      .speakers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .speaker-item {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 4px solid var(--accent-green);
+      }
+
+      .speaker-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      .speaker-item img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center top;
+        border: 3px solid var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .speaker-item h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .saiba-mais-btn {
+        margin-top: auto;
+        background: var(--accent-green);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 0.5rem 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 0.9rem;
+      }
+
+      .saiba-mais-btn:hover {
+        background: #5a8f35;
+        transform: translateY(-2px);
+      }
+
+      /* Modal */
+      .modal {
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        background: rgba(44, 95, 125, 0.75);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .modal.show {
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+
+      .modal-content {
+        background: #fff;
+        color: var(--dark-text);
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(44, 95, 125, 0.25);
+        max-width: 420px;
+        width: 90vw;
+        padding: 2.5rem 1.8rem 1.4rem;
+        position: relative;
+        text-align: center;
+        opacity: 0;
+        animation: modalFadeIn 0.3s ease-out forwards;
+      }
+
+      @keyframes modalFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1.25rem;
+        font-size: 2rem;
+        color: var(--primary);
+        cursor: pointer;
+        background: none;
+        border: none;
+        line-height: 1;
+      }
+
+      .close-modal:hover {
+        color: var(--secondary);
+      }
+
+      .modal-content img.modal-avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center top;
+        border: 3px solid var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .modal-bio {
+        font-size: 1rem;
+        margin-top: 1.2rem;
+        color: #444;
+        text-align: left;
+        line-height: 1.6;
+      }
+
+      .modal-bio br {
+        display: block;
+        content: "";
+        margin-top: 0.5rem;
+      }
+
+      .registration-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+      }
+
+      .registration-btn {
+        display: inline-block;
+        background: var(--accent);
+        color: var(--dark-text) !important;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.05rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .registration-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      }
+
+      .registration-btn-disabled {
+        background: rgba(255, 255, 255, 0.3);
+        cursor: default;
+        pointer-events: none;
+      }
+
+      .registration-btn-disabled:hover {
+        transform: none;
+      }
+
+      .speakers-coming-soon {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--muted-text);
+        font-style: italic;
+        padding: 2rem;
+        background: var(--light-bg);
+        border-radius: 12px;
+        margin-bottom: 0;
+      }
+
+      /* Sponsors */
+      .sponsors-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        gap: 2rem;
+        margin: 2rem auto;
+        max-width: 1100px;
+      }
+
+      .sponsor-item {
+        text-align: center;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .sponsor-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .sponsor-logo {
+        max-width: 160px;
+        max-height: 80px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .sponsor-partners {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: nowrap;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .sponsor-partners:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .sponsor-partners .sponsor-logo {
+        max-width: 130px;
+        max-height: 70px;
       }
 
       /* Responsive */
@@ -961,6 +1322,46 @@
 
         .mobile-menu-btn {
           display: block;
+        }
+
+        .schedule-table {
+          font-size: 0.85rem;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+          padding: 0.6rem 0.5rem;
+        }
+
+        .tabs button {
+          font-size: 0.9rem;
+          padding: 0.9rem 0.5rem;
+        }
+
+        .speakers-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+        }
+
+        .speaker-item img {
+          width: 100px;
+          height: 100px;
+        }
+
+        .sponsors-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .sponsor-partners {
+          flex-direction: row;
+          justify-content: center;
+          flex-wrap: nowrap;
+        }
+
+        .sponsor-partners .sponsor-logo {
+          max-width: 100px;
+          max-height: 55px;
         }
 
         header.hero h1 {
@@ -1011,10 +1412,12 @@
   <body>
     <!-- Navigation -->
     <nav id="navbar">
-      <div class="logo-small">
-        <i class="fas fa-stethoscope"></i>
-        Gastro <span>&</span> Nutri Conecta
-      </div>
+      <a href="#top" class="logo-small">
+        <img
+          src="logos-gastro-nutri-removebg-preview.png"
+          alt="Gastro Conecta & Nutri Conecta 2026"
+        />
+      </a>
       <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
         <i class="fas fa-bars"></i>
       </button>
@@ -1022,6 +1425,10 @@
         <li><a href="#top" data-i18n="nav.home">Início</a></li>
         <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
         <li><a href="#eventos" data-i18n="nav.events">Eventos</a></li>
+        <li><a href="#programacao" data-i18n="nav.schedule">Programação</a></li>
+        <li>
+          <a href="#palestrantes" data-i18n="nav.speakers">Palestrantes</a>
+        </li>
         <li><a href="#temas" data-i18n="nav.topics">Temas</a></li>
         <li><a href="#comissao" data-i18n="nav.committee">Comissão</a></li>
         <li><a href="#local" data-i18n="nav.location">Local</a></li>
@@ -1133,10 +1540,10 @@
 
     <!-- Events section -->
     <section id="eventos" class="fade-in">
-      <div class="container">
-        <h2 data-i18n="events.title">Três Eventos em Um Único Dia</h2>
+      <div class="container" style="text-align: center">
+        <h2 data-i18n="events.title">Dois Eventos em Um Único Dia</h2>
         <p
-          style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem"
+          style="font-size: 1.1rem; margin-bottom: 3rem"
           data-i18n="events.subtitle"
         >
           Escolha o evento que melhor atende suas necessidades profissionais
@@ -1145,32 +1552,41 @@
         <div class="events-grid">
           <!-- Gastro Conecta -->
           <div class="event-card gastro">
-            <h3>
-              <img src="stomach-icon.svg" alt="" class="event-icon" width="28" height="28" />
-              <span data-i18n="events.gastro.title">Gastro Conecta</span>
-            </h3>
+            <div class="event-card-header">
+              <img
+                src="logo-gastro.png"
+                alt="Gastro Conecta"
+                class="event-card-logo"
+              />
+            </div>
             <span class="badge badge-paid" data-i18n="events.gastro.badge">
               Vagas Limitadas
             </span>
             <p data-i18n="events.gastro.description">
               Simpósio focado nas mais recentes atualizações em
-              gastroenterologia, endoscopia e cirurgia do aparelho digestivo.
+              Gastroenterologia, Endoscopia, Cirurgia do Aparelho Digestivo e
+              nas Atualizações e Tratamento da Obesidade.
             </p>
             <p style="margin-top: 1rem">
               <strong data-i18n="events.gastro.audience">Público-Alvo:</strong
               ><br />
               <span data-i18n="events.gastro.audienceText">
-                Gastroenterologistas, endoscopistas, endocrinologistas, cirurgiões do aparelho digestivo, bariátricos e profissionais da área (multidisciplinar)
+                Gastroenterologistas, endoscopistas, endocrinologistas,
+                cirurgiões do aparelho digestivo, bariátricos e profissionais da
+                área (multidisciplinar)
               </span>
             </p>
           </div>
 
           <!-- Nutri Conecta -->
           <div class="event-card nutri">
-            <h3>
-              <i class="fas fa-apple-alt"></i>
-              <span data-i18n="events.nutri.title">Nutri Conecta</span>
-            </h3>
+            <div class="event-card-header">
+              <img
+                src="logo-nutri.png"
+                alt="Nutri Conecta"
+                class="event-card-logo"
+              />
+            </div>
             <span class="badge badge-paid" data-i18n="events.nutri.badge">
               Vagas Limitadas
             </span>
@@ -1183,33 +1599,6 @@
               ><br />
               <span data-i18n="events.nutri.audienceText">
                 Nutricionistas, nutrólogos, médicos e profissionais da saúde
-              </span>
-            </p>
-          </div>
-
-          <!-- Curso Especial -->
-          <div class="event-card curso">
-            <h3>
-              <i class="fas fa-graduation-cap"></i>
-              <span data-i18n="events.curso.title">Cursos Especializados</span>
-            </h3>
-            <span class="badge badge-paid" data-i18n="events.curso.badge">
-              Vagas Limitadas
-            </span>
-            <p data-i18n="events.curso.description">
-              02 Cursos intensivos com capacidade para 17 participantes cada, para aprofundamento em técnicas avançadas.
-            </p>
-            <p style="margin-top: 1rem">
-              <strong data-i18n="events.curso.spots">Vagas:</strong><br />
-              <span data-i18n="events.curso.spotsText">
-                02 Cursos com capacidade para 17 participantes cada
-              </span>
-            </p>
-            <p>
-              <strong data-i18n="events.curso.registration">Inscrições:</strong
-              ><br />
-              <span data-i18n="events.curso.registrationText">
-                Via Sympla (Em breve)
               </span>
             </p>
           </div>
@@ -1226,11 +1615,19 @@
           <!-- Gastro Topics -->
           <div class="topic-card">
             <h3>
-              <img src="stomach-icon.svg" alt="" class="gastro-icon" width="28" height="28" />
+              <img
+                src="stomach-icon.svg"
+                alt=""
+                class="gastro-icon"
+                width="28"
+                height="28"
+              />
               <span data-i18n="topics.gastro.title">Gastro Conecta</span>
             </h3>
 
-            <h4 data-i18n="topics.gastro.dii">DII – Doenças Inflamatórias Intestinais:</h4>
+            <h4 data-i18n="topics.gastro.dii">
+              DII – Doenças Inflamatórias Intestinais:
+            </h4>
             <ul>
               <li data-i18n="topics.gastro.dii1">
                 Algoritmo de investigação clínica das DII
@@ -1251,7 +1648,8 @@
                 E se fosse Doença Inflamatória?
               </li>
               <li data-i18n="topics.gastro.cancer3">
-                Papel da Endoscopia Diagnóstica e terapêutica (ressecar ou não ressecar, eis a questão)
+                Papel da Endoscopia Diagnóstica e terapêutica (ressecar ou não
+                ressecar, eis a questão)
               </li>
               <li data-i18n="topics.gastro.cancer4">Seguimento (e agora?)</li>
             </ul>
@@ -1259,7 +1657,8 @@
             <h4 data-i18n="topics.gastro.obesity">Obesidade:</h4>
             <ul>
               <li data-i18n="topics.gastro.obesity1">
-                A epidemia da Obesidade: o que muda com a nova diretriz e classificação?
+                A epidemia da Obesidade: o que muda com a nova diretriz e
+                classificação?
               </li>
               <li data-i18n="topics.gastro.obesity2">
                 Atualizações no tratamento da Obesidade - Tratamento Clínico
@@ -1268,7 +1667,8 @@
                 Atualizações no tratamento da Obesidade - Tratamento Cirúrgico
               </li>
               <li data-i18n="topics.gastro.obesity4">
-                Repercussões metabólicas da Obesidade: MASH e Apneia do sono. O que podemos oferecer?
+                Repercussões metabólicas da Obesidade: MASH e Apneia do sono. O
+                que podemos oferecer?
               </li>
             </ul>
           </div>
@@ -1297,9 +1697,6 @@
               <li data-i18n="topics.nutri.women2">
                 Avaliação em cada comportamento desse ciclo
               </li>
-              <li data-i18n="topics.nutri.women3">
-                Escolha de suplementação adequada
-              </li>
               <li data-i18n="topics.nutri.women4">
                 Manutenção da saúde mental e física
               </li>
@@ -1321,62 +1718,569 @@
                 Abordagem interdisciplinar
               </li>
             </ul>
-
-            <h4 data-i18n="topics.nutri.supplements">Suplementação:</h4>
-            <ul>
-              <li data-i18n="topics.nutri.supplements1">
-                Quando há real necessidade de suplementar
-              </li>
-              <li data-i18n="topics.nutri.supplements2">
-                Bases fisiológicas e nutricionais
-              </li>
-              <li data-i18n="topics.nutri.supplements3">
-                Modulação Metabólica
-              </li>
-              <li data-i18n="topics.nutri.supplements4">
-                Suplementação como complemento
-              </li>
-            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 
-    ============================================================
-    SCHEDULE SECTION - TO BE ADDED WHEN DATA IS AVAILABLE
-    ============================================================
+    <!-- Schedule section -->
     <section id="programacao" class="fade-in">
       <div class="container">
         <h2 data-i18n="schedule.title">Programação Completa</h2>
-        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem;" data-i18n="schedule.subtitle">
+        <p
+          style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem"
+          data-i18n="schedule.subtitle"
+        >
           Confira a programação detalhada do evento
         </p>
-        
-        <div class="schedule-container">
-          Schedule tabs and content will go here
+
+        <div class="tabs">
+          <button
+            id="tab-gastro"
+            class="active"
+            onclick="showScheduleTab('gastro')"
+            data-i18n="schedule.gastro"
+          >
+            Gastro Conecta
+          </button>
+          <button
+            id="tab-nutri"
+            onclick="showScheduleTab('nutri')"
+            data-i18n="schedule.nutri"
+          >
+            Nutri Conecta
+          </button>
+        </div>
+
+        <!-- Gastro Conecta - Sexta 27/03/2026 -->
+        <div id="schedule-gastro" class="schedule-day">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th style="width: 130px" data-i18n="schedule.timeHeader">
+                  Horário
+                </th>
+                <th data-i18n="schedule.activityHeader">Atividade</th>
+                <th style="width: 220px" data-i18n="schedule.presenterHeader">
+                  Apresentador
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>08:00 - 08:30</td>
+                <td colspan="2" class="session-break">
+                  <strong>Credenciamento</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>08:30 - 08:45</td>
+                <td colspan="2" class="session-break">
+                  <strong>Abertura</strong>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 1 - MESA DII<br /><small
+                    >Presidente: A decidir | Moderadores: Norma Jucá</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>08:45 - 10:00</td>
+                <td>Algoritmo de investigação clínica das DII</td>
+                <td><span class="speaker-name">Lia Serra</span></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Manejo inicial</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Controle de remissão</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Crossfire: controvérsias do dia-a-dia</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>10:00 - 10:20</td>
+                <td colspan="2" class="session-break">
+                  <strong>COFFEE BREAK</strong>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 2 - Câncer de reto<br /><small
+                    >Presidente: A decidir | Moderadores: A decidir</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>10:30 - 11:45</td>
+                <td>Apresentação de caso clínico</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>E se fosse Doença Inflamatória?</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  Papel da Endoscopia Diagnóstica e terapêutica (ressecar ou não
+                  ressecar, eis a questão)
+                </td>
+                <td><span class="speaker-name">Leliane Alencar</span></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Seguimento (e agora?)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>11:50 - 12:30</td>
+                <td colspan="2" class="session-break">
+                  <strong
+                    >SIMPÓSIO SATÉLITE - AstraZeneca - Tratamento perioperatório
+                    do Câncer Gástrico</strong
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>12:30 - 13:30</td>
+                <td colspan="2" class="session-break">
+                  <strong>INTERVALO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 3 - Obesidade<br /><small
+                    >Presidente: A decidir | Moderadores: A decidir</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>14:00 - 15:15</td>
+                <td>
+                  Classificação da Obesidade: o que muda com as novas
+                  diretrizes?
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  Repercussões metabólicas da Obesidade: MASH e Apneia do sono.
+                  O que podemos oferecer?
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 4 - Câncer Gástrico<br /><small
+                    >Presidente: A decidir | Moderadores: A decidir</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>15:20 - 16:50</td>
+                <td>Papel do H. Pylori no Câncer Gástrico</td>
+                <td><span class="speaker-name">Fábio Menezes</span></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  Diagnóstico e tratamento endoscópico do Câncer Gástrico
+                  Precoce
+                </td>
+                <td><span class="speaker-name">Lucas Case Ferraz</span></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Tratamento Cirúrgico Câncer Gástrico</td>
+                <td><span class="speaker-name">Flávio Fernandes</span></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  Novas perspectivas e desafios no tratamento do Câncer Gástrico
+                  Avançado
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>16:50 - 17:10</td>
+                <td colspan="2" class="session-break">
+                  <strong>COFFEE BREAK</strong>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 5 - Nutrição em oncologia, em DII<br /><small
+                    >Presidente: A decidir | Moderadores: A decidir</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>17:10 - 18:25</td>
+                <td colspan="2">Sessão em definição</td>
+              </tr>
+              <tr>
+                <td>18:30</td>
+                <td colspan="2" class="session-break">
+                  <strong>Encerramento</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Nutri Conecta - Sexta 27/03/2026 -->
+        <div id="schedule-nutri" class="schedule-day" style="display: none">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th style="width: 130px" data-i18n="schedule.timeHeader">
+                  Horário
+                </th>
+                <th data-i18n="schedule.activityHeader">Atividade</th>
+                <th style="width: 220px" data-i18n="schedule.presenterHeader">
+                  Apresentador
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>08:30 - 09:00</td>
+                <td colspan="2" class="session-break">
+                  <strong>Credenciamento</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>09:00</td>
+                <td colspan="2" class="session-break">
+                  <strong>Abertura</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>09:10 - 09:50</td>
+                <td colspan="2" class="session-break">
+                  <strong>CONFERÊNCIA GENÉTICA</strong>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 1 - MEDICINA DE PRECISÃO
+                </td>
+              </tr>
+              <tr>
+                <td>09:50 - 11:30</td>
+                <td>Teste genético Histamina</td>
+                <td><span class="speaker-name">Maria Pimentel</span></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td><span class="speaker-name">Renata Knack</span></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td><span class="speaker-name">Renata Martins</span></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>11:30 - 12:00</td>
+                <td colspan="2" class="session-break">
+                  <strong>COFFEE BREAK</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>12:10 - 12:50</td>
+                <td colspan="2" class="session-break">
+                  <strong>SIMPÓSIO SATÉLITE</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>13:30 - 14:30</td>
+                <td>CONFERÊNCIA - Fertilidade, Climatério e Menopausa</td>
+                <td><span class="speaker-name">Fernanda Padovani</span></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 3 - EMAGRECIMENTO E LONGEVIDADE
+                </td>
+              </tr>
+              <tr>
+                <td>14:30 - 15:50</td>
+                <td>Emagrecimento análises GLP1</td>
+                <td><span class="speaker-name">Edite Magalhães</span></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Neuronutrição no Tratamento da Compulsão Alimentar</td>
+                <td><span class="speaker-name">Danielle Lodetti</span></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>16:00 - 16:20</td>
+                <td colspan="2" class="session-break">
+                  <strong>COFFEE BREAK</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
-    -->
 
-    <!-- 
-    ============================================================
-    SPEAKERS SECTION - TO BE ADDED WHEN DATA IS AVAILABLE
-    ============================================================
+    <!-- Speakers section -->
     <section id="palestrantes" class="fade-in">
       <div class="container">
         <h2 data-i18n="speakers.title">Palestrantes</h2>
-        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem;" data-i18n="speakers.subtitle">
-          Especialistas de renome nacional e internacional
+        <p
+          style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem"
+          data-i18n="speakers.intro"
+        >
+          Conheça nossos palestrantes:
         </p>
-        
+
+        <h3
+          style="
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+          "
+        >
+          <span data-i18n="speakers.gastro">Gastro Conecta</span>
+        </h3>
+        <p class="speakers-coming-soon" data-i18n="speakers.comingSoon">
+          Em breve
+        </p>
+
+        <h3
+          style="
+            text-align: center;
+            color: var(--primary);
+            margin: 3rem 0 1.5rem;
+            font-size: 1.5rem;
+          "
+        >
+          <span data-i18n="speakers.nutri">Nutri Conecta</span>
+        </h3>
         <div class="speakers-grid">
-          Speaker cards will go here
+          <div class="speaker-item">
+            <img src="speakers/Danielle Lodetti.jpeg" alt="Danielle Lodetti" />
+            <h4>Danielle Lodetti</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-danielle-lodetti"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/Edite Magalhães.webp" alt="Edite Magalhães" />
+            <h4>Edite Magalhães</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-edite-magalhaes"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/Fernanda Padovani.jpg" alt="Fernanda Padovani" />
+            <h4>Fernanda Padovani</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-fernanda-padovani"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/Maria Pimentel.webp" alt="Maria Pimentel" />
+            <h4>Maria Pimentel</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-maria-pimentel"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/Renata Martins.webp" alt="Renata Martins" />
+            <h4>Renata Martins</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-renata-martins"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
         </div>
       </div>
     </section>
-    -->
+
+    <!-- Speaker Modals -->
+    <div class="modal" id="modal-danielle-lodetti">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Danielle Lodetti.jpeg"
+          alt="Danielle Lodetti"
+          class="modal-avatar"
+        />
+        <h3>Danielle Lodetti</h3>
+        <div class="modal-bio">
+          Mestrado em Neurociências. Formação em Neurociências. Criadora da
+          Neuronutrição ®.<br />
+          Nutricionista pela Universidade Federal de Santa Catarina (2000).<br />
+          Especialista em Fisiologia do Exercício pela Escola Paulista de
+          Medicina (2002).<br />
+          Especialista em Nutrição Estética pelo IPGS – Rio de Janeiro
+          (2010).<br />
+          Especialização em Nutrição Ortomolecular e Nutrigenômica – FAPES – SP
+          (2012).<br />
+          Especialização em Fitoterapia Integrativa. Especialização em
+          Psiquiatria Ortomolecular – FAPES – SP (2022).<br />
+          Professora e palestrante. Idealizadora científica da Academia da
+          Neuronutrição ®.<br />
+          Coordenadora pós graduação em Neuronutrição ®. Coordenadora científica
+          do Instituto Synbia ® – Jundiaí.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-edite-magalhaes">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Edite Magalhães.webp"
+          alt="Edite Magalhães"
+          class="modal-avatar"
+        />
+        <h3>Edite Magalhães</h3>
+        <div class="modal-bio">
+          Médica Nutróloga – Título de especialista ABRAN/CFM.<br />
+          Especialista em terapia parenteral e enteral – SBNPE/CFM.<br />
+          Residência em Clínica médica – Santa Casa de Misericórdia do
+          Recife.<br />
+          Coordenadora da equipe de terapia nutricional e do serviço de
+          nutrologia do Hospital Santa Joana.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-fernanda-padovani">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Fernanda Padovani.jpg"
+          alt="Fernanda Padovani"
+          class="modal-avatar"
+        />
+        <h3>Fernanda Padovani</h3>
+        <div class="modal-bio">
+          Pós graduação em Nutrição Clínica.<br />
+          Pós graduação em Nutrição Esportiva Funcional.<br />
+          Pós graduação em Nutriendocrinologia.<br />
+          Pós graduação em Biofísica Quântica e Biorressonância aplicada.<br />
+          Certificação pelo Instituto de Medicina Funcional – IFM/USA em
+          Autoimmunity.<br />
+          Formação em florais de Bach na saúde da mulher.<br />
+          Formação em Aromaterapia na saúde da mulher.<br />
+          Formação em prescrição de ervas magistrais chinesas.<br />
+          Formação em Dietoterapia Chinesa.<br />
+          Doutoranda em Naturopatia.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-maria-pimentel">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Maria Pimentel.webp"
+          alt="Maria Pimentel"
+          class="modal-avatar"
+        />
+        <h3>Maria Pimentel</h3>
+        <div class="modal-bio">
+          Formada pela Faculdade Pernambucana de Saúde – FPS.<br />
+          Formação em Modulação Intestinal – Murilo Pereira.<br />
+          Pós-graduada em Adequação Nutricional e Manutenção da Homeostase –
+          Uningá.<br />
+          Pós-graduada em Reprogramação Epigenética Eficiente – Plenitude
+          Educação.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-renata-martins">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Renata Martins.webp"
+          alt="Renata Martins"
+          class="modal-avatar"
+        />
+        <h3>Renata Martins</h3>
+        <div class="modal-bio">
+          Médica Nutróloga.<br />
+          Residência Médica em Nutrologia pelo Hospital Felício Rocho.<br />
+          Especialista em Nutrição Enteral e Parenteral pelo Hospital Felício
+          Rocho.<br />
+          Pós graduada em Nutrologia pela ABRAN.<br />
+          Especialidade em Obesidade e Nutrologia esportiva pela ABRAN.<br />
+          Chancelada pelo American College of Sports Medicine em Nutrição
+          Esportiva.<br />
+          Nutrigenética e Medicina de Precisão.
+        </div>
+      </div>
+    </div>
 
     <!-- Committee section -->
     <section id="comissao" class="fade-in">
@@ -1598,48 +2502,84 @@
       "
     >
       <div class="container" style="text-align: center">
-        <h2 style="color: white" data-i18n="registration.title">
-          Inscrições em Breve
-        </h2>
+        <h2 style="color: white" data-i18n="registration.title">Inscrições</h2>
+        <div class="registration-buttons">
+          <a
+            href="https://forms.gle/TAwTgm8jhYHoHzTs9"
+            class="btn-primary registration-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-i18n="registration.gastro"
+              >Gastro Conecta – Inscreva-se</span
+            >
+          </a>
+          <span
+            class="btn-primary registration-btn registration-btn-disabled"
+            data-i18n="registration.nutri"
+          >
+            Nutri Conecta – Em breve
+          </span>
+        </div>
         <p
           style="
-            font-size: 1.1rem;
+            font-size: 1rem;
             max-width: 700px;
-            margin: 0 auto 2rem;
-            color: rgba(255, 255, 255, 0.95);
+            margin: 2rem auto 0;
+            color: rgba(255, 255, 255, 0.9);
           "
-          data-i18n="registration.text"
         >
-          Em breve divulgaremos a abertura oficial das inscrições.
+          <a
+            href="https://wa.me/5581999851712"
+            style="color: rgba(255, 255, 255, 0.95); text-decoration: underline"
+            target="_blank"
+          >
+            <i class="fab fa-whatsapp"></i>
+            <span data-i18n="registration.contact"
+              >Dúvidas? Entre em Contato</span
+            >
+          </a>
         </p>
-        <a
-          href="https://wa.me/5581999851712"
-          class="btn-primary"
-          target="_blank"
-        >
-          <i class="fab fa-whatsapp"></i>
-          <span data-i18n="registration.contact">Entre em Contato</span>
-        </a>
       </div>
     </section>
 
-    <!-- 
-    ============================================================
-    SPONSORS SECTION - TO BE ADDED WHEN DATA IS AVAILABLE
-    ============================================================
+    <!-- Sponsors section -->
     <section id="patrocinadores" class="fade-in">
       <div class="container">
         <h2 data-i18n="sponsors.title">Patrocinadores</h2>
-        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem;" data-i18n="sponsors.subtitle">
+        <p
+          style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem"
+          data-i18n="sponsors.subtitle"
+        >
           Agradecemos o apoio de nossos patrocinadores
         </p>
-        
         <div class="sponsors-grid">
-          Sponsor logos will go here
+          <div class="sponsor-item">
+            <img src="sponsors/SPAC.png" alt="SPAC" class="sponsor-logo" />
+          </div>
+          <div class="sponsor-partners">
+            <img
+              src="sponsors/Logo_CRM-removebg-preview.png"
+              alt="CRM"
+              class="sponsor-logo"
+            />
+            <img
+              src="sponsors/FUJI FILM.jpeg"
+              alt="FUJI FILM"
+              class="sponsor-logo"
+            />
+          </div>
+          <div class="sponsor-partners">
+            <img src="sponsors/ROVAL.png" alt="ROVAL" class="sponsor-logo" />
+            <img
+              src="sponsors/InfinityPharma-laranja.png"
+              alt="Infinity Pharma"
+              class="sponsor-logo"
+            />
+          </div>
         </div>
       </div>
     </section>
-    -->
 
     <!-- Footer -->
     <footer>
@@ -1699,10 +2639,25 @@
           "nav.home": "Início",
           "nav.about": "Sobre",
           "nav.events": "Eventos",
+          "nav.schedule": "Programação",
+          "nav.speakers": "Palestrantes",
           "nav.topics": "Temas",
           "nav.committee": "Comissão",
           "nav.location": "Local",
           "nav.register": "Inscreva-se",
+          "schedule.title": "Programação Completa",
+          "schedule.subtitle": "Confira a programação detalhada do evento",
+          "schedule.gastro": "Gastro Conecta",
+          "schedule.nutri": "Nutri Conecta",
+          "schedule.timeHeader": "Horário",
+          "schedule.activityHeader": "Atividade",
+          "schedule.presenterHeader": "Apresentador",
+          "speakers.title": "Palestrantes",
+          "speakers.intro": "Conheça nossos palestrantes:",
+          "speakers.gastro": "Gastro Conecta",
+          "speakers.nutri": "Nutri Conecta",
+          "speakers.comingSoon": "Em breve",
+          "speakers.learnMore": "Saiba mais",
           "hero.title": "Gastro Conecta & Nutri Conecta 2026",
           "hero.subtitle": "27 de março de 2026<br />Novotel Recife Marina",
           "hero.registrationSoon":
@@ -1720,13 +2675,13 @@
           "countdown.hours": "Horas",
           "countdown.minutes": "Minutos",
           "countdown.seconds": "Segundos",
-          "events.title": "Três Eventos em Um Único Dia",
+          "events.title": "Dois Eventos em Um Único Dia",
           "events.subtitle":
             "Escolha o evento que melhor atende suas necessidades profissionais",
           "events.gastro.title": "Gastro Conecta",
           "events.gastro.badge": "Vagas Limitadas",
           "events.gastro.description":
-            "Simpósio focado nas mais recentes atualizações em gastroenterologia, endoscopia e cirurgia do aparelho digestivo.",
+            "Simpósio focado nas mais recentes atualizações em Gastroenterologia, Endoscopia, Cirurgia do Aparelho Digestivo e nas Atualizações e Tratamento da Obesidade.",
           "events.gastro.audience": "Público-Alvo:",
           "events.gastro.audienceText":
             "Gastroenterologistas, endoscopistas, endocrinologistas, cirurgiões do aparelho digestivo, bariátricos e profissionais da área (multidisciplinar)",
@@ -1742,7 +2697,8 @@
           "events.curso.description":
             "02 Cursos intensivos com capacidade para 17 participantes cada, para aprofundamento em técnicas avançadas.",
           "events.curso.spots": "Vagas:",
-          "events.curso.spotsText": "02 Cursos com capacidade para 17 participantes cada",
+          "events.curso.spotsText":
+            "02 Cursos com capacidade para 17 participantes cada",
           "events.curso.registration": "Inscrições:",
           "events.curso.registrationText": "Via Sympla (Em breve)",
           "topics.title": "Principais Temas em Destaque",
@@ -1755,13 +2711,18 @@
           "topics.gastro.cancer": "Câncer de Reto:",
           "topics.gastro.cancer1": "Apresentação de caso clínico",
           "topics.gastro.cancer2": "E se fosse Doença Inflamatória?",
-          "topics.gastro.cancer3": "Papel da Endoscopia Diagnóstica e terapêutica (ressecar ou não ressecar, eis a questão)",
+          "topics.gastro.cancer3":
+            "Papel da Endoscopia Diagnóstica e terapêutica (ressecar ou não ressecar, eis a questão)",
           "topics.gastro.cancer4": "Seguimento (e agora?)",
           "topics.gastro.obesity": "Obesidade:",
-          "topics.gastro.obesity1": "A epidemia da Obesidade: o que muda com a nova diretriz e classificação?",
-          "topics.gastro.obesity2": "Atualizações no tratamento da Obesidade - Tratamento Clínico",
-          "topics.gastro.obesity3": "Atualizações no tratamento da Obesidade - Tratamento Cirúrgico",
-          "topics.gastro.obesity4": "Repercussões metabólicas da Obesidade: MASH e Apneia do sono. O que podemos oferecer?",
+          "topics.gastro.obesity1":
+            "A epidemia da Obesidade: o que muda com a nova diretriz e classificação?",
+          "topics.gastro.obesity2":
+            "Atualizações no tratamento da Obesidade - Tratamento Clínico",
+          "topics.gastro.obesity3":
+            "Atualizações no tratamento da Obesidade - Tratamento Cirúrgico",
+          "topics.gastro.obesity4":
+            "Repercussões metabólicas da Obesidade: MASH e Apneia do sono. O que podemos oferecer?",
           "topics.nutri.title": "Nutri Conecta",
           "topics.nutri.precision": "Medicina de Precisão:",
           "topics.nutri.precision1": "Uso do perfil genético do paciente",
@@ -1771,7 +2732,6 @@
           "topics.nutri.women": "Saúde da Mulher:",
           "topics.nutri.women1": "Climatério e Menopausa",
           "topics.nutri.women2": "Avaliação em cada comportamento desse ciclo",
-          "topics.nutri.women3": "Escolha de suplementação adequada",
           "topics.nutri.women4": "Manutenção da saúde mental e física",
           "topics.nutri.behavior": "Comportamento Alimentar:",
           "topics.nutri.behavior1":
@@ -1781,12 +2741,6 @@
           "topics.nutri.behavior3": "Neurobiologia do comer",
           "topics.nutri.behavior4": "Identificação de gatilhos emocionais",
           "topics.nutri.behavior5": "Abordagem interdisciplinar",
-          "topics.nutri.supplements": "Suplementação:",
-          "topics.nutri.supplements1":
-            "Quando há real necessidade de suplementar",
-          "topics.nutri.supplements2": "Bases fisiológicas e nutricionais",
-          "topics.nutri.supplements3": "Modulação Metabólica",
-          "topics.nutri.supplements4": "Suplementação como complemento",
           "committee.title": "Comissão Organizadora",
           "committee.gastro": "Gastro Conecta",
           "committee.nutri": "Nutri Conecta",
@@ -1805,10 +2759,10 @@
             "3 salas simultâneas com toda infraestrutura necessária",
           "location.parking": "Estacionamento",
           "location.parkingText": "Amplo estacionamento disponível no local",
-          "registration.title": "Inscrições em Breve",
-          "registration.text":
-            "Em breve divulgaremos a abertura oficial das inscrições.",
-          "registration.contact": "Entre em Contato",
+          "registration.title": "Inscrições",
+          "registration.gastro": "Gastro Conecta – Inscreva-se",
+          "registration.nutri": "Nutri Conecta – Em breve",
+          "registration.contact": "Dúvidas? Entre em Contato",
           "footer.about": "Sobre o Evento",
           "footer.aboutText":
             "Eventos científicos de excelência voltados para profissionais de gastroenterologia, nutrição e áreas relacionadas.",
@@ -1822,10 +2776,25 @@
           "nav.home": "Home",
           "nav.about": "About",
           "nav.events": "Events",
+          "nav.schedule": "Schedule",
+          "nav.speakers": "Speakers",
           "nav.topics": "Topics",
           "nav.committee": "Committee",
           "nav.location": "Location",
           "nav.register": "Register",
+          "schedule.title": "Full Schedule",
+          "schedule.subtitle": "Check the detailed event schedule",
+          "schedule.gastro": "Gastro Conecta",
+          "schedule.nutri": "Nutri Conecta",
+          "schedule.timeHeader": "Time",
+          "schedule.activityHeader": "Activity",
+          "schedule.presenterHeader": "Presenter",
+          "speakers.title": "Speakers",
+          "speakers.intro": "Meet our speakers:",
+          "speakers.gastro": "Gastro Conecta",
+          "speakers.nutri": "Nutri Conecta",
+          "speakers.comingSoon": "Coming soon",
+          "speakers.learnMore": "Learn more",
           "hero.title": "Gastro Conecta & Nutri Conecta 2026",
           "hero.subtitle": "March 27, 2026<br />Novotel Recife Marina",
           "hero.registrationSoon": "Registration coming soon! Stay updated.",
@@ -1842,13 +2811,13 @@
           "countdown.hours": "Hours",
           "countdown.minutes": "Minutes",
           "countdown.seconds": "Seconds",
-          "events.title": "Three Events in One Day",
+          "events.title": "Two Events in One Day",
           "events.subtitle":
             "Choose the event that best meets your professional needs",
           "events.gastro.title": "Gastro Conecta",
           "events.gastro.badge": "Limited Spots",
           "events.gastro.description":
-            "Symposium focused on the latest updates in gastroenterology, endoscopy and digestive system surgery.",
+            "Symposium focused on the latest updates in Gastroenterology, Endoscopy, Digestive System Surgery, and Obesity Updates and Treatment.",
           "events.gastro.audience": "Target Audience:",
           "events.gastro.audienceText":
             "Gastroenterologists, endoscopists, endocrinologists, digestive system surgeons, bariatric specialists and multidisciplinary professionals",
@@ -1864,7 +2833,8 @@
           "events.curso.description":
             "02 Intensive courses with a capacity for 17 participants each, for in-depth study of advanced techniques.",
           "events.curso.spots": "Spots:",
-          "events.curso.spotsText": "02 Courses with a capacity for 17 participants each",
+          "events.curso.spotsText":
+            "02 Courses with a capacity for 17 participants each",
           "events.curso.registration": "Registration:",
           "events.curso.registrationText": "Via Sympla (Coming soon)",
           "topics.title": "Main Featured Topics",
@@ -1877,13 +2847,18 @@
           "topics.gastro.cancer": "Rectal Cancer:",
           "topics.gastro.cancer1": "Clinical case presentation",
           "topics.gastro.cancer2": "What if it was Inflammatory Disease?",
-          "topics.gastro.cancer3": "Role of Diagnostic and therapeutic Endoscopy (to resect or not to resect, that is the question)",
+          "topics.gastro.cancer3":
+            "Role of Diagnostic and therapeutic Endoscopy (to resect or not to resect, that is the question)",
           "topics.gastro.cancer4": "Follow-up (what now?)",
           "topics.gastro.obesity": "Obesity:",
-          "topics.gastro.obesity1": "The Obesity epidemic: what changes with the new guideline and classification?",
-          "topics.gastro.obesity2": "Updates in Obesity treatment - Clinical Treatment",
-          "topics.gastro.obesity3": "Updates in Obesity treatment - Surgical Treatment",
-          "topics.gastro.obesity4": "Metabolic repercussions of Obesity: MASH and Sleep Apnea. What can we offer?",
+          "topics.gastro.obesity1":
+            "The Obesity epidemic: what changes with the new guideline and classification?",
+          "topics.gastro.obesity2":
+            "Updates in Obesity treatment - Clinical Treatment",
+          "topics.gastro.obesity3":
+            "Updates in Obesity treatment - Surgical Treatment",
+          "topics.gastro.obesity4":
+            "Metabolic repercussions of Obesity: MASH and Sleep Apnea. What can we offer?",
           "topics.nutri.title": "Nutri Conecta",
           "topics.nutri.precision": "Precision Medicine:",
           "topics.nutri.precision1": "Use of patient genetic profile",
@@ -1893,7 +2868,6 @@
           "topics.nutri.women": "Women's Health:",
           "topics.nutri.women1": "Climacteric and Menopause",
           "topics.nutri.women2": "Assessment of each behavior in this cycle",
-          "topics.nutri.women3": "Choosing appropriate supplementation",
           "topics.nutri.women4": "Maintenance of mental and physical health",
           "topics.nutri.behavior": "Eating Behavior:",
           "topics.nutri.behavior1":
@@ -1902,12 +2876,6 @@
           "topics.nutri.behavior3": "Neurobiology of eating",
           "topics.nutri.behavior4": "Identification of emotional triggers",
           "topics.nutri.behavior5": "Interdisciplinary approach",
-          "topics.nutri.supplements": "Supplementation:",
-          "topics.nutri.supplements1":
-            "When there is a real need to supplement",
-          "topics.nutri.supplements2": "Physiological and nutritional bases",
-          "topics.nutri.supplements3": "Metabolic Modulation",
-          "topics.nutri.supplements4": "Supplementation as a complement",
           "committee.title": "Organizing Committee",
           "committee.gastro": "Gastro Conecta",
           "committee.nutri": "Nutri Conecta",
@@ -1926,10 +2894,10 @@
             "3 simultaneous rooms with all necessary infrastructure",
           "location.parking": "Parking",
           "location.parkingText": "Ample parking available on site",
-          "registration.title": "Registration Coming Soon",
-          "registration.text":
-            "We will soon announce the official opening of registrations.",
-          "registration.contact": "Contact Us",
+          "registration.title": "Registration",
+          "registration.gastro": "Gastro Conecta – Register",
+          "registration.nutri": "Nutri Conecta – Coming soon",
+          "registration.contact": "Questions? Contact Us",
           "footer.about": "About the Event",
           "footer.aboutText":
             "Scientific events of excellence for professionals in gastroenterology, nutrition and related areas.",
@@ -1943,10 +2911,25 @@
           "nav.home": "Accueil",
           "nav.about": "À propos",
           "nav.events": "Événements",
+          "nav.schedule": "Programme",
+          "nav.speakers": "Intervenants",
           "nav.topics": "Thèmes",
           "nav.committee": "Comité",
           "nav.location": "Lieu",
           "nav.register": "S'inscrire",
+          "schedule.title": "Programme Complet",
+          "schedule.subtitle": "Consultez le programme détaillé de l'événement",
+          "schedule.gastro": "Gastro Conecta",
+          "schedule.nutri": "Nutri Conecta",
+          "schedule.timeHeader": "Horaire",
+          "schedule.activityHeader": "Activité",
+          "schedule.presenterHeader": "Présentateur",
+          "speakers.title": "Intervenants",
+          "speakers.intro": "Découvrez nos intervenants :",
+          "speakers.gastro": "Gastro Conecta",
+          "speakers.nutri": "Nutri Conecta",
+          "speakers.comingSoon": "Bientôt disponible",
+          "speakers.learnMore": "En savoir plus",
           "hero.title": "Gastro Conecta & Nutri Conecta 2026",
           "hero.subtitle": "27 mars 2026<br />Novotel Recife Marina",
           "hero.registrationSoon":
@@ -1964,13 +2947,13 @@
           "countdown.hours": "Heures",
           "countdown.minutes": "Minutes",
           "countdown.seconds": "Secondes",
-          "events.title": "Trois Événements en Un Jour",
+          "events.title": "Deux Événements en Un Jour",
           "events.subtitle":
             "Choisissez l'événement qui répond le mieux à vos besoins professionnels",
           "events.gastro.title": "Gastro Conecta",
           "events.gastro.badge": "Places Limitées",
           "events.gastro.description":
-            "Symposium axé sur les dernières mises à jour en gastroentérologie, endoscopie et chirurgie du système digestif.",
+            "Symposium axé sur les dernières mises à jour en Gastroentérologie, Endoscopie, Chirurgie du Système Digestif et les Mises à Jour et Traitement de l'Obésité.",
           "events.gastro.audience": "Public cible:",
           "events.gastro.audienceText":
             "Gastroentérologues, endoscopistes, endocrinologues, chirurgiens digestifs, spécialistes bariatriques et professionnels multidisciplinaires",
@@ -1986,12 +2969,14 @@
           "events.curso.description":
             "02 Cours intensifs avec une capacité de 17 participants chacun, pour approfondir les techniques avancées.",
           "events.curso.spots": "Places:",
-          "events.curso.spotsText": "02 Cours avec une capacité de 17 participants chacun",
+          "events.curso.spotsText":
+            "02 Cours avec une capacité de 17 participants chacun",
           "events.curso.registration": "Inscription:",
           "events.curso.registrationText": "Via Sympla (Bientôt disponible)",
           "topics.title": "Principaux Thèmes en Vedette",
           "topics.gastro.title": "Gastro Conecta",
-          "topics.gastro.dii": "MICI – Maladies Inflammatoires Chroniques de l'Intestin:",
+          "topics.gastro.dii":
+            "MICI – Maladies Inflammatoires Chroniques de l'Intestin:",
           "topics.gastro.dii1": "Algorithme d'investigation clinique des MICI",
           "topics.gastro.dii2": "Prise en charge initiale",
           "topics.gastro.dii3": "Contrôle de la rémission",
@@ -1999,13 +2984,18 @@
           "topics.gastro.cancer": "Cancer du Rectum:",
           "topics.gastro.cancer1": "Présentation de cas clinique",
           "topics.gastro.cancer2": "Et si c'était une Maladie Inflammatoire?",
-          "topics.gastro.cancer3": "Rôle de l'Endoscopie Diagnostique et thérapeutique (réséquer ou ne pas réséquer, telle est la question)",
+          "topics.gastro.cancer3":
+            "Rôle de l'Endoscopie Diagnostique et thérapeutique (réséquer ou ne pas réséquer, telle est la question)",
           "topics.gastro.cancer4": "Suivi (et maintenant?)",
           "topics.gastro.obesity": "Obésité:",
-          "topics.gastro.obesity1": "L'épidémie d'Obésité: qu'est-ce qui change avec la nouvelle directive et classification?",
-          "topics.gastro.obesity2": "Mises à jour du traitement de l'Obésité - Traitement Clinique",
-          "topics.gastro.obesity3": "Mises à jour du traitement de l'Obésité - Traitement Chirurgical",
-          "topics.gastro.obesity4": "Répercussions métaboliques de l'Obésité: MASH et Apnée du sommeil. Que pouvons-nous offrir?",
+          "topics.gastro.obesity1":
+            "L'épidémie d'Obésité: qu'est-ce qui change avec la nouvelle directive et classification?",
+          "topics.gastro.obesity2":
+            "Mises à jour du traitement de l'Obésité - Traitement Clinique",
+          "topics.gastro.obesity3":
+            "Mises à jour du traitement de l'Obésité - Traitement Chirurgical",
+          "topics.gastro.obesity4":
+            "Répercussions métaboliques de l'Obésité: MASH et Apnée du sommeil. Que pouvons-nous offrir?",
           "topics.nutri.title": "Nutri Conecta",
           "topics.nutri.precision": "Médecine de Précision:",
           "topics.nutri.precision1":
@@ -2017,7 +3007,6 @@
           "topics.nutri.women1": "Climatère et Ménopause",
           "topics.nutri.women2":
             "Évaluation de chaque comportement de ce cycle",
-          "topics.nutri.women3": "Choix de la supplémentation appropriée",
           "topics.nutri.women4": "Maintien de la santé mentale et physique",
           "topics.nutri.behavior": "Comportement Alimentaire:",
           "topics.nutri.behavior1":
@@ -2027,13 +3016,6 @@
           "topics.nutri.behavior4":
             "Identification des déclencheurs émotionnels",
           "topics.nutri.behavior5": "Approche interdisciplinaire",
-          "topics.nutri.supplements": "Supplémentation:",
-          "topics.nutri.supplements1":
-            "Quand il y a un réel besoin de supplémenter",
-          "topics.nutri.supplements2":
-            "Bases physiologiques et nutritionnelles",
-          "topics.nutri.supplements3": "Modulation Métabolique",
-          "topics.nutri.supplements4": "Supplémentation en complément",
           "committee.title": "Comité d'Organisation",
           "committee.gastro": "Gastro Conecta",
           "committee.nutri": "Nutri Conecta",
@@ -2052,10 +3034,10 @@
             "3 salles simultanées avec toute l'infrastructure nécessaire",
           "location.parking": "Parking",
           "location.parkingText": "Grand parking disponible sur place",
-          "registration.title": "Inscriptions Bientôt Disponibles",
-          "registration.text":
-            "Nous annoncerons bientôt l'ouverture officielle des inscriptions.",
-          "registration.contact": "Contactez-nous",
+          "registration.title": "Inscriptions",
+          "registration.gastro": "Gastro Conecta – S'inscrire",
+          "registration.nutri": "Nutri Conecta – Bientôt disponible",
+          "registration.contact": "Questions ? Contactez-nous",
           "footer.about": "À propos de l'Événement",
           "footer.aboutText":
             "Événements scientifiques d'excellence pour les professionnels de la gastroentérologie, de la nutrition et des domaines connexes.",
@@ -2174,6 +3156,52 @@
       setInterval(updateCountdown, 1000);
 
       // Mobile menu toggle
+      function showScheduleTab(tab) {
+        document
+          .querySelectorAll(".schedule-day")
+          .forEach((el) => (el.style.display = "none"));
+        document
+          .querySelectorAll(".tabs button")
+          .forEach((btn) => btn.classList.remove("active"));
+        document.getElementById("schedule-" + tab).style.display = "block";
+        document.getElementById("tab-" + tab).classList.add("active");
+      }
+
+      // Modal logic for speakers
+      document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("saiba-mais-btn")) {
+          const modalId = e.target.dataset.modal;
+          const modal = document.getElementById(modalId);
+          if (modal) {
+            modal.classList.add("show");
+            document.body.style.overflow = "hidden";
+          }
+        }
+        if (e.target.classList.contains("close-modal")) {
+          const modal = e.target.closest(".modal");
+          if (modal) {
+            modal.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        }
+        if (
+          e.target.classList.contains("modal") &&
+          e.target.classList.contains("show")
+        ) {
+          e.target.classList.remove("show");
+          document.body.style.overflow = "";
+        }
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          document.querySelectorAll(".modal.show").forEach((modal) => {
+            modal.classList.remove("show");
+            document.body.style.overflow = "";
+          });
+        }
+      });
+
       function toggleMobileMenu() {
         const menu = document.getElementById("nav-menu");
         menu.style.display = menu.style.display === "flex" ? "none" : "flex";
