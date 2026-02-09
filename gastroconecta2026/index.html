@@ -930,6 +930,56 @@
         cursor: pointer;
       }
 
+      /* Schedule header with download button - TGI style */
+      .schedule-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .schedule-title-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex: 1;
+      }
+
+      .schedule-title {
+        margin: 0;
+        flex: 1;
+      }
+
+      .download-pdf-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.5rem 1rem;
+        background: rgba(44, 95, 125, 0.1);
+        border-radius: 6px;
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .download-pdf-btn:hover {
+        background: rgba(44, 95, 125, 0.15);
+        transform: translateY(-1px);
+        color: var(--primary);
+      }
+
+      .download-icon {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+
       /* Schedule tabs */
       .tabs {
         display: flex;
@@ -1242,6 +1292,80 @@
       }
 
       /* Sponsors */
+      .sponsor-top-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .sponsor-top-row .sponsor-tier {
+        flex: 1;
+        min-width: 250px;
+        max-width: 450px;
+        margin-bottom: 0;
+      }
+
+      .sponsor-tier {
+        margin-bottom: 3rem;
+      }
+
+      .sponsor-tier-title {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--muted-text);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .sponsor-tier-title::before,
+      .sponsor-tier-title::after {
+        content: "";
+        flex: 1;
+        max-width: 150px;
+        height: 1px;
+        background: #ddd;
+      }
+
+      .sponsor-tier-logos {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      .sponsor-tier-logos img {
+        max-width: 180px;
+        max-height: 80px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+      }
+
+      .sponsor-tier-logos img:hover {
+        transform: scale(1.05);
+      }
+
+      .sponsor-tier.realizacao .sponsor-tier-logos img {
+        max-width: 220px;
+        max-height: 100px;
+      }
+
+      .sponsor-tier.master .sponsor-tier-logos img {
+        max-width: 160px;
+        max-height: 70px;
+      }
+
       .sponsors-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -1431,13 +1555,13 @@
       <ul id="nav-menu">
         <li><a href="#top" data-i18n="nav.home">Início</a></li>
         <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#comissao" data-i18n="nav.committee">Comissão</a></li>
         <li><a href="#eventos" data-i18n="nav.events">Eventos</a></li>
         <li><a href="#programacao" data-i18n="nav.schedule">Programação</a></li>
         <li>
           <a href="#palestrantes" data-i18n="nav.speakers">Palestrantes</a>
         </li>
         <li><a href="#temas" data-i18n="nav.topics">Temas</a></li>
-        <li><a href="#comissao" data-i18n="nav.committee">Comissão</a></li>
         <li><a href="#local" data-i18n="nav.location">Local</a></li>
         <li class="nav-lang-selector">
           <select id="language-select" onchange="changeLanguage()">
@@ -1514,6 +1638,140 @@
           <span data-i18n="about.organizer">Realização:</span>
           <span style="color: var(--accent)">Instituto Endogastro Academy</span>
         </h3>
+      </div>
+    </section>
+
+    <!-- Committee section -->
+    <section id="comissao" class="fade-in">
+      <div class="container">
+        <h2 data-i18n="committee.title">Comissão Organizadora</h2>
+
+        <div style="text-align: center; margin-bottom: 2rem">
+          <img
+            src="logo-gastro.png"
+            alt="Gastro Conecta"
+            style="max-width: 200px; height: auto"
+          />
+        </div>
+        <div class="committee-grid">
+          <div class="committee-member">
+            <div class="committee-photo has-image">
+              <img
+                src="committee/Jose-Camara.png"
+                alt="Dr. José Bezerra Câmara Neto"
+              />
+            </div>
+            <h4>Dr. José Bezerra Câmara Neto</h4>
+            <p data-i18n="committee.role">Comissão Organizadora</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo has-image">
+              <img
+                src="committee/Leliane-Alencar.png"
+                alt="Dra. Leliane Alencar Bonates"
+              />
+            </div>
+            <h4>Dra. Leliane Alencar Bonates</h4>
+            <p data-i18n="committee.role">Comissão Organizadora</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo has-image">
+              <img
+                src="committee/MARCOS-SATURNINO-PE.webp"
+                alt="Dr. Marcos Saturnino"
+              />
+            </div>
+            <h4>Dr. Marcos Saturnino</h4>
+            <p data-i18n="committee.role">Comissão Organizadora</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo has-image">
+              <img
+                src="committee/Nildevande-Firmino.jfif"
+                alt="Dr. Nildevande Firmino"
+              />
+            </div>
+            <h4>Dr. Nildevande Firmino</h4>
+            <p data-i18n="committee.role">Comissão Organizadora</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo has-image">
+              <img
+                src="committee/Justiniano-Luna.png"
+                alt="Dr. Justiniano Othon de Luna"
+              />
+            </div>
+            <h4>Dr. Justiniano Othon de Luna</h4>
+            <p data-i18n="committee.role">Comissão Organizadora</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo has-image">
+              <img
+                src="committee/leonardo-bandeira.jpeg"
+                alt="Dr. Leonardo Bandeira"
+              />
+            </div>
+            <h4>Dr. Leonardo Bandeira</h4>
+            <p data-i18n="committee.role">Comissão Organizadora</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo has-image">
+              <img
+                src="committee/fatima-sampaio.jpeg"
+                alt="Dra. Fátima Sampaio"
+              />
+            </div>
+            <h4>Dra. Fátima Sampaio</h4>
+            <p data-i18n="committee.role">Comissão Organizadora</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin: 4rem 0 2rem">
+          <img
+            src="logo-nutri.png"
+            alt="Nutri Conecta"
+            style="max-width: 200px; height: auto"
+          />
+        </div>
+        <div
+          class="committee-grid"
+          style="grid-template-columns: repeat(4, 1fr); max-width: 900px"
+        >
+          <div class="committee-member">
+            <div class="committee-photo has-image">
+              <img src="committee/Maria-Pimentel.png" alt="Maria Pimentel" />
+            </div>
+            <h4>Maria Pimentel</h4>
+            <p data-i18n="committee.nutritionist">Nutricionista</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo has-image">
+              <img
+                src="committee/Edite-Magalhaes.png"
+                alt="Dra. Edite Magalhães"
+              />
+            </div>
+            <h4>Dra. Edite Magalhães</h4>
+            <p data-i18n="committee.nutritionist_md">Nutróloga</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo has-image">
+              <img
+                src="committee/RENATA-MARTINS-MG.webp"
+                alt="Dra. Renata Martins"
+              />
+            </div>
+            <h4>Dra. Renata Martins</h4>
+            <p data-i18n="committee.nutritionist_md">Nutróloga</p>
+          </div>
+          <div class="committee-member">
+            <div class="committee-photo has-image">
+              <img src="committee/rebeca-pessoa.jpeg" alt="Rebeca Pessoa" />
+            </div>
+            <h4>Rebeca Pessoa</h4>
+            <p data-i18n="committee.nutritionist">Nutricionista</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1625,16 +1883,13 @@
         <div class="topics-grid">
           <!-- Gastro Topics -->
           <div class="topic-card">
-            <h3>
+            <div style="text-align: center; margin-bottom: 1.5rem">
               <img
-                src="stomach-icon.svg"
-                alt=""
-                class="gastro-icon"
-                width="28"
-                height="28"
+                src="logo-gastro.png"
+                alt="Gastro Conecta"
+                style="max-width: 180px; height: auto"
               />
-              <span data-i18n="topics.gastro.title">Gastro Conecta</span>
-            </h3>
+            </div>
 
             <h4 data-i18n="topics.gastro.dii">
               DII – Doenças Inflamatórias Intestinais:
@@ -1686,10 +1941,13 @@
 
           <!-- Nutri Topics -->
           <div class="topic-card">
-            <h3>
-              <i class="fas fa-dna"></i>
-              <span data-i18n="topics.nutri.title">Nutri Conecta</span>
-            </h3>
+            <div style="text-align: center; margin-bottom: 1.5rem">
+              <img
+                src="logo-nutri.png"
+                alt="Nutri Conecta"
+                style="max-width: 180px; height: auto"
+              />
+            </div>
 
             <h4 data-i18n="topics.nutri.precision">Medicina de Precisão:</h4>
             <ul>
@@ -1737,13 +1995,37 @@
     <!-- Schedule section -->
     <section id="programacao" class="fade-in">
       <div class="container">
-        <h2 data-i18n="schedule.title">Programação Completa</h2>
-        <p
-          style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem"
-          data-i18n="schedule.subtitle"
-        >
-          Confira a programação detalhada do evento
-        </p>
+        <div class="schedule-header">
+          <div class="schedule-title-row">
+            <h2 class="schedule-title" data-i18n="schedule.title">
+              Programação
+            </h2>
+            <a
+              href="schedule_resumes/Programação preliminar - NutriConecta (3).pdf"
+              target="_blank"
+              rel="noopener"
+              class="download-pdf-btn"
+            >
+              <svg
+                class="download-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7,10 12,15 17,10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              <span data-i18n="schedule.download"
+                >Baixe aqui a sua programação</span
+              >
+            </a>
+          </div>
+        </div>
 
         <div class="tabs">
           <button
@@ -2088,37 +2370,29 @@
     <section id="palestrantes" class="fade-in">
       <div class="container">
         <h2 data-i18n="speakers.title">Palestrantes</h2>
-        <p
-          style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem"
-          data-i18n="speakers.intro"
-        >
-          Conheça nossos palestrantes:
-        </p>
 
-        <h3
+        <!-- Gastro Conecta + Nutri Conecta logos -->
+        <div
           style="
-            text-align: center;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin: 2rem 0 2rem;
           "
         >
-          <span data-i18n="speakers.gastro">Gastro Conecta</span>
-        </h3>
-        <p class="speakers-coming-soon" data-i18n="speakers.comingSoon">
-          Em breve
-        </p>
-
-        <h3
-          style="
-            text-align: center;
-            color: var(--primary);
-            margin: 3rem 0 1.5rem;
-            font-size: 1.5rem;
-          "
-        >
-          <span data-i18n="speakers.nutri">Nutri Conecta</span>
-        </h3>
+          <img
+            src="logo-gastro.png"
+            alt="Gastro Conecta"
+            style="max-width: 200px; height: auto"
+          />
+          <img
+            src="logo-nutri.png"
+            alt="Nutri Conecta"
+            style="max-width: 200px; height: auto"
+          />
+        </div>
         <div class="speakers-grid">
           <div class="speaker-item">
             <img src="speakers/Danielle Lodetti.jpeg" alt="Danielle Lodetti" />
@@ -2175,6 +2449,42 @@
               Saiba mais
             </button>
           </div>
+          <div class="speaker-item">
+            <img
+              src="committee/leonardo-bandeira.jpeg"
+              alt="Leonardo Bandeira"
+            />
+            <h4>Leonardo Bandeira</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-leonardo-bandeira"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/Pedro Perim.jpg" alt="Pedro Perim" />
+            <h4>Pedro Perim</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-pedro-perim"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/rebeca_pessoa.jpeg" alt="Rebeca Pessoa" />
+            <h4>Rebeca Pessoa</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-rebeca-pessoa"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -2223,7 +2533,8 @@
           Residência em Clínica médica – Santa Casa de Misericórdia do
           Recife.<br />
           Coordenadora da equipe de terapia nutricional e do serviço de
-          nutrologia do Hospital Santa Joana.
+          nutrologia do Hospital Santa Joana.<br />
+          Nutróloga da Nutrigen Clinic.
         </div>
       </div>
     </div>
@@ -2292,146 +2603,73 @@
         </div>
       </div>
     </div>
-
-    <!-- Committee section -->
-    <section id="comissao" class="fade-in">
-      <div class="container">
-        <h2 data-i18n="committee.title">Comissão Organizadora</h2>
-
-        <h3
-          style="
-            text-align: center;
-            color: var(--primary);
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-          "
-        >
-          <span data-i18n="committee.gastro">Gastro Conecta</span>
-        </h3>
-        <div class="committee-grid">
-          <div class="committee-member">
-            <div class="committee-photo has-image">
-              <img
-                src="committee/Jose-Camara.png"
-                alt="Dr. José Bezerra Câmara Neto"
-              />
-            </div>
-            <h4>Dr. José Bezerra Câmara Neto</h4>
-            <p data-i18n="committee.role">Comissão Organizadora</p>
-          </div>
-          <div class="committee-member">
-            <div class="committee-photo has-image">
-              <img
-                src="committee/Leliane-Alencar.png"
-                alt="Dra. Leliane Alencar Bonates"
-              />
-            </div>
-            <h4>Dra. Leliane Alencar Bonates</h4>
-            <p data-i18n="committee.role">Comissão Organizadora</p>
-          </div>
-          <div class="committee-member">
-            <div class="committee-photo has-image">
-              <img
-                src="committee/MARCOS-SATURNINO-PE.webp"
-                alt="Dr. Marcos Saturnino"
-              />
-            </div>
-            <h4>Dr. Marcos Saturnino</h4>
-            <p data-i18n="committee.role">Comissão Organizadora</p>
-          </div>
-          <div class="committee-member">
-            <div class="committee-photo has-image">
-              <img
-                src="committee/Nildevande-Firmino.jfif"
-                alt="Dr. Nildevande Firmino"
-              />
-            </div>
-            <h4>Dr. Nildevande Firmino</h4>
-            <p data-i18n="committee.role">Comissão Organizadora</p>
-          </div>
-          <div class="committee-member">
-            <div class="committee-photo has-image">
-              <img
-                src="committee/Justiniano-Luna.png"
-                alt="Dr. Justiniano Othon de Luna"
-              />
-            </div>
-            <h4>Dr. Justiniano Othon de Luna</h4>
-            <p data-i18n="committee.role">Comissão Organizadora</p>
-          </div>
-          <div class="committee-member">
-            <div class="committee-photo has-image">
-              <img
-                src="committee/leonardo-bandeira.jpeg"
-                alt="Dr. Leonardo Bandeira"
-              />
-            </div>
-            <h4>Dr. Leonardo Bandeira</h4>
-            <p data-i18n="committee.role">Comissão Organizadora</p>
-          </div>
-          <div class="committee-member">
-            <div class="committee-photo has-image">
-              <img
-                src="committee/fatima-sampaio.jpeg"
-                alt="Dra. Fátima Sampaio"
-              />
-            </div>
-            <h4>Dra. Fátima Sampaio</h4>
-            <p data-i18n="committee.role">Comissão Organizadora</p>
-          </div>
-        </div>
-
-        <h3
-          style="
-            text-align: center;
-            color: var(--accent-green);
-            margin: 4rem 0 2rem;
-            font-size: 1.5rem;
-          "
-        >
-          <span data-i18n="committee.nutri">Nutri Conecta</span>
-        </h3>
-        <div
-          class="committee-grid"
-          style="grid-template-columns: repeat(4, 1fr); max-width: 900px"
-        >
-          <div class="committee-member">
-            <div class="committee-photo has-image">
-              <img src="committee/Maria-Pimentel.png" alt="Maria Pimentel" />
-            </div>
-            <h4>Maria Pimentel</h4>
-            <p data-i18n="committee.nutritionist">Nutricionista</p>
-          </div>
-          <div class="committee-member">
-            <div class="committee-photo has-image">
-              <img
-                src="committee/Edite-Magalhaes.png"
-                alt="Dra. Edite Magalhães"
-              />
-            </div>
-            <h4>Dra. Edite Magalhães</h4>
-            <p data-i18n="committee.nutritionist_md">Nutróloga</p>
-          </div>
-          <div class="committee-member">
-            <div class="committee-photo has-image">
-              <img
-                src="committee/RENATA-MARTINS-MG.webp"
-                alt="Dra. Renata Martins"
-              />
-            </div>
-            <h4>Dra. Renata Martins</h4>
-            <p data-i18n="committee.nutritionist_md">Nutróloga</p>
-          </div>
-          <div class="committee-member">
-            <div class="committee-photo has-image">
-              <img src="committee/rebeca-pessoa.jpeg" alt="Rebeca Pessoa" />
-            </div>
-            <h4>Rebeca Pessoa</h4>
-            <p data-i18n="committee.nutritionist">Nutricionista</p>
-          </div>
+    <div class="modal" id="modal-leonardo-bandeira">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="committee/leonardo-bandeira.jpeg"
+          alt="Leonardo Bandeira"
+          class="modal-avatar"
+        />
+        <h3>Leonardo Bandeira</h3>
+        <div class="modal-bio">
+          Doutorando em Endocrinologia na Escola Paulista de Medicina
+          (EPM/Unifesp).<br />
+          Fellow em Endocrinologia pela Columbia University, NY.<br />
+          Diretor da Sociedade Brasileira de Endocrinologia e Metabologia –
+          SBEM/PE.<br />
+          Endocrinologista da Nutrigen Clinic.
         </div>
       </div>
-    </section>
+    </div>
+    <div class="modal" id="modal-pedro-perim">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Pedro Perim.jpg"
+          alt="Pedro Perim"
+          class="modal-avatar"
+        />
+        <h3>Pedro Perim</h3>
+        <div class="modal-bio">
+          Nutricionista.<br />
+          Mestre pela Faculdade de Medicina da USP.<br />
+          Pesquisador na área de suplementação com dezenas de artigos
+          publicados.<br />
+          Fundador da P2 Nutrition Academy.<br />
+          Especialista em Nutrição Esportiva.<br />
+          Especialista em Microbiota Intestinal.<br />
+          Certificado Internacionalmente em Nutrição.<br />
+          Membro do American College of Sports Medicine.<br />
+          Criador da Formação em Suplementação Inteligente e Comunidade "Um
+          Scoop de Ciência".<br />
+          Nutricionista e Fundador Clínica PENS.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-rebeca-pessoa">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/rebeca_pessoa.jpeg"
+          alt="Rebeca Pessoa"
+          class="modal-avatar"
+        />
+        <h3>Rebeca Pessoa</h3>
+        <div class="modal-bio">
+          Formada pelo Centro Universitário Maurício de Nassau – UNINASSAU
+          Recife.<br />
+          Especialização em Nutrição Oncológica pelo A.C.Camargo Câncer
+          Center.<br />
+          Pós-Graduação em Nutrição Funcional Integrativa pela faculdade VP
+          Nutricional (em conclusão).<br />
+          Atuação com foco em oncologia, emagrecimento, saúde da mulher e
+          menopausa.<br />
+          Estágio em oncologia no Hospital Memorial São José e Hospital
+          Esperança.
+        </div>
+      </div>
+    </div>
 
     <!-- Location section -->
     <section id="local" class="fade-in" style="background: white">
@@ -2525,12 +2763,16 @@
               >Gastro Conecta – Inscreva-se</span
             >
           </a>
-          <span
-            class="btn-primary registration-btn registration-btn-disabled"
-            data-i18n="registration.nutri"
+          <a
+            href="https://forms.gle/nqZSBe2jF5wCuXp1A"
+            class="btn-primary registration-btn"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Nutri Conecta – Em breve
-          </span>
+            <span data-i18n="registration.nutri"
+              >Nutri Conecta – Inscreva-se</span
+            >
+          </a>
         </div>
         <p
           style="
@@ -2558,35 +2800,48 @@
     <section id="patrocinadores" class="fade-in">
       <div class="container">
         <h2 data-i18n="sponsors.title">Patrocinadores</h2>
-        <p
-          style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem"
-          data-i18n="sponsors.subtitle"
-        >
-          Agradecemos o apoio de nossos patrocinadores
-        </p>
-        <div class="sponsors-grid">
-          <div class="sponsor-item">
-            <img src="sponsors/SPAC.png" alt="SPAC" class="sponsor-logo" />
+
+        <!-- Realização + Patrocínio Master (same row) -->
+        <div class="sponsor-top-row">
+          <div class="sponsor-tier realizacao">
+            <div class="sponsor-tier-title">
+              <span data-i18n="sponsors.realizacao">Realização</span>
+            </div>
+            <div class="sponsor-tier-logos">
+              <img
+                src="sponsors/Endogastro Academy.jpg.png"
+                alt="Endogastro Academy"
+              />
+            </div>
           </div>
-          <div class="sponsor-partners">
-            <img
-              src="sponsors/Logo_CRM-removebg-preview.png"
-              alt="CRM"
-              class="sponsor-logo"
-            />
-            <img
-              src="sponsors/FUJI FILM.jpeg"
-              alt="FUJI FILM"
-              class="sponsor-logo"
-            />
+
+          <div class="sponsor-tier master">
+            <div class="sponsor-tier-title">
+              <span data-i18n="sponsors.master">Patrocínio Master</span>
+            </div>
+            <div class="sponsor-tier-logos">
+              <img
+                src="sponsors/Endogastro Medicina Diagnóstica e Terapêutica.jpg.png"
+                alt="Endogastro Medicina Diagnóstica e Terapêutica"
+              />
+              <img src="sponsors/Evipar.png" alt="Evipar" />
+              <img src="sponsors/Nutrigen.png" alt="Nutrigen Clinic" />
+            </div>
           </div>
-          <div class="sponsor-partners">
-            <img src="sponsors/ROVAL.png" alt="ROVAL" class="sponsor-logo" />
+        </div>
+
+        <!-- Patrocinadores -->
+        <div class="sponsor-tier">
+          <div class="sponsor-tier-logos">
+            <img src="sponsors/SPAC.png" alt="SPAC" />
+            <img src="sponsors/Logo_CRM-removebg-preview.png" alt="CRM" />
+            <img src="sponsors/FUJI FILM.jpeg" alt="FUJI FILM" />
+            <img src="sponsors/ROVAL.png" alt="ROVAL" />
             <img
               src="sponsors/InfinityPharma-laranja.png"
               alt="Infinity Pharma"
-              class="sponsor-logo"
             />
+            <img src="sponsors/zeekr.png" alt="Zeekr" />
           </div>
         </div>
       </div>
@@ -2656,8 +2911,9 @@
           "nav.committee": "Comissão",
           "nav.location": "Local",
           "nav.register": "Inscreva-se",
-          "schedule.title": "Programação Completa",
+          "schedule.title": "Programação",
           "schedule.subtitle": "Confira a programação detalhada do evento",
+          "schedule.download": "Baixe aqui a sua programação",
           "schedule.gastro": "Gastro Conecta",
           "schedule.nutri": "Nutri Conecta",
           "schedule.timeHeader": "Horário",
@@ -2771,8 +3027,11 @@
           "location.parkingText": "Amplo estacionamento disponível no local",
           "registration.title": "Inscrições",
           "registration.gastro": "Gastro Conecta – Inscreva-se",
-          "registration.nutri": "Nutri Conecta – Em breve",
+          "registration.nutri": "Nutri Conecta – Inscreva-se",
           "registration.contact": "Dúvidas? Entre em Contato",
+          "sponsors.title": "Patrocinadores",
+          "sponsors.realizacao": "Realização",
+          "sponsors.master": "Patrocínio Master",
           "footer.about": "Sobre o Evento",
           "footer.aboutText":
             "Eventos científicos de excelência voltados para profissionais de gastroenterologia, nutrição e áreas relacionadas.",
@@ -2792,8 +3051,9 @@
           "nav.committee": "Committee",
           "nav.location": "Location",
           "nav.register": "Register",
-          "schedule.title": "Full Schedule",
+          "schedule.title": "Schedule",
           "schedule.subtitle": "Check the detailed event schedule",
+          "schedule.download": "Download your program here",
           "schedule.gastro": "Gastro Conecta",
           "schedule.nutri": "Nutri Conecta",
           "schedule.timeHeader": "Time",
@@ -2906,8 +3166,11 @@
           "location.parkingText": "Ample parking available on site",
           "registration.title": "Registration",
           "registration.gastro": "Gastro Conecta – Register",
-          "registration.nutri": "Nutri Conecta – Coming soon",
+          "registration.nutri": "Nutri Conecta – Register",
           "registration.contact": "Questions? Contact Us",
+          "sponsors.title": "Sponsors",
+          "sponsors.realizacao": "Organization",
+          "sponsors.master": "Master Sponsorship",
           "footer.about": "About the Event",
           "footer.aboutText":
             "Scientific events of excellence for professionals in gastroenterology, nutrition and related areas.",
@@ -2927,8 +3190,9 @@
           "nav.committee": "Comité",
           "nav.location": "Lieu",
           "nav.register": "S'inscrire",
-          "schedule.title": "Programme Complet",
+          "schedule.title": "Programme",
           "schedule.subtitle": "Consultez le programme détaillé de l'événement",
+          "schedule.download": "Téléchargez votre programme ici",
           "schedule.gastro": "Gastro Conecta",
           "schedule.nutri": "Nutri Conecta",
           "schedule.timeHeader": "Horaire",
@@ -3045,8 +3309,11 @@
           "location.parkingText": "Grand parking disponible sur place",
           "registration.title": "Inscriptions",
           "registration.gastro": "Gastro Conecta – S'inscrire",
-          "registration.nutri": "Nutri Conecta – Bientôt disponible",
+          "registration.nutri": "Nutri Conecta – S'inscrire",
           "registration.contact": "Questions ? Contactez-nous",
+          "sponsors.title": "Sponsors",
+          "sponsors.realizacao": "Organisation",
+          "sponsors.master": "Parrainage Master",
           "footer.about": "À propos de l'Événement",
           "footer.aboutText":
             "Événements scientifiques d'excellence pour les professionnels de la gastroentérologie, de la nutrition et des domaines connexes.",
