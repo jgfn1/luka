@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
@@ -330,7 +330,8 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: radial-gradient(
+        background:
+          radial-gradient(
             circle at 20% 50%,
             rgba(232, 168, 56, 0.2) 0%,
             transparent 50%
@@ -438,6 +439,68 @@
         box-shadow: 0 6px 24px rgba(232, 168, 56, 0.5);
       }
 
+      /* Hero sponsors floating over video */
+      .hero-sponsors {
+        margin-top: 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3rem;
+        animation: fadeInUp 1s ease-out 0.6s both;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 2rem 3rem;
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .hero-sponsor-group {
+        text-align: center;
+        flex: 1;
+        min-width: 200px;
+        max-width: 400px;
+      }
+
+      .hero-sponsor-label {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--muted-text);
+        margin-bottom: 1rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+
+      .hero-sponsor-label::before,
+      .hero-sponsor-label::after {
+        content: "";
+        flex: 1;
+        max-width: 80px;
+        height: 1px;
+        background: #ddd;
+      }
+
+      .hero-sponsor-logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-sponsor-logos img {
+        max-height: 45px;
+        width: auto;
+        transition: transform 0.3s ease;
+      }
+
+      .hero-sponsor-logos img:hover {
+        transform: scale(1.05);
+      }
+
       /* Section styles */
       section {
         padding: 5rem 2rem;
@@ -462,7 +525,9 @@
       .fade-in {
         opacity: 0;
         transform: translateY(30px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
       }
 
       .fade-in.visible {
@@ -492,7 +557,8 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: radial-gradient(
+        background:
+          radial-gradient(
             circle at 20% 80%,
             rgba(255, 255, 255, 0.1) 0%,
             transparent 50%
@@ -577,7 +643,8 @@
           rgba(255, 255, 255, 0.35),
           rgba(255, 255, 255, 0.15)
         );
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25),
+        box-shadow:
+          0 12px 40px rgba(0, 0, 0, 0.25),
           inset 0 1px 0 rgba(255, 255, 255, 0.5);
       }
 
@@ -592,7 +659,8 @@
         color: #fff;
         line-height: 1;
         margin-bottom: 0.3rem;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2),
+        text-shadow:
+          0 2px 8px rgba(0, 0, 0, 0.2),
           0 4px 16px rgba(0, 0, 0, 0.15);
         font-family: "Montserrat", sans-serif;
         letter-spacing: -1px;
@@ -1608,6 +1676,34 @@
         >
           Inscreva-se
         </a>
+
+        <!-- Hero sponsors floating over video -->
+        <div class="hero-sponsors">
+          <div class="hero-sponsor-group">
+            <div class="hero-sponsor-label" data-i18n="sponsors.realizacao">
+              Realização
+            </div>
+            <div class="hero-sponsor-logos">
+              <img
+                src="sponsors/Endogastro Academy.jpg.png"
+                alt="Endogastro Academy"
+              />
+            </div>
+          </div>
+          <div class="hero-sponsor-group">
+            <div class="hero-sponsor-label" data-i18n="sponsors.master">
+              Patrocínio Master
+            </div>
+            <div class="hero-sponsor-logos">
+              <img
+                src="sponsors/Endogastro-Medicina.png"
+                alt="Endogastro Medicina"
+              />
+              <img src="sponsors/Evipar.png" alt="Evipar" />
+              <img src="sponsors/Nutrigen.png" alt="Nutrigen" />
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -3415,26 +3511,26 @@
 
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
         );
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         document.getElementById("days").innerText = String(days).padStart(
           2,
-          "0"
+          "0",
         );
         document.getElementById("hours").innerText = String(hours).padStart(
           2,
-          "0"
+          "0",
         );
         document.getElementById("minutes").innerText = String(minutes).padStart(
           2,
-          "0"
+          "0",
         );
         document.getElementById("seconds").innerText = String(seconds).padStart(
           2,
-          "0"
+          "0",
         );
       }
 
