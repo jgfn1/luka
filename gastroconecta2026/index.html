@@ -1021,6 +1021,12 @@
         flex: 1;
       }
 
+      .download-buttons {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
       .download-pdf-btn {
         display: flex;
         align-items: center;
@@ -2086,30 +2092,52 @@
             <h2 class="schedule-title" data-i18n="schedule.title">
               Programação
             </h2>
-            <a
-              href="schedule_resumes/Programacao-preliminar-NutriConecta.pdf"
-              target="_blank"
-              rel="noopener"
-              class="download-pdf-btn"
-            >
-              <svg
-                class="download-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+            <div class="download-buttons">
+              <a
+                href="schedule_resumes/Programacao-preliminar-GastroConecta.pdf"
+                target="_blank"
+                rel="noopener"
+                class="download-pdf-btn"
               >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7,10 12,15 17,10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              <span data-i18n="schedule.download"
-                >Baixe aqui a sua programação</span
+                <svg
+                  class="download-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7,10 12,15 17,10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Baixar Programação Gastro</span>
+              </a>
+              <a
+                href="schedule_resumes/Programacao-preliminar-NutriConecta.pdf"
+                target="_blank"
+                rel="noopener"
+                class="download-pdf-btn"
               >
-            </a>
+                <svg
+                  class="download-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7,10 12,15 17,10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Baixar Programação Nutri</span>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -2310,7 +2338,7 @@
                   Novas perspectivas e desafios no tratamento do Câncer Gástrico
                   Avançado
                 </td>
-                <td><span class="speaker-name">Lara Neves</span></td>
+                <td><span class="speaker-name">Nildevande Firmino e Lara Neves</span></td>
               </tr>
               <tr>
                 <td></td>
@@ -2398,79 +2426,130 @@
                 </td>
               </tr>
               <tr>
-                <td>09:10 - 09:50</td>
-                <td colspan="2" class="session-break">
-                  <strong>CONFERÊNCIA GENÉTICA</strong>
-                </td>
-              </tr>
-              <tr>
                 <td colspan="3" class="session-header">
-                  Mesa 1 - MEDICINA DE PRECISÃO
+                  Mesa 1 - MEDICINA DE PRECISÃO<br /><small
+                    >Moderador: Rebeca Pessoa</small
+                  >
                 </td>
               </tr>
               <tr>
-                <td>09:50 - 11:30</td>
-                <td>Teste genético Histamina</td>
-                <td><span class="speaker-name">Maria Pimentel</span></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td><span class="speaker-name">Renata Knack</span></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
+                <td>09:15 - 09:35</td>
+                <td>A Genética e sua interface com a medicina do estilo de vida</td>
                 <td><span class="speaker-name">Renata Martins</span></td>
               </tr>
               <tr>
-                <td></td>
+                <td>09:35 - 09:55</td>
+                <td>Discussão de Caso Clínico</td>
+                <td><span class="speaker-name">Maria Pimentel</span></td>
+              </tr>
+              <tr>
+                <td>09:55 - 10:15</td>
                 <td colspan="2" class="session-break">
                   <strong>DISCUSSÃO</strong>
                 </td>
               </tr>
               <tr>
-                <td>11:30 - 12:00</td>
+                <td>10:15 - 10:35</td>
                 <td colspan="2" class="session-break">
                   <strong>COFFEE BREAK</strong>
                 </td>
-              </tr>
-              <tr>
-                <td>12:10 - 12:50</td>
-                <td colspan="2" class="session-break">
-                  <strong>SIMPÓSIO SATÉLITE</strong>
-                </td>
-              </tr>
-              <tr>
-                <td>13:30 - 14:30</td>
-                <td>CONFERÊNCIA - Fertilidade, Climatério e Menopausa</td>
-                <td><span class="speaker-name">Fernanda Padovani</span></td>
               </tr>
               <tr>
                 <td colspan="3" class="session-header">
-                  Mesa 3 - EMAGRECIMENTO E LONGEVIDADE
+                  Mesa 2 - EMAGRECIMENTO E LONGEVIDADE<br /><small
+                    >Moderador: José Câmara</small
+                  >
                 </td>
               </tr>
               <tr>
-                <td>14:30 - 15:50</td>
-                <td>Emagrecimento análises GLP1</td>
+                <td>10:40 - 11:00</td>
+                <td>Análogos de GLP1 - O que temos de novidade?</td>
+                <td><span class="speaker-name">Leonardo Bandeira</span></td>
+              </tr>
+              <tr>
+                <td>11:00 - 11:20</td>
+                <td>Estratégias nutricionais durante o uso de análogos de GLP1</td>
+                <td><span class="speaker-name">Rebeca Pessoa</span></td>
+              </tr>
+              <tr>
+                <td>11:20 - 11:40</td>
+                <td>Suplementação em usuários de GLP1: o que faz sentido?</td>
                 <td><span class="speaker-name">Edite Magalhães</span></td>
               </tr>
               <tr>
-                <td></td>
-                <td>Neuronutrição no Tratamento da Compulsão Alimentar</td>
-                <td><span class="speaker-name">Danielle Lodetti</span></td>
-              </tr>
-              <tr>
-                <td></td>
+                <td>11:40 - 12:00</td>
                 <td colspan="2" class="session-break">
                   <strong>DISCUSSÃO</strong>
                 </td>
               </tr>
               <tr>
-                <td>16:00 - 16:20</td>
+                <td>12:00 - 12:40</td>
+                <td colspan="2" class="session-break">
+                  <strong>SIMPÓSIO SATÉLITE FERINJECT</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>12:40 - 14:00</td>
+                <td colspan="2" class="session-break">
+                  <strong>INTERVALO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  Mesa 3 - SAÚDE DA MULHER<br /><small
+                    >Moderador: Maria Pimentel</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>14:00 - 14:30</td>
+                <td>Fertilidade</td>
+                <td><span class="speaker-name">Fernanda Padovani</span></td>
+              </tr>
+              <tr>
+                <td>14:30 - 15:00</td>
+                <td>Climatério e Menopausa</td>
+                <td><span class="speaker-name">Danielle Lodetti</span></td>
+              </tr>
+              <tr>
+                <td>15:00 - 15:15</td>
+                <td>Suplementação Climatério e Menopausa</td>
+                <td><span class="speaker-name">Catarina Michelle</span></td>
+              </tr>
+              <tr>
+                <td>15:15 - 15:30</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>15:30 - 15:50</td>
                 <td colspan="2" class="session-break">
                   <strong>COFFEE BREAK</strong>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  CONFERÊNCIA - PERFORMANCE DESPORTIVA<br /><small
+                    >Moderador: Renata Martins</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>16:00 - 17:00</td>
+                <td>Metabolismo de alta performance na atividade física e suplementação (Creatina)</td>
+                <td><span class="speaker-name">Pedro Perim</span></td>
+              </tr>
+              <tr>
+                <td>17:00 - 17:20</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>17:20</td>
+                <td colspan="2" class="session-break">
+                  <strong>Encerramento</strong>
                 </td>
               </tr>
             </tbody>
@@ -2609,21 +2688,18 @@
         />
         <h3>Danielle Lodetti</h3>
         <div class="modal-bio">
-          Mestrado em Neurociências. Formação em Neurociências. Criadora da
-          Neuronutrição ®.<br />
-          Nutricionista pela Universidade Federal de Santa Catarina (2000).<br />
-          Especialista em Fisiologia do Exercício pela Escola Paulista de
-          Medicina (2002).<br />
-          Especialista em Nutrição Estética pelo IPGS – Rio de Janeiro
-          (2010).<br />
-          Especialização em Nutrição Ortomolecular e Nutrigenômica – FAPES – SP
-          (2012).<br />
-          Especialização em Fitoterapia Integrativa. Especialização em
-          Psiquiatria Ortomolecular – FAPES – SP (2022).<br />
-          Professora e palestrante. Idealizadora científica da Academia da
-          Neuronutrição ®.<br />
-          Coordenadora pós graduação em Neuronutrição ®. Coordenadora científica
-          do Instituto Synbia ® – Jundiaí.
+          Nutricionista. Mestrado em Neurociências. Formação em Neurociências.
+          Criadora da Neuronutrição ®.<br />
+          Nutricionista pela Universidade Federal de Santa Catarina.<br />
+          Especialista em Fisiologia do Exercício, Nutrição Estética.<br />
+          Aperfeiçoamento em Bioquímica Aplicada à Patologia.<br />
+          Especialização em Nutrição Ortomolecular e Nutrigenômica.<br />
+          Especialização em Fitoterapia Integrativa.<br />
+          Especialização em Psiquiatria Ortomolecular.<br />
+          Professora e palestrante.<br />
+          Idealizadora científica da Academia da Neuronutrição ®.<br />
+          Coordenadora pós graduação em Neuronutrição ®.<br />
+          Coordenadora científica do Instituto Synbia ® – Jundiaí.
         </div>
       </div>
     </div>
@@ -2768,14 +2844,12 @@
         <div class="modal-bio">
           Formada pelo Centro Universitário Maurício de Nassau – UNINASSAU
           Recife.<br />
-          Especialização em Nutrição Oncológica pelo A.C.Camargo Câncer
-          Center.<br />
           Pós-Graduação em Nutrição Funcional Integrativa pela faculdade VP
-          Nutricional (em conclusão).<br />
-          Atuação com foco em oncologia, emagrecimento, saúde da mulher e
-          menopausa.<br />
-          Estágio em oncologia no Hospital Memorial São José e Hospital
-          Esperança.
+          Nutricional.<br />
+          Pós-Graduação em Saúde da Mulher pela faculdade VP Nutricional.<br />
+          Atuação com foco em Nutrigenética, emagrecimento, saúde da mulher,
+          estética e menopausa.<br />
+          Especialização em Nutrição Oncológica pelo A.C.Camargo Câncer Center.
         </div>
       </div>
     </div>
