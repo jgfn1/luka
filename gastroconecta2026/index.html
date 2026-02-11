@@ -359,6 +359,7 @@
         z-index: 2;
         max-width: 1000px;
         width: 100%;
+        padding-top: 80px;
         animation: fadeInUp 1s ease-out;
       }
 
@@ -437,6 +438,65 @@
         background: linear-gradient(135deg, #f5c563 0%, var(--accent) 100%);
         transform: translateY(-3px);
         box-shadow: 0 6px 24px rgba(232, 168, 56, 0.5);
+      }
+
+      /* Hero edition badges */
+      .hero-badges {
+        position: absolute;
+        top: 120px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2rem;
+        pointer-events: none;
+        z-index: 3;
+      }
+
+      .hero-badge {
+        pointer-events: auto;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        color: var(--primary);
+        padding: 0.8rem 1.4rem;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        border-radius: 8px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+        text-align: center;
+      }
+
+      .hero-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        color: var(--secondary);
+      }
+
+      .hero-badge small {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: var(--muted-text);
+        margin-top: 2px;
+      }
+
+      @media (max-width: 768px) {
+        .hero-badges {
+          top: 100px;
+          padding: 0 1rem;
+        }
+        .hero-badge {
+          font-size: 0.7rem;
+          padding: 0.5rem 0.8rem;
+        }
+        .hero-badge small {
+          font-size: 0.6rem;
+        }
       }
 
       /* Hero sponsors floating over video */
@@ -1667,6 +1727,16 @@
       <!-- Overlay -->
       <div class="hero-overlay"></div>
 
+      <!-- Edition badges -->
+      <div class="hero-badges">
+        <a href="#" class="hero-badge" id="photos-2026-btn">
+          Melhores Momentos<small>Edição 2026</small>
+        </a>
+        <a href="#" class="hero-badge" id="photos-2025-btn">
+          Melhores Momentos<small>Edição 2025</small>
+        </a>
+      </div>
+
       <div class="hero-content">
         <h1 data-i18n="hero.title">
           Gastro Conecta <span>&</span> Nutri Conecta <span>2026</span>
@@ -2294,12 +2364,16 @@
               </tr>
               <tr>
                 <td></td>
-                <td>Atualizações no tratamento da Obesidade - Abordagem Clínica</td>
+                <td>
+                  Atualizações no tratamento da Obesidade - Abordagem Clínica
+                </td>
                 <td></td>
               </tr>
               <tr>
                 <td></td>
-                <td>Atualizações no tratamento da Obesidade - Abordagem Cirúrgica</td>
+                <td>
+                  Atualizações no tratamento da Obesidade - Abordagem Cirúrgica
+                </td>
                 <td></td>
               </tr>
               <tr>
@@ -2348,7 +2422,11 @@
                   Novas perspectivas e desafios no tratamento do Câncer Gástrico
                   Avançado
                 </td>
-                <td><span class="speaker-name">Nildevande Firmino e Lara Neves</span></td>
+                <td>
+                  <span class="speaker-name"
+                    >Nildevande Firmino e Lara Neves</span
+                  >
+                </td>
               </tr>
               <tr>
                 <td></td>
@@ -2380,7 +2458,9 @@
               </tr>
               <tr>
                 <td></td>
-                <td>Perda de peso, sarcopenia e caquexia: o que temos de novidade?</td>
+                <td>
+                  Perda de peso, sarcopenia e caquexia: o que temos de novidade?
+                </td>
                 <td><span class="speaker-name">Denise Fernandes</span></td>
               </tr>
               <tr>
@@ -2444,7 +2524,9 @@
               </tr>
               <tr>
                 <td>09:15 - 09:35</td>
-                <td>A Genética e sua interface com a medicina do estilo de vida</td>
+                <td>
+                  A Genética e sua interface com a medicina do estilo de vida
+                </td>
                 <td><span class="speaker-name">Renata Martins</span></td>
               </tr>
               <tr>
@@ -2478,7 +2560,9 @@
               </tr>
               <tr>
                 <td>11:00 - 11:20</td>
-                <td>Estratégias nutricionais durante o uso de análogos de GLP1</td>
+                <td>
+                  Estratégias nutricionais durante o uso de análogos de GLP1
+                </td>
                 <td><span class="speaker-name">Rebeca Pessoa</span></td>
               </tr>
               <tr>
@@ -2547,7 +2631,10 @@
               </tr>
               <tr>
                 <td>16:00 - 17:00</td>
-                <td>Metabolismo de alta performance na atividade física e suplementação (Creatina)</td>
+                <td>
+                  Metabolismo de alta performance na atividade física e
+                  suplementação (Creatina)
+                </td>
                 <td><span class="speaker-name">Pedro Perim</span></td>
               </tr>
               <tr>
@@ -3060,8 +3147,10 @@
         </div>
 
         <!-- Patrocinadores -->
-        <h2 data-i18n="sponsors.patrocinios" style="margin-top: 3rem;">Patrocínios</h2>
-        <div class="sponsor-tier" style="margin-top: 1.5rem;">
+        <h2 data-i18n="sponsors.patrocinios" style="margin-top: 3rem">
+          Patrocínios
+        </h2>
+        <div class="sponsor-tier" style="margin-top: 1.5rem">
           <div class="sponsor-tier-logos">
             <img src="sponsors/SPAC.png" alt="SPAC" />
             <img src="sponsors/Logo_CRM-removebg-preview.png" alt="CRM" />
