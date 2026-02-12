@@ -176,6 +176,29 @@
         max-width: 244px;
       }
 
+      nav .nav-realizacao {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      nav .nav-realizacao span {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--muted-text);
+        text-transform: uppercase;
+      }
+
+      nav .nav-realizacao img {
+        height: 50px;
+        max-width: none;
+      }
+
+      nav.scrolled .nav-realizacao img {
+        height: 40px;
+      }
+
       nav ul {
         list-style: none;
         display: flex;
@@ -443,7 +466,7 @@
       /* Hero edition badges */
       .hero-badges {
         position: absolute;
-        top: 120px;
+        top: 100px;
         left: 0;
         right: 0;
         display: flex;
@@ -455,7 +478,7 @@
 
       .hero-badge {
         pointer-events: auto;
-        background: rgba(255, 255, 255, 0.7);
+        background: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(10px);
         color: var(--primary);
         padding: 0.8rem 1.4rem;
@@ -548,17 +571,98 @@
         align-items: center;
         justify-content: center;
         gap: 1.5rem;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
       }
 
       .hero-sponsor-logos img {
-        max-height: 50px;
+        max-height: 45px;
         width: auto;
         transition: transform 0.3s ease;
       }
 
+      @media (max-width: 768px) {
+        .hero-sponsor-logos {
+          gap: 1rem;
+        }
+        .hero-sponsor-logos img {
+          max-height: 35px;
+        }
+      }
+
       .hero-sponsor-logos img:hover {
         transform: scale(1.05);
+      }
+
+      /* Hero event logos */
+      .hero-event-logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-event-logos img {
+        max-height: 80px;
+        width: auto;
+        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+      }
+
+      @media (max-width: 768px) {
+        .hero-event-logos {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .hero-event-logos img {
+          max-height: 50px;
+        }
+      }
+
+      /* Sponsors carousel */
+      .hero-sponsors-carousel {
+        margin-top: 1.5rem;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+        padding: 1rem 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .hero-sponsors-carousel .hero-sponsor-label {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--muted-text);
+        text-transform: uppercase;
+        margin-bottom: 0.8rem;
+      }
+
+      .carousel-track {
+        display: flex;
+        animation: scroll-carousel 20s linear infinite;
+        width: max-content;
+      }
+
+      .carousel-track img {
+        max-height: 40px;
+        width: auto;
+        margin: 0 2rem;
+        opacity: 0.9;
+      }
+
+      @keyframes scroll-carousel {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .carousel-track:hover {
+        animation-play-state: paused;
       }
 
       /* Section styles */
@@ -1677,10 +1781,11 @@
   <body>
     <!-- Navigation -->
     <nav id="navbar">
-      <a href="#top" class="logo-small">
+      <a href="#top" class="logo-small nav-realizacao">
+        <span>Realização:</span>
         <img
-          src="logos-gastro-nutri-removebg-preview.png"
-          alt="Gastro Conecta & Nutri Conecta 2026"
+          src="sponsors/Endogastro Academy.jpg.png"
+          alt="Endogastro Academy"
         />
       </a>
       <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
@@ -1738,9 +1843,11 @@
       </div>
 
       <div class="hero-content">
-        <h1 data-i18n="hero.title">
-          Gastro Conecta <span>&</span> Nutri Conecta <span>2026</span>
-        </h1>
+        <!-- Event logos instead of text title -->
+        <div class="hero-event-logos">
+          <img src="logo-gastro.png" alt="Gastro Conecta" />
+          <img src="logo-nutri.png" alt="Nutri Conecta" />
+        </div>
         <p data-i18n="hero.subtitle">
           27 de março de 2026<br />Novotel Recife Marina
         </p>
@@ -1753,31 +1860,46 @@
           Inscreva-se
         </a>
 
-        <!-- Hero sponsors floating over video -->
+        <!-- Patrocínio Master -->
         <div class="hero-sponsors">
-          <div class="hero-sponsor-group">
-            <div class="hero-sponsor-label" data-i18n="sponsors.realizacao">
-              Realização
-            </div>
-            <div class="hero-sponsor-logos">
-              <img
-                src="sponsors/Endogastro Academy.jpg.png"
-                alt="Endogastro Academy"
-              />
-            </div>
-          </div>
           <div class="hero-sponsor-group">
             <div class="hero-sponsor-label" data-i18n="sponsors.master">
               Patrocínio Master
             </div>
             <div class="hero-sponsor-logos">
+              <img src="sponsors/Evipar.png" alt="Evipar" />
               <img
                 src="sponsors/Endogastro-Medicina.png"
                 alt="Endogastro Medicina"
               />
-              <img src="sponsors/Evipar.png" alt="Evipar" />
               <img src="sponsors/Nutrigen.png" alt="Nutrigen" />
             </div>
+          </div>
+        </div>
+
+        <!-- Patrocinadores carousel -->
+        <div class="hero-sponsors-carousel">
+          <div class="hero-sponsor-label">Patrocinadores</div>
+          <div class="carousel-track">
+            <img src="sponsors/SPAC.png" alt="SPAC" />
+            <img src="sponsors/Logo_CRM-removebg-preview.png" alt="CRM" />
+            <img src="sponsors/FUJI_FILM.png" alt="Fuji Film" />
+            <img src="sponsors/ROVAL.png" alt="Roval" />
+            <img
+              src="sponsors/InfinityPharma-laranja.png"
+              alt="Infinity Pharma"
+            />
+            <img src="sponsors/zeekr.png" alt="Zeekr" />
+            <!-- Duplicated for seamless loop -->
+            <img src="sponsors/SPAC.png" alt="SPAC" />
+            <img src="sponsors/Logo_CRM-removebg-preview.png" alt="CRM" />
+            <img src="sponsors/FUJI_FILM.png" alt="Fuji Film" />
+            <img src="sponsors/ROVAL.png" alt="Roval" />
+            <img
+              src="sponsors/InfinityPharma-laranja.png"
+              alt="Infinity Pharma"
+            />
+            <img src="sponsors/zeekr.png" alt="Zeekr" />
           </div>
         </div>
       </div>
@@ -3072,7 +3194,7 @@
         <h2 style="color: white" data-i18n="registration.title">Inscrições</h2>
         <div class="registration-buttons">
           <a
-            href="https://forms.gle/TAwTgm8jhYHoHzTs9"
+            href="https://www.sympla.com.br/evento/gastro-conecta-2026/3310112"
             class="btn-primary registration-btn"
             target="_blank"
             rel="noopener noreferrer"
@@ -3082,7 +3204,7 @@
             >
           </a>
           <a
-            href="https://forms.gle/nqZSBe2jF5wCuXp1A"
+            href="https://www.sympla.com.br/evento/nutri-contecta-2026/3310526"
             class="btn-primary registration-btn"
             target="_blank"
             rel="noopener noreferrer"
