@@ -1373,6 +1373,30 @@
         margin-bottom: 0.5rem;
       }
 
+      .speaker-item .speaker-placeholder {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid var(--primary);
+        margin-bottom: 1rem;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      @media (max-width: 768px) {
+        .speaker-item .speaker-placeholder {
+          width: 100px;
+          height: 100px;
+          font-size: 1.6rem;
+        }
+      }
+
       .saiba-mais-btn {
         margin-top: auto;
         background: var(--accent-green);
@@ -2430,7 +2454,7 @@
               <tr>
                 <td colspan="3" class="session-header">
                   Mesa 2 - Câncer de reto<br /><small
-                    >Presidente: Leliane Alencar | Moderadores: Nildevande
+                    >Presidente: Samara Duarte | Moderadores: Nildevande
                     Firmino, Ítalo Ferreira</small
                   >
                 </td>
@@ -2481,42 +2505,37 @@
               <tr>
                 <td colspan="3" class="session-header">
                   Mesa 3 - Obesidade<br /><small
-                    >Presidente: A definir | Moderadores: A definir</small
+                    >Presidente: José Câmara | Moderadores: Leonardo Bandeira,
+                    Érico Higino, Ana Carla Montenegro</small
                   >
                 </td>
               </tr>
               <tr>
-                <td>14:00 - 15:15</td>
+                <td>14:00 - 14:15</td>
                 <td>
                   Classificação da Obesidade: o que muda com as novas
                   diretrizes?
                 </td>
-                <td></td>
+                <td><span class="speaker-name">Francisco Bandeira</span></td>
               </tr>
               <tr>
-                <td></td>
+                <td>14:15 - 14:30</td>
                 <td>
-                  Atualizações no tratamento da Obesidade - Abordagem Clínica
+                  Novas opções medicamentosas para a Obesidade: é o fim da
+                  cirurgia bariátrica?
                 </td>
-                <td></td>
+                <td><span class="speaker-name">Fábio Moura</span></td>
               </tr>
               <tr>
-                <td></td>
+                <td>14:30 - 14:45</td>
                 <td>
-                  Atualizações no tratamento da Obesidade - Abordagem Cirúrgica
+                  Novas opções medicamentosas para a Obesidade: novos aliados
+                  para a cirurgia bariátrica?
                 </td>
-                <td></td>
+                <td><span class="speaker-name">Álvaro Albano</span></td>
               </tr>
               <tr>
-                <td></td>
-                <td>
-                  Repercussões metabólicas da Obesidade: MASH e Apneia do sono.
-                  O que podemos oferecer?
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
+                <td>14:45 - 15:05</td>
                 <td colspan="2" class="session-break">
                   <strong>DISCUSSÃO</strong>
                 </td>
@@ -2524,18 +2543,18 @@
               <tr>
                 <td colspan="3" class="session-header">
                   Mesa 4 - Câncer Gástrico<br /><small
-                    >Presidente: A definir | Moderadores: Antônio de Pádua,
-                    Leliane Alencar</small
+                    >Presidente: Leliane Alencar | Moderadores: Antônio de Pádua,
+                    Cristiana Tavares</small
                   >
                 </td>
               </tr>
               <tr>
-                <td>15:20 - 16:50</td>
+                <td>15:10 - 15:25</td>
                 <td>Papel do H. Pylori no Câncer Gástrico</td>
                 <td><span class="speaker-name">Fábio Menezes</span></td>
               </tr>
               <tr>
-                <td></td>
+                <td>15:25 - 15:40</td>
                 <td>
                   Diagnóstico e tratamento endoscópico do Câncer Gástrico
                   Precoce
@@ -2543,12 +2562,12 @@
                 <td><span class="speaker-name">Lucas Case Ferraz</span></td>
               </tr>
               <tr>
-                <td></td>
+                <td>15:40 - 15:55</td>
                 <td>Tratamento Cirúrgico Câncer Gástrico</td>
                 <td><span class="speaker-name">Flávio Fernandes</span></td>
               </tr>
               <tr>
-                <td></td>
+                <td>15:55 - 16:10</td>
                 <td>
                   Novas perspectivas e desafios no tratamento do Câncer Gástrico
                   Avançado
@@ -2560,13 +2579,13 @@
                 </td>
               </tr>
               <tr>
-                <td></td>
+                <td>16:10 - 16:30</td>
                 <td colspan="2" class="session-break">
                   <strong>DISCUSSÃO</strong>
                 </td>
               </tr>
               <tr>
-                <td>16:50 - 17:10</td>
+                <td>16:30 - 16:50</td>
                 <td colspan="2" class="session-break">
                   <strong>COFFEE BREAK</strong>
                 </td>
@@ -2575,12 +2594,12 @@
                 <td colspan="3" class="session-header">
                   Mesa 5 - Nutrição em oncologia<br /><small
                     >Presidente: Cristiana Tavares | Moderadores: Nildevande
-                    Firmino</small
+                    Firmino, Omar Jacobina</small
                   >
                 </td>
               </tr>
               <tr>
-                <td>17:10 - 18:25</td>
+                <td>17:00 - 17:15</td>
                 <td>
                   O que muda na nutrição do paciente com câncer do trato
                   gastrointestinal
@@ -2588,14 +2607,14 @@
                 <td><span class="speaker-name">Priscila Antunes</span></td>
               </tr>
               <tr>
-                <td></td>
+                <td>17:15 - 17:30</td>
                 <td>
                   Perda de peso, sarcopenia e caquexia: o que temos de novidade?
                 </td>
                 <td><span class="speaker-name">Denise Fernandes</span></td>
               </tr>
               <tr>
-                <td></td>
+                <td>17:30 - 17:45</td>
                 <td>
                   Timing da terapia nutricional no paciente oncológico -
                   estratégias de pré-habilitação cirúrgica e possíveis
@@ -2604,13 +2623,13 @@
                 <td><span class="speaker-name">Edite Magalhães</span></td>
               </tr>
               <tr>
-                <td></td>
+                <td>17:45 - 18:00</td>
                 <td colspan="2" class="session-break">
                   <strong>DISCUSSÃO</strong>
                 </td>
               </tr>
               <tr>
-                <td>18:30</td>
+                <td>18:00</td>
                 <td colspan="2" class="session-break">
                   <strong>Encerramento</strong>
                 </td>
@@ -2799,7 +2818,137 @@
             style="max-width: 200px; height: auto"
           />
         </div>
-        <!-- Espaço reservado para palestrantes Gastro -->
+        <div class="speakers-grid">
+          <div class="speaker-item">
+            <img src="speakers/Marcos-Saturnino.webp" alt="Marcos Saturnino" />
+            <h4>Marcos Saturnino</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-marcos-saturnino"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/Leliane-Alencar.png" alt="Leliane Alencar" />
+            <h4>Leliane Alencar</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-leliane-alencar"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/Nildevande-Firmino.jpeg" alt="Nildevande Firmino" />
+            <h4>Nildevande Firmino</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-nildevande-firmino"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/Fabio-Menezes.jpeg" alt="Fábio Menezes" />
+            <h4>Fábio Menezes</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-fabio-menezes"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/Lucas-Case.jpeg" alt="Lucas Case Ferraz" />
+            <h4>Lucas Case Ferraz</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-lucas-case"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/Flavio-Fernandes.jpeg" alt="Flávio Fernandes" />
+            <h4>Flávio Fernandes</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-flavio-fernandes"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/Thiago-Apolinario.webp" alt="Thiago Apolinário" />
+            <h4>Thiago Apolinário</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-thiago-apolinario"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/Alvaro-Albano.jpeg" alt="Álvaro Albano" />
+            <h4>Álvaro Albano</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-alvaro-albano"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/Priscila-Antunes.jpeg" alt="Priscila Antunes" />
+            <h4>Priscila Antunes</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-priscila-antunes"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/Denise-Fernandes.jpeg" alt="Denise Fernandes" />
+            <h4>Denise Fernandes</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-denise-fernandes"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="speaker-item">
+            <div class="speaker-placeholder">FB</div>
+            <h4>Francisco Bandeira</h4>
+          </div>
+          <div class="speaker-item">
+            <div class="speaker-placeholder">FM</div>
+            <h4>Fábio Moura</h4>
+          </div>
+          <div class="speaker-item">
+            <div class="speaker-placeholder">LN</div>
+            <h4>Lara Neves</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-lara-neves"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+        </div>
 
         <!-- Nutri Conecta -->
         <div style="text-align: center; margin: 2rem 0 1.5rem">
@@ -3116,6 +3265,208 @@
           Professora da Pós-Graduação em Cosmetologia Aplicada à Estética e
           Fisioterapia Dermatofuncional – CCE e IDE.<br />
           Professora da Pós-Graduação Farmácia Magistral - Gestão - IDE.
+        </div>
+      </div>
+    </div>
+
+    <!-- Gastro Conecta Speaker Modals -->
+    <div class="modal" id="modal-marcos-saturnino">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Marcos-Saturnino.webp"
+          alt="Marcos Saturnino"
+          class="modal-avatar"
+        />
+        <h3>Marcos Saturnino</h3>
+        <div class="modal-bio">
+          Coloproctologista.<br />
+          Membro titular da Sociedade Brasileira de Coloproctologia (SBCP).<br />
+          Membro do Grupo de Estudos da Doença Inflamatória Intestinal do Brasil
+          (GEDIIB) e da Organização Europeia de Crohn e Colites.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-leliane-alencar">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Leliane-Alencar.png"
+          alt="Leliane Alencar"
+          class="modal-avatar"
+        />
+        <h3>Leliane Alencar Bonates</h3>
+        <div class="modal-bio">
+          Médica Endoscopista.<br />
+          Membro Titular SOBED.<br />
+          Presidente SOBED capítulo Pernambuco gestão 25-26.<br />
+          Diretora Médica Endogastro.<br />
+          Membro Sociedades Americana e Europeia de Endoscopia Gastrointestinal.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-nildevande-firmino">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Nildevande-Firmino.jpeg"
+          alt="Nildevande Firmino"
+          class="modal-avatar"
+        />
+        <h3>Nildevande Firmino</h3>
+        <div class="modal-bio">
+          Oncologista pelo Hospital Sírio Libanês (SP).<br />
+          Oncologista do Hospital Santa Joana e Hospital do Câncer de Pernambuco.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-fabio-menezes">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Fabio-Menezes.jpeg"
+          alt="Fábio Menezes"
+          class="modal-avatar"
+        />
+        <h3>Fábio Menezes</h3>
+        <div class="modal-bio">
+          Médico gastroenterologista formado pela Universidade de Pernambuco.<br />
+          Preceptor de gastroenterologia no mesmo serviço.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-lucas-case">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Lucas-Case.jpeg"
+          alt="Lucas Case Ferraz"
+          class="modal-avatar"
+        />
+        <h3>Lucas Case Ferraz</h3>
+        <div class="modal-bio">
+          Membro Titular da Sociedade Brasileira de Endoscopia (SOBED).<br />
+          Preceptor da Residência de Endoscopia Digestiva – Hospital da
+          Restauração-PE.<br />
+          Atuação em Endoscopia Biliopancreática – Hospital Unimed Recife /
+          Hospital da Restauração-PE / Rede Hapvida.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-flavio-fernandes">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Flavio-Fernandes.jpeg"
+          alt="Flávio Fernandes"
+          class="modal-avatar"
+        />
+        <h3>Flávio Fernandes</h3>
+        <div class="modal-bio">
+          Cirurgião do Aparelho Digestivo do Santa Joana, Ebserh e Hospital dos
+          Servidores.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-thiago-apolinario">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Thiago-Apolinario.webp"
+          alt="Thiago Apolinário"
+          class="modal-avatar"
+        />
+        <h3>Thiago Apolinário</h3>
+        <div class="modal-bio">
+          Oncologista clínico do Hospital Santa Joana.<br />
+          Oncologista clínico do Hospital Universitário Oswaldo Cruz –
+          Universidade de Pernambuco.<br />
+          Fellowship em Oncologia Mamária, Fundação Champalimaud, Lisboa, Portugal.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-alvaro-albano">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Alvaro-Albano.jpeg"
+          alt="Álvaro Albano"
+          class="modal-avatar"
+        />
+        <h3>Álvaro Albano</h3>
+        <div class="modal-bio">
+          Membro da Câmara Técnica de Cirurgia Bariátrica do CFM.<br />
+          Diretor Científico da Sociedade Brasileira de Cirurgia Bariátrica e
+          Metabólica – Gestão 23/24.<br />
+          Professor Honorário do Fellowship de Cirurgia Bariátrica e Metabólica
+          da IFSO Latin América.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-priscila-antunes">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Priscila-Antunes.jpeg"
+          alt="Priscila Antunes"
+          class="modal-avatar"
+        />
+        <h3>Priscila Antunes</h3>
+        <div class="modal-bio">
+          Nutricionista Clínica no Hospital Santa Joana Recife.<br />
+          Graduação em Ciências da Nutrição – UFPE.<br />
+          Residência em Nutrição Clínica – HC/UFPE.<br />
+          Mestre em Nutrição Clínica – Faculdade de Ciência da Nutrição e
+          Alimentação da Universidade do Porto (FCNAUP) – Portugal.<br />
+          Pós-graduada em Oncologia – Liga Portuguesa Contra o Cancro (LPCC) –
+          Portugal.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-denise-fernandes">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/Denise-Fernandes.jpeg"
+          alt="Denise Fernandes"
+          class="modal-avatar"
+        />
+        <h3>Denise Fernandes</h3>
+        <div class="modal-bio">
+          Intensivista, formada pelo programa de Residência Multiprofissional em
+          Terapia Intensiva do Real Hospital Português.<br />
+          Especialista em Nutrição Parenteral e Enteral pela SBNPE/BRASPEN.<br />
+          Nutricionista da Equipe Multiprofissional de Terapia Nutricional (EMTN)
+          do Real Hospital Português.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-lara-neves">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div
+          class="modal-avatar"
+          style="
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+          "
+        >LN</div>
+        <h3>Lara Neves</h3>
+        <div class="modal-bio">
+          Médica patologista pela UFPE.<br />
+          PhD em Patologia Hepática pelo King's College London.<br />
+          Patologista do Hospital das Clínicas da UFPE, do SPAC e do Laboratório
+          Municipal de Saúde Pública do Recife.
         </div>
       </div>
     </div>
