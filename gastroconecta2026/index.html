@@ -1377,7 +1377,11 @@
         width: 120px;
         height: 120px;
         border-radius: 50%;
-        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--secondary) 100%
+        );
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1914,7 +1918,10 @@
               alt="Infinity Pharma"
             />
             <img src="sponsors/zeekr.png" alt="Zeekr" />
-            <img src="sponsors/Lg_Eurofarma_pref_slogan_RGB.png" alt="Eurofarma" />
+            <img
+              src="sponsors/Lg_Eurofarma_pref_slogan_RGB.png"
+              alt="Eurofarma"
+            />
             <!-- Duplicated for seamless loop -->
             <img src="sponsors/SPAC.png" alt="SPAC" />
             <img src="sponsors/Logo_CRM-removebg-preview.png" alt="CRM" />
@@ -1925,7 +1932,10 @@
               alt="Infinity Pharma"
             />
             <img src="sponsors/zeekr.png" alt="Zeekr" />
-            <img src="sponsors/Lg_Eurofarma_pref_slogan_RGB.png" alt="Eurofarma" />
+            <img
+              src="sponsors/Lg_Eurofarma_pref_slogan_RGB.png"
+              alt="Eurofarma"
+            />
           </div>
         </div>
       </div>
@@ -2545,8 +2555,8 @@
               <tr>
                 <td colspan="3" class="session-header">
                   Mesa 4 - Câncer Gástrico<br /><small
-                    >Presidente: Leliane Alencar | Moderadores: Antônio de Pádua,
-                    Cristiana Tavares</small
+                    >Presidente: Leliane Alencar | Moderadores: Antônio de
+                    Pádua, Cristiana Tavares</small
                   >
                 </td>
               </tr>
@@ -2844,7 +2854,10 @@
             </button>
           </div>
           <div class="speaker-item">
-            <img src="speakers/Nildevande-Firmino.jpeg" alt="Nildevande Firmino" />
+            <img
+              src="speakers/Nildevande-Firmino.jpeg"
+              alt="Nildevande Firmino"
+            />
             <h4>Nildevande Firmino</h4>
             <button
               class="saiba-mais-btn"
@@ -2888,7 +2901,10 @@
             </button>
           </div>
           <div class="speaker-item">
-            <img src="speakers/Thiago-Apolinario.webp" alt="Thiago Apolinário" />
+            <img
+              src="speakers/Thiago-Apolinario.webp"
+              alt="Thiago Apolinário"
+            />
             <h4>Thiago Apolinário</h4>
             <button
               class="saiba-mais-btn"
@@ -2932,8 +2948,18 @@
             </button>
           </div>
           <div class="speaker-item">
-            <div class="speaker-placeholder">FB</div>
+            <img
+              src="speakers/francisco_bandeira.png"
+              alt="Francisco Bandeira"
+            />
             <h4>Francisco Bandeira</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-francisco-bandeira"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
           </div>
           <div class="speaker-item">
             <div class="speaker-placeholder">FM</div>
@@ -3318,7 +3344,8 @@
         <h3>Nildevande Firmino</h3>
         <div class="modal-bio">
           Oncologista pelo Hospital Sírio Libanês (SP).<br />
-          Oncologista do Hospital Santa Joana e Hospital do Câncer de Pernambuco.
+          Oncologista do Hospital Santa Joana e Hospital do Câncer de
+          Pernambuco.
         </div>
       </div>
     </div>
@@ -3383,7 +3410,8 @@
           Oncologista clínico do Hospital Santa Joana.<br />
           Oncologista clínico do Hospital Universitário Oswaldo Cruz –
           Universidade de Pernambuco.<br />
-          Fellowship em Oncologia Mamária, Fundação Champalimaud, Lisboa, Portugal.
+          Fellowship em Oncologia Mamária, Fundação Champalimaud, Lisboa,
+          Portugal.
         </div>
       </div>
     </div>
@@ -3438,8 +3466,8 @@
           Intensivista, formada pelo programa de Residência Multiprofissional em
           Terapia Intensiva do Real Hospital Português.<br />
           Especialista em Nutrição Parenteral e Enteral pela SBNPE/BRASPEN.<br />
-          Nutricionista da Equipe Multiprofissional de Terapia Nutricional (EMTN)
-          do Real Hospital Português.
+          Nutricionista da Equipe Multiprofissional de Terapia Nutricional
+          (EMTN) do Real Hospital Português.
         </div>
       </div>
     </div>
@@ -3452,23 +3480,47 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(
+              135deg,
+              var(--primary) 0%,
+              var(--secondary) 100%
+            );
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-family: 'Montserrat', sans-serif;
+            font-family: &quot;Montserrat&quot;, sans-serif;
             font-size: 3rem;
             font-weight: 700;
             margin: 0 auto 1rem;
           "
-        >LN</div>
+        >
+          LN
+        </div>
         <h3>Lara Neves</h3>
         <div class="modal-bio">
           Médica patologista pela UFPE.<br />
           PhD em Patologia Hepática pelo King's College London.<br />
           Patologista do Hospital das Clínicas da UFPE, do SPAC e do Laboratório
           Municipal de Saúde Pública do Recife.
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-francisco-bandeira">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/francisco_bandeira.png"
+          alt="Francisco Bandeira"
+          class="modal-avatar"
+        />
+        <h3>Dr. Francisco Bandeira</h3>
+        <div class="modal-bio">
+          M.D., PhD., M.A.C.E.<br />
+          Professor Livre Docente.<br />
+          Chefe da Disciplina de Endocrinologia da Faculdade de Ciências Médicas
+          da Universidade de Pernambuco (UPE).<br />
+          Master do American College of Endocrinology (MACE).
         </div>
       </div>
     </div>
@@ -3645,7 +3697,10 @@
               alt="Infinity Pharma"
             />
             <img src="sponsors/zeekr.png" alt="Zeekr" />
-            <img src="sponsors/Lg_Eurofarma_pref_slogan_RGB.png" alt="Eurofarma" />
+            <img
+              src="sponsors/Lg_Eurofarma_pref_slogan_RGB.png"
+              alt="Eurofarma"
+            />
           </div>
         </div>
       </div>
