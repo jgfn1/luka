@@ -1803,6 +1803,126 @@
           font-size: 0.6rem;
           letter-spacing: 0.5px;
         }
+
+        .schedule-title-row {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+
+        .download-buttons {
+          flex-direction: column;
+          align-items: stretch;
+          width: 100%;
+        }
+
+        .download-pdf-btn {
+          justify-content: center;
+          white-space: normal;
+          text-align: center;
+          font-size: 0.8rem;
+          padding: 0.6rem 0.8rem;
+        }
+
+        .schedule-table {
+          min-width: 600px;
+        }
+
+        .schedule-day {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+
+      /* Extra small devices */
+      @media (max-width: 480px) {
+        .committee-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          max-width: 100% !important;
+          gap: 1rem;
+        }
+
+        .committee-photo,
+        .committee-photo.has-image img {
+          width: 80px !important;
+          height: 80px !important;
+        }
+
+        .committee-member h4 {
+          font-size: 0.8rem;
+        }
+
+        .download-pdf-btn {
+          font-size: 0.75rem;
+          padding: 0.5rem 0.6rem;
+        }
+
+        .download-pdf-btn span {
+          word-break: break-word;
+        }
+
+        .schedule-table {
+          font-size: 0.75rem;
+          min-width: 550px;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+          padding: 0.5rem 0.4rem;
+        }
+
+        .session-header {
+          font-size: 0.9rem !important;
+        }
+
+        .tabs {
+          flex-wrap: wrap;
+        }
+
+        .tabs button {
+          flex: 1 1 auto;
+          font-size: 0.8rem;
+          padding: 0.7rem 0.4rem;
+        }
+
+        .hero-event-logos img {
+          max-height: 40px;
+        }
+
+        .hero-badges {
+          top: 120px;
+          flex-direction: column;
+          gap: 0.5rem;
+          align-items: flex-start;
+          padding: 0 0.8rem;
+        }
+
+        .hero-badge {
+          font-size: 0.6rem;
+          padding: 0.5rem 0.8rem;
+        }
+
+        .hero-badge small {
+          font-size: 0.5rem;
+        }
+
+        .hero-sponsors {
+          padding: 1rem 1.5rem;
+          gap: 1.5rem;
+        }
+
+        .hero-sponsor-logos img {
+          max-height: 30px;
+        }
+
+        .hero-sponsors-carousel {
+          padding: 0.8rem 1rem;
+        }
+
+        .carousel-track img {
+          max-height: 30px;
+          margin: 0 1rem;
+        }
       }
     </style>
   </head>
