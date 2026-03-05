@@ -179,24 +179,15 @@
       nav .nav-realizacao {
         display: flex;
         align-items: center;
-        gap: 0.6rem;
-      }
-
-      nav .nav-realizacao span {
-        font-family: "Montserrat", sans-serif;
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: var(--muted-text);
-        text-transform: uppercase;
       }
 
       nav .nav-realizacao img {
-        height: 50px;
+        height: 70px;
         max-width: none;
       }
 
       nav.scrolled .nav-realizacao img {
-        height: 40px;
+        height: 55px;
       }
 
       nav ul {
@@ -311,18 +302,22 @@
         overflow: hidden;
       }
 
-      /* Video background */
+      /* Hero background */
       .hero-video-bg {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        transform: translate(-50%, -50%);
+        inset: 0;
         z-index: 0;
         pointer-events: none;
+      }
+
+      .hero-placeholder-bg {
+        background: linear-gradient(
+          135deg,
+          #1a3d52 0%,
+          #2c5f7d 30%,
+          #3d7a9a 60%,
+          #4a9eba 100%
+        );
       }
 
       .hero-video-bg iframe {
@@ -641,6 +636,7 @@
 
       .carousel-track {
         display: flex;
+        align-items: center;
         animation: scroll-carousel 20s linear infinite;
         width: max-content;
       }
@@ -650,6 +646,26 @@
         width: auto;
         margin: 0 2rem;
         opacity: 0.9;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .carousel-track img.logo-square {
+        max-height: 70px;
+      }
+
+      .carousel-track img.logo-intermediate {
+        max-height: 55px;
+      }
+
+      .sponsor-tier-logos img.logo-square {
+        max-height: 130px;
+        max-width: 130px;
+      }
+
+      .sponsor-tier-logos img.logo-intermediate {
+        max-height: 105px;
+        max-width: 105px;
       }
 
       @keyframes scroll-carousel {
@@ -1609,12 +1625,34 @@
         gap: 2rem;
       }
 
+      .sponsor-tier-logos-harmonic {
+        gap: 2.5rem;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .patrocinios-tier .sponsor-tier-logos img {
+        max-width: 140px;
+        max-height: 55px;
+      }
+
+      .patrocinios-tier .sponsor-tier-logos img.logo-square {
+        max-height: 65px;
+        max-width: 65px;
+      }
+
+      .patrocinios-tier .sponsor-tier-logos img.logo-intermediate {
+        max-height: 60px;
+        max-width: 60px;
+      }
+
       .sponsor-tier-logos img {
         max-width: 180px;
         max-height: 80px;
         width: auto;
         height: auto;
         object-fit: contain;
+        object-position: center;
         transition: transform 0.3s ease;
       }
 
@@ -1713,6 +1751,14 @@
       }
 
       @media (max-width: 768px) {
+        nav .nav-realizacao img {
+          height: 55px;
+        }
+
+        nav.scrolled .nav-realizacao img {
+          height: 45px;
+        }
+
         nav ul {
           display: none;
         }
@@ -1923,6 +1969,14 @@
           max-height: 30px;
           margin: 0 1rem;
         }
+
+        .carousel-track img.logo-square {
+          max-height: 50px;
+        }
+
+        .carousel-track img.logo-intermediate {
+          max-height: 42px;
+        }
       }
     </style>
   </head>
@@ -1930,7 +1984,6 @@
     <!-- Navigation -->
     <nav id="navbar">
       <a href="#top" class="logo-small nav-realizacao">
-        <span>Realização:</span>
         <img
           src="sponsors/Endogastro Academy.jpg.png"
           alt="Endogastro Academy"
@@ -1967,15 +2020,8 @@
 
     <!-- Hero section -->
     <header class="hero" id="top">
-      <!-- Video Background -->
-      <div class="hero-video-bg">
-        <iframe
-          src="https://www.youtube.com/embed/NnET9qG9Bhw?autoplay=1&mute=1&loop=1&playlist=NnET9qG9Bhw&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-        ></iframe>
-      </div>
+      <!-- Hero background placeholder -->
+      <div class="hero-video-bg hero-placeholder-bg"></div>
 
       <!-- Overlay -->
       <div class="hero-overlay"></div>
@@ -2030,32 +2076,40 @@
           <div class="hero-sponsor-label">Patrocinadores</div>
           <div class="carousel-track">
             <img src="sponsors/SPAC.png" alt="SPAC" />
-            <img src="sponsors/Logo_CRM-removebg-preview.png" alt="CRM" />
+            <img src="sponsors/ESSENTIA_GROUP.png" alt="Essentia Group" class="logo-square" />
+            <img src="sponsors/zeekr-removebg-preview.png" alt="Zeekr" />
+            <img src="sponsors/Logo_CRM-removebg-preview.png" alt="CRM" class="logo-square" />
             <img src="sponsors/FUJI_FILM.png" alt="Fuji Film" />
-            <img src="sponsors/ROVAL.png" alt="Roval" />
             <img
               src="sponsors/InfinityPharma-laranja.png"
               alt="Infinity Pharma"
+              class="logo-intermediate"
             />
-            <img src="sponsors/zeekr.png" alt="Zeekr" />
+            <img src="sponsors/ROVAL.png" alt="Roval" />
             <img
               src="sponsors/Lg_Eurofarma_pref_slogan_RGB.png"
               alt="Eurofarma"
             />
+            <img src="sponsors/johnson_johnson_medtech.png" alt="J&amp;J" />
+            <img src="sponsors/assistec.png" alt="Assistec" />
             <!-- Duplicated for seamless loop -->
             <img src="sponsors/SPAC.png" alt="SPAC" />
-            <img src="sponsors/Logo_CRM-removebg-preview.png" alt="CRM" />
+            <img src="sponsors/ESSENTIA_GROUP.png" alt="Essentia Group" class="logo-square" />
+            <img src="sponsors/zeekr-removebg-preview.png" alt="Zeekr" />
+            <img src="sponsors/Logo_CRM-removebg-preview.png" alt="CRM" class="logo-square" />
             <img src="sponsors/FUJI_FILM.png" alt="Fuji Film" />
-            <img src="sponsors/ROVAL.png" alt="Roval" />
             <img
               src="sponsors/InfinityPharma-laranja.png"
               alt="Infinity Pharma"
+              class="logo-intermediate"
             />
-            <img src="sponsors/zeekr.png" alt="Zeekr" />
+            <img src="sponsors/ROVAL.png" alt="Roval" />
             <img
               src="sponsors/Lg_Eurofarma_pref_slogan_RGB.png"
               alt="Eurofarma"
             />
+            <img src="sponsors/johnson_johnson_medtech.png" alt="J&amp;J" />
+            <img src="sponsors/assistec.png" alt="Assistec" />
           </div>
         </div>
       </div>
@@ -2084,9 +2138,23 @@
           evidências científicas e fortalecerem o trabalho em equipe no cuidado
           ao paciente.
         </p>
-        <h3 style="text-align: center; margin-top: 3rem">
+        <h3
+          style="
+            text-align: center;
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+          "
+        >
           <span data-i18n="about.organizer">Realização:</span>
-          <span style="color: var(--accent)">Instituto Endogastro Academy</span>
+          <img
+            src="sponsors/Endogastro Academy.jpg.png"
+            alt="Endogastro Academy"
+            style="height: 50px; width: auto"
+          />
         </h3>
       </div>
     </section>
@@ -2554,7 +2622,7 @@
               <tr>
                 <td>08:45 - 10:00</td>
                 <td>Algoritmo de investigação clínica das DII</td>
-                <td><span class="speaker-name">Lia Serra</span></td>
+                <td></td>
               </tr>
               <tr>
                 <td></td>
@@ -3082,8 +3150,15 @@
             </button>
           </div>
           <div class="speaker-item">
-            <div class="speaker-placeholder">FM</div>
+            <img src="speakers/fabio_moura.jpeg" alt="Fábio Moura" />
             <h4>Fábio Moura</h4>
+            <button
+              class="saiba-mais-btn"
+              data-modal="modal-fabio-moura"
+              data-i18n="speakers.learnMore"
+            >
+              Saiba mais
+            </button>
           </div>
           <div class="speaker-item">
             <div class="speaker-placeholder">LN</div>
@@ -3591,6 +3666,30 @@
         </div>
       </div>
     </div>
+    <div class="modal" id="modal-fabio-moura">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img
+          src="speakers/fabio_moura.jpeg"
+          alt="Fábio Moura"
+          class="modal-avatar"
+        />
+        <h3>Dr. Fábio Moura</h3>
+        <p
+          style="
+            margin-bottom: 0.5rem;
+            color: var(--muted-text);
+            font-size: 0.9rem;
+          "
+        >
+          Endocrinologista
+        </p>
+        <div class="modal-bio">
+          Especialista em Endocrinologia e Metabologia pela SBEM.<br />
+          Mestre em Ciências da Saúde pela Universidade de Pernambuco.
+        </div>
+      </div>
+    </div>
     <div class="modal" id="modal-lara-neves">
       <div class="modal-content">
         <span class="close-modal">&times;</span>
@@ -3803,24 +3902,28 @@
         </div>
 
         <!-- Patrocinadores -->
-        <h2 data-i18n="sponsors.patrocinios" style="margin-top: 3rem">
-          Patrocínios
-        </h2>
-        <div class="sponsor-tier" style="margin-top: 1.5rem">
-          <div class="sponsor-tier-logos">
+        <div class="sponsor-tier patrocinios-tier" style="margin-top: 3rem">
+          <div class="sponsor-tier-title">
+            <span data-i18n="sponsors.patrocinios">Patrocínios</span>
+          </div>
+          <div class="sponsor-tier-logos sponsor-tier-logos-harmonic">
             <img src="sponsors/SPAC.png" alt="SPAC" />
-            <img src="sponsors/Logo_CRM-removebg-preview.png" alt="CRM" />
-            <img src="sponsors/FUJI FILM.jpeg" alt="FUJI FILM" />
-            <img src="sponsors/ROVAL.png" alt="ROVAL" />
+            <img src="sponsors/ESSENTIA_GROUP.png" alt="Essentia Group" class="logo-square" />
+            <img src="sponsors/zeekr-removebg-preview.png" alt="Zeekr" />
+            <img src="sponsors/Logo_CRM-removebg-preview.png" alt="CRM" class="logo-square" />
+            <img src="sponsors/FUJI_FILM.png" alt="Fuji Film" />
             <img
               src="sponsors/InfinityPharma-laranja.png"
               alt="Infinity Pharma"
+              class="logo-intermediate"
             />
-            <img src="sponsors/zeekr.png" alt="Zeekr" />
+            <img src="sponsors/ROVAL.png" alt="Roval" />
             <img
               src="sponsors/Lg_Eurofarma_pref_slogan_RGB.png"
               alt="Eurofarma"
             />
+            <img src="sponsors/johnson_johnson_medtech.png" alt="J&amp;J" />
+            <img src="sponsors/assistec.png" alt="Assistec" />
           </div>
         </div>
       </div>
