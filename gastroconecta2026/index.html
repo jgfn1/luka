@@ -311,13 +311,8 @@
       }
 
       .hero-placeholder-bg {
-        background: linear-gradient(
-          135deg,
-          #1a3d52 0%,
-          #2c5f7d 30%,
-          #3d7a9a 60%,
-          #4a9eba 100%
-        );
+        background: url("Novotel-Marina-hero-background.jpeg") center center /
+          cover no-repeat;
       }
 
       .hero-video-bg iframe {
@@ -456,6 +451,24 @@
         background: linear-gradient(135deg, #f5c563 0%, var(--accent) 100%);
         transform: translateY(-3px);
         box-shadow: 0 6px 24px rgba(232, 168, 56, 0.5);
+      }
+
+      .hero-cta-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .hero-cta-btn-sm {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.82rem;
+      }
+
+      .hero-cta-btn-spacer {
+        visibility: hidden;
+        pointer-events: none;
       }
 
       /* Hero edition badges */
@@ -2046,13 +2059,31 @@
           27 de março de 2026<br />Novotel Recife Marina
         </p>
 
-        <a
-          href="#inscricoes"
-          class="registration-status hero-cta-btn"
-          data-i18n="hero.registrationCta"
-        >
-          Inscreva-se
-        </a>
+        <div class="hero-cta-buttons">
+          <a
+            href="https://www.sympla.com.br/evento/curso-de-terapia-injetAvel---com-a-mEdica-nutrOloga-dra-renata-martins-mg/3336305"
+            class="registration-status hero-cta-btn hero-cta-btn-sm hero-cta-btn-spacer"
+            aria-hidden="true"
+            tabindex="-1"
+          >
+            Curso Terapia Injetáveis
+          </a>
+          <a
+            href="#inscricoes"
+            class="registration-status hero-cta-btn"
+            data-i18n="hero.registrationCta"
+          >
+            Inscreva-se
+          </a>
+          <a
+            href="https://www.sympla.com.br/evento/curso-de-terapia-injetAvel---com-a-mEdica-nutrOloga-dra-renata-martins-mg/3336305"
+            class="registration-status hero-cta-btn hero-cta-btn-sm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Curso Terapia Injetáveis
+          </a>
+        </div>
 
         <!-- Patrocínio Master -->
         <div class="hero-sponsors">
