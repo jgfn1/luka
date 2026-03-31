@@ -281,12 +281,18 @@
       }
 
       .nav-cta.nav-cta-disabled {
-        background: rgba(102, 102, 102, 0.25);
-        color: var(--muted-text) !important;
-        cursor: default;
+        background: linear-gradient(135deg, #6e6e6e 0%, #9e9e9e 100%);
+        color: #fff !important;
+        cursor: not-allowed;
         box-shadow: none;
-        border: 1px solid rgba(102, 102, 102, 0.2);
+        border: none;
         text-transform: none;
+      }
+
+      .nav-cta.nav-cta-disabled:hover {
+        transform: none;
+        background: linear-gradient(135deg, #6e6e6e 0%, #9e9e9e 100%);
+        box-shadow: none;
       }
 
       /* Hero section */
@@ -424,11 +430,23 @@
         letter-spacing: 0.5px;
       }
 
-      .btn-primary:hover {
+      .btn-primary:hover:not(:disabled):not([disabled]) {
         background: linear-gradient(135deg, #f5c563 0%, var(--accent) 100%);
         transform: translateY(-3px);
         box-shadow: 0 8px 30px rgba(232, 168, 56, 0.6);
         color: var(--dark-text);
+      }
+
+      button.btn-primary:disabled,
+      button.btn-primary[disabled] {
+        background: linear-gradient(135deg, #6e6e6e 0%, #9e9e9e 100%) !important;
+        color: #fff !important;
+        cursor: not-allowed !important;
+        box-shadow: none !important;
+        transform: none !important;
+        animation: none;
+        pointer-events: none;
+        opacity: 1;
       }
 
       .registration-status,
@@ -453,6 +471,20 @@
         box-shadow: 0 6px 24px rgba(232, 168, 56, 0.5);
       }
 
+      .hero-cta-btn.hero-cta-btn-closed {
+        background: linear-gradient(135deg, #6e6e6e 0%, #9e9e9e 100%);
+        color: #fff !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        cursor: default;
+        pointer-events: none;
+      }
+
+      .hero-cta-btn.hero-cta-btn-closed:hover {
+        transform: none;
+        background: linear-gradient(135deg, #6e6e6e 0%, #9e9e9e 100%);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      }
+
       .hero-cta-buttons {
         display: flex;
         flex-wrap: wrap;
@@ -466,17 +498,51 @@
         font-size: 0.82rem;
       }
 
-      /* Hero edition badges */
+      /* Hero edition badges / photo galleries */
       .hero-badges {
         position: absolute;
         top: 115px;
         left: 0;
         right: 0;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         padding: 0 2rem;
         pointer-events: none;
         z-index: 3;
+      }
+
+      .hero-photos-cluster {
+        pointer-events: auto;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: 0.65rem 1rem 0.75rem;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        max-width: min(520px, 92vw);
+      }
+
+      .hero-photos-title {
+        display: block;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        color: var(--primary);
+        text-align: left;
+        margin-bottom: 0.55rem;
+        letter-spacing: 0.04em;
+      }
+
+      .hero-photos-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 0.45rem;
+      }
+
+      .hero-badge.hero-badge--compact {
+        padding: 0.45rem 0.75rem;
+        font-size: 0.68rem;
       }
 
       .hero-badge {
@@ -1289,6 +1355,68 @@
         background: rgba(44, 95, 125, 0.1);
       }
 
+      /* Galeria de fotos (Google Drive embed) */
+      .photos-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        justify-content: center;
+        margin: 2rem auto 1.25rem;
+        max-width: 720px;
+      }
+
+      .photos-tab-btn {
+        flex: 1 1 auto;
+        min-width: 118px;
+        padding: 0.75rem 1rem;
+        border: 2px solid var(--primary);
+        border-radius: 50px;
+        background: #fff;
+        color: var(--primary);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 0.88rem;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      .photos-tab-btn:hover:not(.active) {
+        background: rgba(44, 95, 125, 0.08);
+      }
+
+      .photos-tab-btn.active {
+        background: var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+      }
+
+      .photo-gallery {
+        margin-top: 0.5rem;
+      }
+
+      .photo-embed {
+        position: relative;
+        width: 100%;
+        padding-top: 62.5%;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(17, 17, 17, 0.12);
+        background: #f0f4f7;
+        border: 1px solid rgba(44, 95, 125, 0.12);
+      }
+
+      .photo-embed iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .photos-tab-panel[hidden] {
+        display: none !important;
+      }
+
       .schedule-day {
         overflow-x: auto;
       }
@@ -1554,19 +1682,37 @@
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
       }
 
-      .registration-btn:hover {
+      button.registration-btn {
+        border: none;
+        font-family: inherit;
+        line-height: inherit;
+        cursor: pointer;
+      }
+
+      button.registration-btn:disabled {
+        cursor: not-allowed;
+      }
+
+      .registration-btn:hover:not(:disabled):not([disabled]) {
         transform: translateY(-3px);
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
       }
 
       .registration-btn-disabled {
-        background: rgba(255, 255, 255, 0.3);
-        cursor: default;
+        background: linear-gradient(135deg, #6e6e6e 0%, #9e9e9e 100%);
+        color: #fff !important;
+        cursor: not-allowed;
         pointer-events: none;
+        box-shadow: none;
+      }
+
+      button.registration-btn-disabled:disabled {
+        opacity: 1;
       }
 
       .registration-btn-disabled:hover {
         transform: none;
+        box-shadow: none;
       }
 
       .speakers-coming-soon {
@@ -1951,6 +2097,19 @@
           padding: 0 0.8rem;
         }
 
+        .hero-photos-cluster {
+          padding: 0.5rem 0.65rem 0.6rem;
+        }
+
+        .hero-photos-title {
+          font-size: 0.65rem;
+        }
+
+        .hero-badge.hero-badge--compact {
+          font-size: 0.58rem;
+          padding: 0.38rem 0.55rem;
+        }
+
         .hero-badge {
           font-size: 0.6rem;
           padding: 0.5rem 0.8rem;
@@ -1985,6 +2144,22 @@
         .carousel-track img.logo-intermediate {
           max-height: 42px;
         }
+
+        .photos-tabs {
+          flex-direction: column;
+          align-items: stretch;
+          max-width: 100%;
+        }
+
+        .photos-tab-btn {
+          min-width: 0;
+          width: 100%;
+        }
+
+        .photo-embed {
+          padding-top: 75%;
+          border-radius: 12px;
+        }
       }
     </style>
   </head>
@@ -2011,6 +2186,7 @@
         </li>
         <li><a href="#temas" data-i18n="nav.topics">Temas</a></li>
         <li><a href="#local" data-i18n="nav.location">Local</a></li>
+        <li><a href="#fotos" data-i18n="nav.photos">Fotos</a></li>
         <li class="nav-lang-selector">
           <select id="language-select" onchange="changeLanguage()">
             <option value="pt">PT</option>
@@ -2019,9 +2195,14 @@
           </select>
         </li>
         <li>
-          <a href="#inscricoes" class="nav-cta" data-i18n="nav.register">
-            Inscreva-se
-          </a>
+          <span
+            class="nav-cta nav-cta-disabled"
+            role="status"
+            aria-disabled="true"
+            tabindex="-1"
+            data-i18n="nav.register"
+            >Inscrições encerradas</span
+          >
         </li>
       </ul>
     </nav>
@@ -2034,14 +2215,36 @@
       <!-- Overlay -->
       <div class="hero-overlay"></div>
 
-      <!-- Edition badges -->
+      <!-- Melhores momentos – álbuns no Google Drive -->
       <div class="hero-badges">
-        <a href="#" class="hero-badge" id="photos-2026-btn">
-          Melhores Momentos<small>Edição 2026</small>
-        </a>
-        <a href="#" class="hero-badge" id="photos-2025-btn">
-          Melhores Momentos<small>Edição 2025</small>
-        </a>
+        <div class="hero-photos-cluster">
+          <span class="hero-photos-title" data-i18n="photos.title"
+            >Melhores momentos</span
+          >
+          <div class="hero-photos-links">
+            <a
+              href="#fotos"
+              class="hero-badge hero-badge--compact"
+              data-photos-tab="geral"
+              data-i18n="photos.geral"
+              >Geral</a
+            >
+            <a
+              href="#fotos"
+              class="hero-badge hero-badge--compact"
+              data-photos-tab="gastro"
+              data-i18n="photos.gastro"
+              >Gastro Conecta</a
+            >
+            <a
+              href="#fotos"
+              class="hero-badge hero-badge--compact"
+              data-photos-tab="nutri"
+              data-i18n="photos.nutri"
+              >Nutri Conecta</a
+            >
+          </div>
+        </div>
       </div>
 
       <div class="hero-content">
@@ -2055,13 +2258,12 @@
         </p>
 
         <div class="hero-cta-buttons">
-          <a
-            href="#inscricoes"
-            class="registration-status hero-cta-btn"
+          <span
+            class="registration-status hero-cta-btn hero-cta-btn-closed"
+            role="status"
             data-i18n="hero.registrationCta"
+            >Inscrições encerradas</span
           >
-            Inscreva-se
-          </a>
         </div>
 
         <!-- Patrocínio Master -->
@@ -3844,6 +4046,110 @@
       </div>
     </section>
 
+    <!-- Galeria de fotos -->
+    <section id="fotos" class="fade-in">
+      <div class="container" style="text-align: center">
+        <h2 data-i18n="photos.galleryTitle">Galeria de fotos</h2>
+
+        <div class="photos-tabs" role="tablist" aria-label="Álbuns de fotos">
+          <button
+            type="button"
+            class="photos-tab-btn active"
+            id="photos-tab-btn-geral"
+            role="tab"
+            aria-selected="true"
+            aria-controls="photos-panel-geral"
+            data-photos-tab="geral"
+            onclick="showPhotosTab('geral')"
+            data-i18n="photos.geral"
+          >
+            Geral
+          </button>
+          <button
+            type="button"
+            class="photos-tab-btn"
+            id="photos-tab-btn-gastro"
+            role="tab"
+            aria-selected="false"
+            aria-controls="photos-panel-gastro"
+            data-photos-tab="gastro"
+            onclick="showPhotosTab('gastro')"
+            data-i18n="photos.gastro"
+          >
+            Gastro Conecta
+          </button>
+          <button
+            type="button"
+            class="photos-tab-btn"
+            id="photos-tab-btn-nutri"
+            role="tab"
+            aria-selected="false"
+            aria-controls="photos-panel-nutri"
+            data-photos-tab="nutri"
+            onclick="showPhotosTab('nutri')"
+            data-i18n="photos.nutri"
+          >
+            Nutri Conecta
+          </button>
+        </div>
+
+        <div class="photo-gallery">
+          <div
+            class="photos-tab-panel"
+            id="photos-panel-geral"
+            data-photos-panel="geral"
+            role="tabpanel"
+            aria-labelledby="photos-tab-btn-geral"
+          >
+            <div class="photo-embed">
+              <iframe
+                title="Fotos — Geral"
+                src="https://drive.google.com/embeddedfolderview?id=1p4OR8F73Z-JLkdJuiH_qtLs3T1NrhuvE#grid"
+                loading="lazy"
+                allowfullscreen=""
+              ></iframe>
+            </div>
+          </div>
+          <div
+            class="photos-tab-panel"
+            id="photos-panel-gastro"
+            data-photos-panel="gastro"
+            role="tabpanel"
+            aria-labelledby="photos-tab-btn-gastro"
+            hidden
+          >
+            <div class="photo-embed">
+              <iframe
+                title="Fotos — Gastro Conecta"
+                src="about:blank"
+                data-src="https://drive.google.com/embeddedfolderview?id=1q4ecR_vwuUmcYrWbE7-2GK8gpHrN8cBc#grid"
+                loading="lazy"
+                allowfullscreen=""
+              ></iframe>
+            </div>
+          </div>
+          <div
+            class="photos-tab-panel"
+            id="photos-panel-nutri"
+            data-photos-panel="nutri"
+            role="tabpanel"
+            aria-labelledby="photos-tab-btn-nutri"
+            hidden
+          >
+            <div class="photo-embed">
+              <iframe
+                title="Fotos — Nutri Conecta"
+                src="about:blank"
+                data-src="https://drive.google.com/embeddedfolderview?id=1eZd3u6-aKRhXAjGyfnaARmuc-Z59kSoG#grid"
+                loading="lazy"
+                allowfullscreen=""
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Registration section -->
     <section
       id="inscricoes"
@@ -3860,26 +4166,26 @@
       <div class="container" style="text-align: center">
         <h2 style="color: white" data-i18n="registration.title">Inscrições</h2>
         <div class="registration-buttons">
-          <a
-            href="https://www.sympla.com.br/evento/gastro-conecta-2026/3310112"
-            class="btn-primary registration-btn"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            disabled
+            aria-disabled="true"
+            class="btn-primary registration-btn registration-btn-disabled"
           >
             <span data-i18n="registration.gastro"
-              >Gastro Conecta – Inscreva-se</span
+              >Gastro Conecta – Inscrições encerradas</span
             >
-          </a>
-          <a
-            href="https://www.sympla.com.br/evento/nutri-contecta-2026/3310526"
-            class="btn-primary registration-btn"
-            target="_blank"
-            rel="noopener noreferrer"
+          </button>
+          <button
+            type="button"
+            disabled
+            aria-disabled="true"
+            class="btn-primary registration-btn registration-btn-disabled"
           >
             <span data-i18n="registration.nutri"
-              >Nutri Conecta – Inscreva-se</span
+              >Nutri Conecta – Inscrições encerradas</span
             >
-          </a>
+          </button>
         </div>
         <p
           style="
@@ -4027,7 +4333,13 @@
           "nav.topics": "Temas",
           "nav.committee": "Comissão",
           "nav.location": "Local",
-          "nav.register": "Inscreva-se",
+          "nav.photos": "Fotos",
+          "nav.register": "Inscrições encerradas",
+          "photos.title": "Melhores momentos",
+          "photos.geral": "Geral",
+          "photos.gastro": "Gastro Conecta",
+          "photos.nutri": "Nutri Conecta",
+          "photos.galleryTitle": "Galeria de fotos",
           "schedule.title": "Programação",
           "schedule.subtitle": "Confira a programação detalhada do evento",
           "schedule.download": "Baixe aqui a sua programação",
@@ -4044,7 +4356,7 @@
           "speakers.learnMore": "Saiba mais",
           "hero.title": "Gastro Conecta & Nutri Conecta 2026",
           "hero.subtitle": "27 de março de 2026<br />Novotel Recife Marina",
-          "hero.registrationCta": "Inscreva-se",
+          "hero.registrationCta": "Inscrições encerradas",
           "about.title": "Sobre os Eventos",
           "about.intro":
             "O Instituto Endogastro Academy tem a honra de anunciar os Simpósios GastroConecta e NutriConecta 2026. Eventos científicos de excelência voltados à discussão de temas contemporâneos e relevantes sobre o trato gastrointestinal, obesidade, medicina de precisão, genética, saúde, comportamento alimentar e bem-estar.",
@@ -4143,8 +4455,8 @@
           "location.parking": "Estacionamento",
           "location.parkingText": "Amplo estacionamento disponível no local",
           "registration.title": "Inscrições",
-          "registration.gastro": "Gastro Conecta – Inscreva-se",
-          "registration.nutri": "Nutri Conecta – Inscreva-se",
+          "registration.gastro": "Gastro Conecta – Inscrições encerradas",
+          "registration.nutri": "Nutri Conecta – Inscrições encerradas",
           "registration.contact": "Dúvidas? Entre em Contato",
           "sponsors.title": "Patrocinadores",
           "sponsors.realizacao": "Realização",
@@ -4168,7 +4480,13 @@
           "nav.topics": "Topics",
           "nav.committee": "Committee",
           "nav.location": "Location",
-          "nav.register": "Register",
+          "nav.photos": "Photos",
+          "nav.register": "Registration closed",
+          "photos.title": "Best moments",
+          "photos.geral": "General",
+          "photos.gastro": "Gastro Conecta",
+          "photos.nutri": "Nutri Conecta",
+          "photos.galleryTitle": "Photo gallery",
           "schedule.title": "Schedule",
           "schedule.subtitle": "Check the detailed event schedule",
           "schedule.download": "Download your program here",
@@ -4185,7 +4503,7 @@
           "speakers.learnMore": "Learn more",
           "hero.title": "Gastro Conecta & Nutri Conecta 2026",
           "hero.subtitle": "March 27, 2026<br />Novotel Recife Marina",
-          "hero.registrationCta": "Register for Gastro Conecta",
+          "hero.registrationCta": "Registration closed",
           "about.title": "About the Events",
           "about.intro":
             "The Endogastro Academy Institute is honored to announce the GastroConecta and NutriConecta 2026 Symposiums. Scientific events of excellence focused on discussing contemporary and relevant topics about the gastrointestinal tract, obesity, precision medicine, genetics, health, eating behavior and well-being.",
@@ -4283,8 +4601,8 @@
           "location.parking": "Parking",
           "location.parkingText": "Ample parking available on site",
           "registration.title": "Registration",
-          "registration.gastro": "Gastro Conecta – Register",
-          "registration.nutri": "Nutri Conecta – Register",
+          "registration.gastro": "Gastro Conecta – Registration closed",
+          "registration.nutri": "Nutri Conecta – Registration closed",
           "registration.contact": "Questions? Contact Us",
           "sponsors.title": "Sponsors",
           "sponsors.realizacao": "Organization",
@@ -4308,7 +4626,13 @@
           "nav.topics": "Thèmes",
           "nav.committee": "Comité",
           "nav.location": "Lieu",
-          "nav.register": "S'inscrire",
+          "nav.photos": "Photos",
+          "nav.register": "Inscriptions closes",
+          "photos.title": "Meilleurs moments",
+          "photos.geral": "Général",
+          "photos.gastro": "Gastro Conecta",
+          "photos.nutri": "Nutri Conecta",
+          "photos.galleryTitle": "Galerie photos",
           "schedule.title": "Programme",
           "schedule.subtitle": "Consultez le programme détaillé de l'événement",
           "schedule.download": "Téléchargez votre programme ici",
@@ -4325,7 +4649,7 @@
           "speakers.learnMore": "En savoir plus",
           "hero.title": "Gastro Conecta & Nutri Conecta 2026",
           "hero.subtitle": "27 mars 2026<br />Novotel Recife Marina",
-          "hero.registrationCta": "S'inscrire",
+          "hero.registrationCta": "Inscriptions closes",
           "about.title": "À propos des Événements",
           "about.intro":
             "L'Institut Endogastro Academy a l'honneur d'annoncer les Symposiums GastroConecta et NutriConecta 2026. Événements scientifiques d'excellence axés sur la discussion de sujets contemporains et pertinents sur le tractus gastro-intestinal, l'obésité, la médecine de précision, la génétique, la santé, le comportement alimentaire et le bien-être.",
@@ -4427,8 +4751,8 @@
           "location.parking": "Parking",
           "location.parkingText": "Grand parking disponible sur place",
           "registration.title": "Inscriptions",
-          "registration.gastro": "Gastro Conecta – S'inscrire",
-          "registration.nutri": "Nutri Conecta – S'inscrire",
+          "registration.gastro": "Gastro Conecta – Inscriptions closes",
+          "registration.nutri": "Nutri Conecta – Inscriptions closes",
           "registration.contact": "Questions ? Contactez-nous",
           "sponsors.title": "Sponsors",
           "sponsors.realizacao": "Organisation",
@@ -4457,11 +4781,23 @@
         localStorage.setItem("selectedLanguage", lang);
       }
 
-      // Load saved language
+      // Load saved language; deep-link ?album=geral|gastro|nutri
       window.addEventListener("DOMContentLoaded", () => {
         const savedLang = localStorage.getItem("selectedLanguage") || "pt";
         document.getElementById("language-select").value = savedLang;
         if (savedLang !== "pt") changeLanguage();
+        const album = new URLSearchParams(window.location.search).get("album");
+        if (album && ["geral", "gastro", "nutri"].includes(album)) {
+          showPhotosTab(album);
+          const fotosEl = document.getElementById("fotos");
+          if (fotosEl) {
+            const navH = document.getElementById("navbar")?.offsetHeight ?? 0;
+            window.scrollTo({
+              top: fotosEl.offsetTop - navH,
+              behavior: "auto",
+            });
+          }
+        }
       });
 
       // Navbar scroll effect
@@ -4492,10 +4828,44 @@
         observer.observe(el);
       });
 
+      function showPhotosTab(tabId) {
+        const valid = ["geral", "gastro", "nutri"];
+        if (!valid.includes(tabId)) tabId = "geral";
+        document.querySelectorAll(".photos-tab-panel").forEach((panel) => {
+          const match = panel.dataset.photosPanel === tabId;
+          if (match) {
+            panel.removeAttribute("hidden");
+          } else {
+            panel.setAttribute("hidden", "");
+          }
+        });
+        document.querySelectorAll(".photos-tab-btn").forEach((btn) => {
+          const match = btn.dataset.photosTab === tabId;
+          btn.classList.toggle("active", match);
+          btn.setAttribute("aria-selected", match ? "true" : "false");
+        });
+        const activePanel = document.querySelector(
+          `.photos-tab-panel[data-photos-panel="${tabId}"]`,
+        );
+        if (activePanel) {
+          const iframe = activePanel.querySelector("iframe[data-src]");
+          if (iframe && iframe.dataset.src) {
+            const current = iframe.getAttribute("src") || "";
+            if (!current || current === "about:blank") {
+              iframe.setAttribute("src", iframe.dataset.src);
+            }
+          }
+        }
+      }
+
       // Smooth scroll
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
+          const photosTab = this.getAttribute("data-photos-tab");
+          if (photosTab) {
+            showPhotosTab(photosTab);
+          }
           const target = document.querySelector(this.getAttribute("href"));
           if (target) {
             const navHeight = document.getElementById("navbar").offsetHeight;
