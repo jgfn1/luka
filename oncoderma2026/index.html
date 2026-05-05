@@ -1,0 +1,1289 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>II Simpósio Oncoderma Recife | 5 de junho de 2026</title>
+    <meta
+      name="description"
+      content="II Simpósio Oncoderma Recife — 5 de junho de 2026, 8h, Auditório Hospital Santa Joana Recife. Inscrições pelo Sympla."
+    />
+    <link
+      rel="canonical"
+      href="https://www.oncodermarecife2026.com.br/"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://www.oncodermarecife2026.com.br/"
+    />
+    <meta property="og:title" content="II Simpósio Oncoderma Recife" />
+    <meta
+      property="og:description"
+      content="5 de junho de 2026 — Auditório Hospital Santa Joana Recife"
+    />
+    <meta
+      property="og:image"
+      content="https://www.oncodermarecife2026.com.br/oncoderma2026/assets/Logo_Oncoderma.png"
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://www.oncodermarecife2026.com.br/"
+    />
+    <meta property="twitter:title" content="II Simpósio Oncoderma Recife" />
+    <meta
+      property="twitter:description"
+      content="5 de junho de 2026 — Hospital Santa Joana Recife"
+    />
+    <meta
+      property="twitter:image"
+      content="https://www.oncodermarecife2026.com.br/oncoderma2026/assets/Logo_Oncoderma.png"
+    />
+
+    <link rel="icon" type="image/png" href="assets/Logo_Oncoderma.png" />
+    <link rel="apple-touch-icon" href="assets/Logo_Oncoderma.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --gold: #e5b333;
+        --terracotta: #d14d33;
+        --maroon: #5a1a31;
+        --primary: #5a1a31;
+        --secondary: #d14d33;
+        --accent: #e5b333;
+        --light-bg: #f9f6f2;
+        --dark-text: #2d2a28;
+        --muted-text: #5c5753;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Open Sans", Arial, sans-serif;
+        color: var(--dark-text);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Montserrat", sans-serif;
+        color: var(--primary);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+      }
+      h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+      h3 {
+        font-size: 1.35rem;
+        font-weight: 600;
+        margin: 1.5rem 0 1rem;
+      }
+
+      p {
+        margin: 0.5rem 0 1rem;
+      }
+
+      a {
+        color: var(--maroon);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover,
+      a:focus {
+        color: var(--terracotta);
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0.65rem 1.5rem;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(90, 26, 49, 0.12);
+        transition: all 0.3s ease;
+      }
+
+      nav.scrolled {
+        padding: 0.45rem 1.5rem;
+        box-shadow: 0 4px 14px rgba(90, 26, 49, 0.15);
+      }
+
+      nav .logo-small {
+        height: 58px;
+        transition: height 0.3s ease;
+        display: flex;
+        align-items: center;
+      }
+
+      nav .logo-small img {
+        height: 100%;
+        width: auto;
+        max-width: 220px;
+        object-fit: contain;
+        object-position: left center;
+      }
+
+      nav.scrolled .logo-small {
+        height: 50px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.35rem;
+        align-items: center;
+      }
+
+      nav ul li a {
+        font-weight: 600;
+        font-size: 0.88rem;
+        padding: 0.4rem 0;
+        position: relative;
+        color: var(--maroon);
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gold);
+        transition: width 0.3s ease;
+      }
+
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+
+      .nav-cta {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--terracotta) 0%, #b83d28 100%);
+        color: #fff !important;
+        padding: 0.65rem 1.25rem;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.82rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        box-shadow: 0 3px 14px rgba(209, 77, 51, 0.35);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(209, 77, 51, 0.45);
+        color: #fff !important;
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 1001;
+      }
+
+      .mobile-menu-toggle span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: var(--maroon);
+        transition: all 0.3s ease;
+        border-radius: 3px;
+      }
+
+      .mobile-menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      header.hero {
+        position: relative;
+        min-height: 88vh;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 110px 1rem 3rem;
+        overflow: hidden;
+      }
+
+      header.hero .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background: linear-gradient(
+            145deg,
+            rgba(90, 26, 49, 0.92) 0%,
+            rgba(209, 77, 51, 0.85) 48%,
+            rgba(229, 179, 51, 0.78) 100%
+          ),
+          radial-gradient(
+            circle at 20% 30%,
+            rgba(229, 179, 51, 0.35) 0%,
+            transparent 45%
+          ),
+          radial-gradient(
+            circle at 85% 70%,
+            rgba(90, 26, 49, 0.5) 0%,
+            transparent 55%
+          );
+      }
+
+      header.hero .hero-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.35;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30 30 60 0 30z' fill='none' stroke='%23ffffff' stroke-opacity='0.08'/%3E%3C/svg%3E");
+        background-size: 48px 48px;
+      }
+
+      header.hero .hero-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      header.hero .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 920px;
+        width: 100%;
+      }
+
+      header.hero .hero-content img.logo {
+        width: min(320px, 88vw);
+        height: auto;
+        margin-bottom: 1.75rem;
+        filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.35));
+        background: rgba(255, 255, 255, 0.97);
+        padding: 1.25rem 1.5rem;
+        border-radius: 18px;
+      }
+
+      header.hero h1 {
+        color: #fff;
+        margin-bottom: 0.75rem;
+        font-size: clamp(1.65rem, 4vw, 2.65rem);
+        text-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
+      }
+
+      header.hero h1 span.accent {
+        color: var(--gold);
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+      }
+
+      header.hero p {
+        color: #fdf8f2;
+        font-size: 1.18rem;
+        margin-bottom: 2rem;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero-logos-section {
+        margin-top: 2rem;
+        padding-top: 1.75rem;
+        border-top: 2px solid rgba(255, 255, 255, 0.35);
+      }
+
+      .hero-logos-section h3 {
+        color: #fff;
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-bottom: 1.25rem;
+        opacity: 0.95;
+      }
+
+      .hero-logo-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem 2rem;
+        align-items: center;
+        justify-items: center;
+        max-width: 520px;
+        margin: 0 auto 1.5rem;
+      }
+
+      .hero-logo-grid img {
+        max-width: 200px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+      }
+
+      .btn-primary {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--gold) 0%, #f0c85c 100%);
+        color: var(--maroon) !important;
+        padding: 1rem 2.2rem;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 1rem;
+        transition: all 0.35s ease;
+        box-shadow: 0 4px 22px rgba(229, 179, 51, 0.45);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 28px rgba(229, 179, 51, 0.55);
+        color: var(--maroon) !important;
+      }
+
+      section {
+        padding: 4.5rem 2rem;
+      }
+
+      section:nth-of-type(even) {
+        background: var(--light-bg);
+      }
+
+      .container {
+        max-width: 1140px;
+        margin: 0 auto;
+      }
+
+      .two-column {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+        align-items: start;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      #countdown-section {
+        background: linear-gradient(
+          135deg,
+          var(--maroon) 0%,
+          #4a1530 40%,
+          var(--terracotta) 100%
+        );
+        color: #fff;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #countdown-section h2 {
+        color: #fff;
+        font-size: 1.45rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .countdown-timer {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      .countdown-item {
+        background: rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(12px);
+        border: 2px solid rgba(255, 255, 255, 0.28);
+        border-radius: 14px;
+        padding: 0.85rem 1.15rem;
+        min-width: 86px;
+      }
+
+      .countdown-number {
+        font-size: 2rem;
+        font-weight: 800;
+        display: block;
+        line-height: 1;
+        margin-bottom: 0.35rem;
+        color: var(--gold);
+      }
+
+      .countdown-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        opacity: 0.92;
+      }
+
+      .schedule-header {
+        margin-bottom: 1.5rem;
+      }
+
+      .schedule-title-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .schedule-title {
+        margin: 0;
+      }
+
+      .download-pdf-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.55rem 1.1rem;
+        background: rgba(90, 26, 49, 0.08);
+        border-radius: 8px;
+        color: var(--maroon);
+        font-weight: 600;
+        font-size: 0.88rem;
+        border: 1px solid rgba(90, 26, 49, 0.15);
+        transition: background 0.25s ease, transform 0.2s ease;
+      }
+
+      .download-pdf-btn:hover {
+        background: rgba(209, 77, 51, 0.12);
+        transform: translateY(-1px);
+        color: var(--maroon);
+      }
+
+      .download-icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+      }
+
+      .notice-box {
+        background: #fff;
+        border-left: 4px solid var(--gold);
+        padding: 1.25rem 1.5rem;
+        border-radius: 0 12px 12px 0;
+        box-shadow: 0 4px 20px rgba(90, 26, 49, 0.08);
+        margin-bottom: 2rem;
+      }
+
+      .qr-block {
+        margin-top: 2.5rem;
+        padding: 2rem;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 28px rgba(90, 26, 49, 0.1);
+        text-align: center;
+      }
+
+      .qr-block canvas {
+        display: block;
+        margin: 1rem auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      }
+
+      .qr-actions {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+      }
+
+      .btn-outline {
+        display: inline-block;
+        padding: 0.55rem 1.2rem;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        border: 2px solid var(--maroon);
+        color: var(--maroon) !important;
+        background: transparent;
+        cursor: pointer;
+        font-family: inherit;
+      }
+
+      .btn-outline:hover {
+        background: var(--maroon);
+        color: #fff !important;
+      }
+
+      .committee-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .placeholder-card {
+        border: 2px dashed rgba(90, 26, 49, 0.25);
+        border-radius: 14px;
+        padding: 2rem 1rem;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.7);
+        min-height: 160px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--muted-text);
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .sponsors-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 2rem;
+        margin: 2rem auto;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .sponsor-item img {
+        max-width: 200px;
+        max-height: 72px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .map-frame {
+        border: 0;
+        width: 100%;
+        height: 400px;
+        border-radius: 14px;
+        box-shadow: 0 6px 22px rgba(90, 26, 49, 0.15);
+      }
+
+      .orgs-strip {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+        align-items: center;
+        margin-top: 2rem;
+      }
+
+      .orgs-strip img {
+        max-width: 220px;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+        object-fit: contain;
+      }
+
+      .orgs-strip h3 {
+        margin-top: 0;
+        font-size: 1.05rem;
+        color: var(--terracotta);
+      }
+
+      footer {
+        background: linear-gradient(
+          135deg,
+          var(--maroon) 0%,
+          #3d1225 50%,
+          var(--terracotta) 100%
+        );
+        color: #fff;
+        padding: 3rem 2rem 2rem;
+        text-align: center;
+      }
+
+      footer a {
+        color: var(--gold);
+        font-weight: 600;
+      }
+
+      footer a:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+
+      footer p {
+        margin: 0.65rem 0;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 0.75rem;
+      }
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.12);
+        transition: background 0.25s ease, transform 0.2s ease;
+      }
+
+      .social-link:hover {
+        background: rgba(229, 179, 51, 0.35);
+        transform: translateY(-2px);
+      }
+
+      .social-link svg {
+        width: 22px;
+        height: 22px;
+        fill: #fff;
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding: 0.55rem 1rem;
+        }
+
+        .mobile-menu-toggle {
+          display: flex;
+        }
+
+        nav ul {
+          position: fixed;
+          top: 76px;
+          left: 0;
+          right: 0;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(10px);
+          flex-direction: column;
+          align-items: stretch;
+          padding: 0.5rem 0;
+          box-shadow: 0 8px 24px rgba(90, 26, 49, 0.12);
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+
+        nav ul.active {
+          max-height: 560px;
+          opacity: 1;
+          overflow-y: auto;
+        }
+
+        nav ul li {
+          border-bottom: 1px solid rgba(90, 26, 49, 0.08);
+        }
+
+        nav ul li a,
+        nav ul li .nav-cta {
+          display: block;
+          padding: 1rem 1.5rem;
+        }
+
+        nav ul li .nav-cta {
+          margin: 0.5rem 1.25rem 1rem;
+          text-align: center;
+          border-radius: 999px;
+        }
+
+        h1 {
+          font-size: 1.85rem;
+        }
+        h2 {
+          font-size: 1.55rem;
+        }
+
+        header.hero .hero-content img.logo {
+          width: min(260px, 90vw);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="main-nav">
+      <a href="#top" class="logo-small"
+        ><img src="assets/Logo_Oncoderma.png" alt="II Simpósio Oncoderma"
+      /></a>
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobile-menu-toggle"
+        aria-label="Abrir menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul id="nav-menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#programacao">Programação</a></li>
+        <li><a href="#palestrantes">Palestrantes</a></li>
+        <li><a href="#local">Local</a></li>
+        <li><a href="#fotos">Fotos</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li>
+          <a
+            class="nav-cta"
+            href="https://www.sympla.com.br/evento/ii-simpOsio-oncoderma-recife/3410101"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Inscrições</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <img
+          class="logo"
+          src="assets/Logo_Oncoderma.png"
+          alt="Logo II Simpósio Oncoderma"
+        />
+        <h1><span class="accent">II Simpósio</span> Oncoderma Recife</h1>
+        <p>
+          <strong>5 de junho de 2026</strong> · Sexta-feira · 8h<br />
+          Auditório Hospital Santa Joana Recife — Graças
+        </p>
+        <a
+          class="btn-primary"
+          href="https://www.sympla.com.br/evento/ii-simpOsio-oncoderma-recife/3410101"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Inscreva-se no Sympla</a
+        >
+
+        <div class="hero-logos-section">
+          <h3>Realização</h3>
+          <div class="hero-logo-grid">
+            <img
+              src="organizers/Logo Isep Fundo Transparente (atual).png"
+              alt="ISEP"
+            />
+            <img
+              src="organizers/Logo Hospital Santa Joana Fundo Transparente (atual) .png"
+              alt="Hospital Santa Joana"
+            />
+          </div>
+          <h3 style="margin-top: 1rem">Apoio institucional</h3>
+          <div class="hero-logo-grid" style="grid-template-columns: 1fr">
+            <img
+              src="organizers/LOGO CLUPE DA PELE DE PE  (3).png"
+              alt="Clínica de Pele"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="sobre" class="fade-in">
+      <div class="container">
+        <h2>Sobre o evento</h2>
+        <p>
+          O <strong>II Simpósio Oncoderma Recife</strong> reúne profissionais da
+          área para atualização, discussão e troca de experiências em temas
+          ligados à oncologia dermatológica, em ambiente científico promovido
+          pelo <strong>ISEP</strong> e pelo <strong>Hospital Santa Joana</strong>,
+          com apoio da <strong>Clínica de Pele</strong>.
+        </p>
+        <p style="margin-top: 1rem; color: var(--muted-text); font-size: 0.98rem">
+          Domínios oficiais:
+          <a href="https://www.oncodermarecife.com.br/">oncodermarecife.com.br</a>
+          ·
+          <a href="https://www.oncodermarecife2026.com.br/"
+            >oncodermarecife2026.com.br</a
+          >
+        </p>
+
+        <div class="orgs-strip">
+          <div>
+            <h3>Realização</h3>
+            <img
+              src="organizers/Logo Isep Fundo Transparente (atual).png"
+              alt="ISEP"
+            />
+            <img
+              src="organizers/Logo Hospital Santa Joana Fundo Transparente (atual) .png"
+              alt="Hospital Santa Joana"
+              style="margin-top: 1.25rem"
+            />
+          </div>
+          <div>
+            <h3>Apoio institucional</h3>
+            <img
+              src="organizers/LOGO CLUPE DA PELE DE PE  (3).png"
+              alt="Clínica de Pele"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="countdown-section" class="fade-in">
+      <div class="container">
+        <h2>Contagem regressiva</h2>
+        <div class="countdown-timer">
+          <div class="countdown-item">
+            <span id="days" class="countdown-number">00</span>
+            <span class="countdown-label">Dias</span>
+          </div>
+          <div class="countdown-item">
+            <span id="hours" class="countdown-number">00</span>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <div class="countdown-item">
+            <span id="minutes" class="countdown-number">00</span>
+            <span class="countdown-label">Minutos</span>
+          </div>
+          <div class="countdown-item">
+            <span id="seconds" class="countdown-number">00</span>
+            <span class="countdown-label">Segundos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="programacao" class="fade-in">
+      <div class="container">
+        <div class="schedule-header">
+          <div class="schedule-title-row">
+            <h2 class="schedule-title">Programação</h2>
+            <a
+              href="schedule/Programação preliminar - II Oncoderma.pdf"
+              class="download-pdf-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                class="download-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Baixar PDF (preliminar)
+            </a>
+          </div>
+        </div>
+
+        <div class="notice-box">
+          <p style="margin: 0; font-weight: 600; color: var(--maroon)">
+            Programação em construção
+          </p>
+          <p style="margin: 0.75rem 0 0">
+            A grade abaixo será atualizada conforme confirmarmos os detalhes.
+            Utilize o PDF preliminar como referência até a versão final.
+          </p>
+        </div>
+
+        <p style="color: var(--muted-text); margin-bottom: 1.5rem">
+          <strong>05/06/2026 (sexta-feira)</strong> — início às
+          <strong>8h</strong>. Confira horários e mesas no PDF.
+        </p>
+
+        <div class="qr-block" id="qr-programacao">
+          <h3 style="margin-top: 0; color: var(--maroon)">
+            QR Code — Programação no site
+          </h3>
+          <p style="color: var(--muted-text); font-size: 0.95rem">
+            Aponte a câmera para este código para abrir diretamente a página da
+            programação (útil para crachás e material impresso).
+          </p>
+          <canvas id="qr-canvas" width="280" height="280" aria-label="QR Code da programação"></canvas>
+          <p
+            id="qr-url-label"
+            style="font-size: 0.82rem; word-break: break-all; color: var(--muted-text)"
+          ></p>
+          <div class="qr-actions">
+            <button type="button" class="btn-outline" id="qr-download-btn">
+              Baixar QR (PNG)
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="palestrantes" class="fade-in">
+      <div class="container">
+        <h2 class="text-center">Palestrantes</h2>
+        <p class="text-center" style="margin-bottom: 2rem; color: var(--muted-text)">
+          Fotos e currículos serão publicados em breve.
+        </p>
+        <div class="committee-grid">
+          <div class="placeholder-card">Em breve</div>
+          <div class="placeholder-card">Em breve</div>
+          <div class="placeholder-card">Em breve</div>
+          <div class="placeholder-card">Em breve</div>
+          <div class="placeholder-card">Em breve</div>
+          <div class="placeholder-card">Em breve</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="local" class="fade-in">
+      <div class="container two-column">
+        <div>
+          <h2>Local do evento</h2>
+          <p>
+            O evento será realizado no
+            <strong>Auditório do Hospital Santa Joana Recife</strong>, no bairro
+            das Graças.
+          </p>
+          <p style="margin-top: 1.25rem">
+            <strong>Endereço:</strong><br />
+            Av. Joaquim Nabuco, 200 — Graças<br />
+            Recife — PE
+          </p>
+          <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--muted-text)">
+            Use o mapa ao lado para orientação de acesso.
+          </p>
+        </div>
+        <div>
+          <iframe
+            class="map-frame"
+            loading="lazy"
+            allowfullscreen
+            title="Mapa — Hospital Santa Joana Recife"
+            src="https://maps.google.com/maps?q=Hospital+Santa+Joana+Recife+Av.+Joaquim+Nabuco,+200+Gra%C3%A7as+Recife&output=embed"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="inscricao" class="fade-in">
+      <div class="container text-center">
+        <h2>Inscrições</h2>
+        <p style="max-width: 640px; margin: 0 auto 1.75rem">
+          Garanta sua vaga pelo Sympla. Em caso de dúvidas, fale com a
+          organização na seção de contato.
+        </p>
+        <a
+          class="btn-primary"
+          href="https://www.sympla.com.br/evento/ii-simpOsio-oncoderma-recife/3410101"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Abrir página de inscrições</a
+        >
+      </div>
+    </section>
+
+    <section id="patrocinadores" class="fade-in">
+      <div class="container">
+        <h2 class="text-center">Patrocinadores</h2>
+        <p class="text-center" style="margin-bottom: 2rem; color: var(--muted-text)">
+          Agradecemos o apoio das empresas que viabilizam este simpósio.
+        </p>
+        <div class="sponsors-grid">
+          <div class="sponsor-item">
+            <img src="sponsors/adium.png" alt="Adium" />
+          </div>
+          <div class="sponsor-item">
+            <img src="sponsors/Bristol.png" alt="Bristol Myers Squibb" />
+          </div>
+          <div class="sponsor-item">
+            <img src="sponsors/LOGO MERCK .jpg" alt="Merck" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fotos" class="fade-in">
+      <div class="container text-center">
+        <h2>Galeria de fotos</h2>
+        <p style="color: var(--muted-text); max-width: 560px; margin: 0 auto">
+          Durante o evento divulgaremos o link oficial para download das fotos.
+        </p>
+      </div>
+    </section>
+
+    <section id="contato" class="fade-in">
+      <div class="container two-column">
+        <div>
+          <h2>Contato</h2>
+          <p>
+            Para dúvidas sobre o simpósio ou suporte nas inscrições, entre em
+            contato com a organização:
+          </p>
+          <h3>Luka Plan Promoções e Eventos</h3>
+          <p>
+            <strong>Endereço:</strong><br />
+            Rua João Eugênio de Lima, 143 – Sala 01<br />
+            Boa Viagem – Recife – CEP 51.030-360
+          </p>
+          <p>
+            <strong>Telefone/WhatsApp:</strong><br />
+            <a href="https://wa.me/5581999851712" target="_blank" rel="noopener"
+              >(81) 99985-1712</a
+            >
+            ·
+            <a href="https://wa.me/5581992325922" target="_blank" rel="noopener"
+              >(81) 9232-5922</a
+            >
+          </p>
+          <p>
+            <strong>E-mail:</strong><br />
+            <a href="mailto:eventos@lukaplan.com.br">eventos@lukaplan.com.br</a
+            ><br />
+            <a href="mailto:simposiodeoncologiadohsj@gmail.com"
+              >simposiodeoncologiadohsj@gmail.com</a
+            >
+          </p>
+          <div class="social-links">
+            <a
+              href="https://instagram.com/lukaplan_"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              title="Instagram"
+              aria-label="Instagram Luka Plan"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://wa.me/5581999851712"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              title="WhatsApp"
+              aria-label="WhatsApp"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+            </a>
+            <a
+              href="mailto:eventos@lukaplan.com.br"
+              class="social-link"
+              title="E-mail"
+              aria-label="E-mail"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2>Informações</h2>
+          <p>
+            Cancelamentos ou alterações de inscrição devem ser comunicados com
+            antecedência à organização, para permitir repasse da vaga quando
+            aplicável.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p style="font-size: 1.05rem; font-weight: 700">
+        &copy; 2026 II Simpósio Oncoderma Recife
+      </p>
+      <p>Hospital Santa Joana · ISEP · Clínica de Pele (apoio)</p>
+      <p style="margin-top: 2rem; font-size: 0.9rem">
+        Desenvolvido por
+        <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener"
+          >Luka Plan Promoções e Eventos</a
+        >
+      </p>
+      <p style="margin-top: 1.25rem">
+        <a href="#top">↑ Voltar ao topo</a>
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script>
+      (function () {
+        const PROGRAM_URL =
+          "https://www.oncodermarecife2026.com.br/#programacao";
+
+        const canvas = document.getElementById("qr-canvas");
+        const label = document.getElementById("qr-url-label");
+        const dlBtn = document.getElementById("qr-download-btn");
+
+        if (label) label.textContent = PROGRAM_URL;
+
+        if (typeof QRCode !== "undefined" && canvas) {
+          QRCode.toCanvas(
+            canvas,
+            PROGRAM_URL,
+            {
+              width: 280,
+              margin: 2,
+              color: { dark: "#5A1A31", light: "#ffffff" },
+            },
+            function (err) {
+              if (err) console.error(err);
+            }
+          );
+        }
+
+        if (dlBtn && canvas) {
+          dlBtn.addEventListener("click", function () {
+            canvas.toBlob(function (blob) {
+              if (!blob) return;
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement("a");
+              a.href = url;
+              a.download = "qrcode-programacao-oncoderma-2026.png";
+              a.click();
+              URL.revokeObjectURL(url);
+            });
+          });
+        }
+      })();
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
+
+      document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+
+      const nav = document.getElementById("main-nav");
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("scrolled", window.pageYOffset > 80);
+      });
+
+      function updateCountdown() {
+        const eventDate = new Date("2026-06-05T08:00:00-03:00").getTime();
+        const now = Date.now();
+        const distance = eventDate - now;
+
+        const pad2 = (n) => String(Math.max(0, n)).padStart(2, "0");
+
+        if (distance <= 0) {
+          ["days", "hours", "minutes", "seconds"].forEach((id) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = id === "days" ? "0" : "00";
+          });
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = String(days);
+        document.getElementById("hours").textContent = pad2(hours);
+        document.getElementById("minutes").textContent = pad2(minutes);
+        document.getElementById("seconds").textContent = pad2(seconds);
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (!href || href === "#") return;
+          e.preventDefault();
+          const target = document.getElementById(href.slice(1));
+          if (!target) return;
+          const navHeight = document.getElementById("main-nav").offsetHeight;
+          const top =
+            target.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+          window.scrollTo({ top, behavior: "smooth" });
+          const navMenu = document.getElementById("nav-menu");
+          const menuToggle = document.getElementById("mobile-menu-toggle");
+          if (navMenu && navMenu.classList.contains("active")) {
+            navMenu.classList.remove("active");
+            menuToggle.classList.remove("active");
+          }
+        });
+      });
+
+      const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+      mobileMenuToggle.addEventListener("click", () => {
+        mobileMenuToggle.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest("nav")) {
+          navMenu.classList.remove("active");
+          mobileMenuToggle.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

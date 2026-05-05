@@ -23,6 +23,50 @@
       ],
       "destination": "/gastroconecta2026/:path*",
       "permanent": false
+    },
+    {
+      "source": "/:path((?!oncoderma2026).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "oncodermarecife.com.br"
+        }
+      ],
+      "destination": "/oncoderma2026/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/:path((?!oncoderma2026).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.oncodermarecife.com.br"
+        }
+      ],
+      "destination": "/oncoderma2026/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/:path((?!oncoderma2026).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "oncodermarecife2026.com.br"
+        }
+      ],
+      "destination": "/oncoderma2026/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/:path((?!oncoderma2026).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.oncodermarecife2026.com.br"
+        }
+      ],
+      "destination": "/oncoderma2026/:path*",
+      "permanent": false
     }
   ],
   "headers": [
