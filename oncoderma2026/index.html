@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>II Simpósio Oncoderma Recife | 5 de junho de 2026</title>
+    <title>III Simpósio Oncoderma Recife | 5 de junho de 2026</title>
     <meta
       name="description"
-      content="II Simpósio Oncoderma Recife — 5 de junho de 2026, 8h, Auditório Hospital Santa Joana Recife. Inscrições pelo Sympla."
+      content="III Simpósio Oncoderma Recife — 5 de junho de 2026, 8h, Auditório Hospital Santa Joana Recife. Inscrições pelo Sympla."
     />
     <link
       rel="canonical"
@@ -18,7 +18,7 @@
       property="og:url"
       content="https://www.oncodermarecife2026.com.br/"
     />
-    <meta property="og:title" content="II Simpósio Oncoderma Recife" />
+    <meta property="og:title" content="III Simpósio Oncoderma Recife" />
     <meta
       property="og:description"
       content="5 de junho de 2026 — Auditório Hospital Santa Joana Recife"
@@ -33,7 +33,7 @@
       property="twitter:url"
       content="https://www.oncodermarecife2026.com.br/"
     />
-    <meta property="twitter:title" content="II Simpósio Oncoderma Recife" />
+    <meta property="twitter:title" content="III Simpósio Oncoderma Recife" />
     <meta
       property="twitter:description"
       content="5 de junho de 2026 — Hospital Santa Joana Recife"
@@ -522,46 +522,103 @@
         margin-bottom: 2rem;
       }
 
-      .qr-block {
-        margin-top: 2.5rem;
-        padding: 2rem;
-        background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 8px 28px rgba(90, 26, 49, 0.1);
-        text-align: center;
+      .schedule-scroll {
+        overflow-x: auto;
+        margin-top: 1.75rem;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 10px;
       }
 
-      .qr-block canvas {
-        display: block;
-        margin: 1rem auto;
-        border-radius: 12px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      .schedule-table {
+        width: 100%;
+        min-width: 640px;
+        border-collapse: collapse;
+        margin-bottom: 0;
+        font-size: 0.95rem;
+        box-shadow: 0 2px 12px rgba(90, 26, 49, 0.12);
+        border-radius: 10px;
+        overflow: hidden;
       }
 
-      .qr-actions {
-        margin-top: 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        justify-content: center;
+      .schedule-table th,
+      .schedule-table td {
+        padding: 0.95rem 0.8rem;
+        border: 1px solid #e8e0d8;
+        text-align: left;
+        vertical-align: top;
       }
 
-      .btn-outline {
-        display: inline-block;
-        padding: 0.55rem 1.2rem;
-        border-radius: 999px;
-        font-weight: 700;
-        font-size: 0.88rem;
-        border: 2px solid var(--maroon);
-        color: var(--maroon) !important;
-        background: transparent;
-        cursor: pointer;
-        font-family: inherit;
-      }
-
-      .btn-outline:hover {
+      .schedule-table th {
         background: var(--maroon);
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .schedule-table tbody tr {
+        transition: background 0.2s ease;
+      }
+
+      .schedule-table tbody tr:nth-child(odd) {
+        background: #fdfcfa;
+      }
+
+      .schedule-table tbody tr:hover {
+        background: rgba(209, 77, 51, 0.07);
+      }
+
+      .session-header {
+        background: linear-gradient(
+          135deg,
+          var(--terracotta) 0%,
+          #c0452e 100%
+        ) !important;
         color: #fff !important;
+        font-weight: 700 !important;
+        font-size: 1rem !important;
+        line-height: 1.45;
+      }
+
+      .session-header strong {
+        font-size: 0.95rem;
+        display: inline-block;
+        margin-bottom: 0.35rem;
+        opacity: 0.95;
+      }
+
+      .session-header small {
+        display: block;
+        margin-top: 0.35rem;
+        font-weight: 600;
+        opacity: 0.92;
+        line-height: 1.5;
+      }
+
+      .session-break {
+        background: #fff6e0 !important;
+        font-weight: 700;
+        text-align: center;
+        color: #6b4a18;
+      }
+
+      .speaker-name {
+        font-weight: 700;
+        color: var(--maroon);
+        line-height: 1.45;
+      }
+
+      @media (max-width: 768px) {
+        .schedule-table {
+          font-size: 0.86rem;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+          padding: 0.65rem 0.5rem;
+        }
       }
 
       .committee-grid {
@@ -754,7 +811,7 @@
   <body>
     <nav id="main-nav">
       <a href="#top" class="logo-small"
-        ><img src="assets/Logo_Oncoderma.png" alt="II Simpósio Oncoderma"
+        ><img src="assets/Logo_Oncoderma.png" alt="III Simpósio Oncoderma"
       /></a>
 
       <button
@@ -794,9 +851,9 @@
         <img
           class="logo"
           src="assets/Logo_Oncoderma.png"
-          alt="Logo II Simpósio Oncoderma"
+          alt="Logo III Simpósio Oncoderma"
         />
-        <h1><span class="accent">II Simpósio</span> Oncoderma Recife</h1>
+        <h1><span class="accent">III Simpósio</span> Oncoderma Recife</h1>
         <p>
           <strong>5 de junho de 2026</strong> · Sexta-feira · 8h<br />
           Auditório Hospital Santa Joana Recife — Graças
@@ -836,7 +893,7 @@
       <div class="container">
         <h2>Sobre o evento</h2>
         <p>
-          O <strong>II Simpósio Oncoderma Recife</strong> reúne profissionais da
+          O <strong>III Simpósio Oncoderma Recife</strong> reúne profissionais da
           área para atualização, discussão e troca de experiências em temas
           ligados à oncologia dermatológica, em ambiente científico promovido
           pelo <strong>ISEP</strong> e pelo <strong>Hospital Santa Joana</strong>,
@@ -903,7 +960,7 @@
       <div class="container">
         <div class="schedule-header">
           <div class="schedule-title-row">
-            <h2 class="schedule-title">Programação</h2>
+            <h2 class="schedule-title">Programação científica</h2>
             <a
               href="schedule/Programação preliminar - II Oncoderma.pdf"
               class="download-pdf-btn"
@@ -932,37 +989,239 @@
 
         <div class="notice-box">
           <p style="margin: 0; font-weight: 600; color: var(--maroon)">
-            Programação em construção
+            Programação preliminar
           </p>
           <p style="margin: 0.75rem 0 0">
-            A grade abaixo será atualizada conforme confirmarmos os detalhes.
-            Utilize o PDF preliminar como referência até a versão final.
+            A grade pode ser ajustada até a data do evento. Baixe também o PDF
+            oficial quando precisar da versão para impressão.
           </p>
         </div>
 
-        <p style="color: var(--muted-text); margin-bottom: 1.5rem">
+        <p style="color: var(--muted-text); margin-bottom: 0.25rem">
           <strong>05/06/2026 (sexta-feira)</strong> — início às
-          <strong>8h</strong>. Confira horários e mesas no PDF.
+          <strong>8h</strong>.
         </p>
 
-        <div class="qr-block" id="qr-programacao">
-          <h3 style="margin-top: 0; color: var(--maroon)">
-            QR Code — Programação no site
-          </h3>
-          <p style="color: var(--muted-text); font-size: 0.95rem">
-            Aponte a câmera para este código para abrir diretamente a página da
-            programação (útil para crachás e material impresso).
-          </p>
-          <canvas id="qr-canvas" width="280" height="280" aria-label="QR Code da programação"></canvas>
-          <p
-            id="qr-url-label"
-            style="font-size: 0.82rem; word-break: break-all; color: var(--muted-text)"
-          ></p>
-          <div class="qr-actions">
-            <button type="button" class="btn-outline" id="qr-download-btn">
-              Baixar QR (PNG)
-            </button>
-          </div>
+        <div class="schedule-scroll">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th style="width: 130px">Horário</th>
+                <th>Atividade</th>
+                <th style="width: 220px">Apresentador(a)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>08:00 - 08:10</td>
+                <td colspan="2" class="session-break"><strong>ABERTURA</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+<strong>08:15 - 09:15<br />(01 hora )</strong><br />
+                  MESA 1 - CÂNCER DE PELE: PREVENÇÃO E DIAGNÓSTICO PRECOCE<br /><small>Presidente: Cristiana Tavares<br />Debatedores: Patrícia Guimarães, Ana Luiza Gadelha
+                </small>
+                </td>
+              </tr>
+              <tr>
+                <td>08:15 – 08:30<br />(15 min)</td>
+                <td>Prevenção ao câncer de pele: o que realmente tem evidência científica em fotoproteção?</td>
+                <td><span class="speaker-name">Thamires Alcântara</span></td>
+              </tr>
+              <tr>
+                <td>08:30 – 08:45<br />(15 min)</td>
+                <td>O papel da quimioprofilaxia no CPNM.</td>
+                <td><span class="speaker-name">Aline Piol</span></td>
+              </tr>
+              <tr>
+                <td>08:45 – 09:00<br />(15 min)</td>
+                <td>Dicas práticas de Dermatoscopia para diagnosticar lesões precoces.</td>
+                <td><span class="speaker-name">Silvana Cavalcanti</span></td>
+              </tr>
+              <tr>
+                <td>09:00 - 09:15<br />(15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+<strong>09:15 - 10:30   (01 hora e<br /> 15 min)</strong><br />
+                  MESA 2 — TUMORES CUTÂNEOS NÃO MELANOMA: REFINANDO O TRATAMENTO<br /><small>Presidente: Luciana Câmara<br />Debatedores: Rebeca Reis, Felipe Marinho
+                </small>
+                </td>
+              </tr>
+              <tr>
+                <td>09:15 - 09:30 (15 min)</td>
+                <td>Cirurgia com controle de margens no câncer de pele em tumores não melanoma</td>
+                <td><span class="speaker-name">Virgínia Batista</span></td>
+              </tr>
+              <tr>
+                <td>09:30 - 09:45 (15 min)</td>
+                <td>Há espaço para o BLS no CEC de alto risco?</td>
+                <td><span class="speaker-name">Beatriz Cavalcanti</span></td>
+              </tr>
+              <tr>
+                <td>09:45 - 10:00 (15 min)</td>
+                <td>Classificação e avaliação do CEC de alto risco: o olhar do patologista pós C-POST</td>
+                <td><span class="speaker-name">Laís Príncipe</span></td>
+              </tr>
+              <tr>
+                <td>10:00 - 10:15 (15 min)</td>
+                <td>CEC de alto risco: a abordagem do oncologista clínico</td>
+                <td><span class="speaker-name">Antônio Douglas</span></td>
+              </tr>
+              <tr>
+                <td>10:15 - 10:30 (15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
+              </tr>
+              <tr>
+                <td>10:30 - 10:50<br />(20 min)</td>
+                <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+<strong>10:50 - 11:50<br />(1 hora)</strong><br />
+                  MESA 3  — DESAFIOS NO CÂNCER DE PELE NÃO MELANOMA<br /><small>Presidente: Antônio de Pádua<br />Debatedores: Rogerio Santos, Daniela Takano
+                </small>
+                </td>
+              </tr>
+              <tr>
+                <td>10:50 - 11:05 (15 min)</td>
+                <td>Tratamento sistêmico no CBC</td>
+                <td><span class="speaker-name">Rodrigo Arruda</span></td>
+              </tr>
+              <tr>
+                <td>11:05 - 11:20 (15 min)</td>
+                <td>CBC com resposta parcial ao tratamento sitêmico - como proceder?</td>
+                <td><span class="speaker-name">Susane Leite</span></td>
+              </tr>
+              <tr>
+                <td>11:20 - 11:50 (30 min)</td>
+                <td>Caso clínico contextualizado: Carcinoma de Merkel</td>
+                <td><span class="speaker-name">Cristiana Tavares<br />Luis Felipe Carvalho<br />Susane Leite<br />Rogério Santos<br />Daniela Takano<br />Claudia Fontan</span></td>
+              </tr>
+              <tr>
+                <td>11:50 - 13:00</td>
+                <td colspan="2" class="session-break"><strong>ALMOÇO</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+<strong>13:00 - 14:00<br />(01 hora)</strong><br />
+                  MESA 4 —  FERRAMENTAS NO MANEJO DE TUMORES CUTÂNEOS<br /><small>Presidente: Jéssica Guido<br />Debatedores: Gessiane Alves,  Ilka Rocha
+                </small>
+                </td>
+              </tr>
+              <tr>
+                <td>13:00 - 13:15<br />(15 min)</td>
+                <td>Mapeamento Corporal: quem precisa fazer e por quê?</td>
+                <td><span class="speaker-name">Tais Oliveira</span></td>
+              </tr>
+              <tr>
+                <td>13:15 - 13:30<br />(15 min)</td>
+                <td>Quando indicar a avaliação genética ao paciente com câncer de pele?</td>
+                <td><span class="speaker-name">Leandro Apolinário</span></td>
+              </tr>
+              <tr>
+                <td>13:30 - 13:45<br />(15 min)</td>
+                <td>Ultrassonografia de Alta Frequência para os cânceres de pele: onde estamos?</td>
+                <td><span class="speaker-name">Cláudia Fontan</span></td>
+              </tr>
+              <tr>
+                <td>13:45 - 14:00<br />(15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+<strong>14:00 - 15:00<br />(01 hora)</strong><br />
+                  MESA 5 — MANEJO NA NOVA ERA DE TRATAMENTO DO MELANOMA: NOVOS DESAFIOS<br /><small>Presidente: Luciana Câmara<br />Debatedores: Antônio de Pádua, Heberton Medeiros
+                </small>
+                </td>
+              </tr>
+              <tr>
+                <td>14:00 - 14:15<br />(15 min)</td>
+                <td>Neoadjuvância do melanoma EC III</td>
+                <td><span class="speaker-name">Silvia Fontan</span></td>
+              </tr>
+              <tr>
+                <td>14:15 - 14:30<br />(15 min)</td>
+                <td>Desafios na avaliação de resposta patológica pós NADINA</td>
+                <td><span class="speaker-name">Daniela Takano</span></td>
+              </tr>
+              <tr>
+                <td>14:30 - 14:45<br />(15 min)</td>
+                <td>Resposta patológica completa - Só a retirada do linfonodo index é suficiente?</td>
+                <td><span class="speaker-name">Paulo Miranda</span></td>
+              </tr>
+              <tr>
+                <td>14:45 - 15:00<br />(15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
+              </tr>
+              <tr>
+                <td>15:00 - 15:20<br />(20 min)</td>
+                <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+<strong>15:20 - 16:35<br />(01 hora e<br /> 15 min)</strong><br />
+                  MESA 6 —  MELANOMA EM FOCO: ESTRATÉGIAS DO CENÁRIO ADJUVANTE AO METASTÁTICO<br /><small>Presidente: Silvia Fontan<br />Debatedores: Manoel Andrade, Bruno Pacheco
+                </small>
+                </td>
+              </tr>
+              <tr>
+                <td>15:20 - 15:35<br />(15 min)</td>
+                <td>Otimizando a adjuvância do melanoma ECIII</td>
+                <td><span class="speaker-name">Luis Felipe Carvalho</span></td>
+              </tr>
+              <tr>
+                <td>15:35 - 15:50<br />(15 min)</td>
+                <td>Linfonodo ilíaco: tratar como doença sistêmica?</td>
+                <td><span class="speaker-name">Rebeca Reis</span></td>
+              </tr>
+              <tr>
+                <td>15:50 - 16:05<br />(15 min)</td>
+                <td>Melanoma metastático BRAF +: da biologia tumoral ao tratamento sistêmico</td>
+                <td><span class="speaker-name">Luiz José Batista</span></td>
+              </tr>
+              <tr>
+                <td>16:05 - 16:20<br />(15 min)</td>
+                <td>Sequenciamento terapêutico do melanoma metastático</td>
+                <td><span class="speaker-name">Nildevande Firmino</span></td>
+              </tr>
+              <tr>
+                <td>16:20 - 16:35<br />(15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+<strong>16:35 - 17:35<br />(01 hora)</strong><br />
+                  MESA 7 — INTERFACE DERMATO-ONCO DURANTE TRATAMENTO ONCOLÓGICO<br /><small>Presidente: Rossano Araújo<br />Debatedores: Consuelo Albuquerque,  Cristiane Violet
+                </small>
+                </td>
+              </tr>
+              <tr>
+                <td>16:35 - 16:50<br />(15 min)</td>
+                <td>Toxicidade Cutânea pela imunoterapia</td>
+                <td><span class="speaker-name">Jessica Guido</span></td>
+              </tr>
+              <tr>
+                <td>16:50 - 17:05<br />(15 min)</td>
+                <td>Os limites da estética: como cuidar da auto-estima do paciente oncológico?</td>
+                <td><span class="speaker-name">Janielli Assis</span></td>
+              </tr>
+              <tr>
+                <td>17:05 - 17:20<br />(15 min)</td>
+                <td>Protocolos de interface dermato-oncologia durante o tratamento oncológico</td>
+                <td><span class="speaker-name">Aldejane Gurgel</span></td>
+              </tr>
+              <tr>
+                <td>17:20 - 17:35<br />(15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
+              </tr>
+              <tr>
+                <td>17:35 – 17:45<br />(10 min)</td>
+                <td colspan="2" class="session-break"><strong>ENCERRAMENTO</strong></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -1148,7 +1407,7 @@
 
     <footer>
       <p style="font-size: 1.05rem; font-weight: 700">
-        &copy; 2026 II Simpósio Oncoderma Recife
+        &copy; 2026 III Simpósio Oncoderma Recife
       </p>
       <p>Hospital Santa Joana · ISEP · Clínica de Pele (apoio)</p>
       <p style="margin-top: 2rem; font-size: 0.9rem">
@@ -1162,48 +1421,7 @@
       </p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
     <script>
-      (function () {
-        const PROGRAM_URL =
-          "https://www.oncodermarecife2026.com.br/#programacao";
-
-        const canvas = document.getElementById("qr-canvas");
-        const label = document.getElementById("qr-url-label");
-        const dlBtn = document.getElementById("qr-download-btn");
-
-        if (label) label.textContent = PROGRAM_URL;
-
-        if (typeof QRCode !== "undefined" && canvas) {
-          QRCode.toCanvas(
-            canvas,
-            PROGRAM_URL,
-            {
-              width: 280,
-              margin: 2,
-              color: { dark: "#5A1A31", light: "#ffffff" },
-            },
-            function (err) {
-              if (err) console.error(err);
-            }
-          );
-        }
-
-        if (dlBtn && canvas) {
-          dlBtn.addEventListener("click", function () {
-            canvas.toBlob(function (blob) {
-              if (!blob) return;
-              const url = URL.createObjectURL(blob);
-              const a = document.createElement("a");
-              a.href = url;
-              a.download = "qrcode-programacao-oncoderma-2026.png";
-              a.click();
-              URL.revokeObjectURL(url);
-            });
-          });
-        }
-      })();
-
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
