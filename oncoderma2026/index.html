@@ -503,15 +503,6 @@
         flex-shrink: 0;
       }
 
-      .notice-box {
-        background: #fff;
-        border-left: 4px solid var(--gold);
-        padding: 1.25rem 1.5rem;
-        border-radius: 0 12px 12px 0;
-        box-shadow: 0 4px 20px rgba(90, 26, 49, 0.08);
-        margin-bottom: 2rem;
-      }
-
       .schedule-scroll {
         overflow-x: auto;
         margin-top: 1.75rem;
@@ -611,11 +602,107 @@
         }
       }
 
+      /* Comissão — mesmo padrão visual do site TGI */
       .committee-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin: 2rem 0;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .committee-item {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(90, 26, 49, 0.1);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .committee-item:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 16px 32px rgba(90, 26, 49, 0.18);
+      }
+
+      .committee-item img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1rem;
+        border: 5px solid var(--maroon);
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      }
+
+      .committee-item:hover img {
+        border-color: var(--terracotta);
+        transform: scale(1.08);
+        box-shadow: 0 8px 20px rgba(209, 77, 51, 0.35);
+      }
+
+      .committee-item h4 {
+        color: var(--maroon);
+        font-size: 1.05rem;
+        margin: 0.5rem 0;
+        font-weight: 600;
+        line-height: 1.3;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .speakers-placeholder-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 1.5rem;
         margin: 2rem 0;
+      }
+
+      @media (max-width: 1200px) {
+        .committee-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.75rem;
+        }
+
+        .committee-item img {
+          width: 130px;
+          height: 130px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .committee-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+
+        .committee-item {
+          padding: 1.25rem 0.75rem;
+        }
+
+        .committee-item img {
+          width: 110px;
+          height: 110px;
+          border-width: 4px;
+        }
+
+        .committee-item h4 {
+          font-size: 0.95rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .committee-grid {
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
+        }
+
+        .committee-item img {
+          width: 120px;
+          height: 120px;
+        }
       }
 
       .placeholder-card {
@@ -888,35 +975,6 @@
           <strong>Número de participantes:</strong> 70
         </p>
 
-        <h3 id="comissao" style="margin-top: 2.25rem">Comissão organizadora</h3>
-        <ul
-          style="
-            margin: 0.5rem 0 0;
-            padding-left: 1.25rem;
-            line-height: 1.75;
-            max-width: 52rem;
-          "
-        >
-          <li>Dra. Cristiana Tavares</li>
-          <li>Dra. Aline Piol</li>
-          <li>Dra. Jessica Guido</li>
-          <li>Dr. Nildevande Firmino</li>
-          <li>Dr. Antônio Douglas</li>
-          <li>Dra. Consuelo Albuquerque</li>
-          <li>Dr. Antônio de Pádua</li>
-          <li>Dr. Luis Felipe Carvalho</li>
-          <li>Dra. Beatriz Cavalcanti</li>
-        </ul>
-
-        <p style="margin-top: 1.5rem; color: var(--muted-text); font-size: 0.98rem">
-          Domínios oficiais:
-          <a href="https://www.oncodermarecife.com.br/">oncodermarecife.com.br</a>
-          ·
-          <a href="https://www.oncodermarecife2026.com.br/"
-            >oncodermarecife2026.com.br</a
-          >
-        </p>
-
         <div class="orgs-strip">
           <div>
             <h3>Realização</h3>
@@ -965,13 +1023,109 @@
       </div>
     </section>
 
+    <section id="comissao" class="fade-in">
+      <div class="container">
+        <h2 class="text-center">Comissão Organizadora</h2>
+        <p
+          class="text-center"
+          style="font-size: 1.1rem; margin-bottom: 3rem; max-width: 720px; margin-left: auto; margin-right: auto"
+        >
+          A programação científica está sob responsabilidade de um time
+          multidisciplinar de especialistas:
+        </p>
+        <div class="committee-grid">
+          <div class="committee-item">
+            <img
+              src="committee/cristiana-tavares.webp"
+              alt="Dra. Cristiana Tavares"
+            />
+            <h4>Dra. Cristiana Tavares</h4>
+          </div>
+          <div class="committee-item">
+            <img
+              src="committee/placeholder.svg"
+              alt=""
+              width="140"
+              height="140"
+              loading="lazy"
+            />
+            <h4>Dra. Aline Piol</h4>
+          </div>
+          <div class="committee-item">
+            <img
+              src="committee/placeholder.svg"
+              alt=""
+              width="140"
+              height="140"
+              loading="lazy"
+            />
+            <h4>Dra. Jessica Guido</h4>
+          </div>
+          <div class="committee-item">
+            <img
+              src="committee/nildevande-firmino.jfif"
+              alt="Dr. Nildevande Firmino"
+            />
+            <h4>Dr. Nildevande Firmino</h4>
+          </div>
+          <div class="committee-item">
+            <img
+              src="committee/antonio-douglas.webp"
+              alt="Dr. Antônio Douglas"
+            />
+            <h4>Dr. Antônio Douglas</h4>
+          </div>
+          <div class="committee-item">
+            <img
+              src="committee/placeholder.svg"
+              alt=""
+              width="140"
+              height="140"
+              loading="lazy"
+            />
+            <h4>Dra. Consuelo Albuquerque</h4>
+          </div>
+          <div class="committee-item">
+            <img
+              src="committee/placeholder.svg"
+              alt=""
+              width="140"
+              height="140"
+              loading="lazy"
+            />
+            <h4>Dr. Antônio de Pádua</h4>
+          </div>
+          <div class="committee-item">
+            <img
+              src="committee/placeholder.svg"
+              alt=""
+              width="140"
+              height="140"
+              loading="lazy"
+            />
+            <h4>Dr. Luis Felipe Carvalho</h4>
+          </div>
+          <div class="committee-item">
+            <img
+              src="committee/placeholder.svg"
+              alt=""
+              width="140"
+              height="140"
+              loading="lazy"
+            />
+            <h4>Dra. Beatriz Cavalcanti</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="programacao" class="fade-in">
       <div class="container">
         <div class="schedule-header">
           <div class="schedule-title-row">
             <h2 class="schedule-title">Programação científica</h2>
             <a
-              href="schedule/Programação preliminar - II Oncoderma.pdf"
+              href="schedule/programacao-oncoderma-iii.pdf"
               class="download-pdf-btn"
               target="_blank"
               rel="noopener noreferrer"
@@ -991,19 +1145,9 @@
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              Baixar PDF (preliminar)
+              Baixar PDF
             </a>
           </div>
-        </div>
-
-        <div class="notice-box">
-          <p style="margin: 0; font-weight: 600; color: var(--maroon)">
-            Programação preliminar
-          </p>
-          <p style="margin: 0.75rem 0 0">
-            A grade pode ser ajustada até a data do evento. Baixe também o PDF
-            oficial quando precisar da versão para impressão.
-          </p>
         </div>
 
         <p style="color: var(--muted-text); margin-bottom: 0.25rem">
@@ -1241,7 +1385,7 @@
         <p class="text-center" style="margin-bottom: 2rem; color: var(--muted-text)">
           Fotos e currículos serão publicados em breve.
         </p>
-        <div class="committee-grid">
+        <div class="speakers-placeholder-grid">
           <div class="placeholder-card">Em breve</div>
           <div class="placeholder-card">Em breve</div>
           <div class="placeholder-card">Em breve</div>
