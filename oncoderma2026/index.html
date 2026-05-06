@@ -637,6 +637,10 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
       }
 
+      .committee-item img.crop-top {
+        object-position: center top;
+      }
+
       .committee-item:hover img {
         border-color: var(--terracotta);
         transform: scale(1.08);
@@ -938,7 +942,7 @@
 
         <div class="hero-logos-section">
           <h3>Realização</h3>
-          <div class="hero-logo-grid">
+          <div class="hero-logo-grid" style="grid-template-columns: repeat(3, 1fr)">
             <img
               src="organizers/Logo Isep Fundo Transparente (atual).png"
               alt="ISEP"
@@ -946,6 +950,10 @@
             <img
               src="organizers/Logo Hospital Santa Joana Fundo Transparente (atual) .png"
               alt="Hospital Santa Joana"
+            />
+            <img
+              src="organizers/Rede Américas .png"
+              alt="Rede Américas"
             />
           </div>
           <h3 style="margin-top: 1rem">Apoio institucional</h3>
@@ -986,6 +994,11 @@
             <img
               src="organizers/Logo Hospital Santa Joana Fundo Transparente (atual) .png"
               alt="Hospital Santa Joana"
+              style="margin-top: 1.25rem"
+            />
+            <img
+              src="organizers/Rede Américas .png"
+              alt="Rede Américas"
               style="margin-top: 1.25rem"
             />
           </div>
@@ -1043,37 +1056,17 @@
         <div class="committee-grid">
           <div class="committee-item">
             <img
-              src="committee/cristiana-tavares.webp"
-              alt="Dra. Cristiana Tavares"
-            />
-            <h4>Dra. Cristiana Tavares</h4>
-          </div>
-          <div class="committee-item">
-            <img
-              src="committee/placeholder.svg"
-              alt=""
-              width="140"
-              height="140"
-              loading="lazy"
+              src="committee/aline-piol.jpeg"
+              alt="Dra. Aline Piol"
             />
             <h4>Dra. Aline Piol</h4>
           </div>
           <div class="committee-item">
             <img
-              src="committee/placeholder.svg"
-              alt=""
-              width="140"
-              height="140"
-              loading="lazy"
+              src="committee/antonio-de-padua.jpeg"
+              alt="Dr. Antônio de Pádua"
             />
-            <h4>Dra. Jessica Guido</h4>
-          </div>
-          <div class="committee-item">
-            <img
-              src="committee/nildevande-firmino.jfif"
-              alt="Dr. Nildevande Firmino"
-            />
-            <h4>Dr. Nildevande Firmino</h4>
+            <h4>Dr. Antônio de Pádua</h4>
           </div>
           <div class="committee-item">
             <img
@@ -1084,43 +1077,46 @@
           </div>
           <div class="committee-item">
             <img
-              src="committee/placeholder.svg"
-              alt=""
-              width="140"
-              height="140"
-              loading="lazy"
+              src="committee/beatriz-cavalcanti.jpeg"
+              alt="Dra. Beatriz Cavalcanti"
+            />
+            <h4>Dra. Beatriz Cavalcanti</h4>
+          </div>
+          <div class="committee-item">
+            <img
+              src="committee/consuelo-albuquerque.jpeg"
+              alt="Dra. Consuelo Albuquerque"
             />
             <h4>Dra. Consuelo Albuquerque</h4>
           </div>
           <div class="committee-item">
             <img
-              src="committee/placeholder.svg"
-              alt=""
-              width="140"
-              height="140"
-              loading="lazy"
+              src="committee/cristiana-tavares.webp"
+              alt="Dra. Cristiana Tavares"
             />
-            <h4>Dr. Antônio de Pádua</h4>
+            <h4>Dra. Cristiana Tavares</h4>
           </div>
           <div class="committee-item">
             <img
-              src="committee/placeholder.svg"
-              alt=""
-              width="140"
-              height="140"
-              loading="lazy"
+              src="committee/jessica-guido.webp"
+              alt="Dra. Jessica Guido"
             />
-            <h4>Dr. Luis Felipe Carvalho</h4>
+            <h4>Dra. Jessica Guido</h4>
           </div>
           <div class="committee-item">
             <img
-              src="committee/placeholder.svg"
-              alt=""
-              width="140"
-              height="140"
-              loading="lazy"
+              src="committee/nildevande-firmino.jpeg"
+              alt="Dr. Nildevande Firmino"
+              class="crop-top"
             />
-            <h4>Dra. Beatriz Cavalcanti</h4>
+            <h4>Dr. Nildevande Firmino</h4>
+          </div>
+          <div class="committee-item">
+            <img
+              src="committee/silvia-fontan.jpeg"
+              alt="Dra. Silvia Fontan"
+            />
+            <h4>Dra. Silvia Fontan</h4>
           </div>
         </div>
       </div>
@@ -1223,7 +1219,7 @@
                   MESA 2 — TUMORES CUTÂNEOS NÃO MELANOMA: REFINANDO O
                   TRATAMENTO<br /><small
                     >Presidente: Luciana Câmara<br />Debatedores: Rebeca Reis,
-                    Felipe Marinho
+                    Bruno Pacheco
                   </small>
                 </td>
               </tr>
@@ -1282,19 +1278,20 @@
               <tr>
                 <td>11:05 - 11:20 (15 min)</td>
                 <td>
-                  CBC com resposta parcial ao tratamento sitêmico - como
+                  CBC com resposta parcial ao tratamento sistêmico - como
                   proceder?
                 </td>
-                <td><span class="speaker-name">Susane Leite</span></td>
+                <td><span class="speaker-name">Suzane Leite</span></td>
               </tr>
               <tr>
                 <td>11:20 - 11:50 (30 min)</td>
                 <td>Caso clínico contextualizado: Carcinoma de Merkel</td>
                 <td>
                   <span class="speaker-name"
-                    >Cristiana Tavares<br />Luis Felipe Carvalho<br />Susane
-                    Leite<br />Rogério Santos<br />Daniela Takano<br />Claudia
-                    Fontan</span
+                    >Apresentação: Rogério Santos<br />Discussão:<br />Cristiana
+                    Tavares<br />Luis Felipe Carvalho<br />Suzane
+                    Leite<br />Daniela Takano<br />Claudia Fontan<br />Rodrigo
+                    Arruda</span
                   >
                 </td>
               </tr>
@@ -1389,7 +1386,7 @@
                   MESA 6 — MELANOMA EM FOCO: ESTRATÉGIAS DO CENÁRIO ADJUVANTE AO
                   METASTÁTICO<br /><small
                     >Presidente: Silvia Fontan<br />Debatedores: Manoel Andrade,
-                    Bruno Pacheco
+                    Domingo Lins
                   </small>
                 </td>
               </tr>
