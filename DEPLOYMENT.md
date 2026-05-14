@@ -10,10 +10,11 @@ Complete guide for deploying multiple event sites with custom domains on Vercel.
 
 ## Domains
 
-| Domain                     | Site           | File                            |
-| -------------------------- | -------------- | ------------------------------- |
-| `www.tgirecife.com.br`     | TGI            | `/index.html`                   |
-| `gastroconecta2026.com.br` | Gastro Conecta | `/gastroconecta2026/index.html` |
+| Domain                                  | Site            | File                            |
+| --------------------------------------- | --------------- | ------------------------------- |
+| `www.tgirecife.com.br`                  | TGI             | `/index.html`                   |
+| `gastroconecta2026.com.br`              | Gastro Conecta  | `/gastroconecta2026/index.html` |
+| `congressoendoginecorecife.com.br`      | Endogineco 2026 | `/endogineco2026/index.html`    |
 
 ## Setup Steps
 
@@ -36,6 +37,7 @@ In Vercel Dashboard:
 3. Add each domain:
    - `tgirecife.com.br` + `www.tgirecife.com.br`
    - `gastroconecta2026.com.br` + `www.gastroconecta2026.com.br`
+   - `congressoendoginecorecife.com.br` + `www.congressoendoginecorecife.com.br`
 
 ### 3. Configure DNS
 
@@ -136,8 +138,7 @@ vercel dev
 # Access at localhost:3000
 # Or modify /etc/hosts to test domain routing:
 # 127.0.0.1 gastroconecta2026.com.br
-# 127.0.0.1 tgirecife.com.br
-```
+# 127.0.0.1 congressoendoginecorecife.com.br
 
 ## Build Configuration
 

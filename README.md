@@ -17,6 +17,12 @@ Multi-site repository for event landing pages. Each event has its own custom dom
 - **Date**: 2026 (TBD)
 - **File**: `/gastroconecta2026/index.html`
 
+### Congresso Endogineco 2026
+
+- **Domain**: [www.congressoendoginecorecife.com.br](https://www.congressoendoginecorecife.com.br/)
+- **Date**: 27–29 de agosto de 2026
+- **File**: `/endogineco2026/index.html`
+
 ## Tech Stack
 
 - Pure HTML5/CSS3/Vanilla JavaScript
@@ -32,6 +38,8 @@ Multi-site repository for event landing pages. Each event has its own custom dom
 ├── index.html                 # TGI site (tgirecife.com.br)
 ├── gastroconecta2026/         # Gastro Conecta 2026
 │   └── index.html             # (gastroconecta2026.com.br)
+├── endogineco2026/            # Congresso Endogineco 2026
+│   └── index.html             # (congressoendoginecorecife.com.br)
 ├── assets/                    # Shared assets (logos, sponsors)
 ├── tgi/                       # TGI-specific assets
 └── vercel.json               # Domain routing config
@@ -54,6 +62,7 @@ Open HTML files directly in browser:
 
 - TGI: `/index.html`
 - Gastro Conecta: `/gastroconecta2026/index.html`
+- Endogineco 2026: `/endogineco2026/index.html`
 
 Or use `vercel dev` for domain routing testing.
 

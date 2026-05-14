@@ -25,6 +25,28 @@
       "permanent": false
     },
     {
+      "source": "/:path((?!endogineco2026).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "congressoendoginecorecife.com.br"
+        }
+      ],
+      "destination": "/endogineco2026/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/:path((?!endogineco2026).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.congressoendoginecorecife.com.br"
+        }
+      ],
+      "destination": "/endogineco2026/:path*",
+      "permanent": false
+    },
+    {
       "source": "/:path((?!oncoderma2026).*)*",
       "has": [
         {
