@@ -12,6 +12,8 @@ This project uses **separate custom domains** for each event, all deployed from 
 ├── gastroconecta2026/
 │   ├── index.html                      # Gastro Conecta 2026 site
 │   └── Save the date (Gastro & Nutri).jpg
+├── endogineco2026/
+│   └── index.html                      # Congresso Endogineco 2026 site
 ├── assets/                             # Shared assets
 │   ├── logos/                          # Organization logos
 │   ├── speakers/                       # Speaker photos
@@ -27,10 +29,11 @@ This project uses **separate custom domains** for each event, all deployed from 
 
 Configured in `vercel.json` using host-based rewrites:
 
-| Domain                     | Serves         | File                            |
-| -------------------------- | -------------- | ------------------------------- |
-| `www.tgirecife.com.br`     | TGI            | `/index.html`                   |
-| `gastroconecta2026.com.br` | Gastro Conecta | `/gastroconecta2026/index.html` |
+| Domain                             | Serves          | File                            |
+| ---------------------------------- | --------------- | ------------------------------- |
+| `www.tgirecife.com.br`             | TGI             | `/index.html`                   |
+| `gastroconecta2026.com.br`         | Gastro Conecta  | `/gastroconecta2026/index.html` |
+| `congressoendoginecorecife.com.br` | Endogineco 2026 | `/endogineco2026/index.html`    |
 
 ## Path Strategy
 
@@ -39,6 +42,7 @@ Configured in `vercel.json` using host-based rewrites:
 - ✅ `/assets/logos/logo.png` (works for all domains)
 - ✅ `/tgi/LOGO-TGI.png` (TGI-specific)
 - ✅ `/gastroconecta2026/image.jpg` (Gastro-specific)
+- ✅ `/endogineco2026/assets/...` (Endogineco-specific)
 - ❌ `../assets/logo.png` (breaks with domain routing)
 
 ## Adding New Event Sites
