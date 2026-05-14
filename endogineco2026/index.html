@@ -46,6 +46,7 @@
 
     <style>
       :root {
+        /* Brand colours */
         --navy: #1a3870;
         --navy-dark: #102450;
         --blue: #2d6aa0;
@@ -57,9 +58,20 @@
         --light-bg: #f4f7fc;
         --dark-text: #1e2a3a;
         --muted-text: #5a6880;
+        /* Design tokens */
+        --r-sm: 10px;
+        --r-md: 18px;
+        --r-lg: 28px;
+        --r-xl: 40px;
+        --shadow-xs: 0 1px 4px rgba(26,56,112,.07);
+        --shadow-sm: 0 3px 12px rgba(26,56,112,.10);
+        --shadow-md: 0 6px 24px rgba(26,56,112,.14);
+        --shadow-lg: 0 12px 40px rgba(26,56,112,.18);
+        --ease: cubic-bezier(.4,0,.2,1);
+        --section-pad: 5.5rem 2rem;
       }
 
-      * {
+      *, *::before, *::after {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -67,144 +79,173 @@
 
       html {
         scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
 
       body {
         font-family: "Open Sans", Arial, sans-serif;
         color: var(--dark-text);
-        line-height: 1.6;
+        line-height: 1.65;
+        background: #fff;
       }
 
-      h1,
-      h2,
-      h3 {
+      h1, h2, h3, h4 {
         font-family: "Montserrat", sans-serif;
         color: var(--primary);
+        line-height: 1.25;
       }
 
-      h1 {
-        font-size: 2.5rem;
-        font-weight: 800;
-      }
-      h2 {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-      }
-      h3 {
-        font-size: 1.35rem;
-        font-weight: 600;
-        margin: 1.5rem 0 1rem;
-      }
+      h1 { font-size: 2.5rem; font-weight: 800; }
+      h2 { font-size: 2rem;   font-weight: 700; margin-bottom: 1.25rem; }
+      h3 { font-size: 1.3rem; font-weight: 600; margin: 1.5rem 0 .9rem; }
 
-      p {
-        margin: 0.5rem 0 1rem;
-      }
+      p { margin: 0 0 1rem; }
 
       a {
         color: var(--navy);
         text-decoration: none;
-        transition: color 0.3s ease;
+        transition: color .25s var(--ease);
+      }
+      a:hover, a:focus { color: var(--blue); }
+
+      img { display: block; max-width: 100%; }
+
+      .text-center { text-align: center; }
+
+      /* ── EYEBROW / SECTION LABEL ── */
+      .section-eyebrow {
+        display: inline-block;
+        font-family: "Montserrat", sans-serif;
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: rgba(240,160,32,.10);
+        border: 1px solid rgba(240,160,32,.28);
+        padding: .3rem .85rem;
+        border-radius: 99px;
+        margin-bottom: 1rem;
       }
 
-      a:hover,
-      a:focus {
-        color: var(--blue);
+      /* ── SECTION TITLE ACCENT ── */
+      .section-title {
+        position: relative;
+        display: inline-block;
+        padding-bottom: .6rem;
+        margin-bottom: 1.5rem;
       }
-
-      .text-center {
-        text-align: center;
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 48px;
+        height: 3px;
+        background: var(--gold);
+        border-radius: 99px;
+      }
+      .text-center .section-title::after,
+      .section-title.text-center::after {
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       /* ── NAV ── */
       nav {
         position: fixed;
-        top: 0;
-        left: 0;
+        top: 0; left: 0;
         width: 100%;
-        padding: 0.65rem 1.5rem;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(10px);
-        display: flex;
-        justify-content: space-between;
+        padding: .7rem 2rem;
+        background: rgba(255,255,255,.97);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        display: grid;
+        grid-template-columns: auto 1fr auto;
         align-items: center;
+        gap: 1rem;
         z-index: 1000;
-        box-shadow: 0 2px 8px rgba(26, 56, 112, 0.12);
-        transition: all 0.3s ease;
+        box-shadow: 0 1px 0 rgba(26,56,112,.08), 0 4px 20px rgba(26,56,112,.06);
+        transition: padding .3s var(--ease), box-shadow .3s var(--ease);
       }
 
       nav.scrolled {
-        padding: 0.45rem 1.5rem;
-        box-shadow: 0 4px 14px rgba(26, 56, 112, 0.15);
+        padding: .45rem 2rem;
+        box-shadow: 0 1px 0 rgba(26,56,112,.10), 0 6px 24px rgba(26,56,112,.12);
       }
 
       nav .logo-small {
-        height: 58px;
-        transition: height 0.3s ease;
+        height: 54px;
+        transition: height .3s var(--ease);
         display: flex;
         align-items: center;
       }
-
       nav .logo-small img {
         height: 100%;
         width: auto;
-        max-width: 220px;
+        max-width: 200px;
         object-fit: contain;
         object-position: left center;
       }
+      nav.scrolled .logo-small { height: 44px; }
 
-      nav.scrolled .logo-small {
-        height: 48px;
-      }
-
+      /* Centre column */
       nav ul {
         list-style: none;
         display: flex;
-        gap: 1.35rem;
+        gap: 1.5rem;
         align-items: center;
+        justify-content: center;
       }
 
       nav ul li a {
         font-weight: 600;
-        font-size: 0.88rem;
-        padding: 0.4rem 0;
+        font-size: .84rem;
+        padding: .35rem 0;
         position: relative;
         color: var(--navy);
+        letter-spacing: .01em;
       }
 
       nav ul li a::after {
         content: "";
         position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
+        bottom: -2px; left: 0;
+        width: 0; height: 2px;
         background: var(--gold);
-        transition: width 0.3s ease;
+        border-radius: 99px;
+        transition: width .3s var(--ease);
       }
+      nav ul li a:hover::after { width: 100%; }
 
-      nav ul li a:hover::after {
-        width: 100%;
+      /* Right column */
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        justify-content: flex-end;
       }
 
       .nav-cta {
-        display: inline-block;
-        background: linear-gradient(135deg, var(--gold) 0%, #d4880a 100%);
+        display: inline-flex;
+        align-items: center;
+        gap: .4rem;
+        background: linear-gradient(135deg, var(--gold) 0%, #c97c08 100%);
         color: var(--navy-dark) !important;
-        padding: 0.65rem 1.25rem;
-        border-radius: 999px;
+        padding: .6rem 1.3rem;
+        border-radius: 99px;
         font-weight: 700;
-        font-size: 0.82rem;
-        letter-spacing: 0.04em;
-        box-shadow: 0 3px 14px rgba(240, 160, 32, 0.35);
-        transition:
-          transform 0.2s ease,
-          box-shadow 0.2s ease;
+        font-size: .82rem;
+        letter-spacing: .03em;
+        box-shadow: 0 3px 12px rgba(240,160,32,.35);
+        transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+        will-change: transform;
+        white-space: nowrap;
       }
-
       .nav-cta:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(240, 160, 32, 0.45);
+        box-shadow: 0 6px 20px rgba(240,160,32,.50);
         color: var(--navy-dark) !important;
       }
 
@@ -218,38 +259,27 @@
         padding: 8px;
         z-index: 1001;
       }
-
       .mobile-menu-toggle span {
         display: block;
-        width: 28px;
-        height: 3px;
+        width: 26px; height: 2.5px;
         background: var(--navy);
-        transition: all 0.3s ease;
-        border-radius: 3px;
+        border-radius: 99px;
+        transition: all .3s var(--ease);
       }
-
-      .mobile-menu-toggle.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-      }
-
-      .mobile-menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-      }
-
-      .mobile-menu-toggle.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-      }
+      .mobile-menu-toggle.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+      .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+      .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
       /* ── HERO ── */
       header.hero {
         position: relative;
-        min-height: 88vh;
+        min-height: 100svh;
         color: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
-        padding: 110px 1rem 3rem;
+        padding: 110px 1.5rem 5rem;
         overflow: hidden;
       }
 
@@ -257,33 +287,27 @@
         position: absolute;
         inset: 0;
         z-index: 0;
+        /* Very dark base so the logo and chips are clearly readable */
         background:
           linear-gradient(
-            145deg,
-            rgba(16, 36, 80, 0.96) 0%,
-            rgba(26, 56, 112, 0.90) 45%,
-            rgba(45, 106, 160, 0.82) 75%,
-            rgba(240, 160, 32, 0.65) 100%
+            160deg,
+            rgba(2,5,15,.99) 0%,
+            rgba(6,12,32,.98) 30%,
+            rgba(10,22,56,.96) 60%,
+            rgba(18,38,80,.93) 100%
           ),
-          radial-gradient(
-            circle at 15% 25%,
-            rgba(240, 160, 32, 0.28) 0%,
-            transparent 48%
-          ),
-          radial-gradient(
-            circle at 88% 72%,
-            rgba(26, 56, 112, 0.6) 0%,
-            transparent 55%
-          );
+          radial-gradient(ellipse at 20% 85%, rgba(240,160,32,.14) 0%, transparent 48%),
+          radial-gradient(ellipse at 80% 80%, rgba(45,106,160,.20) 0%, transparent 45%);
       }
 
+      /* Subtle dot-grid texture */
       header.hero .hero-bg::after {
         content: "";
         position: absolute;
         inset: 0;
-        opacity: 0.3;
-        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='28' fill='none' stroke='%23ffffff' stroke-opacity='0.06'/%3E%3C/svg%3E");
-        background-size: 54px 54px;
+        opacity: .20;
+        background-image: radial-gradient(rgba(255,255,255,.18) 1px, transparent 1px);
+        background-size: 32px 32px;
       }
 
       header.hero .hero-overlay {
@@ -291,118 +315,204 @@
         inset: 0;
         z-index: 1;
         pointer-events: none;
+        background: linear-gradient(to bottom, transparent 70%, rgba(2,5,15,.55) 100%);
       }
 
       header.hero .hero-content {
         position: relative;
         z-index: 2;
-        max-width: 960px;
+        max-width: 900px;
         width: 100%;
+      }
+
+      /* Logo with animated ring */
+      header.hero .hero-logo-wrap {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1.75rem;
+      }
+      header.hero .hero-logo-wrap::before {
+        content: "";
+        position: absolute;
+        inset: -16px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(240,160,32,.35);
+        animation: ring-pulse 3s ease-in-out infinite;
+      }
+      @keyframes ring-pulse {
+        0%, 100% { transform: scale(1); opacity: .6; }
+        50%       { transform: scale(1.06); opacity: .2; }
       }
 
       header.hero .hero-logo {
-        max-width: 340px;
-        width: 80%;
+        max-width: 320px;
+        width: 75%;
         height: auto;
-        margin: 0 auto 1.5rem;
         display: block;
-        filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.35));
+        animation: logo-float 6s ease-in-out infinite;
+        filter: drop-shadow(0 8px 28px rgba(0,0,0,.40));
+      }
+      @keyframes logo-float {
+        0%, 100% { transform: translateY(0); }
+        50%       { transform: translateY(-8px); }
       }
 
-      header.hero h1 {
+      /* Info chips row */
+      .hero-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .65rem;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+      .hero-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: .45rem;
+        background: rgba(255,255,255,.10);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(255,255,255,.22);
         color: #fff;
-        margin-bottom: 0.75rem;
-        font-size: clamp(1.55rem, 3.8vw, 2.5rem);
-        text-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
+        padding: .5rem 1.1rem;
+        border-radius: 99px;
+        font-size: .84rem;
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: .02em;
       }
-
-      header.hero h1 span.accent {
-        color: var(--gold);
-        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+      .hero-chip svg {
+        width: 15px; height: 15px;
+        fill: none;
+        stroke: var(--gold);
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        flex-shrink: 0;
       }
 
       header.hero p {
-        color: #e8f0ff;
-        font-size: 1.18rem;
+        color: rgba(232,240,255,.9);
+        font-size: 1.1rem;
         margin-bottom: 2rem;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 0 2px 8px rgba(0,0,0,.2);
       }
 
       .hero-logos-section {
-        margin-top: 2rem;
+        margin-top: 2.25rem;
         padding-top: 1.75rem;
-        border-top: 2px solid rgba(255, 255, 255, 0.32);
+        border-top: 1px solid rgba(255,255,255,.20);
       }
-
       .hero-logos-section h3 {
-        color: #fff;
-        font-size: 0.82rem;
+        color: rgba(255,255,255,.75);
+        font-size: .72rem;
         font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.12em;
+        letter-spacing: .14em;
         margin-bottom: 1.25rem;
-        opacity: 0.95;
       }
-
       .hero-logo-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.25rem 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem 2.5rem;
         align-items: center;
-        justify-items: center;
+        justify-content: center;
         max-width: 560px;
         margin: 0 auto 1.5rem;
       }
-
       .hero-logo-grid img {
-        max-width: 160px;
-        width: 100%;
+        max-width: 140px;
+        max-height: 56px;
+        width: auto;
         height: auto;
         object-fit: contain;
-        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+        filter: brightness(0) invert(1) drop-shadow(0 2px 6px rgba(0,0,0,.25));
+        opacity: .88;
+        transition: opacity .2s;
+      }
+      .hero-logo-grid img:hover { opacity: 1; }
+
+      /* Scroll indicator */
+      .hero-scroll {
+        position: absolute;
+        bottom: 1.75rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .4rem;
+        opacity: .6;
+        animation: scroll-bounce 2s ease-in-out infinite;
+      }
+      .hero-scroll span {
+        display: block;
+        width: 1.5px;
+        height: 28px;
+        background: linear-gradient(to bottom, transparent, #fff);
+        border-radius: 99px;
+      }
+      @keyframes scroll-bounce {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50%       { transform: translateX(-50%) translateY(6px); }
       }
 
       /* ── BUTTONS ── */
       .btn-primary {
-        display: inline-block;
-        background: linear-gradient(135deg, var(--gold) 0%, #d4880a 100%);
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        background: linear-gradient(135deg, var(--gold) 0%, #c97c08 100%);
         color: var(--navy-dark) !important;
         padding: 1rem 2.2rem;
-        border-radius: 50px;
+        border-radius: 99px;
         font-weight: 800;
         font-size: 1rem;
-        transition: all 0.35s ease;
-        box-shadow: 0 4px 22px rgba(240, 160, 32, 0.45);
-        letter-spacing: 0.04em;
+        letter-spacing: .04em;
+        box-shadow: 0 4px 20px rgba(240,160,32,.40), 0 1px 0 rgba(255,255,255,.15) inset;
+        transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+        will-change: transform;
+        font-family: "Montserrat", sans-serif;
       }
-
       .btn-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 28px rgba(240, 160, 32, 0.55);
+        transform: translateY(-3px) scale(1.01);
+        box-shadow: 0 10px 32px rgba(240,160,32,.55);
         color: var(--navy-dark) !important;
       }
+      .btn-primary:active { transform: translateY(-1px); }
 
       .btn-outline {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
         background: transparent;
         color: #fff !important;
-        padding: 0.9rem 2rem;
-        border-radius: 50px;
+        padding: .9rem 2rem;
+        border-radius: 99px;
         font-weight: 700;
-        font-size: 0.95rem;
-        border: 2px solid rgba(255, 255, 255, 0.6);
-        transition: all 0.3s ease;
-        letter-spacing: 0.03em;
+        font-size: .95rem;
+        border: 1.5px solid rgba(255,255,255,.55);
+        letter-spacing: .03em;
+        transition: all .25s var(--ease);
+        font-family: "Montserrat", sans-serif;
+      }
+      .btn-outline:hover {
+        background: rgba(255,255,255,.12);
+        border-color: rgba(255,255,255,.85);
+        color: #fff !important;
       }
 
-      .btn-outline:hover {
-        background: rgba(255, 255, 255, 0.12);
-        border-color: #fff;
+      .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .85rem;
+        justify-content: center;
       }
 
       /* ── SECTIONS ── */
       section {
-        padding: 4.5rem 2rem;
+        padding: var(--section-pad);
       }
 
       section:nth-of-type(even) {
@@ -421,29 +531,28 @@
         align-items: start;
       }
 
+      /* ── FADE-IN + STAGGER ── */
       .fade-in {
         opacity: 0;
-        transform: translateY(28px);
-        transition:
-          opacity 0.6s ease,
-          transform 0.6s ease;
+        transform: translateY(32px);
+        transition: opacity .65s var(--ease), transform .65s var(--ease);
       }
-
       .fade-in.visible {
         opacity: 1;
         transform: none;
       }
+      /* stagger delays applied via JS */
 
       /* ── COUNTDOWN ── */
       #countdown-section {
         background: linear-gradient(
-          135deg,
+          140deg,
           var(--navy-dark) 0%,
-          #1a3870 45%,
+          #1a3870 50%,
           var(--blue) 100%
         );
         color: #fff;
-        padding: 2.5rem 2rem;
+        padding: 3.5rem 2rem;
         text-align: center;
         position: relative;
         overflow: hidden;
@@ -453,57 +562,78 @@
         content: "";
         position: absolute;
         inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='48' height='48' rx='8' fill='none' stroke='%23ffffff' stroke-opacity='0.04'/%3E%3C/svg%3E");
-        background-size: 50px 50px;
+        background-image:
+          linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+        background-size: 40px 40px;
       }
 
       #countdown-section h2 {
         color: #fff;
-        font-size: 1.45rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.35rem;
+        margin-bottom: .5rem;
+        position: relative;
+        font-weight: 700;
+      }
+
+      #countdown-section .subtitle {
+        color: rgba(255,255,255,.65);
+        font-size: .9rem;
+        margin-bottom: 2rem;
         position: relative;
       }
 
       .countdown-timer {
         display: flex;
         justify-content: center;
-        gap: 1rem;
+        gap: .85rem;
         flex-wrap: wrap;
-        max-width: 640px;
+        max-width: 580px;
         margin: 0 auto;
         position: relative;
       }
 
       .countdown-item {
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(12px);
-        border: 2px solid rgba(255, 255, 255, 0.25);
-        border-radius: 14px;
-        padding: 0.85rem 1.15rem;
-        min-width: 86px;
+        background: rgba(255,255,255,.09);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255,255,255,.18);
+        border-radius: var(--r-md);
+        padding: 1.1rem 1.3rem;
+        min-width: 90px;
+        position: relative;
+        overflow: hidden;
+      }
+      .countdown-item::after {
+        content: "";
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 2px;
+        background: var(--gold);
+        opacity: .7;
       }
 
       .countdown-number {
-        font-size: 2rem;
+        font-size: 2.4rem;
         font-weight: 800;
         display: block;
         line-height: 1;
-        margin-bottom: 0.35rem;
+        margin-bottom: .4rem;
         color: var(--gold);
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: -.02em;
       }
 
       .countdown-label {
-        font-size: 0.68rem;
+        font-size: .65rem;
         text-transform: uppercase;
-        letter-spacing: 0.08em;
+        letter-spacing: .12em;
         font-weight: 700;
-        opacity: 0.92;
+        color: rgba(255,255,255,.75);
       }
 
       /* ── SCHEDULE TABS ── */
-      .schedule-header {
-        margin-bottom: 1.5rem;
-      }
+      .schedule-header { margin-bottom: 1.75rem; }
 
       .schedule-title-row {
         display: flex;
@@ -511,140 +641,117 @@
         justify-content: space-between;
         gap: 1rem;
         flex-wrap: wrap;
+        margin-bottom: 1.5rem;
       }
 
-      .schedule-title {
-        margin: 0;
-      }
+      .schedule-title { margin: 0; }
 
       .download-pdf-btn {
         display: inline-flex;
         align-items: center;
-        gap: 0.45rem;
-        padding: 0.55rem 1.1rem;
-        background: rgba(26, 56, 112, 0.08);
-        border-radius: 8px;
+        gap: .4rem;
+        padding: .55rem 1.1rem;
+        background: #fff;
+        border-radius: var(--r-sm);
         color: var(--navy);
         font-weight: 600;
-        font-size: 0.88rem;
-        border: 1px solid rgba(26, 56, 112, 0.15);
-        transition:
-          background 0.25s ease,
-          transform 0.2s ease;
+        font-size: .85rem;
+        border: 1.5px solid rgba(26,56,112,.18);
+        box-shadow: var(--shadow-xs);
+        transition: background .2s var(--ease), transform .2s var(--ease), box-shadow .2s var(--ease);
       }
-
       .download-pdf-btn:hover {
-        background: rgba(45, 106, 160, 0.12);
+        background: var(--light-bg);
         transform: translateY(-1px);
+        box-shadow: var(--shadow-sm);
         color: var(--navy);
       }
 
-      .download-icon {
-        width: 18px;
-        height: 18px;
-        flex-shrink: 0;
-      }
+      .download-icon { width: 16px; height: 16px; flex-shrink: 0; }
 
+      /* Day tabs — pill style */
       .day-tabs {
         display: flex;
-        gap: 0.5rem;
+        gap: .5rem;
         flex-wrap: wrap;
         margin-bottom: 1.5rem;
+        background: rgba(26,56,112,.05);
+        border-radius: var(--r-sm);
+        padding: .3rem;
+        width: fit-content;
       }
 
       .day-tab-btn {
-        padding: 0.65rem 1.3rem;
-        border: 2px solid rgba(26, 56, 112, 0.2);
-        background: #fff;
-        border-radius: 8px;
+        padding: .6rem 1.4rem;
+        border: none;
+        background: transparent;
+        border-radius: var(--r-sm);
         font-family: "Montserrat", sans-serif;
         font-weight: 700;
-        font-size: 0.9rem;
-        color: var(--navy);
+        font-size: .88rem;
+        color: var(--muted-text);
         cursor: pointer;
-        transition: all 0.25s ease;
+        transition: all .22s var(--ease);
+        position: relative;
       }
-
-      .day-tab-btn:hover {
-        border-color: var(--blue);
-        background: rgba(45, 106, 160, 0.06);
-      }
-
+      .day-tab-btn:hover { color: var(--navy); background: rgba(26,56,112,.06); }
       .day-tab-btn.active {
         background: var(--navy);
         color: #fff;
-        border-color: var(--navy);
-        box-shadow: 0 3px 12px rgba(26, 56, 112, 0.3);
+        box-shadow: var(--shadow-sm);
       }
 
-      .day-panel {
-        display: none;
+      .day-panel { display: none; }
+      .day-panel.active { display: block; animation: panel-in .3s var(--ease); }
+      @keyframes panel-in {
+        from { opacity: 0; transform: translateY(8px); }
+        to   { opacity: 1; transform: none; }
       }
 
-      .day-panel.active {
-        display: block;
-      }
-
-      .aud-tabs {
+      /* Auditorium label (replaces sub-tabs) */
+      .aud-label {
         display: flex;
-        gap: 0.4rem;
-        flex-wrap: wrap;
-        margin-bottom: 1.25rem;
-      }
-
-      .aud-tab-btn {
-        padding: 0.45rem 1rem;
-        border: 1.5px solid rgba(45, 106, 160, 0.25);
-        background: #fff;
-        border-radius: 6px;
+        align-items: center;
+        gap: .6rem;
         font-family: "Montserrat", sans-serif;
-        font-weight: 600;
-        font-size: 0.82rem;
+        font-size: .8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .08em;
         color: var(--blue);
-        cursor: pointer;
-        transition: all 0.2s ease;
+        margin: 1.75rem 0 .65rem;
       }
-
-      .aud-tab-btn:hover {
-        border-color: var(--blue);
-        background: rgba(45, 106, 160, 0.07);
-      }
-
-      .aud-tab-btn.active {
-        background: var(--blue);
-        color: #fff;
-        border-color: var(--blue);
-      }
-
-      .aud-panel {
-        display: none;
-      }
-
-      .aud-panel.active {
+      .aud-label::before {
+        content: "";
         display: block;
+        width: 14px;
+        height: 2px;
+        background: var(--gold);
+        border-radius: 99px;
+        flex-shrink: 0;
       }
+      .aud-label:first-child { margin-top: 0; }
 
       .schedule-scroll {
         overflow-x: auto;
-        margin-top: 0.75rem;
+        margin-top: .75rem;
         -webkit-overflow-scrolling: touch;
-        border-radius: 10px;
+        border-radius: var(--r-md);
+        box-shadow: var(--shadow-sm);
       }
 
       .schedule-table {
         width: 100%;
-        min-width: 600px;
+        min-width: 580px;
         border-collapse: collapse;
-        margin-bottom: 0;
-        font-size: 0.95rem;
-        box-shadow: 0 2px 12px rgba(26, 56, 112, 0.1);
-        border-radius: 10px;
+        font-size: .93rem;
+        border-radius: var(--r-md);
         overflow: hidden;
       }
 
       .schedule-table th,
       .schedule-table td {
-        padding: 0.95rem 0.8rem;
+        padding: .95rem .85rem;
         border: 1px solid #dde8f5;
         text-align: left;
         vertical-align: top;
@@ -655,71 +762,43 @@
         color: #fff;
         font-weight: 700;
         text-transform: uppercase;
-        font-size: 0.82rem;
-        letter-spacing: 0.06em;
+        font-size: .78rem;
+        letter-spacing: .07em;
         font-family: "Montserrat", sans-serif;
       }
 
-      .schedule-table tbody tr {
-        transition: background 0.2s ease;
-      }
-
-      .schedule-table tbody tr:nth-child(odd) {
-        background: #fafcff;
-      }
-
-      .schedule-table tbody tr:hover {
-        background: rgba(45, 106, 160, 0.07);
-      }
+      .schedule-table tbody tr { transition: background .15s ease; }
+      .schedule-table tbody tr:nth-child(odd) { background: #fafcff; }
+      .schedule-table tbody tr:hover { background: rgba(45,106,160,.06); }
 
       .session-header {
-        background: linear-gradient(
-          135deg,
-          var(--blue) 0%,
-          #1e5a90 100%
-        ) !important;
+        background: linear-gradient(135deg, var(--blue) 0%, #1e5a90 100%) !important;
         color: #fff !important;
         font-weight: 700 !important;
-        font-size: 1rem !important;
+        font-size: .98rem !important;
         line-height: 1.45;
       }
-
-      .session-header strong {
-        font-size: 0.95rem;
-        display: inline-block;
-        margin-bottom: 0.35rem;
-        opacity: 0.95;
-      }
-
-      .session-header small {
-        display: block;
-        margin-top: 0.35rem;
-        font-weight: 600;
-        opacity: 0.92;
-        line-height: 1.5;
-        font-size: 0.88rem;
-      }
+      .session-header strong { font-size: .93rem; display: inline-block; margin-bottom: .3rem; }
+      .session-header small { display: block; margin-top: .3rem; font-weight: 600; opacity: .9; line-height: 1.5; font-size: .85rem; }
 
       .session-break {
-        background: #fff8e6 !important;
+        background: #fffbf0 !important;
         font-weight: 700;
         text-align: center;
         color: #7a5000;
       }
-
       .session-live {
         background: linear-gradient(135deg, #e8f3ff 0%, #d4e8ff 100%) !important;
         font-weight: 700;
         text-align: center;
         color: var(--navy);
       }
-
       .session-podcast {
-        background: linear-gradient(135deg, #f0e8ff 0%, #e0d4ff 100%) !important;
+        background: linear-gradient(135deg, #f0e8ff 0%, #e4d4ff 100%) !important;
         font-weight: 700;
         text-align: center;
         color: #3a1a70;
-        font-size: 0.9rem;
+        font-size: .88rem;
       }
 
       .speaker-name {
@@ -729,70 +808,72 @@
       }
 
       @media (max-width: 768px) {
-        .schedule-table {
-          font-size: 0.86rem;
-        }
-
-        .schedule-table th,
-        .schedule-table td {
-          padding: 0.65rem 0.5rem;
-        }
+        .schedule-table { font-size: .83rem; }
+        .schedule-table th, .schedule-table td { padding: .6rem .5rem; }
+        .day-tabs { width: 100%; }
       }
 
       /* ── COMMITTEE ── */
       .committee-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-        margin: 2rem 0;
-        max-width: 1400px;
-        margin-left: auto;
-        margin-right: auto;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.75rem;
+        margin: 2rem auto;
+        max-width: 1000px;
       }
 
       .committee-item {
         text-align: center;
-        padding: 1.5rem 1rem;
+        padding: 2rem 1.25rem 1.5rem;
         background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 4px 12px rgba(26, 56, 112, 0.1);
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-radius: var(--r-md);
+        box-shadow: var(--shadow-sm);
+        transition: transform .38s cubic-bezier(.175,.885,.32,1.275), box-shadow .38s var(--ease);
+        position: relative;
+        overflow: hidden;
+        will-change: transform;
       }
-
-      .committee-item:hover {
-        transform: translateY(-12px);
-        box-shadow: 0 16px 32px rgba(26, 56, 112, 0.18);
+      .committee-item::before {
+        content: "";
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--navy), var(--gold));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .35s var(--ease);
       }
+      .committee-item:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+      .committee-item:hover::before { transform: scaleX(1); }
 
       .committee-item img {
-        width: 140px;
-        height: 140px;
+        width: 130px;
+        height: 130px;
         border-radius: 50%;
         object-fit: cover;
         object-position: center top;
-        margin: 0 auto 1rem;
-        border: 5px solid var(--navy);
-        transition: all 0.4s ease;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        margin: 0 auto 1.1rem;
+        border: 4px solid var(--navy);
+        box-shadow: 0 4px 16px rgba(26,56,112,.15);
+        transition: border-color .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
+        will-change: transform;
       }
-
       .committee-item:hover img {
         border-color: var(--gold);
-        transform: scale(1.08);
-        box-shadow: 0 8px 20px rgba(240, 160, 32, 0.35);
+        transform: scale(1.06);
+        box-shadow: 0 8px 24px rgba(240,160,32,.30);
       }
 
       .committee-item h4 {
         color: var(--navy);
-        font-size: 1.05rem;
-        margin: 0.5rem 0 0.25rem;
+        font-size: 1rem;
+        margin: .4rem 0 .2rem;
         font-weight: 700;
         line-height: 1.3;
         font-family: "Montserrat", sans-serif;
       }
-
       .committee-item p {
-        font-size: 0.85rem;
+        font-size: .82rem;
         color: var(--muted-text);
         margin: 0;
       }
@@ -800,64 +881,60 @@
       /* ── SPEAKERS ── */
       .speakers-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
         gap: 1.5rem;
-        margin: 2rem 0;
+        margin: 2rem auto;
         max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
       }
 
       .speaker-item {
         text-align: center;
-        padding: 1.5rem 1rem;
+        padding: 1.75rem 1rem 1.25rem;
         background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 4px 12px rgba(26, 56, 112, 0.08);
-        transition: all 0.3s ease;
+        border-radius: var(--r-md);
+        box-shadow: var(--shadow-xs);
+        border: 1px solid rgba(26,56,112,.07);
+        transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
         display: flex;
         flex-direction: column;
         align-items: center;
+        will-change: transform;
       }
-
       .speaker-item:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 24px rgba(26, 56, 112, 0.14);
+        transform: translateY(-7px);
+        box-shadow: var(--shadow-md);
+        border-color: rgba(240,160,32,.3);
       }
 
       .speaker-item img {
-        width: 120px;
-        height: 120px;
+        width: 110px; height: 110px;
         border-radius: 50%;
         object-fit: cover;
         object-position: center top;
         border: 3px solid var(--navy);
         margin-bottom: 1rem;
+        transition: border-color .25s var(--ease);
       }
+      .speaker-item:hover img { border-color: var(--gold); }
 
       .speaker-item .avatar-empty {
-        width: 120px;
-        height: 120px;
+        width: 110px; height: 110px;
         border-radius: 50%;
-        border: 3px solid var(--navy);
+        border: 3px solid rgba(26,56,112,.25);
         margin-bottom: 1rem;
-        background: linear-gradient(180deg, #e8f0ff 0%, #d0ddf5 100%);
+        background: linear-gradient(160deg, #e8f0ff 0%, #d0ddf5 100%);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #6880a0;
+        color: #8090b0;
       }
-
-      .speaker-item .avatar-empty svg {
-        width: 52%;
-        height: 52%;
-      }
+      .speaker-item .avatar-empty svg { width: 48%; height: 48%; }
 
       .speaker-item h4 {
-        font-size: 1rem;
+        font-size: .92rem;
         font-weight: 700;
         color: var(--navy);
-        margin-bottom: 0.75rem;
+        margin-bottom: .75rem;
         margin-top: 0;
         font-family: "Montserrat", sans-serif;
         line-height: 1.3;
@@ -865,421 +942,392 @@
 
       .saiba-mais-btn {
         margin-top: auto;
-        background: linear-gradient(135deg, var(--blue) 0%, #1a5080 100%);
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        padding: 0.5rem 1.2rem;
+        display: inline-flex;
+        align-items: center;
+        gap: .35rem;
+        background: transparent;
+        color: var(--blue);
+        border: 1.5px solid var(--blue);
+        border-radius: var(--r-sm);
+        padding: .45rem 1rem;
         font-weight: 600;
         cursor: pointer;
-        transition: all 0.2s;
-        font-size: 0.9rem;
+        transition: all .2s var(--ease);
+        font-size: .82rem;
         font-family: inherit;
       }
-
       .saiba-mais-btn:hover {
-        filter: brightness(1.1);
-        transform: translateY(-2px);
+        background: var(--blue);
+        color: #fff;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(45,106,160,.3);
       }
 
       /* ── MODAL ── */
       .modal {
         position: fixed;
         z-index: 10000;
-        left: 0;
-        top: 0;
+        inset: 0;
         width: 100vw;
-        height: 100vh;
         height: 100dvh;
-        background: rgba(26, 56, 112, 0.78);
+        background: rgba(10,22,56,.75);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
         visibility: hidden;
         opacity: 0;
-        transition: opacity 0.3s ease;
+        transition: opacity .3s var(--ease), visibility .3s;
       }
-
-      .modal.show {
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
+      .modal.show { visibility: visible; opacity: 1; }
 
       .modal-content {
         background: #fff;
         color: var(--dark-text);
-        border-radius: 12px;
-        box-shadow: 0 8px 32px rgba(26, 56, 112, 0.28);
+        border-radius: var(--r-lg);
+        box-shadow: var(--shadow-lg), 0 0 0 1px rgba(26,56,112,.06);
         max-width: 440px;
         width: 90vw;
-        padding: 2.5rem 1.8rem 1.4rem;
+        padding: 2.5rem 2rem 1.75rem;
         position: relative;
         text-align: center;
         opacity: 0;
-        animation: speakerModalFadeIn 0.3s ease-out forwards;
+        animation: modal-pop .3s var(--ease) forwards;
       }
-
-      @keyframes speakerModalFadeIn {
-        from { opacity: 0; transform: scale(0.95); }
-        to { opacity: 1; transform: scale(1); }
+      @keyframes modal-pop {
+        from { opacity: 0; transform: scale(.93) translateY(12px); }
+        to   { opacity: 1; transform: none; }
       }
 
       .close-modal {
         position: absolute;
-        top: 0.85rem;
-        right: 1rem;
-        font-size: 2rem;
-        color: var(--navy);
-        cursor: pointer;
-        line-height: 1;
-        padding: 0.25rem 0.45rem;
-        background: none;
+        top: 1rem; right: 1.1rem;
+        width: 32px; height: 32px;
+        border-radius: 50%;
+        background: rgba(26,56,112,.08);
         border: none;
-        font-family: inherit;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        color: var(--navy);
+        line-height: 1;
+        transition: background .2s var(--ease), color .2s;
       }
-
-      .close-modal:hover {
-        color: var(--blue);
-      }
+      .close-modal:hover { background: var(--navy); color: #fff; }
 
       .modal-content img.modal-avatar {
-        width: 120px;
-        height: 120px;
+        width: 110px; height: 110px;
         border-radius: 50%;
         object-fit: cover;
         object-position: center top;
         border: 3px solid var(--navy);
-        margin: 0 auto 0.5rem;
+        margin: 0 auto .75rem;
         display: block;
+        box-shadow: var(--shadow-sm);
       }
-
       .modal-content .modal-avatar.modal-avatar-empty {
-        width: 120px;
-        height: 120px;
+        width: 110px; height: 110px;
         border-radius: 50%;
-        border: 3px solid var(--navy);
-        margin: 0 auto 0.5rem;
+        border: 3px solid rgba(26,56,112,.25);
+        margin: 0 auto .75rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(180deg, #e8f0ff 0%, #d0ddf5 100%);
+        background: linear-gradient(160deg, #e8f0ff, #d0ddf5);
         color: #6880a0;
       }
-
-      .modal-content .modal-avatar-empty svg {
-        width: 52%;
-        height: 52%;
-      }
+      .modal-content .modal-avatar-empty svg { width: 48%; height: 48%; }
 
       .modal-content h3 {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         color: var(--navy);
-        margin: 0.75rem 0 0;
+        margin: .5rem 0 0;
         font-family: "Montserrat", sans-serif;
       }
 
-      .modal-bio {
-        font-size: 1rem;
-        color: #444;
-        line-height: 1.6;
-      }
-
+      .modal-bio { font-size: .95rem; color: #444; line-height: 1.65; }
       ul.modal-bio {
-        margin: 1.2rem 0 0;
-        padding: 0 0 0 1.35rem;
+        margin: 1.1rem 0 0;
+        padding: 0 0 0 1.3rem;
         text-align: left;
         list-style-type: disc;
       }
-
-      ul.modal-bio li {
-        margin: 0.4rem 0;
-      }
-
+      ul.modal-bio li { margin: .4rem 0; }
       .modal-bio.modal-bio-pending {
-        margin-top: 1.2rem;
+        margin-top: 1.1rem;
         text-align: center;
         font-style: italic;
         color: var(--muted-text);
       }
 
-      /* ── RESPONSIVE committee ── */
-      @media (max-width: 1200px) {
-        .committee-grid {
-          grid-template-columns: repeat(3, 1fr);
-          gap: 1.75rem;
-        }
-      }
-
+      /* ── RESPONSIVE committee / speakers ── */
       @media (max-width: 768px) {
         .committee-grid {
           grid-template-columns: repeat(2, 1fr);
-          gap: 1.5rem;
-        }
-
-        .committee-item {
-          padding: 1.25rem 0.75rem;
-        }
-
-        .committee-item img {
-          width: 110px;
-          height: 110px;
-          border-width: 4px;
-        }
-
-        .committee-item h4 {
-          font-size: 0.95rem;
-        }
-
-        .speaker-item img,
-        .speaker-item .avatar-empty {
-          width: 100px;
-          height: 100px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .committee-grid {
-          grid-template-columns: 1fr;
           gap: 1.25rem;
         }
+        .committee-item { padding: 1.5rem .75rem 1.25rem; }
+        .committee-item img { width: 110px; height: 110px; }
+        .committee-item h4 { font-size: .92rem; }
+
+        .speakers-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+        .speaker-item img, .speaker-item .avatar-empty { width: 90px; height: 90px; }
+      }
+      @media (max-width: 480px) {
+        .committee-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
       }
 
       /* ── SPONSORS ── */
       .sponsors-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.5rem;
         margin: 2rem auto;
         align-items: center;
-        justify-items: center;
+        justify-content: center;
+        max-width: 900px;
       }
-
       .sponsor-item img {
-        max-width: 200px;
-        max-height: 72px;
-        width: auto;
-        height: auto;
+        max-width: 180px;
+        max-height: 68px;
+        width: auto; height: auto;
         object-fit: contain;
-        filter: grayscale(0.15);
-        transition: filter 0.2s ease;
+        filter: grayscale(.15);
+        transition: filter .2s;
+        opacity: .85;
       }
-
-      .sponsor-item img:hover {
-        filter: none;
-      }
+      .sponsor-item img:hover { filter: none; opacity: 1; }
 
       /* ── MAP ── */
       .map-frame {
         border: 0;
         width: 100%;
         height: 420px;
-        border-radius: 14px;
-        box-shadow: 0 6px 22px rgba(26, 56, 112, 0.15);
+        border-radius: var(--r-md);
+        box-shadow: var(--shadow-md);
+        display: block;
       }
 
       /* ── ORGS STRIP ── */
       .orgs-strip {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        display: flex;
+        flex-wrap: wrap;
         gap: 2rem;
         align-items: center;
+        justify-content: flex-start;
         margin-top: 2rem;
       }
-
       .orgs-strip img {
-        max-width: 220px;
-        width: 100%;
-        height: auto;
-        margin: 0 auto;
-        display: block;
+        max-width: 180px;
+        max-height: 72px;
+        width: auto; height: auto;
         object-fit: contain;
       }
-
-      .orgs-strip h3 {
-        margin-top: 0;
-        font-size: 1.05rem;
-        color: var(--blue);
-      }
+      .orgs-strip h3 { margin-top: 0; font-size: 1rem; color: var(--blue); }
 
       /* ── INSCRICOES CTA ── */
       .cta-box {
-        background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
-        border-radius: 18px;
-        padding: 3rem 2rem;
+        background: linear-gradient(140deg, var(--navy-dark) 0%, #1a3870 50%, var(--blue) 100%);
+        border-radius: var(--r-lg);
+        padding: 3.5rem 2.5rem;
         text-align: center;
         color: #fff;
-        box-shadow: 0 8px 32px rgba(26, 56, 112, 0.25);
+        box-shadow: var(--shadow-lg);
+        position: relative;
+        overflow: hidden;
       }
-
-      .cta-box h2 {
-        color: #fff;
-        margin-bottom: 0.75rem;
+      .cta-box::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
       }
-
-      .cta-box p {
-        color: rgba(255,255,255,0.88);
-        font-size: 1.05rem;
-        margin-bottom: 1.75rem;
-      }
+      .cta-box h2 { color: #fff; margin-bottom: .75rem; position: relative; }
+      .cta-box p  { color: rgba(255,255,255,.85); font-size: 1.05rem; margin-bottom: 1.75rem; position: relative; }
 
       .coming-soon-badge {
-        display: inline-block;
-        background: rgba(240, 160, 32, 0.18);
-        border: 2px solid rgba(240, 160, 32, 0.55);
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        background: rgba(240,160,32,.15);
+        border: 1.5px solid rgba(240,160,32,.5);
         color: var(--gold-light);
-        padding: 0.6rem 1.6rem;
-        border-radius: 50px;
+        padding: .65rem 1.75rem;
+        border-radius: 99px;
         font-weight: 700;
-        font-size: 0.95rem;
-        letter-spacing: 0.04em;
+        font-size: .95rem;
+        letter-spacing: .04em;
+        font-family: "Montserrat", sans-serif;
       }
 
       /* ── FOOTER ── */
       footer {
-        background: linear-gradient(
-          135deg,
-          var(--navy-dark) 0%,
-          #1a3870 55%,
-          var(--blue) 100%
-        );
-        color: #fff;
-        padding: 3rem 2rem 2rem;
-        text-align: center;
+        background: linear-gradient(140deg, var(--navy-dark) 0%, #1a3870 55%, var(--blue) 100%);
+        color: rgba(255,255,255,.85);
+        padding: 4rem 2rem 2.5rem;
       }
 
-      footer a {
+      .footer-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+        align-items: start;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(255,255,255,.12);
+      }
+
+      .footer-brand img {
+        max-width: 160px;
+        height: auto;
+        margin-bottom: 1rem;
+        filter: brightness(0) invert(1);
+        opacity: .9;
+      }
+
+      .footer-brand p { font-size: .88rem; color: rgba(255,255,255,.65); margin: 0; }
+
+      .footer-links h4 {
+        font-size: .72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .12em;
         color: var(--gold);
-        font-weight: 600;
+        margin-bottom: .85rem;
+        font-family: "Montserrat", sans-serif;
       }
+      .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+      .footer-links ul li a { font-size: .87rem; color: rgba(255,255,255,.72); transition: color .2s; }
+      .footer-links ul li a:hover { color: var(--gold); }
 
-      footer a:hover {
-        color: #fff;
-        text-decoration: underline;
+      .footer-bottom {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding-top: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .75rem;
+        align-items: center;
+        justify-content: space-between;
       }
+      .footer-bottom p { font-size: .82rem; color: rgba(255,255,255,.5); margin: 0; }
+      .footer-bottom a { color: var(--gold-light); font-weight: 600; }
+      .footer-bottom a:hover { color: #fff; text-decoration: underline; }
 
-      footer p {
-        margin: 0.65rem 0;
-      }
+      footer a { color: var(--gold); font-weight: 600; }
+      footer a:hover { color: #fff; text-decoration: underline; }
+      footer p { margin: .6rem 0; }
 
       .social-links {
         display: flex;
-        gap: 1rem;
+        gap: .75rem;
         flex-wrap: wrap;
-        margin-top: 0.75rem;
-        justify-content: flex-start;
+        margin-top: 1rem;
       }
-
       .social-link {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 44px;
-        height: 44px;
+        width: 42px; height: 42px;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.12);
-        transition:
-          background 0.25s ease,
-          transform 0.2s ease;
+        background: rgba(255,255,255,.10);
+        border: 1px solid rgba(255,255,255,.15);
+        transition: background .22s var(--ease), transform .2s var(--ease), border-color .22s;
       }
-
       .social-link:hover {
-        background: rgba(240, 160, 32, 0.35);
+        background: rgba(240,160,32,.30);
+        border-color: rgba(240,160,32,.5);
         transform: translateY(-2px);
       }
-
-      .social-link svg {
-        width: 22px;
-        height: 22px;
-        fill: #fff;
-      }
+      .social-link svg { width: 20px; height: 20px; fill: #fff; }
 
       /* ── MOBILE NAV ── */
-      @media (max-width: 768px) {
+      @media (max-width: 900px) {
         nav {
-          padding: 0.55rem 1rem;
+          grid-template-columns: auto auto;
+          padding: .55rem 1.1rem;
         }
-
-        .mobile-menu-toggle {
-          display: flex;
-        }
-
+        /* hide centre menu in grid; will be shown as overlay */
         nav ul {
+          grid-column: 1 / -1;
+          grid-row: 2;
           position: fixed;
-          top: 76px;
-          left: 0;
-          right: 0;
-          background: rgba(255, 255, 255, 0.98);
-          backdrop-filter: blur(10px);
+          top: 64px; left: 0; right: 0;
+          background: rgba(255,255,255,.98);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
           flex-direction: column;
           align-items: stretch;
-          padding: 0.5rem 0;
-          box-shadow: 0 8px 24px rgba(26, 56, 112, 0.12);
+          justify-content: flex-start;
+          padding: .4rem 0;
+          box-shadow: 0 12px 32px rgba(26,56,112,.14);
           max-height: 0;
           overflow: hidden;
           opacity: 0;
-          transition: all 0.3s ease;
+          transition: max-height .35s var(--ease), opacity .28s var(--ease);
+          border-bottom: 1px solid rgba(26,56,112,.08);
         }
+        nav ul.active { max-height: 600px; opacity: 1; overflow-y: auto; }
+        nav ul li { border-bottom: 1px solid rgba(26,56,112,.06); }
+        nav ul li a { display: block; padding: .9rem 1.5rem; }
+        nav ul li a::after { display: none; }
 
-        nav ul.active {
-          max-height: 580px;
-          opacity: 1;
-          overflow-y: auto;
-        }
+        .mobile-menu-toggle { display: flex; }
 
-        nav ul li {
-          border-bottom: 1px solid rgba(26, 56, 112, 0.08);
-        }
+        /* Hide desktop CTA on small screens, show only toggle */
+        .nav-actions .nav-cta { display: none; }
 
-        nav ul li a,
-        nav ul li .nav-cta {
-          display: block;
-          padding: 1rem 1.5rem;
-        }
+        /* Hero mobile */
+        header.hero { min-height: 100svh; padding: 90px 1rem 4rem; }
+        header.hero .hero-logo { max-width: 240px; }
+        .hero-chip { font-size: .78rem; padding: .4rem .9rem; }
+        .hero-scroll { display: none; }
 
-        nav ul li .nav-cta {
-          margin: 0.5rem 1.25rem 1rem;
-          text-align: center;
-          border-radius: 999px;
-        }
+        /* Typography */
+        h1 { font-size: 1.75rem; }
+        h2 { font-size: 1.5rem; }
 
-        h1 {
-          font-size: 1.85rem;
-        }
-        h2 {
-          font-size: 1.55rem;
-        }
+        /* Sections */
+        section { padding: 3.5rem 1.1rem; }
 
-        .day-tabs,
-        .aud-tabs {
-          gap: 0.35rem;
-        }
+        /* Footer */
+        .footer-inner { grid-template-columns: 1fr; gap: 1.75rem; }
+        .footer-bottom { flex-direction: column; align-items: flex-start; gap: .5rem; }
 
-        .day-tab-btn {
-          font-size: 0.82rem;
-          padding: 0.55rem 0.9rem;
-        }
+        .day-tab-btn { font-size: .82rem; padding: .55rem .9rem; }
+      }
+
+      @media (max-width: 480px) {
+        .hero-chips { gap: .45rem; }
+        .hero-chip { font-size: .74rem; padding: .35rem .8rem; }
+        .btn-group { gap: .6rem; }
+        .btn-primary, .btn-outline { font-size: .9rem; padding: .85rem 1.6rem; }
+      }
+
+      /* ── PERFORMANCE ── */
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
       }
     </style>
   </head>
   <body>
     <!-- ── NAV ── -->
     <nav id="main-nav">
+      <!-- Logo — left column -->
       <a href="#top" class="logo-small">
         <img src="assets/logo-endogineco.png" alt="Congresso Endogineco 2026" />
       </a>
 
-      <button
-        type="button"
-        class="mobile-menu-toggle"
-        id="mobile-menu-toggle"
-        aria-label="Abrir menu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
+      <!-- Links — centre column -->
       <ul id="nav-menu">
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#comissao">Comissão</a></li>
@@ -1288,10 +1336,22 @@
         <li><a href="#local">Local</a></li>
         <li><a href="#inscricao">Inscrições</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li>
-          <a class="nav-cta" href="#inscricao">Inscreva-se</a>
-        </li>
       </ul>
+
+      <!-- CTA + mobile toggle — right column -->
+      <div class="nav-actions">
+        <a class="nav-cta" href="#inscricao">Inscreva-se</a>
+        <button
+          type="button"
+          class="mobile-menu-toggle"
+          id="mobile-menu-toggle"
+          aria-label="Abrir menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
 
     <!-- ── HERO ── -->
@@ -1299,32 +1359,60 @@
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
-        <img
-          src="assets/logo-endogineco.png"
-          alt="Congresso Internacional Endogineco 2026"
-          class="hero-logo"
-        />
-        <p>
-          <strong>27, 28 e 29 de agosto de 2026</strong> &middot; Das 08h às 18h<br />
-          Mar Hotel Conventions — Recife/PE
-        </p>
-        <a class="btn-primary" href="#inscricao">Inscreva-se</a>
+
+        <div class="hero-logo-wrap">
+          <img
+            src="assets/logo-endogineco.png"
+            alt="Congresso Internacional Endogineco 2026"
+            class="hero-logo"
+            fetchpriority="high"
+          />
+        </div>
+
+        <!-- Info chips -->
+        <div class="hero-chips">
+          <span class="hero-chip">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            27, 28 e 29 de agosto de 2026
+          </span>
+          <span class="hero-chip">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            08h às 18h
+          </span>
+          <span class="hero-chip">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Mar Hotel Conventions · Recife/PE
+          </span>
+        </div>
+
+        <div class="btn-group">
+          <a class="btn-primary" href="#inscricao">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Inscreva-se
+          </a>
+          <a class="btn-outline" href="#programacao">Ver Programação</a>
+        </div>
 
         <div class="hero-logos-section">
           <h3>Realização</h3>
           <div class="hero-logo-grid">
-            <img src="organizers/logo-isep.png" alt="ISEP" />
-            <img src="organizers/logo-hospital-santa-joana.png" alt="Hospital Santa Joana" />
-            <img src="organizers/logo-rede-americas.png" alt="Rede Américas" />
+            <img src="organizers/logo-isep.png" alt="ISEP" loading="eager" />
+            <img src="organizers/logo-hospital-santa-joana.png" alt="Hospital Santa Joana" loading="eager" />
+            <img src="organizers/logo-rede-americas.png" alt="Rede Américas" loading="eager" />
           </div>
         </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero-scroll" aria-hidden="true">
+        <span></span>
       </div>
     </header>
 
     <!-- ── SOBRE ── -->
     <section id="sobre" class="fade-in">
       <div class="container">
-        <h2>Sobre o evento</h2>
+        <h2 class="section-title">Sobre o evento</h2>
         <p>
           O <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong> tem a satisfação de
           apresentar o <strong>Congresso Endogineco 2026</strong>, que será realizado nos dias
@@ -1371,6 +1459,7 @@
     <section id="countdown-section" class="fade-in">
       <div class="container">
         <h2>Contagem regressiva</h2>
+        <p class="subtitle">para o início do Congresso Endogineco 2026</p>
         <div class="countdown-timer">
           <div class="countdown-item">
             <span id="days" class="countdown-number">00</span>
@@ -1394,8 +1483,8 @@
 
     <!-- ── COMISSÃO ── -->
     <section id="comissao" class="fade-in">
-      <div class="container">
-        <h2 class="text-center">Comissão Organizadora</h2>
+      <div class="container text-center">
+        <h2 class="section-title text-center">Comissão Organizadora</h2>
         <p
           class="text-center"
           style="font-size: 1.1rem; margin-bottom: 3rem; max-width: 720px; margin-left: auto; margin-right: auto;"
@@ -1405,19 +1494,19 @@
         </p>
         <div class="committee-grid">
           <div class="committee-item">
-            <img src="committee/edilberto-rocha.png" alt="Dr. Edilberto Rocha" />
+            <img src="committee/edilberto-rocha.png" alt="Dr. Edilberto Rocha" loading="lazy" />
             <h4>Dr. Edilberto Rocha</h4>
           </div>
           <div class="committee-item">
-            <img src="committee/iolanda-matias.jpg" alt="Dra. Iolanda Matias" />
+            <img src="committee/iolanda-matias.jpg" alt="Dra. Iolanda Matias" loading="lazy" />
             <h4>Dra. Iolanda Matias</h4>
           </div>
           <div class="committee-item">
-            <img src="committee/jardel-soares.jpg" alt="Dr. Jardel Soares" />
+            <img src="committee/jardel-soares.jpg" alt="Dr. Jardel Soares" loading="lazy" />
             <h4>Dr. Jardel Soares</h4>
           </div>
           <div class="committee-item">
-            <img src="committee/juliana-zaidan.jpg" alt="Dra. Juliana Zaidan" />
+            <img src="committee/juliana-zaidan.jpg" alt="Dra. Juliana Zaidan" loading="lazy" />
             <h4>Dra. Juliana Zaidan</h4>
           </div>
         </div>
@@ -1429,7 +1518,7 @@
       <div class="container">
         <div class="schedule-header">
           <div class="schedule-title-row">
-            <h2 class="schedule-title">Programação científica</h2>
+            <h2 class="schedule-title section-title">Programação científica</h2>
             <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center;">
               <a
                 href="schedule/programacao-preliminar-2026.pdf"
@@ -1480,164 +1569,145 @@
 
         <!-- ─ DIA 1: QUINTA 27/08 ─ -->
         <div class="day-panel active" id="panel-quinta">
-          <div class="aud-tabs" role="tablist" aria-label="Auditórios quinta-feira">
-            <button class="aud-tab-btn active" data-aud="quinta-c">Auditório C</button>
-            <button class="aud-tab-btn" data-aud="quinta-a">Auditório A</button>
-            <button class="aud-tab-btn" data-aud="quinta-b">Auditório B</button>
-            <button class="aud-tab-btn" data-aud="quinta-foyer">Foyer</button>
+
+          <p class="aud-label">Auditório C — Curso de USG Mapeamento de Endometriose</p>
+          <div class="schedule-scroll">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th style="width:140px">Horário</th>
+                  <th>Atividade</th>
+                  <th style="width:220px">Coordenação / Palestrante</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>07:30</td>
+                  <td colspan="2" class="session-break"><strong>CREDENCIAMENTO — Curso Pré-Congresso (USG Mapeamento)</strong></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="session-header">
+                    <strong>08:00 – 17:30 (dia todo)</strong><br />
+                    Curso de USG Mapeamento de Endometriose<br />
+                    <small>Coordenação: MEDERE — Cecília Pontes e Penélope Melo</small>
+                  </td>
+                </tr>
+                <tr>
+                  <td>12:00 – 13:30</td>
+                  <td colspan="2" class="session-break"><strong>INTERVALO</strong></td>
+                </tr>
+                <tr>
+                  <td>13:30 – 17:00</td>
+                  <td colspan="2" class="session-live"><strong>CONTINUAÇÃO DO CURSO</strong></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          <!-- Quinta – Auditório C (dia todo) -->
-          <div class="aud-panel active" id="panel-quinta-c">
-            <div class="schedule-scroll">
-              <table class="schedule-table">
-                <thead>
-                  <tr>
-                    <th style="width:140px">Horário</th>
-                    <th>Atividade</th>
-                    <th style="width:220px">Coordenação / Palestrante</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>07:30</td>
-                    <td colspan="2" class="session-break"><strong>CREDENCIAMENTO — Curso Pré-Congresso (USG Mapeamento)</strong></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-header">
-                      <strong>08:00 – 17:30 (dia todo)</strong><br />
-                      AUDITÓRIO C — Curso de USG Mapeamento de Endometriose<br />
-                      <small>Coordenação: MEDERE — Cecília Pontes e Penélope Melo</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>12:00 – 13:30</td>
-                    <td colspan="2" class="session-break"><strong>INTERVALO</strong></td>
-                  </tr>
-                  <tr>
-                    <td>13:30 – 17:00</td>
-                    <td colspan="2" class="session-live"><strong>CONTINUAÇÃO DO CURSO</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <p class="aud-label">Auditório A — A Videocirurgia na Oncoginecologia</p>
+          <div class="schedule-scroll">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th style="width:140px">Horário</th>
+                  <th>Atividade</th>
+                  <th style="width:220px">Coordenação / Palestrante</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>12:30</td>
+                  <td colspan="2" class="session-break"><strong>CREDENCIAMENTO — Cursos Pré-Congresso</strong></td>
+                </tr>
+                <tr>
+                  <td>13:00 – 13:15</td>
+                  <td colspan="2" class="session-break"><strong>ABERTURA</strong></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="session-header">
+                    <strong>13:15 – 15:00</strong><br />
+                    A Videocirurgia na Oncoginecologia<br />
+                    <small>Coordenação: Iolanda Matias</small>
+                  </td>
+                </tr>
+                <tr>
+                  <td>15:00 – 15:30</td>
+                  <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
+                </tr>
+                <tr>
+                  <td>15:30 – 17:00</td>
+                  <td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          <!-- Quinta – Auditório A -->
-          <div class="aud-panel" id="panel-quinta-a">
-            <div class="schedule-scroll">
-              <table class="schedule-table">
-                <thead>
-                  <tr>
-                    <th style="width:140px">Horário</th>
-                    <th>Atividade</th>
-                    <th style="width:220px">Coordenação / Palestrante</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>12:30</td>
-                    <td colspan="2" class="session-break"><strong>CREDENCIAMENTO — Cursos Pré-Congresso</strong></td>
-                  </tr>
-                  <tr>
-                    <td>13:00 – 13:15</td>
-                    <td colspan="2" class="session-break"><strong>ABERTURA</strong></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-header">
-                      <strong>13:15 – 15:00</strong><br />
-                      AUDITÓRIO A — A Videocirurgia na Oncoginecologia<br />
-                      <small>Coordenação: Iolanda Matias</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>15:00 – 15:30</td>
-                    <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
-                  </tr>
-                  <tr>
-                    <td>15:30 – 17:00</td>
-                    <td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <p class="aud-label">Auditório B — Curso de Nutrição para Pacientes com Endometriose</p>
+          <div class="schedule-scroll">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th style="width:140px">Horário</th>
+                  <th>Atividade</th>
+                  <th style="width:220px">Coordenação / Palestrante</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>12:30</td>
+                  <td colspan="2" class="session-break"><strong>CREDENCIAMENTO — Cursos Pré-Congresso</strong></td>
+                </tr>
+                <tr>
+                  <td>13:00 – 13:15</td>
+                  <td colspan="2" class="session-break"><strong>ABERTURA</strong></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="session-header">
+                    <strong>13:15 – 15:00</strong><br />
+                    Curso de Nutrição para Pacientes com Endometriose
+                  </td>
+                </tr>
+                <tr>
+                  <td>15:00 – 15:30</td>
+                  <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
+                </tr>
+                <tr>
+                  <td>15:30 – 17:00</td>
+                  <td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          <!-- Quinta – Auditório B -->
-          <div class="aud-panel" id="panel-quinta-b">
-            <div class="schedule-scroll">
-              <table class="schedule-table">
-                <thead>
-                  <tr>
-                    <th style="width:140px">Horário</th>
-                    <th>Atividade</th>
-                    <th style="width:220px">Coordenação / Palestrante</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>12:30</td>
-                    <td colspan="2" class="session-break"><strong>CREDENCIAMENTO — Cursos Pré-Congresso</strong></td>
-                  </tr>
-                  <tr>
-                    <td>13:00 – 13:15</td>
-                    <td colspan="2" class="session-break"><strong>ABERTURA</strong></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-header">
-                      <strong>13:15 – 15:00</strong><br />
-                      AUDITÓRIO B — Curso de Nutrição para Pacientes com Endometriose
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>15:00 – 15:30</td>
-                    <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
-                  </tr>
-                  <tr>
-                    <td>15:30 – 17:00</td>
-                    <td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- Quinta – Foyer -->
-          <div class="aud-panel" id="panel-quinta-foyer">
-            <div class="schedule-scroll">
-              <table class="schedule-table">
-                <thead>
-                  <tr>
-                    <th style="width:140px">Horário</th>
-                    <th>Atividade</th>
-                    <th style="width:220px">Coordenação / Palestrante</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td colspan="3" class="session-header">
-                      <strong>13:15 – 17:00</strong><br />
-                      FOYER — Curso de Sutura Dry Lab em Sutura Endoscópica<br />
-                      <small>Coordenação: Guilherme Zanluchi</small>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <p class="aud-label">Foyer — Curso de Sutura Dry Lab em Sutura Endoscópica</p>
+          <div class="schedule-scroll">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th style="width:140px">Horário</th>
+                  <th>Atividade</th>
+                  <th style="width:220px">Coordenação / Palestrante</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="3" class="session-header">
+                    <strong>13:15 – 17:00</strong><br />
+                    Curso de Sutura Dry Lab em Sutura Endoscópica<br />
+                    <small>Coordenação: Guilherme Zanluchi</small>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
         <!-- /panel-quinta -->
 
         <!-- ─ DIA 2: SEXTA 28/08 ─ -->
         <div class="day-panel" id="panel-sexta">
-          <div class="aud-tabs" role="tablist" aria-label="Auditórios sexta-feira">
-            <button class="aud-tab-btn active" data-aud="sexta-a">Auditório A</button>
-            <button class="aud-tab-btn" data-aud="sexta-b">Auditório B</button>
-          </div>
 
-          <!-- Sexta – Auditório A -->
-          <div class="aud-panel active" id="panel-sexta-a">
-            <div class="schedule-scroll">
+          <p class="aud-label">Auditório A</p>
+          <div class="schedule-scroll">
               <table class="schedule-table">
                 <thead>
                   <tr>
@@ -1787,16 +1857,14 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
           </div>
 
-          <!-- Sexta – Auditório B -->
-          <div class="aud-panel" id="panel-sexta-b">
-            <div class="schedule-scroll">
-              <table class="schedule-table">
-                <thead>
-                  <tr>
-                    <th style="width:155px">Horário</th>
+          <p class="aud-label">Auditório B</p>
+          <div class="schedule-scroll">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th style="width:155px">Horário</th>
                     <th>Atividade</th>
                     <th style="width:220px">Palestrante</th>
                   </tr>
@@ -1929,21 +1997,15 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
           </div>
         </div>
         <!-- /panel-sexta -->
 
         <!-- ─ DIA 3: SÁBADO 29/08 ─ -->
         <div class="day-panel" id="panel-sabado">
-          <div class="aud-tabs" role="tablist" aria-label="Auditórios sábado">
-            <button class="aud-tab-btn active" data-aud="sabado-a">Auditório A</button>
-            <button class="aud-tab-btn" data-aud="sabado-b">Auditório B</button>
-          </div>
 
-          <!-- Sábado – Auditório A -->
-          <div class="aud-panel active" id="panel-sabado-a">
-            <div class="schedule-scroll">
+          <p class="aud-label">Auditório A</p>
+          <div class="schedule-scroll">
               <table class="schedule-table">
                 <thead>
                   <tr>
@@ -2059,22 +2121,20 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
           </div>
 
-          <!-- Sábado – Auditório B -->
-          <div class="aud-panel" id="panel-sabado-b">
-            <div class="schedule-scroll">
-              <table class="schedule-table">
-                <thead>
-                  <tr>
-                    <th style="width:155px">Horário</th>
-                    <th>Atividade</th>
-                    <th style="width:220px">Palestrante</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
+          <p class="aud-label">Auditório B</p>
+          <div class="schedule-scroll">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th style="width:155px">Horário</th>
+                  <th>Atividade</th>
+                  <th style="width:220px">Palestrante</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
                     <td>08:00 – 10:00 (2h)</td>
                     <td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td>
                   </tr>
@@ -2169,9 +2229,8 @@
                     <td>16:15</td>
                     <td colspan="2" class="session-break"><strong>ENCERRAMENTO E BRINDE</strong></td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
+              </tbody>
+            </table>
           </div>
         </div>
         <!-- /panel-sabado -->
@@ -2181,7 +2240,7 @@
     <!-- ── PALESTRANTES ── -->
     <section id="palestrantes" class="fade-in">
       <div class="container">
-        <h2 class="text-center">Palestrantes</h2>
+        <h2 class="section-title text-center" style="display:block">Palestrantes</h2>
         <p
           class="text-center"
           style="font-size: 1.05rem; color: var(--muted-text); max-width: 680px; margin: 0 auto 2.5rem;"
@@ -2241,7 +2300,7 @@
     <section id="local" class="fade-in">
       <div class="container two-column">
         <div>
-          <h2>Local do evento</h2>
+          <h2 class="section-title">Local do evento</h2>
           <p>
             O Congresso Endogineco 2026 será realizado no
             <strong>Mar Hotel Conventions</strong>, um dos principais centros de convenções
@@ -2289,7 +2348,7 @@
     <!-- ── PATROCINADORES ── -->
     <section id="patrocinadores" class="fade-in">
       <div class="container text-center">
-        <h2>Patrocinadores</h2>
+        <h2 class="section-title" style="display:block">Patrocinadores</h2>
         <p style="color: var(--muted-text); max-width: 600px; margin: 0 auto;">
           Os patrocinadores serão divulgados assim que confirmados.
         </p>
@@ -2300,7 +2359,7 @@
     <section id="contato" class="fade-in">
       <div class="container two-column">
         <div>
-          <h2>Contato</h2>
+          <h2 class="section-title">Contato</h2>
           <p>
             Para dúvidas sobre o congresso, inscrições ou cotas de patrocínio, entre em
             contato com a organização:
@@ -2437,33 +2496,71 @@
 
     <!-- ── FOOTER ── -->
     <footer>
-      <p style="font-size: 1.05rem; font-weight: 700">
-        &copy; 2026 Congresso Internacional Endogineco — Recife/PE
-      </p>
-      <p>ISEP &middot; Hospital Santa Joana &middot; Rede Américas</p>
-      <p style="margin-top: 2rem; font-size: 0.9rem">
-        Produzido por:
-        <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener">Luka Plan Promoções e Eventos</a>
-        &nbsp;|&nbsp;
-        Desenvolvido por:
-        <a href="https://wa.me/55NUMERO?text=Ol%C3%A1%2C+gostaria+de+criar+um+site%21+%3A%29" target="_blank" rel="noopener">Automa IT &amp; Development</a>
-      </p>
-      <p style="margin-top: 1.25rem">
-        <a href="#top">↑ Voltar ao topo</a>
-      </p>
+      <div class="footer-inner">
+        <!-- Brand column -->
+        <div class="footer-brand">
+          <img src="assets/logo-endogineco.png" alt="Endogineco 2026" loading="lazy" />
+          <p>Congresso Internacional Endogineco 2026<br />27, 28 e 29 de agosto · Recife/PE</p>
+          <p style="margin-top:.5rem; font-size:.82rem; color:rgba(255,255,255,.45)">
+            ISEP · Hospital Santa Joana · Rede Américas
+          </p>
+        </div>
+
+        <!-- Links column -->
+        <div class="footer-links">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#sobre">Sobre o evento</a></li>
+            <li><a href="#comissao">Comissão organizadora</a></li>
+            <li><a href="#programacao">Programação científica</a></li>
+            <li><a href="#palestrantes">Palestrantes</a></li>
+            <li><a href="#local">Local do evento</a></li>
+            <li><a href="#inscricao">Inscrições</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Congresso Internacional Endogineco — Recife/PE</p>
+        <p>
+          Produzido por: <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener">Luka Plan Promoções e Eventos</a>
+          &nbsp;&middot;&nbsp;
+          Desenvolvido por: <a href="https://wa.me/55NUMERO?text=Ol%C3%A1%2C+gostaria+de+criar+um+site%21+%3A%29" target="_blank" rel="noopener">Automa IT &amp; Development</a>
+        </p>
+      </div>
     </footer>
 
     <script>
-      /* ── Fade-in on scroll ── */
+      /* ── Fade-in on scroll (sections) ── */
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) entry.target.classList.add("visible");
           });
         },
-        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+        { threshold: 0.09, rootMargin: "0px 0px -48px 0px" },
       );
       document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+
+      /* ── Stagger animation for card grids ── */
+      const cardObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              cardObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.08, rootMargin: "0px 0px -32px 0px" }
+      );
+
+      document.querySelectorAll(".committee-item, .speaker-item").forEach((el, i) => {
+        el.classList.add("fade-in");
+        el.style.transitionDelay = `${i * 70}ms`;
+        cardObserver.observe(el);
+      });
 
       /* ── Nav scroll class ── */
       const nav = document.getElementById("main-nav");
@@ -2535,20 +2632,6 @@
         });
       });
 
-      /* ── Auditorium tabs (delegated) ── */
-      document.addEventListener("click", (e) => {
-        if (!e.target.classList.contains("aud-tab-btn")) return;
-        const btn = e.target;
-        const audId = btn.dataset.aud;
-        const parentPanel = btn.closest(".day-panel");
-        if (!parentPanel) return;
-
-        parentPanel.querySelectorAll(".aud-tab-btn").forEach((b) => b.classList.remove("active"));
-        parentPanel.querySelectorAll(".aud-panel").forEach((p) => p.classList.remove("active"));
-        btn.classList.add("active");
-        const audPanel = document.getElementById("panel-" + audId);
-        if (audPanel) audPanel.classList.add("active");
-      });
 
       /* ── Modal ── */
       document.addEventListener("click", function (e) {
