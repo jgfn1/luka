@@ -6,7 +6,7 @@
     <title>Congresso Internacional Endogineco 2026 | 27, 28 e 29 de agosto – Recife</title>
     <meta
       name="description"
-      content="Congresso Internacional Endogineco 2026 — endometriose e ginecologia minimamente invasiva, 27 a 29 de agosto de 2026, 8h às 18h, Mar Hotel Conventions, Recife/PE."
+      content="Congresso Internacional Endogineco 2026 — endometriose e ginecologia minimamente invasiva, 27 a 29 de agosto de 2026, Mar Hotel Conventions, Recife/PE."
     />
     <link rel="canonical" href="https://www.congressoendoginecorecife.com.br/" />
 
@@ -46,7 +46,6 @@
 
     <style>
       :root {
-        /* Brand colours */
         --navy: #1a3870;
         --navy-dark: #102450;
         --blue: #2d6aa0;
@@ -58,7 +57,6 @@
         --light-bg: #f4f7fc;
         --dark-text: #1e2a3a;
         --muted-text: #5a6880;
-        /* Design tokens */
         --r-sm: 10px;
         --r-md: 18px;
         --r-lg: 28px;
@@ -69,1251 +67,667 @@
         --shadow-lg: 0 12px 40px rgba(26,56,112,.18);
         --ease: cubic-bezier(.4,0,.2,1);
         --section-pad: 5.5rem 2rem;
+        --hero-grad:
+          linear-gradient(160deg, rgba(2,5,15,.99) 0%, rgba(6,12,32,.98) 30%, rgba(10,22,56,.96) 60%, rgba(18,38,80,.93) 100%),
+          radial-gradient(ellipse at 20% 85%, rgba(240,160,32,.12) 0%, transparent 48%),
+          radial-gradient(ellipse at 80% 80%, rgba(45,106,160,.18) 0%, transparent 45%);
       }
 
-      *, *::before, *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-      html {
-        scroll-behavior: smooth;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
+      html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-      body {
-        font-family: "Open Sans", Arial, sans-serif;
-        color: var(--dark-text);
-        line-height: 1.65;
-        background: #fff;
-      }
+      body { font-family: "Open Sans", Arial, sans-serif; color: var(--dark-text); line-height: 1.65; background: #fff; }
 
-      h1, h2, h3, h4 {
-        font-family: "Montserrat", sans-serif;
-        color: var(--primary);
-        line-height: 1.25;
-      }
-
+      h1, h2, h3, h4 { font-family: "Montserrat", sans-serif; color: var(--primary); line-height: 1.25; }
       h1 { font-size: 2.5rem; font-weight: 800; }
-      h2 { font-size: 2rem;   font-weight: 700; margin-bottom: 1.25rem; }
+      h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1.25rem; }
       h3 { font-size: 1.3rem; font-weight: 600; margin: 1.5rem 0 .9rem; }
 
       p { margin: 0 0 1rem; }
 
-      a {
-        color: var(--navy);
-        text-decoration: none;
-        transition: color .25s var(--ease);
-      }
+      a { color: var(--navy); text-decoration: none; transition: color .25s var(--ease); }
       a:hover, a:focus { color: var(--blue); }
 
       img { display: block; max-width: 100%; }
 
       .text-center { text-align: center; }
 
-      /* ── EYEBROW / SECTION LABEL ── */
+      /* ── EYEBROW ── */
       .section-eyebrow {
         display: inline-block;
         font-family: "Montserrat", sans-serif;
-        font-size: .72rem;
-        font-weight: 700;
-        letter-spacing: .15em;
-        text-transform: uppercase;
+        font-size: .72rem; font-weight: 700;
+        letter-spacing: .15em; text-transform: uppercase;
         color: var(--gold);
         background: rgba(240,160,32,.10);
         border: 1px solid rgba(240,160,32,.28);
-        padding: .3rem .85rem;
-        border-radius: 99px;
-        margin-bottom: 1rem;
+        padding: .3rem .85rem; border-radius: 99px; margin-bottom: 1rem;
       }
 
       /* ── SECTION TITLE ACCENT ── */
       .section-title {
-        position: relative;
-        display: inline-block;
-        padding-bottom: .6rem;
-        margin-bottom: 1.5rem;
+        position: relative; display: inline-block;
+        padding-bottom: .6rem; margin-bottom: 1.5rem;
       }
       .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 48px;
-        height: 3px;
-        background: var(--gold);
-        border-radius: 99px;
+        content: ""; position: absolute; bottom: 0; left: 0;
+        width: 48px; height: 3px; background: var(--gold); border-radius: 99px;
       }
-      .text-center .section-title::after,
-      .section-title.text-center::after {
-        left: 50%;
-        transform: translateX(-50%);
+      .text-center .section-title::after, .section-title.text-center::after {
+        left: 50%; transform: translateX(-50%);
       }
+
+      /* ── ALTERNATING SECTION BACKGROUNDS ── */
+      section { padding: var(--section-pad); width: 100%; }
+
+      .section-light {
+        background: linear-gradient(180deg, #ffffff 0%, #f4f7fc 100%);
+      }
+
+      .section-dark {
+        background: var(--hero-grad);
+        color: rgba(232,240,255,.9);
+      }
+      .section-dark h2, .section-dark h3, .section-dark h4 { color: #fff; }
+      .section-dark .section-title::after { background: var(--gold); }
+      .section-dark .section-eyebrow {
+        color: var(--gold);
+        background: rgba(240,160,32,.15);
+        border-color: rgba(240,160,32,.35);
+      }
+      .section-dark p { color: rgba(232,240,255,.85); }
+      .section-dark .muted-text { color: rgba(255,255,255,.60); }
+      .section-dark a { color: var(--gold-light); }
+      .section-dark a:hover { color: #fff; }
+
+      /* Committee cards on dark bg */
+      .section-dark .committee-item {
+        background: rgba(255,255,255,.07);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,.14);
+        box-shadow: 0 4px 20px rgba(0,0,0,.25);
+      }
+      .section-dark .committee-item h4 { color: #fff; }
+      .section-dark .committee-item p { color: rgba(255,255,255,.60); }
+      .section-dark .committee-item img { border-color: rgba(255,255,255,.35); }
+      .section-dark .committee-item:hover { box-shadow: 0 16px 44px rgba(0,0,0,.45); }
+
+      /* Day/gallery tabs on dark bg */
+      .section-dark .day-tabs { background: rgba(255,255,255,.08); }
+      .section-dark .day-tab-btn { color: rgba(255,255,255,.65); }
+      .section-dark .day-tab-btn:hover { color: #fff; background: rgba(255,255,255,.12); }
+      .section-dark .day-tab-btn.active { background: var(--gold); color: var(--navy-dark); }
 
       /* ── NAV ── */
       nav {
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%;
+        position: fixed; top: 0; left: 0; width: 100%;
         padding: .7rem 2rem;
         background: rgba(255,255,255,.97);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        align-items: center;
-        gap: 1rem;
-        z-index: 1000;
+        backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+        display: grid; grid-template-columns: auto 1fr auto;
+        align-items: center; gap: 1rem; z-index: 1000;
         box-shadow: 0 1px 0 rgba(26,56,112,.08), 0 4px 20px rgba(26,56,112,.06);
         transition: padding .3s var(--ease), box-shadow .3s var(--ease);
       }
+      nav.scrolled { padding: .45rem 2rem; box-shadow: 0 1px 0 rgba(26,56,112,.10), 0 6px 24px rgba(26,56,112,.12); }
 
-      nav.scrolled {
-        padding: .45rem 2rem;
-        box-shadow: 0 1px 0 rgba(26,56,112,.10), 0 6px 24px rgba(26,56,112,.12);
-      }
-
-      nav .logo-small {
-        height: 54px;
-        transition: height .3s var(--ease);
-        display: flex;
-        align-items: center;
-      }
-      nav .logo-small img {
-        height: 100%;
-        width: auto;
-        max-width: 200px;
-        object-fit: contain;
-        object-position: left center;
-      }
+      nav .logo-small { height: 54px; transition: height .3s var(--ease); display: flex; align-items: center; }
+      nav .logo-small img { height: 100%; width: auto; max-width: 200px; object-fit: contain; object-position: left center; }
       nav.scrolled .logo-small { height: 44px; }
 
-      /* Centre column */
       nav ul {
-        list-style: none;
-        display: flex;
-        gap: 1.5rem;
-        align-items: center;
-        justify-content: center;
+        list-style: none; display: flex; gap: 1.2rem;
+        align-items: center; justify-content: center;
       }
-
       nav ul li a {
-        font-weight: 600;
-        font-size: .84rem;
-        padding: .35rem 0;
-        position: relative;
-        color: var(--navy);
-        letter-spacing: .01em;
+        font-weight: 600; font-size: .82rem; padding: .35rem 0;
+        position: relative; color: var(--navy); letter-spacing: .01em;
       }
-
       nav ul li a::after {
-        content: "";
-        position: absolute;
-        bottom: -2px; left: 0;
-        width: 0; height: 2px;
-        background: var(--gold);
-        border-radius: 99px;
-        transition: width .3s var(--ease);
+        content: ""; position: absolute; bottom: -2px; left: 0;
+        width: 0; height: 2px; background: var(--gold);
+        border-radius: 99px; transition: width .3s var(--ease);
       }
       nav ul li a:hover::after { width: 100%; }
 
-      /* Right column */
-      .nav-actions {
-        display: flex;
-        align-items: center;
-        gap: .75rem;
-        justify-content: flex-end;
-      }
+      .nav-actions { display: flex; align-items: center; gap: .75rem; justify-content: flex-end; }
 
       .nav-cta {
-        display: inline-flex;
-        align-items: center;
-        gap: .4rem;
+        display: inline-flex; align-items: center; gap: .4rem;
         background: linear-gradient(135deg, var(--gold) 0%, #c97c08 100%);
         color: var(--navy-dark) !important;
-        padding: .6rem 1.3rem;
-        border-radius: 99px;
-        font-weight: 700;
-        font-size: .82rem;
-        letter-spacing: .03em;
+        padding: .6rem 1.3rem; border-radius: 99px;
+        font-weight: 700; font-size: .82rem; letter-spacing: .03em;
         box-shadow: 0 3px 12px rgba(240,160,32,.35);
         transition: transform .2s var(--ease), box-shadow .2s var(--ease);
-        will-change: transform;
         white-space: nowrap;
       }
-      .nav-cta:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(240,160,32,.50);
-        color: var(--navy-dark) !important;
-      }
+      .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(240,160,32,.50); color: var(--navy-dark) !important; }
 
       .mobile-menu-toggle {
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 8px;
-        z-index: 1001;
+        display: none; flex-direction: column; gap: 5px;
+        background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001;
       }
-      .mobile-menu-toggle span {
-        display: block;
-        width: 26px; height: 2.5px;
-        background: var(--navy);
-        border-radius: 99px;
-        transition: all .3s var(--ease);
-      }
+      .mobile-menu-toggle span { display: block; width: 26px; height: 2.5px; background: var(--navy); border-radius: 99px; transition: all .3s var(--ease); }
       .mobile-menu-toggle.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
       .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
       .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
       /* ── HERO ── */
       header.hero {
-        position: relative;
-        min-height: 100svh;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 110px 1.5rem 5rem;
-        overflow: hidden;
+        position: relative; min-height: 100svh; color: #fff;
+        display: flex; align-items: center; justify-content: center;
+        text-align: center; padding: 110px 1.5rem 5rem; overflow: hidden;
       }
-
       header.hero .hero-bg {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        /* Very dark base so the logo and chips are clearly readable */
-        background:
-          linear-gradient(
-            160deg,
-            rgba(2,5,15,.99) 0%,
-            rgba(6,12,32,.98) 30%,
-            rgba(10,22,56,.96) 60%,
-            rgba(18,38,80,.93) 100%
-          ),
-          radial-gradient(ellipse at 20% 85%, rgba(240,160,32,.14) 0%, transparent 48%),
-          radial-gradient(ellipse at 80% 80%, rgba(45,106,160,.20) 0%, transparent 45%);
+        position: absolute; inset: 0; z-index: 0;
+        background: var(--hero-grad);
       }
-
-      /* Subtle dot-grid texture */
       header.hero .hero-bg::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        opacity: .20;
+        content: ""; position: absolute; inset: 0; opacity: .18;
         background-image: radial-gradient(rgba(255,255,255,.18) 1px, transparent 1px);
         background-size: 32px 32px;
       }
-
       header.hero .hero-overlay {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        pointer-events: none;
+        position: absolute; inset: 0; z-index: 1; pointer-events: none;
         background: linear-gradient(to bottom, transparent 70%, rgba(2,5,15,.55) 100%);
       }
+      header.hero .hero-content { position: relative; z-index: 2; max-width: 960px; width: 100%; }
 
-      header.hero .hero-content {
-        position: relative;
-        z-index: 2;
-        max-width: 900px;
-        width: 100%;
-      }
-
-      /* Logo with animated ring */
-      header.hero .hero-logo-wrap {
-        position: relative;
-        display: inline-block;
-        margin-bottom: 1.75rem;
-      }
+      header.hero .hero-logo-wrap { position: relative; display: inline-block; margin-bottom: 1.75rem; }
       header.hero .hero-logo-wrap::before {
-        content: "";
-        position: absolute;
-        inset: -16px;
-        border-radius: 50%;
-        border: 1.5px solid rgba(240,160,32,.35);
-        animation: ring-pulse 3s ease-in-out infinite;
+        content: ""; position: absolute; inset: -16px; border-radius: 50%;
+        border: 1.5px solid rgba(240,160,32,.35); animation: ring-pulse 3s ease-in-out infinite;
       }
-      @keyframes ring-pulse {
-        0%, 100% { transform: scale(1); opacity: .6; }
-        50%       { transform: scale(1.06); opacity: .2; }
-      }
-
+      @keyframes ring-pulse { 0%, 100% { transform: scale(1); opacity: .6; } 50% { transform: scale(1.06); opacity: .2; } }
       header.hero .hero-logo {
-        max-width: 320px;
-        width: 75%;
-        height: auto;
-        display: block;
+        max-width: 320px; width: 75%; height: auto; display: block;
         animation: logo-float 6s ease-in-out infinite;
         filter: drop-shadow(0 8px 28px rgba(0,0,0,.40));
       }
-      @keyframes logo-float {
-        0%, 100% { transform: translateY(0); }
-        50%       { transform: translateY(-8px); }
-      }
+      @keyframes logo-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
-      /* Info chips row */
-      .hero-chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: .65rem;
-        justify-content: center;
-        margin-bottom: 2rem;
-      }
+      .hero-chips { display: flex; flex-wrap: wrap; gap: .65rem; justify-content: center; margin-bottom: 2rem; }
       .hero-chip {
-        display: inline-flex;
-        align-items: center;
-        gap: .45rem;
-        background: rgba(255,255,255,.10);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        border: 1px solid rgba(255,255,255,.22);
-        color: #fff;
-        padding: .5rem 1.1rem;
-        border-radius: 99px;
-        font-size: .84rem;
-        font-weight: 600;
-        font-family: "Montserrat", sans-serif;
-        letter-spacing: .02em;
+        display: inline-flex; align-items: center; gap: .45rem;
+        background: rgba(255,255,255,.10); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(255,255,255,.22); color: #fff;
+        padding: .5rem 1.1rem; border-radius: 99px;
+        font-size: .84rem; font-weight: 600; font-family: "Montserrat", sans-serif; letter-spacing: .02em;
       }
-      .hero-chip svg {
-        width: 15px; height: 15px;
-        fill: none;
-        stroke: var(--gold);
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        flex-shrink: 0;
-      }
+      .hero-chip svg { width: 15px; height: 15px; fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+      a.hero-chip { cursor: pointer; transition: background .2s, border-color .2s, transform .18s; }
+      a.hero-chip:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.45); transform: translateY(-2px); color: #fff; }
 
-      header.hero p {
-        color: rgba(232,240,255,.9);
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-        text-shadow: 0 2px 8px rgba(0,0,0,.2);
-      }
+      header.hero p { color: rgba(232,240,255,.9); font-size: 1.1rem; margin-bottom: 2rem; text-shadow: 0 2px 8px rgba(0,0,0,.2); }
 
+      /* Hero logos two-column */
       .hero-logos-section {
-        margin-top: 2.25rem;
-        padding-top: 1.75rem;
+        margin-top: 2.25rem; padding-top: 1.75rem;
         border-top: 1px solid rgba(255,255,255,.20);
       }
-      .hero-logos-section h3 {
-        color: rgba(255,255,255,.75);
-        font-size: .72rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: .14em;
-        margin-bottom: 1.25rem;
+      .hero-logos-cols {
+        display: grid; grid-template-columns: 1fr 1px 1fr;
+        gap: 0 1.5rem; align-items: start; max-width: 700px; margin: 0 auto;
+      }
+      .hero-logos-col-divider { background: rgba(255,255,255,.18); margin: 0; width: 1px; align-self: stretch; }
+      .hero-logos-col { padding: 0 .5rem; }
+      .hero-logos-col h3 {
+        color: rgba(255,255,255,.75); font-size: .72rem; font-weight: 700;
+        text-transform: uppercase; letter-spacing: .14em; margin-bottom: 1.1rem; margin-top: 0;
       }
       .hero-logo-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem 2.5rem;
-        align-items: center;
-        justify-content: center;
-        max-width: 560px;
-        margin: 0 auto 1.5rem;
+        display: flex; flex-wrap: wrap; gap: 1rem 1.75rem;
+        align-items: center; justify-content: center;
       }
       .hero-logo-grid img {
-        max-width: 140px;
-        max-height: 56px;
-        width: auto;
-        height: auto;
-        object-fit: contain;
-        filter: brightness(0) invert(1) drop-shadow(0 2px 6px rgba(0,0,0,.25));
-        opacity: .88;
-        transition: opacity .2s;
+        max-width: 132px; max-height: 52px; width: auto; height: auto; object-fit: contain;
+        filter: drop-shadow(0 2px 10px rgba(0,0,0,.35));
+        opacity: 1; transition: opacity .2s, transform .2s;
       }
-      .hero-logo-grid img:hover { opacity: 1; }
+      .hero-logo-grid img:hover { opacity: .95; transform: scale(1.03); }
+      .hero-logos-col .coming-soon-text {
+        color: rgba(255,255,255,.45); font-size: .78rem; font-style: italic; margin: 0; text-align: center;
+      }
 
-      /* Scroll indicator */
       .hero-scroll {
-        position: absolute;
-        bottom: 1.75rem;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: .4rem;
-        opacity: .6;
-        animation: scroll-bounce 2s ease-in-out infinite;
+        position: absolute; bottom: 1.75rem; left: 50%; transform: translateX(-50%);
+        z-index: 2; display: flex; flex-direction: column; align-items: center; gap: .4rem;
+        opacity: .6; animation: scroll-bounce 2s ease-in-out infinite;
       }
-      .hero-scroll span {
-        display: block;
-        width: 1.5px;
-        height: 28px;
-        background: linear-gradient(to bottom, transparent, #fff);
-        border-radius: 99px;
-      }
-      @keyframes scroll-bounce {
-        0%, 100% { transform: translateX(-50%) translateY(0); }
-        50%       { transform: translateX(-50%) translateY(6px); }
-      }
+      .hero-scroll span { display: block; width: 1.5px; height: 28px; background: linear-gradient(to bottom, transparent, #fff); border-radius: 99px; }
+      @keyframes scroll-bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
 
       /* ── BUTTONS ── */
       .btn-primary {
-        display: inline-flex;
-        align-items: center;
-        gap: .5rem;
+        display: inline-flex; align-items: center; gap: .5rem;
         background: linear-gradient(135deg, var(--gold) 0%, #c97c08 100%);
         color: var(--navy-dark) !important;
-        padding: 1rem 2.2rem;
-        border-radius: 99px;
-        font-weight: 800;
-        font-size: 1rem;
-        letter-spacing: .04em;
+        padding: 1rem 2.2rem; border-radius: 99px;
+        font-weight: 800; font-size: 1rem; letter-spacing: .04em;
         box-shadow: 0 4px 20px rgba(240,160,32,.40), 0 1px 0 rgba(255,255,255,.15) inset;
         transition: transform .25s var(--ease), box-shadow .25s var(--ease);
-        will-change: transform;
         font-family: "Montserrat", sans-serif;
       }
-      .btn-primary:hover {
-        transform: translateY(-3px) scale(1.01);
-        box-shadow: 0 10px 32px rgba(240,160,32,.55);
-        color: var(--navy-dark) !important;
-      }
+      .btn-primary:hover { transform: translateY(-3px) scale(1.01); box-shadow: 0 10px 32px rgba(240,160,32,.55); color: var(--navy-dark) !important; }
       .btn-primary:active { transform: translateY(-1px); }
 
       .btn-outline {
-        display: inline-flex;
-        align-items: center;
-        gap: .5rem;
-        background: transparent;
-        color: #fff !important;
-        padding: .9rem 2rem;
-        border-radius: 99px;
-        font-weight: 700;
-        font-size: .95rem;
-        border: 1.5px solid rgba(255,255,255,.55);
-        letter-spacing: .03em;
-        transition: all .25s var(--ease);
+        display: inline-flex; align-items: center; gap: .5rem;
+        background: transparent; color: #fff !important;
+        padding: .9rem 2rem; border-radius: 99px;
+        font-weight: 700; font-size: .95rem;
+        border: 1.5px solid rgba(255,255,255,.55); letter-spacing: .03em;
+        transition: all .25s var(--ease); font-family: "Montserrat", sans-serif;
+      }
+      .btn-outline:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.85); color: #fff !important; }
+
+      .btn-group { display: flex; flex-wrap: wrap; gap: .85rem; justify-content: center; }
+
+      .btn-section-cta {
+        display: inline-flex; align-items: center; gap: .5rem;
+        background: linear-gradient(135deg, var(--gold) 0%, #c97c08 100%);
+        color: var(--navy-dark) !important;
+        padding: .75rem 1.8rem; border-radius: 99px;
+        font-weight: 700; font-size: .92rem; letter-spacing: .03em;
+        box-shadow: 0 4px 16px rgba(240,160,32,.40);
+        transition: transform .22s var(--ease), box-shadow .22s var(--ease);
         font-family: "Montserrat", sans-serif;
       }
-      .btn-outline:hover {
-        background: rgba(255,255,255,.12);
-        border-color: rgba(255,255,255,.85);
-        color: #fff !important;
-      }
+      .btn-section-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(240,160,32,.55); color: var(--navy-dark) !important; }
 
-      .btn-group {
-        display: flex;
-        flex-wrap: wrap;
-        gap: .85rem;
-        justify-content: center;
-      }
+      /* ── CONTAINER ── */
+      .container { max-width: 1140px; margin: 0 auto; }
 
-      /* ── SECTIONS ── */
-      section {
-        padding: var(--section-pad);
-      }
-
-      section:nth-of-type(even) {
-        background: var(--light-bg);
-      }
-
-      .container {
-        max-width: 1140px;
-        margin: 0 auto;
-      }
-
-      .two-column {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2.5rem;
-        align-items: start;
-      }
+      .two-column { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; align-items: start; }
 
       /* ── FADE-IN + STAGGER ── */
-      .fade-in {
-        opacity: 0;
-        transform: translateY(32px);
-        transition: opacity .65s var(--ease), transform .65s var(--ease);
-      }
-      .fade-in.visible {
-        opacity: 1;
-        transform: none;
-      }
-      /* stagger delays applied via JS */
+      .fade-in { opacity: 0; transform: translateY(32px); transition: opacity .65s var(--ease), transform .65s var(--ease); }
+      .fade-in.visible { opacity: 1; transform: none; }
 
-      /* ── COUNTDOWN ── */
-      #countdown-section {
-        background: linear-gradient(
-          140deg,
-          var(--navy-dark) 0%,
-          #1a3870 50%,
-          var(--blue) 100%
-        );
-        color: #fff;
-        padding: 3.5rem 2rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      #countdown-section::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image:
-          linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-        background-size: 40px 40px;
-      }
-
-      #countdown-section h2 {
-        color: #fff;
-        font-size: 1.35rem;
-        margin-bottom: .5rem;
-        position: relative;
-        font-weight: 700;
-      }
-
-      #countdown-section .subtitle {
-        color: rgba(255,255,255,.65);
-        font-size: .9rem;
-        margin-bottom: 2rem;
-        position: relative;
-      }
-
-      .countdown-timer {
-        display: flex;
-        justify-content: center;
-        gap: .85rem;
-        flex-wrap: wrap;
-        max-width: 580px;
-        margin: 0 auto;
-        position: relative;
-      }
-
-      .countdown-item {
-        background: rgba(255,255,255,.09);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255,255,255,.18);
-        border-radius: var(--r-md);
-        padding: 1.1rem 1.3rem;
-        min-width: 90px;
-        position: relative;
-        overflow: hidden;
-      }
-      .countdown-item::after {
-        content: "";
-        position: absolute;
-        bottom: 0; left: 0; right: 0;
-        height: 2px;
-        background: var(--gold);
-        opacity: .7;
-      }
-
-      .countdown-number {
-        font-size: 2.4rem;
-        font-weight: 800;
-        display: block;
-        line-height: 1;
-        margin-bottom: .4rem;
-        color: var(--gold);
-        font-family: "Montserrat", sans-serif;
-        letter-spacing: -.02em;
-      }
-
-      .countdown-label {
-        font-size: .65rem;
-        text-transform: uppercase;
-        letter-spacing: .12em;
-        font-weight: 700;
-        color: rgba(255,255,255,.75);
-      }
-
-      /* ── SCHEDULE TABS ── */
-      .schedule-header { margin-bottom: 1.75rem; }
-
-      .schedule-title-row {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin-bottom: 1.5rem;
-      }
-
-      .schedule-title { margin: 0; }
-
-      .download-pdf-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: .4rem;
-        padding: .55rem 1.1rem;
-        background: #fff;
-        border-radius: var(--r-sm);
-        color: var(--navy);
-        font-weight: 600;
-        font-size: .85rem;
-        border: 1.5px solid rgba(26,56,112,.18);
-        box-shadow: var(--shadow-xs);
-        transition: background .2s var(--ease), transform .2s var(--ease), box-shadow .2s var(--ease);
-      }
-      .download-pdf-btn:hover {
-        background: var(--light-bg);
-        transform: translateY(-1px);
-        box-shadow: var(--shadow-sm);
-        color: var(--navy);
-      }
-
-      .download-icon { width: 16px; height: 16px; flex-shrink: 0; }
-
-      /* Day tabs — pill style */
-      .day-tabs {
-        display: flex;
-        gap: .5rem;
-        flex-wrap: wrap;
-        margin-bottom: 1.5rem;
-        background: rgba(26,56,112,.05);
-        border-radius: var(--r-sm);
-        padding: .3rem;
-        width: fit-content;
-      }
-
-      .day-tab-btn {
-        padding: .6rem 1.4rem;
-        border: none;
-        background: transparent;
-        border-radius: var(--r-sm);
-        font-family: "Montserrat", sans-serif;
-        font-weight: 700;
-        font-size: .88rem;
-        color: var(--muted-text);
-        cursor: pointer;
-        transition: all .22s var(--ease);
-        position: relative;
-      }
-      .day-tab-btn:hover { color: var(--navy); background: rgba(26,56,112,.06); }
-      .day-tab-btn.active {
-        background: var(--navy);
-        color: #fff;
-        box-shadow: var(--shadow-sm);
-      }
-
-      .day-panel { display: none; }
-      .day-panel.active { display: block; animation: panel-in .3s var(--ease); }
-      @keyframes panel-in {
-        from { opacity: 0; transform: translateY(8px); }
-        to   { opacity: 1; transform: none; }
-      }
-
-      /* Auditorium label (replaces sub-tabs) */
-      .aud-label {
-        display: flex;
-        align-items: center;
-        gap: .6rem;
-        font-family: "Montserrat", sans-serif;
-        font-size: .8rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: .08em;
-        color: var(--blue);
-        margin: 1.75rem 0 .65rem;
-      }
-      .aud-label::before {
-        content: "";
-        display: block;
-        width: 14px;
-        height: 2px;
-        background: var(--gold);
-        border-radius: 99px;
-        flex-shrink: 0;
-      }
-      .aud-label:first-child { margin-top: 0; }
-
-      .schedule-scroll {
-        overflow-x: auto;
-        margin-top: .75rem;
-        -webkit-overflow-scrolling: touch;
-        border-radius: var(--r-md);
-        box-shadow: var(--shadow-sm);
-      }
-
-      .schedule-table {
-        width: 100%;
-        min-width: 580px;
-        border-collapse: collapse;
-        font-size: .93rem;
-        border-radius: var(--r-md);
-        overflow: hidden;
-      }
-
-      .schedule-table th,
-      .schedule-table td {
-        padding: .95rem .85rem;
-        border: 1px solid #dde8f5;
-        text-align: left;
-        vertical-align: top;
-      }
-
-      .schedule-table th {
-        background: var(--navy);
-        color: #fff;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: .78rem;
-        letter-spacing: .07em;
-        font-family: "Montserrat", sans-serif;
-      }
-
-      .schedule-table tbody tr { transition: background .15s ease; }
-      .schedule-table tbody tr:nth-child(odd) { background: #fafcff; }
-      .schedule-table tbody tr:hover { background: rgba(45,106,160,.06); }
-
-      .session-header {
-        background: linear-gradient(135deg, var(--blue) 0%, #1e5a90 100%) !important;
-        color: #fff !important;
-        font-weight: 700 !important;
-        font-size: .98rem !important;
-        line-height: 1.45;
-      }
-      .session-header strong { font-size: .93rem; display: inline-block; margin-bottom: .3rem; }
-      .session-header small { display: block; margin-top: .3rem; font-weight: 600; opacity: .9; line-height: 1.5; font-size: .85rem; }
-
-      .session-break {
-        background: #fffbf0 !important;
-        font-weight: 700;
-        text-align: center;
-        color: #7a5000;
-      }
-      .session-live {
-        background: linear-gradient(135deg, #e8f3ff 0%, #d4e8ff 100%) !important;
-        font-weight: 700;
-        text-align: center;
-        color: var(--navy);
-      }
-      .session-podcast {
-        background: linear-gradient(135deg, #f0e8ff 0%, #e4d4ff 100%) !important;
-        font-weight: 700;
-        text-align: center;
-        color: #3a1a70;
-        font-size: .88rem;
-      }
-
-      .speaker-name {
-        font-weight: 700;
-        color: var(--navy);
-        line-height: 1.45;
-      }
-
-      @media (max-width: 768px) {
-        .schedule-table { font-size: .83rem; }
-        .schedule-table th, .schedule-table td { padding: .6rem .5rem; }
-        .day-tabs { width: 100%; }
-      }
-
-      /* ── COMMITTEE ── */
-      .committee-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.75rem;
-        margin: 2rem auto;
-        max-width: 1000px;
-      }
-
-      .committee-item {
-        text-align: center;
-        padding: 2rem 1.25rem 1.5rem;
-        background: #fff;
-        border-radius: var(--r-md);
-        box-shadow: var(--shadow-sm);
-        transition: transform .38s cubic-bezier(.175,.885,.32,1.275), box-shadow .38s var(--ease);
-        position: relative;
-        overflow: hidden;
-        will-change: transform;
-      }
-      .committee-item::before {
-        content: "";
-        position: absolute;
-        bottom: 0; left: 0; right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--navy), var(--gold));
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform .35s var(--ease);
-      }
-      .committee-item:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
-      .committee-item:hover::before { transform: scaleX(1); }
-
-      .committee-item img {
-        width: 130px;
-        height: 130px;
-        border-radius: 50%;
-        object-fit: cover;
-        object-position: center top;
-        margin: 0 auto 1.1rem;
-        border: 4px solid var(--navy);
-        box-shadow: 0 4px 16px rgba(26,56,112,.15);
-        transition: border-color .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
-        will-change: transform;
-      }
-      .committee-item:hover img {
-        border-color: var(--gold);
-        transform: scale(1.06);
-        box-shadow: 0 8px 24px rgba(240,160,32,.30);
-      }
-
-      .committee-item h4 {
-        color: var(--navy);
-        font-size: 1rem;
-        margin: .4rem 0 .2rem;
-        font-weight: 700;
-        line-height: 1.3;
-        font-family: "Montserrat", sans-serif;
-      }
-      .committee-item p {
-        font-size: .82rem;
-        color: var(--muted-text);
-        margin: 0;
-      }
-
-      /* ── SPEAKERS ── */
-      .speakers-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-        gap: 1.5rem;
-        margin: 2rem auto;
-        max-width: 1200px;
-      }
-
-      .speaker-item {
-        text-align: center;
-        padding: 1.75rem 1rem 1.25rem;
-        background: #fff;
-        border-radius: var(--r-md);
-        box-shadow: var(--shadow-xs);
-        border: 1px solid rgba(26,56,112,.07);
-        transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        will-change: transform;
-      }
-      .speaker-item:hover {
-        transform: translateY(-7px);
-        box-shadow: var(--shadow-md);
-        border-color: rgba(240,160,32,.3);
-      }
-
-      .speaker-item img {
-        width: 110px; height: 110px;
-        border-radius: 50%;
-        object-fit: cover;
-        object-position: center top;
-        border: 3px solid var(--navy);
-        margin-bottom: 1rem;
-        transition: border-color .25s var(--ease);
-      }
-      .speaker-item:hover img { border-color: var(--gold); }
-
-      .speaker-item .avatar-empty {
-        width: 110px; height: 110px;
-        border-radius: 50%;
-        border: 3px solid rgba(26,56,112,.25);
-        margin-bottom: 1rem;
-        background: linear-gradient(160deg, #e8f0ff 0%, #d0ddf5 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #8090b0;
-      }
-      .speaker-item .avatar-empty svg { width: 48%; height: 48%; }
-
-      .speaker-item h4 {
-        font-size: .92rem;
-        font-weight: 700;
-        color: var(--navy);
-        margin-bottom: .75rem;
-        margin-top: 0;
-        font-family: "Montserrat", sans-serif;
-        line-height: 1.3;
-      }
-
-      .saiba-mais-btn {
-        margin-top: auto;
-        display: inline-flex;
-        align-items: center;
-        gap: .35rem;
-        background: transparent;
-        color: var(--blue);
-        border: 1.5px solid var(--blue);
-        border-radius: var(--r-sm);
-        padding: .45rem 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all .2s var(--ease);
-        font-size: .82rem;
-        font-family: inherit;
-      }
-      .saiba-mais-btn:hover {
-        background: var(--blue);
-        color: #fff;
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(45,106,160,.3);
-      }
-
-      /* ── MODAL ── */
-      .modal {
-        position: fixed;
-        z-index: 10000;
-        inset: 0;
-        width: 100vw;
-        height: 100dvh;
-        background: rgba(10,22,56,.75);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity .3s var(--ease), visibility .3s;
-      }
-      .modal.show { visibility: visible; opacity: 1; }
-
-      .modal-content {
-        background: #fff;
-        color: var(--dark-text);
+      /* ── CONTAGEM (incorporada à seção Sobre) ── */
+      #sobre .sobre-countdown-wrap {
+        margin-top: 3rem;
+        padding: 2.75rem 2rem;
         border-radius: var(--r-lg);
-        box-shadow: var(--shadow-lg), 0 0 0 1px rgba(26,56,112,.06);
-        max-width: 440px;
-        width: 90vw;
-        padding: 2.5rem 2rem 1.75rem;
-        position: relative;
-        text-align: center;
-        opacity: 0;
-        animation: modal-pop .3s var(--ease) forwards;
-      }
-      @keyframes modal-pop {
-        from { opacity: 0; transform: scale(.93) translateY(12px); }
-        to   { opacity: 1; transform: none; }
-      }
-
-      .close-modal {
-        position: absolute;
-        top: 1rem; right: 1.1rem;
-        width: 32px; height: 32px;
-        border-radius: 50%;
-        background: rgba(26,56,112,.08);
-        border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.3rem;
-        color: var(--navy);
-        line-height: 1;
-        transition: background .2s var(--ease), color .2s;
-      }
-      .close-modal:hover { background: var(--navy); color: #fff; }
-
-      .modal-content img.modal-avatar {
-        width: 110px; height: 110px;
-        border-radius: 50%;
-        object-fit: cover;
-        object-position: center top;
-        border: 3px solid var(--navy);
-        margin: 0 auto .75rem;
-        display: block;
-        box-shadow: var(--shadow-sm);
-      }
-      .modal-content .modal-avatar.modal-avatar-empty {
-        width: 110px; height: 110px;
-        border-radius: 50%;
-        border: 3px solid rgba(26,56,112,.25);
-        margin: 0 auto .75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(160deg, #e8f0ff, #d0ddf5);
-        color: #6880a0;
-      }
-      .modal-content .modal-avatar-empty svg { width: 48%; height: 48%; }
-
-      .modal-content h3 {
-        font-size: 1.2rem;
-        color: var(--navy);
-        margin: .5rem 0 0;
-        font-family: "Montserrat", sans-serif;
-      }
-
-      .modal-bio { font-size: .95rem; color: #444; line-height: 1.65; }
-      ul.modal-bio {
-        margin: 1.1rem 0 0;
-        padding: 0 0 0 1.3rem;
-        text-align: left;
-        list-style-type: disc;
-      }
-      ul.modal-bio li { margin: .4rem 0; }
-      .modal-bio.modal-bio-pending {
-        margin-top: 1.1rem;
-        text-align: center;
-        font-style: italic;
-        color: var(--muted-text);
-      }
-
-      /* ── RESPONSIVE committee / speakers ── */
-      @media (max-width: 768px) {
-        .committee-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1.25rem;
-        }
-        .committee-item { padding: 1.5rem .75rem 1.25rem; }
-        .committee-item img { width: 110px; height: 110px; }
-        .committee-item h4 { font-size: .92rem; }
-
-        .speakers-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-        .speaker-item img, .speaker-item .avatar-empty { width: 90px; height: 90px; }
-      }
-      @media (max-width: 480px) {
-        .committee-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-      }
-
-      /* ── SPONSORS ── */
-      .sponsors-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2.5rem;
-        margin: 2rem auto;
-        align-items: center;
-        justify-content: center;
-        max-width: 900px;
-      }
-      .sponsor-item img {
-        max-width: 180px;
-        max-height: 68px;
-        width: auto; height: auto;
-        object-fit: contain;
-        filter: grayscale(.15);
-        transition: filter .2s;
-        opacity: .85;
-      }
-      .sponsor-item img:hover { filter: none; opacity: 1; }
-
-      /* ── MAP ── */
-      .map-frame {
-        border: 0;
-        width: 100%;
-        height: 420px;
-        border-radius: var(--r-md);
-        box-shadow: var(--shadow-md);
-        display: block;
-      }
-
-      /* ── ORGS STRIP ── */
-      .orgs-strip {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        align-items: center;
-        justify-content: flex-start;
-        margin-top: 2rem;
-      }
-      .orgs-strip img {
-        max-width: 180px;
-        max-height: 72px;
-        width: auto; height: auto;
-        object-fit: contain;
-      }
-      .orgs-strip h3 { margin-top: 0; font-size: 1rem; color: var(--blue); }
-
-      /* ── INSCRICOES CTA ── */
-      .cta-box {
         background: linear-gradient(140deg, var(--navy-dark) 0%, #1a3870 50%, var(--blue) 100%);
-        border-radius: var(--r-lg);
-        padding: 3.5rem 2.5rem;
-        text-align: center;
         color: #fff;
-        box-shadow: var(--shadow-lg);
+        text-align: center;
         position: relative;
         overflow: hidden;
+        box-shadow: var(--shadow-md);
       }
-      .cta-box::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image:
-          linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      #sobre .sobre-countdown-wrap::before {
+        content: ""; position: absolute; inset: 0;
+        background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
         background-size: 40px 40px;
         pointer-events: none;
       }
-      .cta-box h2 { color: #fff; margin-bottom: .75rem; position: relative; }
-      .cta-box p  { color: rgba(255,255,255,.85); font-size: 1.05rem; margin-bottom: 1.75rem; position: relative; }
-
-      .coming-soon-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: .5rem;
-        background: rgba(240,160,32,.15);
-        border: 1.5px solid rgba(240,160,32,.5);
-        color: var(--gold-light);
-        padding: .65rem 1.75rem;
-        border-radius: 99px;
-        font-weight: 700;
-        font-size: .95rem;
-        letter-spacing: .04em;
+      #sobre .sobre-countdown-wrap h3 {
+        color: #fff; font-size: 1.35rem; margin-bottom: .5rem; position: relative; font-weight: 700;
         font-family: "Montserrat", sans-serif;
       }
+      #sobre .sobre-countdown-wrap .sobre-countdown-sub {
+        color: rgba(255,255,255,.65); font-size: .9rem; margin-bottom: 2rem; position: relative;
+      }
+      .countdown-timer { display: flex; justify-content: center; gap: .85rem; flex-wrap: wrap; max-width: 580px; margin: 0 auto; position: relative; }
+      .countdown-item {
+        background: rgba(255,255,255,.09); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255,255,255,.18); border-radius: var(--r-md);
+        padding: 1.1rem 1.3rem; min-width: 90px; position: relative; overflow: hidden;
+      }
+      .countdown-item::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); opacity: .7; }
+      .countdown-number { font-size: 2.4rem; font-weight: 800; display: block; line-height: 1; margin-bottom: .4rem; color: var(--gold); font-family: "Montserrat", sans-serif; letter-spacing: -.02em; }
+      .countdown-label { font-size: .65rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; color: rgba(255,255,255,.75); }
 
-      /* ── FOOTER ── */
+      /* ── SOBRE: TWO-COLUMN LAYOUT ── */
+      .sobre-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+      .sobre-chips { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.75rem; }
+      .sobre-chip {
+        display: inline-flex; align-items: center; gap: .4rem;
+        background: rgba(26,56,112,.07); border: 1.5px solid rgba(26,56,112,.14);
+        color: var(--navy); padding: .42rem .9rem; border-radius: 99px;
+        font-size: .82rem; font-weight: 600; font-family: "Montserrat", sans-serif;
+        transition: background .2s, border-color .2s, transform .2s;
+      }
+      .sobre-chip:hover { background: rgba(26,56,112,.13); border-color: rgba(26,56,112,.25); transform: translateY(-1px); }
+
+      /* ── DUAL VERTICAL SCROLL (Sobre gallery) ── */
+      .dvs-outer {
+        display: flex; gap: 12px;
+        height: 480px; overflow: hidden;
+        border-radius: var(--r-md);
+        position: relative;
+      }
+      .dvs-col { flex: 1; overflow: hidden; }
+      .dvs-track { display: flex; flex-direction: column; gap: 12px; animation-timing-function: linear; animation-iteration-count: infinite; }
+      .dvs-track-down { animation-name: dvs-scroll-down; animation-duration: 22s; }
+      .dvs-track-up { animation-name: dvs-scroll-up; animation-duration: 22s; }
+      @keyframes dvs-scroll-down { 0% { transform: translateY(0); } 100% { transform: translateY(-50%); } }
+      @keyframes dvs-scroll-up { 0% { transform: translateY(-50%); } 100% { transform: translateY(0); } }
+      .dvs-outer:hover .dvs-track { animation-play-state: paused; }
+      .dvs-card { border-radius: var(--r-sm); overflow: hidden; flex-shrink: 0; aspect-ratio: 4/3; background: linear-gradient(135deg, #1a3870 0%, #2d6aa0 100%); display: flex; align-items: center; justify-content: center; }
+      .dvs-card img { width: 100%; height: 100%; object-fit: cover; }
+      .dvs-card-placeholder {
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        gap: .5rem; color: rgba(255,255,255,.45); font-size: .78rem; font-family: "Montserrat", sans-serif;
+        font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 1rem;
+      }
+      .dvs-card-placeholder svg { width: 32px; height: 32px; opacity: .35; }
+
+      /* ── SCHEDULE TABS ── */
+      .schedule-header { margin-bottom: 1.75rem; }
+      .schedule-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+      .schedule-title { margin: 0; }
+      .download-pdf-btn {
+        display: inline-flex; align-items: center; gap: .4rem;
+        padding: .55rem 1.1rem; background: #fff; border-radius: var(--r-sm);
+        color: var(--navy); font-weight: 600; font-size: .85rem;
+        border: 1.5px solid rgba(26,56,112,.18); box-shadow: var(--shadow-xs);
+        transition: background .2s var(--ease), transform .2s var(--ease), box-shadow .2s var(--ease);
+      }
+      .download-pdf-btn:hover { background: var(--light-bg); transform: translateY(-1px); box-shadow: var(--shadow-sm); color: var(--navy); }
+      .download-icon { width: 16px; height: 16px; flex-shrink: 0; }
+
+      .day-tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1.5rem; background: rgba(26,56,112,.05); border-radius: var(--r-sm); padding: .3rem; width: fit-content; }
+      .day-tab-btn { padding: .6rem 1.4rem; border: none; background: transparent; border-radius: var(--r-sm); font-family: "Montserrat", sans-serif; font-weight: 700; font-size: .88rem; color: var(--muted-text); cursor: pointer; transition: all .22s var(--ease); }
+      .day-tab-btn:hover { color: var(--navy); background: rgba(26,56,112,.06); }
+      .day-tab-btn.active { background: var(--navy); color: #fff; box-shadow: var(--shadow-sm); }
+      .day-panel { display: none; }
+      .day-panel.active { display: block; animation: panel-in .3s var(--ease); }
+      @keyframes panel-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+      .aud-label { display: flex; align-items: center; gap: .6rem; font-family: "Montserrat", sans-serif; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--blue); margin: 1.75rem 0 .65rem; }
+      .aud-label::before { content: ""; display: block; width: 14px; height: 2px; background: var(--gold); border-radius: 99px; flex-shrink: 0; }
+      .aud-label:first-child { margin-top: 0; }
+
+      .schedule-scroll { overflow-x: auto; margin-top: .75rem; -webkit-overflow-scrolling: touch; border-radius: var(--r-md); box-shadow: var(--shadow-sm); }
+      .schedule-table { width: 100%; min-width: 580px; border-collapse: collapse; font-size: .93rem; border-radius: var(--r-md); overflow: hidden; }
+      .schedule-table th, .schedule-table td { padding: .95rem .85rem; border: 1px solid #dde8f5; text-align: left; vertical-align: top; }
+      .schedule-table th { background: var(--navy); color: #fff; font-weight: 700; text-transform: uppercase; font-size: .78rem; letter-spacing: .07em; font-family: "Montserrat", sans-serif; }
+      .schedule-table tbody tr { transition: background .15s ease; }
+      .schedule-table tbody tr:nth-child(odd) { background: #fafcff; }
+      .schedule-table tbody tr:hover { background: rgba(45,106,160,.06); }
+      .session-header { background: linear-gradient(135deg, var(--blue) 0%, #1e5a90 100%) !important; color: #fff !important; font-weight: 700 !important; font-size: .98rem !important; line-height: 1.45; }
+      .session-header strong { font-size: .93rem; display: inline-block; margin-bottom: .3rem; }
+      .session-header small { display: block; margin-top: .3rem; font-weight: 600; opacity: .9; line-height: 1.5; font-size: .85rem; }
+      .session-break { background: #fffbf0 !important; font-weight: 700; text-align: center; color: #7a5000; }
+      .session-live { background: linear-gradient(135deg, #e8f3ff 0%, #d4e8ff 100%) !important; font-weight: 700; text-align: center; color: var(--navy); }
+      .session-podcast { background: linear-gradient(135deg, #f0e8ff 0%, #e4d4ff 100%) !important; font-weight: 700; text-align: center; color: #3a1a70; font-size: .88rem; }
+      .speaker-name { font-weight: 700; color: var(--navy); line-height: 1.45; }
+
+      /* ── NETFLIX CAROUSEL ── */
+      .netflix-section-wrapper { position: relative; width: 100%; }
+      .netflix-carousel {
+        display: flex; gap: 10px;
+        overflow-x: auto; scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        cursor: grab; padding: .5rem 3rem 1rem;
+        scrollbar-width: none;
+      }
+      .netflix-carousel::-webkit-scrollbar { display: none; }
+      .netflix-carousel.dragging { cursor: grabbing; scroll-snap-type: none; }
+      .netflix-carousel.netflix-carousel--center {
+        justify-content: center;
+      }
+
+      .netflix-card {
+        flex: 0 0 240px; height: 360px;
+        border-radius: var(--r-sm); overflow: hidden;
+        position: relative; background: var(--navy-dark);
+        scroll-snap-align: start;
+        transition: transform .32s var(--ease), box-shadow .32s var(--ease), z-index 0s;
+        cursor: default; flex-shrink: 0;
+        box-shadow: 0 4px 16px rgba(0,0,0,.3);
+      }
+      .netflix-card:hover { transform: scale(1.05) translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,.55); z-index: 5; }
+      .netflix-card-bg {
+        position: absolute; inset: 0;
+        background-size: cover; background-position: center top;
+        transition: transform .5s var(--ease);
+      }
+      .netflix-card:hover .netflix-card-bg { transform: scale(1.06); }
+      .netflix-card-overlay {
+        position: absolute; inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.05) 100%);
+        transition: background .3s var(--ease);
+      }
+      .netflix-card:hover .netflix-card-overlay { background: linear-gradient(to top, rgba(0,0,0,.95) 0%, rgba(0,0,0,.5) 55%, rgba(0,0,0,.1) 100%); }
+      .netflix-card-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.1rem 1rem; z-index: 1; }
+      .netflix-card-content h3 { color: #fff; font-size: 1rem; font-weight: 700; margin: 0 0 .25rem; line-height: 1.3; }
+      .netflix-card-content p { color: rgba(255,255,255,.72); font-size: .82rem; margin: 0; }
+      .netflix-card-btn {
+        display: inline-flex; align-items: center; margin-top: .65rem;
+        padding: .4rem 1rem; background: var(--gold); color: var(--navy-dark) !important;
+        border-radius: var(--r-sm); font-weight: 700; font-size: .8rem;
+        text-decoration: none; transition: background .2s, transform .2s;
+        font-family: "Montserrat", sans-serif;
+      }
+      .netflix-card-btn:hover { background: var(--gold-light); transform: translateY(-1px); color: var(--navy-dark) !important; }
+
+      .netflix-card--speaker {
+        cursor: pointer;
+      }
+      .netflix-card--speaker:focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 3px;
+      }
+      button.netflix-card-saiba-mais {
+        display: inline-flex;
+        align-items: center;
+        margin-top: .55rem;
+        padding: .38rem .95rem;
+        background: transparent;
+        color: #fff !important;
+        border: 1.5px solid rgba(255,255,255,.55);
+        border-radius: var(--r-sm);
+        font-weight: 700;
+        font-size: .78rem;
+        font-family: "Montserrat", sans-serif;
+        cursor: pointer;
+        transition: background .2s, border-color .2s;
+      }
+      button.netflix-card-saiba-mais:hover {
+        background: rgba(255,255,255,.12);
+        border-color: rgba(255,255,255,.85);
+      }
+
+      .netflix-card-content--speaker-placeholder {
+        text-align: center;
+      }
+      .netflix-card-content--speaker-placeholder .netflix-card-saiba-mais {
+        margin-top: 0;
+      }
+
+      /* Empty card placeholder */
+      .netflix-card-empty-bg {
+        position: absolute; inset: 0;
+        background: linear-gradient(160deg, var(--navy-dark) 0%, var(--blue) 100%);
+        display: flex; align-items: center; justify-content: center;
+      }
+      .netflix-card-empty-bg svg { width: 56px; height: 56px; opacity: .18; color: #fff; }
+
+      /* Arrows */
+      .netflix-arrow {
+        position: absolute; top: 50%; transform: translateY(-50%);
+        z-index: 10; background: rgba(26,56,112,.85); border: none; color: #fff;
+        width: 44px; height: 44px; border-radius: 50%;
+        font-size: 1.6rem; line-height: 1; cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        transition: background .2s, transform .2s; box-shadow: 0 4px 16px rgba(0,0,0,.35);
+      }
+      .netflix-arrow:hover { background: var(--navy); transform: translateY(-50%) scale(1.1); }
+      .netflix-arrow-prev { left: 8px; }
+      .netflix-arrow-next { right: 8px; }
+      .section-light .netflix-arrow { background: rgba(255,255,255,.9); color: var(--navy); box-shadow: 0 4px 16px rgba(26,56,112,.2); }
+      .section-light .netflix-arrow:hover { background: #fff; }
+
+      /* ── COMMITTEE ── */
+      .committee-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.75rem; margin: 2rem auto; max-width: 1000px; }
+      .committee-item {
+        text-align: center; padding: 2rem 1.25rem 1.5rem;
+        background: #fff; border-radius: var(--r-md); box-shadow: var(--shadow-sm);
+        transition: transform .38s cubic-bezier(.175,.885,.32,1.275), box-shadow .38s var(--ease);
+        position: relative; overflow: hidden;
+      }
+      .committee-item::before {
+        content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+        background: linear-gradient(90deg, var(--navy), var(--gold));
+        transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease);
+      }
+      .committee-item:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+      .committee-item:hover::before { transform: scaleX(1); }
+      .committee-item img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; object-position: center top; margin: 0 auto 1.1rem; border: 4px solid var(--navy); box-shadow: 0 4px 16px rgba(26,56,112,.15); transition: border-color .35s var(--ease), transform .35s var(--ease); }
+      .committee-item:hover img { border-color: var(--gold); transform: scale(1.06); }
+      .committee-item h4 { color: var(--navy); font-size: 1rem; margin: .4rem 0 .2rem; font-weight: 700; line-height: 1.3; font-family: "Montserrat", sans-serif; }
+      .committee-item p { font-size: .82rem; color: var(--muted-text); margin: 0; }
+
+      /* ── SPONSORS ── */
+      .sponsors-grid { display: flex; flex-wrap: wrap; gap: 2.5rem; margin: 2rem auto; align-items: center; justify-content: center; max-width: 900px; min-height: 6rem; }
+      .sponsor-item img { max-width: 180px; max-height: 68px; width: auto; height: auto; object-fit: contain; filter: grayscale(.15); transition: filter .2s; opacity: .85; }
+      .sponsor-item img:hover { filter: none; opacity: 1; }
+
+      /* ── MAP ── */
+      .map-frame { border: 0; width: 100%; height: 420px; border-radius: var(--r-md); box-shadow: var(--shadow-md); display: block; }
+
+      /* ── GALLERY ── */
+      .gallery-panel { display: none; }
+      .gallery-panel.active { display: block; animation: panel-in .3s var(--ease); }
+      .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+      .gallery-item { border-radius: var(--r-sm); overflow: hidden; aspect-ratio: 4/3; background: rgba(255,255,255,.08); position: relative; cursor: pointer; }
+      .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s var(--ease); }
+      .gallery-item:hover img { transform: scale(1.06); }
+      .gallery-placeholder { text-align: center; padding: 3.5rem 2rem; color: rgba(255,255,255,.5); font-size: 1rem; }
+      .gallery-placeholder svg { width: 48px; height: 48px; opacity: .3; margin: 0 auto 1rem; display: block; }
+      .netflix-card-content p.netflix-card-meta {
+        font-size: .72rem;
+        color: rgba(255,255,255,.82);
+        margin: .35rem 0 0;
+        line-height: 1.35;
+        font-weight: 600;
+      }
+
+      /* ── FOOTER MULTI-COLUMN ── */
       footer {
         background: linear-gradient(140deg, var(--navy-dark) 0%, #1a3870 55%, var(--blue) 100%);
         color: rgba(255,255,255,.85);
-        padding: 4rem 2rem 2.5rem;
       }
-
-      .footer-inner {
-        max-width: 1100px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2.5rem;
-        align-items: start;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid rgba(255,255,255,.12);
+      .footer-top { padding: 4rem 2rem 2rem; }
+      .footer-inner-wide {
+        max-width: 1140px; margin: 0 auto;
+        display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem; align-items: start;
+        padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.12);
       }
-
-      .footer-brand img {
-        max-width: 160px;
-        height: auto;
-        margin-bottom: 1rem;
-        filter: brightness(0) invert(1);
-        opacity: .9;
-      }
-
-      .footer-brand p { font-size: .88rem; color: rgba(255,255,255,.65); margin: 0; }
-
-      .footer-links h4 {
-        font-size: .72rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: .12em;
-        color: var(--gold);
-        margin-bottom: .85rem;
+      .footer-brand img { max-width: 150px; height: auto; margin-bottom: 1rem; filter: brightness(0) invert(1); opacity: .9; }
+      .footer-brand p { font-size: .88rem; color: rgba(255,255,255,.65); margin: 0 0 .4rem; }
+      .footer-col h4 {
+        font-size: .72rem; font-weight: 700; text-transform: uppercase;
+        letter-spacing: .12em; color: var(--gold); margin-bottom: .85rem; margin-top: 0;
         font-family: "Montserrat", sans-serif;
       }
-      .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
-      .footer-links ul li a { font-size: .87rem; color: rgba(255,255,255,.72); transition: color .2s; }
-      .footer-links ul li a:hover { color: var(--gold); }
+      .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+      .footer-col ul li a { font-size: .87rem; color: rgba(255,255,255,.72); transition: color .2s; }
+      .footer-col ul li a:hover { color: var(--gold); }
+      .footer-col p, .footer-col address { font-size: .87rem; color: rgba(255,255,255,.65); font-style: normal; margin: 0 0 .4rem; line-height: 1.6; }
+      .footer-col a { color: var(--gold-light); }
+      .footer-col a:hover { color: #fff; }
 
       .footer-bottom {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding-top: 1.5rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: .75rem;
-        align-items: center;
-        justify-content: space-between;
+        max-width: 1140px; margin: 0 auto; padding: 1.5rem 2rem;
+        display: flex; flex-wrap: wrap; gap: .75rem;
+        align-items: center; justify-content: space-between;
       }
       .footer-bottom p { font-size: .82rem; color: rgba(255,255,255,.5); margin: 0; }
       .footer-bottom a { color: var(--gold-light); font-weight: 600; }
       .footer-bottom a:hover { color: #fff; text-decoration: underline; }
 
-      footer a { color: var(--gold); font-weight: 600; }
-      footer a:hover { color: #fff; text-decoration: underline; }
-      footer p { margin: .6rem 0; }
-
-      .social-links {
-        display: flex;
-        gap: .75rem;
-        flex-wrap: wrap;
-        margin-top: 1rem;
-      }
+      .social-links { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1rem; }
       .social-link {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 42px; height: 42px;
-        border-radius: 50%;
-        background: rgba(255,255,255,.10);
-        border: 1px solid rgba(255,255,255,.15);
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 40px; height: 40px; border-radius: 50%;
+        background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.15);
         transition: background .22s var(--ease), transform .2s var(--ease), border-color .22s;
       }
-      .social-link:hover {
-        background: rgba(240,160,32,.30);
-        border-color: rgba(240,160,32,.5);
-        transform: translateY(-2px);
-      }
-      .social-link svg { width: 20px; height: 20px; fill: #fff; }
+      .social-link:hover { background: rgba(240,160,32,.30); border-color: rgba(240,160,32,.5); transform: translateY(-2px); }
+      .social-link svg { width: 18px; height: 18px; fill: #fff; }
 
-      /* ── MOBILE NAV ── */
+      /* ── MODAL ── */
+      .modal { position: fixed; z-index: 10000; inset: 0; width: 100vw; height: 100dvh; background: rgba(10,22,56,.75); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: flex; justify-content: center; align-items: center; overflow: hidden; visibility: hidden; opacity: 0; transition: opacity .3s var(--ease), visibility .3s; }
+      .modal.show { visibility: visible; opacity: 1; }
+      .modal-content { background: #fff; color: var(--dark-text); border-radius: var(--r-lg); box-shadow: var(--shadow-lg); max-width: 520px; width: 90vw; max-height: 90dvh; overflow-y: auto; padding: 2.5rem 2rem 1.75rem; position: relative; text-align: center; animation: modal-pop .3s var(--ease) forwards; }
+      .modal-content.modal-content--speaker-placeholder-only {
+        padding: 2.75rem 2rem 2rem;
+      }
+      .speaker-modal-graphic {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        border-radius: 50%;
+        background: linear-gradient(160deg, var(--navy-dark) 0%, var(--blue) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid rgba(26,56,112,.12);
+      }
+      .speaker-modal-graphic svg {
+        width: 56px;
+        height: 56px;
+        opacity: .35;
+        color: #fff;
+      }
+
+      @keyframes modal-pop { from { opacity: 0; transform: scale(.93) translateY(12px); } to { opacity: 1; transform: none; } }
+      .close-modal { position: absolute; top: 1rem; right: 1.1rem; width: 32px; height: 32px; border-radius: 50%; background: rgba(26,56,112,.08); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--navy); transition: background .2s, color .2s; }
+      .close-modal:hover { background: var(--navy); color: #fff; }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 1024px) {
+        .sobre-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+        .dvs-outer { height: 320px; }
+        .hero-logos-cols { grid-template-columns: 1fr; gap: 1.5rem; }
+        .hero-logos-col-divider { display: none; }
+        .footer-inner-wide { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      }
       @media (max-width: 900px) {
-        nav {
-          grid-template-columns: auto auto;
-          padding: .55rem 1.1rem;
-        }
-        /* hide centre menu in grid; will be shown as overlay */
-        nav ul {
-          grid-column: 1 / -1;
-          grid-row: 2;
-          position: fixed;
-          top: 64px; left: 0; right: 0;
-          background: rgba(255,255,255,.98);
-          backdrop-filter: blur(16px);
-          -webkit-backdrop-filter: blur(16px);
-          flex-direction: column;
-          align-items: stretch;
-          justify-content: flex-start;
-          padding: .4rem 0;
-          box-shadow: 0 12px 32px rgba(26,56,112,.14);
-          max-height: 0;
-          overflow: hidden;
-          opacity: 0;
-          transition: max-height .35s var(--ease), opacity .28s var(--ease);
-          border-bottom: 1px solid rgba(26,56,112,.08);
-        }
-        nav ul.active { max-height: 600px; opacity: 1; overflow-y: auto; }
+        nav { grid-template-columns: auto auto; padding: .55rem 1.1rem; }
+        nav ul { grid-column: 1 / -1; grid-row: 2; position: fixed; top: 64px; left: 0; right: 0; background: rgba(255,255,255,.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); flex-direction: column; align-items: stretch; justify-content: flex-start; padding: .4rem 0; box-shadow: 0 12px 32px rgba(26,56,112,.14); max-height: 0; overflow: hidden; opacity: 0; transition: max-height .35s var(--ease), opacity .28s var(--ease); border-bottom: 1px solid rgba(26,56,112,.08); }
+        nav ul.active { max-height: 920px; opacity: 1; overflow-y: auto; }
         nav ul li { border-bottom: 1px solid rgba(26,56,112,.06); }
         nav ul li a { display: block; padding: .9rem 1.5rem; }
         nav ul li a::after { display: none; }
-
         .mobile-menu-toggle { display: flex; }
-
-        /* Hide desktop CTA on small screens, show only toggle */
         .nav-actions .nav-cta { display: none; }
-
-        /* Hero mobile */
         header.hero { min-height: 100svh; padding: 90px 1rem 4rem; }
         header.hero .hero-logo { max-width: 240px; }
         .hero-chip { font-size: .78rem; padding: .4rem .9rem; }
         .hero-scroll { display: none; }
-
-        /* Typography */
         h1 { font-size: 1.75rem; }
         h2 { font-size: 1.5rem; }
-
-        /* Sections */
         section { padding: 3.5rem 1.1rem; }
-
-        /* Footer */
-        .footer-inner { grid-template-columns: 1fr; gap: 1.75rem; }
+        .footer-inner-wide { grid-template-columns: 1fr 1fr; gap: 1.75rem; }
         .footer-bottom { flex-direction: column; align-items: flex-start; gap: .5rem; }
-
-        .day-tab-btn { font-size: .82rem; padding: .55rem .9rem; }
+        .committee-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+        .schedule-table { font-size: .83rem; }
+        .schedule-table th, .schedule-table td { padding: .6rem .5rem; }
+        .day-tabs { width: 100%; }
+        .netflix-card { flex: 0 0 180px; height: 270px; }
+        .netflix-arrow { width: 36px; height: 36px; font-size: 1.2rem; }
+        .netflix-carousel { padding: .5rem 2.5rem .75rem; }
       }
-
-      @media (max-width: 480px) {
+      @media (max-width: 600px) {
+        .footer-inner-wide { grid-template-columns: 1fr; }
         .hero-chips { gap: .45rem; }
         .hero-chip { font-size: .74rem; padding: .35rem .8rem; }
         .btn-group { gap: .6rem; }
         .btn-primary, .btn-outline { font-size: .9rem; padding: .85rem 1.6rem; }
+        .netflix-card { flex: 0 0 155px; height: 235px; }
+        .netflix-carousel { padding: .5rem 2rem .75rem; }
+        .netflix-arrow { width: 32px; height: 32px; font-size: 1rem; }
       }
 
-      /* ── PERFORMANCE ── */
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
       }
@@ -1322,34 +736,27 @@
   <body>
     <!-- ── NAV ── -->
     <nav id="main-nav">
-      <!-- Logo — left column -->
       <a href="#top" class="logo-small">
         <img src="assets/logo-endogineco.png" alt="Congresso Endogineco 2026" />
       </a>
 
-      <!-- Links — centre column -->
       <ul id="nav-menu">
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#comissao">Comissão</a></li>
         <li><a href="#programacao">Programação</a></li>
         <li><a href="#palestrantes">Palestrantes</a></li>
+        <li><a href="#pre-congresso">Pré-congresso</a></li>
+        <li><a href="#submissao">Trabalhos Científicos</a></li>
         <li><a href="#local">Local</a></li>
         <li><a href="#inscricao">Inscrições</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="#patrocinadores">Patrocinadores</a></li>
+        <li><a href="#galeria">Galeria</a></li>
       </ul>
 
-      <!-- CTA + mobile toggle — right column -->
       <div class="nav-actions">
         <a class="nav-cta" href="#inscricao">Inscreva-se</a>
-        <button
-          type="button"
-          class="mobile-menu-toggle"
-          id="mobile-menu-toggle"
-          aria-label="Abrir menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
         </button>
       </div>
     </nav>
@@ -1361,137 +768,222 @@
       <div class="hero-content">
 
         <div class="hero-logo-wrap">
-          <img
-            src="assets/logo-endogineco.png"
-            alt="Congresso Internacional Endogineco 2026"
-            class="hero-logo"
-            fetchpriority="high"
-          />
+          <img src="assets/logo-endogineco.png" alt="Congresso Internacional Endogineco 2026" class="hero-logo" fetchpriority="high" />
         </div>
 
         <!-- Info chips -->
         <div class="hero-chips">
-          <span class="hero-chip">
+          <a href="#pre-congresso" class="hero-chip">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            27, 28 e 29 de agosto de 2026
-          </span>
-          <span class="hero-chip">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            08h às 18h
-          </span>
-          <span class="hero-chip">
+            Pré-congresso: 27 de agosto de 2026
+          </a>
+          <a href="#programacao" class="hero-chip">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Congresso: 28 e 29 de agosto de 2026
+          </a>
+          <a href="#local" class="hero-chip">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             Mar Hotel Conventions · Recife/PE
-          </span>
+          </a>
         </div>
 
         <div class="btn-group">
           <a class="btn-primary" href="#inscricao">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-            Inscreva-se
+            Inscreva-se no Congresso
           </a>
-          <a class="btn-outline" href="#programacao">Ver Programação</a>
+          <a class="btn-outline" href="#programacao">Programação Congresso</a>
         </div>
 
+        <!-- Logos section: two columns -->
         <div class="hero-logos-section">
-          <h3>Realização</h3>
-          <div class="hero-logo-grid">
-            <img src="organizers/logo-isep.png" alt="ISEP" loading="eager" />
-            <img src="organizers/logo-hospital-santa-joana.png" alt="Hospital Santa Joana" loading="eager" />
-            <img src="organizers/logo-rede-americas.png" alt="Rede Américas" loading="eager" />
+          <div class="hero-logos-cols">
+            <div class="hero-logos-col">
+              <h3>Realização</h3>
+              <div class="hero-logo-grid">
+                <img src="organizers/logo-isep.png" alt="ISEP" loading="eager" />
+                <img src="organizers/logo-hospital-santa-joana.png" alt="Hospital Santa Joana" loading="eager" />
+                <img src="organizers/logo-rede-americas.png" alt="Rede Américas" loading="eager" />
+              </div>
+            </div>
+            <div class="hero-logos-col-divider" aria-hidden="true"></div>
+            <div class="hero-logos-col">
+              <h3>Apoio Institucional</h3>
+              <div class="hero-logo-grid">
+                <img src="institutional-support/gimi.png" alt="GIMI" loading="eager" />
+                <img src="institutional-support/sogope.png" alt="SOGOPE" loading="eager" />
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- ======================================================
+             CARROSSEL DE PATROCINADORES — descomenta quando tiver os logos
+             ======================================================
+        <div class="sponsors-marquee" style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,.15); overflow: hidden;">
+          <div class="sponsors-marquee-track" style="display: flex; gap: 2.5rem; animation: marquee-scroll 30s linear infinite;">
+            <img src="sponsors/patrocinador-1.png" alt="Patrocinador" style="max-height: 40px; filter: brightness(0) invert(1); opacity: .7;" />
+            <img src="sponsors/patrocinador-2.png" alt="Patrocinador" style="max-height: 40px; filter: brightness(0) invert(1); opacity: .7;" />
+          </div>
+        </div>
+        @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        -->
+
       </div>
 
-      <!-- Scroll indicator -->
-      <div class="hero-scroll" aria-hidden="true">
-        <span></span>
-      </div>
+      <div class="hero-scroll" aria-hidden="true"><span></span></div>
     </header>
 
     <!-- ── SOBRE ── -->
-    <section id="sobre" class="fade-in">
+    <section id="sobre" class="section-light fade-in">
       <div class="container">
-        <h2 class="section-title">Sobre o evento</h2>
-        <p>
-          O <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong> tem a satisfação de
-          apresentar o <strong>Congresso Endogineco 2026</strong>, que será realizado nos dias
-          <strong>27, 28 e 29 de agosto de 2026</strong>, das 08h às 18h, em Recife/PE, conforme
-          programação preliminar.
-        </p>
-        <p>
-          Trata-se de um dos eventos científicos mais aguardados pela comunidade médica e
-          multidisciplinar. Em 2025, o evento foi um grande sucesso, reunindo profissionais
-          renomados no tratamento da endometriose de todas as regiões do país, além de cirurgias
-          ao vivo, lançamentos de curativos cirúrgicos, hemostáticos e diversas inovações
-          tecnológicas.
-        </p>
-        <p>
-          Além das cirurgias ao vivo de altíssimo padrão e multicêntricas, serão mantidos os
-          <em>talk shows</em>, videoaulas, atividades <em>hands in the dough</em> e
-          <em>cross fires</em>. Em 2026, o Congresso chega com mais inovações, premiações para
-          trabalhos científicos, vídeos de cirurgias semi-editados e estúdio de podcast.
-        </p>
-        <p>
-          O Congresso tem como objetivo fortalecer a endoginecologia regional, aproximar as
-          subespecialidades e áreas afins, além de aprimorar o tratamento de doenças que exigem
-          atenção multidisciplinar, como a endometriose. Busca também contribuir para o
-          fortalecimento da ginecologia nacional, inspirando novos profissionais em sua jornada
-          de aprimoramento da experiência da paciente.
-        </p>
-        <p>
-          O evento contará com a participação de um grande número de médicos de diferentes
-          especialidades, residentes e equipe multidisciplinar de todo o Brasil.
-        </p>
+        <div class="sobre-layout">
+          <!-- Left: text + chips -->
+          <div class="sobre-text">
+            <span class="section-eyebrow">Sobre o evento</span>
+            <h2 class="section-title">O Congresso Endogineco 2026</h2>
+            <p>
+              O <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong> tem a satisfação de
+              apresentar o <strong>Congresso Endogineco 2026</strong>, que será realizado nos dias
+              <strong>27, 28 e 29 de agosto de 2026</strong>, em Recife/PE.
+            </p>
+            <p>
+              Em 2025, o evento foi um grande sucesso, reunindo profissionais renomados no
+              tratamento da endometriose de todas as regiões do país, além de cirurgias ao vivo,
+              lançamentos e diversas inovações tecnológicas.
+            </p>
+            <p>
+              Em 2026, o Congresso chega com ainda mais inovações: premiações para trabalhos
+              científicos, vídeos semi-editados de cirurgias e um estúdio de podcast — tudo para
+              fortalecer a endoginecologia e inspirar novos profissionais.
+            </p>
+            <p>
+              O evento contará com a participação de médicos de diferentes especialidades,
+              residentes e equipe multidisciplinar de todo o Brasil.
+            </p>
 
-        <div style="margin-top: 2rem;">
-          <h3 style="color: var(--blue); font-size: 1.05rem; margin-bottom: 1.25rem;">Realização</h3>
-          <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: flex-start;">
-            <img src="organizers/logo-isep.png" alt="ISEP" style="max-width: 180px; max-height: 72px; width: auto; height: auto; object-fit: contain;" />
-            <img src="organizers/logo-hospital-santa-joana.png" alt="Hospital Santa Joana" style="max-width: 180px; max-height: 72px; width: auto; height: auto; object-fit: contain;" />
-            <img src="organizers/logo-rede-americas.png" alt="Rede Américas" style="max-width: 180px; max-height: 72px; width: auto; height: auto; object-fit: contain;" />
+            <!-- Feature chips -->
+            <div class="sobre-chips">
+              <span class="sobre-chip">🎬 9 Cirurgias Ao Vivo</span>
+              <span class="sobre-chip">⚡ Cross Fires</span>
+              <span class="sobre-chip">📹 Vídeos Show Cases</span>
+              <span class="sobre-chip">🎙️ Podcasts</span>
+              <span class="sobre-chip">🎭 Talk Shows</span>
+              <span class="sobre-chip">🏥 Casos Clínicos</span>
+              <span class="sobre-chip">📣 Palestras</span>
+              <span class="sobre-chip">🎓 Conferências</span>
+              <span class="sobre-chip">✨ E muito mais!</span>
+            </div>
+          </div>
+
+          <!-- Right: vertical photo carousel -->
+          <div class="sobre-gallery">
+            <div class="dvs-outer">
+              <!-- Coluna esquerda (desce) -->
+              <div class="dvs-col">
+                <div class="dvs-track dvs-track-down">
+                  <div class="dvs-card">
+                    <div class="dvs-card-placeholder">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+                      Edição 2025
+                    </div>
+                  </div>
+                  <div class="dvs-card">
+                    <div class="dvs-card-placeholder" style="background: linear-gradient(135deg, #102450 0%, #1a3870 100%);">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+                      Edição 2025
+                    </div>
+                  </div>
+                  <div class="dvs-card">
+                    <div class="dvs-card-placeholder" style="background: linear-gradient(135deg, #1e4a8a 0%, #2d6aa0 100%);">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+                      Edição 2025
+                    </div>
+                  </div>
+                  <!-- duplicatas para loop infinito -->
+                  <div class="dvs-card">
+                    <div class="dvs-card-placeholder">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+                      Edição 2025
+                    </div>
+                  </div>
+                  <div class="dvs-card">
+                    <div class="dvs-card-placeholder" style="background: linear-gradient(135deg, #102450 0%, #1a3870 100%);">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+                      Edição 2025
+                    </div>
+                  </div>
+                  <div class="dvs-card">
+                    <div class="dvs-card-placeholder" style="background: linear-gradient(135deg, #1e4a8a 0%, #2d6aa0 100%);">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+                      Edição 2025
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Coluna direita (sobe) -->
+              <div class="dvs-col">
+                <div class="dvs-track dvs-track-up">
+                  <div class="dvs-card">
+                    <div class="dvs-card-placeholder" style="background: linear-gradient(135deg, #1a3870 0%, #f0a020 100%); opacity:.85;">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+                      Edição 2025
+                    </div>
+                  </div>
+                  <div class="dvs-card">
+                    <div class="dvs-card-placeholder" style="background: linear-gradient(135deg, #2d6aa0 0%, #102450 100%);">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+                      Edição 2025
+                    </div>
+                  </div>
+                  <div class="dvs-card">
+                    <div class="dvs-card-placeholder">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+                      Edição 2025
+                    </div>
+                  </div>
+                  <!-- duplicatas para loop infinito -->
+                  <div class="dvs-card">
+                    <div class="dvs-card-placeholder" style="background: linear-gradient(135deg, #1a3870 0%, #f0a020 100%); opacity:.85;">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+                      Edição 2025
+                    </div>
+                  </div>
+                  <div class="dvs-card">
+                    <div class="dvs-card-placeholder" style="background: linear-gradient(135deg, #2d6aa0 0%, #102450 100%);">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+                      Edição 2025
+                    </div>
+                  </div>
+                  <div class="dvs-card">
+                    <div class="dvs-card-placeholder">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+                      Edição 2025
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ── COUNTDOWN ── -->
-    <section id="countdown-section" class="fade-in">
-      <div class="container">
-        <h2>Contagem regressiva</h2>
-        <p class="subtitle">para o início do Congresso Endogineco 2026</p>
-        <div class="countdown-timer">
-          <div class="countdown-item">
-            <span id="days" class="countdown-number">00</span>
-            <span class="countdown-label">Dias</span>
-          </div>
-          <div class="countdown-item">
-            <span id="hours" class="countdown-number">00</span>
-            <span class="countdown-label">Horas</span>
-          </div>
-          <div class="countdown-item">
-            <span id="minutes" class="countdown-number">00</span>
-            <span class="countdown-label">Minutos</span>
-          </div>
-          <div class="countdown-item">
-            <span id="seconds" class="countdown-number">00</span>
-            <span class="countdown-label">Segundos</span>
+        <div class="sobre-countdown-wrap">
+          <h3>Contagem</h3>
+          <p class="sobre-countdown-sub">Regressiva para o início do Congresso Endogineco 2026</p>
+          <div class="countdown-timer">
+            <div class="countdown-item"><span id="days" class="countdown-number">00</span><span class="countdown-label">Dias</span></div>
+            <div class="countdown-item"><span id="hours" class="countdown-number">00</span><span class="countdown-label">Horas</span></div>
+            <div class="countdown-item"><span id="minutes" class="countdown-number">00</span><span class="countdown-label">Minutos</span></div>
+            <div class="countdown-item"><span id="seconds" class="countdown-number">00</span><span class="countdown-label">Segundos</span></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ── COMISSÃO ── -->
-    <section id="comissao" class="fade-in">
+    <section id="comissao" class="section-dark fade-in">
       <div class="container text-center">
-        <h2 class="section-title text-center">Comissão Organizadora</h2>
-        <p
-          class="text-center"
-          style="font-size: 1.1rem; margin-bottom: 3rem; max-width: 720px; margin-left: auto; margin-right: auto;"
-        >
-          A programação científica está sob responsabilidade de um time multidisciplinar de
-          especialistas dedicados à endoginecologia.
-        </p>
+        <h2 class="section-title text-center" style="display:block">Comissão Organizadora</h2>
         <div class="committee-grid">
           <div class="committee-item">
             <img src="committee/edilberto-rocha.png" alt="Dr. Edilberto Rocha" loading="lazy" />
@@ -1514,57 +1006,28 @@
     </section>
 
     <!-- ── PROGRAMAÇÃO ── -->
-    <section id="programacao" class="fade-in">
+    <section id="programacao" class="section-light fade-in">
       <div class="container">
         <div class="schedule-header">
           <div class="schedule-title-row">
             <h2 class="schedule-title section-title">Programação científica</h2>
             <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center;">
-              <a
-                href="schedule/programacao-preliminar-2026.pdf"
-                class="download-pdf-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
+              <a href="schedule/programacao-preliminar-2026.pdf" class="download-pdf-btn" target="_blank" rel="noopener noreferrer">
+                <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Baixar PDF
               </a>
-              <a
-                href="schedule/programacao-preliminar-2026.xlsx"
-                class="download-pdf-btn"
-                download
-              >
-                <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
-                Baixar XLSX
+              <a href="schedule/programacao-preliminar-2026.xlsx" class="download-pdf-btn" download>
+                <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Baixar planilha
               </a>
             </div>
           </div>
         </div>
 
-        <p style="color: var(--muted-text); margin-bottom: 1.5rem;">
-          Programação preliminar — <strong>27, 28 e 29 de agosto de 2026</strong>, das 08h às 18h.
-          Alterações sujeitas a confirmação.
-        </p>
-
-        <!-- Seletor de dia -->
         <div class="day-tabs" role="tablist" aria-label="Dias do congresso">
-          <button class="day-tab-btn active" role="tab" data-day="quinta" aria-selected="true">
-            Quinta, 27/08
-          </button>
-          <button class="day-tab-btn" role="tab" data-day="sexta" aria-selected="false">
-            Sexta, 28/08
-          </button>
-          <button class="day-tab-btn" role="tab" data-day="sabado" aria-selected="false">
-            Sábado, 29/08
-          </button>
+          <button class="day-tab-btn active" role="tab" data-day="quinta" aria-selected="true">Quinta, 27/08</button>
+          <button class="day-tab-btn" role="tab" data-day="sexta" aria-selected="false">Sexta, 28/08</button>
+          <button class="day-tab-btn" role="tab" data-day="sabado" aria-selected="false">Sábado, 29/08</button>
         </div>
 
         <!-- ─ DIA 1: QUINTA 27/08 ─ -->
@@ -1573,33 +1036,12 @@
           <p class="aud-label">Auditório C — Curso de USG Mapeamento de Endometriose</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
-              <thead>
-                <tr>
-                  <th style="width:140px">Horário</th>
-                  <th>Atividade</th>
-                  <th style="width:220px">Coordenação / Palestrante</th>
-                </tr>
-              </thead>
+              <thead><tr><th style="width:140px">Horário</th><th>Atividade</th><th style="width:220px">Coordenação / Palestrante</th></tr></thead>
               <tbody>
-                <tr>
-                  <td>07:30</td>
-                  <td colspan="2" class="session-break"><strong>CREDENCIAMENTO — Curso Pré-Congresso (USG Mapeamento)</strong></td>
-                </tr>
-                <tr>
-                  <td colspan="3" class="session-header">
-                    <strong>08:00 – 17:30 (dia todo)</strong><br />
-                    Curso de USG Mapeamento de Endometriose<br />
-                    <small>Coordenação: MEDERE — Cecília Pontes e Penélope Melo</small>
-                  </td>
-                </tr>
-                <tr>
-                  <td>12:00 – 13:30</td>
-                  <td colspan="2" class="session-break"><strong>INTERVALO</strong></td>
-                </tr>
-                <tr>
-                  <td>13:30 – 17:00</td>
-                  <td colspan="2" class="session-live"><strong>CONTINUAÇÃO DO CURSO</strong></td>
-                </tr>
+                <tr><td>7:30</td><td colspan="2" class="session-break"><strong>Credenciamento curso Pré Congresso (USG Mapeamento)</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>08:00 – 17:30</strong><br />AUDITÓRIO C — Curso de USG Mapeamento de Endometriose<br /><small>Coordenação: MEDERE (Cecília Pontes e Penélope Melo)</small></td></tr>
+                <tr><td>12:00 – 13:30</td><td colspan="2" class="session-break"><strong>INTERVALO</strong></td></tr>
+                <tr><td>13:30 – 17:00</td><td colspan="2" class="session-live"><strong>CONTINUAÇÃO DO CURSO</strong></td></tr>
               </tbody>
             </table>
           </div>
@@ -1607,37 +1049,13 @@
           <p class="aud-label">Auditório A — A Videocirurgia na Oncoginecologia</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
-              <thead>
-                <tr>
-                  <th style="width:140px">Horário</th>
-                  <th>Atividade</th>
-                  <th style="width:220px">Coordenação / Palestrante</th>
-                </tr>
-              </thead>
+              <thead><tr><th style="width:140px">Horário</th><th>Atividade</th><th style="width:220px">Coordenação / Palestrante</th></tr></thead>
               <tbody>
-                <tr>
-                  <td>12:30</td>
-                  <td colspan="2" class="session-break"><strong>CREDENCIAMENTO — Cursos Pré-Congresso</strong></td>
-                </tr>
-                <tr>
-                  <td>13:00 – 13:15</td>
-                  <td colspan="2" class="session-break"><strong>ABERTURA</strong></td>
-                </tr>
-                <tr>
-                  <td colspan="3" class="session-header">
-                    <strong>13:15 – 15:00</strong><br />
-                    A Videocirurgia na Oncoginecologia<br />
-                    <small>Coordenação: Iolanda Matias</small>
-                  </td>
-                </tr>
-                <tr>
-                  <td>15:00 – 15:30</td>
-                  <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
-                </tr>
-                <tr>
-                  <td>15:30 – 17:00</td>
-                  <td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td>
-                </tr>
+                <tr><td>12:30</td><td colspan="2" class="session-break"><strong>Credenciamento cursos Pré Congresso</strong></td></tr>
+                <tr><td>13:00 – 13:15</td><td colspan="2" class="session-break"><strong>Abertura</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:15 – 15:00</strong><br />AUDITÓRIO A — A Videocirurgia na Oncoginecologia<br /><small>Coordenação: Iolanda Matias</small></td></tr>
+                <tr><td>15:00 – 15:30</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>15:30 – 17:00</td><td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td></tr>
               </tbody>
             </table>
           </div>
@@ -1645,36 +1063,13 @@
           <p class="aud-label">Auditório B — Curso de Nutrição para Pacientes com Endometriose</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
-              <thead>
-                <tr>
-                  <th style="width:140px">Horário</th>
-                  <th>Atividade</th>
-                  <th style="width:220px">Coordenação / Palestrante</th>
-                </tr>
-              </thead>
+              <thead><tr><th style="width:140px">Horário</th><th>Atividade</th><th style="width:220px">Coordenação / Palestrante</th></tr></thead>
               <tbody>
-                <tr>
-                  <td>12:30</td>
-                  <td colspan="2" class="session-break"><strong>CREDENCIAMENTO — Cursos Pré-Congresso</strong></td>
-                </tr>
-                <tr>
-                  <td>13:00 – 13:15</td>
-                  <td colspan="2" class="session-break"><strong>ABERTURA</strong></td>
-                </tr>
-                <tr>
-                  <td colspan="3" class="session-header">
-                    <strong>13:15 – 15:00</strong><br />
-                    Curso de Nutrição para Pacientes com Endometriose
-                  </td>
-                </tr>
-                <tr>
-                  <td>15:00 – 15:30</td>
-                  <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
-                </tr>
-                <tr>
-                  <td>15:30 – 17:00</td>
-                  <td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td>
-                </tr>
+                <tr><td>12:30</td><td colspan="2" class="session-break"><strong>Credenciamento cursos Pré Congresso</strong></td></tr>
+                <tr><td>13:00 – 13:15</td><td colspan="2" class="session-break"><strong>Abertura</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:15 – 15:00</strong><br />AUDITÓRIO B — Curso de Nutrição para pacientes com Endometriose<br /><small>Coordenação: (a confirmar)</small></td></tr>
+                <tr><td>15:00 – 15:30</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>15:30 – 17:00</td><td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td></tr>
               </tbody>
             </table>
           </div>
@@ -1682,21 +1077,9 @@
           <p class="aud-label">Foyer — Curso de Sutura Dry Lab em Sutura Endoscópica</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
-              <thead>
-                <tr>
-                  <th style="width:140px">Horário</th>
-                  <th>Atividade</th>
-                  <th style="width:220px">Coordenação / Palestrante</th>
-                </tr>
-              </thead>
+              <thead><tr><th style="width:140px">Horário</th><th>Atividade</th><th style="width:220px">Coordenação / Palestrante</th></tr></thead>
               <tbody>
-                <tr>
-                  <td colspan="3" class="session-header">
-                    <strong>13:15 – 17:00</strong><br />
-                    Curso de Sutura Dry Lab em Sutura Endoscópica<br />
-                    <small>Coordenação: Guilherme Zanluchi</small>
-                  </td>
-                </tr>
+                <tr><td colspan="3" class="session-header"><strong>13:15 – 17:00</strong><br />FOYER — Curso de Sutura Dry Lab em sutura Endoscópica<br /><small>Coordenação: Guilherme Zanluchi</small></td></tr>
               </tbody>
             </table>
           </div>
@@ -1705,530 +1088,139 @@
 
         <!-- ─ DIA 2: SEXTA 28/08 ─ -->
         <div class="day-panel" id="panel-sexta">
-
           <p class="aud-label">Auditório A</p>
           <div class="schedule-scroll">
-              <table class="schedule-table">
-                <thead>
-                  <tr>
-                    <th style="width:155px">Horário</th>
-                    <th>Atividade</th>
-                    <th style="width:220px">Palestrante</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>08:00 – 08:15</td>
-                    <td colspan="2" class="session-break"><strong>CREDENCIAMENTO</strong></td>
-                  </tr>
-                  <tr>
-                    <td>08:15 – 08:30</td>
-                    <td colspan="2" class="session-break">
-                      <strong>ABERTURA</strong>
-                      <div style="font-weight:400; margin-top:0.35rem; font-size:0.88rem;">
-                        Érica Batista · Edilberto Rocha · Jardel Soares · Iolanda Matias · Agostinho Machado · Juliana Zaidan
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>08:35 – 09:00</td>
-                    <td>Conferência — Como a IA pode influenciar sua conduta do consultório ao pós-cirúrgico?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-header">
-                      <strong>09:05 – 10:05 (01 hora)</strong><br />
-                      MESA 1 — Miomas Uterinos
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>09:05 – 09:15 (10 min)</td>
-                    <td>Estratégias para Diminuir o Sangramento nas Miomectomias — qual a minha estratégia?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>09:15 – 09:25 (10 min)</td>
-                    <td>&nbsp;</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>09:25 – 09:35 (10 min)</td>
-                    <td>Extração de miomas — existe a melhor técnica?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>09:35 – 09:45 (10 min)</td>
-                    <td>Conversão cirúrgica em miomectomia — falha na indicação ou decisão correta?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>09:45 – 10:05 (20 min)</td>
-                    <td><em>Cross Fire</em> — Miomectomia Robótica × Miomectomia Videolaparoscópica</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>10:05 – 10:35 (30 min)</td>
-                    <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-header">
-                      <strong>10:35 – 12:15 (01h40)</strong><br />
-                      MESA 2 — Vídeo Histeroscopia
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>10:35 – 10:45 (10 min)</td>
-                    <td>Vídeo Histeroscopia Ambulatorial — qual o espaço até onde ir? Como minimizar o temor? Como diminuir a dor?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>11:05 – 11:20 (15 min)</td>
-                    <td>Hiperplasia Endometrial e Câncer de Endométrio — ainda posso ser conservador? Até quando?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>11:20 – 11:35 (15 min)</td>
-                    <td>Utilizando a Histeroscopia para o tratamento do SUA (sangramento uterino anormal)</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>11:35 – 11:50 (15 min)</td>
-                    <td>Como minimizar as complicações nas histeroscopias e, se ocorrerem, como lidar com elas?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>11:50 – 12:05 (15 min)</td>
-                    <td>Os desafios da retenção de restos ovulares — como a Histeroscopia pode ajudar?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>12:05 – 12:15 (10 min)</td>
-                    <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-                  </tr>
-                  <tr>
-                    <td>12:15 – 13:30 (01h15)</td>
-                    <td colspan="2" class="session-break"><strong>INTERVALO</strong></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-podcast">
-                      🎙️ <strong>ESTÚDIO DE PODCAST</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>13:30 – 15:30 (2h)</td>
-                    <td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td>
-                  </tr>
-                  <tr>
-                    <td>15:30 – 16:00 (30 min)</td>
-                    <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-header">
-                      <strong>16:00 – 17:20 (01h20)</strong><br />
-                      MESA 3 — Nerve-Sparing (preservação nervosa) na Cirurgia de Endometriose
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>16:00 – 16:30 (30 min)</td>
-                    <td>Você sabe onde passam os principais nervos pélvicos? Qual a importância na cirurgia complexa de endometriose?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>16:30 – 16:50 (20 min)</td>
-                    <td>Principais lesões nervosas na endometriose — quais os principais sintomas?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>16:50 – 17:10 (20 min)</td>
-                    <td>Toda lesão nervosa por endometriose deve ser operada?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>17:10 – 17:20 (10 min)</td>
-                    <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-                  </tr>
-                  <tr>
-                    <td>17:20 – 17:55 (35 min)</td>
-                    <td><em>Talk Show</em> — "Jornada da paciente com endometriose: como ter um consultório de sucesso"</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-break"><strong>CERIMÔNIA DE ABERTURA</strong></td>
-                  </tr>
-                </tbody>
-              </table>
+            <table class="schedule-table">
+              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
+              <tbody>
+                <tr><td>08:00 – 08:15</td><td colspan="2" class="session-break"><strong>Credenciamento</strong></td></tr>
+                <tr><td>08:15 – 08:30</td><td colspan="2" class="session-break"><strong>Abertura</strong><div style="font-weight:400; margin-top:0.35rem; font-size:0.88rem; line-height:1.45;">Érica Batista<br />Edilberto Rocha<br />Jardel Soares<br />Iolanda Matias<br />Agostinho Machado<br />Juliana Zaidan</div></td></tr>
+                <tr><td>08:35 – 09:00</td><td>Conferência — Como a IA pode influenciar sua conduta do consultório ao pós-cirúrgico?</td><td></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>09:05 – 10:05 (01 hora)</strong><br />MESA 1 — Miomas Uterinos</td></tr>
+                <tr><td>09:05 – 09:15 (10 min)</td><td>Estratégias para Diminuir o Sangramento nas Miomectomias — Qual a minha estratégia?</td><td></td></tr>
+                <tr><td>09:15 – 09:25 (10 min)</td><td></td><td></td></tr>
+                <tr><td>09:25 – 09:35 (10 min)</td><td>Extração de miomas — Existe a melhor técnica?</td><td></td></tr>
+                <tr><td>09:35 – 09:45 (10 min)</td><td>Conversão cirúrgica em miomectomia — falha na indicação ou decisão correta?</td><td></td></tr>
+                <tr><td>09:45 – 10:05 (20 min)</td><td><strong>CROSS FIRE</strong> — Miomectomia Robótica × Miomectomia Videolaparoscopias</td><td></td></tr>
+                <tr><td>10:05 – 10:35 (30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>10:35 – 12:15 (01 hora e 40 min)</strong><br />MESA 2 — Vídeo Histeroscopia</td></tr>
+                <tr><td>10:35 – 10:45 (10 min)</td><td>Vídeo Histeroscopia Ambulatorial — qual o espaço até onde ir? Como minimizar o temor? Como diminuir a dor?</td><td></td></tr>
+                <tr><td>11:05 – 11:20 (15 min)</td><td>Hiperplasia Endometrial e Câncer de Endométrio — Ainda posso ser conservador? Até quando?</td><td></td></tr>
+                <tr><td>11:20 – 11:35 (15 min)</td><td>Utilizando a Histeroscopia para o tratamento da SUA (sangramento uterino anormal)</td><td></td></tr>
+                <tr><td>11:35 – 11:50 (15 min)</td><td>Como minimizar as complicações nas Histeroscopias — e, se ocorrerem, como lidar com elas?</td><td></td></tr>
+                <tr><td>11:50 – 12:05 (15 min)</td><td>Os desafios da retenção de restos ovulares — Como a Histeroscopia pode ajudar?</td><td></td></tr>
+                <tr><td>12:05 – 12:15 (10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>12:15 – 13:30 (01 hora e 30 min)</td><td colspan="2" class="session-break"><strong>INTERVALO</strong></td></tr>
+                <tr><td colspan="3" class="session-podcast">🎙️ <strong>PODCAST</strong></td></tr>
+                <tr><td>13:30 – 15:30 (2 horas)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td></tr>
+                <tr><td>15:30 – 16:00 (30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>16:00 – 17:20 (01 hora e 20 min)</strong><br />MESA 3 — Nerve-sparing (preservação nervosa) na Cirurgia de Endometriose</td></tr>
+                <tr><td>16:00 – 16:30 (30 min)</td><td>Você sabe onde passam os principais nervos pélvicos? Qual a importância na Cirurgia complexa de Endometriose?</td><td></td></tr>
+                <tr><td>16:30 – 16:50 (20 min)</td><td>Principais lesões nervosas na Endometriose — Quais os principais sintomas?</td><td></td></tr>
+                <tr><td>16:50 – 17:10 (20 min)</td><td>Toda lesão nervosa por endometriose deve ser operada?</td><td></td></tr>
+                <tr><td>17:10 – 17:20 (10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>17:20 – 17:55 (35 min)</td><td><strong>TALK SHOW</strong> — &quot;Jornada da paciente com endometriose&quot;<br /><small style="opacity:.92;font-weight:600">Como ter um consultório de sucesso</small></td><td></td></tr>
+                <tr><td colspan="3" class="session-break"><strong>Cerimônia abertura</strong></td></tr>
+              </tbody>
+            </table>
           </div>
 
           <p class="aud-label">Auditório B</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
-              <thead>
-                <tr>
-                  <th style="width:155px">Horário</th>
-                    <th>Atividade</th>
-                    <th style="width:220px">Palestrante</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td colspan="3" class="session-header">
-                      <strong>08:25 – 10:05 (01h40)</strong><br />
-                      MESA 1 — No meu consultório
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>08:25 – 08:45 (20 min)</td>
-                    <td>Menopausa e Climatério — como eu trato e conduzo caso a caso?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>08:45 – 09:05 (20 min)</td>
-                    <td>Métodos de diagnóstico para endometriose — o que já temos? Quais as novas perspectivas?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>09:05 – 09:25 (20 min)</td>
-                    <td>Endometriose na adolescência — como conduzo? Como evitar o excesso de cirurgias?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>09:25 – 09:45 (20 min)</td>
-                    <td>Dor na relação sexual, vaginismo e dificuldades de relacionamento como sequela da endometriose — como conduzir?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>09:45 – 09:55 (10 min)</td>
-                    <td>Impactos negativos da endometriose na sociedade — como podemos reverter isso?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>09:55 – 10:05 (10 min)</td>
-                    <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-                  </tr>
-                  <tr>
-                    <td>10:05 – 10:35 (30 min)</td>
-                    <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-header">
-                      <strong>10:35 – 12:15</strong><br />
-                      VIDEO SHOW CASES — Vídeos semi-editados
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>10:35 – 10:55 (20 min)</td>
-                    <td>Apresentação de Video Show Cases — vídeos semi-editados</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>10:35 – 10:55 (20 min)</td>
-                    <td>Como o uso da fluorescência me ajudou nesse caso</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>10:35 – 10:55 (20 min)</td>
-                    <td>Tive que mudar minha estratégia no tratamento dessa doença intestinal</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>10:55 – 11:15 (20 min)</td>
-                    <td>Como eu tratei essa lesão ureteral de endometriose</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>11:15 – 11:35 (20 min)</td>
-                    <td>Minha estratégia para essa miomectomia difícil</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>11:35 – 11:55 (20 min)</td>
-                    <td>Cerclagem Robótica — quando? Tips e truques</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>11:55 – 12:15 (15 min)</td>
-                    <td>Istmocele — tratar por via laparoscópica, robótica ou histeroscopia?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>12:15 – 13:30 (01h15)</td>
-                    <td colspan="2" class="session-break"><strong>INTERVALO</strong></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-podcast">
-                      🎙️ <strong>ESTÚDIO DE PODCAST</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>13:30 – 15:30 (2h)</td>
-                    <td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td>
-                  </tr>
-                  <tr>
-                    <td>15:30 – 16:00 (30 min)</td>
-                    <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-header">
-                      <strong>16:00 – 17:10 (01h10)</strong><br />
-                      MESA 2 — Imagem
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>16:00 – 16:40 (40 min)</td>
-                    <td><em>Cross Fire</em> — O que não pode faltar no ultrassom de mapeamento da endometriose? O que foi possível melhorar com a tecnologia? O que não pode faltar na ressonância para rastreio? A reconstrução 3D como apoio ao cirurgião.</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>16:40 – 17:00 (20 min)</td>
-                    <td>A IA será uma amiga ou uma inimiga no diagnóstico de endometriose?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>17:00 – 17:10 (10 min)</td>
-                    <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-                  </tr>
-                  <tr>
-                    <td>17:10 – 18:00 (50 min)</td>
-                    <td>Tomando decisões no tratamento da endometriose — VOCÊ DECIDE!<br /><small style="color:var(--muted-text)">Caso Clínico 1 · Caso Clínico 2 · Caso Clínico 3</small></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-break"><strong>CERIMÔNIA DE ABERTURA</strong></td>
-                  </tr>
-                </tbody>
-              </table>
+              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
+              <tbody>
+                <tr><td colspan="3" class="session-header"><strong>08:25 – 10:05 (01 hora e 40 min)</strong><br />MESA 1 — No meu consultório</td></tr>
+                <tr><td>08:25 – 08:45 (20 min)</td><td>Menopausa e Climatério — Como eu trato e conduzo caso a caso?</td><td></td></tr>
+                <tr><td>08:45 – 09:05 (20 min)</td><td>Métodos de Diagnóstico para endometriose — O que já temos? Quais as novas perspectivas?</td><td></td></tr>
+                <tr><td>09:05 – 09:25 (20 min)</td><td>Endometriose na adolescência — Como conduzo? Como evitar o excesso de cirurgias?</td><td></td></tr>
+                <tr><td>09:25 – 09:45 (20 min)</td><td>Dor na relação sexual, vaginismo e dificuldades de relacionamento como sequela da endometriose — Como conduzir?</td><td></td></tr>
+                <tr><td>09:45 – 09:55 (10 min)</td><td>Impactos negativos da endometriose na sociedade — Como podemos reverter isso?</td><td></td></tr>
+                <tr><td>09:55 – 10:05 (10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>10:05 – 10:35 (30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>10:35 – 12:15</strong><br />Video show cases — Vídeos semi-editados</td></tr>
+                <tr><td>10:35 – 10:55 (20 min)</td><td>Video show cases — Vídeos semi-editados <small style="display:block;margin-top:.35rem;color:var(--muted-text);font-weight:600">(caso, estratégias e briefing do palestrante)</small></td><td></td></tr>
+                <tr><td>10:35 – 10:55 (20 min)</td><td>Como o uso da fluorescência me ajudou nesse caso</td><td></td></tr>
+                <tr><td>10:35 – 10:55 (20 min)</td><td>Tive que mudar minha estratégia no tratamento dessa doença intestinal</td><td></td></tr>
+                <tr><td>10:55 – 11:15 (20 min)</td><td>Como eu tratei essa lesão ureteral de endometriose</td><td></td></tr>
+                <tr><td>11:15 – 11:35 (20 min)</td><td>Minha estratégia para essa miomectomia difícil</td><td></td></tr>
+                <tr><td>11:35 – 11:55 (20 min)</td><td>Cerclagem Robótica — Quando? Tips e Truques?</td><td></td></tr>
+                <tr><td>11:55 – 12:15 (15 min)</td><td>Istmocele — Tratar por via laparoscópica, robótica ou Histeroscopia?</td><td></td></tr>
+                <tr><td>12:15 – 13:30 (01 hora e 15 min)</td><td colspan="2" class="session-break"><strong>INTERVALO</strong></td></tr>
+                <tr><td colspan="3" class="session-podcast">🎙️ <strong>PODCAST</strong></td></tr>
+                <tr><td>13:30 – 15:30 (2 horas)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td></tr>
+                <tr><td>15:30 – 16:00 (30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>16:00 – 17:10 (01 hora e 10 min)</strong><br />MESA 2 — Imagem</td></tr>
+                <tr><td>16:00 – 16:40 (40 min)</td><td><strong>CROSS FIRE</strong> — O que não pode faltar no ultrassom de mapeamento da endometriose?<br />O que foi possível melhorar com a tecnologia?<br />O que não pode faltar na ressonância para rastreio de endometriose?<br />A reconstrução três D como apoio ao cirurgião</td><td></td></tr>
+                <tr><td>16:40 – 17:00 (20 min)</td><td>A IA será uma amiga ou uma inimiga no diagnóstico de endometriose?</td><td></td></tr>
+                <tr><td>17:00 – 17:10 (10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>17:10 – 18:00 (50 min)</td><td><strong>Tomando decisões no tratamento da endometriose — VOCÊ DECIDE!</strong></td><td></td></tr>
+                <tr><td></td><td>Caso Clínico 1</td><td></td></tr>
+                <tr><td></td><td>Caso Clínico 2</td><td></td></tr>
+                <tr><td></td><td>Caso Clínico 3</td><td></td></tr>
+                <tr><td colspan="3" class="session-break"><strong>Cerimônia abertura</strong></td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
         <!-- /panel-sexta -->
 
         <!-- ─ DIA 3: SÁBADO 29/08 ─ -->
         <div class="day-panel" id="panel-sabado">
-
           <p class="aud-label">Auditório A</p>
           <div class="schedule-scroll">
-              <table class="schedule-table">
-                <thead>
-                  <tr>
-                    <th style="width:155px">Horário</th>
-                    <th>Atividade</th>
-                    <th style="width:220px">Palestrante</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>08:00 – 10:00 (2h)</td>
-                    <td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td>
-                  </tr>
-                  <tr>
-                    <td>10:00 – 10:30 (30 min)</td>
-                    <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
-                  </tr>
-                  <tr>
-                    <td>10:30 – 10:50 (20 min)</td>
-                    <td>Conferência — Cirurgia Robótica na Ginecologia e outras tecnologias associadas: que benefícios já temos comprovado?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>10:50 – 11:10 (20 min)</td>
-                    <td>Conferência — Adenomiose: quando o tratamento clínico falhar, o que mais posso oferecer à mulher infértil?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>11:10 – 11:25 (15 min)</td>
-                    <td>Conferência — Manejo clínico da dor: o que temos de novo? Cannabis? E no manejo avançado da dor, o que temos de novo?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-header">
-                      <strong>11:25 – 12:35 (01h10)</strong><br />
-                      MESA 1 — Infertilidade e Endometriose
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>11:25 – 11:40 (15 min)</td>
-                    <td>O que fazer primeiro na paciente com endometriose: FIV antes de operar ou operar e depois FIV?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>11:40 – 11:55 (15 min)</td>
-                    <td>Na investigação histeroscópica da mulher infértil: o que devo procurar? Como tratar?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>11:55 – 12:10 (15 min)</td>
-                    <td>O desafio do manejo das malformações uterinas: do diagnóstico à escolha da via ideal. Qual a melhor estratégia cirúrgica?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>12:10 – 12:25 (15 min)</td>
-                    <td>Da implantação até o parto — muda alguma coisa no acompanhamento da mulher com endometriose e infertilidade?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>12:25 – 12:35 (10 min)</td>
-                    <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-                  </tr>
-                  <tr>
-                    <td>12:35 – 12:55 (20 min)</td>
-                    <td colspan="2" class="session-break"><strong>BRUNCH</strong></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-podcast">
-                      🎙️ <strong>ESTÚDIO DE PODCAST</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>12:55 – 13:15 (20 min)</td>
-                    <td>Conferência — A sobrevida do cirurgião videolaparoscópico e robótico: da ergonomia à saúde mental</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>13:15 – 13:35 (20 min)</td>
-                    <td>Conferência — Canetas Emagrecedoras: qual o mecanismo de ação? Ela poderia ajudar no tratamento da endometriose?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-header">
-                      <strong>13:35 – 14:25 (50 min)</strong><br />
-                      MESA 2 — Coloproctologia em Ação
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>13:35 – 14:05 (30 min)</td>
-                    <td><em>Triplo Cross Fire</em> — Shaving / Discóide e Duplo Discóide / Ressecção Segmentar</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>14:05 – 14:15 (10 min)</td>
-                    <td>Fístulas intestinais — como conduzir?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>14:15 – 14:25 (10 min)</td>
-                    <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-                  </tr>
-                  <tr>
-                    <td>14:25 – 14:35 (10 min)</td>
-                    <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
-                  </tr>
-                  <tr>
-                    <td>14:25 – 16:15 (01h50)</td>
-                    <td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td>
-                  </tr>
-                  <tr>
-                    <td>16:15</td>
-                    <td colspan="2" class="session-break"><strong>ENCERRAMENTO E BRINDE</strong></td>
-                  </tr>
-                </tbody>
-              </table>
+            <table class="schedule-table">
+              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
+              <tbody>
+                <tr><td>08:00 – 10:00 (2 horas)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td></tr>
+                <tr><td>10:00 – 10:30 (30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>10:30 – 10:50 (20 min)</td><td>Conferência — Cirurgia Robótica na Ginecologia e outras tecnologias associadas — Que benefícios já temos comprovado?</td><td></td></tr>
+                <tr><td>10:50 – 11:10 (20 min)</td><td>Conferência — Adenomiose — Quando o tratamento clínico falhar, o que mais posso oferecer à mulher infértil?</td><td></td></tr>
+                <tr><td>11:10 – 11:25 (15 min)</td><td>Conferência — Manejo clínico da dor — O que temos de novo? Canabbis? E no manejo avançado da dor, o que temos de novo?</td><td></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>11:25 – 12:35 (01 hora e 10 min)</strong><br />MESA 1 — Infertilidade e Endometriose</td></tr>
+                <tr><td>11:25 – 11:40 (15 min)</td><td>O que fazer primeiro na paciente com endometriose: FiV antes de operar ou operar e depois a FIV?</td><td></td></tr>
+                <tr><td>11:40 – 11:55 (15 min)</td><td>Na investigação Histeroscópica da mulher infértil — O que devo procurar? Como tratar?</td><td></td></tr>
+                <tr><td>11:55 – 12:10 (15 min)</td><td>O desafio do manejo das malformações uterinas — do diagnóstico à escolha da via ideal de abordagem. Qual a melhor estratégia cirúrgica?</td><td></td></tr>
+                <tr><td>12:10 – 12:25 (15 min)</td><td>Da implantação até o parto — Muda alguma alguma coisa no acompanhamento da mulher que cursa com endometriose e infertilidade?</td><td></td></tr>
+                <tr><td>12:25 – 12:35 (10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>12:35 – 12:55 (20 min)</td><td colspan="2" class="session-break"><strong>BRUNCH</strong></td></tr>
+                <tr><td>12:55 – 13:15 (20 min)</td><td>Conferência — A sobrevida do cirurgião Videolaparoscópico e Robótico — da ergonomia à saúde mental</td><td></td></tr>
+                <tr><td>13:15 – 13:35 (20 min)</td><td>Conferência — Canetas Emagrecedoras — Qual o mecanismo de ação. Ela poderia ajudar no tratamento da endometriose?</td><td></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:35 – 14:25 (50 min)</strong><br />MESA 2 — Coloproctologia em ação</td></tr>
+                <tr><td>13:35 – 14:05 (30 min)</td><td><strong>TRIPLO CROSS FIRE</strong> — Shaving / Discoide e duplo discoide / Ressecção Segmentar</td><td></td></tr>
+                <tr><td>14:05 – 14:15 (10 min)</td><td>Fístulas intestinais — Como conduzir?</td><td></td></tr>
+                <tr><td>14:15 – 14:25 (10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>14:25 – 14:35 (10 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>14:25 – 16:15 (01 hora e 50 min)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td></tr>
+                <tr><td>16:15</td><td colspan="2" class="session-break"><strong>Encerramento e Brinde</strong></td></tr>
+              </tbody>
+            </table>
           </div>
 
           <p class="aud-label">Auditório B</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
-              <thead>
-                <tr>
-                  <th style="width:155px">Horário</th>
-                  <th>Atividade</th>
-                  <th style="width:220px">Palestrante</th>
-                </tr>
-              </thead>
+              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
               <tbody>
-                <tr>
-                    <td>08:00 – 10:00 (2h)</td>
-                    <td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td>
-                  </tr>
-                  <tr>
-                    <td>10:00 – 10:30 (30 min)</td>
-                    <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
-                  </tr>
-                  <tr>
-                    <td>10:30 – 10:45 (15 min)</td>
-                    <td>Conferência — Tratamento das distopias genitais: qual a melhor técnica? E os resultados?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>10:45 – 11:00 (15 min)</td>
-                    <td>Conferência — Decidir é mais difícil do que operar</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>11:00 – 11:15 (15 min)</td>
-                    <td>Conferência — Quando a dor pélvica é muito mais do que a endometriose</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>11:15 – 11:30 (15 min)</td>
-                    <td>Conferência — PBM (Patient Blood Management): como preparar o paciente para cirurgia? Até quando tolerar a anemia?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-header">
-                      <strong>11:30 – 12:35 (01h05)</strong><br />
-                      MESA 1 — A Multidisciplinaridade
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>11:30 – 11:45 (15 min)</td>
-                    <td>A melhor dieta para paciente com endometriose — há espaço para suplementos?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>11:45 – 12:00 (15 min)</td>
-                    <td>Fisioterapia Pélvica antes e após a cirurgia — que resultados temos comprovados?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>12:00 – 12:15 (15 min)</td>
-                    <td>A acupuntura como tratamento adjuvante nas patologias ginecológicas</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>12:15 – 12:25 (10 min)</td>
-                    <td>Os impactos da atividade física no tratamento da endometriose — qual o melhor exercício?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>12:25 – 12:35 (10 min)</td>
-                    <td colspan="2" class="session-break"><strong>DISCUSSÃO</strong></td>
-                  </tr>
-                  <tr>
-                    <td>12:35 – 13:55 (01h20)</td>
-                    <td colspan="2" class="session-break"><strong>BRUNCH</strong></td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-podcast">
-                      🎙️ <strong>ESTÚDIO DE PODCAST</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="session-header">
-                      <strong>13:55 – 14:25 (30 min)</strong><br />
-                      MESA 2 — Urologia em Ação
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>13:55 – 14:10 (15 min)</td>
-                    <td>Tratamento da endometriose ureteral em pelves congeladas — existe uma melhor técnica?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>14:10 – 14:25 (15 min)</td>
-                    <td>Lesão vesical — limites da ressecção. Existem repercussões?</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>14:25 – 14:35 (10 min)</td>
-                    <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
-                  </tr>
-                  <tr>
-                    <td>14:35 – 16:15 (01h40)</td>
-                    <td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td>
-                  </tr>
-                  <tr>
-                    <td>16:15</td>
-                    <td colspan="2" class="session-break"><strong>ENCERRAMENTO E BRINDE</strong></td>
-                  </tr>
+                <tr><td>08:00 – 10:00 (2 horas)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td></tr>
+                <tr><td>10:00 – 10:30 (30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>10:30 – 10:45 (15 min)</td><td>Conferência — Tratamento das distopias genitais — Qual a melhor técnica? E os resultados?</td><td></td></tr>
+                <tr><td>10:45 – 11:00 (15 min)</td><td>Conferência — Decidir é mais difícil do que operar</td><td></td></tr>
+                <tr><td>11:00 – 11:15 (15 min)</td><td>Conferência — Quando a dor pélvica é muito mais do que a endometriose</td><td></td></tr>
+                <tr><td>11:15 – 11:30 (15 min)</td><td>Conferência — PBM (Patient Blood Management) — Como preparar o paciente para cirugia? Até quando tolerar a anemia?</td><td></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>11:30 – 12:35 (01 hora e 05 min)</strong><br />MESA 1 — A multidisciplinaridade</td></tr>
+                <tr><td>11:30 – 11:45 (15 min)</td><td>A melhor dieta para paciente com endometriose — Há espaço para suplementos?</td><td></td></tr>
+                <tr><td>11:45 – 12:00 (15 min)</td><td>Fisioterapia Pélvica antes e após a cirurgia — Que resultados temos comprovados?</td><td></td></tr>
+                <tr><td>12:00 – 12:15 (15 min)</td><td>A acupuntura como tratamento adjuvante nas patologias ginecológicas.</td><td></td></tr>
+                <tr><td>12:15 – 12:25 (10 min)</td><td>Os impactos da atividade física no tratamento da endometriose — Qual o melhor exercício?</td><td></td></tr>
+                <tr><td>12:25 – 12:35 (10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>12:35 – 13:55 (1 hora e 20 min)</td><td colspan="2" class="session-break"><strong>BRUNCH</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:55 – 14:25 (30 min)</strong><br />MESA 2 — Urologia em ação</td></tr>
+                <tr><td>13:55 – 14:10 (15 min)</td><td>Tratamento da endometriose ureteral — em pelves congeladas existe uma melhor técnica?</td><td></td></tr>
+                <tr><td>14:10 – 14:25 (15 min)</td><td>Lesão vesical — limites da ressecção. Existem repercussões?</td><td></td></tr>
+                <tr><td>14:25 – 14:35 (10 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>14:35 – 16:15 (01 hora e 40 min)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td></tr>
+                <tr><td>16:15</td><td colspan="2" class="session-break"><strong>Encerramento e Brinde</strong></td></tr>
               </tbody>
             </table>
           </div>
@@ -2238,66 +1230,195 @@
     </section>
 
     <!-- ── PALESTRANTES ── -->
-    <section id="palestrantes" class="fade-in">
-      <div class="container">
-        <h2 class="section-title text-center" style="display:block">Palestrantes</h2>
-        <p
-          class="text-center"
-          style="font-size: 1.05rem; color: var(--muted-text); max-width: 680px; margin: 0 auto 2.5rem;"
-        >
-          Em breve apresentaremos o corpo docente completo do Congresso Endogineco 2026.
-          Os currículos serão adicionados assim que possível.
+    <section id="palestrantes" class="section-dark fade-in">
+      <div class="container" style="padding-bottom: 1.5rem;">
+        <h2 class="section-title" style="display:block">Palestrantes</h2>
+      </div>
+      <div class="netflix-section-wrapper">
+        <button class="netflix-arrow netflix-arrow-prev" id="speakers-prev" aria-label="Anterior">&#8249;</button>
+        <div class="netflix-carousel" id="speakers-carousel">
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
+            <div class="netflix-card-empty-bg">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
+            <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #102450 0%, #2d6aa0 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
+            <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #1e4a8a 0%, #102450 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
+            <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #1a3870 0%, #2d6aa0 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
+            <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #102450 0%, #1a3870 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
+            <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #102450 0%, #2d6aa0 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
+            <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #1e4a8a 0%, #102450 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
+            <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #1a3870 0%, #102450 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+        </div>
+        <button class="netflix-arrow netflix-arrow-next" id="speakers-next" aria-label="Próximo">&#8250;</button>
+      </div>
+    </section>
+
+    <!-- ── PRÉ-CONGRESSO ── -->
+    <section id="pre-congresso" class="section-light fade-in">
+      <div class="container" style="padding-bottom: 1.5rem;">
+        <h2 class="section-title">Pré-congresso</h2>
+      </div>
+      <div class="netflix-section-wrapper">
+        <button class="netflix-arrow netflix-arrow-prev" id="precongresso-prev" aria-label="Anterior">&#8249;</button>
+        <div class="netflix-carousel netflix-carousel--center" id="precongresso-carousel">
+          <div class="netflix-card">
+            <div class="netflix-card-bg" style="background-image:url('https://images.pexels.com/photos/4483323/pexels-photo-4483323.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960');" role="img" aria-label="Centro cirúrgico e sala de operações"></div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content">
+              <h3>A Videocirurgia na Oncoginecologia</h3>
+              <p>27/08 · 13:15 – 17:00 · Auditório A</p>
+              <p class="netflix-card-meta">Coordenação: Dra. Iolanda Matias</p>
+              <a href="#inscricao" class="netflix-card-btn">Inscreva-se</a>
+            </div>
+          </div>
+          <div class="netflix-card">
+            <div class="netflix-card-bg" style="background-image:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&amp;fit=crop&amp;w=960&amp;q=80');" role="img" aria-label="Alimentação e nutrição"></div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content">
+              <h3>Curso de Nutrição para pacientes com Endometriose</h3>
+              <p>27/08 · 13:15 – 17:00 · Auditório B</p>
+              <a href="#inscricao" class="netflix-card-btn">Inscreva-se</a>
+            </div>
+          </div>
+          <div class="netflix-card">
+            <div class="netflix-card-bg" style="background-image:url('https://images.pexels.com/photos/7089029/pexels-photo-7089029.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960');" role="img" aria-label="Equipamento de ultrassom em ambiente clínico"></div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content">
+              <h3>Curso de USG Mapeamento de Endometriose</h3>
+              <p>27/08 · 13:15 – 17:00 · Auditório C</p>
+              <p class="netflix-card-meta">Coordenação: MEDERE (Dra. Cecília Pontes e Dra. Penélope Cruz)</p>
+              <a href="#inscricao" class="netflix-card-btn">Inscreva-se</a>
+            </div>
+          </div>
+          <div class="netflix-card">
+            <div class="netflix-card-bg" style="background-image:url('pre-congresso/sutura-instrumental-bg.jpg');" role="img" aria-label="Instrumental laparoscópico em campo cirúrgico"></div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content">
+              <h3>Curso de Sutura Dry Lab em sutura endoscópica</h3>
+              <p>27/08 · 13:15 – 17:00 · Foyer</p>
+              <p class="netflix-card-meta">Coordenação: Dr. Guilherme Zanluchi</p>
+              <a href="#inscricao" class="netflix-card-btn">Inscreva-se</a>
+            </div>
+          </div>
+        </div>
+        <button class="netflix-arrow netflix-arrow-next" id="precongresso-next" aria-label="Próximo">&#8250;</button>
+      </div>
+      <div class="container" style="margin-top: .5rem;">
+        <p style="margin: 0; font-size: .68rem; line-height: 1.35; color: rgba(17,24,39,.42); text-align: center;">
+          Imagem «Sutura Dry Lab»: Anpol42 —
+          <a href="https://commons.wikimedia.org/wiki/File:Instruments_for_laparoscopic_Hernia_Operation.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>
+          (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>).
         </p>
-        <div class="speakers-grid">
-          <!-- Placeholders – serão substituídos pelas fotos reais -->
-          <div class="speaker-item">
-            <div class="avatar-empty" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+    </section>
+
+    <!-- ── SUBMISSÃO DE TRABALHOS CIENTÍFICOS ── -->
+    <section id="submissao" class="section-dark fade-in">
+      <div class="container" style="padding-bottom: 1.5rem;">
+        <h2 class="section-title" style="display:block">Submissão de Trabalhos Científicos</h2>
+        <a href="#" class="btn-section-cta" style="margin-top: .75rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Envie seu trabalho
+        </a>
+      </div>
+
+      <!-- Comissão Julgadora (Netflix-style) -->
+      <div style="margin-top: 2rem;">
+        <div class="container" style="padding-bottom: .75rem;">
+          <h3 style="color: rgba(255,255,255,.85); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin: 0;">Comissão Julgadora</h3>
+        </div>
+        <div class="netflix-section-wrapper">
+          <button class="netflix-arrow netflix-arrow-prev" id="submissao-prev" aria-label="Anterior">&#8249;</button>
+          <div class="netflix-carousel netflix-carousel--center" id="submissao-carousel">
+            <div class="netflix-card">
+              <div class="netflix-card-empty-bg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+              <div class="netflix-card-overlay"></div>
+              <div class="netflix-card-content"><h3>Avaliador</h3><p>Comissão julgadora</p></div>
             </div>
-            <h4>Palestrante</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-placeholder-1">Saiba mais</button>
-          </div>
-          <div class="speaker-item">
-            <div class="avatar-empty" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <div class="netflix-card">
+              <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #102450 0%, #2d6aa0 100%);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+              <div class="netflix-card-overlay"></div>
+              <div class="netflix-card-content"><h3>Avaliador</h3><p>Comissão julgadora</p></div>
             </div>
-            <h4>Palestrante</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-placeholder-2">Saiba mais</button>
-          </div>
-          <div class="speaker-item">
-            <div class="avatar-empty" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <div class="netflix-card">
+              <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #1e4a8a 0%, #102450 100%);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+              <div class="netflix-card-overlay"></div>
+              <div class="netflix-card-content"><h3>Avaliador</h3><p>Comissão julgadora</p></div>
             </div>
-            <h4>Palestrante</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-placeholder-3">Saiba mais</button>
-          </div>
-          <div class="speaker-item">
-            <div class="avatar-empty" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <div class="netflix-card">
+              <div class="netflix-card-empty-bg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+              <div class="netflix-card-overlay"></div>
+              <div class="netflix-card-content"><h3>Avaliador</h3><p>Comissão julgadora</p></div>
             </div>
-            <h4>Palestrante</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-placeholder-4">Saiba mais</button>
           </div>
-          <div class="speaker-item">
-            <div class="avatar-empty" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
-            <h4>Palestrante</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-placeholder-5">Saiba mais</button>
-          </div>
-          <div class="speaker-item">
-            <div class="avatar-empty" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
-            <h4>Palestrante</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-placeholder-6">Saiba mais</button>
-          </div>
+          <button class="netflix-arrow netflix-arrow-next" id="submissao-next" aria-label="Próximo">&#8250;</button>
         </div>
       </div>
     </section>
 
     <!-- ── LOCAL ── -->
-    <section id="local" class="fade-in">
+    <section id="local" class="section-light fade-in">
       <div class="container two-column">
         <div>
           <h2 class="section-title">Local do evento</h2>
@@ -2312,11 +1433,8 @@
             Boa Viagem — Recife/PE — CEP 51030-300
           </p>
           <p style="margin-top: 1rem">
-            <strong>Datas:</strong> 27, 28 e 29 de agosto de 2026<br />
-            <strong>Horário:</strong> 08h às 18h
-          </p>
-          <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--muted-text)">
-            Use o mapa ao lado para orientação de acesso.
+            <strong>Pré-congresso:</strong> 27 de agosto de 2026<br />
+            <strong>Congresso:</strong> 28 e 29 de agosto de 2026
           </p>
         </div>
         <div>
@@ -2332,192 +1450,130 @@
     </section>
 
     <!-- ── INSCRIÇÕES ── -->
-    <section id="inscricao" class="fade-in">
-      <div class="container">
-        <div class="cta-box">
-          <h2>Inscrições</h2>
-          <p>
-            O link de inscrições pelo Sympla está sendo preparado e será disponibilizado em breve.<br />
-            Fique atento ao nosso site e redes sociais para não perder o prazo.
-          </p>
-          <span class="coming-soon-badge">Em breve</span>
-        </div>
+    <section id="inscricao" class="section-dark fade-in">
+      <div class="container text-center">
+        <h2 class="section-title text-center" style="display:block">Inscrições</h2>
+        <a href="#" class="btn-primary" style="margin-top: .5rem;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          Inscreva-se
+        </a>
       </div>
     </section>
 
     <!-- ── PATROCINADORES ── -->
-    <section id="patrocinadores" class="fade-in">
+    <section id="patrocinadores" class="section-light fade-in">
       <div class="container text-center">
         <h2 class="section-title" style="display:block">Patrocinadores</h2>
-        <p style="color: var(--muted-text); max-width: 600px; margin: 0 auto;">
-          Os patrocinadores serão divulgados assim que confirmados.
-        </p>
+        <div class="sponsors-grid"></div>
       </div>
     </section>
 
-    <!-- ── CONTATO ── -->
-    <section id="contato" class="fade-in">
-      <div class="container two-column">
-        <div>
-          <h2 class="section-title">Contato</h2>
-          <p>
-            Para dúvidas sobre o congresso, inscrições ou cotas de patrocínio, entre em
-            contato com a organização:
-          </p>
-          <h3>Luka Plan Promoções e Eventos</h3>
-          <p>
-            <strong>Endereço:</strong><br />
-            Rua João Eugênio de Lima, 143 – Sala 01<br />
-            Boa Viagem – Recife – CEP 51.030-360
-          </p>
-          <p>
-            <strong>Telefone/WhatsApp:</strong><br />
-            <a href="https://wa.me/5581999851712" target="_blank" rel="noopener">(81) 99985-1712</a>
-            &nbsp;·&nbsp;
-            <a href="https://wa.me/5581992325922" target="_blank" rel="noopener">(81) 9232-5922</a>
-          </p>
-          <p>
-            <strong>E-mail:</strong><br />
-            <a href="mailto:eventos@lukaplan.com.br">eventos@lukaplan.com.br</a>
-          </p>
-          <div class="social-links">
-            <a
-              href="https://instagram.com/lukaplan_"
-              target="_blank"
-              rel="noopener"
-              class="social-link"
-              title="Instagram Luka Plan"
-              aria-label="Instagram Luka Plan"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
-            </a>
-            <a
-              href="https://wa.me/5581999851712"
-              target="_blank"
-              rel="noopener"
-              class="social-link"
-              title="WhatsApp"
-              aria-label="WhatsApp"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-            </a>
-            <a
-              href="mailto:eventos@lukaplan.com.br"
-              class="social-link"
-              title="E-mail"
-              aria-label="E-mail"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-              </svg>
-            </a>
+    <!-- ── GALERIA ── -->
+    <section id="galeria" class="section-dark fade-in">
+      <div class="container">
+        <h2 class="section-title text-center" style="display:block">Galeria</h2>
+
+        <div class="day-tabs" role="tablist" aria-label="Edições do congresso" style="margin: 1.5rem auto 0; width: fit-content;">
+          <button class="day-tab-btn active" role="tab" data-gallery="2025" aria-selected="true">Edição 2025</button>
+          <button class="day-tab-btn" role="tab" data-gallery="2026" aria-selected="false">Edição 2026</button>
+        </div>
+
+        <div class="gallery-panel active" id="gallery-2025">
+          <div class="gallery-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
           </div>
         </div>
-        <div>
-          <h2>Informações gerais</h2>
-          <p>
-            Cancelamentos ou alterações de inscrição devem ser comunicados com antecedência
-            à organização, para permitir repasse de vaga quando aplicável.
-          </p>
-          <p style="margin-top: 1.25rem">
-            <strong>Público-alvo:</strong><br />
-            Médicos ginecologistas, cirurgiões, residentes e equipe multidisciplinar.
-            O evento é aberto para profissionais de todo o Brasil.
-          </p>
+
+        <div class="gallery-panel" id="gallery-2026">
+          <div class="gallery-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ── MODAIS – palestrantes (placeholders) ── -->
-    <div class="modal" id="modal-placeholder-1">
-      <div class="modal-content">
+    <div id="speaker-modal" class="modal" role="dialog" aria-modal="true" aria-label="Palestrante">
+      <div class="modal-content modal-content--speaker-placeholder-only">
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
-        <div class="modal-avatar modal-avatar-empty" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <div class="speaker-modal-graphic" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
-        <h3>Palestrante</h3>
-        <div class="modal-bio modal-bio-pending">Informações em breve</div>
-      </div>
-    </div>
-    <div class="modal" id="modal-placeholder-2">
-      <div class="modal-content">
-        <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
-        <div class="modal-avatar modal-avatar-empty" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <h3>Palestrante</h3>
-        <div class="modal-bio modal-bio-pending">Informações em breve</div>
-      </div>
-    </div>
-    <div class="modal" id="modal-placeholder-3">
-      <div class="modal-content">
-        <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
-        <div class="modal-avatar modal-avatar-empty" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <h3>Palestrante</h3>
-        <div class="modal-bio modal-bio-pending">Informações em breve</div>
-      </div>
-    </div>
-    <div class="modal" id="modal-placeholder-4">
-      <div class="modal-content">
-        <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
-        <div class="modal-avatar modal-avatar-empty" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <h3>Palestrante</h3>
-        <div class="modal-bio modal-bio-pending">Informações em breve</div>
-      </div>
-    </div>
-    <div class="modal" id="modal-placeholder-5">
-      <div class="modal-content">
-        <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
-        <div class="modal-avatar modal-avatar-empty" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <h3>Palestrante</h3>
-        <div class="modal-bio modal-bio-pending">Informações em breve</div>
-      </div>
-    </div>
-    <div class="modal" id="modal-placeholder-6">
-      <div class="modal-content">
-        <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
-        <div class="modal-avatar modal-avatar-empty" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <h3>Palestrante</h3>
-        <div class="modal-bio modal-bio-pending">Informações em breve</div>
       </div>
     </div>
 
     <!-- ── FOOTER ── -->
     <footer>
-      <div class="footer-inner">
-        <!-- Brand column -->
-        <div class="footer-brand">
-          <img src="assets/logo-endogineco.png" alt="Endogineco 2026" loading="lazy" />
-          <p>Congresso Internacional Endogineco 2026<br />27, 28 e 29 de agosto · Recife/PE</p>
-          <p style="margin-top:.5rem; font-size:.82rem; color:rgba(255,255,255,.45)">
-            ISEP · Hospital Santa Joana · Rede Américas
-          </p>
-        </div>
+      <div class="footer-top">
+        <div class="footer-inner-wide">
 
-        <!-- Links column -->
-        <div class="footer-links">
-          <h4>Navegação</h4>
-          <ul>
-            <li><a href="#sobre">Sobre o evento</a></li>
-            <li><a href="#comissao">Comissão organizadora</a></li>
-            <li><a href="#programacao">Programação científica</a></li>
-            <li><a href="#palestrantes">Palestrantes</a></li>
-            <li><a href="#local">Local do evento</a></li>
-            <li><a href="#inscricao">Inscrições</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
+          <!-- Logo + brand -->
+          <div class="footer-brand">
+            <img src="assets/logo-endogineco.png" alt="Endogineco 2026" loading="lazy" />
+            <p>Congresso Internacional Endogineco 2026</p>
+            <p>27, 28 e 29 de agosto · Recife/PE</p>
+            <p style="margin-top:.25rem; font-size:.8rem; color:rgba(255,255,255,.40);">ISEP · Hospital Santa Joana · Rede Américas</p>
+            <div class="social-links">
+              <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener" class="social-link" title="Instagram Luka Plan" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              <a href="https://wa.me/5581999851712" target="_blank" rel="noopener" class="social-link" title="WhatsApp" aria-label="WhatsApp">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+              <a href="mailto:eventos@lukaplan.com.br" class="social-link" title="E-mail" aria-label="E-mail">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Navegação -->
+          <div class="footer-col">
+            <h4>Navegação</h4>
+            <ul>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#comissao">Comissão</a></li>
+              <li><a href="#programacao">Programação</a></li>
+              <li><a href="#palestrantes">Palestrantes</a></li>
+              <li><a href="#pre-congresso">Pré-congresso</a></li>
+              <li><a href="#submissao">Trabalhos Científicos</a></li>
+              <li><a href="#local">Local</a></li>
+              <li><a href="#inscricao">Inscrições</a></li>
+              <li><a href="#patrocinadores">Patrocinadores</a></li>
+              <li><a href="#galeria">Galeria</a></li>
+            </ul>
+          </div>
+
+          <!-- Local -->
+          <div class="footer-col">
+            <h4>Local</h4>
+            <address>
+              Mar Hotel Conventions<br />
+              Rua Barão de Souza Leão, 451<br />
+              Boa Viagem — Recife/PE<br />
+              CEP 51030-300
+            </address>
+            <p style="margin-top: .75rem;"><strong style="color: rgba(255,255,255,.55); font-size:.8rem; letter-spacing:.04em; text-transform:uppercase; font-family:'Montserrat',sans-serif;">Datas</strong><br />
+              27, 28 e 29 de agosto de 2026
+            </p>
+          </div>
+
+          <!-- Contato -->
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <p><strong style="color: rgba(255,255,255,.75);">Luka Plan Promoções e Eventos</strong></p>
+            <address>
+              Rua João Eugênio de Lima, 143 – Sala 01<br />
+              Boa Viagem – Recife/PE<br />
+              CEP 51.030-360
+            </address>
+            <p style="margin-top: .75rem;">
+              <a href="tel:+5581999851712">(81) 99985-1712</a><br />
+              <a href="tel:+5581992325922">(81) 99232-5922</a>
+            </p>
+            <p>
+              <a href="mailto:eventos@lukaplan.com.br">eventos@lukaplan.com.br</a>
+            </p>
+          </div>
+
         </div>
       </div>
 
@@ -2526,68 +1582,48 @@
         <p>
           Produzido por: <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener">Luka Plan Promoções e Eventos</a>
           &nbsp;&middot;&nbsp;
-          Desenvolvido por: <a href="https://wa.me/55NUMERO?text=Ol%C3%A1%2C+gostaria+de+criar+um+site%21+%3A%29" target="_blank" rel="noopener">Automa IT &amp; Development</a>
+          Desenvolvido por: <a href="tel:+5581995460140">Automa IT &amp; Development</a>
         </p>
       </div>
     </footer>
 
     <script>
-      /* ── Fade-in on scroll (sections) ── */
+      /* ── Fade-in on scroll ── */
       const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) entry.target.classList.add("visible");
-          });
-        },
-        { threshold: 0.09, rootMargin: "0px 0px -48px 0px" },
+        (entries) => { entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("visible"); }); },
+        { threshold: 0.08, rootMargin: "0px 0px -48px 0px" }
       );
       document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
 
-      /* ── Stagger animation for card grids ── */
+      /* ── Stagger for committee cards ── */
       const cardObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              cardObserver.unobserve(entry.target);
-            }
-          });
-        },
+        (entries) => { entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); cardObserver.unobserve(e.target); } }); },
         { threshold: 0.08, rootMargin: "0px 0px -32px 0px" }
       );
-
-      document.querySelectorAll(".committee-item, .speaker-item").forEach((el, i) => {
+      document.querySelectorAll(".committee-item").forEach((el, i) => {
         el.classList.add("fade-in");
         el.style.transitionDelay = `${i * 70}ms`;
         cardObserver.observe(el);
       });
 
-      /* ── Nav scroll class ── */
+      /* ── Nav scroll ── */
       const nav = document.getElementById("main-nav");
-      window.addEventListener("scroll", () => {
-        nav.classList.toggle("scrolled", window.pageYOffset > 80);
-      });
+      window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.pageYOffset > 80));
 
       /* ── Countdown ── */
       function updateCountdown() {
-        const eventDate = new Date("2026-08-27T08:00:00-03:00").getTime();
+        const eventDate = new Date("2026-08-28T08:00:00-03:00").getTime();
         const now = Date.now();
         const distance = eventDate - now;
         const pad2 = (n) => String(Math.max(0, n)).padStart(2, "0");
-
         if (distance <= 0) {
-          ["days", "hours", "minutes", "seconds"].forEach((id) => {
-            const el = document.getElementById(id);
-            if (el) el.textContent = id === "days" ? "0" : "00";
-          });
+          ["days","hours","minutes","seconds"].forEach((id) => { const el = document.getElementById(id); if (el) el.textContent = "00"; });
           return;
         }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
+        const days = Math.floor(distance / 86400000);
+        const hours = Math.floor((distance % 86400000) / 3600000);
+        const minutes = Math.floor((distance % 3600000) / 60000);
+        const seconds = Math.floor((distance % 60000) / 1000);
         document.getElementById("days").textContent = String(days);
         document.getElementById("hours").textContent = pad2(hours);
         document.getElementById("minutes").textContent = pad2(minutes);
@@ -2605,8 +1641,7 @@
           const target = document.getElementById(href.slice(1));
           if (!target) return;
           const navHeight = document.getElementById("main-nav").offsetHeight;
-          const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
-          window.scrollTo({ top, behavior: "smooth" });
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - navHeight - 16, behavior: "smooth" });
           const navMenu = document.getElementById("nav-menu");
           const menuToggle = document.getElementById("mobile-menu-toggle");
           if (navMenu && navMenu.classList.contains("active")) {
@@ -2616,53 +1651,130 @@
         });
       });
 
-      /* ── Day tabs ── */
+      /* ── Day tabs (schedule) ── */
       document.querySelectorAll(".day-tab-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
           const day = btn.dataset.day;
-          document.querySelectorAll(".day-tab-btn").forEach((b) => {
-            b.classList.remove("active");
-            b.setAttribute("aria-selected", "false");
-          });
+          if (!day) return; // ignore gallery tabs handled separately
+          document.querySelectorAll(`[data-day]`).forEach((b) => { b.classList.remove("active"); b.setAttribute("aria-selected", "false"); });
           document.querySelectorAll(".day-panel").forEach((p) => p.classList.remove("active"));
-          btn.classList.add("active");
-          btn.setAttribute("aria-selected", "true");
+          btn.classList.add("active"); btn.setAttribute("aria-selected", "true");
           const panel = document.getElementById("panel-" + day);
           if (panel) panel.classList.add("active");
         });
       });
 
-
-      /* ── Modal ── */
-      document.addEventListener("click", function (e) {
-        if (e.target.classList.contains("saiba-mais-btn")) {
-          const modalId = e.target.dataset.modal;
-          const modal = document.getElementById(modalId);
-          if (modal) {
-            modal.classList.add("show");
-            document.body.style.overflow = "hidden";
-          }
-        }
-        if (e.target.classList.contains("close-modal")) {
-          const modal = e.target.closest(".modal");
-          if (modal) {
-            modal.classList.remove("show");
-            document.body.style.overflow = "";
-          }
-        }
-        if (e.target.classList.contains("modal") && e.target.classList.contains("show")) {
-          e.target.classList.remove("show");
-          document.body.style.overflow = "";
-        }
+      /* ── Gallery tabs ── */
+      document.querySelectorAll("[data-gallery]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const edition = btn.dataset.gallery;
+          document.querySelectorAll("[data-gallery]").forEach((b) => { b.classList.remove("active"); b.setAttribute("aria-selected", "false"); });
+          document.querySelectorAll(".gallery-panel").forEach((p) => p.classList.remove("active"));
+          btn.classList.add("active"); btn.setAttribute("aria-selected", "true");
+          const panel = document.getElementById("gallery-" + edition);
+          if (panel) panel.classList.add("active");
+        });
       });
 
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") {
-          document.querySelectorAll(".modal.show").forEach((modal) => {
-            modal.classList.remove("show");
-            document.body.style.overflow = "";
+      /* ── Netflix carousel — drag + arrows ── */
+      function initNetflixCarousel(carouselId, prevId, nextId) {
+        const carousel = document.getElementById(carouselId);
+        if (!carousel) return;
+        let isDown = false, startX = 0, scrollLeft = 0;
+
+        carousel.addEventListener("mousedown", (e) => {
+          isDown = true; carousel.classList.add("dragging");
+          startX = e.pageX - carousel.offsetLeft;
+          scrollLeft = carousel.scrollLeft;
+        });
+        carousel.addEventListener("mouseleave", () => { isDown = false; carousel.classList.remove("dragging"); });
+        carousel.addEventListener("mouseup", () => { isDown = false; carousel.classList.remove("dragging"); });
+        carousel.addEventListener("mousemove", (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - carousel.offsetLeft;
+          carousel.scrollLeft = scrollLeft - (x - startX) * 1.8;
+        });
+
+        /* touch drag */
+        let touchStartX = 0, touchScrollLeft = 0;
+        carousel.addEventListener("touchstart", (e) => { touchStartX = e.touches[0].pageX; touchScrollLeft = carousel.scrollLeft; }, { passive: true });
+        carousel.addEventListener("touchmove", (e) => {
+          const dx = touchStartX - e.touches[0].pageX;
+          carousel.scrollLeft = touchScrollLeft + dx;
+        }, { passive: true });
+
+        const prevBtn = document.getElementById(prevId);
+        const nextBtn = document.getElementById(nextId);
+        const scrollAmt = () => Math.max(carousel.clientWidth * 0.75, 240);
+        if (prevBtn) prevBtn.addEventListener("click", () => carousel.scrollBy({ left: -scrollAmt(), behavior: "smooth" }));
+        if (nextBtn) nextBtn.addEventListener("click", () => carousel.scrollBy({ left: scrollAmt(), behavior: "smooth" }));
+      }
+
+      initNetflixCarousel("speakers-carousel", "speakers-prev", "speakers-next");
+      initNetflixCarousel("precongresso-carousel", "precongresso-prev", "precongresso-next");
+      initNetflixCarousel("submissao-carousel", "submissao-prev", "submissao-next");
+
+      /* ── Modal palestrantes ── */
+      const speakerModal = document.getElementById("speaker-modal");
+
+      function closeSpeakerModal() {
+        if (!speakerModal) return;
+        speakerModal.classList.remove("show");
+        document.body.style.overflow = "";
+      }
+
+      function openSpeakerModal() {
+        if (!speakerModal) return;
+        speakerModal.classList.add("show");
+        document.body.style.overflow = "hidden";
+      }
+
+      const spCarousel = document.getElementById("speakers-carousel");
+      if (spCarousel && speakerModal) {
+        let spDown = false;
+        let spOx = 0;
+        let spOy = 0;
+        let spMoved = false;
+        spCarousel.addEventListener("pointerdown", (e) => {
+          if (e.pointerType === "mouse" && e.button !== 0) return;
+          spDown = true;
+          spOx = e.clientX;
+          spOy = e.clientY;
+          spMoved = false;
+        });
+        spCarousel.addEventListener("pointermove", (e) => {
+          if (!spDown) return;
+          if (Math.hypot(e.clientX - spOx, e.clientY - spOy) > 14) spMoved = true;
+        });
+        ["pointerup", "pointercancel"].forEach((ev) => {
+          spCarousel.addEventListener(ev, () => { spDown = false; });
+        });
+        spCarousel.addEventListener(
+          "click",
+          (e) => {
+            const card = e.target.closest(".netflix-card--speaker");
+            if (!card || spMoved) return;
+            e.preventDefault();
+            openSpeakerModal();
+          },
+          true
+        );
+        spCarousel.querySelectorAll(".netflix-card--speaker").forEach((card) => {
+          card.addEventListener("keydown", (e) => {
+            if (e.key !== "Enter" && e.key !== " ") return;
+            e.preventDefault();
+            openSpeakerModal();
           });
-        }
+        });
+      }
+
+      speakerModal?.querySelector(".close-modal")?.addEventListener("click", closeSpeakerModal);
+      speakerModal?.addEventListener("click", (e) => {
+        if (e.target === speakerModal) closeSpeakerModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && speakerModal?.classList.contains("show")) closeSpeakerModal();
       });
 
       /* ── Mobile menu ── */
@@ -2672,12 +1784,8 @@
         mobileMenuToggle.classList.toggle("active");
         navMenu.classList.toggle("active");
       });
-
       document.addEventListener("click", (e) => {
-        if (!e.target.closest("nav")) {
-          navMenu.classList.remove("active");
-          mobileMenuToggle.classList.remove("active");
-        }
+        if (!e.target.closest("nav")) { navMenu.classList.remove("active"); mobileMenuToggle.classList.remove("active"); }
       });
     </script>
   </body>
