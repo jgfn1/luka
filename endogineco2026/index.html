@@ -472,6 +472,13 @@
       .netflix-carousel.netflix-carousel--center {
         justify-content: center;
       }
+      .netflix-carousel.netflix-carousel--center.netflix-carousel--scrollable {
+        justify-content: flex-start;
+      }
+
+      .netflix-arrow.netflix-arrow--hidden {
+        display: none !important;
+      }
 
       .netflix-card {
         flex: 0 0 240px; height: 360px;
@@ -693,8 +700,8 @@
       }
       @media (max-width: 900px) {
         nav { grid-template-columns: auto auto; padding: .55rem 1.1rem; }
-        nav ul { grid-column: 1 / -1; grid-row: 2; position: fixed; top: 64px; left: 0; right: 0; background: rgba(255,255,255,.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); flex-direction: column; align-items: stretch; justify-content: flex-start; padding: .4rem 0; box-shadow: 0 12px 32px rgba(26,56,112,.14); max-height: 0; overflow: hidden; opacity: 0; transition: max-height .35s var(--ease), opacity .28s var(--ease); border-bottom: 1px solid rgba(26,56,112,.08); }
-        nav ul.active { max-height: 920px; opacity: 1; overflow-y: auto; }
+        nav ul { grid-column: 1 / -1; grid-row: 2; position: fixed; top: 64px; left: 0; right: 0; background: rgba(255,255,255,.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); flex-direction: column; align-items: stretch; justify-content: flex-start; padding: .4rem 0 .75rem; box-shadow: 0 12px 32px rgba(26,56,112,.14); max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; pointer-events: none; transition: max-height .35s var(--ease), opacity .28s var(--ease), visibility 0s linear .35s; border-bottom: 1px solid rgba(26,56,112,.08); overscroll-behavior: contain; }
+        nav ul.active { max-height: calc(100vh - 64px); max-height: calc(100svh - 64px); opacity: 1; visibility: visible; pointer-events: auto; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; touch-action: pan-y; transition: max-height .35s var(--ease), opacity .28s var(--ease), visibility 0s linear 0s; }
         nav ul li { border-bottom: 1px solid rgba(26,56,112,.06); }
         nav ul li a { display: block; padding: .9rem 1.5rem; }
         nav ul li a::after { display: none; }
@@ -748,7 +755,6 @@
         <li><a href="#pre-congresso">Pré-congresso</a></li>
         <li><a href="#submissao">Trabalhos Científicos</a></li>
         <li><a href="#local">Local</a></li>
-        <li><a href="#inscricao">Inscrições</a></li>
         <li><a href="#patrocinadores">Patrocinadores</a></li>
         <li><a href="#galeria">Galeria</a></li>
       </ul>
@@ -1536,7 +1542,6 @@
               <li><a href="#pre-congresso">Pré-congresso</a></li>
               <li><a href="#submissao">Trabalhos Científicos</a></li>
               <li><a href="#local">Local</a></li>
-              <li><a href="#inscricao">Inscrições</a></li>
               <li><a href="#patrocinadores">Patrocinadores</a></li>
               <li><a href="#galeria">Galeria</a></li>
             </ul>
@@ -1582,7 +1587,7 @@
         <p>
           Produzido por: <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener">Luka Plan Promoções e Eventos</a>
           &nbsp;&middot;&nbsp;
-          Desenvolvido por: <a href="tel:+5581995460140">Automa IT &amp; Development</a>
+          Desenvolvido por: <a href="https://wa.me/5581995460140" target="_blank" rel="noopener noreferrer">Automa IT &amp; Development</a>
         </p>
       </div>
     </footer>
@@ -1676,11 +1681,24 @@
         });
       });
 
-      /* ── Netflix carousel — drag + arrows ── */
+      /* ── Netflix carousel — drag + arrows (setas só quando há overflow) ── */
       function initNetflixCarousel(carouselId, prevId, nextId) {
         const carousel = document.getElementById(carouselId);
         if (!carousel) return;
         let isDown = false, startX = 0, scrollLeft = 0;
+
+        function syncCarouselOverflow() {
+          requestAnimationFrame(() => {
+            const epsilon = 6;
+            const scrollable = carousel.scrollWidth > carousel.clientWidth + epsilon;
+            carousel.classList.toggle("netflix-carousel--scrollable", scrollable);
+            const prevBtn = document.getElementById(prevId);
+            const nextBtn = document.getElementById(nextId);
+            if (prevBtn) prevBtn.classList.toggle("netflix-arrow--hidden", !scrollable);
+            if (nextBtn) nextBtn.classList.toggle("netflix-arrow--hidden", !scrollable);
+            if (!scrollable) carousel.scrollLeft = 0;
+          });
+        }
 
         carousel.addEventListener("mousedown", (e) => {
           isDown = true; carousel.classList.add("dragging");
@@ -1709,6 +1727,12 @@
         const scrollAmt = () => Math.max(carousel.clientWidth * 0.75, 240);
         if (prevBtn) prevBtn.addEventListener("click", () => carousel.scrollBy({ left: -scrollAmt(), behavior: "smooth" }));
         if (nextBtn) nextBtn.addEventListener("click", () => carousel.scrollBy({ left: scrollAmt(), behavior: "smooth" }));
+
+        syncCarouselOverflow();
+        const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(syncCarouselOverflow) : null;
+        if (ro) ro.observe(carousel);
+        window.addEventListener("load", syncCarouselOverflow);
+        window.addEventListener("resize", syncCarouselOverflow);
       }
 
       initNetflixCarousel("speakers-carousel", "speakers-prev", "speakers-next");
