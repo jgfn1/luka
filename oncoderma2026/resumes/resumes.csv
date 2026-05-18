@@ -1,69 +1,81 @@
-﻿Nome ,Curriculo 
-Aline Piol Sá,"Médica Dermatologista 
+﻿,Nome ,Curriculo 
+1,Aline Piol Sá,"Médica Dermatologista 
 Especista em Oncologia Cutânea pelo Instituto Sírio Libanês 
 Especialista em Cirurgia Dermatológica pelo IMS-Hospital da Gamboa
 Especialista em Acupuntura pelo Colégio Médico de Acupuntura  
 Especialista em Medicina de Família e Comunidade pela AMB"
-Antônio Douglas,"Oncologista Clínico Do Hospital Santa Joana – Rede Américas;
+2,Antônio Douglas,"Oncologista Clínico Do Hospital Santa Joana – Rede Américas;
 Professor da UPE"
-Beatriz Cavalcanti,"Cirurgiã geral Pela universidade Federal do Rio Grande do Norte - HUOL
+3,Beatriz Cavalcanti,"Cirurgiã geral Pela universidade Federal do Rio Grande do Norte - HUOL
 Cirurgiã oncológica pelo hospital do câncer de Pernambuco                                                                        Preceptora do serviço de oncoginecologia do Hospital do Câncer de Pernambuco"
-Claudia Fontan,"Médica radiologista especialista pelo Colégio Brasileiro de Radiologia – CBR
+4,Claudia Fontan,"Médica radiologista especialista pelo Colégio Brasileiro de Radiologia – CBR
 Membro da Comissão Nacional de Ultrassonografia - CNUS/CBR
 Visiting Scholar MSK UCSD- San Diego
 Fundadora e responsável técnica da clínica  ULTRAPLENNA ultrassonografia especializada.
 Mestre em biologia da saúde –HC/UFPE
 Doutoranda LIKA/Ageu Magalhães -UFPE"
-Daniela Takano,"Residência médica em Anatomia Patológica pela Universidade Federal de São Paulo/Unifesp
+5,Daniela Takano,"Residência médica em Anatomia Patológica pela Universidade Federal de São Paulo/Unifesp
 Mestre em Patologia pela Universidade Federal de Pernambuco/UFPE
 Título de especialista em Dermatopatologia pela International Society of Dermatopathology/ISDP
 Patologista Hospital das Clínicas da Universidade Federal de Pernambuco/UFPE e do laboratório de Patologistas Associados/PAS"
-Janielli Assis,"Médica pelo Centro Universitário Maurício de Nassau - UNINASSAU
+6,Janielli Assis,"Médica pelo Centro Universitário Maurício de Nassau - UNINASSAU
 Dermatologista pelo IMIP
 Título de especialista pela Associação Médica Brasileira
 Membro titular da Sociedade Brasileira de Dermatologia
 Pós-graduanda em oncologia cutânea no A.C Camargo Cancer Center"
-Jéssica Guido,"Membro Titular da Sociedade Brasileira de Dermatologista                                                                        Professora e Coordenadora da Disciplina de Dermatologia da Universidade Federal de Pernambuco e Universidade Católica de Pernambuco                                                                                                                               Preceptora da Residência Médica do HC-UFPE                                                                                                 Mestre em Medicina Interna pela UFPE e Doutora em Cirurgia pela UFPE.
+7,Jéssica Guido,"Membro Titular da Sociedade Brasileira de Dermatologista                                                                        Professora e Coordenadora da Disciplina de Dermatologia da Universidade Federal de Pernambuco e Universidade Católica de Pernambuco                                                                                                                               Preceptora da Residência Médica do HC-UFPE                                                                                                 Mestre em Medicina Interna pela UFPE e Doutora em Cirurgia pela UFPE.
 Chefe do Ambulatório de Toxicidade Cutânea a Quimioterápicos e a Imunossupressores"
-Laís Príncipe,"Médica patologista com atuação em dermatopatologia                                                                                           Atualmente trabalha no Hospital Universitário Oswaldo Cruz, Laboratório PAS e Serviço de Verificação de Óbito"
-Leandro Apolinário,"Oncologista clínico do Hospital Santa Joana Recife (Americas 
+8,Laís Príncipe,"Médica patologista com atuação em dermatopatologia                                                                                           Atualmente trabalha no Hospital Universitário Oswaldo Cruz, Laboratório PAS e Serviço de Verificação de Óbito"
+9,Leandro Apolinário,"Oncologista clínico do Hospital Santa Joana Recife (Americas 
 Oncologia) e do Hospital Universitário Oswaldo Cruz (Universidade 
 de Pernambuco);
 Ex-research FELLOWSHIP IOSI, Swizterland"
-Luis Felipe Carvalho,"Médico Oncologista Clínico 
+10,Luis Felipe Carvalho,"Médico Oncologista Clínico 
 Preceptor da Residência de Oncologia Clínica do IMIP
-Médico Oncologista da Rede Americas. "
-Luiz José Batista,"Médico oncologista Oncologia D’Or Esperança Recife, Imip e HC UFPE
-Mestrado pelo Imip
-Chefe da Unidade de Oncologia HC UFPE"
-Nildevande Firmino,"Oncologista pelo Hospital Sírio Libanês (SP).
-Oncologista do Hospital Santa Joana e do Hospital do Câncer de Pernambuco."
-Paulo Henrique Miranda,"Cirurgião oncológico pelo Ac Camargo Câncer Center
+Médico Oncologista da Rede Americas. ","confirmou, mas vai atualizar currículo"
+11,Luiz José Batista,"Médico oncologista Santa Joana Recife, Esperança Recife, HC UFPE
+Mestrado em cuidados paliativos pelo Imip
+Chefe da Unidade de Oncologia e Hematologia do Hospital das Clínicas da UFPE",
+12,Natália Diniz ,"Fellow Dermatologia em Oncologia Insituto Nacional de Câncer- INCA RJ
+Pós Graduação Dermatologia Oncológica Hospital Sírio Libanês 
+Sociedade Brasileira de Cirurgia Dermatológica (SBCD)
+Sociedade Brasileira de Dermatologia (SBD)
+Grupo brasileiro de Melanoma (GBM)
+Residência Médica Dermatologia Universidade Federal de Alagoas 
+Graduação em medicina pela Universidade de Pernambuco 
+",
+13,Nildevande Firmino,"Oncologista pelo Hospital Sírio Libanês (SP).
+Oncologista do Hospital Santa Joana e do Hospital do Câncer de Pernambuco.",
+14,Paulo Henrique Miranda,"Cirurgião oncológico pelo Ac Camargo Câncer Center
 Doutor em Oncologia/Melanoma pelo Ac camargo câncer Center/SP
 Coordenador da oncologia cutânea da clínico Unionco Pró-Pele, Clínica RICO e Hospital Barão de Lucena                                                                                                                                                                   Membro fundador - Clube da Pele de Pernambuco.
-Membro do Grupo Brasileiro de Melanoma e SBCO"
-Rebeca Reis ,"Cirurgiã geral pelo Hosp Oswaldo Cruz. 
+Membro do Grupo Brasileiro de Melanoma e SBCO",
+15,Rebeca Reis ,"Cirurgiã geral pelo Hosp Oswaldo Cruz. 
 Cirurgiã oncológica pelo Hosp do Câncer de Pernambuco
 Coordenadora da residência de Cirurg. Oncológica do Hosp. do Câncer.
-⁠Cirurgiã oncológica do RICO e Unionco.A16"
-Rodrigo Arruda,"Coordenador Oncologia Clínica do Hospital do Câncer de Pernambuco;
+⁠Cirurgiã oncológica do RICO e Unionco.A16",
+16,Rodrigo Arruda,"Coordenador Oncologia Clínica do Hospital do Câncer de Pernambuco;
 Oncologista Clínico do Imip, Santa Joana e Unionco; 
-Mestre pelo IMIP"
-Rogerio Santos,"Confirmou, mas falta enviar foto e currículo"
-Silvana Cavalcante,"Residência médica em clínica médica e dermatologia
+Mestre pelo IMIP",
+17,Rogério Santos,"Cirurgião oncológico do Real instituto de cirurgia oncológica do Hospital Português 
+Doutorado em oncologia pelo AC Camargo Câncer Center e Hospital do Câncer de Pernambuco",
+18,Silvana Cavalcante,"Residência médica em clínica médica e dermatologia
 Professora da disciplina dermatologia da UPE                                                                                                  Preceptora da residência médica em dermatologia da UPE
-Especializanda em oncologia cutânea pelo Hospital Albert Einstein                                                                     Doutorado em Medicina Tropical"
-Silvia Fontan,"Oncologista do Hospital Santa Joana;
+Especializanda em oncologia cutânea pelo Hospital Albert Einstein                                                                     Doutorado em Medicina Tropical",
+19,Silvia Fontan,"Oncologista do Hospital Santa Joana;
 Oncologista do Hospital Barão de Lucena;
-Oncologista do Hospital do Câncer"
-Suzane Leite,"Médica radioterapeuta do RHP/ IMIP/ HUOC 
+Oncologista do Hospital do Câncer",
+20,Suzane Leite,"Médica radioterapeuta do RHP/ IMIP/ HUOC 
 Membro titular pela sociedade Brasileira de radioterapia 
-Membro titular da sociedade Brasileira de Radiocirurgia."
-Tais Oliveira ,
-Thamires Alcântara,"Dermatologista pelo Hospital Universitário Oswaldo Cruz
+Membro titular da sociedade Brasileira de Radiocirurgia.",
+21,Tais Oliveira ,"Médica Dermatologista pelo Hospital Otávio de Freitas (PE)
+Especialista em Cosmiatria, Laser e Procedimentos pelo Hospital Albert Einstein (SP)
+Membro Titular SBD e SBCD
+Preceptora voluntária da Residência em Dermatologia e responsável pelo ambulatório de Mapeamento Corporal do Hospital Otávio de Freitas (PE)",
+22,Thamires Alcântara,"Dermatologista pelo Hospital Universitário Oswaldo Cruz
 Membro titular da SBD
 Cirurgia dermatológica, cosmiatria e laser pela SBCD
-Oncologia Cutânea pelo Hospital Sírio Libanês                                                                                      Preceptora voluntária de dermatologia no Hospital Universitário Oswaldo Cruz"
-Virgínia Batista,"Membro Titular da Sociedade Brasileira de Dermatologia;  
+Oncologia Cutânea pelo Hospital Sírio Libanês                                                                                      Preceptora voluntária de dermatologia no Hospital Universitário Oswaldo Cruz",
+23,Virgínia Batista,"Membro Titular da Sociedade Brasileira de Dermatologia;  
 ⁠Especialista em cirurgia dermatológica pela faculdade do ABC;
-⁠Cirurgiã especialista de Mohs pela SBD"
+⁠Cirurgiã especialista de Mohs pela SBD",
