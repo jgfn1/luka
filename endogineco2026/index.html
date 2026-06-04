@@ -786,26 +786,83 @@
       .modal { position: fixed; z-index: 10000; inset: 0; width: 100vw; height: 100dvh; background: rgba(10,22,56,.75); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: flex; justify-content: center; align-items: center; overflow: hidden; visibility: hidden; opacity: 0; transition: opacity .3s var(--ease), visibility .3s; }
       .modal.show { visibility: visible; opacity: 1; }
       .modal-content { background: #fff; color: var(--dark-text); border-radius: var(--r-lg); box-shadow: var(--shadow-lg); max-width: 520px; width: 90vw; max-height: 90dvh; overflow-y: auto; padding: 2.5rem 2rem 1.75rem; position: relative; text-align: center; animation: modal-pop .3s var(--ease) forwards; }
-      .modal-content.modal-content--speaker-placeholder-only {
-        padding: 2.75rem 2rem 2rem;
+      .modal-content.modal-content--speaker {
+        text-align: left;
+        max-width: 560px;
       }
-      .speaker-modal-graphic {
-        width: 120px;
-        height: 120px;
-        margin: 0 auto;
+      .speaker-modal-photo {
+        display: block;
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 1rem;
         border-radius: 50%;
-        background: linear-gradient(160deg, var(--navy-dark) 0%, var(--blue) 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        object-fit: cover;
+        object-position: center top;
         border: 3px solid rgba(26,56,112,.12);
       }
-      .speaker-modal-graphic svg {
-        width: 56px;
-        height: 56px;
-        opacity: .35;
-        color: #fff;
+      .speaker-modal-name {
+        text-align: center;
+        color: var(--navy);
+        font-size: 1.35rem;
+        margin: 0 0 .25rem;
+        font-family: "Montserrat", sans-serif;
       }
+      .speaker-modal-region {
+        text-align: center;
+        color: var(--muted-text);
+        font-size: .88rem;
+        font-weight: 700;
+        margin: 0 0 1rem;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+      }
+      .speaker-modal-bio {
+        margin: 0;
+        padding-left: 1.15rem;
+        color: var(--dark-text);
+        font-size: .9rem;
+        line-height: 1.55;
+      }
+      .speaker-modal-bio li { margin-bottom: .45rem; }
+      .speaker-modal-bio-empty {
+        text-align: center;
+        color: var(--muted-text);
+        font-size: .9rem;
+        margin: 0;
+      }
+      .modal-content.modal-content--confirm { text-align: left; max-width: 520px; }
+      .submission-confirm-title {
+        color: var(--navy);
+        font-size: 1.2rem;
+        margin: 0 0 .85rem;
+        font-family: "Montserrat", sans-serif;
+      }
+      .submission-confirm-text { font-size: .93rem; line-height: 1.6; margin: 0 0 1.25rem; color: var(--dark-text); }
+      .submission-confirm-actions { display: flex; flex-wrap: wrap; gap: .65rem; justify-content: flex-end; }
+      .btn-confirm-cancel {
+        padding: .55rem 1.1rem;
+        border-radius: var(--r-sm);
+        border: 1.5px solid rgba(26,56,112,.25);
+        background: transparent;
+        color: var(--navy);
+        font-weight: 700;
+        font-family: "Montserrat", sans-serif;
+        cursor: pointer;
+      }
+      .btn-confirm-cancel:hover { background: rgba(26,56,112,.06); }
+      .btn-confirm-proceed {
+        display: inline-flex;
+        align-items: center;
+        padding: .55rem 1.15rem;
+        border-radius: var(--r-sm);
+        background: var(--gold);
+        color: var(--navy-dark) !important;
+        font-weight: 700;
+        font-family: "Montserrat", sans-serif;
+        text-decoration: none;
+      }
+      .btn-confirm-proceed:hover { background: var(--gold-light); }
+      .trabalhos-cientificos-ctas .btn-edital { margin: 0; }
 
       @keyframes modal-pop { from { opacity: 0; transform: scale(.93) translateY(12px); } to { opacity: 1; transform: none; } }
       .close-modal { position: absolute; top: 1rem; right: 1.1rem; width: 32px; height: 32px; border-radius: 50%; background: rgba(26,56,112,.08); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--navy); transition: background .2s, color .2s; }
@@ -951,7 +1008,7 @@
         <li><a href="#programacao">Programação</a></li>
         <li><a href="#palestrantes">Palestrantes</a></li>
         <li><a href="#pre-congresso">Pré-congresso</a></li>
-        <li><a href="#submissao">Trabalhos Científicos</a></li>
+        <li><a href="#trabalhos-cientificos">Trabalhos Científicos</a></li>
         <li><a href="#local">Local</a></li>
         <li><a href="#patrocinadores">Patrocinadores</a></li>
         <li><a href="#galeria">Galeria</a></li>
@@ -1200,16 +1257,26 @@
 
         <!-- ─ DIA 1: QUINTA 27/08 ─ -->
         <div class="day-panel active" id="panel-quinta">
+<p class="aud-label">Pré-congresso</p>
+          <div class="schedule-scroll">
+            <table class="schedule-table">
+              <thead><tr><th style="width:140px">Horário</th><th>Atividade</th><th style="width:220px">Coordenação / Palestrante</th></tr></thead>
+              <tbody>
+                <tr><td>7:30</td><td colspan="2" class="session-break"><strong>Credenciamento curso Pré Congresso (USG Mapeamento)</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
 
           <p class="aud-label">Auditório C — Curso de USG Mapeamento de Endometriose</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
               <thead><tr><th style="width:140px">Horário</th><th>Atividade</th><th style="width:220px">Coordenação / Palestrante</th></tr></thead>
               <tbody>
-                <tr><td>7:30</td><td colspan="2" class="session-break"><strong>Credenciamento curso Pré Congresso (USG Mapeamento)</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>08:00 – 17:30</strong><br />AUDITÓRIO C — Curso de USG Mapeamento de Endometriose<br /><small>Coordenação: MEDERE (Cecília Pontes e Penélope Melo)</small></td></tr>
-                <tr><td>12:00 – 13:30</td><td colspan="2" class="session-break"><strong>INTERVALO</strong></td></tr>
-                <tr><td>13:30 – 17:00</td><td colspan="2" class="session-live"><strong>CONTINUAÇÃO DO CURSO</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>08:00 - 12:00</strong><br />AUDITÓRIO C - Curso de USG Mapeamento de Endometriose<br />Coordenação:  MEDERE  (Cecília Pontes - PE e Penélope Melo - PE )</td></tr>
+                <tr><td>12:00 - 13:30</td><td colspan="2" class="session-break"><strong>INTERVALO</strong></td></tr>
+                <tr><td>13:30 - 17:30</td><td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td></tr>
+                <tr><td>12:30</td><td colspan="2" class="session-break"><strong>Credenciamento cursos Pré Congresso</strong></td></tr>
+                <tr><td>13:00-13:15</td><td colspan="2" class="session-break"><strong>Abertura</strong></td></tr>
               </tbody>
             </table>
           </div>
@@ -1219,11 +1286,9 @@
             <table class="schedule-table">
               <thead><tr><th style="width:140px">Horário</th><th>Atividade</th><th style="width:220px">Coordenação / Palestrante</th></tr></thead>
               <tbody>
-                <tr><td>12:30</td><td colspan="2" class="session-break"><strong>Credenciamento cursos Pré Congresso</strong></td></tr>
-                <tr><td>13:00 – 13:15</td><td colspan="2" class="session-break"><strong>Abertura</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>13:15 – 15:00</strong><br />AUDITÓRIO A — A Videocirurgia na Oncoginecologia<br /><small>Coordenação: Iolanda Matias</small></td></tr>
-                <tr><td>15:00 – 15:30</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td>15:30 – 17:00</td><td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:15 - 15:00</strong><br />AUDITÓRIO A  - A Videocirurgia na Oncoginecologia<br />Coordenação:  Iolanda Matias - PE</td></tr>
+                <tr><td>15:00 - 15:30</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>15:30 - 17:00</td><td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td></tr>
               </tbody>
             </table>
           </div>
@@ -1233,11 +1298,10 @@
             <table class="schedule-table">
               <thead><tr><th style="width:140px">Horário</th><th>Atividade</th><th style="width:220px">Coordenação / Palestrante</th></tr></thead>
               <tbody>
-                <tr><td>12:30</td><td colspan="2" class="session-break"><strong>Credenciamento cursos Pré Congresso</strong></td></tr>
-                <tr><td>13:00 – 13:15</td><td colspan="2" class="session-break"><strong>Abertura</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>13:15 – 15:00</strong><br />AUDITÓRIO B — Curso de Nutrição para pacientes com Endometriose<br /><small>Coordenação: (a confirmar)</small></td></tr>
-                <tr><td>15:00 – 15:30</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td>15:30 – 17:00</td><td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:15 - 15:00</strong><br />AUDITÓRIO B  - Curso Nutricção para pacientes com Endometriose <br />Coordenação:</td></tr>
+                <tr><td>13:15 - 15:00</td><td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td></tr>
+                <tr><td>15:00 - 15:30</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>15:30 - 17:00</td><td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td></tr>
               </tbody>
             </table>
           </div>
@@ -1247,7 +1311,21 @@
             <table class="schedule-table">
               <thead><tr><th style="width:140px">Horário</th><th>Atividade</th><th style="width:220px">Coordenação / Palestrante</th></tr></thead>
               <tbody>
-                <tr><td colspan="3" class="session-header"><strong>13:15 – 17:00</strong><br />FOYER — Curso de Sutura Dry Lab em sutura Endoscópica<br /><small>Coordenação: Guilherme Zanluchi</small></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>12:30 - 19:00</strong><br />FOYER - Curso de Sutura Dry Lab em sutura Endoscópica <br />Coordenação: Guilherme Zanluchi - SP</td></tr>
+                <tr><td>12:30 - 13:00</td><td>Regras básicas de posição de agulha e fio - Nomenclatura e sistematização de agulha</td><td class="speaker-name">professor 1</td></tr>
+                <tr><td>13:00 - 13:30</td><td>Teoria do Ponto perfeito e passagem de agulha</td><td class="speaker-name">professor 2</td></tr>
+                <tr><td>13:30-14:00</td><td>Aplicação prática de sutura em videos: Fechamento de cúpula vaginal e miomectomias</td><td class="speaker-name">professor 3</td></tr>
+                <tr><td>14:00 - 15:30</td><td>Estação prática</td><td></td></tr>
+                <tr><td>14:00-14:30</td><td>Sistematização de 1 grau e acordar as mãos</td><td></td></tr>
+                <tr><td>14:30-15:00</td><td>Sistematizaçoes e Cruz de verificaçao</td><td></td></tr>
+                <tr><td>15:00 -15:30</td><td>O Ponto Perfeito</td><td></td></tr>
+                <tr><td>15:30 - 16:00</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>16:00 - 16:30</td><td>Teoria dos nós: Nó quadrado e semi-chaves</td><td class="speaker-name">professor 1</td></tr>
+                <tr><td>16:30 - 17:30</td><td>Os nós da minha preferência - Aplicação dos nós em cada tipo de tecido e cirurgia</td><td class="speaker-name">professor 2</td></tr>
+                <tr><td>17:30 - 19:00</td><td>Estação prática</td><td class="speaker-name">professor 3</td></tr>
+                <tr><td>17:30 - 18:00</td><td>Triplo Duplo - Monomanual e bimanual</td><td></td></tr>
+                <tr><td>18:00 - 18:30</td><td>Sequência de semi-chaves bloqueantes</td><td></td></tr>
+                <tr><td>18:30 - 19:00</td><td>Competição - Prêmio</td><td></td></tr>
               </tbody>
             </table>
           </div>
@@ -1256,76 +1334,49 @@
 
         <!-- ─ DIA 2: SEXTA 28/08 ─ -->
         <div class="day-panel" id="panel-sexta">
+<p class="aud-label">Abertura do congresso</p>
+          <div class="schedule-scroll">
+            <table class="schedule-table">
+              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
+              <tbody>
+                <tr><td>08:00 - 08:15</td><td colspan="2" class="session-break"><strong>Credenciamento</strong></td></tr>
+                <tr><td>08:15 08:30</td><td>Abertura</td><td class="speaker-name">Érica Batista <br />Edilberto Rocha <br />Jardel Soares <br />Iolanda Matias <br />Agostinho Machado                    Juliana Zaidan</td></tr>
+              </tbody>
+            </table>
+          </div>
+
           <p class="aud-label">Auditório A</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
               <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
               <tbody>
-                <tr><td>08:00 – 08:15</td><td colspan="2" class="session-break"><strong>Credenciamento</strong></td></tr>
-                <tr><td>08:15 – 08:30</td><td colspan="2" class="session-break"><strong>Abertura</strong><div style="font-weight:400; margin-top:0.35rem; font-size:0.88rem; line-height:1.45;">Érica Batista<br />Edilberto Rocha<br />Jardel Soares<br />Iolanda Matias<br />Agostinho Machado<br />Juliana Zaidan</div></td></tr>
-                <tr><td>08:35 – 09:00</td><td>Conferência — Como a IA pode influenciar sua conduta do consultório ao pós-cirúrgico?</td><td></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>09:05 – 10:05 (01 hora)</strong><br />MESA 1 — Miomas Uterinos</td></tr>
-                <tr><td>09:05 – 09:15 (10 min)</td><td>Estratégias para Diminuir o Sangramento nas Miomectomias — Qual a minha estratégia?</td><td></td></tr>
-                <tr><td>09:15 – 09:25 (10 min)</td><td></td><td></td></tr>
-                <tr><td>09:25 – 09:35 (10 min)</td><td>Extração de miomas — Existe a melhor técnica?</td><td></td></tr>
-                <tr><td>09:35 – 09:45 (10 min)</td><td>Conversão cirúrgica em miomectomia — falha na indicação ou decisão correta?</td><td></td></tr>
-                <tr><td>09:45 – 10:05 (20 min)</td><td><strong>CROSS FIRE</strong> — Miomectomia Robótica × Miomectomia Videolaparoscopias</td><td></td></tr>
-                <tr><td>10:05 – 10:35 (30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>10:35 – 12:15 (01 hora e 40 min)</strong><br />MESA 2 — Vídeo Histeroscopia</td></tr>
-                <tr><td>10:35 – 10:45 (10 min)</td><td>Vídeo Histeroscopia Ambulatorial — qual o espaço até onde ir? Como minimizar o temor? Como diminuir a dor?</td><td></td></tr>
-                <tr><td>11:05 – 11:20 (15 min)</td><td>Hiperplasia Endometrial e Câncer de Endométrio — Ainda posso ser conservador? Até quando?</td><td></td></tr>
-                <tr><td>11:20 – 11:35 (15 min)</td><td>Utilizando a Histeroscopia para o tratamento da SUA (sangramento uterino anormal)</td><td></td></tr>
-                <tr><td>11:35 – 11:50 (15 min)</td><td>Como minimizar as complicações nas Histeroscopias — e, se ocorrerem, como lidar com elas?</td><td></td></tr>
-                <tr><td>11:50 – 12:05 (15 min)</td><td>Os desafios da retenção de restos ovulares — Como a Histeroscopia pode ajudar?</td><td></td></tr>
-                <tr><td>12:05 – 12:15 (10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
-                <tr><td>12:15 – 13:30 (01 hora e 30 min)</td><td colspan="2" class="session-break"><strong>INTERVALO</strong></td></tr>
+                <tr><td>08:35 - 09:15</td><td>Presidente: Edilberto Rocha - PE</td><td></td></tr>
+                <tr><td>08:35- 09:00</td><td>Conferência - Como a IA pode influenciar  sua conduta do consultório ao pós- cirúrgico?</td><td class="speaker-name">Jardel Soares - PE</td></tr>
+                <tr><td>09:05- 09:15</td><td>Complicações em cirurgias minimamente invasiva - Como eu devo conduzir?</td><td class="speaker-name">Giuliano Borelli - SP</td></tr>
+                <tr><td colspan="3" class="session-header"><strong>09:15 - 10:05<br />(50 min)</strong><br />MESA 1 - Miomas Uterinos        <br />Presidente: Mariana Santiago - PE <br />Debatedores: Jessica Cesário - PE, Rafael Alves, - PE,  Alisson Chianca - MA, Lilian Mendes - CE</td></tr>
+                <tr><td>09:15 - 09:25<br />(10 min)</td><td>Estratégias para Diminuir o Sangramento nas miomectomias - Qual a minha estratégia ?</td><td class="speaker-name">Melissandro Lacerda - PB</td></tr>
+                <tr><td>09:25 - 09:35<br />(10 min)</td><td>Extração de miomas - Existe a melhor técnica ?</td><td class="speaker-name">Mauro Aguiar - PE</td></tr>
+                <tr><td>09:35 - 09:45<br />(10 min)</td><td>Conversão cirúrgica em miomectomia - falha na indicação ou decisão correta ?</td><td class="speaker-name">Ana Luiza Lobão - PB</td></tr>
+                <tr><td>09:45 - 10:05<br />(20 min)</td><td>Miomectomia - Qual a melhor incisão, o melhor ponto e o melhor  fio para uma cirurgia refinada , rápida e sem sangramentos ?</td><td class="speaker-name">Andreiza Bilhar - CE</td></tr>
+                <tr><td>10:05 - 10:35<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>10:35 - 12:15<br />(01 hora e <br />40 min)</strong><br />MESA 2 - Vídeo Histeroscopia       <br />Presidente: Helena Nagle - PE<br />Debatedores: Neidson Menezes - PE, Aurélio Costa - PE, Vera Sena- PE, Felipe Rocha - PE</td></tr>
+                <tr><td>10:35 - 10:45<br />(10 min)</td><td>Vídeo Histeroscopia Ambulatorial qual o espaço até onde ir? Como minimizar o temor? <br />Como diminuir a dor?</td><td class="speaker-name">Mariana Vieira  - SP</td></tr>
+                <tr><td>11:05 - 11:20<br />(15 min)</td><td>Hiperplasia Endometrial e Câncer de Endométrio. Ainda posso ser conservado e ? Até Quando ?</td><td class="speaker-name">Yole Minervino - PB</td></tr>
+                <tr><td>11:20 - 11:35<br />(15 min)</td><td>Utilizando a Histeroscopia para o tratamento da SUA (sangramento uterino anormal). <br />Onde se aplica ? Qual o limite ?</td><td class="speaker-name">Maria Roma - PE</td></tr>
+                <tr><td>11:35 - 11:50<br />(15 min)</td><td>Como minimizar as complicações na Histeroscopias  e se ocorrerem como lidar com elas ?</td><td class="speaker-name">Ana Carolina Serafim - PE</td></tr>
+                <tr><td>11:50 - 12:05<br />(15 min)</td><td>Os desafios da retenção de restos ovulares - Como a Histeroscopia pode ajudar?</td><td></td></tr>
+                <tr><td>12:05 - 12:15<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>12:15-12:30<br />(15min)</td><td>SIMPÓSIO - A reposição de Ferro - Item fundamental para uma cirurgia segura</td><td class="speaker-name">Jardel Soares - PE</td></tr>
+                <tr><td>12:30 - 13:30              (01 hora)</td><td colspan="2" class="session-break"><strong>INTERVALO</strong></td></tr>
                 <tr><td colspan="3" class="session-podcast">🎙️ <strong>PODCAST</strong></td></tr>
-                <tr><td>13:30 – 15:30 (2 horas)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td></tr>
-                <tr><td>15:30 – 16:00 (30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>16:00 – 17:20 (01 hora e 20 min)</strong><br />MESA 3 — Nerve-sparing (preservação nervosa) na Cirurgia de Endometriose</td></tr>
-                <tr><td>16:00 – 16:30 (30 min)</td><td>Você sabe onde passam os principais nervos pélvicos? Qual a importância na Cirurgia complexa de Endometriose?</td><td></td></tr>
-                <tr><td>16:30 – 16:50 (20 min)</td><td>Principais lesões nervosas na Endometriose — Quais os principais sintomas?</td><td></td></tr>
-                <tr><td>16:50 – 17:10 (20 min)</td><td>Toda lesão nervosa por endometriose deve ser operada?</td><td></td></tr>
-                <tr><td>17:10 – 17:20 (10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
-                <tr><td>17:20 – 17:55 (35 min)</td><td><strong>TALK SHOW</strong> — &quot;Jornada da paciente com endometriose&quot;<br /><small style="opacity:.92;font-weight:600">Como ter um consultório de sucesso</small></td><td></td></tr>
-                <tr><td colspan="3" class="session-break"><strong>Cerimônia abertura</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p class="aud-label">Auditório B</p>
-          <div class="schedule-scroll">
-            <table class="schedule-table">
-              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
-              <tbody>
-                <tr><td colspan="3" class="session-header"><strong>08:25 – 10:05 (01 hora e 40 min)</strong><br />MESA 1 — No meu consultório</td></tr>
-                <tr><td>08:25 – 08:45 (20 min)</td><td>Menopausa e Climatério — Como eu trato e conduzo caso a caso?</td><td></td></tr>
-                <tr><td>08:45 – 09:05 (20 min)</td><td>Métodos de Diagnóstico para endometriose — O que já temos? Quais as novas perspectivas?</td><td></td></tr>
-                <tr><td>09:05 – 09:25 (20 min)</td><td>Endometriose na adolescência — Como conduzo? Como evitar o excesso de cirurgias?</td><td></td></tr>
-                <tr><td>09:25 – 09:45 (20 min)</td><td>Dor na relação sexual, vaginismo e dificuldades de relacionamento como sequela da endometriose — Como conduzir?</td><td></td></tr>
-                <tr><td>09:45 – 09:55 (10 min)</td><td>Impactos negativos da endometriose na sociedade — Como podemos reverter isso?</td><td></td></tr>
-                <tr><td>09:55 – 10:05 (10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
-                <tr><td>10:05 – 10:35 (30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>10:35 – 12:15</strong><br />Video show cases — Vídeos semi-editados</td></tr>
-                <tr><td>10:35 – 10:55 (20 min)</td><td>Video show cases — Vídeos semi-editados <small style="display:block;margin-top:.35rem;color:var(--muted-text);font-weight:600">(caso, estratégias e briefing do palestrante)</small></td><td></td></tr>
-                <tr><td>10:35 – 10:55 (20 min)</td><td>Como o uso da fluorescência me ajudou nesse caso</td><td></td></tr>
-                <tr><td>10:35 – 10:55 (20 min)</td><td>Tive que mudar minha estratégia no tratamento dessa doença intestinal</td><td></td></tr>
-                <tr><td>10:55 – 11:15 (20 min)</td><td>Como eu tratei essa lesão ureteral de endometriose</td><td></td></tr>
-                <tr><td>11:15 – 11:35 (20 min)</td><td>Minha estratégia para essa miomectomia difícil</td><td></td></tr>
-                <tr><td>11:35 – 11:55 (20 min)</td><td>Cerclagem Robótica — Quando? Tips e Truques?</td><td></td></tr>
-                <tr><td>11:55 – 12:15 (15 min)</td><td>Istmocele — Tratar por via laparoscópica, robótica ou Histeroscopia?</td><td></td></tr>
-                <tr><td>12:15 – 13:30 (01 hora e 15 min)</td><td colspan="2" class="session-break"><strong>INTERVALO</strong></td></tr>
-                <tr><td colspan="3" class="session-podcast">🎙️ <strong>PODCAST</strong></td></tr>
-                <tr><td>13:30 – 15:30 (2 horas)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td></tr>
-                <tr><td>15:30 – 16:00 (30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>16:00 – 17:10 (01 hora e 10 min)</strong><br />MESA 2 — Imagem</td></tr>
-                <tr><td>16:00 – 16:40 (40 min)</td><td><strong>CROSS FIRE</strong> — O que não pode faltar no ultrassom de mapeamento da endometriose?<br />O que foi possível melhorar com a tecnologia?<br />O que não pode faltar na ressonância para rastreio de endometriose?<br />A reconstrução três D como apoio ao cirurgião</td><td></td></tr>
-                <tr><td>16:40 – 17:00 (20 min)</td><td>A IA será uma amiga ou uma inimiga no diagnóstico de endometriose?</td><td></td></tr>
-                <tr><td>17:00 – 17:10 (10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
-                <tr><td>17:10 – 18:00 (50 min)</td><td><strong>Tomando decisões no tratamento da endometriose — VOCÊ DECIDE!</strong></td><td></td></tr>
-                <tr><td></td><td>Caso Clínico 1</td><td></td></tr>
-                <tr><td></td><td>Caso Clínico 2</td><td></td></tr>
-                <tr><td></td><td>Caso Clínico 3</td><td></td></tr>
+                <tr><td>13:30 - 15:30<br />(2 horas)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO                                                                                                                                              Presidente: Mauro Aguiar - PE</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife - PE <br />Condução caso:  Mari Cecília - PE <br />Kathiane Lustosa CE - cirurgiã<br /> <br />* Hospital Barão de Lucena - PE<br />Condução caso: Carolina Feitosa - PE <br />Patrick Bellelis - SP  / <br />Mariana Vieira  - SP<br /><br />* Hospital das nações CWB  <br />Mônica Zomer Kondo PR <br />William Kondo PR<br /><br />* Hospital Campinas - SP<br />Carlos Godoy - SP</div></td></tr>
+                <tr><td>15:30 - 16:00<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>16:00 - 17:20<br />(01 hora e <br />20 min)</strong><br />MESA 3 - Nerve-sparing (preservação nervosa) na Cirurgia de Endometriose    <br />Presidente: Priscila Vieira- PE       <br />Debatedores: Renato Barreto - SP, Melissandro Lacerda - PB, Anna Luiza Lobão - PB</td></tr>
+                <tr><td>16:00 - 16:30<br />(30 min)</td><td>Você sabe onde passam os principais nervos pélvicos ? Qual a importância na Cirurgia complexa de Endometriose?</td><td class="speaker-name">Kathiane Lustosa - CE</td></tr>
+                <tr><td>16:30 - 16:50<br />(20 min)</td><td>Principais lesões nervosas na Endometriose ? Quais os principais sintomas ?</td><td class="speaker-name">Patrick Bellelis - SP</td></tr>
+                <tr><td>16:50 - 17:10<br />(20 min)</td><td>Toda lesão nervosa por endometriose deve ser operada?</td><td class="speaker-name">Raquel Magalhães - SP</td></tr>
+                <tr><td>17:10 - 17:20<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>17:20 - 18:00<br />(40 min)</td><td>TALK SHOW - &quot;Jornada da paciente com endometriose&quot;<br />Como ter um consultório de sucesso                                                                                                                        Coordenadora: Marina Muniz</td><td class="speaker-name">Rosaura Almeida - PE, Marcos Saturnino - PE, Isaura Vieira - DF<br />Urologista <br />Kathiane Lustosa - CE, Mayara Macedo -PE, Pericles Oliveira - PB, Psicólogo</td></tr>
                 <tr><td colspan="3" class="session-break"><strong>Cerimônia abertura</strong></td></tr>
               </tbody>
             </table>
@@ -1335,60 +1386,45 @@
 
         <!-- ─ DIA 3: SÁBADO 29/08 ─ -->
         <div class="day-panel" id="panel-sabado">
-          <p class="aud-label">Auditório A</p>
+<p class="aud-label">Auditório B</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
               <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
               <tbody>
-                <tr><td>08:00 – 10:00 (2 horas)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td></tr>
-                <tr><td>10:00 – 10:30 (30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td>10:30 – 10:50 (20 min)</td><td>Conferência — Cirurgia Robótica na Ginecologia e outras tecnologias associadas — Que benefícios já temos comprovado?</td><td></td></tr>
-                <tr><td>10:50 – 11:10 (20 min)</td><td>Conferência — Adenomiose — Quando o tratamento clínico falhar, o que mais posso oferecer à mulher infértil?</td><td></td></tr>
-                <tr><td>11:10 – 11:25 (15 min)</td><td>Conferência — Manejo clínico da dor — O que temos de novo? Canabbis? E no manejo avançado da dor, o que temos de novo?</td><td></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>11:25 – 12:35 (01 hora e 10 min)</strong><br />MESA 1 — Infertilidade e Endometriose</td></tr>
-                <tr><td>11:25 – 11:40 (15 min)</td><td>O que fazer primeiro na paciente com endometriose: FiV antes de operar ou operar e depois a FIV?</td><td></td></tr>
-                <tr><td>11:40 – 11:55 (15 min)</td><td>Na investigação Histeroscópica da mulher infértil — O que devo procurar? Como tratar?</td><td></td></tr>
-                <tr><td>11:55 – 12:10 (15 min)</td><td>O desafio do manejo das malformações uterinas — do diagnóstico à escolha da via ideal de abordagem. Qual a melhor estratégia cirúrgica?</td><td></td></tr>
-                <tr><td>12:10 – 12:25 (15 min)</td><td>Da implantação até o parto — Muda alguma alguma coisa no acompanhamento da mulher que cursa com endometriose e infertilidade?</td><td></td></tr>
-                <tr><td>12:25 – 12:35 (10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
-                <tr><td>12:35 – 12:55 (20 min)</td><td colspan="2" class="session-break"><strong>BRUNCH</strong></td></tr>
-                <tr><td>12:55 – 13:15 (20 min)</td><td>Conferência — A sobrevida do cirurgião Videolaparoscópico e Robótico — da ergonomia à saúde mental</td><td></td></tr>
-                <tr><td>13:15 – 13:35 (20 min)</td><td>Conferência — Canetas Emagrecedoras — Qual o mecanismo de ação. Ela poderia ajudar no tratamento da endometriose?</td><td></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>13:35 – 14:25 (50 min)</strong><br />MESA 2 — Coloproctologia em ação</td></tr>
-                <tr><td>13:35 – 14:05 (30 min)</td><td><strong>TRIPLO CROSS FIRE</strong> — Shaving / Discoide e duplo discoide / Ressecção Segmentar</td><td></td></tr>
-                <tr><td>14:05 – 14:15 (10 min)</td><td>Fístulas intestinais — Como conduzir?</td><td></td></tr>
-                <tr><td>14:15 – 14:25 (10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
-                <tr><td>14:25 – 14:35 (10 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td>14:25 – 16:15 (01 hora e 50 min)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td></tr>
-                <tr><td>16:15</td><td colspan="2" class="session-break"><strong>Encerramento e Brinde</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p class="aud-label">Auditório B</p>
-          <div class="schedule-scroll">
-            <table class="schedule-table">
-              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
-              <tbody>
-                <tr><td>08:00 – 10:00 (2 horas)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td></tr>
-                <tr><td>10:00 – 10:30 (30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td>10:30 – 10:45 (15 min)</td><td>Conferência — Tratamento das distopias genitais — Qual a melhor técnica? E os resultados?</td><td></td></tr>
-                <tr><td>10:45 – 11:00 (15 min)</td><td>Conferência — Decidir é mais difícil do que operar</td><td></td></tr>
-                <tr><td>11:00 – 11:15 (15 min)</td><td>Conferência — Quando a dor pélvica é muito mais do que a endometriose</td><td></td></tr>
-                <tr><td>11:15 – 11:30 (15 min)</td><td>Conferência — PBM (Patient Blood Management) — Como preparar o paciente para cirugia? Até quando tolerar a anemia?</td><td></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>11:30 – 12:35 (01 hora e 05 min)</strong><br />MESA 1 — A multidisciplinaridade</td></tr>
-                <tr><td>11:30 – 11:45 (15 min)</td><td>A melhor dieta para paciente com endometriose — Há espaço para suplementos?</td><td></td></tr>
-                <tr><td>11:45 – 12:00 (15 min)</td><td>Fisioterapia Pélvica antes e após a cirurgia — Que resultados temos comprovados?</td><td></td></tr>
-                <tr><td>12:00 – 12:15 (15 min)</td><td>A acupuntura como tratamento adjuvante nas patologias ginecológicas.</td><td></td></tr>
-                <tr><td>12:15 – 12:25 (10 min)</td><td>Os impactos da atividade física no tratamento da endometriose — Qual o melhor exercício?</td><td></td></tr>
-                <tr><td>12:25 – 12:35 (10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
-                <tr><td>12:35 – 13:55 (1 hora e 20 min)</td><td colspan="2" class="session-break"><strong>BRUNCH</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>13:55 – 14:25 (30 min)</strong><br />MESA 2 — Urologia em ação</td></tr>
-                <tr><td>13:55 – 14:10 (15 min)</td><td>Tratamento da endometriose ureteral — em pelves congeladas existe uma melhor técnica?</td><td></td></tr>
-                <tr><td>14:10 – 14:25 (15 min)</td><td>Lesão vesical — limites da ressecção. Existem repercussões?</td><td></td></tr>
-                <tr><td>14:25 – 14:35 (10 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td>14:35 – 16:15 (01 hora e 40 min)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td></tr>
-                <tr><td>16:15</td><td colspan="2" class="session-break"><strong>Encerramento e Brinde</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>08:25 - 10:05<br />(01 hora e <br />40 min)</strong><br />MESA 1 -  No meu consultório           <br />Presidente: Simone Carvalho - PE <br />Debatedores:</td></tr>
+                <tr><td>08:25 - 8:45 <br />(20 min)</td><td>Climatério E Menopausa na paciente com Endometriose. Como eu conduzo caso a caso?</td><td class="speaker-name">Priscila Vieira - PE</td></tr>
+                <tr><td>08:45 - 09:05<br />(20 min)</td><td>Métodos de Diagnóstico para endometriose o que já temos ? Quais as novas perspectivas?</td><td class="speaker-name">Cicilia Pontes - PE</td></tr>
+                <tr><td>09:05 - 9:25 <br />(20 min)</td><td>Endometriose na adolescência: Como conduzo? Como evitar o excesso de cirurgias ?</td><td class="speaker-name">Lilia Mendes - CE</td></tr>
+                <tr><td>09:25 - 09:45<br />(20 min)</td><td>Dor na relação sexual ,Vaginismo , dificuldades de relacionamento como sequela da endometriose . Como conduzir ?</td><td class="speaker-name">Aleide Tavares - PE</td></tr>
+                <tr><td>09:45 - 09:55<br />(10  min)</td><td>Impactos negativos da endometriose na sociedade . Como podemos reverter isso ?</td><td class="speaker-name">Iolanda Matias - PE</td></tr>
+                <tr><td>09:55 - 10:05<br />(10  min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>10:05 - 10:35 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>10:35 - 12:15<br />(01 hora e <br />40 min)</strong><br />VÍDEOS SHOWS CASE - Vídeos semi-editados</td></tr>
+                <tr><td>10:35 - 10:55<br />(20 min)</td><td>Como o uso da fluorescência me ajudou nesse caso</td><td class="speaker-name">Guilherme Zanluchi - PE</td></tr>
+                <tr><td>10:35 - 10:55<br />(20 min)</td><td>Tive que mudar minha estratégia no tratamento dessa doença intestinal</td><td class="speaker-name">Claudia Joaquim - RJ</td></tr>
+                <tr><td>10:55-11:15<br />(20 min)</td><td>Como eu tratei essa lesão ureteral de endometriose</td><td class="speaker-name">Rogerson Andrade - PE</td></tr>
+                <tr><td>11:15 - 11:35<br />(20 min)</td><td>Minha estratégia para essa miomectomia difícil</td><td class="speaker-name">Alisson Chianca - MA</td></tr>
+                <tr><td>11:35 - 11:55<br />(20 min)</td><td>Cerclagem Robótica . Quando? Tips e Truques ?</td><td class="speaker-name">Patrick Bellelis - SP</td></tr>
+                <tr><td>11:55  -  12:15<br />(20  min)</td><td>Istmocele -Tratar por via laparoscópica, robótica ou Histeroscopia ?</td><td class="speaker-name">Mariana Vieira - SP</td></tr>
+                <tr><td>12:15-12:30<br />(15 min)</td><td>SIMPÓSIO  - A reposição de Ferro - Item fundamental para uma cirurgia segura</td><td class="speaker-name">Jardel Soares - PE</td></tr>
+                <tr><td>12:30  - 13:30<br />(1 hora)</td><td colspan="2" class="session-break"><strong>INTERVALO</strong></td></tr>
+                <tr><td colspan="3" class="session-podcast">🎙️ <strong>PODCAST</strong></td></tr>
+                <tr><td>13:30 - 15:30<br />(2 horas)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td></tr>
+                <tr><td>15:30 - 16:00<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>16:00 - 17:10<br />(01 hora e <br />10 min)</strong><br />MESA 2 - Imagem        <br />Presidente: Taciana Morais</td></tr>
+                <tr><td>16:00 - 16:30<br />(30 min)</td><td>CROSS FIRE  - Apresente suas superioridades</td><td></td></tr>
+                <tr><td></td><td>O que  não pode faltar na ultrassom  de mapeamento da endometriose ?<br />O que foi possível melhorar com a tecnologia ?</td><td class="speaker-name">Penélope Melo - PE</td></tr>
+                <tr><td></td><td>O que não pode faltar na ressonância para rastreio de endometriose ?</td><td class="speaker-name">Rafaela Agonis - BA</td></tr>
+                <tr><td>16:30 - 16:45<br />(15 min)</td><td>Como a  reconstrução três D veio para trazer um  apoio ao cirurgião ? Te mostro na prática</td><td class="speaker-name">Italo Cruz - PE</td></tr>
+                <tr><td>16:45 - 17:00<br />(15 min)</td><td>A IA substituirá o humano  no diagnóstico radiológico da endometriose?</td><td class="speaker-name">Nadja Rolim - PE</td></tr>
+                <tr><td>17:00 - 17:10<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>17:10 - 17:25<br />(15 min)</td><td>SIMPÓSIO PATROCINADO BAYER  - Tratamento Clínico da Endometriose segundo o protocolo da ACOH 2026</td><td class="speaker-name">Jardel Soares - PE</td></tr>
+                <tr><td>17:15 - 18:00<br />(45 min)</td><td>Tomando decisões no  tratamento cirúrgico no ginecologia <br />VOCÊ DECIDE!</td><td></td></tr>
+                <tr><td></td><td>Caso Clínico 1 - TUMOR ANEXIAL</td><td></td></tr>
+                <tr><td></td><td>Caso Clínico 2 - PROLAPSO + INCONTINÊNCIA URINÁRIA</td><td class="speaker-name">Sara Arcanjo - PE</td></tr>
+                <tr><td></td><td>Caso Clínico 3 - ADENOMIOSE</td><td class="speaker-name">Raquel Magalhães - PE</td></tr>
+                <tr><td>18:00</td><td colspan="2" class="session-break"><strong>Encerramento</strong></td></tr>
+                <tr><td>Cerimônia abertura</td><td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td></tr>
               </tbody>
             </table>
           </div>
@@ -1405,75 +1441,149 @@
       <div class="netflix-section-wrapper">
         <button class="netflix-arrow netflix-arrow-prev" id="speakers-prev" aria-label="Anterior">&#8249;</button>
         <div class="netflix-carousel" id="speakers-carousel">
-          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
-            <div class="netflix-card-empty-bg">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
+
+
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Aleide Tavares" data-speaker-name="Aleide Tavares" data-speaker-region="PE" data-speaker-photo="speakers/aleide-tavares-pe.jpg" data-speaker-bio="[&quot;Residência GO pela UPE;&quot;, &quot;Residência Reprodução Humana pelo IMIP;&quot;, &quot;Mestre em Ciências da Saúde pela UFPE;&quot;, &quot;Título de especialista em sexologia pela FEBRASGO&quot;, &quot;Trabalhos atualmente:&quot;, &quot;Supervisora da residência médica GO - HFPE;&quot;, &quot;Responsável pela ambulatório de climatério HC-UFPE&quot;, &quot;Ginecologista do espaço Trans- UFPE&quot;]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/aleide-tavares-pe.jpg');" role="img" aria-label="Foto de Aleide Tavares"></div>
             <div class="netflix-card-overlay"></div>
-            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+            <div class="netflix-card-content">
+              <h3>Aleide Tavares</h3>
+              <p>PE</p>
               <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
             </div>
           </div>
-          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
-            <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #102450 0%, #2d6aa0 100%);">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Alisson Chianca" data-speaker-name="Alisson Chianca" data-speaker-region="MA" data-speaker-photo="speakers/alisson-chianca-ma.jpg" data-speaker-bio="[]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/alisson-chianca-ma.jpg');" role="img" aria-label="Foto de Alisson Chianca"></div>
             <div class="netflix-card-overlay"></div>
-            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+            <div class="netflix-card-content">
+              <h3>Alisson Chianca</h3>
+              <p>MA</p>
               <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
             </div>
           </div>
-          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
-            <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #1e4a8a 0%, #102450 100%);">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Andreissa Paiva" data-speaker-name="Andreissa Paiva" data-speaker-region="CE" data-speaker-photo="speakers/andreissa-paiva-ce.jpg" data-speaker-bio="[&quot;Professora Adjunta de Ginecologia da Universidade Federal do Ceará.&quot;, &quot;Doutora em Ginecologia pela Universidade Federal de São Paulo (UNIFESP)&quot;, &quot;Uroginecologia e Cirurgia vaginal pela UNIFESP.&quot;, &quot;Membro da Comissão Nacional de Uroginecologia da FEBRASGO.&quot;, &quot;Título de especialista em endoscopia ginecológica pela FEBRASGO e SOBRACIL.&quot;, &quot;Preceptora do internato e residência médica de Ginecologia e obstetrícia da Maternidade escola Assis Chateudbriand.&quot;, &quot;Preceptora da residência médica de Ginecologia e obstetrícia da Escola de saúde pública do Ceará.&quot;, &quot;Coordenadora do fellowship em cirurgias ginecológicas minimamente invasivas do instituto salvata de educação e rede d’or.&quot;, &quot;Vice presidente da sociedade cearense de ginecologia e obstetrícia (SOCEGO).&quot;]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/andreissa-paiva-ce.jpg');" role="img" aria-label="Foto de Andreissa Paiva"></div>
             <div class="netflix-card-overlay"></div>
-            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+            <div class="netflix-card-content">
+              <h3>Andreissa Paiva</h3>
+              <p>CE</p>
               <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
             </div>
           </div>
-          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
-            <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #1a3870 0%, #2d6aa0 100%);">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Carlos Godoy" data-speaker-name="Carlos Godoy" data-speaker-region="SP" data-speaker-photo="speakers/carlos-godoy-sp.jpg" data-speaker-bio="[&quot;Cirurgião Ginecológico graduado pela UNICAMP, com especialização em Oncologia Pélvica e Cirurgia Minimamante Invasiva, com ênfase no tratamento de Endometriose e Câncer Ginecológico.&quot;, &quot;Mestre em Ginecologia pela UNICAMP.&quot;, &quot;Médico Líder do Núcleo de Endometriose do Hospital São Luiz Campinas e do setor de Oncologia Ginecológica do Hospital Vera Cruz Campinas. Proctor em Robótica pela Intuitive.&quot;]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/carlos-godoy-sp.jpg');" role="img" aria-label="Foto de Carlos Godoy"></div>
             <div class="netflix-card-overlay"></div>
-            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+            <div class="netflix-card-content">
+              <h3>Carlos Godoy</h3>
+              <p>SP</p>
               <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
             </div>
           </div>
-          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
-            <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #102450 0%, #1a3870 100%);">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Fábio Ohara" data-speaker-name="Fábio Ohara" data-speaker-region="SP" data-speaker-photo="speakers/fabio-ohara-sp.jpg" data-speaker-bio="[]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/fabio-ohara-sp.jpg');" role="img" aria-label="Foto de Fábio Ohara"></div>
             <div class="netflix-card-overlay"></div>
-            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+            <div class="netflix-card-content">
+              <h3>Fábio Ohara</h3>
+              <p>SP</p>
               <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
             </div>
           </div>
-          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
-            <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #102450 0%, #2d6aa0 100%);">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Giuliano Borelli" data-speaker-name="Giuliano Borelli" data-speaker-region="SP" data-speaker-photo="speakers/giuliano-borelli-sp.jpg" data-speaker-bio="[]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/giuliano-borelli-sp.jpg');" role="img" aria-label="Foto de Giuliano Borelli"></div>
             <div class="netflix-card-overlay"></div>
-            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+            <div class="netflix-card-content">
+              <h3>Giuliano Borelli</h3>
+              <p>SP</p>
               <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
             </div>
           </div>
-          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
-            <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #1e4a8a 0%, #102450 100%);">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Iolanda Matias" data-speaker-name="Iolanda Matias" data-speaker-region="PE" data-speaker-photo="speakers/iolanda-matias-pe.jpg" data-speaker-bio="[&quot;Ginecologista oncológica do Hospital Santa Joana Recife&quot;, &quot;Cirurgia Oncológica do HC/ UFPE&quot;, &quot;Especialista em cirurgia minimamente invasiva pelo Hospital Sírio Libanês&quot;, &quot;Cancerologia Cirúrgica pelo HCP&quot;, &quot;Mestre  em oncologia ginecologia UPE&quot;, &quot;Doutora em biologia Molecular no câncer ginecológico-LIKA/UFPE&quot;]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/iolanda-matias-pe.jpg');" role="img" aria-label="Foto de Iolanda Matias"></div>
             <div class="netflix-card-overlay"></div>
-            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+            <div class="netflix-card-content">
+              <h3>Iolanda Matias</h3>
+              <p>PE</p>
               <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
             </div>
           </div>
-          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Palestrante">
-            <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #1a3870 0%, #102450 100%);">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Jardel Soares" data-speaker-name="Jardel Soares" data-speaker-region="PE" data-speaker-photo="speakers/jardel-soares-pe.jpg" data-speaker-bio="[&quot;[Especialidades]&quot;, &quot;TOCOGINECOLOGISTA, ENDOSCOPIA GINECOLÓGICA.&quot;, &quot;[Formação]&quot;, &quot;Formado em Medicina UNIVALLE/UFPE. Residência Médica em Tocoginecologia IMIP (Instituto Materno Infantil Fernando Figueira) - Recife - PE. Pós-Graduação em Vídeo-Histeroscopia pelo GYNELASER/FERTILITÉ - Brasília - DF. Pós-Graduação em Videolaparoscopia UNICETREX/UNICEMEX - Brasília - DF. Curso Avançado em Endometriose Profunda - Santa Casa de Misericórdia - São Paulo - SP. Mentoria Cirurgião de Elite - Dr. Marcelo Vieira - São Paulo. CAVAVER LAB - Grupo Naveg - São Paulo. Fellowship em Cirurgia Robótica - Hospital Santa Joana - Recife - PE (em curso).&quot;, &quot;[Sociedade]&quot;, &quot;Título de Especialista em Tocoginecologista - AMB. Título de Especialista em Endoscopia Ginecológica - AMB. Membro Titular da Sociedade de Cirurgia Minimamente Invasiva e Robótica - SOBRACIL. Membro Aspirante à Presidência da SOBRACIL Capítulo Pernambuco. Membro Titular da FEBRASGO.&quot;, &quot;[Atuação Atual]&quot;, &quot;Membro de Grupo de Cirurgia Minimamente Invasiva - Hospital Santa Joana Recife - PE. Preceptor da Residência Médica do Hospital Barão de Lucena Recife. Diretor Médico da Clínica Vida’s - Recife - PE.&quot;]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/jardel-soares-pe.jpg');" role="img" aria-label="Foto de Jardel Soares"></div>
             <div class="netflix-card-overlay"></div>
-            <div class="netflix-card-content netflix-card-content--speaker-placeholder">
+            <div class="netflix-card-content">
+              <h3>Jardel Soares</h3>
+              <p>PE</p>
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Jessica Cesário" data-speaker-name="Jessica Cesário" data-speaker-region="PE" data-speaker-photo="speakers/jessica-cesario-pe.jpeg" data-speaker-bio="[]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/jessica-cesario-pe.jpeg');" role="img" aria-label="Foto de Jessica Cesário"></div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content">
+              <h3>Jessica Cesário</h3>
+              <p>PE</p>
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Kathiane Lustosa" data-speaker-name="Kathiane Lustosa" data-speaker-region="CE" data-speaker-photo="speakers/kathiane-lustosa-ce.jpg" data-speaker-bio="[&quot;Doutora e Mestre em Cirurgia pela Universidade Federal do Ceará&quot;, &quot;Ginecologista formada pelo HGF/CE com Título de especialista pela FEBRASGO em área de atuação em Endoscopia ginecológica&quot;, &quot;Pós-Graduação em Endometriose e Ginecologia Minimamente Invasiva pelo Hospital Sírio Libanês&quot;, &quot;Preceptora da Residência Médica em Ginecologia e Obstetrícia e em Endoscopia ginecológica da ESP e do HGF&quot;, &quot;Coordenadora do Fellowship em Cirurgias ginecológicas minimamente invasivas do Instituto Salvata e Rede D’or&quot;, &quot;Vice presidente Nordeste  da SOBRACIL&quot;]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/kathiane-lustosa-ce.jpg');" role="img" aria-label="Foto de Kathiane Lustosa"></div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content">
+              <h3>Kathiane Lustosa</h3>
+              <p>CE</p>
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Mariana Vieira" data-speaker-name="Mariana Vieira" data-speaker-region="SP" data-speaker-photo="speakers/mariana-vieira-sp.jpg" data-speaker-bio="[]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/mariana-vieira-sp.jpg');" role="img" aria-label="Foto de Mariana Vieira"></div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content">
+              <h3>Mariana Vieira</h3>
+              <p>SP</p>
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Marina Muniz" data-speaker-name="Marina Muniz" data-speaker-region="PE" data-speaker-photo="speakers/marina-muniz-pe.jpg" data-speaker-bio="[&quot;Médica pela Universidade Federal de Campina Grande (UFCG)&quot;, &quot;Residência Médica em Ginecologia e Obstetrícia pelo Hospital Barão de Lucena (SES-PE)&quot;, &quot;Residência Médica em Ginecologia Oncológica pelo Hospital das Clínicas (UFPE)&quot;]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/marina-muniz-pe.jpg');" role="img" aria-label="Foto de Marina Muniz"></div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content">
+              <h3>Marina Muniz</h3>
+              <p>PE</p>
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Mauro Aguiar" data-speaker-name="Mauro Aguiar" data-speaker-region="PE" data-speaker-photo="speakers/mauro-aguiar-pe.jpg" data-speaker-bio="[&quot;Mestre em Ciências da Saúde pela UFPE&quot;, &quot;Chefe do setor de endoscopia ginecológica do HC-UFPE&quot;, &quot;Vice-diretor científico da SOGOPE&quot;, &quot;Membro da câmara técnica de cirurgia robótica do CREMEPE&quot;]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/mauro-aguiar-pe.jpg');" role="img" aria-label="Foto de Mauro Aguiar"></div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content">
+              <h3>Mauro Aguiar</h3>
+              <p>PE</p>
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Melissandro Lacerda" data-speaker-name="Melissandro Lacerda" data-speaker-region="PB" data-speaker-photo="speakers/melissandro-lacerda-pb.jpg" data-speaker-bio="[&quot;Médico Ginecologista com Residência Médica em Ginecologia e Obstetrícia&quot;, &quot;Especialização em Endoscopia Ginecológica pelo IAMSPE São Paulo&quot;, &quot;Especialização em Reprodução Assistida pela Santa Casa de São Paulo&quot;, &quot;Pós-graduação em Cirurgia Robótica pelo Hospital Albert Einstein São Paulo&quot;, &quot;Diretor Médico da Clínica Uterus em João Pessoa&quot;]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/melissandro-lacerda-pb.jpg');" role="img" aria-label="Foto de Melissandro Lacerda"></div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content">
+              <h3>Melissandro Lacerda</h3>
+              <p>PB</p>
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Mônica Zomer Kondo" data-speaker-name="Mônica Zomer Kondo" data-speaker-region="PR" data-speaker-photo="speakers/monica-zomer-kondo-pa.jpg" data-speaker-bio="[&quot;Médica formada pela Universidade do Sul de Santa Catarina em 2006.&quot;, &quot;Em 2009 concluiu residência médica em Ginecologia e Obstetrícia pela Maternidade Darcy Vargas, Joinville, Santa Catarina.&quot;, &quot;Como formação complementar em 2008 realizou um curso de Ultra-sonografia em Ginecologia e Obstetrícia pela Diagnosis – Centro de Diagnósticos por Imagem em Ribeirão Preto – SP.&quot;, &quot;Em 2010 realizou os cursos de Videohisteroscopia Básico e Avançado, de Videocolposcopia &amp; Leep &amp; Laser e de Videolaparoscopia Ginecológica pela Gynelaser – Núcleo de Ginecologia Avançada em Brasília.&quot;, &quot;Autora de vários artigos científicos publicados em revistas nacionais e internacionais e coautora de um livro sobre Videocirurgia, já apresentou diversos trabalhos em cursos e congressos.&quot;, &quot;Trabalha também com ensino na área de cirurgia minimamente invasiva, onde participa, juntamente com Dr. William Kondo, em um curso para médicos, de Treinamento Continuado em Laparoscopia Ginecológica, que desde 2014 já capacitou mais de 60 profissionais de todo o Brasil.&quot;, &quot;Participa como *faculty* no IRCAD AMERICA LATINA em Barretos – SP.&quot;, &quot;Participa como *faculty* no AAGL (Advancing Minimally Invasive Gynecology Worldwide).&quot;, &quot;Certificação para inserção de implantes hormonais pela ELMECO.&quot;, &quot;Membro Titular da SOBRACIL.&quot;, &quot;Atua na área de cirurgia ginecológica minimamente invasiva, com foco em tratamentos para endometriose.&quot;]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/monica-zomer-kondo-pa.jpg');" role="img" aria-label="Foto de Mônica Zomer Kondo"></div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content">
+              <h3>Mônica Zomer Kondo</h3>
+              <p>PR</p>
+              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+            </div>
+          </div>
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Patrick Bellelis" data-speaker-name="Patrick Bellelis" data-speaker-region="SP" data-speaker-photo="speakers/patrick-bellelis-sp.jpeg" data-speaker-bio="[]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/patrick-bellelis-sp.jpeg');" role="img" aria-label="Foto de Patrick Bellelis"></div>
+            <div class="netflix-card-overlay"></div>
+            <div class="netflix-card-content">
+              <h3>Patrick Bellelis</h3>
+              <p>SP</p>
               <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
             </div>
           </div>
@@ -1496,7 +1606,7 @@
             <div class="netflix-card-content">
               <h3>A Videocirurgia na Oncoginecologia</h3>
               <p>27/08 · 13:15 – 17:00 · Auditório A</p>
-              <p class="netflix-card-meta">Coordenação: Dra. Iolanda Matias</p>
+              <p class="netflix-card-meta">Coordenação: Dra. Iolanda Matias (PE)</p>
               <a class="netflix-card-btn" aria-disabled="true">Inscreva-se</a>
             </div>
           </div>
@@ -1514,18 +1624,18 @@
             <div class="netflix-card-overlay"></div>
             <div class="netflix-card-content">
               <h3>Curso de USG Mapeamento de Endometriose</h3>
-              <p>27/08 · 13:15 – 17:00 · Auditório C</p>
-              <p class="netflix-card-meta">Coordenação: MEDERE (Dra. Cecília Pontes e Dra. Penélope Cruz)</p>
+              <p>27/08 · 08:00 – 17:30 · Auditório C</p>
+              <p class="netflix-card-meta">Coordenação: MEDERE (Dra. Cecília Pontes e Dra. Penélope Melo — PE)</p>
               <a class="netflix-card-btn" aria-disabled="true">Inscreva-se</a>
             </div>
           </div>
           <div class="netflix-card">
-            <div class="netflix-card-bg" style="background-image:url('pre-congresso/sutura-instrumental-bg.jpg');" role="img" aria-label="Instrumental laparoscópico em campo cirúrgico"></div>
+            <div class="netflix-card-bg" style="background-image:url('pre-congress/sutura-instrumental-bg.jpg');" role="img" aria-label="Instrumental laparoscópico em campo cirúrgico"></div>
             <div class="netflix-card-overlay"></div>
             <div class="netflix-card-content">
               <h3>Curso de Sutura Dry Lab em sutura endoscópica</h3>
-              <p>27/08 · 13:15 – 17:00 · Foyer</p>
-              <p class="netflix-card-meta">Coordenação: Dr. Guilherme Zanluchi</p>
+              <p>27/08 · 12:30 – 19:00 · Foyer</p>
+              <p class="netflix-card-meta">Coordenação: Dr. Guilherme Zanluchi (SP)</p>
               <a class="netflix-card-btn" aria-disabled="true">Inscreva-se</a>
             </div>
           </div>
@@ -1542,13 +1652,18 @@
     </section>
 
     <!-- ── SUBMISSÃO DE TRABALHOS CIENTÍFICOS ── -->
-    <section id="submissao" class="section-dark fade-in">
+    <section id="trabalhos-cientificos" class="section-dark fade-in">
       <div class="container" style="padding-bottom: 1.5rem;">
         <h2 class="section-title" style="display:block">Submissão de Trabalhos Científicos</h2>
-        <a href="#" class="btn-section-cta" style="margin-top: .75rem;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          Envie seu trabalho
-        </a>
+        <div class="trabalhos-cientificos-ctas" style="margin-top: .75rem; display: flex; flex-wrap: wrap; gap: .65rem; align-items: center;">
+          <a href="scientific-papers/edital-de-submissao-de-trabalhos-cientificos-congresso-endogineco-recife.pdf" class="btn-section-cta btn-edital" target="_blank" rel="noopener noreferrer">
+            Acessar edital
+          </a>
+          <button type="button" id="btn-envie-trabalho" class="btn-section-cta">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Envie seu trabalho
+          </button>
+        </div>
       </div>
 
       <!-- Comissão Julgadora (Netflix-style) -->
@@ -1557,8 +1672,8 @@
           <h3 style="color: rgba(255,255,255,.85); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin: 0;">Comissão Julgadora</h3>
         </div>
         <div class="netflix-section-wrapper">
-          <button class="netflix-arrow netflix-arrow-prev" id="submissao-prev" aria-label="Anterior">&#8249;</button>
-          <div class="netflix-carousel netflix-carousel--center" id="submissao-carousel">
+          <button class="netflix-arrow netflix-arrow-prev" id="trabalhos-cientificos-prev" aria-label="Anterior">&#8249;</button>
+          <div class="netflix-carousel netflix-carousel--center" id="trabalhos-cientificos-carousel">
             <div class="netflix-card">
               <div class="netflix-card-empty-bg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
               <div class="netflix-card-overlay"></div>
@@ -1580,7 +1695,7 @@
               <div class="netflix-card-content"><h3>Avaliador</h3><p>Comissão julgadora</p></div>
             </div>
           </div>
-          <button class="netflix-arrow netflix-arrow-next" id="submissao-next" aria-label="Próximo">&#8250;</button>
+          <button class="netflix-arrow netflix-arrow-next" id="trabalhos-cientificos-next" aria-label="Próximo">&#8250;</button>
         </div>
       </div>
     </section>
@@ -1672,11 +1787,28 @@
       <p class="gallery-lightbox__counter" id="gallery-lightbox-counter" aria-live="polite"></p>
     </div>
 
-    <div id="speaker-modal" class="modal" role="dialog" aria-modal="true" aria-label="Palestrante">
-      <div class="modal-content modal-content--speaker-placeholder-only">
+    <div id="speaker-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="speaker-modal-name">
+      <div class="modal-content modal-content--speaker">
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
-        <div class="speaker-modal-graphic" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <img id="speaker-modal-photo" class="speaker-modal-photo" src="" alt="" width="140" height="140" />
+        <h3 id="speaker-modal-name" class="speaker-modal-name"></h3>
+        <p id="speaker-modal-region" class="speaker-modal-region"></p>
+        <ul id="speaker-modal-bio" class="speaker-modal-bio"></ul>
+        <p id="speaker-modal-bio-empty" class="speaker-modal-bio-empty" hidden>Currículo em atualização.</p>
+      </div>
+    </div>
+
+    <div id="submission-confirm-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="submission-confirm-title">
+      <div class="modal-content modal-content--confirm">
+        <button type="button" class="close-modal" data-close="submission-confirm-modal" aria-label="Fechar">&times;</button>
+        <h3 id="submission-confirm-title" class="submission-confirm-title">Confirmação de submissão</h3>
+        <p class="submission-confirm-text">
+          Declaro que li o edital de submissão de trabalhos científicos e que o material enviado cumpre as regras descritas nele.
+          Trabalhos que não seguirem as instruções do edital <strong>não serão aprovados</strong> pela Comissão Julgadora.
+        </p>
+        <div class="submission-confirm-actions">
+          <button type="button" class="btn-confirm-cancel" data-close="submission-confirm-modal">Cancelar</button>
+          <a id="submission-confirm-proceed" class="btn-confirm-proceed" href="https://forms.gle/G1BY2Q4XQ3Zr2evy7" target="_blank" rel="noopener noreferrer">Continuar para o formulário</a>
         </div>
       </div>
     </div>
@@ -1715,7 +1847,7 @@
               <li><a href="#programacao">Programação</a></li>
               <li><a href="#palestrantes">Palestrantes</a></li>
               <li><a href="#pre-congresso">Pré-congresso</a></li>
-              <li><a href="#submissao">Trabalhos Científicos</a></li>
+              <li><a href="#trabalhos-cientificos">Trabalhos Científicos</a></li>
               <li><a href="#local">Local</a></li>
               <li><a href="#patrocinadores">Patrocinadores</a></li>
               <li><a href="#galeria">Galeria</a></li>
@@ -2087,22 +2219,82 @@
 
       initNetflixCarousel("speakers-carousel", "speakers-prev", "speakers-next");
       initNetflixCarousel("precongresso-carousel", "precongresso-prev", "precongresso-next");
-      initNetflixCarousel("submissao-carousel", "submissao-prev", "submissao-next");
+      initNetflixCarousel("trabalhos-cientificos-carousel", "trabalhos-cientificos-prev", "trabalhos-cientificos-next");
 
       /* ── Modal palestrantes ── */
       const speakerModal = document.getElementById("speaker-modal");
+      const speakerModalPhoto = document.getElementById("speaker-modal-photo");
+      const speakerModalName = document.getElementById("speaker-modal-name");
+      const speakerModalRegion = document.getElementById("speaker-modal-region");
+      const speakerModalBio = document.getElementById("speaker-modal-bio");
+      const speakerModalBioEmpty = document.getElementById("speaker-modal-bio-empty");
 
       function closeSpeakerModal() {
         if (!speakerModal) return;
         speakerModal.classList.remove("show");
-        document.body.style.overflow = "";
+        if (!document.getElementById("submission-confirm-modal")?.classList.contains("show")) {
+          document.body.style.overflow = "";
+        }
       }
 
-      function openSpeakerModal() {
-        if (!speakerModal) return;
+      function openSpeakerModal(card) {
+        if (!speakerModal || !card) return;
+        const name = card.dataset.speakerName || "Palestrante";
+        const region = card.dataset.speakerRegion || "";
+        const photo = card.dataset.speakerPhoto || "";
+        let bioItems = [];
+        try {
+          bioItems = JSON.parse(card.dataset.speakerBio || "[]");
+        } catch (_) {
+          bioItems = [];
+        }
+        if (speakerModalPhoto) {
+          speakerModalPhoto.src = photo;
+          speakerModalPhoto.alt = name;
+          speakerModalPhoto.hidden = !photo;
+        }
+        if (speakerModalName) {
+          speakerModalName.textContent = name;
+          speakerModal.setAttribute("aria-label", name);
+        }
+        if (speakerModalRegion) speakerModalRegion.textContent = region;
+        if (speakerModalBio) {
+          speakerModalBio.innerHTML = "";
+          bioItems.forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            speakerModalBio.appendChild(li);
+          });
+          speakerModalBio.hidden = bioItems.length === 0;
+        }
+        if (speakerModalBioEmpty) speakerModalBioEmpty.hidden = bioItems.length > 0;
         speakerModal.classList.add("show");
         document.body.style.overflow = "hidden";
       }
+
+      /* ── Confirmação submissão de trabalhos ── */
+      const submissionConfirmModal = document.getElementById("submission-confirm-modal");
+      const btnEnvieTrabalho = document.getElementById("btn-envie-trabalho");
+
+      function closeSubmissionConfirmModal() {
+        if (!submissionConfirmModal) return;
+        submissionConfirmModal.classList.remove("show");
+        if (!speakerModal?.classList.contains("show")) document.body.style.overflow = "";
+      }
+
+      function openSubmissionConfirmModal() {
+        if (!submissionConfirmModal) return;
+        submissionConfirmModal.classList.add("show");
+        document.body.style.overflow = "hidden";
+      }
+
+      btnEnvieTrabalho?.addEventListener("click", openSubmissionConfirmModal);
+      submissionConfirmModal?.querySelectorAll("[data-close='submission-confirm-modal']").forEach((el) => {
+        el.addEventListener("click", closeSubmissionConfirmModal);
+      });
+      submissionConfirmModal?.addEventListener("click", (e) => {
+        if (e.target === submissionConfirmModal) closeSubmissionConfirmModal();
+      });
 
       const spCarousel = document.getElementById("speakers-carousel");
       if (spCarousel && speakerModal) {
@@ -2130,7 +2322,7 @@
             const card = e.target.closest(".netflix-card--speaker");
             if (!card || spMoved) return;
             e.preventDefault();
-            openSpeakerModal();
+            openSpeakerModal(card);
           },
           true
         );
@@ -2138,7 +2330,7 @@
           card.addEventListener("keydown", (e) => {
             if (e.key !== "Enter" && e.key !== " ") return;
             e.preventDefault();
-            openSpeakerModal();
+            openSpeakerModal(card);
           });
         });
       }
@@ -2151,7 +2343,8 @@
         if (e.key !== "Escape") return;
         const galleryLb = document.getElementById("gallery-lightbox");
         if (galleryLb?.classList.contains("show")) return;
-        if (speakerModal?.classList.contains("show")) closeSpeakerModal();
+        if (submissionConfirmModal?.classList.contains("show")) closeSubmissionConfirmModal();
+        else if (speakerModal?.classList.contains("show")) closeSpeakerModal();
       });
 
       /* ── Mobile menu ── */
