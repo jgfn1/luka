@@ -403,6 +403,13 @@
         transform: none;
       }
 
+      @media (prefers-reduced-motion: reduce) {
+        .fade-in {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
       #countdown-section {
         background: linear-gradient(
           135deg,
@@ -2320,18 +2327,41 @@
     </footer>
 
     <script>
-      const observer = new IntersectionObserver(
+      function revealFadeIn(el) {
+        el.classList.add("visible");
+      }
+
+      function revealFadeInsInView() {
+        const viewportHeight =
+          window.innerHeight || document.documentElement.clientHeight;
+        document.querySelectorAll(".fade-in:not(.visible)").forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < viewportHeight * 0.92 && rect.bottom > viewportHeight * 0.05) {
+            revealFadeIn(el);
+          }
+        });
+      }
+
+      const fadeInObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting) entry.target.classList.add("visible");
+            if (entry.isIntersecting) {
+              revealFadeIn(entry.target);
+              fadeInObserver.unobserve(entry.target);
+            }
           });
         },
-        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+        { threshold: 0, rootMargin: "0px 0px 80px 0px" },
       );
 
-      document
-        .querySelectorAll(".fade-in")
-        .forEach((el) => observer.observe(el));
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        fadeInObserver.observe(el);
+      });
+
+      revealFadeInsInView();
+      window.addEventListener("scroll", revealFadeInsInView, { passive: true });
+      window.addEventListener("resize", revealFadeInsInView, { passive: true });
+      window.addEventListener("orientationchange", revealFadeInsInView);
 
       const nav = document.getElementById("main-nav");
       window.addEventListener("scroll", () => {
@@ -2376,6 +2406,9 @@
           e.preventDefault();
           const target = document.getElementById(href.slice(1));
           if (!target) return;
+          if (target.classList.contains("fade-in")) {
+            revealFadeIn(target);
+          }
           const navHeight = document.getElementById("main-nav").offsetHeight;
           const top =
             target.getBoundingClientRect().top +
@@ -2383,6 +2416,8 @@
             navHeight -
             16;
           window.scrollTo({ top, behavior: "smooth" });
+          window.setTimeout(revealFadeInsInView, 450);
+          window.setTimeout(revealFadeInsInView, 900);
           const navMenu = document.getElementById("nav-menu");
           const menuToggle = document.getElementById("mobile-menu-toggle");
           if (navMenu && navMenu.classList.contains("active")) {
