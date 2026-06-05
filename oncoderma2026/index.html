@@ -958,6 +958,59 @@
         box-shadow: 0 6px 22px rgba(90, 26, 49, 0.15);
       }
 
+      .photo-gallery {
+        margin-top: 2rem;
+        text-align: left;
+      }
+
+      .photo-embed {
+        position: relative;
+        width: 100%;
+        padding-top: 62.5%;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 6px 22px rgba(90, 26, 49, 0.15);
+        background: #fff;
+        border: 1px solid rgba(90, 26, 49, 0.08);
+      }
+
+      .photo-embed iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .photo-drive-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin-top: 1.25rem;
+        padding: 0.55rem 1.1rem;
+        background: rgba(90, 26, 49, 0.08);
+        border-radius: 8px;
+        color: var(--maroon);
+        font-weight: 600;
+        font-size: 0.88rem;
+        border: 1px solid rgba(90, 26, 49, 0.15);
+        transition:
+          background 0.25s ease,
+          transform 0.2s ease;
+      }
+
+      .photo-drive-link:hover {
+        background: rgba(209, 77, 51, 0.12);
+        transform: translateY(-1px);
+        color: var(--maroon);
+      }
+
+      @media (max-width: 768px) {
+        .photo-embed {
+          border-radius: 12px;
+        }
+      }
+
       .orgs-strip {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1912,11 +1965,41 @@
     </section>
 
     <section id="fotos" class="fade-in">
-      <div class="container text-center">
-        <h2>Galeria de fotos</h2>
-        <p style="color: var(--muted-text); max-width: 560px; margin: 0 auto">
-          Durante o evento divulgaremos o link oficial para download das fotos.
+      <div class="container">
+        <h2 class="text-center">Galeria de fotos</h2>
+        <p
+          class="text-center"
+          style="
+            color: var(--muted-text);
+            max-width: 640px;
+            margin: 0 auto 0.5rem;
+            font-size: 1.05rem;
+          "
+        >
+          Reviva os melhores momentos do II Simpósio Oncoderma Recife com os
+          registros oficiais do evento.
         </p>
+
+        <div class="photo-gallery">
+          <div class="photo-embed">
+            <iframe
+              src="https://drive.google.com/embeddedfolderview?id=1RJD-l7_z3aPqAHMh56LJ8TSamYFxaOrq#grid"
+              loading="lazy"
+              title="Galeria de fotos — II Simpósio Oncoderma Recife 2026"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="text-center">
+            <a
+              class="photo-drive-link"
+              href="https://drive.google.com/drive/folders/1RJD-l7_z3aPqAHMh56LJ8TSamYFxaOrq?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Baixar todas as fotos no Google Drive
+            </a>
+          </p>
+        </div>
       </div>
     </section>
 
