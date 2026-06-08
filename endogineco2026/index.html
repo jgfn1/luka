@@ -526,6 +526,45 @@
         background: var(--gold);
         transform: none;
       }
+      .netflix-card-actions {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: .4rem;
+        margin-top: .65rem;
+        align-items: stretch;
+      }
+      .netflix-card-actions .netflix-card-btn {
+        margin-top: 0;
+        flex: 1 1 0;
+        min-width: 0;
+        justify-content: center;
+        text-align: center;
+        font-size: .72rem;
+        padding: .4rem .5rem;
+      }
+      .netflix-card-btn--outline {
+        background: transparent;
+        color: #fff !important;
+        border: 1.5px solid rgba(255,255,255,.55);
+        border-radius: var(--r-sm);
+        font-weight: 700;
+      }
+      .netflix-card-btn--outline:hover {
+        background: rgba(255,255,255,.12);
+        border-color: rgba(255,255,255,.85);
+        color: #fff !important;
+        transform: translateY(-1px);
+      }
+
+      .schedule-block--precongress { margin-top: 2.5rem; }
+      .schedule-block--precongress .day-tabs { width: 100%; max-width: 100%; }
+      .schedule-block--precongress .day-tab-btn {
+        font-size: .74rem;
+        padding: .55rem .85rem;
+        line-height: 1.25;
+        text-align: left;
+      }
 
       .netflix-card--speaker {
         cursor: pointer;
@@ -1250,98 +1289,21 @@
           </div>
         </div>
 
+        <div class="schedule-block" data-schedule-group="congress">
         <div class="day-tabs" role="tablist" aria-label="Dias do congresso">
-          <button class="day-tab-btn active" role="tab" data-day="quinta" aria-selected="true">Quinta, 27/08</button>
-          <button class="day-tab-btn" role="tab" data-day="sexta" aria-selected="false">Sexta, 28/08</button>
+          <button class="day-tab-btn active" role="tab" data-day="sexta" aria-selected="true">Sexta, 28/08</button>
           <button class="day-tab-btn" role="tab" data-day="sabado" aria-selected="false">Sábado, 29/08</button>
         </div>
 
-        <!-- ─ DIA 1: QUINTA 27/08 ─ -->
-        <div class="day-panel active" id="panel-quinta">
-<p class="aud-label">Pré-congresso</p>
-          <div class="schedule-scroll">
-            <table class="schedule-table">
-              <thead><tr><th style="width:140px">Horário</th><th>Atividade</th><th style="width:220px">Coordenação / Palestrante</th></tr></thead>
-              <tbody>
-                <tr><td>7:30</td><td colspan="2" class="session-break"><strong>Credenciamento curso Pré Congresso (USG Mapeamento)</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p class="aud-label">Auditório C — Curso de USG Mapeamento de Endometriose</p>
-          <div class="schedule-scroll">
-            <table class="schedule-table">
-              <thead><tr><th style="width:140px">Horário</th><th>Atividade</th><th style="width:220px">Coordenação / Palestrante</th></tr></thead>
-              <tbody>
-                <tr><td colspan="3" class="session-header"><strong>08:00 - 12:00</strong><br />AUDITÓRIO C - Curso de USG Mapeamento de Endometriose<br />Coordenação:  MEDERE  (Cecília Pontes - PE e Penélope Melo - PE )</td></tr>
-                <tr><td>12:00 - 13:30</td><td colspan="2" class="session-break"><strong>INTERVALO</strong></td></tr>
-                <tr><td>13:30 - 17:30</td><td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td></tr>
-                <tr><td>12:30</td><td colspan="2" class="session-break"><strong>Credenciamento cursos Pré Congresso</strong></td></tr>
-                <tr><td>13:00-13:15</td><td colspan="2" class="session-break"><strong>Abertura</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p class="aud-label">Auditório A — A Videocirurgia na Oncoginecologia</p>
-          <div class="schedule-scroll">
-            <table class="schedule-table">
-              <thead><tr><th style="width:140px">Horário</th><th>Atividade</th><th style="width:220px">Coordenação / Palestrante</th></tr></thead>
-              <tbody>
-                <tr><td colspan="3" class="session-header"><strong>13:15 - 15:00</strong><br />AUDITÓRIO A  - A Videocirurgia na Oncoginecologia<br />Coordenação:  Iolanda Matias - PE</td></tr>
-                <tr><td>15:00 - 15:30</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td>15:30 - 17:00</td><td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p class="aud-label">Auditório B — Curso de Nutrição para Pacientes com Endometriose</p>
-          <div class="schedule-scroll">
-            <table class="schedule-table">
-              <thead><tr><th style="width:140px">Horário</th><th>Atividade</th><th style="width:220px">Coordenação / Palestrante</th></tr></thead>
-              <tbody>
-                <tr><td colspan="3" class="session-header"><strong>13:15 - 15:00</strong><br />AUDITÓRIO B  - Curso Nutricção para pacientes com Endometriose <br />Coordenação:</td></tr>
-                <tr><td>13:15 - 15:00</td><td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td></tr>
-                <tr><td>15:00 - 15:30</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td>15:30 - 17:00</td><td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p class="aud-label">Foyer — Curso de Sutura Dry Lab em Sutura Endoscópica</p>
-          <div class="schedule-scroll">
-            <table class="schedule-table">
-              <thead><tr><th style="width:140px">Horário</th><th>Atividade</th><th style="width:220px">Coordenação / Palestrante</th></tr></thead>
-              <tbody>
-                <tr><td colspan="3" class="session-header"><strong>12:30 - 19:00</strong><br />FOYER - Curso de Sutura Dry Lab em sutura Endoscópica <br />Coordenação: Guilherme Zanluchi - SP</td></tr>
-                <tr><td>12:30 - 13:00</td><td>Regras básicas de posição de agulha e fio - Nomenclatura e sistematização de agulha</td><td class="speaker-name">professor 1</td></tr>
-                <tr><td>13:00 - 13:30</td><td>Teoria do Ponto perfeito e passagem de agulha</td><td class="speaker-name">professor 2</td></tr>
-                <tr><td>13:30-14:00</td><td>Aplicação prática de sutura em videos: Fechamento de cúpula vaginal e miomectomias</td><td class="speaker-name">professor 3</td></tr>
-                <tr><td>14:00 - 15:30</td><td>Estação prática</td><td></td></tr>
-                <tr><td>14:00-14:30</td><td>Sistematização de 1 grau e acordar as mãos</td><td></td></tr>
-                <tr><td>14:30-15:00</td><td>Sistematizaçoes e Cruz de verificaçao</td><td></td></tr>
-                <tr><td>15:00 -15:30</td><td>O Ponto Perfeito</td><td></td></tr>
-                <tr><td>15:30 - 16:00</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td>16:00 - 16:30</td><td>Teoria dos nós: Nó quadrado e semi-chaves</td><td class="speaker-name">professor 1</td></tr>
-                <tr><td>16:30 - 17:30</td><td>Os nós da minha preferência - Aplicação dos nós em cada tipo de tecido e cirurgia</td><td class="speaker-name">professor 2</td></tr>
-                <tr><td>17:30 - 19:00</td><td>Estação prática</td><td class="speaker-name">professor 3</td></tr>
-                <tr><td>17:30 - 18:00</td><td>Triplo Duplo - Monomanual e bimanual</td><td></td></tr>
-                <tr><td>18:00 - 18:30</td><td>Sequência de semi-chaves bloqueantes</td><td></td></tr>
-                <tr><td>18:30 - 19:00</td><td>Competição - Prêmio</td><td></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <!-- /panel-quinta -->
-
-        <!-- ─ DIA 2: SEXTA 28/08 ─ -->
-        <div class="day-panel" id="panel-sexta">
+        <!-- ─ SEXTA 28/08 ─ -->
+        <div class="day-panel active" id="panel-sexta">
 <p class="aud-label">Abertura do congresso</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
               <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
               <tbody>
                 <tr><td>08:00 - 08:15</td><td colspan="2" class="session-break"><strong>Credenciamento</strong></td></tr>
-                <tr><td>08:15 08:30</td><td>Abertura</td><td class="speaker-name">Érica Batista <br />Edilberto Rocha <br />Jardel Soares <br />Iolanda Matias <br />Agostinho Machado                    Juliana Zaidan</td></tr>
+                <tr><td>08:15 -  08:30</td><td>Abertura</td><td class="speaker-name">Érica Batista <br />Edilberto Rocha <br />Jardel Soares <br />Iolanda Matias <br />Agostinho Machado                    Juliana Zaidan</td></tr>
               </tbody>
             </table>
           </div>
@@ -1351,64 +1313,59 @@
             <table class="schedule-table">
               <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
               <tbody>
-                <tr><td>08:35 - 09:15</td><td>Presidente: Edilberto Rocha - PE</td><td></td></tr>
-                <tr><td>08:35- 09:00</td><td>Conferência - Como a IA pode influenciar  sua conduta do consultório ao pós- cirúrgico?</td><td class="speaker-name">Jardel Soares - PE</td></tr>
-                <tr><td>09:05- 09:15</td><td>Complicações em cirurgias minimamente invasiva - Como eu devo conduzir?</td><td class="speaker-name">Giuliano Borelli - SP</td></tr>
-                <tr><td colspan="3" class="session-header"><strong>09:15 - 10:05<br />(50 min)</strong><br />MESA 1 - Miomas Uterinos        <br />Presidente: Mariana Santiago - PE <br />Debatedores: Jessica Cesário - PE, Rafael Alves, - PE,  Alisson Chianca - MA, Lilian Mendes - CE</td></tr>
-                <tr><td>09:15 - 09:25<br />(10 min)</td><td>Estratégias para Diminuir o Sangramento nas miomectomias - Qual a minha estratégia ?</td><td class="speaker-name">Melissandro Lacerda - PB</td></tr>
-                <tr><td>09:25 - 09:35<br />(10 min)</td><td>Extração de miomas - Existe a melhor técnica ?</td><td class="speaker-name">Mauro Aguiar - PE</td></tr>
-                <tr><td>09:35 - 09:45<br />(10 min)</td><td>Conversão cirúrgica em miomectomia - falha na indicação ou decisão correta ?</td><td class="speaker-name">Ana Luiza Lobão - PB</td></tr>
-                <tr><td>09:45 - 10:05<br />(20 min)</td><td>Miomectomia - Qual a melhor incisão, o melhor ponto e o melhor  fio para uma cirurgia refinada , rápida e sem sangramentos ?</td><td class="speaker-name">Andreiza Bilhar - CE</td></tr>
-                <tr><td>10:05 - 10:35<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>10:35 - 12:15<br />(01 hora e <br />40 min)</strong><br />MESA 2 - Vídeo Histeroscopia       <br />Presidente: Helena Nagle - PE<br />Debatedores: Neidson Menezes - PE, Aurélio Costa - PE, Vera Sena- PE, Felipe Rocha - PE</td></tr>
-                <tr><td>10:35 - 10:45<br />(10 min)</td><td>Vídeo Histeroscopia Ambulatorial qual o espaço até onde ir? Como minimizar o temor? <br />Como diminuir a dor?</td><td class="speaker-name">Mariana Vieira  - SP</td></tr>
-                <tr><td>11:05 - 11:20<br />(15 min)</td><td>Hiperplasia Endometrial e Câncer de Endométrio. Ainda posso ser conservado e ? Até Quando ?</td><td class="speaker-name">Yole Minervino - PB</td></tr>
-                <tr><td>11:20 - 11:35<br />(15 min)</td><td>Utilizando a Histeroscopia para o tratamento da SUA (sangramento uterino anormal). <br />Onde se aplica ? Qual o limite ?</td><td class="speaker-name">Maria Roma - PE</td></tr>
-                <tr><td>11:35 - 11:50<br />(15 min)</td><td>Como minimizar as complicações na Histeroscopias  e se ocorrerem como lidar com elas ?</td><td class="speaker-name">Ana Carolina Serafim - PE</td></tr>
-                <tr><td>11:50 - 12:05<br />(15 min)</td><td>Os desafios da retenção de restos ovulares - Como a Histeroscopia pode ajudar?</td><td></td></tr>
-                <tr><td>12:05 - 12:15<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
-                <tr><td>12:15-12:30<br />(15min)</td><td>SIMPÓSIO - A reposição de Ferro - Item fundamental para uma cirurgia segura</td><td class="speaker-name">Jardel Soares - PE</td></tr>
-                <tr><td>12:30 - 13:30              (01 hora)</td><td colspan="2" class="session-break"><strong>INTERVALO</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>08:30 - 09:50<br />(01 hora e <br />20 min)</strong><br />MESA 1 - Nerve-sparing (preservação nervosa) na Cirurgia de Endometriose    <br />Presidente: Priscila Vieira- PE       <br />Debatedores: Renato Barreto - SP, Melissandro Lacerda - PB, Anna Luiza Lobão - PB</td></tr>
+                <tr><td>08:30 - 09:00<br />(30 min)</td><td>Você sabe onde passam os principais nervos pélvicos ? Qual a importância na Cirurgia complexa de Endometriose?</td><td class="speaker-name">Kathiane Lustosa - CE</td></tr>
+                <tr><td>09:00 - 09:20<br />(20 min)</td><td>Principais lesões nervosas na Endometriose ? Quais os principais sintomas ?</td><td class="speaker-name">Patrick Belilis - SP</td></tr>
+                <tr><td>09:20 - 09:40<br />(20 min)</td><td>Toda lesão nervosa por endometriose deve ser operada?</td><td class="speaker-name">Raquel Magalhães - SP</td></tr>
+                <tr><td>09:40 - 09:50<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>09:50 - 10:20<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>10:20 - 11:40<br />(1 hora e <br />20 min)</strong><br />MESA 2 - Vídeo Histeroscopia       <br />Presidente: Helena Nagle - PE<br />Debatedores: Neidson Menezes - PE, Aurélio Costa - PE, Vera Sena- PE, Felipe Rocha - PE</td></tr>
+                <tr><td>10:20 - 10:30<br />(10 min)</td><td>Vídeo Histeroscopia Ambulatorial qual o espaço até onde ir? Como minimizar o temor? <br />Como diminuir a dor?</td><td class="speaker-name">Mariana Vieira  - SP</td></tr>
+                <tr><td>10:30 - 10:45<br />(15 min)</td><td>Hiperplasia Endometrial e Câncer de Endométrio. Ainda posso ser conservado e ? Até Quando ?</td><td class="speaker-name">Yole Minervino - PB</td></tr>
+                <tr><td>10:45 - 11:00<br />(15 min)</td><td>Utilizando a Histeroscopia para o tratamento da SUA (sangramento uterino anormal). <br />Onde se aplica ? Qual o limite ?</td><td class="speaker-name">Maria Roma - PE</td></tr>
+                <tr><td>11:00 - 11:15<br />(15 min)</td><td>Como minimizar as complicações na Histeroscopias  e se ocorrerem como lidar com elas ?</td><td class="speaker-name">Ana Carolina Serafim - PE</td></tr>
+                <tr><td>11:15 - 11:30<br />(15 min)</td><td>Os desafios da retenção de restos ovulares - Como a Histeroscopia pode ajudar?</td><td></td></tr>
+                <tr><td>11:30 - 11:40<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>11:40 - 12:00<br />(20 min)</td><td>SIMPÓSIO - A reposição de Ferro - Item fundamental para uma cirurgia segura</td><td class="speaker-name">Jardel Soares - PE</td></tr>
+                <tr><td>12:00 - 13:30<br />(01 hora e <br />30 min)</td><td colspan="2" class="session-break"><strong>INTERVALO LIVRE</strong></td></tr>
                 <tr><td colspan="3" class="session-podcast">🎙️ <strong>PODCAST</strong></td></tr>
-                <tr><td>13:30 - 15:30<br />(2 horas)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO                                                                                                                                              Presidente: Mauro Aguiar - PE</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife - PE <br />Condução caso:  Mari Cecília - PE <br />Kathiane Lustosa CE - cirurgiã<br /> <br />* Hospital Barão de Lucena - PE<br />Condução caso: Carolina Feitosa - PE <br />Patrick Bellelis - SP  / <br />Mariana Vieira  - SP<br /><br />* Hospital das nações CWB  <br />Mônica Zomer Kondo PR <br />William Kondo PR<br /><br />* Hospital Campinas - SP<br />Carlos Godoy - SP</div></td></tr>
+                <tr><td>13:30 - 15:30<br />(2 horas)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO                                                                                                                                              Presidente: Mauro Aguiar - PE</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife - PE <br />Condução caso:  Mari Cecília - PE <br />Kathyane Lustosa CE - cirurgiã<br /> <br />* Hospital Barão de Lucena - PE<br />Condução caso: Carolina Feitosa - PE <br />Patrick Bellelis - SP  / <br />Mariana Vieira  - SP<br /><br />* Hospital das nações CWB  <br />Mônica Zomer PR <br />William Kondo PR<br /><br />* Hospital Campinas - SP<br />Carlos Godoy - SP</div></td></tr>
                 <tr><td>15:30 - 16:00<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>16:00 - 17:20<br />(01 hora e <br />20 min)</strong><br />MESA 3 - Nerve-sparing (preservação nervosa) na Cirurgia de Endometriose    <br />Presidente: Priscila Vieira- PE       <br />Debatedores: Renato Barreto - SP, Melissandro Lacerda - PB, Anna Luiza Lobão - PB</td></tr>
-                <tr><td>16:00 - 16:30<br />(30 min)</td><td>Você sabe onde passam os principais nervos pélvicos ? Qual a importância na Cirurgia complexa de Endometriose?</td><td class="speaker-name">Kathiane Lustosa - CE</td></tr>
-                <tr><td>16:30 - 16:50<br />(20 min)</td><td>Principais lesões nervosas na Endometriose ? Quais os principais sintomas ?</td><td class="speaker-name">Patrick Bellelis - SP</td></tr>
-                <tr><td>16:50 - 17:10<br />(20 min)</td><td>Toda lesão nervosa por endometriose deve ser operada?</td><td class="speaker-name">Raquel Magalhães - SP</td></tr>
-                <tr><td>17:10 - 17:20<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
-                <tr><td>17:20 - 18:00<br />(40 min)</td><td>TALK SHOW - &quot;Jornada da paciente com endometriose&quot;<br />Como ter um consultório de sucesso                                                                                                                        Coordenadora: Marina Muniz</td><td class="speaker-name">Rosaura Almeida - PE, Marcos Saturnino - PE, Isaura Vieira - DF<br />Urologista <br />Kathiane Lustosa - CE, Mayara Macedo -PE, Pericles Oliveira - PB, Psicólogo</td></tr>
+                <tr><td colspan="3" class="session-header"><strong>16:00 - 16:50<br />(50 min)</strong><br />MESA 3 - Miomas Uterinos        <br />Presidente: Mariana Santiago - PE <br />Debatedores: Jessica Cesario - PE, Rafael Alves, - PE,  Alisson Chianca - MA, Lilian Mendes - CE</td></tr>
+                <tr><td>16:00 - 16:10<br />(10 min)</td><td>Estratégias para Diminuir o Sangramento nas miomectomias - Qual a minha estratégia ?</td><td class="speaker-name">Melissandro Lacerda - PB</td></tr>
+                <tr><td>16:10 - 16:20<br />(10 min)</td><td>Extração de miomas - Existe a melhor técnica ?</td><td class="speaker-name">Mauro Aguiar - PE</td></tr>
+                <tr><td>16:20 - 16:30<br />(10 min)</td><td>Conversão cirúrgica em miomectomia - falha na indicação ou decisão correta ?</td><td class="speaker-name">Ana Luiza Lobão - PB</td></tr>
+                <tr><td>16:30 - 16:50<br />(20 min)</td><td>Miomectomia - Qual a melhor incisão, o melhor ponto e o melhor  fio para uma cirurgia refinada , rápida e sem sangramentos ?</td><td class="speaker-name">Andreissa Paiva - CE</td></tr>
+                <tr><td>16:50 - 17:15<br />(25 min)</td><td>Conferência - Como a IA pode influenciar  sua conduta do consultório ao pós- cirúrgico?<br />Presidente: Edilberto Rocha - PE</td><td class="speaker-name">Jardel Soares - PE</td></tr>
+                <tr><td>17:15 - 17:25<br />(10 min)</td><td>Complicações em cirurgias minimamente invasiva - Como eu devo conduzir?</td><td class="speaker-name">Giuliano Borell - SP</td></tr>
+                <tr><td>17:25 - 18:05<br />(40 min)</td><td>TALK SHOW - &quot;Jornada da paciente com endometriose&quot;<br />Como ter um consultório de sucesso                                                                                                                        Coordenadora: Mariana Muniz</td><td class="speaker-name">Rosaura Almeida - PE, Marcos Saturnino - PE, Isaura Vieira - DF<br />Urologista <br />Kathyane Lustosa - CE, Mayara Macedo -PE, Pericles Oliveira - PB, Psicólogo</td></tr>
                 <tr><td colspan="3" class="session-break"><strong>Cerimônia abertura</strong></td></tr>
               </tbody>
             </table>
           </div>
-        </div>
-        <!-- /panel-sexta -->
 
-        <!-- ─ DIA 3: SÁBADO 29/08 ─ -->
-        <div class="day-panel" id="panel-sabado">
-<p class="aud-label">Auditório B</p>
+          <p class="aud-label">Auditório B</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
               <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
               <tbody>
                 <tr><td colspan="3" class="session-header"><strong>08:25 - 10:05<br />(01 hora e <br />40 min)</strong><br />MESA 1 -  No meu consultório           <br />Presidente: Simone Carvalho - PE <br />Debatedores:</td></tr>
-                <tr><td>08:25 - 8:45 <br />(20 min)</td><td>Climatério E Menopausa na paciente com Endometriose. Como eu conduzo caso a caso?</td><td class="speaker-name">Priscila Vieira - PE</td></tr>
+                <tr><td>08:25 - 08:45 <br />(20 min)</td><td>Climatério E Menopausa na paciente com Endometriose. Como eu conduzo caso a caso?</td><td class="speaker-name">Priscila Vieira - PE</td></tr>
                 <tr><td>08:45 - 09:05<br />(20 min)</td><td>Métodos de Diagnóstico para endometriose o que já temos ? Quais as novas perspectivas?</td><td class="speaker-name">Cicilia Pontes - PE</td></tr>
                 <tr><td>09:05 - 9:25 <br />(20 min)</td><td>Endometriose na adolescência: Como conduzo? Como evitar o excesso de cirurgias ?</td><td class="speaker-name">Lilia Mendes - CE</td></tr>
-                <tr><td>09:25 - 09:45<br />(20 min)</td><td>Dor na relação sexual ,Vaginismo , dificuldades de relacionamento como sequela da endometriose . Como conduzir ?</td><td class="speaker-name">Aleide Tavares - PE</td></tr>
+                <tr><td>09:25 - 09:45<br />(20 min)</td><td>Dor na relação sexual ,Vaginismo , dificuldades de relacionamento como sequela da endometriose . Como conduzir ?</td><td class="speaker-name">Aleite Tavares - PE</td></tr>
                 <tr><td>09:45 - 09:55<br />(10  min)</td><td>Impactos negativos da endometriose na sociedade . Como podemos reverter isso ?</td><td class="speaker-name">Iolanda Matias - PE</td></tr>
                 <tr><td>09:55 - 10:05<br />(10  min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
                 <tr><td>10:05 - 10:35 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
                 <tr><td colspan="3" class="session-header"><strong>10:35 - 12:15<br />(01 hora e <br />40 min)</strong><br />VÍDEOS SHOWS CASE - Vídeos semi-editados</td></tr>
                 <tr><td>10:35 - 10:55<br />(20 min)</td><td>Como o uso da fluorescência me ajudou nesse caso</td><td class="speaker-name">Guilherme Zanluchi - PE</td></tr>
-                <tr><td>10:35 - 10:55<br />(20 min)</td><td>Tive que mudar minha estratégia no tratamento dessa doença intestinal</td><td class="speaker-name">Claudia Joaquim - RJ</td></tr>
-                <tr><td>10:55-11:15<br />(20 min)</td><td>Como eu tratei essa lesão ureteral de endometriose</td><td class="speaker-name">Rogerson Andrade - PE</td></tr>
-                <tr><td>11:15 - 11:35<br />(20 min)</td><td>Minha estratégia para essa miomectomia difícil</td><td class="speaker-name">Alisson Chianca - MA</td></tr>
-                <tr><td>11:35 - 11:55<br />(20 min)</td><td>Cerclagem Robótica . Quando? Tips e Truques ?</td><td class="speaker-name">Patrick Bellelis - SP</td></tr>
-                <tr><td>11:55  -  12:15<br />(20  min)</td><td>Istmocele -Tratar por via laparoscópica, robótica ou Histeroscopia ?</td><td class="speaker-name">Mariana Vieira - SP</td></tr>
-                <tr><td>12:15-12:30<br />(15 min)</td><td>SIMPÓSIO  - A reposição de Ferro - Item fundamental para uma cirurgia segura</td><td class="speaker-name">Jardel Soares - PE</td></tr>
-                <tr><td>12:30  - 13:30<br />(1 hora)</td><td colspan="2" class="session-break"><strong>INTERVALO</strong></td></tr>
+                <tr><td>10:55 - 11:15<br />(20 min)</td><td>Tive que mudar minha estratégia no tratamento dessa doença intestinal</td><td class="speaker-name">Claudia Joaquim - RJ</td></tr>
+                <tr><td>11:15 -11:35<br />(20 min)</td><td>Como eu tratei essa lesão ureteral de endometriose</td><td class="speaker-name">Rogerson Andrade - PE</td></tr>
+                <tr><td>11:35 - 11:55<br />(20 min)</td><td>Minha estratégia para essa miomectomia difícil</td><td class="speaker-name">Alisson Chianca - MA</td></tr>
+                <tr><td>11:55 - 12:15<br />(20 min)</td><td>Cerclagem Robótica . Quando? Tips e Truques ?</td><td class="speaker-name">Patrick Bellilis - SP</td></tr>
+                <tr><td>12:15 - 12:35<br />(20  min)</td><td>Istmocele -Tratar por via laparoscópica, robótica ou Histeroscopia ?</td><td class="speaker-name">Mariana Vieira - SP</td></tr>
+                <tr><td>12:35 - 12:50<br />(15 min)</td><td>SIMPÓSIO  - A reposição de Ferro - Item fundamental para uma cirurgia segura</td><td class="speaker-name">Jardel Soares - PE</td></tr>
+                <tr><td>12:50 - 13:30<br />(40 min)</td><td colspan="2" class="session-break"><strong>INTERVALO LIVRE</strong></td></tr>
                 <tr><td colspan="3" class="session-podcast">🎙️ <strong>PODCAST</strong></td></tr>
                 <tr><td>13:30 - 15:30<br />(2 horas)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td></tr>
                 <tr><td>15:30 - 16:00<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
@@ -1430,7 +1387,78 @@
             </table>
           </div>
         </div>
+        <!-- /panel-sexta -->
+
+        <!-- ─ DIA 3: SÁBADO 29/08 ─ -->
+        <div class="day-panel" id="panel-sabado">
+<p class="aud-label">Auditório A</p>
+          <div class="schedule-scroll">
+            <table class="schedule-table">
+              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
+              <tbody>
+                <tr><td>08:00 - 10:00            (2 horas)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO                                                                                                                                                                           Presidente : Iolanda Matias - PE</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife  - PE<br />Condução caso: Sidraiton Melo - PE <br />Raquel Magalhães SP<br /><br />* Hospital Barão de Lucena  - PE<br />Condução caso: Eveline Martins - PE <br />Sara Arcanjo - PE /<br />Andreissa Paiva - CE</div></td></tr>
+                <tr><td>10:00 - 10:30 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>10:30 - 10:50         (20 min)</td><td>Conferência: Cirurgia Robótica na Ginecologia e outras tecnologias associadas- <br />Que benefícios já temos comprovado ?</td><td class="speaker-name">Jordanna Diniz - DF<br />*Online*</td></tr>
+                <tr><td>10:50 - 11:10         (20 min)</td><td>Conferência: Protocolo ERAS - Se aplica mesmo em cirurgias de alta complexidade ?</td><td class="speaker-name">Carlos Godoy - SP</td></tr>
+                <tr><td>11:10 - 11:25         (15 min)</td><td>Conferência: Manejo clínico da dor - O que temos de novo ? Canabbis? <br />E no manejo avançado da dor o que temos de novo ?</td><td class="speaker-name">Luiz Severo - PE</td></tr>
+                <tr><td colspan="3" class="session-header"><strong>11:25 - 12:35<br />(01 hora e <br />10 min)</strong><br />MESA 1 - Infertilidade e Endometriose <br />Presidente:<br />Debatedores:</td></tr>
+                <tr><td>11:25 - 11:40 <br />(15 min)</td><td>O que fazer primeiro na paciente com endometriose : FiV  antes e depois operar ou operar e depois a FIV ?</td><td class="speaker-name">Patrick Bellelis - SP</td></tr>
+                <tr><td>11:40 - 11:55<br />(15 min)</td><td>Na investigação Histeroscopica da mulher infértil : O que devo procurar ? Como tratar ?</td><td class="speaker-name">Altina Castelo Branco - PE</td></tr>
+                <tr><td>11:55 - 12:10<br />(15 min)</td><td>O desafio do manejo das malformações uterinas: do diagnóstico à escolha da via ideal de abordagem. Qual a melhor estratégia cirúrgica?</td><td class="speaker-name">Mariana Vieira - SP</td></tr>
+                <tr><td>12:10 - 12:25<br />(15 min)</td><td>Da implantação até o parto - Muda alguma alguma coisa no acompanhamento da mulher que cursa com endometriose e infertilidade ?</td><td class="speaker-name">Edilberto Rocha - PE</td></tr>
+                <tr><td>12:25 - 12:35<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>12:35 - 12:55<br />(20 min)</td><td colspan="2" class="session-break"><strong>INTERVALO</strong></td></tr>
+                <tr><td>12:55 - 13:15<br />(20 min)</td><td>Lições pra vida: A sobrevida do cirurgião Videolaparoscopico  e  Robótico  da ergonomia à saúde mental</td><td class="speaker-name">Fernando Heredia - Chile <br />*Online*</td></tr>
+                <tr><td>13:15 - 13:35<br />(20 min)</td><td>Lições pra vida: Decidir é mais difícil do que operar</td><td class="speaker-name">Ana Sierra - México <br />*Online*</td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:35 - 14:25            (50 min)</strong><br />MESA 2 - Coloproctologia no painel         <br />Presidente : Marcos Saturnino - PE<br />Debatedores:</td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:35 - 14:05            (30 min)</strong><br />TRIPLO CROSS FIRE o TRIELO</td></tr>
+                <tr><td></td><td>Shaving</td><td class="speaker-name">Paulo Mozart - PE</td></tr>
+                <tr><td></td><td>Discoide e duplo discoide</td><td class="speaker-name">Claudia Joaquim - RJ</td></tr>
+                <tr><td></td><td>Ressecção Segmentar</td><td class="speaker-name">Renato Leal - SP</td></tr>
+                <tr><td>14:05 - 14:15            (10 min)</td><td>Fístulas intestinais - Como conduzir ?</td><td class="speaker-name">Cláudia Joaquim - RJ</td></tr>
+                <tr><td>14:15 - 14:25            (10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>14:25 - 14:35</td><td colspan="2" class="session-break"><strong>INTERVALO</strong></td></tr>
+                <tr><td>14:35 - 16:15<br />(01 hora e 40 min)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO</strong></td></tr>
+                <tr><td>16:15</td><td colspan="2" class="session-break"><strong>Encerramento e Feijoada na Piscina</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="aud-label">Auditório B</p>
+          <div class="schedule-scroll">
+            <table class="schedule-table">
+              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
+              <tbody>
+                <tr><td>08:00 - 10:00</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO                                                                                                                Presidente: Iolanda Matias</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife PE - Raquel Magalhães - SP<br /><br />* Hospital Barão de Lucena - PE <br />Sara Arcanjo - CE / <br />Andreissa Paiva - CE</div></td></tr>
+                <tr><td>10:00 - 10:30 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>10:30  - 11:10<br />(40 min)</td><td>Urologia em ação            <br />Presidente: Guilherme Lima - PE<br />Debatedores: Evandilson Guenes - PE, Rafael Oliveira - PE, Gilberto Pagnosin - PE</td><td></td></tr>
+                <tr><td>10:30 - 10:45<br />(15 min)</td><td>Tratamento da endometriose ureteral, em pelves congeladas existe uma melhor técnica?  <br />Existe superioridade na via de abordagem ?</td><td class="speaker-name">Antônio César Cruz - PE</td></tr>
+                <tr><td>10:45 - 11:00<br />(15 min)</td><td>Lesão vesical - limites da ressecção. Existem repercussões a longo prazo?</td><td class="speaker-name">Rogerson Camargo - PE</td></tr>
+                <tr><td>11:00 -11:10              <br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>11:10 - 11:40             (30 min)</strong><br />Conferências                                                                                                                                             Presidente : Valter Ivo Paiva PE</td></tr>
+                <tr><td>11:10 - 11:25 <br />(15 min)</td><td>Conferência: Quando a dor pélvica é muito mais do que a endometriose</td><td class="speaker-name">Giuliano Borelli - SP</td></tr>
+                <tr><td>11:25 - 11:40            (15 min)</td><td>Conferência: PBM ( patient blood Management) Como o preparar o paciente para cirugia? Até quando  tolerar a anemia ? Como otimizar seus resultados cirúrgicos ?</td><td class="speaker-name">Dahra Telles - PE</td></tr>
+                <tr><td colspan="3" class="session-header"><strong>11:40 - 12:30<br />(50 min)</strong><br />MESA 1 - A multidisciplinaridade           <br />Presidente: Juliana  Zaidan - PE<br />Debatedores: Natália  Fernandes - PE, Rita Santos - PE, Leonardo Lima - PE, Shirley Portela - PE</td></tr>
+                <tr><td>11:40 - 11:50<br />(10 min)</td><td>A melhor dieta para paciente com endometriose ? Ha espaço para suplementos?</td><td class="speaker-name">Nara Parente - CE</td></tr>
+                <tr><td>11:50 - 12:00<br />(10 min)</td><td>Fisioterapia Pélvica antes e após a cirurgia. Que resultados temos comprovados ?</td><td class="speaker-name">Isabella Frota - CE</td></tr>
+                <tr><td>12:00 - 12:10<br />(10 min)</td><td>A acupuntura como tratamento adjuvante nas patologias ginecológicas.</td><td class="speaker-name">Isaura Vieira  - DF</td></tr>
+                <tr><td>12:10 - 12:20<br />(10 min)</td><td>Os impactos da atividade física no tratamento da endometriose. <br />Qual o melhor exercício ?</td><td></td></tr>
+                <tr><td>12:20 - 12:30<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>12:30 - 13:00<br />(1 hora e 10 min)</td><td colspan="2" class="session-break"><strong>INTERVALO (SIMPÓSIO)</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:40 - 14:20<br />(40 min)</strong><br />Uroginecologia em Foco                       <br />Presidente: Eveline Martins - PE              <br />Debatedores: Sônia Lavínia - PE, Vanessa Freitas - PE, Arthur Rangel - PE, Guilherme Zanluchi - SP</td></tr>
+                <tr><td>13:40 - 13:50<br />(10 min)</td><td>Estudo Urodinâmico Quando pedir? Como interpretar?</td><td class="speaker-name">Mônica Diniz - PE</td></tr>
+                <tr><td>13:50 - 14:00<br />(10 min)</td><td>Tratamento das distopias genitais - Qual a melhor técnica ? E os resultados ? Eu te mostro na prática</td><td class="speaker-name">Sara Arcanjo - CE</td></tr>
+                <tr><td>14:00 - 14:10<br />(10 min)</td><td>Incontinecia Urinária - Como conduzir ? Qual a hora de operar ? Vou te mostrar na prática</td><td class="speaker-name">Andreissa Paiva  - CE</td></tr>
+                <tr><td>14:10 - 14:20<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussão</strong></td></tr>
+                <tr><td>14:20 - 14:35<br />(15 min)</td><td colspan="2" class="session-break"><strong>INTERVALO</strong></td></tr>
+                <tr><td>14:35 - 16:15<br />(01 hora e 40 min)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO                                                                                                                                                                                        Coordenador : Jardel Soares - PE</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife - PE Giuliano Borelli - SP<br /><br />* Hospital Barão de Lucena - PE<br />Fabio Ohara - SP <br /><br />* BOGOTA - Colômbia  <br />Santiago Machicado</div></td></tr>
+                <tr><td>16:15</td><td colspan="2" class="session-break"><strong>Encerramento e Feijoada na Piscina</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
         <!-- /panel-sabado -->
+        </div>
       </div>
     </section>
 
@@ -1626,7 +1654,10 @@
               <h3>A Videocirurgia na Oncoginecologia</h3>
               <p>27/08 · 13:15 – 17:00 · Auditório A</p>
               <p class="netflix-card-meta">Coordenação: Dra. Iolanda Matias (PE)</p>
-              <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-pre-congresso-a-videocirurgia-na-oncoginecologia-coordenacao-dra-iolanda-martins/3456233" target="_blank" rel="noopener noreferrer">Inscreva-se</a>
+              <div class="netflix-card-actions">
+                <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-pre-congresso-a-videocirurgia-na-oncoginecologia-coordenacao-dra-iolanda-martins/3456233" target="_blank" rel="noopener noreferrer">Inscreva-se</a>
+                <a class="netflix-card-btn netflix-card-btn--outline" href="pre-congress/programação-a-videocirurgia-na-oncologia.pdf" target="_blank" rel="noopener noreferrer">Programação</a>
+              </div>
             </div>
           </div>
           <div class="netflix-card">
@@ -1635,7 +1666,10 @@
             <div class="netflix-card-content">
               <h3>Curso de Nutrição para pacientes com Endometriose</h3>
               <p>27/08 · 13:15 – 17:00 · Auditório B</p>
-              <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-pre-congresso-nutricao-para-pacientes-com-endometriose-coordenacao-rosaura-santos/3456241" target="_blank" rel="noopener noreferrer">Inscreva-se</a>
+              <div class="netflix-card-actions">
+                <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-pre-congresso-nutricao-para-pacientes-com-endometriose-coordenacao-rosaura-santos/3456241" target="_blank" rel="noopener noreferrer">Inscreva-se</a>
+                <a class="netflix-card-btn netflix-card-btn--outline" href="pre-congress/programação-nutrição-para-pacientes-com-endometriose.pdf" target="_blank" rel="noopener noreferrer">Programação</a>
+              </div>
             </div>
           </div>
           <div class="netflix-card">
@@ -1645,7 +1679,10 @@
               <h3>Curso de USG Mapeamento de Endometriose</h3>
               <p>27/08 · 08:00 – 17:30 · Auditório C</p>
               <p class="netflix-card-meta">Coordenação: MEDERE (Dra. Cecília Pontes e Dra. Penélope Melo — PE)</p>
-              <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-de-usg-mapeamento-de-endometriose-coordenacao-dra-cecilia-pontes-e-dra-penelope-melo-pe/3456249" target="_blank" rel="noopener noreferrer">Inscreva-se</a>
+              <div class="netflix-card-actions">
+                <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-de-usg-mapeamento-de-endometriose-coordenacao-dra-cecilia-pontes-e-dra-penelope-melo-pe/3456249" target="_blank" rel="noopener noreferrer">Inscreva-se</a>
+                <a class="netflix-card-btn netflix-card-btn--outline" href="pre-congress/programação-usg-mapeamento-de-endometriose.pdf" target="_blank" rel="noopener noreferrer">Programação</a>
+              </div>
             </div>
           </div>
           <div class="netflix-card">
@@ -1655,7 +1692,10 @@
               <h3>Curso de Sutura Dry Lab em sutura endoscópica</h3>
               <p>27/08 · 12:30 – 19:00 · Foyer</p>
               <p class="netflix-card-meta">Coordenação: Dr. Guilherme Zanluchi (SP)</p>
-              <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-pre-congresso-sutura-laparoscopica-coordenacao-dr-guilherme-zanluchi-sp/3456262" target="_blank" rel="noopener noreferrer">Inscreva-se</a>
+              <div class="netflix-card-actions">
+                <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-pre-congresso-sutura-laparoscopica-coordenacao-dr-guilherme-zanluchi-sp/3456262" target="_blank" rel="noopener noreferrer">Inscreva-se</a>
+                <a class="netflix-card-btn netflix-card-btn--outline" href="pre-congress/programação-sutura-laparoscopia.pdf" target="_blank" rel="noopener noreferrer">Programação</a>
+              </div>
             </div>
           </div>
         </div>
@@ -1667,6 +1707,136 @@
           <a href="https://commons.wikimedia.org/wiki/File:Instruments_for_laparoscopic_Hernia_Operation.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>
           (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>).
         </p>
+      </div>
+
+      <div class="container schedule-block schedule-block--precongress" data-schedule-group="precongress">
+        <h3 class="section-title" style="font-size: 1.35rem; margin-bottom: 1.25rem;">Programação dos cursos</h3>
+        <div class="day-tabs" role="tablist" aria-label="Cursos do pré-congresso">
+          <button class="day-tab-btn active" role="tab" data-day="videocirurgia" aria-selected="true">A Videocirurgia na Oncoginecologia</button>
+          <button class="day-tab-btn" role="tab" data-day="nutricao" aria-selected="false">Curso de Nutrição para pacientes com Endometriose</button>
+          <button class="day-tab-btn" role="tab" data-day="usg" aria-selected="false">Curso de USG Mapeamento de Endometriose</button>
+          <button class="day-tab-btn" role="tab" data-day="sutura" aria-selected="false">Curso de Sutura Dry Lab em sutura endoscópica</button>
+        </div>
+
+        <div class="day-panel active" id="panel-videocirurgia">
+<div class="schedule-scroll">
+            <table class="schedule-table">
+              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
+              <tbody>
+                <tr><td>13:00-13:15</td><td colspan="2" class="session-break"><strong>Abertura</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:30 - 17:30</strong><br />AUDITÓRIO A  - A Videocirurgia na Oncoginecologia<br />Coordenação:  Iolanda Matias - PE</td></tr>
+                <tr><td></td><td>Histerectomias Laparoscópicas<br />Sinais  clínicos e pacientes de risco oncológico</td><td></td></tr>
+                <tr><td></td><td>Endometriose Malignizada -  quando suspeitar</td><td></td></tr>
+                <tr><td></td><td>Uso da Luminescencia  e sua indicação</td><td></td></tr>
+                <tr><td>15:30 - 16:00</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td></td><td>Coloproctologia – Quando suspeitar de doença maligna  e  o que fazer?</td><td></td></tr>
+                <tr><td></td><td>Laboratório pré-operatório  - Marcadores em oncologia</td><td></td></tr>
+                <tr><td></td><td>Ultrassonografia pré-operatória – Classificação de risco para Câncer de ovário</td><td></td></tr>
+                <tr><td></td><td>Ressonância pélvica e os sinais de alerta</td><td></td></tr>
+                <tr><td></td><td>Tratamentos oncológicos e seus impactos no campo cirúrgico</td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- /panel-videocirurgia -->
+
+        <div class="day-panel" id="panel-nutricao">
+<div class="schedule-scroll">
+            <table class="schedule-table">
+              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
+              <tbody>
+                <tr><td>13:00-13:15</td><td colspan="2" class="session-break"><strong>Abertura</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:30 - 17:30</strong><br />AUDITÓRIO B  - Curso Nutrição para pacientes com Endometriose <br />Coordenação:  Rosaura Santos - PE</td></tr>
+                <tr><td>13:30 - 13:40</td><td colspan="2" class="session-break"><strong>Abertura e apresentação - Panorama da endometriose e impacto nutricional.<br />Moderadora: Nut Rosaura</strong></td></tr>
+                <tr><td>13:40 - 14:20</td><td>AULA 1</td><td class="speaker-name">Nut. Natalia Fernandes</td></tr>
+                <tr><td></td><td>Evidências sobre dieta anti-inflamatória e sintomas.</td><td></td></tr>
+                <tr><td colspan="3" class="session-break"><strong>Discussão de casos clínicos: pacientes com dor pélvica e alterações alimentares.</strong></td></tr>
+                <tr><td>14:20 - 15:00</td><td>AULA 2</td><td class="speaker-name">Nut. Gil Barbieri</td></tr>
+                <tr><td></td><td>Ambiente Metabólico e Sucesso Reprodutivo</td><td></td></tr>
+                <tr><td></td><td>Relação entre resistência insulínica, obesidade e fertilidade.</td><td></td></tr>
+                <tr><td></td><td>Estratégias nutricionais para otimizar ambiente metabólico.</td><td></td></tr>
+                <tr><td></td><td>Casos clínicos: infertilidade associada a síndrome metabólica.</td><td></td></tr>
+                <tr><td>15:00 às 15:40</td><td>AULA 3</td><td class="speaker-name">Nut. Adriana Soares</td></tr>
+                <tr><td></td><td>Nutrição Modulando a Inflamação</td><td></td></tr>
+                <tr><td></td><td>Nutrientes e compostos bioativos com ação anti-inflamatória.</td><td></td></tr>
+                <tr><td></td><td>Papel dos ácidos graxos ômega-3, antioxidantes e fibras.</td><td></td></tr>
+                <tr><td></td><td>Casos clínicos: pacientes com endometriose e inflamação sistêmica.</td><td></td></tr>
+                <tr><td>15:40 - 16:00</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>16:00 às 16:30</td><td>AULA 4</td><td class="speaker-name">Nutr. Nara  Parente</td></tr>
+                <tr><td></td><td>Protocolo Nutricional Perioperatório</td><td></td></tr>
+                <tr><td></td><td>Preparação nutricional para cirurgia de endometriose.</td><td></td></tr>
+                <tr><td></td><td>Estratégias para reduzir complicações e acelerar recuperação.</td><td></td></tr>
+                <tr><td></td><td>Caso clínico: pacientes em pré e pós-operatório.</td><td></td></tr>
+                <tr><td>16:30 - 17:00</td><td>AULA 5</td><td class="speaker-name">Nut. Lais Sousa</td></tr>
+                <tr><td></td><td>Dores Pélvicas e Abordagem Nutricional</td><td></td></tr>
+                <tr><td></td><td>Relação entre dor crônica e dieta.</td><td></td></tr>
+                <tr><td></td><td>Intervenções nutricionais para melhora da qualidade de vida.</td><td></td></tr>
+                <tr><td></td><td>Casos clínico: pacientes com dor pélvica refratária.</td><td></td></tr>
+                <tr><td>17:00 - 17:30</td><td>AULA 6</td><td class="speaker-name">Farmacêutica : Catarina( Roval)</td></tr>
+                <tr><td></td><td>Suplementação Farmacoterápica nas Diferentes Fases da Endometriose</td><td></td></tr>
+                <tr><td></td><td>Suplementos com evidência científica (vitamina D, antioxidantes, probióticos).</td><td></td></tr>
+                <tr><td></td><td>Ajustes conforme fase da doença e tratamento médico.</td><td></td></tr>
+                <tr><td></td><td>Prática: Elaborando uma prescrição assertiva</td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- /panel-nutricao -->
+
+        <div class="day-panel" id="panel-usg">
+<div class="schedule-scroll">
+            <table class="schedule-table">
+              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
+              <tbody>
+                <tr><td>13:00-13:15</td><td colspan="2" class="session-break"><strong>Abertura</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:15 - 17:00</strong><br />AUDITÓRIO C - Curso de USG Mapeamento de Endometriose<br />Coordenação:  MEDERE  (Cecília Pontes - PE e Penélope Melo - PE )</td></tr>
+                <tr><td>13:30 - 14:30</td><td>Bloco 1 - Fundamentos &amp; Anatomia Aplicada</td><td></td></tr>
+                <tr><td></td><td>A &quot;Cara&quot; da Doença nos exames radiológicos US e RM</td><td></td></tr>
+                <tr><td></td><td>Compartimentalização da pelve: Como a doença se apresenta e se espalha.</td><td></td></tr>
+                <tr><td></td><td>Compartimento anterior: Falando da bexiga: Quando o achado de imagem acende o alerta para mudar a estratégia ou chamar o urologista.</td><td></td></tr>
+                <tr><td></td><td>Compartimento Posterior: espeço retrocervical e intestino. Desvendando a pelve antes de abrir: como podemos ajudar o cirurgião.</td><td></td></tr>
+                <tr><td></td><td>Compartimento lateral: quando a lesão infiltra mais que o esperado</td><td></td></tr>
+                <tr><td>14:30 - 15:30</td><td>Bloco 2 - Raciocínio Clínico e Prática de Consultório</td><td></td></tr>
+                <tr><td colspan="3" class="session-break"><strong>Correlação Prática (US vs RM): Discussão interativa de casos reais focados em dor, infertilidade e planejamento cirúrgico. Onde os métodos concordam, onde discordam e como isso muda sua conduta.</strong></td></tr>
+                <tr><td></td><td>O Laudo Traduzido&quot;: Como interpretar o laudo radiológico, compreendendo os achados e como evitar o hiperdiagnóstico</td><td></td></tr>
+                <tr><td>15:30 - 16:00</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>16:00 - 17:00</td><td>Bloco 3 - Fronteiras, Infertilidade e o Futuro da Imagem</td><td></td></tr>
+                <tr><td></td><td>Avaliação de Tubas e Cavidade por US</td><td></td></tr>
+                <tr><td></td><td>Desafios Avançados:</td><td></td></tr>
+                <tr><td></td><td>Como avaliar lesões em sítios atípicos (diafragma e parede)</td><td></td></tr>
+                <tr><td></td><td>As armadilhas do mapeamento pós-operatório (fibrose x recidiva x lesão residual) e o impacto dos bloqueios hormonais na leitura dos exames.</td><td></td></tr>
+                <tr><td></td><td>O que há de Novo na Literatura Mundial: As evidências científicas e diretrizes internacionais mais recentes que estão mudando a conduta na endometriose profunda.</td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- /panel-usg -->
+
+        <div class="day-panel" id="panel-sutura">
+<div class="schedule-scroll">
+            <table class="schedule-table">
+              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
+              <tbody>
+                <tr><td colspan="3" class="session-header"><strong>12:30 - 19:00</strong><br />FOYER - Curso de Sutura Dry Lab em sutura Endoscópica <br />Coordenação: Guilherme Zanluchi - SP</td></tr>
+                <tr><td>12:30 - 13:00</td><td>Regras básicas de posição de agulha e fio - Nomenclatura e sistematização de agulha</td><td class="speaker-name">professor 1</td></tr>
+                <tr><td>13:00 - 13:30</td><td>Teoria do Ponto perfeito e passagem de agulha</td><td class="speaker-name">professor 2</td></tr>
+                <tr><td>13:30-14:00</td><td>Aplicação prática de sutura em videos: Fechamento de cúpula vaginal e miomectomias</td><td class="speaker-name">professor 3</td></tr>
+                <tr><td>14:00 - 15:30</td><td>Estação prática</td><td></td></tr>
+                <tr><td>14:00-14:30</td><td>Sistematização de 1 grau e acordar as mãos</td><td></td></tr>
+                <tr><td>14:30-15:00</td><td>Sistematizaçoes e Cruz de verificaçao</td><td></td></tr>
+                <tr><td>15:00 -15:30</td><td>O Ponto Perfeito</td><td></td></tr>
+                <tr><td>15:30 - 16:00</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>16:00 - 16:30</td><td>Teoria dos nós: Nó quadrado e semi-chaves</td><td class="speaker-name">professor 1</td></tr>
+                <tr><td>16:30 - 17:30</td><td>Os nós da minha preferência - Aplicação dos nós em cada tipo de tecido e cirurgia</td><td class="speaker-name">professor 2</td></tr>
+                <tr><td>17:30 - 19:00</td><td>Estação prática</td><td class="speaker-name">professor 3</td></tr>
+                <tr><td>17:30 - 18:00</td><td>Triplo Duplo - Monomanual e bimanual</td><td></td></tr>
+                <tr><td>18:00 - 18:30</td><td>Sequência de semi-chaves bloqueantes</td><td></td></tr>
+                <tr><td>18:30 - 19:00</td><td>Competição - Prêmio</td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- /panel-sutura -->
       </div>
     </section>
 
@@ -1989,15 +2159,20 @@
       });
 
       /* ── Day tabs (schedule) ── */
-      document.querySelectorAll(".day-tab-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const day = btn.dataset.day;
-          if (!day) return; // ignore gallery tabs handled separately
-          document.querySelectorAll(`[data-day]`).forEach((b) => { b.classList.remove("active"); b.setAttribute("aria-selected", "false"); });
-          document.querySelectorAll(".day-panel").forEach((p) => p.classList.remove("active"));
-          btn.classList.add("active"); btn.setAttribute("aria-selected", "true");
-          const panel = document.getElementById("panel-" + day);
-          if (panel) panel.classList.add("active");
+      document.querySelectorAll(".schedule-block").forEach((block) => {
+        const tabs = block.querySelectorAll(".day-tab-btn");
+        const panels = block.querySelectorAll(".day-panel");
+        tabs.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const day = btn.dataset.day;
+            if (!day) return;
+            tabs.forEach((b) => { b.classList.remove("active"); b.setAttribute("aria-selected", "false"); });
+            panels.forEach((p) => p.classList.remove("active"));
+            btn.classList.add("active");
+            btn.setAttribute("aria-selected", "true");
+            const panel = block.querySelector("#panel-" + day);
+            if (panel) panel.classList.add("active");
+          });
         });
       });
 

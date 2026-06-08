@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate schedule table HTML from programacao-preliminar-2026.csv."""
+"""Generate schedule table HTML from CSV files."""
 import csv
 import html
 import re
@@ -7,7 +7,27 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CSV_PATH = ROOT / "schedule" / "programacao-preliminar-2026.csv"
+CONGRESS_CSV = ROOT / "schedule" / "programacao-preliminar-2026.csv"
+PRECONGRESS_DIR = ROOT / "pre-congress"
+
+PRECONGRESS_COURSES = [
+    {
+        "id": "videocirurgia",
+        "csv": "programacao-a-videocirurgia-na-oncologia.csv",
+    },
+    {
+        "id": "nutricao",
+        "csv": "programacao-nutricao-para-pacientes-com-endometriose.csv",
+    },
+    {
+        "id": "usg",
+        "csv": "programacao-usg-mapeamento-de-endometriose.csv",
+    },
+    {
+        "id": "sutura",
+        "csv": "programacao-sutura-dry-lab-em-sutura-endoscopica.csv",
+    },
+]
 
 
 def esc(text: str) -> str:
@@ -16,6 +36,17 @@ def esc(text: str) -> str:
 
 def br(text: str) -> str:
     return esc(text).replace("\n", "<br />")
+
+
+def day_key(day_label: str) -> str | None:
+    d = (day_label or "").lower()
+    if "sexta" in d:
+        return "sexta"
+    if "sábado" in d or "sabado" in d:
+        return "sabado"
+    if "quinta" in d:
+        return "quinta"
+    return None
 
 
 def is_header_row(time: str, activity: str) -> bool:
@@ -67,7 +98,7 @@ def row_kind(time: str, activity: str, speaker: str) -> str:
     return "talk"
 
 
-def tr_row(time: str, activity: str, speaker: str, col3_label: str = "Palestrante") -> str:
+def tr_row(time: str, activity: str, speaker: str) -> str:
     time = (time or "").strip()
     activity = (activity or "").strip()
     speaker = (speaker or "").strip()
@@ -118,19 +149,41 @@ def tr_row(time: str, activity: str, speaker: str, col3_label: str = "Palestrant
     return f"<tr><td>{br(time)}</td><td>{br(activity)}</td>{sp}</tr>"
 
 
-def parse_sections():
-    with CSV_PATH.open(newline="", encoding="utf-8") as f:
-        rows = list(csv.reader(f))
+def is_auditorium_row(time: str, activity: str) -> bool:
+    t = (time or "").strip()
+    a = (activity or "").strip()
+    if re.match(r"^AUDITÓRIO [AB]\s*$", t, re.I):
+        return True
+    if re.match(r"^AUDITÓRIO [AB]\s*$", a, re.I) and not t:
+        return True
+    return False
 
-    sections = []
-    current = None
-    auditorium = None
 
-    def flush():
-        nonlocal current
-        if current and current.get("auditoriums"):
-            sections.append(current)
-        current = None
+def auditorium_label(name: str) -> str:
+    label = name.strip()
+    if label.startswith("AUDITÓRIO"):
+        return label.replace("AUDITÓRIO", "Auditório")
+    if label == "Abertura":
+        return "Abertura do congresso"
+    return label
+
+
+def parse_csv_rows(csv_path: Path):
+    with csv_path.open(newline="", encoding="utf-8") as f:
+        return list(csv.reader(f))
+
+
+def parse_congress_sections():
+    rows = parse_csv_rows(CONGRESS_CSV)
+    days: dict[str, dict] = {}
+    current_key = None
+
+    def ensure_auditorium(day: dict, name: str):
+        found = next((a for a in day["auditoriums"] if a["name"] == name), None)
+        if not found:
+            day["auditoriums"].append({"name": name, "rows": []})
+            found = day["auditoriums"][-1]
+        return found
 
     for row in rows:
         if not row or all(not (c or "").strip() for c in row):
@@ -142,97 +195,82 @@ def parse_sections():
         if "CONGRESSO ENDOGINECO" in (time + activity):
             continue
 
-        if time.strip().lower() == "horário" or time.strip().lower() == "horario":
-            day = activity.strip()
-            flush()
-            current = {"day": day, "auditoriums": []}
-            auditorium = None
+        if time.strip().lower() in ("horário", "horario"):
+            key = day_key(activity)
+            if key is None or key == "quinta":
+                current_key = None
+                continue
+            if key not in days:
+                days[key] = {"day": activity.strip(), "day_key": key, "auditoriums": []}
+            current_key = key
             continue
 
-        if not current:
+        if not current_key:
             continue
 
-        aud_match = re.match(r"^(AUDITÓRIO [AB]|AUDITORIO [AB]|FOYER)\s*$", time.strip(), re.I)
-        if aud_match or (
-            len(row) >= 1
-            and re.match(r"^AUDITÓRIO [AB]\s*$", (time or "").strip(), re.I)
-            and not activity.strip()
-        ):
-            auditorium = time.strip() or activity.strip()
-            current["auditoriums"].append({"name": auditorium, "rows": []})
+        day = days[current_key]
+
+        if is_auditorium_row(time, activity):
+            aud_name = (time or activity).strip()
+            ensure_auditorium(day, aud_name)
             continue
 
-        if "Quinta" in current["day"]:
-            prefix = None
-            for p in ("AUDITÓRIO C", "AUDITÓRIO A", "AUDITÓRIO B", "FOYER"):
-                if p in activity.upper():
-                    prefix = p
-                    break
-            if prefix:
-                found = next((a for a in current["auditoriums"] if a["name"] == prefix), None)
-                if not found:
-                    current["auditoriums"].append({"name": prefix, "rows": []})
-                    found = current["auditoriums"][-1]
-                found["rows"].append((time, activity, speaker))
-            else:
-                active = current["auditoriums"][-1] if current["auditoriums"] else None
-                if not active:
-                    current["auditoriums"].append({"name": "Pré-congresso", "rows": []})
-                    active = current["auditoriums"][-1]
-                active["rows"].append((time, activity, speaker))
-        else:
-            if not current["auditoriums"]:
-                current["auditoriums"].append({"name": "Abertura", "rows": []})
-            current["auditoriums"][-1]["rows"].append((time, activity, speaker))
+        if not day["auditoriums"]:
+            ensure_auditorium(day, "Abertura")
 
-    flush()
-    return sections
+        active = day["auditoriums"][-1]
+        active["rows"].append((time, activity, speaker))
+
+    return [days[k] for k in ("sexta", "sabado") if k in days]
 
 
-def render_panel(section, col3="Palestrante"):
+def parse_precongress_section(csv_path: Path):
+    rows = parse_csv_rows(csv_path)
+    program_rows = []
+    started = False
+
+    for row in rows:
+        if not row or all(not (c or "").strip() for c in row):
+            continue
+        time = row[0] if len(row) > 0 else ""
+        activity = row[1] if len(row) > 1 else ""
+        speaker = row[2] if len(row) > 2 else ""
+
+        upper = (time + activity).upper()
+        if "PRÉ CONGRESSO" in upper or "PRE CONGRESSO" in upper:
+            continue
+        if "CONGRESSO ENDOGINECO" in upper:
+            continue
+        if time.strip().lower() in ("horário", "horario"):
+            started = True
+            continue
+        if not started:
+            continue
+        program_rows.append((time, activity, speaker))
+
+    return {
+        "auditoriums": [{"name": "Programação", "rows": program_rows}],
+    }
+
+
+def render_panel(section, col3="Palestrante", hide_single_label=True):
     parts = []
-    for aud in section["auditoriums"]:
-        label = aud["name"]
-        is_quinta = "Quinta" in section["day"]
-        if label.startswith("AUDITÓRIO C"):
-            label = (
-                "Auditório C — Curso de USG Mapeamento de Endometriose"
-                if is_quinta
-                else "Auditório C"
-            )
-        elif label.startswith("AUDITÓRIO A"):
-            label = (
-                "Auditório A — A Videocirurgia na Oncoginecologia"
-                if is_quinta
-                else "Auditório A"
-            )
-        elif label.startswith("AUDITÓRIO B"):
-            label = (
-                "Auditório B — Curso de Nutrição para Pacientes com Endometriose"
-                if is_quinta
-                else "Auditório B"
-            )
-        elif label.startswith("AUDITÓRIO"):
-            label = label.replace("AUDITÓRIO", "Auditório")
-        elif label == "FOYER":
-            label = (
-                "Foyer — Curso de Sutura Dry Lab em Sutura Endoscópica"
-                if is_quinta
-                else "Foyer"
-            )
-        elif label == "Abertura":
-            label = "Abertura do congresso"
-        parts.append(f'          <p class="aud-label">{esc(label)}</p>')
+    auditoriums = section["auditoriums"]
+    for aud in auditoriums:
+        if hide_single_label and len(auditoriums) == 1 and aud["name"] == "Programação":
+            pass
+        else:
+            parts.append(f'          <p class="aud-label">{esc(auditorium_label(aud["name"]))}</p>')
         parts.append('          <div class="schedule-scroll">')
         parts.append('            <table class="schedule-table">')
-        w_time = "155px" if "Sexta" in section["day"] or "Sábado" in section["day"] else "140px"
+        w_time = "155px"
         parts.append(
             f'              <thead><tr><th style="width:{w_time}">Horário</th>'
-            f"<th>Atividade</th><th style=\"width:220px\">{col3}</th></tr></thead>"
+            f'<th>Atividade</th><th style="width:220px">{col3}</th></tr></thead>'
         )
         parts.append("              <tbody>")
         for time, activity, speaker in aud["rows"]:
-            parts.append("                " + tr_row(time, activity, speaker, col3))
+            parts.append("                " + tr_row(time, activity, speaker))
         parts.append("              </tbody>")
         parts.append("            </table>")
         parts.append("          </div>")
@@ -240,17 +278,27 @@ def render_panel(section, col3="Palestrante"):
     return "\n".join(parts)
 
 
+def emit_panels(mode: str):
+    if mode == "congress":
+        sections = parse_congress_sections()
+        for sec in sections:
+            print(f"<!-- PANEL {sec['day_key']} -->")
+            print(render_panel(sec, "Palestrante", hide_single_label=False))
+    elif mode == "precongress":
+        for course in PRECONGRESS_COURSES:
+            csv_path = PRECONGRESS_DIR / course["csv"]
+            if not csv_path.exists():
+                raise SystemExit(f"missing pre-congress CSV: {csv_path}")
+            section = parse_precongress_section(csv_path)
+            print(f"<!-- PANEL {course['id']} -->")
+            print(render_panel(section, "Palestrante", hide_single_label=True))
+    else:
+        raise SystemExit(f"unknown mode: {mode}")
+
+
 def main():
-    sections = parse_sections()
-    panel_ids = ["quinta", "sexta", "sabado"]
-    for sec, pid in zip(sections, panel_ids):
-        col3 = (
-            "Coordenação / Palestrante"
-            if "Quinta" in sec["day"]
-            else "Palestrante"
-        )
-        print(f"<!-- PANEL {pid} -->")
-        print(render_panel(sec, col3))
+    mode = sys.argv[1] if len(sys.argv) > 1 else "congress"
+    emit_panels(mode)
 
 
 if __name__ == "__main__":
