@@ -1562,7 +1562,7 @@
               <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
             </div>
           </div>
-          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Kathyane Lustosa" data-speaker-name="Kathyane Lustosa" data-speaker-region="CE" data-speaker-photo="speakers/kathyane-lustosa-ce.jpg" data-speaker-bio="[&quot;Doutora e Mestre em Cirurgia pela Universidade Federal do Ceará&quot;, &quot;Ginecologista formada pelo HGF/CE com Título de especialista pela FEBRASGO em área de atuação em Endoscopia ginecológica&quot;, &quot;Pós-Graduação em Endometriose e Ginecologia Minimamente Invasiva pelo Hospital Sírio Libanês&quot;, &quot;Preceptora da Residência Médica em Ginecologia e Obstetrícia e em Endoscopia ginecológica da ESP e do HGF&quot;, &quot;Coordenadora do Fellowship em Cirurgias ginecológicas minimamente invasivas do Instituto Salvata e Rede D’or&quot;, &quot;Vice presidente Nordeste  da SOBRACIL&quot;]">
+          <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Kathyane Lustosa" data-speaker-name="Kathyane Lustosa" data-speaker-region="CE" data-speaker-photo="speakers/kathyane-lustosa-ce.jpg" data-speaker-bio="[&quot;Doutora e Mestre em Cirurgia pela Universidade Federal do Ceará&quot;, &quot;Ginecologista formada pelo HGF/CE com Título de especialista pela FEBRASGO em área de atuação em Endoscopia ginecológica&quot;, &quot;Pós-Graduação em Endometriose e Ginecologia Minimamente Invasiva pelo Hospital Sírio Libanês&quot;, &quot;Preceptora da Residência Médica em Ginecologia e Obstetrícia e em Endoscopia ginecológica da ESP e do HGF&quot;, &quot;Coordenadora do Fellowship em Cirurgias ginecológicas minimamente invasivas do Instituto Salvata e Rede D'or&quot;, &quot;Vice presidente Nordeste  da SOBRACIL&quot;]">
             <div class="netflix-card-bg" style="background-image:url('speakers/kathyane-lustosa-ce.jpg');" role="img" aria-label="Foto de Kathyane Lustosa"></div>
             <div class="netflix-card-overlay"></div>
             <div class="netflix-card-content">
@@ -2423,6 +2423,33 @@
       const speakerModalBio = document.getElementById("speaker-modal-bio");
       const speakerModalBioEmpty = document.getElementById("speaker-modal-bio-empty");
 
+      function getSpeakerPhoto(card) {
+        const fromData = (card.dataset.speakerPhoto || "").trim();
+        if (fromData) return fromData;
+        const bg = card.querySelector(".netflix-card-bg");
+        if (!bg) return "";
+        const style = bg.style.backgroundImage || window.getComputedStyle(bg).backgroundImage;
+        const match = style && style.match(/url\(["']?([^"')]+)["']?\)/);
+        return match ? match[1].trim() : "";
+      }
+
+      function setSpeakerModalPhoto(photo, name) {
+        if (!speakerModalPhoto) return;
+        if (!photo) {
+          speakerModalPhoto.removeAttribute("src");
+          speakerModalPhoto.alt = "";
+          speakerModalPhoto.hidden = true;
+          return;
+        }
+        const url = new URL(photo, window.location.href).href;
+        speakerModalPhoto.alt = name;
+        speakerModalPhoto.hidden = false;
+        speakerModalPhoto.removeAttribute("hidden");
+        if (speakerModalPhoto.src !== url) {
+          speakerModalPhoto.src = url;
+        }
+      }
+
       function closeSpeakerModal() {
         if (!speakerModal) return;
         speakerModal.classList.remove("show");
@@ -2435,18 +2462,14 @@
         if (!speakerModal || !card) return;
         const name = card.dataset.speakerName || "Palestrante";
         const region = card.dataset.speakerRegion || "";
-        const photo = card.dataset.speakerPhoto || "";
+        const photo = getSpeakerPhoto(card);
         let bioItems = [];
         try {
           bioItems = JSON.parse(card.dataset.speakerBio || "[]");
         } catch (_) {
           bioItems = [];
         }
-        if (speakerModalPhoto) {
-          speakerModalPhoto.src = photo;
-          speakerModalPhoto.alt = name;
-          speakerModalPhoto.hidden = !photo;
-        }
+        setSpeakerModalPhoto(photo, name);
         if (speakerModalName) {
           speakerModalName.textContent = name;
           speakerModal.setAttribute("aria-label", name);
