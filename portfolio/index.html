@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Luka Plan — Sites de Eventos Científicos</title>
+    <title data-i18n="meta.title">Automa IT &amp; Development — Scientific Event Websites</title>
     <meta
       name="description"
-      content="Luka Plan Promoções e Eventos — criação de landing pages para congressos, simpósios e eventos científicos."
+      data-i18n-attr="content:meta.description"
+      content="Portfolio of responsive landing pages for medical and scientific events, developed by Automa IT &amp; Development."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,10 +44,44 @@
       }
 
       .hero {
+        position: relative;
+        z-index: 0;
         background: linear-gradient(135deg, var(--primary) 0%, #2d5a87 100%);
         color: #fff;
         padding: 4rem 1.5rem 5rem;
         text-align: center;
+      }
+
+      .lang-selector {
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+        z-index: 2;
+      }
+
+      .lang-selector select {
+        appearance: none;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        padding: 0.45rem 2rem 0.45rem 0.75rem;
+        border-radius: 8px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 0.875rem;
+        font-weight: 600;
+        cursor: pointer;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23fff' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.6rem center;
+      }
+
+      .lang-selector select:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .lang-selector select option {
+        color: var(--text);
+        background: #fff;
       }
 
       .hero h1 {
@@ -58,7 +93,7 @@
       .hero .tagline {
         font-size: clamp(1rem, 2.5vw, 1.25rem);
         opacity: 0.9;
-        max-width: 640px;
+        max-width: 680px;
         margin: 0 auto 2rem;
       }
 
@@ -74,6 +109,8 @@
       }
 
       main {
+        position: relative;
+        z-index: 1;
         max-width: 1100px;
         margin: -3rem auto 0;
         padding: 0 1.5rem 4rem;
@@ -95,6 +132,10 @@
 
       .intro p {
         color: var(--muted);
+      }
+
+      .intro p + p {
+        margin-top: 0.75rem;
       }
 
       .projects h2 {
@@ -194,92 +235,119 @@
         text-decoration: underline;
       }
 
-      .contact-links {
+      .footer-credits {
         display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        margin-top: 0.75rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      @media (max-width: 480px) {
+        .lang-selector {
+          position: static;
+          margin-bottom: 1.25rem;
+          display: flex;
+          justify-content: center;
+        }
       }
     </style>
   </head>
   <body>
     <header class="hero">
-      <span class="badge">Luka Plan Promoções e Eventos</span>
-      <h1>Sites de Eventos Científicos</h1>
-      <p class="tagline">
-        Landing pages responsivas para congressos, simpósios e encontros
-        médico-científicos — design moderno, domínio próprio e deploy contínuo.
+      <div class="lang-selector">
+        <select id="language-selector" aria-label="Select language">
+          <option value="en">English</option>
+          <option value="pt">Português</option>
+          <option value="es">Español</option>
+        </select>
+      </div>
+      <span class="badge" data-i18n="hero.badge">Automa IT &amp; Development</span>
+      <h1 data-i18n="hero.title">Scientific Event Websites</h1>
+      <p class="tagline" data-i18n="hero.tagline">
+        Responsive landing pages for congresses, symposiums, and medical-scientific
+        events — modern design, custom domains, and continuous deployment.
       </p>
     </header>
 
     <main>
       <section class="intro">
-        <h2>O que fazemos</h2>
-        <p>
-          Desenvolvemos sites institucionais para eventos da área da saúde:
-          programação científica, comissão organizadora, palestrantes,
-          patrocinadores, inscrições e informações de local. Cada evento possui
-          domínio personalizado, servido a partir de um único repositório com
-          roteamento por domínio na Vercel.
+        <h2 data-i18n="intro.title">What we do</h2>
+        <p data-i18n="intro.p1">
+          We build institutional websites for healthcare events: scientific
+          programs, organizing committees, speakers, sponsors, registration,
+          and venue information. Each site runs on its own custom domain from a
+          single repository with domain-based routing on Vercel.
+        </p>
+        <p data-i18n="intro.p2">
+          The projects below were developed by Automa IT &amp; Development for
+          Luka Plan Promoções e Eventos, our client and the producer of these
+          events.
         </p>
       </section>
 
       <section class="projects">
-        <h2>Portfólio de eventos</h2>
+        <h2 data-i18n="projects.title">Event portfolio</h2>
         <div class="grid">
           <article class="card">
-            <span class="status status--past">Realizado</span>
-            <h3>III Simpósio TGI</h3>
-            <p class="meta">
-              Oncologia Gastrointestinal · 31 out – 1 nov 2025 · Novotel Recife
-              Marina
+            <span class="status status--past" data-i18n="status.past">Completed</span>
+            <h3 data-i18n="card.tgi.title">III TGI Symposium</h3>
+            <p class="meta" data-i18n="card.tgi.meta">
+              Gastrointestinal Oncology · October 31 – November 1, 2025 · Novotel
+              Recife Marina
             </p>
-            <a href="https://www.tgirecife.com.br/" target="_blank" rel="noopener noreferrer"
-              >Visitar site</a
+            <a
+              href="https://www.tgirecife.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="visitSite"
+              >Visit website</a
             >
           </article>
 
           <article class="card">
-            <span class="status status--live">Em andamento</span>
-            <h3>Gastro Conecta &amp; Nutri Conecta 2026</h3>
-            <p class="meta">
-              Trato gastrointestinal e nutrição · 27 mar 2026 · Novotel Recife
-              Marina
+            <span class="status status--past" data-i18n="status.past">Completed</span>
+            <h3 data-i18n="card.gastro.title">Gastro Conecta &amp; Nutri Conecta 2026</h3>
+            <p class="meta" data-i18n="card.gastro.meta">
+              Gastrointestinal tract and nutrition · March 27, 2026 (1 day) ·
+              Novotel Recife Marina
             </p>
             <a
               href="https://www.gastroconecta2026.com.br/"
               target="_blank"
               rel="noopener noreferrer"
-              >Visitar site</a
+              data-i18n="visitSite"
+              >Visit website</a
             >
           </article>
 
           <article class="card">
-            <span class="status status--live">Em andamento</span>
-            <h3>Congresso Endogineco 2026</h3>
-            <p class="meta">
-              Ginecologia e endoscopia · 27–29 ago 2026 · Recife
-            </p>
-            <a
-              href="https://www.congressoendoginecorecife.com.br/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Visitar site</a
-            >
-          </article>
-
-          <article class="card">
-            <span class="status status--live">Em andamento</span>
-            <h3>II Simpósio Oncoderma Recife</h3>
-            <p class="meta">
-              Oncologia cutânea · 5 jun 2026 · Hospital Santa Joana Recife
+            <span class="status status--past" data-i18n="status.past">Completed</span>
+            <h3 data-i18n="card.onco.title">II Oncoderma Recife Symposium</h3>
+            <p class="meta" data-i18n="card.onco.meta">
+              Cutaneous oncology · June 5, 2026 (1 day) · Hospital Santa Joana
+              Recife
             </p>
             <a
               href="https://www.oncodermarecife2026.com.br/"
               target="_blank"
               rel="noopener noreferrer"
-              >Visitar site</a
+              data-i18n="visitSite"
+              >Visit website</a
+            >
+          </article>
+
+          <article class="card">
+            <span class="status status--live" data-i18n="status.upcoming">Upcoming</span>
+            <h3 data-i18n="card.endo.title">Endogineco International Congress 2026</h3>
+            <p class="meta" data-i18n="card.endo.meta">
+              Gynecology and endoscopy · August 27–29, 2026 · Recife
+            </p>
+            <a
+              href="https://www.congressoendoginecorecife.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="visitSite"
+              >Visit website</a
             >
           </article>
         </div>
@@ -287,13 +355,173 @@
     </main>
 
     <footer>
-      <p><strong>Luka Plan Promoções e Eventos</strong></p>
-      <div class="contact-links">
-        <a href="mailto:eventos@lukaplan.com.br">eventos@lukaplan.com.br</a>
-        <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener noreferrer"
-          >@lukaplan_</a
-        >
+      <div class="footer-credits">
+        <p>
+          <span data-i18n="footer.developed">Developed by</span>
+          <strong
+            ><a
+              href="https://wa.me/5581995460140?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20um%20site%21%20%3A%29"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Automa IT &amp; Development</a
+            ></strong
+          >
+        </p>
       </div>
     </footer>
+
+    <script>
+      const translations = {
+        en: {
+          "meta.title": "Automa IT & Development — Scientific Event Websites",
+          "meta.description":
+            "Portfolio of responsive landing pages for medical and scientific events, developed by Automa IT & Development.",
+          "hero.badge": "Automa IT & Development",
+          "hero.title": "Scientific Event Websites",
+          "hero.tagline":
+            "Responsive landing pages for congresses, symposiums, and medical-scientific events — modern design, custom domains, and continuous deployment.",
+          "intro.title": "What we do",
+          "intro.p1":
+            "We build institutional websites for healthcare events: scientific programs, organizing committees, speakers, sponsors, registration, and venue information. Each site runs on its own custom domain from a single repository with domain-based routing on Vercel.",
+          "intro.p2":
+            "The projects below were developed by Automa IT & Development for Luka Plan Promoções e Eventos, our client and the producer of these events.",
+          "projects.title": "Event portfolio",
+          "status.past": "Completed",
+          "status.upcoming": "Upcoming",
+          "card.tgi.title": "III TGI Symposium",
+          "card.tgi.meta":
+            "Gastrointestinal Oncology · October 31 – November 1, 2025 · Novotel Recife Marina",
+          "card.gastro.title": "Gastro Conecta & Nutri Conecta 2026",
+          "card.gastro.meta":
+            "Gastrointestinal tract and nutrition · March 27, 2026 (1 day) · Novotel Recife Marina",
+          "card.onco.title": "II Oncoderma Recife Symposium",
+          "card.onco.meta":
+            "Cutaneous oncology · June 5, 2026 (1 day) · Hospital Santa Joana Recife",
+          "card.endo.title": "Endogineco International Congress 2026",
+          "card.endo.meta":
+            "Gynecology and endoscopy · August 27–29, 2026 · Recife",
+          visitSite: "Visit website",
+          "footer.developed": "Developed by",
+        },
+        pt: {
+          "meta.title": "Automa IT & Development — Sites de Eventos Científicos",
+          "meta.description":
+            "Portfólio de landing pages responsivas para eventos médico-científicos, desenvolvidas pela Automa IT & Development.",
+          "hero.badge": "Automa IT & Development",
+          "hero.title": "Sites de Eventos Científicos",
+          "hero.tagline":
+            "Landing pages responsivas para congressos, simpósios e encontros médico-científicos — design moderno, domínio próprio e deploy contínuo.",
+          "intro.title": "O que fazemos",
+          "intro.p1":
+            "Desenvolvemos sites institucionais para eventos da área da saúde: programação científica, comissão organizadora, palestrantes, patrocinadores, inscrições e informações de local. Cada evento possui domínio personalizado, servido a partir de um único repositório com roteamento por domínio na Vercel.",
+          "intro.p2":
+            "Os projetos abaixo foram desenvolvidos pela Automa IT & Development para a Luka Plan Promoções e Eventos, nossa cliente e produtora desses eventos.",
+          "projects.title": "Portfólio de eventos",
+          "status.past": "Realizado",
+          "status.upcoming": "Em breve",
+          "card.tgi.title": "III Simpósio TGI",
+          "card.tgi.meta":
+            "Oncologia Gastrointestinal · 31 de outubro a 1 de novembro de 2025 · Novotel Recife Marina",
+          "card.gastro.title": "Gastro Conecta & Nutri Conecta 2026",
+          "card.gastro.meta":
+            "Trato gastrointestinal e nutrição · 27 de março de 2026 (1 dia) · Novotel Recife Marina",
+          "card.onco.title": "II Simpósio Oncoderma Recife",
+          "card.onco.meta":
+            "Oncologia cutânea · 5 de junho de 2026 (1 dia) · Hospital Santa Joana Recife",
+          "card.endo.title": "Congresso Internacional Endogineco 2026",
+          "card.endo.meta":
+            "Ginecologia e endoscopia · 27 a 29 de agosto de 2026 · Recife",
+          visitSite: "Visitar site",
+          "footer.developed": "Desenvolvido por",
+        },
+        es: {
+          "meta.title": "Automa IT & Development — Sitios Web de Eventos Científicos",
+          "meta.description":
+            "Portafolio de landing pages responsivas para eventos médico-científicos, desarrolladas por Automa IT & Development.",
+          "hero.badge": "Automa IT & Development",
+          "hero.title": "Sitios Web de Eventos Científicos",
+          "hero.tagline":
+            "Landing pages responsivas para congresos, simposios y encuentros médico-científicos — diseño moderno, dominios personalizados y despliegue continuo.",
+          "intro.title": "Qué hacemos",
+          "intro.p1":
+            "Desarrollamos sitios web institucionales para eventos del área de la salud: programación científica, comité organizador, conferencistas, patrocinadores, inscripciones e información del lugar. Cada evento tiene su propio dominio, servido desde un único repositorio con enrutamiento por dominio en Vercel.",
+          "intro.p2":
+            "Los proyectos a continuación fueron desarrollados por Automa IT & Development para Luka Plan Promoções e Eventos, nuestra clienta y productora de estos eventos.",
+          "projects.title": "Portafolio de eventos",
+          "status.past": "Realizado",
+          "status.upcoming": "Próximamente",
+          "card.tgi.title": "III Simposio TGI",
+          "card.tgi.meta":
+            "Oncología Gastrointestinal · 31 de octubre al 1 de noviembre de 2025 · Novotel Recife Marina",
+          "card.gastro.title": "Gastro Conecta & Nutri Conecta 2026",
+          "card.gastro.meta":
+            "Tracto gastrointestinal y nutrición · 27 de marzo de 2026 (1 día) · Novotel Recife Marina",
+          "card.onco.title": "II Simposio Oncoderma Recife",
+          "card.onco.meta":
+            "Oncología cutánea · 5 de junio de 2026 (1 día) · Hospital Santa Joana Recife",
+          "card.endo.title": "Congreso Internacional Endogineco 2026",
+          "card.endo.meta":
+            "Ginecología y endoscopia · 27 al 29 de agosto de 2026 · Recife",
+          visitSite: "Visitar sitio",
+          "footer.developed": "Desarrollado por",
+        },
+      };
+
+      const langLabels = { en: "English", pt: "Português", es: "Español" };
+      const htmlLang = { en: "en", pt: "pt-BR", es: "es" };
+
+      function applyLanguage(lang) {
+        const strings = translations[lang] || translations.en;
+        document.documentElement.lang = htmlLang[lang] || "en";
+
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (strings[key] !== undefined) {
+            el.textContent = strings[key];
+          }
+        });
+
+        document.querySelectorAll("[data-i18n-attr]").forEach((el) => {
+          const pairs = el.getAttribute("data-i18n-attr").split(";");
+          pairs.forEach((pair) => {
+            const [attr, key] = pair.split(":").map((s) => s.trim());
+            if (strings[key] !== undefined) {
+              el.setAttribute(attr, strings[key]);
+            }
+          });
+        });
+
+        const selector = document.getElementById("language-selector");
+        if (selector) {
+          selector.value = lang;
+          selector.setAttribute(
+            "aria-label",
+            lang === "pt"
+              ? "Selecione o idioma"
+              : lang === "es"
+                ? "Seleccione el idioma"
+                : "Select language"
+          );
+        }
+
+        try {
+          localStorage.setItem("portfolio-lang", lang);
+        } catch (_) {}
+      }
+
+      document.getElementById("language-selector").addEventListener("change", (e) => {
+        applyLanguage(e.target.value);
+      });
+
+      const saved = (() => {
+        try {
+          return localStorage.getItem("portfolio-lang");
+        } catch (_) {
+          return null;
+        }
+      })();
+
+      applyLanguage(saved && translations[saved] ? saved : "en");
+    </script>
   </body>
 </html>
