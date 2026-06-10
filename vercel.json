@@ -101,6 +101,26 @@
         }
       ],
       "destination": "/oncoderma2026/:path*"
+    },
+    {
+      "source": "/:path((?!portfolio|tgi|gastroconecta2026|endogineco2026|oncoderma2026).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "lukaplan.vercel.app"
+        }
+      ],
+      "destination": "/portfolio/:path*"
+    },
+    {
+      "source": "/:path((?!portfolio|tgi|gastroconecta2026|endogineco2026|oncoderma2026).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "(.*)\\.vercel\\.app"
+        }
+      ],
+      "destination": "/portfolio/:path*"
     }
   ],
   "headers": [

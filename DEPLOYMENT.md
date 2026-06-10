@@ -6,7 +6,7 @@ Complete guide for deploying multiple event sites with custom domains on Vercel.
 
 - Single Vercel project serves multiple custom domains
 - Domain-based routing in `vercel.json`
-- Root `index.html` serves the Luka Plan portfolio on the default Vercel URL
+- Portfolio in `/portfolio/` (no root `index.html`) so rewrites work on custom domains
 - Automatic deployments on push to `main`
 
 ## Domains
@@ -18,7 +18,7 @@ Complete guide for deploying multiple event sites with custom domains on Vercel.
 | `gastroconecta2026.com.br`              | Gastro Conecta  | `/gastroconecta2026/index.html` |
 | `congressoendoginecorecife.com.br`      | Endogineco 2026 | `/endogineco2026/index.html`    |
 | `oncodermarecife2026.com.br`            | Oncoderma 2026  | `/oncoderma2026/index.html`     |
-| `*.vercel.app`                          | Portfolio       | `/index.html`                   |
+| `*.vercel.app`                          | Portfolio       | `/portfolio/index.html`         |
 
 ## Setup Steps
 

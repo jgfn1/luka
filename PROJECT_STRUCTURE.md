@@ -2,13 +2,14 @@
 
 ## Domain-Based Architecture
 
-This project uses **separate custom domains** for each event, all deployed from a single repository. The root `index.html` serves as the Luka Plan portfolio on the default Vercel URL.
+This project uses **separate custom domains** for each event, all deployed from a single repository. The portfolio lives in `/portfolio/` (no root `index.html`) so host-based rewrites work on custom domains.
 
 ## Folder Structure
 
 ```
 /
-├── index.html                          # Luka Plan portfolio
+├── portfolio/
+│   └── index.html                      # Luka Plan portfolio
 ├── tgi/
 │   ├── index.html                      # III Simpósio TGI
 │   ├── LOGO-TGI.png
@@ -33,7 +34,7 @@ Configured in `vercel.json` using host-based rewrites:
 | `gastroconecta2026.com.br`         | Gastro Conecta  | `/gastroconecta2026/index.html` |
 | `congressoendoginecorecife.com.br` | Endogineco 2026 | `/endogineco2026/index.html`    |
 | `oncodermarecife2026.com.br`       | Oncoderma 2026  | `/oncoderma2026/index.html`     |
-| `*.vercel.app` (default)           | Portfolio       | `/index.html`                   |
+| `*.vercel.app` (default)           | Portfolio       | `/portfolio/index.html`         |
 
 ## Path Strategy
 

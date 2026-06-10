@@ -41,7 +41,8 @@ Multi-site repository for event landing pages. Each event has its own custom dom
 
 ```
 /
-├── index.html                 # Luka Plan portfolio (default Vercel URL)
+├── portfolio/                 # Luka Plan portfolio (default Vercel URL)
+│   └── index.html
 ├── tgi/                       # III Simpósio TGI (tgirecife.com.br)
 │   ├── index.html
 │   ├── LOGO-TGI.png
@@ -67,7 +68,7 @@ All sites deploy from a single Vercel project. Domain-based routing serves the c
 
 Open HTML files directly in browser:
 
-- Portfolio: `/index.html`
+- Portfolio: `/portfolio/index.html`
 - TGI: `/tgi/index.html`
 - Gastro Conecta: `/gastroconecta2026/index.html`
 - Endogineco 2026: `/endogineco2026/index.html`
