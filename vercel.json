@@ -3,6 +3,28 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path((?!tgi).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "tgirecife.com.br"
+        }
+      ],
+      "destination": "/tgi/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/:path((?!tgi).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tgirecife.com.br"
+        }
+      ],
+      "destination": "/tgi/:path*",
+      "permanent": false
+    },
+    {
       "source": "/:path((?!gastroconecta2026).*)*",
       "has": [
         {

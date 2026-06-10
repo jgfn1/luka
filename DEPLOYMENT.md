@@ -6,15 +6,19 @@ Complete guide for deploying multiple event sites with custom domains on Vercel.
 
 - Single Vercel project serves multiple custom domains
 - Domain-based routing in `vercel.json`
+- Root `index.html` serves the Luka Plan portfolio on the default Vercel URL
 - Automatic deployments on push to `main`
 
 ## Domains
 
 | Domain                                  | Site            | File                            |
 | --------------------------------------- | --------------- | ------------------------------- |
-| `www.tgirecife.com.br`                  | TGI             | `/index.html`                   |
+| `tgirecife.com.br`                      | TGI             | `/tgi/index.html`               |
+| `www.tgirecife.com.br`                  | TGI             | `/tgi/index.html`               |
 | `gastroconecta2026.com.br`              | Gastro Conecta  | `/gastroconecta2026/index.html` |
 | `congressoendoginecorecife.com.br`      | Endogineco 2026 | `/endogineco2026/index.html`    |
+| `oncodermarecife2026.com.br`            | Oncoderma 2026  | `/oncoderma2026/index.html`     |
+| `*.vercel.app`                          | Portfolio       | `/index.html`                   |
 
 ## Setup Steps
 
@@ -38,6 +42,7 @@ In Vercel Dashboard:
    - `tgirecife.com.br` + `www.tgirecife.com.br`
    - `gastroconecta2026.com.br` + `www.gastroconecta2026.com.br`
    - `congressoendoginecorecife.com.br` + `www.congressoendoginecorecife.com.br`
+   - `oncodermarecife2026.com.br` + `www.oncodermarecife2026.com.br`
 
 ### 3. Configure DNS
 
@@ -77,15 +82,16 @@ Value: cname.vercel-dns.com
 
 ### Domain Routing
 
-`vercel.json` uses host-based rewrites:
+`vercel.json` uses host-based redirects:
 
 ```json
 {
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "gastroconecta2026.com.br" }],
-      "destination": "/gastroconecta2026/index.html"
+      "source": "/:path((?!tgi).*)*",
+      "has": [{ "type": "host", "value": "www.tgirecife.com.br" }],
+      "destination": "/tgi/:path*",
+      "permanent": false
     }
   ]
 }
@@ -93,10 +99,10 @@ Value: cname.vercel-dns.com
 
 ### Asset Paths
 
-Use **absolute paths** from root:
+Use **relative paths within each event folder**:
 
-- ✅ `/assets/logo.png`
-- ✅ `/tgi/schedule.pdf`
+- ✅ `assets/logo.png` (inside `/tgi/`, served as `tgirecife.com.br/assets/logo.png`)
+- ✅ `sponsors/logo.png` (inside `/gastroconecta2026/`)
 - ❌ `../assets/logo.png`
 
 ## Troubleshooting
@@ -124,7 +130,7 @@ Use **absolute paths** from root:
 
 ### Asset Loading Issues
 
-- Use absolute paths (`/assets/`)
+- Use relative paths within the event folder
 - Check browser Network tab for 404s
 - Verify assets exist in correct location
 - Clear browser cache
@@ -135,10 +141,14 @@ Use **absolute paths** from root:
 # Start local dev server
 vercel dev
 
-# Access at localhost:3000
+# Access at localhost:3000 (portfolio)
 # Or modify /etc/hosts to test domain routing:
+# 127.0.0.1 tgirecife.com.br
+# 127.0.0.1 www.tgirecife.com.br
 # 127.0.0.1 gastroconecta2026.com.br
 # 127.0.0.1 congressoendoginecorecife.com.br
+# 127.0.0.1 oncodermarecife2026.com.br
+```
 
 ## Build Configuration
 
