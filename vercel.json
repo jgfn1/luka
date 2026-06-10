@@ -1,7 +1,7 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
+  "rewrites": [
     {
       "source": "/:path((?!tgi).*)*",
       "has": [
@@ -10,8 +10,7 @@
           "value": "tgirecife.com.br"
         }
       ],
-      "destination": "/tgi/:path*",
-      "permanent": false
+      "destination": "/tgi/:path*"
     },
     {
       "source": "/:path((?!tgi).*)*",
@@ -21,8 +20,7 @@
           "value": "www.tgirecife.com.br"
         }
       ],
-      "destination": "/tgi/:path*",
-      "permanent": false
+      "destination": "/tgi/:path*"
     },
     {
       "source": "/:path((?!gastroconecta2026).*)*",
@@ -32,8 +30,7 @@
           "value": "gastroconecta2026.com.br"
         }
       ],
-      "destination": "/gastroconecta2026/:path*",
-      "permanent": false
+      "destination": "/gastroconecta2026/:path*"
     },
     {
       "source": "/:path((?!gastroconecta2026).*)*",
@@ -43,8 +40,7 @@
           "value": "www.gastroconecta2026.com.br"
         }
       ],
-      "destination": "/gastroconecta2026/:path*",
-      "permanent": false
+      "destination": "/gastroconecta2026/:path*"
     },
     {
       "source": "/:path((?!endogineco2026).*)*",
@@ -54,8 +50,7 @@
           "value": "congressoendoginecorecife.com.br"
         }
       ],
-      "destination": "/endogineco2026/:path*",
-      "permanent": false
+      "destination": "/endogineco2026/:path*"
     },
     {
       "source": "/:path((?!endogineco2026).*)*",
@@ -65,8 +60,7 @@
           "value": "www.congressoendoginecorecife.com.br"
         }
       ],
-      "destination": "/endogineco2026/:path*",
-      "permanent": false
+      "destination": "/endogineco2026/:path*"
     },
     {
       "source": "/:path((?!oncoderma2026).*)*",
@@ -76,8 +70,7 @@
           "value": "oncodermarecife.com.br"
         }
       ],
-      "destination": "/oncoderma2026/:path*",
-      "permanent": false
+      "destination": "/oncoderma2026/:path*"
     },
     {
       "source": "/:path((?!oncoderma2026).*)*",
@@ -87,8 +80,7 @@
           "value": "www.oncodermarecife.com.br"
         }
       ],
-      "destination": "/oncoderma2026/:path*",
-      "permanent": false
+      "destination": "/oncoderma2026/:path*"
     },
     {
       "source": "/:path((?!oncoderma2026).*)*",
@@ -98,8 +90,7 @@
           "value": "oncodermarecife2026.com.br"
         }
       ],
-      "destination": "/oncoderma2026/:path*",
-      "permanent": false
+      "destination": "/oncoderma2026/:path*"
     },
     {
       "source": "/:path((?!oncoderma2026).*)*",
@@ -109,8 +100,7 @@
           "value": "www.oncodermarecife2026.com.br"
         }
       ],
-      "destination": "/oncoderma2026/:path*",
-      "permanent": false
+      "destination": "/oncoderma2026/:path*"
     }
   ],
   "headers": [

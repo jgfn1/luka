@@ -82,16 +82,15 @@ Value: cname.vercel-dns.com
 
 ### Domain Routing
 
-`vercel.json` uses host-based redirects:
+`vercel.json` uses host-based rewrites (URL stays clean on the custom domain):
 
 ```json
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/:path((?!tgi).*)*",
       "has": [{ "type": "host", "value": "www.tgirecife.com.br" }],
-      "destination": "/tgi/:path*",
-      "permanent": false
+      "destination": "/tgi/:path*"
     }
   ]
 }

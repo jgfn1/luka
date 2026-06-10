@@ -24,7 +24,7 @@ This project uses **separate custom domains** for each event, all deployed from 
 
 ## Domain Routing
 
-Configured in `vercel.json` using host-based redirects:
+Configured in `vercel.json` using host-based rewrites:
 
 | Domain                             | Serves          | File                            |
 | ---------------------------------- | --------------- | ------------------------------- |
@@ -44,7 +44,7 @@ Configured in `vercel.json` using host-based redirects:
 - ✅ `/gastroconecta2026/image.jpg` (absolute, only when linking across folders)
 - ❌ `../assets/logo.png` (breaks with domain routing)
 
-When a custom domain is configured, Vercel redirects `example.com/path` to `/eventfolder/path` internally. Relative paths in the event `index.html` resolve correctly on the custom domain.
+When a custom domain is configured, Vercel rewrites `example.com/path` to `/eventfolder/path` internally without changing the browser URL. Relative paths in the event `index.html` resolve correctly on the custom domain.
 
 ## Adding New Event Sites
 
