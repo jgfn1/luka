@@ -1,6 +1,128 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/tgi",
+      "has": [{ "type": "host", "value": "tgirecife.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tgi/:path*",
+      "has": [{ "type": "host", "value": "tgirecife.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tgi",
+      "has": [{ "type": "host", "value": "www.tgirecife.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tgi/:path*",
+      "has": [{ "type": "host", "value": "www.tgirecife.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/gastroconecta2026",
+      "has": [{ "type": "host", "value": "gastroconecta2026.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/gastroconecta2026/:path*",
+      "has": [{ "type": "host", "value": "gastroconecta2026.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/gastroconecta2026",
+      "has": [{ "type": "host", "value": "www.gastroconecta2026.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/gastroconecta2026/:path*",
+      "has": [{ "type": "host", "value": "www.gastroconecta2026.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/endogineco2026",
+      "has": [{ "type": "host", "value": "congressoendoginecorecife.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/endogineco2026/:path*",
+      "has": [{ "type": "host", "value": "congressoendoginecorecife.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/endogineco2026",
+      "has": [{ "type": "host", "value": "www.congressoendoginecorecife.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/endogineco2026/:path*",
+      "has": [{ "type": "host", "value": "www.congressoendoginecorecife.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/oncoderma2026",
+      "has": [{ "type": "host", "value": "oncodermarecife.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/oncoderma2026/:path*",
+      "has": [{ "type": "host", "value": "oncodermarecife.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/oncoderma2026",
+      "has": [{ "type": "host", "value": "www.oncodermarecife.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/oncoderma2026/:path*",
+      "has": [{ "type": "host", "value": "www.oncodermarecife.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/oncoderma2026",
+      "has": [{ "type": "host", "value": "oncodermarecife2026.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/oncoderma2026/:path*",
+      "has": [{ "type": "host", "value": "oncodermarecife2026.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/oncoderma2026",
+      "has": [{ "type": "host", "value": "www.oncodermarecife2026.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/oncoderma2026/:path*",
+      "has": [{ "type": "host", "value": "www.oncodermarecife2026.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/:path((?!tgi).*)*",
