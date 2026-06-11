@@ -1,11 +1,13 @@
 # Luka Plan Event Websites
 
-Multi-site repository of landing pages for medical and scientific events. Each
-event is a self-contained static site served from its own custom domain, and all
-sites are deployed from this single repository on Vercel.
+Monorepo of landing pages for medical and scientific events produced by **Luka
+Plan Promoções e Eventos**. Each event is a self-contained static site on its own
+custom domain; all sites deploy from this single Vercel project.
 
-The sites are developed by **Automa IT & Development** for the client
-**Luka Plan Promoções e Eventos**, the producer of the events.
+Developed and maintained by **Automa IT & Development**. This repository is
+scoped to the Luka Plan client — future clients will have their own repositories
+with the same technical pattern (one repo per client, host-based routing in
+`vercel.json`).
 
 ## Active Projects
 
@@ -13,16 +15,16 @@ The sites are developed by **Automa IT & Development** for the client
 
 - **Domain**: [www.tgirecife.com.br](https://www.tgirecife.com.br/)
 - **Topic**: Gastrointestinal oncology
-- **Date**: October 31 – November 1, 2025
+- **Date**: October 31 – November 1, 2025 (2 days)
 - **Location**: Novotel Recife Marina
 - **Folder**: `/tgi/`
 - **Languages**: PT, EN, ES, FR
 
 ### Gastro Conecta & Nutri Conecta 2026
 
-- **Domain**: [gastroconecta2026.com.br](https://www.gastroconecta2026.com.br/)
+- **Domain**: [gastroconecta2026.com.br](https://gastroconecta2026.com.br/)
 - **Topic**: Gastrointestinal tract and nutrition
-- **Date**: March 27, 2026
+- **Date**: March 27, 2026 (1 day)
 - **Location**: Novotel Recife Marina
 - **Folder**: `/gastroconecta2026/`
 - **Languages**: PT, EN, FR
@@ -31,7 +33,7 @@ The sites are developed by **Automa IT & Development** for the client
 
 - **Domain**: [www.oncodermarecife2026.com.br](https://www.oncodermarecife2026.com.br/)
 - **Topic**: Cutaneous oncology
-- **Date**: June 5, 2026
+- **Date**: June 5, 2026 (1 day)
 - **Location**: Hospital Santa Joana Recife
 - **Folder**: `/oncoderma2026/`
 - **Languages**: PT
@@ -40,14 +42,15 @@ The sites are developed by **Automa IT & Development** for the client
 
 - **Domain**: [www.congressoendoginecorecife.com.br](https://www.congressoendoginecorecife.com.br/)
 - **Topic**: Gynecology and endoscopy
-- **Date**: August 27–29, 2026
+- **Date**: August 27–29, 2026 (3 days)
 - **Location**: Recife
 - **Folder**: `/endogineco2026/`
 - **Languages**: PT
 
 ### Portfolio (Automa IT & Development)
 
-- **Default domain**: served on the project's `*.vercel.app` URL
+- **Default URL**: [lukaplan.vercel.app](https://lukaplan.vercel.app/) (also any
+  other `*.vercel.app` hostname for this project)
 - **Folder**: `/portfolio/`
 - **Languages**: EN, PT, ES
 
@@ -64,7 +67,7 @@ The sites are developed by **Automa IT & Development** for the client
 
 ```
 /
-├── portfolio/                 # Automa IT & Development portfolio (default Vercel URL)
+├── portfolio/                 # Automa portfolio (default Vercel URL)
 │   └── index.html
 ├── tgi/                       # III Simpósio TGI (tgirecife.com.br)
 │   ├── index.html
@@ -73,23 +76,27 @@ The sites are developed by **Automa IT & Development** for the client
 ├── gastroconecta2026/         # Gastro Conecta & Nutri Conecta 2026
 │   ├── index.html
 │   ├── committee/  speakers/  sponsors/  schedule_resumes/
-│   └── logos & favicon
+│   └── logo-gastro.png  logo-nutri.png  favicon.svg
 ├── endogineco2026/            # Congresso Internacional Endogineco 2026
 │   ├── index.html
-│   ├── committee/  speakers/  organizers/  institutional-support/
+│   ├── assets/  committee/  speakers/  organizers/  institutional-support/
+│   ├── sponsors/  resumes/   # reserved for future client assets (may be empty)
 │   ├── schedule/  pre-congress/  scientific-papers/  previous-edition/
 │   └── scripts/               # Python schedule generators
 ├── oncoderma2026/             # II Simpósio Oncoderma Recife
 │   ├── index.html
-│   ├── committee/  speakers/  sponsors/  organizers/  schedule/  resumes/
-│   └── assets/
+│   ├── assets/  committee/  speakers/  sponsors/  organizers/
+│   ├── schedule/  resumes/
+│   └── (…)
 ├── vercel.json                # Domain routing, redirects, and headers
 ├── DEPLOYMENT.md              # Deployment & DNS guide
 └── PROJECT_STRUCTURE.md       # Routing & folder conventions
 ```
 
-Each event folder is self-contained: all of its images, PDFs, and data files
-live inside that folder, and there are no shared root-level assets.
+Each event folder is self-contained: images, PDFs, and data files live inside
+that folder. There are no shared root-level assets. Some subfolders (e.g.
+`endogineco2026/sponsors/`, `endogineco2026/resumes/`) are kept in the tree even
+when empty, so incoming sponsor logos or speaker CVs have a defined place.
 
 ## Deployment
 
@@ -128,14 +135,3 @@ Or run `vercel dev` to test host-based routing and redirects locally.
 6. Configure the custom domain in the Vercel Dashboard.
 
 See [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) for the routing conventions.
-
-## Contact
-
-**Client — Luka Plan Promoções e Eventos**
-
-- Email: eventos@lukaplan.com.br
-- Instagram: [@lukaplan\_](https://instagram.com/lukaplan_)
-
-**Developer — Automa IT & Development**
-
-- WhatsApp: [+55 81 99546-0140](https://wa.me/5581995460140)

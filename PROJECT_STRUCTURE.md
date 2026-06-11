@@ -37,6 +37,7 @@ custom domain. The portfolio lives in `/portfolio/` (there is no root
 ├── endogineco2026/
 │   ├── index.html                      # Congresso Internacional Endogineco 2026
 │   ├── assets/ committee/ speakers/ organizers/ institutional-support/
+│   ├── sponsors/ resumes/              # reserved for future assets (may be empty)
 │   ├── schedule/ (+ backup/)
 │   ├── pre-congress/ scientific-papers/ previous-edition/
 │   └── scripts/                        # Python schedule generators
@@ -103,8 +104,11 @@ in the event's `index.html` therefore resolve correctly on the custom domain.
 
 - **Per event**: event-specific images, PDFs, and data files live in
   subfolders such as `committee/`, `speakers/`, `sponsors/`, `organizers/`,
-  `schedule/`, and `assets/`.
+  `schedule/`, `resumes/`, and `assets/`.
 - **No shared root assets**: each event is fully self-contained in its folder.
+- **Empty folders**: some directories (e.g. `endogineco2026/sponsors/`,
+  `endogineco2026/resumes/`) are documented and kept in the repo even without
+  files yet, so future sponsor logos or speaker CVs have a fixed location.
 
 ## Helper Scripts (Endogineco)
 
