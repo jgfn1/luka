@@ -76,30 +76,6 @@
     },
     {
       "source": "/oncoderma2026",
-      "has": [{ "type": "host", "value": "oncodermarecife.com.br" }],
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/oncoderma2026/:path*",
-      "has": [{ "type": "host", "value": "oncodermarecife.com.br" }],
-      "destination": "/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/oncoderma2026",
-      "has": [{ "type": "host", "value": "www.oncodermarecife.com.br" }],
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/oncoderma2026/:path*",
-      "has": [{ "type": "host", "value": "www.oncodermarecife.com.br" }],
-      "destination": "/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/oncoderma2026",
       "has": [{ "type": "host", "value": "oncodermarecife2026.com.br" }],
       "destination": "/",
       "permanent": true
@@ -183,26 +159,6 @@
         }
       ],
       "destination": "/endogineco2026/:path*"
-    },
-    {
-      "source": "/:path((?!oncoderma2026).*)*",
-      "has": [
-        {
-          "type": "host",
-          "value": "oncodermarecife.com.br"
-        }
-      ],
-      "destination": "/oncoderma2026/:path*"
-    },
-    {
-      "source": "/:path((?!oncoderma2026).*)*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.oncodermarecife.com.br"
-        }
-      ],
-      "destination": "/oncoderma2026/:path*"
     },
     {
       "source": "/:path((?!oncoderma2026).*)*",
