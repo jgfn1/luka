@@ -1041,21 +1041,38 @@
       </a>
 
       <ul id="nav-menu">
-        <li><a href="#top">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#comissao">Comissão</a></li>
-        <li><a href="#programacao">Programação</a></li>
-        <li><a href="#palestrantes">Palestrantes</a></li>
-        <li><a href="#pre-congresso">Pré-congresso</a></li>
-        <li><a href="#trabalhos-cientificos">Trabalhos Científicos</a></li>
-        <li><a href="#local">Local</a></li>
-        <li><a href="#patrocinadores">Patrocinadores</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li class="nav-menu-item-cta"><a href="https://www.sympla.com.br/evento/congresso-endogineco-recife/3424928" class="nav-menu-inscricao" target="_blank" rel="noopener noreferrer">Inscreva-se</a></li>
+        <li><a href="#top" data-i18n="nav.home">Início</a></li>
+        <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#comissao" data-i18n="nav.committee">Comissão</a></li>
+        <li><a href="#programacao" data-i18n="nav.schedule">Programação</a></li>
+        <li><a href="#palestrantes" data-i18n="nav.speakers">Palestrantes</a></li>
+        <li><a href="#pre-congresso" data-i18n="nav.precongress">Pré-congresso</a></li>
+        <li><a href="#trabalhos-cientificos" data-i18n="nav.papers">Trabalhos Científicos</a></li>
+        <li><a href="#local" data-i18n="nav.venue">Local</a></li>
+        <li><a href="#patrocinadores" data-i18n="nav.sponsors">Patrocinadores</a></li>
+        <li><a href="#galeria" data-i18n="nav.gallery">Galeria</a></li>
+        <li class="nav-menu-item-cta"><a href="https://www.sympla.com.br/evento/congresso-endogineco-recife/3424928" class="nav-menu-inscricao" target="_blank" rel="noopener noreferrer" data-i18n="nav.register">Inscreva-se</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a class="nav-cta" href="https://www.sympla.com.br/evento/congresso-endogineco-recife/3424928" target="_blank" rel="noopener noreferrer">Inscreva-se</a>
+        <select
+          id="language-select"
+          aria-label="Selecione o idioma"
+          style="
+            background: transparent;
+            color: inherit;
+            border: 1px solid currentColor;
+            border-radius: 6px;
+            padding: 4px 8px;
+            font: inherit;
+            cursor: pointer;
+          "
+        >
+          <option value="pt">Português</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+        </select>
+        <a class="nav-cta" href="https://www.sympla.com.br/evento/congresso-endogineco-recife/3424928" target="_blank" rel="noopener noreferrer" data-i18n="nav.register">Inscreva-se</a>
         <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
           <span></span><span></span><span></span>
         </button>
@@ -1076,32 +1093,32 @@
         <div class="hero-chips">
           <a href="#pre-congresso" class="hero-chip">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Pré-congresso: 27 de agosto de 2026
+            <span data-i18n="hero.chipPre">Pré-congresso: 27 de agosto de 2026</span>
           </a>
           <a href="#programacao" class="hero-chip">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Congresso: 28 e 29 de agosto de 2026
+            <span data-i18n="hero.chipCongress">Congresso: 28 e 29 de agosto de 2026</span>
           </a>
           <a href="#local" class="hero-chip">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Mar Hotel Conventions · Recife/PE
+            <span data-i18n="hero.chipVenue">Mar Hotel Conventions · Recife/PE</span>
           </a>
         </div>
 
         <div class="btn-group">
-          <a class="btn-outline" href="#pre-congresso">Conheça o Pré Congresso</a>
+          <a class="btn-outline" href="#pre-congresso" data-i18n="hero.btnPre">Conheça o Pré Congresso</a>
           <a class="btn-primary" href="https://www.sympla.com.br/evento/congresso-endogineco-recife/3424928" target="_blank" rel="noopener noreferrer">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-            Inscreva-se no Congresso
+            <span data-i18n="hero.btnRegister">Inscreva-se no Congresso</span>
           </a>
-          <a class="btn-outline" href="#programacao">Programação Congresso</a>
+          <a class="btn-outline" href="#programacao" data-i18n="hero.btnSchedule">Programação Congresso</a>
         </div>
 
         <!-- Logos section: two columns -->
         <div class="hero-logos-section">
           <div class="hero-logos-cols">
             <div class="hero-logos-col">
-              <h3>Realização</h3>
+              <h3 data-i18n="hero.realization">Realização</h3>
               <div class="hero-logo-grid">
                 <img src="organizers/logo-isep.png" alt="ISEP" loading="eager" />
                 <img src="organizers/logo-hospital-santa-joana.png" alt="Hospital Santa Joana" loading="eager" />
@@ -1110,7 +1127,7 @@
             </div>
             <div class="hero-logos-col-divider" aria-hidden="true"></div>
             <div class="hero-logos-col">
-              <h3>Apoio Institucional</h3>
+              <h3 data-i18n="hero.support">Apoio Institucional</h3>
               <div class="hero-logo-grid">
                 <img src="institutional-support/gimi.png" alt="GIMI" loading="eager" />
                 <img src="institutional-support/sogope.png" alt="SOGOPE" loading="eager" />
@@ -1142,39 +1159,39 @@
         <div class="sobre-layout">
           <!-- Left: text + chips -->
           <div class="sobre-text">
-            <span class="section-eyebrow">Sobre o evento</span>
-            <h2 class="section-title">O Congresso Endogineco 2026</h2>
-            <p>
+            <span class="section-eyebrow" data-i18n="about.eyebrow">Sobre o evento</span>
+            <h2 class="section-title" data-i18n="about.title">O Congresso Endogineco 2026</h2>
+            <p data-i18n="about.p1">
               O <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong> tem a satisfação de
               apresentar o <strong>Congresso Endogineco 2026</strong>, que será realizado nos dias
               <strong>27, 28 e 29 de agosto de 2026</strong>, em Recife/PE.
             </p>
-            <p>
+            <p data-i18n="about.p2">
               Em 2025, o evento foi um grande sucesso, reunindo profissionais renomados no
               tratamento da endometriose de todas as regiões do país, além de cirurgias ao vivo,
               lançamentos e diversas inovações tecnológicas.
             </p>
-            <p>
+            <p data-i18n="about.p3">
               Em 2026, o Congresso chega com ainda mais inovações: premiações para trabalhos
               científicos, vídeos semi-editados de cirurgias e um estúdio de podcast — tudo para
               fortalecer a endoginecologia e inspirar novos profissionais.
             </p>
-            <p>
+            <p data-i18n="about.p4">
               O evento contará com a participação de médicos de diferentes especialidades,
               residentes e equipe multidisciplinar de todo o Brasil.
             </p>
 
             <!-- Feature chips -->
             <div class="sobre-chips">
-              <span class="sobre-chip">🎬 9 Cirurgias Ao Vivo</span>
-              <span class="sobre-chip">⚡ Cross Fires</span>
-              <span class="sobre-chip">📹 Vídeos Show Cases</span>
-              <span class="sobre-chip">🎙️ Podcasts</span>
-              <span class="sobre-chip">🎭 Talk Shows</span>
-              <span class="sobre-chip">🏥 Casos Clínicos</span>
-              <span class="sobre-chip">📣 Palestras</span>
-              <span class="sobre-chip">🎓 Conferências</span>
-              <span class="sobre-chip">✨ E muito mais!</span>
+              <span class="sobre-chip" data-i18n="about.chip1">🎬 9 Cirurgias Ao Vivo</span>
+              <span class="sobre-chip" data-i18n="about.chip2">⚡ Cross Fires</span>
+              <span class="sobre-chip" data-i18n="about.chip3">📹 Vídeos Show Cases</span>
+              <span class="sobre-chip" data-i18n="about.chip4">🎙️ Podcasts</span>
+              <span class="sobre-chip" data-i18n="about.chip5">🎭 Talk Shows</span>
+              <span class="sobre-chip" data-i18n="about.chip6">🏥 Casos Clínicos</span>
+              <span class="sobre-chip" data-i18n="about.chip7">📣 Palestras</span>
+              <span class="sobre-chip" data-i18n="about.chip8">🎓 Conferências</span>
+              <span class="sobre-chip" data-i18n="about.chip9">✨ E muito mais!</span>
             </div>
           </div>
 
@@ -1233,13 +1250,13 @@
           </div>
         </div>
         <div class="sobre-countdown-wrap">
-          <h3>Contagem</h3>
-          <p class="sobre-countdown-sub">Regressiva para o início do Congresso Endogineco 2026</p>
+          <h3 data-i18n="countdown.title">Contagem</h3>
+          <p class="sobre-countdown-sub" data-i18n="countdown.sub">Regressiva para o início do Congresso Endogineco 2026</p>
           <div class="countdown-timer">
-            <div class="countdown-item"><span id="days" class="countdown-number">00</span><span class="countdown-label">Dias</span></div>
-            <div class="countdown-item"><span id="hours" class="countdown-number">00</span><span class="countdown-label">Horas</span></div>
-            <div class="countdown-item"><span id="minutes" class="countdown-number">00</span><span class="countdown-label">Minutos</span></div>
-            <div class="countdown-item"><span id="seconds" class="countdown-number">00</span><span class="countdown-label">Segundos</span></div>
+            <div class="countdown-item"><span id="days" class="countdown-number">00</span><span class="countdown-label" data-i18n="countdown.days">Dias</span></div>
+            <div class="countdown-item"><span id="hours" class="countdown-number">00</span><span class="countdown-label" data-i18n="countdown.hours">Horas</span></div>
+            <div class="countdown-item"><span id="minutes" class="countdown-number">00</span><span class="countdown-label" data-i18n="countdown.minutes">Minutos</span></div>
+            <div class="countdown-item"><span id="seconds" class="countdown-number">00</span><span class="countdown-label" data-i18n="countdown.seconds">Segundos</span></div>
           </div>
         </div>
       </div>
@@ -1248,7 +1265,7 @@
     <!-- ── COMISSÃO ── -->
     <section id="comissao" class="section-dark fade-in">
       <div class="container text-center">
-        <h2 class="section-title text-center" style="display:block">Comissão Organizadora</h2>
+        <h2 class="section-title text-center" style="display:block" data-i18n="committee.title">Comissão Organizadora</h2>
         <div class="committee-grid">
           <div class="committee-item">
             <img src="committee/edilberto-rocha.png" alt="Dr. Edilberto Rocha" loading="lazy" />
@@ -1275,15 +1292,15 @@
       <div class="container">
         <div class="schedule-header">
           <div class="schedule-title-row">
-            <h2 class="schedule-title section-title">Programação científica</h2>
+            <h2 class="schedule-title section-title" data-i18n="schedule.title">Programação científica</h2>
             <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center;">
               <a href="schedule/programacao-preliminar-2026.pdf" class="download-pdf-btn" target="_blank" rel="noopener noreferrer">
                 <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Baixar PDF
+                <span data-i18n="schedule.downloadPdf">Baixar PDF</span>
               </a>
               <a href="schedule/programacao-preliminar-2026.xlsx" class="download-pdf-btn" download>
                 <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Baixar planilha
+                <span data-i18n="schedule.downloadXlsx">Baixar planilha</span>
               </a>
             </div>
           </div>
@@ -1291,28 +1308,28 @@
 
         <div class="schedule-block" data-schedule-group="congress">
         <div class="day-tabs" role="tablist" aria-label="Dias do congresso">
-          <button class="day-tab-btn active" role="tab" data-day="sexta" aria-selected="true">Sexta, 28/08</button>
-          <button class="day-tab-btn" role="tab" data-day="sabado" aria-selected="false">Sábado, 29/08</button>
+          <button class="day-tab-btn active" role="tab" data-day="sexta" aria-selected="true" data-i18n="schedule.tabFriday">Sexta, 28/08</button>
+          <button class="day-tab-btn" role="tab" data-day="sabado" aria-selected="false" data-i18n="schedule.tabSaturday">Sábado, 29/08</button>
         </div>
 
         <!-- ─ SEXTA 28/08 ─ -->
         <div class="day-panel active" id="panel-sexta">
-<p class="aud-label">Abertura do congresso</p>
+<p class="aud-label" data-i18n="schedule.congressOpening">Abertura do congresso</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
-              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
-              <tbody>
+              <thead><tr><th style="width:155px" data-i18n="schedule.colTime">Horário</th><th data-i18n="schedule.colActivity">Atividade</th><th style="width:220px" data-i18n="schedule.colSpeaker">Palestrante</th></tr></thead>
+              <tbody data-i18n="sch.openCongress">
                 <tr><td>08:00 - 08:15</td><td colspan="2" class="session-break"><strong>Credenciamento</strong></td></tr>
                 <tr><td>08:15 -  08:30</td><td>Abertura</td><td class="speaker-name">Érica Batista <br />Edilberto Rocha <br />Jardel Soares <br />Iolanda Matias <br />Agostinho Machado                    Juliana Zaidan</td></tr>
               </tbody>
             </table>
           </div>
 
-          <p class="aud-label">Auditório A</p>
+          <p class="aud-label" data-i18n="schedule.audA">Auditório A</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
-              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
-              <tbody>
+              <thead><tr><th style="width:155px" data-i18n="schedule.colTime">Horário</th><th data-i18n="schedule.colActivity">Atividade</th><th style="width:220px" data-i18n="schedule.colSpeaker">Palestrante</th></tr></thead>
+              <tbody data-i18n="sch.friAudA">
                 <tr><td colspan="3" class="session-header"><strong>08:30 - 09:50<br />(01 hora e <br />20 min)</strong><br />MESA 1 - Nerve-sparing (preservação nervosa) na Cirurgia de Endometriose    <br />Presidente: Priscila Vieira- PE       <br />Debatedores: Renato Barreto - SP, Melissandro Lacerda - PB, Anna Luiza Lobão - PB</td></tr>
                 <tr><td>08:30 - 09:00<br />(30 min)</td><td>Você sabe onde passam os principais nervos pélvicos ? Qual a importância na Cirurgia complexa de Endometriose?</td><td class="speaker-name">Kathyane Lustosa - CE</td></tr>
                 <tr><td>09:00 - 09:20<br />(20 min)</td><td>Principais lesões nervosas na Endometriose ? Quais os principais sintomas ?</td><td class="speaker-name">Patrick Bellelis - SP</td></tr>
@@ -1344,11 +1361,11 @@
             </table>
           </div>
 
-          <p class="aud-label">Auditório B</p>
+          <p class="aud-label" data-i18n="schedule.audB">Auditório B</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
-              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
-              <tbody>
+              <thead><tr><th style="width:155px" data-i18n="schedule.colTime">Horário</th><th data-i18n="schedule.colActivity">Atividade</th><th style="width:220px" data-i18n="schedule.colSpeaker">Palestrante</th></tr></thead>
+              <tbody data-i18n="sch.friAudB">
                 <tr><td colspan="3" class="session-header"><strong>08:25 - 10:05<br />(01 hora e <br />40 min)</strong><br />MESA 1 -  No meu consultório           <br />Presidente: Simone Carvalho - PE <br />Debatedores:</td></tr>
                 <tr><td>08:25 - 08:45 <br />(20 min)</td><td>Climatério E Menopausa na paciente com Endometriose. Como eu conduzo caso a caso?</td><td class="speaker-name">Priscila Vieira - PE</td></tr>
                 <tr><td>08:45 - 09:05<br />(20 min)</td><td>Métodos de Diagnóstico para endometriose o que já temos ? Quais as novas perspectivas?</td><td class="speaker-name">Cicilia Pontes - PE</td></tr>
@@ -1391,11 +1408,11 @@
 
         <!-- ─ DIA 3: SÁBADO 29/08 ─ -->
         <div class="day-panel" id="panel-sabado">
-<p class="aud-label">Auditório A</p>
+<p class="aud-label" data-i18n="schedule.audA">Auditório A</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
-              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
-              <tbody>
+              <thead><tr><th style="width:155px" data-i18n="schedule.colTime">Horário</th><th data-i18n="schedule.colActivity">Atividade</th><th style="width:220px" data-i18n="schedule.colSpeaker">Palestrante</th></tr></thead>
+              <tbody data-i18n="sch.satAudA">
                 <tr><td>08:00 - 10:00            (2 horas)</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO                                                                                                                                                                           Presidente : Iolanda Matias - PE</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife  - PE<br />Condução caso: Sidraiton Melo - PE <br />Raquel Magalhães SP<br /><br />* Hospital Barão de Lucena  - PE<br />Condução caso: Eveline Martins - PE <br />Sara Arcanjo - PE /<br />Andreissa Paiva - CE</div></td></tr>
                 <tr><td>10:00 - 10:30 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
                 <tr><td>10:30 - 10:50         (20 min)</td><td>Conferência: Cirurgia Robótica na Ginecologia e outras tecnologias associadas- <br />Que benefícios já temos comprovado ?</td><td class="speaker-name">Jordanna Diniz - DF<br />*Online*</td></tr>
@@ -1424,11 +1441,11 @@
             </table>
           </div>
 
-          <p class="aud-label">Auditório B</p>
+          <p class="aud-label" data-i18n="schedule.audB">Auditório B</p>
           <div class="schedule-scroll">
             <table class="schedule-table">
-              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
-              <tbody>
+              <thead><tr><th style="width:155px" data-i18n="schedule.colTime">Horário</th><th data-i18n="schedule.colActivity">Atividade</th><th style="width:220px" data-i18n="schedule.colSpeaker">Palestrante</th></tr></thead>
+              <tbody data-i18n="sch.satAudB">
                 <tr><td>08:00 - 10:00</td><td colspan="2" class="session-live"><strong>CIRURGIAS AO VIVO                                                                                                                Presidente: Iolanda Matias</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife PE - Raquel Magalhães - SP<br /><br />* Hospital Barão de Lucena - PE <br />Sara Arcanjo - CE / <br />Andreissa Paiva - CE</div></td></tr>
                 <tr><td>10:00 - 10:30 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
                 <tr><td>10:30  - 11:10<br />(40 min)</td><td>Urologia em ação            <br />Presidente: Guilherme Lima - PE<br />Debatedores: Evandilson Guenes - PE, Rafael Oliveira - PE, Gilberto Pagnosin - PE</td><td></td></tr>
@@ -1465,7 +1482,7 @@
     <!-- ── PALESTRANTES ── -->
     <section id="palestrantes" class="section-dark fade-in">
       <div class="container" style="padding-bottom: 1.5rem;">
-        <h2 class="section-title" style="display:block">Palestrantes</h2>
+        <h2 class="section-title" style="display:block" data-i18n="speakers.title">Palestrantes</h2>
       </div>
       <div class="netflix-section-wrapper">
         <button class="netflix-arrow netflix-arrow-prev" id="speakers-prev" aria-label="Anterior">&#8249;</button>
@@ -1478,7 +1495,7 @@
             <div class="netflix-card-content">
               <h3>Aleide Tavares</h3>
               <p>PE</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Alisson Chianca" data-speaker-name="Alisson Chianca" data-speaker-region="MA" data-speaker-photo="speakers/alisson-chianca-ma.jpg" data-speaker-bio="[]">
@@ -1487,7 +1504,7 @@
             <div class="netflix-card-content">
               <h3>Alisson Chianca</h3>
               <p>MA</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Andreissa Paiva" data-speaker-name="Andreissa Paiva" data-speaker-region="CE" data-speaker-photo="speakers/andreissa-paiva-ce.jpg" data-speaker-bio="[&quot;Professora Adjunta de Ginecologia da Universidade Federal do Ceará.&quot;, &quot;Doutora em Ginecologia pela Universidade Federal de São Paulo (UNIFESP)&quot;, &quot;Uroginecologia e Cirurgia vaginal pela UNIFESP.&quot;, &quot;Membro da Comissão Nacional de Uroginecologia da FEBRASGO.&quot;, &quot;Título de especialista em endoscopia ginecológica pela FEBRASGO e SOBRACIL.&quot;, &quot;Preceptora do internato e residência médica de Ginecologia e obstetrícia da Maternidade escola Assis Chateudbriand.&quot;, &quot;Preceptora da residência médica de Ginecologia e obstetrícia da Escola de saúde pública do Ceará.&quot;, &quot;Coordenadora do fellowship em cirurgias ginecológicas minimamente invasivas do instituto salvata de educação e rede d’or.&quot;, &quot;Vice presidente da sociedade cearense de ginecologia e obstetrícia (SOCEGO).&quot;]">
@@ -1496,7 +1513,7 @@
             <div class="netflix-card-content">
               <h3>Andreissa Paiva</h3>
               <p>CE</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Carlos Godoy" data-speaker-name="Carlos Godoy" data-speaker-region="SP" data-speaker-photo="speakers/carlos-godoy-sp.jpg" data-speaker-bio="[&quot;Cirurgião Ginecológico graduado pela UNICAMP, com especialização em Oncologia Pélvica e Cirurgia Minimamante Invasiva, com ênfase no tratamento de Endometriose e Câncer Ginecológico.&quot;, &quot;Mestre em Ginecologia pela UNICAMP.&quot;, &quot;Médico Líder do Núcleo de Endometriose do Hospital São Luiz Campinas e do setor de Oncologia Ginecológica do Hospital Vera Cruz Campinas. Proctor em Robótica pela Intuitive.&quot;]">
@@ -1505,7 +1522,7 @@
             <div class="netflix-card-content">
               <h3>Carlos Godoy</h3>
               <p>SP</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Cecília Pontes" data-speaker-name="Cecília Pontes" data-speaker-region="PE" data-speaker-photo="speakers/cecilia-pontes-pe.jpg" data-speaker-bio="[]">
@@ -1514,7 +1531,7 @@
             <div class="netflix-card-content">
               <h3>Cecília Pontes</h3>
               <p>PE</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Fábio Ohara" data-speaker-name="Fábio Ohara" data-speaker-region="SP" data-speaker-photo="speakers/fabio-ohara-sp.jpg" data-speaker-bio="[]">
@@ -1523,7 +1540,7 @@
             <div class="netflix-card-content">
               <h3>Fábio Ohara</h3>
               <p>SP</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Giuliano Borrelli" data-speaker-name="Giuliano Borrelli" data-speaker-region="SP" data-speaker-photo="speakers/giuliano-borrelli-sp.jpg" data-speaker-bio="[]">
@@ -1532,7 +1549,7 @@
             <div class="netflix-card-content">
               <h3>Giuliano Borrelli</h3>
               <p>SP</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Iolanda Matias" data-speaker-name="Iolanda Matias" data-speaker-region="PE" data-speaker-photo="speakers/iolanda-matias-pe.jpg" data-speaker-bio="[&quot;Ginecologista oncológica do Hospital Santa Joana Recife&quot;, &quot;Cirurgia Oncológica do HC/ UFPE&quot;, &quot;Especialista em cirurgia minimamente invasiva pelo Hospital Sírio Libanês&quot;, &quot;Cancerologia Cirúrgica pelo HCP&quot;, &quot;Mestre  em oncologia ginecologia UPE&quot;, &quot;Doutora em biologia Molecular no câncer ginecológico-LIKA/UFPE&quot;]">
@@ -1541,7 +1558,7 @@
             <div class="netflix-card-content">
               <h3>Iolanda Matias</h3>
               <p>PE</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Jardel Soares" data-speaker-name="Jardel Soares" data-speaker-region="PE" data-speaker-photo="speakers/jardel-soares-pe.jpg" data-speaker-bio="[&quot;[Especialidades]&quot;, &quot;TOCOGINECOLOGISTA, ENDOSCOPIA GINECOLÓGICA.&quot;, &quot;[Formação]&quot;, &quot;Formado em Medicina UNIVALLE/UFPE. Residência Médica em Tocoginecologia IMIP (Instituto Materno Infantil Fernando Figueira) - Recife - PE. Pós-Graduação em Vídeo-Histeroscopia pelo GYNELASER/FERTILITÉ - Brasília - DF. Pós-Graduação em Videolaparoscopia UNICETREX/UNICEMEX - Brasília - DF. Curso Avançado em Endometriose Profunda - Santa Casa de Misericórdia - São Paulo - SP. Mentoria Cirurgião de Elite - Dr. Marcelo Vieira - São Paulo. CAVAVER LAB - Grupo Naveg - São Paulo. Fellowship em Cirurgia Robótica - Hospital Santa Joana - Recife - PE (em curso).&quot;, &quot;[Sociedade]&quot;, &quot;Título de Especialista em Tocoginecologista - AMB. Título de Especialista em Endoscopia Ginecológica - AMB. Membro Titular da Sociedade de Cirurgia Minimamente Invasiva e Robótica - SOBRACIL. Membro Aspirante à Presidência da SOBRACIL Capítulo Pernambuco. Membro Titular da FEBRASGO.&quot;, &quot;[Atuação Atual]&quot;, &quot;Membro de Grupo de Cirurgia Minimamente Invasiva - Hospital Santa Joana Recife - PE. Preceptor da Residência Médica do Hospital Barão de Lucena Recife. Diretor Médico da Clínica Vida’s - Recife - PE.&quot;]">
@@ -1550,7 +1567,7 @@
             <div class="netflix-card-content">
               <h3>Jardel Soares</h3>
               <p>PE</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Jessica Cesário" data-speaker-name="Jessica Cesário" data-speaker-region="PE" data-speaker-photo="speakers/jessica-cesario-pe.jpeg" data-speaker-bio="[]">
@@ -1559,7 +1576,7 @@
             <div class="netflix-card-content">
               <h3>Jessica Cesário</h3>
               <p>PE</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Kathyane Lustosa" data-speaker-name="Kathyane Lustosa" data-speaker-region="CE" data-speaker-photo="speakers/kathyane-lustosa-ce.jpg" data-speaker-bio="[&quot;Doutora e Mestre em Cirurgia pela Universidade Federal do Ceará&quot;, &quot;Ginecologista formada pelo HGF/CE com Título de especialista pela FEBRASGO em área de atuação em Endoscopia ginecológica&quot;, &quot;Pós-Graduação em Endometriose e Ginecologia Minimamente Invasiva pelo Hospital Sírio Libanês&quot;, &quot;Preceptora da Residência Médica em Ginecologia e Obstetrícia e em Endoscopia ginecológica da ESP e do HGF&quot;, &quot;Coordenadora do Fellowship em Cirurgias ginecológicas minimamente invasivas do Instituto Salvata e Rede D'or&quot;, &quot;Vice presidente Nordeste  da SOBRACIL&quot;]">
@@ -1568,7 +1585,7 @@
             <div class="netflix-card-content">
               <h3>Kathyane Lustosa</h3>
               <p>CE</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Mariana Vieira" data-speaker-name="Mariana Vieira" data-speaker-region="SP" data-speaker-photo="speakers/mariana-vieira-sp.jpg" data-speaker-bio="[]">
@@ -1577,7 +1594,7 @@
             <div class="netflix-card-content">
               <h3>Mariana Vieira</h3>
               <p>SP</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Mariana Muniz" data-speaker-name="Mariana Muniz" data-speaker-region="PE" data-speaker-photo="speakers/mariana-muniz-pe.jpg" data-speaker-bio="[&quot;Médica pela Universidade Federal de Campina Grande (UFCG)&quot;, &quot;Residência Médica em Ginecologia e Obstetrícia pelo Hospital Barão de Lucena (SES-PE)&quot;, &quot;Residência Médica em Ginecologia Oncológica pelo Hospital das Clínicas (UFPE)&quot;]">
@@ -1586,7 +1603,7 @@
             <div class="netflix-card-content">
               <h3>Mariana Muniz</h3>
               <p>PE</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Mauro Aguiar" data-speaker-name="Mauro Aguiar" data-speaker-region="PE" data-speaker-photo="speakers/mauro-aguiar-pe.jpg" data-speaker-bio="[&quot;Mestre em Ciências da Saúde pela UFPE&quot;, &quot;Chefe do setor de endoscopia ginecológica do HC-UFPE&quot;, &quot;Vice-diretor científico da SOGOPE&quot;, &quot;Membro da câmara técnica de cirurgia robótica do CREMEPE&quot;]">
@@ -1595,7 +1612,7 @@
             <div class="netflix-card-content">
               <h3>Mauro Aguiar</h3>
               <p>PE</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Melissandro Lacerda" data-speaker-name="Melissandro Lacerda" data-speaker-region="PB" data-speaker-photo="speakers/melissandro-lacerda-pb.jpg" data-speaker-bio="[&quot;Médico Ginecologista com Residência Médica em Ginecologia e Obstetrícia&quot;, &quot;Especialização em Endoscopia Ginecológica pelo IAMSPE São Paulo&quot;, &quot;Especialização em Reprodução Assistida pela Santa Casa de São Paulo&quot;, &quot;Pós-graduação em Cirurgia Robótica pelo Hospital Albert Einstein São Paulo&quot;, &quot;Diretor Médico da Clínica Uterus em João Pessoa&quot;]">
@@ -1604,7 +1621,7 @@
             <div class="netflix-card-content">
               <h3>Melissandro Lacerda</h3>
               <p>PB</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Mônica Zomer Kondo" data-speaker-name="Mônica Zomer Kondo" data-speaker-region="PR" data-speaker-photo="speakers/monica-zomer-kondo-pa.jpg" data-speaker-bio="[&quot;Médica formada pela Universidade do Sul de Santa Catarina em 2006.&quot;, &quot;Em 2009 concluiu residência médica em Ginecologia e Obstetrícia pela Maternidade Darcy Vargas, Joinville, Santa Catarina.&quot;, &quot;Como formação complementar em 2008 realizou um curso de Ultra-sonografia em Ginecologia e Obstetrícia pela Diagnosis – Centro de Diagnósticos por Imagem em Ribeirão Preto – SP.&quot;, &quot;Em 2010 realizou os cursos de Videohisteroscopia Básico e Avançado, de Videocolposcopia &amp; Leep &amp; Laser e de Videolaparoscopia Ginecológica pela Gynelaser – Núcleo de Ginecologia Avançada em Brasília.&quot;, &quot;Autora de vários artigos científicos publicados em revistas nacionais e internacionais e coautora de um livro sobre Videocirurgia, já apresentou diversos trabalhos em cursos e congressos.&quot;, &quot;Trabalha também com ensino na área de cirurgia minimamente invasiva, onde participa, juntamente com Dr. William Kondo, em um curso para médicos, de Treinamento Continuado em Laparoscopia Ginecológica, que desde 2014 já capacitou mais de 60 profissionais de todo o Brasil.&quot;, &quot;Participa como *faculty* no IRCAD AMERICA LATINA em Barretos – SP.&quot;, &quot;Participa como *faculty* no AAGL (Advancing Minimally Invasive Gynecology Worldwide).&quot;, &quot;Certificação para inserção de implantes hormonais pela ELMECO.&quot;, &quot;Membro Titular da SOBRACIL.&quot;, &quot;Atua na área de cirurgia ginecológica minimamente invasiva, com foco em tratamentos para endometriose.&quot;]">
@@ -1613,7 +1630,7 @@
             <div class="netflix-card-content">
               <h3>Mônica Zomer Kondo</h3>
               <p>PR</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Patrick Bellelis" data-speaker-name="Patrick Bellelis" data-speaker-region="SP" data-speaker-photo="speakers/patrick-bellelis-sp.jpeg" data-speaker-bio="[]">
@@ -1622,7 +1639,7 @@
             <div class="netflix-card-content">
               <h3>Patrick Bellelis</h3>
               <p>SP</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
           <div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="William Kondo" data-speaker-name="William Kondo" data-speaker-region="PR" data-speaker-photo="speakers/william-kondo-pr.png" data-speaker-bio="[]">
@@ -1631,7 +1648,7 @@
             <div class="netflix-card-content">
               <h3>William Kondo</h3>
               <p>PR</p>
-              <button type="button" class="netflix-card-saiba-mais">Saiba mais</button>
+              <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
         </div>
@@ -1642,7 +1659,7 @@
     <!-- ── PRÉ-CONGRESSO ── -->
     <section id="pre-congresso" class="section-light fade-in">
       <div class="container" style="padding-bottom: 1.5rem;">
-        <h2 class="section-title">Pré-congresso</h2>
+        <h2 class="section-title" data-i18n="precongress.title">Pré-congresso</h2>
       </div>
       <div class="netflix-section-wrapper">
         <button class="netflix-arrow netflix-arrow-prev" id="precongresso-prev" aria-label="Anterior">&#8249;</button>
@@ -1651,12 +1668,12 @@
             <div class="netflix-card-bg" style="background-image:url('https://images.pexels.com/photos/4483323/pexels-photo-4483323.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960');" role="img" aria-label="Centro cirúrgico e sala de operações"></div>
             <div class="netflix-card-overlay"></div>
             <div class="netflix-card-content">
-              <h3>A Videocirurgia na Oncoginecologia</h3>
-              <p>27/08 · 13:15 – 17:00 · Auditório A</p>
-              <p class="netflix-card-meta">Coordenação: Dra. Iolanda Matias (PE)</p>
+              <h3 data-i18n="precongress.card1Title">A Videocirurgia na Oncoginecologia</h3>
+              <p data-i18n="precongress.card1Date">27/08 · 13:15 – 17:00 · Auditório A</p>
+              <p class="netflix-card-meta" data-i18n="precongress.card1Coord">Coordenação: Dra. Iolanda Matias (PE)</p>
               <div class="netflix-card-actions">
-                <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-pre-congresso-a-videocirurgia-na-oncoginecologia-coordenacao-dra-iolanda-martins/3456233" target="_blank" rel="noopener noreferrer">Inscreva-se</a>
-                <a class="netflix-card-btn netflix-card-btn--outline" href="pre-congress/programação-a-videocirurgia-na-oncologia.pdf" target="_blank" rel="noopener noreferrer">Programação</a>
+                <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-pre-congresso-a-videocirurgia-na-oncoginecologia-coordenacao-dra-iolanda-martins/3456233" target="_blank" rel="noopener noreferrer" data-i18n="precongress.cardRegister">Inscreva-se</a>
+                <a class="netflix-card-btn netflix-card-btn--outline" href="pre-congress/programação-a-videocirurgia-na-oncologia.pdf" target="_blank" rel="noopener noreferrer" data-i18n="precongress.cardProgram">Programação</a>
               </div>
             </div>
           </div>
@@ -1664,12 +1681,12 @@
             <div class="netflix-card-bg" style="background-image:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&amp;fit=crop&amp;w=960&amp;q=80');" role="img" aria-label="Alimentação e nutrição"></div>
             <div class="netflix-card-overlay"></div>
             <div class="netflix-card-content">
-              <h3>Curso de Nutrição para pacientes com Endometriose</h3>
-              <p>27/08 · 13:15 – 17:00 · Auditório B</p>
-              <p class="netflix-card-meta">Coordenação: Dra. Rosaura Santos (PE)</p>
+              <h3 data-i18n="precongress.card2Title">Curso de Nutrição para pacientes com Endometriose</h3>
+              <p data-i18n="precongress.card2Date">27/08 · 13:15 – 17:00 · Auditório B</p>
+              <p class="netflix-card-meta" data-i18n="precongress.card2Coord">Coordenação: Dra. Rosaura Santos (PE)</p>
               <div class="netflix-card-actions">
-                <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-pre-congresso-nutricao-para-pacientes-com-endometriose-coordenacao-rosaura-santos/3456241" target="_blank" rel="noopener noreferrer">Inscreva-se</a>
-                <a class="netflix-card-btn netflix-card-btn--outline" href="pre-congress/programação-nutrição-para-pacientes-com-endometriose.pdf" target="_blank" rel="noopener noreferrer">Programação</a>
+                <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-pre-congresso-nutricao-para-pacientes-com-endometriose-coordenacao-rosaura-santos/3456241" target="_blank" rel="noopener noreferrer" data-i18n="precongress.cardRegister">Inscreva-se</a>
+                <a class="netflix-card-btn netflix-card-btn--outline" href="pre-congress/programação-nutrição-para-pacientes-com-endometriose.pdf" target="_blank" rel="noopener noreferrer" data-i18n="precongress.cardProgram">Programação</a>
               </div>
             </div>
           </div>
@@ -1677,12 +1694,12 @@
             <div class="netflix-card-bg" style="background-image:url('https://images.pexels.com/photos/7089029/pexels-photo-7089029.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960');" role="img" aria-label="Equipamento de ultrassom em ambiente clínico"></div>
             <div class="netflix-card-overlay"></div>
             <div class="netflix-card-content">
-              <h3>Curso de USG Mapeamento de Endometriose</h3>
-              <p>27/08 · 13:15 – 17:00 · Auditório C</p>
-              <p class="netflix-card-meta">Coordenação: MEDERE (Dra. Cecília Pontes e Dra. Penélope Melo — PE)</p>
+              <h3 data-i18n="precongress.card3Title">Curso de USG Mapeamento de Endometriose</h3>
+              <p data-i18n="precongress.card3Date">27/08 · 13:15 – 17:00 · Auditório C</p>
+              <p class="netflix-card-meta" data-i18n="precongress.card3Coord">Coordenação: MEDERE (Dra. Cecília Pontes e Dra. Penélope Melo — PE)</p>
               <div class="netflix-card-actions">
-                <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-de-usg-mapeamento-de-endometriose-coordenacao-dra-cecilia-pontes-e-dra-penelope-melo-pe/3456249" target="_blank" rel="noopener noreferrer">Inscreva-se</a>
-                <a class="netflix-card-btn netflix-card-btn--outline" href="pre-congress/programação-usg-mapeamento-de-endometriose.pdf" target="_blank" rel="noopener noreferrer">Programação</a>
+                <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-de-usg-mapeamento-de-endometriose-coordenacao-dra-cecilia-pontes-e-dra-penelope-melo-pe/3456249" target="_blank" rel="noopener noreferrer" data-i18n="precongress.cardRegister">Inscreva-se</a>
+                <a class="netflix-card-btn netflix-card-btn--outline" href="pre-congress/programação-usg-mapeamento-de-endometriose.pdf" target="_blank" rel="noopener noreferrer" data-i18n="precongress.cardProgram">Programação</a>
               </div>
             </div>
           </div>
@@ -1690,12 +1707,12 @@
             <div class="netflix-card-bg" style="background-image:url('pre-congress/sutura-instrumental-bg.jpg');" role="img" aria-label="Instrumental laparoscópico em campo cirúrgico"></div>
             <div class="netflix-card-overlay"></div>
             <div class="netflix-card-content">
-              <h3>Curso de Sutura Dry Lab em sutura endoscópica</h3>
-              <p>27/08 · 12:30 – 19:00 · Foyer</p>
-              <p class="netflix-card-meta">Coordenação: Dr. Guilherme Zanluchi (SP)</p>
+              <h3 data-i18n="precongress.card4Title">Curso de Sutura Dry Lab em sutura endoscópica</h3>
+              <p data-i18n="precongress.card4Date">27/08 · 12:30 – 19:00 · Foyer</p>
+              <p class="netflix-card-meta" data-i18n="precongress.card4Coord">Coordenação: Dr. Guilherme Zanluchi (SP)</p>
               <div class="netflix-card-actions">
-                <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-pre-congresso-sutura-laparoscopica-coordenacao-dr-guilherme-zanluchi-sp/3456262" target="_blank" rel="noopener noreferrer">Inscreva-se</a>
-                <a class="netflix-card-btn netflix-card-btn--outline" href="pre-congress/programação-sutura-laparoscopia.pdf" target="_blank" rel="noopener noreferrer">Programação</a>
+                <a class="netflix-card-btn" href="https://www.sympla.com.br/evento/curso-pre-congresso-sutura-laparoscopica-coordenacao-dr-guilherme-zanluchi-sp/3456262" target="_blank" rel="noopener noreferrer" data-i18n="precongress.cardRegister">Inscreva-se</a>
+                <a class="netflix-card-btn netflix-card-btn--outline" href="pre-congress/programação-sutura-laparoscopia.pdf" target="_blank" rel="noopener noreferrer" data-i18n="precongress.cardProgram">Programação</a>
               </div>
             </div>
           </div>
@@ -1703,7 +1720,7 @@
         <button class="netflix-arrow netflix-arrow-next" id="precongresso-next" aria-label="Próximo">&#8250;</button>
       </div>
       <div class="container" style="margin-top: .5rem;">
-        <p style="margin: 0; font-size: .68rem; line-height: 1.35; color: rgba(17,24,39,.42); text-align: center;">
+        <p style="margin: 0; font-size: .68rem; line-height: 1.35; color: rgba(17,24,39,.42); text-align: center;" data-i18n="precongress.imageCredit">
           Imagem «Sutura Dry Lab»: Anpol42 —
           <a href="https://commons.wikimedia.org/wiki/File:Instruments_for_laparoscopic_Hernia_Operation.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>
           (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>).
@@ -1711,19 +1728,19 @@
       </div>
 
       <div class="container schedule-block schedule-block--precongress" data-schedule-group="precongress">
-        <h3 class="section-title" style="font-size: 1.35rem; margin-bottom: 1.25rem;">Programação dos cursos</h3>
+        <h3 class="section-title" style="font-size: 1.35rem; margin-bottom: 1.25rem;" data-i18n="precongress.coursesTitle">Programação dos cursos</h3>
         <div class="day-tabs" role="tablist" aria-label="Cursos do pré-congresso">
-          <button class="day-tab-btn active" role="tab" data-day="videocirurgia" aria-selected="true">A Videocirurgia na Oncoginecologia</button>
-          <button class="day-tab-btn" role="tab" data-day="nutricao" aria-selected="false">Nutrição para pacientes com Endometriose</button>
-          <button class="day-tab-btn" role="tab" data-day="usg" aria-selected="false">USG Mapeamento de Endometriose</button>
-          <button class="day-tab-btn" role="tab" data-day="sutura" aria-selected="false">Sutura Dry Lab em sutura endoscópica</button>
+          <button class="day-tab-btn active" role="tab" data-day="videocirurgia" aria-selected="true" data-i18n="precongress.tabVideo">A Videocirurgia na Oncoginecologia</button>
+          <button class="day-tab-btn" role="tab" data-day="nutricao" aria-selected="false" data-i18n="precongress.tabNutrition">Nutrição para pacientes com Endometriose</button>
+          <button class="day-tab-btn" role="tab" data-day="usg" aria-selected="false" data-i18n="precongress.tabUsg">USG Mapeamento de Endometriose</button>
+          <button class="day-tab-btn" role="tab" data-day="sutura" aria-selected="false" data-i18n="precongress.tabSuture">Sutura Dry Lab em sutura endoscópica</button>
         </div>
 
         <div class="day-panel active" id="panel-videocirurgia">
 <div class="schedule-scroll">
             <table class="schedule-table">
-              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
-              <tbody>
+              <thead><tr><th style="width:155px" data-i18n="schedule.colTime">Horário</th><th data-i18n="schedule.colActivity">Atividade</th><th style="width:220px" data-i18n="schedule.colSpeaker">Palestrante</th></tr></thead>
+              <tbody data-i18n="sch.preVideocirurgia">
                 <tr><td>13:00-13:15</td><td colspan="2" class="session-break"><strong>Abertura</strong></td></tr>
                 <tr><td colspan="3" class="session-header"><strong>13:30 - 17:30</strong><br />AUDITÓRIO A  - A Videocirurgia na Oncoginecologia<br />Coordenação:  Iolanda Matias - PE</td></tr>
                 <tr><td></td><td>Histerectomias Laparoscópicas<br />Sinais  clínicos e pacientes de risco oncológico</td><td></td></tr>
@@ -1744,8 +1761,8 @@
         <div class="day-panel" id="panel-nutricao">
 <div class="schedule-scroll">
             <table class="schedule-table">
-              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
-              <tbody>
+              <thead><tr><th style="width:155px" data-i18n="schedule.colTime">Horário</th><th data-i18n="schedule.colActivity">Atividade</th><th style="width:220px" data-i18n="schedule.colSpeaker">Palestrante</th></tr></thead>
+              <tbody data-i18n="sch.preNutricao">
                 <tr><td>13:00-13:15</td><td colspan="2" class="session-break"><strong>Abertura</strong></td></tr>
                 <tr><td colspan="3" class="session-header"><strong>13:30 - 17:30</strong><br />AUDITÓRIO B  - Curso Nutrição para pacientes com Endometriose <br />Coordenação:  Rosaura Santos - PE</td></tr>
                 <tr><td>13:30 - 13:40</td><td colspan="2" class="session-break"><strong>Abertura e apresentação - Panorama da endometriose e impacto nutricional.<br />Moderadora: Nut Rosaura</strong></td></tr>
@@ -1787,8 +1804,8 @@
         <div class="day-panel" id="panel-usg">
 <div class="schedule-scroll">
             <table class="schedule-table">
-              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
-              <tbody>
+              <thead><tr><th style="width:155px" data-i18n="schedule.colTime">Horário</th><th data-i18n="schedule.colActivity">Atividade</th><th style="width:220px" data-i18n="schedule.colSpeaker">Palestrante</th></tr></thead>
+              <tbody data-i18n="sch.preUsg">
                 <tr><td>13:00-13:15</td><td colspan="2" class="session-break"><strong>Abertura</strong></td></tr>
                 <tr><td colspan="3" class="session-header"><strong>13:15 - 17:00</strong><br />AUDITÓRIO C - Curso de USG Mapeamento de Endometriose<br />Coordenação:  MEDERE  (Cecília Pontes - PE e Penélope Melo - PE )</td></tr>
                 <tr><td>13:30 - 14:30</td><td>Bloco 1 - Fundamentos &amp; Anatomia Aplicada</td><td></td></tr>
@@ -1816,8 +1833,8 @@
         <div class="day-panel" id="panel-sutura">
 <div class="schedule-scroll">
             <table class="schedule-table">
-              <thead><tr><th style="width:155px">Horário</th><th>Atividade</th><th style="width:220px">Palestrante</th></tr></thead>
-              <tbody>
+              <thead><tr><th style="width:155px" data-i18n="schedule.colTime">Horário</th><th data-i18n="schedule.colActivity">Atividade</th><th style="width:220px" data-i18n="schedule.colSpeaker">Palestrante</th></tr></thead>
+              <tbody data-i18n="sch.preSutura">
                 <tr><td colspan="3" class="session-header"><strong>12:30 - 19:00</strong><br />FOYER - Curso de Sutura Dry Lab em sutura Endoscópica <br />Coordenação: Guilherme Zanluchi - SP</td></tr>
                 <tr><td>12:30 - 13:00</td><td>Regras básicas de posição de agulha e fio - Nomenclatura e sistematização de agulha</td><td class="speaker-name">professor 1</td></tr>
                 <tr><td>13:00 - 13:30</td><td>Teoria do Ponto perfeito e passagem de agulha</td><td class="speaker-name">professor 2</td></tr>
@@ -1844,14 +1861,14 @@
     <!-- ── SUBMISSÃO DE TRABALHOS CIENTÍFICOS ── -->
     <section id="trabalhos-cientificos" class="section-dark fade-in">
       <div class="container" style="padding-bottom: 1.5rem;">
-        <h2 class="section-title" style="display:block">Submissão de Trabalhos Científicos</h2>
+        <h2 class="section-title" style="display:block" data-i18n="papers.title">Submissão de Trabalhos Científicos</h2>
         <div class="trabalhos-cientificos-ctas" style="margin-top: .75rem; display: flex; flex-wrap: wrap; gap: .65rem; align-items: center;">
-          <a href="scientific-papers/edital-de-submissao-de-trabalhos-cientificos-congresso-endogineco-recife.pdf" class="btn-section-cta btn-edital" target="_blank" rel="noopener noreferrer">
+          <a href="scientific-papers/edital-de-submissao-de-trabalhos-cientificos-congresso-endogineco-recife.pdf" class="btn-section-cta btn-edital" target="_blank" rel="noopener noreferrer" data-i18n="papers.accessGuidelines">
             Acessar edital
           </a>
           <button type="button" id="btn-envie-trabalho" class="btn-section-cta">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            Envie seu trabalho
+            <span data-i18n="papers.submit">Envie seu trabalho</span>
           </button>
         </div>
       </div>
@@ -1859,7 +1876,7 @@
       <!-- Comissão Julgadora (Netflix-style) -->
       <div style="margin-top: 2rem;">
         <div class="container" style="padding-bottom: .75rem;">
-          <h3 style="color: rgba(255,255,255,.85); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin: 0;">Comissão Julgadora</h3>
+          <h3 style="color: rgba(255,255,255,.85); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin: 0;" data-i18n="papers.judgingCommittee">Comissão Julgadora</h3>
         </div>
         <div class="netflix-section-wrapper">
           <button class="netflix-arrow netflix-arrow-prev" id="trabalhos-cientificos-prev" aria-label="Anterior">&#8249;</button>
@@ -1867,22 +1884,22 @@
             <div class="netflix-card">
               <div class="netflix-card-empty-bg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
               <div class="netflix-card-overlay"></div>
-              <div class="netflix-card-content"><h3>Avaliador</h3><p>Comissão julgadora</p></div>
+              <div class="netflix-card-content"><h3 data-i18n="papers.evaluator">Avaliador</h3><p data-i18n="papers.judgingCommitteeCard">Comissão julgadora</p></div>
             </div>
             <div class="netflix-card">
               <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #102450 0%, #2d6aa0 100%);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
               <div class="netflix-card-overlay"></div>
-              <div class="netflix-card-content"><h3>Avaliador</h3><p>Comissão julgadora</p></div>
+              <div class="netflix-card-content"><h3 data-i18n="papers.evaluator">Avaliador</h3><p data-i18n="papers.judgingCommitteeCard">Comissão julgadora</p></div>
             </div>
             <div class="netflix-card">
               <div class="netflix-card-empty-bg" style="background: linear-gradient(160deg, #1e4a8a 0%, #102450 100%);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
               <div class="netflix-card-overlay"></div>
-              <div class="netflix-card-content"><h3>Avaliador</h3><p>Comissão julgadora</p></div>
+              <div class="netflix-card-content"><h3 data-i18n="papers.evaluator">Avaliador</h3><p data-i18n="papers.judgingCommitteeCard">Comissão julgadora</p></div>
             </div>
             <div class="netflix-card">
               <div class="netflix-card-empty-bg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
               <div class="netflix-card-overlay"></div>
-              <div class="netflix-card-content"><h3>Avaliador</h3><p>Comissão julgadora</p></div>
+              <div class="netflix-card-content"><h3 data-i18n="papers.evaluator">Avaliador</h3><p data-i18n="papers.judgingCommitteeCard">Comissão julgadora</p></div>
             </div>
           </div>
           <button class="netflix-arrow netflix-arrow-next" id="trabalhos-cientificos-next" aria-label="Próximo">&#8250;</button>
@@ -1894,18 +1911,18 @@
     <section id="local" class="section-light fade-in">
       <div class="container two-column">
         <div>
-          <h2 class="section-title">Local do evento</h2>
-          <p>
+          <h2 class="section-title" data-i18n="venue.title">Local do evento</h2>
+          <p data-i18n="venue.intro">
             O Congresso Endogineco 2026 será realizado no
             <strong>Mar Hotel Conventions</strong>, um dos principais centros de convenções
             de Recife, localizado em Boa Viagem.
           </p>
-          <p style="margin-top: 1.25rem">
+          <p style="margin-top: 1.25rem" data-i18n="venue.address">
             <strong>Endereço:</strong><br />
             Rua Barão de Souza Leão, 451<br />
             Boa Viagem — Recife/PE — CEP 51030-300
           </p>
-          <p style="margin-top: 1rem">
+          <p style="margin-top: 1rem" data-i18n="venue.dates">
             <strong>Pré-congresso:</strong> 27 de agosto de 2026<br />
             <strong>Congresso:</strong> 28 e 29 de agosto de 2026
           </p>
@@ -1925,10 +1942,10 @@
     <!-- ── INSCRIÇÕES ── -->
     <section id="inscricao" class="section-dark fade-in">
       <div class="container text-center">
-        <h2 class="section-title text-center" style="display:block">Inscrições</h2>
+        <h2 class="section-title text-center" style="display:block" data-i18n="registration.title">Inscrições</h2>
         <a href="https://www.sympla.com.br/evento/congresso-endogineco-recife/3424928" class="btn-primary" style="margin-top: .5rem;" target="_blank" rel="noopener noreferrer">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-          Inscreva-se no Congresso
+          <span data-i18n="registration.button">Inscreva-se no Congresso</span>
         </a>
       </div>
     </section>
@@ -1936,7 +1953,7 @@
     <!-- ── PATROCINADORES ── -->
     <section id="patrocinadores" class="section-light fade-in">
       <div class="container text-center">
-        <h2 class="section-title" style="display:block">Patrocinadores</h2>
+        <h2 class="section-title" style="display:block" data-i18n="sponsors.title">Patrocinadores</h2>
         <div class="sponsors-grid"></div>
       </div>
     </section>
@@ -1944,18 +1961,18 @@
     <!-- ── GALERIA ── -->
     <section id="galeria" class="section-dark fade-in">
       <div class="container">
-        <h2 class="section-title text-center" style="display:block">Galeria</h2>
+        <h2 class="section-title text-center" style="display:block" data-i18n="gallery.title">Galeria</h2>
 
         <div class="day-tabs" role="tablist" aria-label="Edições do congresso" style="margin: 1.5rem auto 0; width: fit-content;">
-          <button class="day-tab-btn active" role="tab" data-gallery="2025" aria-selected="true">Edição 2025</button>
-          <button class="day-tab-btn" role="tab" data-gallery="2026" aria-selected="false">Edição 2026</button>
+          <button class="day-tab-btn active" role="tab" data-gallery="2025" aria-selected="true" data-i18n="gallery.tab2025">Edição 2025</button>
+          <button class="day-tab-btn" role="tab" data-gallery="2026" aria-selected="false" data-i18n="gallery.tab2026">Edição 2026</button>
         </div>
 
         <div class="gallery-panel active" id="gallery-2025">
-          <p class="gallery-status" id="gallery-status-2025">Carregando fotos…</p>
+          <p class="gallery-status" id="gallery-status-2025" data-i18n="gallery.loading">Carregando fotos…</p>
           <div class="gallery-grid" id="gallery-grid-2025" aria-live="polite" hidden></div>
           <p class="gallery-load-wrap" id="gallery-load-wrap-2025" hidden>
-            <button type="button" class="btn-outline gallery-load-more" id="gallery-load-more-2025">
+            <button type="button" class="btn-outline gallery-load-more" id="gallery-load-more-2025" data-i18n="gallery.loadMore">
               Carregar mais fotos
             </button>
           </p>
@@ -1984,21 +2001,21 @@
         <h3 id="speaker-modal-name" class="speaker-modal-name"></h3>
         <p id="speaker-modal-region" class="speaker-modal-region"></p>
         <ul id="speaker-modal-bio" class="speaker-modal-bio"></ul>
-        <p id="speaker-modal-bio-empty" class="speaker-modal-bio-empty" hidden>Currículo em atualização.</p>
+        <p id="speaker-modal-bio-empty" class="speaker-modal-bio-empty" hidden data-i18n="speakers.bioEmpty">Currículo em atualização.</p>
       </div>
     </div>
 
     <div id="submission-confirm-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="submission-confirm-title">
       <div class="modal-content modal-content--confirm">
         <button type="button" class="close-modal" data-close="submission-confirm-modal" aria-label="Fechar">&times;</button>
-        <h3 id="submission-confirm-title" class="submission-confirm-title">Confirmação de submissão</h3>
-        <p class="submission-confirm-text">
+        <h3 id="submission-confirm-title" class="submission-confirm-title" data-i18n="submission.title">Confirmação de submissão</h3>
+        <p class="submission-confirm-text" data-i18n="submission.text">
           Declaro que li o edital de submissão de trabalhos científicos e que o material enviado cumpre as regras descritas nele.
           Trabalhos que não seguirem as instruções do edital <strong>não serão aprovados</strong> pela Comissão Julgadora.
         </p>
         <div class="submission-confirm-actions">
-          <button type="button" class="btn-confirm-cancel" data-close="submission-confirm-modal">Cancelar</button>
-          <a id="submission-confirm-proceed" class="btn-confirm-proceed" href="https://forms.gle/G1BY2Q4XQ3Zr2evy7" target="_blank" rel="noopener noreferrer">Continuar para o formulário</a>
+          <button type="button" class="btn-confirm-cancel" data-close="submission-confirm-modal" data-i18n="submission.cancel">Cancelar</button>
+          <a id="submission-confirm-proceed" class="btn-confirm-proceed" href="https://forms.gle/G1BY2Q4XQ3Zr2evy7" target="_blank" rel="noopener noreferrer" data-i18n="submission.proceed">Continuar para o formulário</a>
         </div>
       </div>
     </div>
@@ -2011,8 +2028,8 @@
           <!-- Logo + brand -->
           <div class="footer-brand">
             <img src="assets/logo-endogineco.png" alt="Endogineco 2026" loading="lazy" />
-            <p>Congresso Internacional Endogineco 2026</p>
-            <p>27, 28 e 29 de agosto · Recife/PE</p>
+            <p data-i18n="footer.brandName">Congresso Internacional Endogineco 2026</p>
+            <p data-i18n="footer.brandDates">27, 28 e 29 de agosto · Recife/PE</p>
             <p style="margin-top:.25rem; font-size:.8rem; color:rgba(255,255,255,.40);">ISEP · Hospital Santa Joana · Rede Américas</p>
             <div class="social-links">
               <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener" class="social-link" title="Instagram Luka Plan" aria-label="Instagram">
@@ -2029,38 +2046,38 @@
 
           <!-- Navegação -->
           <div class="footer-col">
-            <h4>Navegação</h4>
+            <h4 data-i18n="footer.navTitle">Navegação</h4>
             <ul>
-              <li><a href="#top">Início</a></li>
-              <li><a href="#sobre">Sobre</a></li>
-              <li><a href="#comissao">Comissão</a></li>
-              <li><a href="#programacao">Programação</a></li>
-              <li><a href="#palestrantes">Palestrantes</a></li>
-              <li><a href="#pre-congresso">Pré-congresso</a></li>
-              <li><a href="#trabalhos-cientificos">Trabalhos Científicos</a></li>
-              <li><a href="#local">Local</a></li>
-              <li><a href="#patrocinadores">Patrocinadores</a></li>
-              <li><a href="#galeria">Galeria</a></li>
+              <li><a href="#top" data-i18n="nav.home">Início</a></li>
+              <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+              <li><a href="#comissao" data-i18n="nav.committee">Comissão</a></li>
+              <li><a href="#programacao" data-i18n="nav.schedule">Programação</a></li>
+              <li><a href="#palestrantes" data-i18n="nav.speakers">Palestrantes</a></li>
+              <li><a href="#pre-congresso" data-i18n="nav.precongress">Pré-congresso</a></li>
+              <li><a href="#trabalhos-cientificos" data-i18n="nav.papers">Trabalhos Científicos</a></li>
+              <li><a href="#local" data-i18n="nav.venue">Local</a></li>
+              <li><a href="#patrocinadores" data-i18n="nav.sponsors">Patrocinadores</a></li>
+              <li><a href="#galeria" data-i18n="nav.gallery">Galeria</a></li>
             </ul>
           </div>
 
           <!-- Local -->
           <div class="footer-col">
-            <h4>Local</h4>
+            <h4 data-i18n="footer.venueTitle">Local</h4>
             <address>
               Mar Hotel Conventions<br />
               Rua Barão de Souza Leão, 451<br />
               Boa Viagem — Recife/PE<br />
               CEP 51030-300
             </address>
-            <p style="margin-top: .75rem;"><strong style="color: rgba(255,255,255,.55); font-size:.8rem; letter-spacing:.04em; text-transform:uppercase; font-family:'Montserrat',sans-serif;">Datas</strong><br />
-              27, 28 e 29 de agosto de 2026
+            <p style="margin-top: .75rem;"><strong style="color: rgba(255,255,255,.55); font-size:.8rem; letter-spacing:.04em; text-transform:uppercase; font-family:'Montserrat',sans-serif;" data-i18n="footer.datesLabel">Datas</strong><br />
+              <span data-i18n="footer.datesValue">27, 28 e 29 de agosto de 2026</span>
             </p>
           </div>
 
           <!-- Contato -->
           <div class="footer-col">
-            <h4>Contato</h4>
+            <h4 data-i18n="footer.contactTitle">Contato</h4>
             <p><strong style="color: rgba(255,255,255,.75);">Luka Plan Promoções e Eventos</strong></p>
             <address>
               Rua João Eugênio de Lima, 143 – Sala 01<br />
@@ -2080,11 +2097,11 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Congresso Internacional Endogineco — Recife/PE</p>
+        <p data-i18n="footer.copyright">&copy; 2026 Congresso Internacional Endogineco — Recife/PE</p>
         <p>
-          Produzido por: <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener">Luka Plan Promoções e Eventos</a>
+          <span data-i18n="footer.producedBy">Produzido por:</span> <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener">Luka Plan Promoções e Eventos</a>
           &nbsp;&middot;&nbsp;
-          Desenvolvido por: <a href="https://wa.me/5581995460140?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20um%20site!%20%3A)" target="_blank" rel="noopener noreferrer">Automa IT &amp; Development</a>
+          <span data-i18n="footer.developedBy">Desenvolvido por:</span> <a href="https://wa.me/5581995460140?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20um%20site!%20%3A)" target="_blank" rel="noopener noreferrer">Automa IT &amp; Development</a>
         </p>
       </div>
     </footer>
@@ -2459,16 +2476,25 @@
         }
       }
 
+      let lastSpeakerCard = null;
       function openSpeakerModal(card) {
         if (!speakerModal || !card) return;
+        lastSpeakerCard = card;
         const name = card.dataset.speakerName || "Palestrante";
         const region = card.dataset.speakerRegion || "";
         const photo = getSpeakerPhoto(card);
         let bioItems = [];
-        try {
-          bioItems = JSON.parse(card.dataset.speakerBio || "[]");
-        } catch (_) {
-          bioItems = [];
+        const lang = document.documentElement.getAttribute("data-lang") || "pt";
+        const translatedBios =
+          (translations[lang] && translations[lang].speakerBios) || null;
+        if (translatedBios && Array.isArray(translatedBios[name])) {
+          bioItems = translatedBios[name];
+        } else {
+          try {
+            bioItems = JSON.parse(card.dataset.speakerBio || "[]");
+          } catch (_) {
+            bioItems = [];
+          }
         }
         setSpeakerModalPhoto(photo, name);
         if (speakerModalName) {
@@ -2593,6 +2619,856 @@
       document.addEventListener("click", (e) => {
         if (!e.target.closest("nav")) closeMobileNavPanel();
       });
+
+      /* ---------------- Internationalization (PT / EN / ES) ---------------- */
+      const translations = {
+        en: {
+          "nav.home": "Home",
+          "nav.about": "About",
+          "nav.committee": "Committee",
+          "nav.schedule": "Program",
+          "nav.speakers": "Speakers",
+          "nav.precongress": "Pre-congress",
+          "nav.papers": "Scientific Papers",
+          "nav.venue": "Venue",
+          "nav.sponsors": "Sponsors",
+          "nav.gallery": "Gallery",
+          "nav.register": "Register",
+          "hero.chipPre": "Pre-congress: August 27, 2026",
+          "hero.chipCongress": "Congress: August 28–29, 2026",
+          "hero.chipVenue": "Mar Hotel Conventions · Recife/PE",
+          "hero.btnPre": "Discover the Pre-congress",
+          "hero.btnRegister": "Register for the Congress",
+          "hero.btnSchedule": "Congress Program",
+          "hero.realization": "Organized by",
+          "hero.support": "Institutional Support",
+          "about.eyebrow": "About the event",
+          "about.title": "The Endogineco Congress 2026",
+          "about.p1":
+            "The <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong> is pleased to present the <strong>Endogineco Congress 2026</strong>, to be held on <strong>August 27, 28 and 29, 2026</strong>, in Recife/PE.",
+          "about.p2":
+            "In 2025, the event was a great success, bringing together renowned endometriosis specialists from every region of the country, along with live surgeries, launches and several technological innovations.",
+          "about.p3":
+            "In 2026, the Congress arrives with even more innovations: awards for scientific papers, semi-edited surgery videos and a podcast studio — all to strengthen endogynecology and inspire new professionals.",
+          "about.p4":
+            "The event will feature physicians from different specialties, residents and a multidisciplinary team from across Brazil.",
+          "about.chip1": "🎬 9 Live Surgeries",
+          "about.chip2": "⚡ Cross Fires",
+          "about.chip3": "📹 Video Showcases",
+          "about.chip4": "🎙️ Podcasts",
+          "about.chip5": "🎭 Talk Shows",
+          "about.chip6": "🏥 Clinical Cases",
+          "about.chip7": "📣 Lectures",
+          "about.chip8": "🎓 Conferences",
+          "about.chip9": "✨ And much more!",
+          "countdown.title": "Countdown",
+          "countdown.sub": "Counting down to the start of the Endogineco Congress 2026",
+          "countdown.days": "Days",
+          "countdown.hours": "Hours",
+          "countdown.minutes": "Minutes",
+          "countdown.seconds": "Seconds",
+          "committee.title": "Organizing Committee",
+          "schedule.title": "Scientific Program",
+          "schedule.downloadPdf": "Download PDF",
+          "schedule.downloadXlsx": "Download spreadsheet",
+          "schedule.tabFriday": "Friday, Aug 28",
+          "schedule.tabSaturday": "Saturday, Aug 29",
+          "schedule.congressOpening": "Congress opening",
+          "schedule.colTime": "Time",
+          "schedule.colActivity": "Activity",
+          "schedule.colSpeaker": "Speaker",
+          "schedule.audA": "Auditorium A",
+          "schedule.audB": "Auditorium B",
+          "speakers.title": "Speakers",
+          "speakers.learnMore": "Learn more",
+          "speakers.bioEmpty": "Profile being updated.",
+          "precongress.title": "Pre-congress",
+          "precongress.coursesTitle": "Course schedule",
+          "precongress.tabVideo": "Video Surgery in Oncogynecology",
+          "precongress.tabNutrition": "Nutrition for patients with Endometriosis",
+          "precongress.tabUsg": "Ultrasound Mapping of Endometriosis",
+          "precongress.tabSuture": "Dry Lab in Endoscopic Suturing",
+          "precongress.card1Title": "Video Surgery in Oncogynecology",
+          "precongress.card1Date": "Aug 27 · 1:15 – 5:00 PM · Auditorium A",
+          "precongress.card1Coord": "Coordination: Dr. Iolanda Matias (PE)",
+          "precongress.card2Title": "Nutrition Course for patients with Endometriosis",
+          "precongress.card2Date": "Aug 27 · 1:15 – 5:00 PM · Auditorium B",
+          "precongress.card2Coord": "Coordination: Dr. Rosaura Santos (PE)",
+          "precongress.card3Title": "Course on Ultrasound Mapping of Endometriosis",
+          "precongress.card3Date": "Aug 27 · 1:15 – 5:00 PM · Auditorium C",
+          "precongress.card3Coord": "Coordination: MEDERE (Dr. Cecília Pontes and Dr. Penélope Melo — PE)",
+          "precongress.card4Title": "Dry Lab Course in Endoscopic Suturing",
+          "precongress.card4Date": "Aug 27 · 12:30 – 7:00 PM · Foyer",
+          "precongress.card4Coord": "Coordination: Dr. Guilherme Zanluchi (SP)",
+          "precongress.cardRegister": "Register",
+          "precongress.cardProgram": "Program",
+          "precongress.imageCredit":
+            'Image «Sutura Dry Lab»: Anpol42 — <a href="https://commons.wikimedia.org/wiki/File:Instruments_for_laparoscopic_Hernia_Operation.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>).',
+          "papers.title": "Scientific Paper Submission",
+          "papers.accessGuidelines": "View call for papers",
+          "papers.submit": "Submit your paper",
+          "papers.judgingCommittee": "Judging Committee",
+          "papers.evaluator": "Evaluator",
+          "papers.judgingCommitteeCard": "Judging committee",
+          "venue.title": "Event venue",
+          "venue.intro":
+            "The Endogineco Congress 2026 will be held at the <strong>Mar Hotel Conventions</strong>, one of Recife's main convention centers, located in Boa Viagem.",
+          "venue.address":
+            "<strong>Address:</strong><br /> Rua Barão de Souza Leão, 451<br /> Boa Viagem — Recife/PE — ZIP 51030-300",
+          "venue.dates":
+            "<strong>Pre-congress:</strong> August 27, 2026<br /> <strong>Congress:</strong> August 28 and 29, 2026",
+          "registration.title": "Registration",
+          "registration.button": "Register for the Congress",
+          "sponsors.title": "Sponsors",
+          "gallery.title": "Gallery",
+          "gallery.tab2025": "2025 Edition",
+          "gallery.tab2026": "2026 Edition",
+          "gallery.loading": "Loading photos…",
+          "gallery.loadMore": "Load more photos",
+          "footer.brandName": "Endogineco International Congress 2026",
+          "footer.brandDates": "August 27, 28 & 29 · Recife/PE",
+          "footer.navTitle": "Navigation",
+          "footer.venueTitle": "Venue",
+          "footer.datesLabel": "Dates",
+          "footer.datesValue": "August 27, 28 & 29, 2026",
+          "footer.contactTitle": "Contact",
+          "footer.copyright": "&copy; 2026 Endogineco International Congress — Recife/PE",
+          "footer.producedBy": "Produced by:",
+          "footer.developedBy": "Developed by:",
+          "submission.title": "Submission confirmation",
+          "submission.text":
+            "I declare that I have read the call for scientific papers and that the submitted material complies with the rules described therein. Papers that do not follow the call's instructions <strong>will not be approved</strong> by the Judging Committee.",
+          "submission.cancel": "Cancel",
+          "submission.proceed": "Continue to the form",
+          "speakerBios": {
+            "Aleide Tavares": [
+              "Residency in OB/GYN at UPE;",
+              "Residency in Human Reproduction at IMIP;",
+              "Master's in Health Sciences at UFPE;",
+              "Board certification in sexology by FEBRASGO",
+              "Current roles:",
+              "Supervisor of the OB/GYN medical residency - HFPE;",
+              "Head of the climacteric outpatient clinic at HC-UFPE",
+              "Gynecologist at the Trans clinic - UFPE",
+            ],
+            "Andreissa Paiva": [
+              "Adjunct Professor of Gynecology at the Federal University of Ceará.",
+              "PhD in Gynecology from the Federal University of São Paulo (UNIFESP)",
+              "Urogynecology and Vaginal Surgery at UNIFESP.",
+              "Member of the National Urogynecology Commission of FEBRASGO.",
+              "Board certification in gynecologic endoscopy by FEBRASGO and SOBRACIL.",
+              "Preceptor of the internship and OB/GYN residency at Maternidade Escola Assis Chateaubriand.",
+              "Preceptor of the OB/GYN residency at the Ceará School of Public Health.",
+              "Coordinator of the fellowship in minimally invasive gynecologic surgery at Instituto Salvata and Rede D'Or.",
+              "Vice President of the Ceará Society of Gynecology and Obstetrics (SOCEGO).",
+            ],
+            "Carlos Godoy": [
+              "Gynecologic Surgeon trained at UNICAMP, with specialization in Pelvic Oncology and Minimally Invasive Surgery, focusing on the treatment of Endometriosis and Gynecologic Cancer.",
+              "Master's in Gynecology from UNICAMP.",
+              "Lead Physician of the Endometriosis Center at Hospital São Luiz Campinas and of the Gynecologic Oncology unit at Hospital Vera Cruz Campinas. Robotics Proctor for Intuitive.",
+            ],
+            "Iolanda Matias": [
+              "Gynecologic oncologist at Hospital Santa Joana Recife",
+              "Surgical Oncology at HC/UFPE",
+              "Specialist in minimally invasive surgery at Hospital Sírio Libanês",
+              "Surgical Oncology at HCP",
+              "Master's in gynecologic oncology, UPE",
+              "PhD in molecular biology of gynecologic cancer - LIKA/UFPE",
+            ],
+            "Jardel Soares": [
+              "[Specialties]",
+              "OBSTETRICS & GYNECOLOGY, GYNECOLOGIC ENDOSCOPY.",
+              "[Education]",
+              "Medical degree from UNIVALLE/UFPE. Residency in Obstetrics & Gynecology at IMIP (Instituto Materno Infantil Fernando Figueira) - Recife - PE. Postgraduate in Video-Hysteroscopy at GYNELASER/FERTILITÉ - Brasília - DF. Postgraduate in Video-laparoscopy at UNICETREX/UNICEMEX - Brasília - DF. Advanced Course in Deep Endometriosis - Santa Casa de Misericórdia - São Paulo - SP. Elite Surgeon Mentorship - Dr. Marcelo Vieira - São Paulo. CADAVER LAB - Grupo Naveg - São Paulo. Fellowship in Robotic Surgery - Hospital Santa Joana - Recife - PE (ongoing).",
+              "[Societies]",
+              "Board certification in Obstetrics & Gynecology - AMB. Board certification in Gynecologic Endoscopy - AMB. Full member of the Society of Minimally Invasive and Robotic Surgery - SOBRACIL. Candidate for the Presidency of SOBRACIL, Pernambuco Chapter. Full member of FEBRASGO.",
+              "[Current roles]",
+              "Member of the Minimally Invasive Surgery Group - Hospital Santa Joana Recife - PE. Preceptor of the medical residency at Hospital Barão de Lucena Recife. Medical Director of Clínica Vida's - Recife - PE.",
+            ],
+            "Kathyane Lustosa": [
+              "PhD and Master's in Surgery from the Federal University of Ceará",
+              "Gynecologist trained at HGF/CE with FEBRASGO board certification in gynecologic endoscopy",
+              "Postgraduate in Endometriosis and Minimally Invasive Gynecology at Hospital Sírio Libanês",
+              "Preceptor of the OB/GYN and gynecologic endoscopy residency at ESP and HGF",
+              "Coordinator of the Fellowship in minimally invasive gynecologic surgery at Instituto Salvata and Rede D'Or",
+              "Northeast Vice President of SOBRACIL",
+            ],
+            "Mariana Muniz": [
+              "Physician from the Federal University of Campina Grande (UFCG)",
+              "OB/GYN residency at Hospital Barão de Lucena (SES-PE)",
+              "Gynecologic Oncology residency at Hospital das Clínicas (UFPE)",
+            ],
+            "Mauro Aguiar": [
+              "Master's in Health Sciences from UFPE",
+              "Head of the gynecologic endoscopy unit at HC-UFPE",
+              "Deputy Scientific Director of SOGOPE",
+              "Member of the robotic surgery technical board of CREMEPE",
+            ],
+            "Melissandro Lacerda": [
+              "Gynecologist with residency in Obstetrics & Gynecology",
+              "Specialization in Gynecologic Endoscopy at IAMSPE São Paulo",
+              "Specialization in Assisted Reproduction at Santa Casa de São Paulo",
+              "Postgraduate in Robotic Surgery at Hospital Albert Einstein São Paulo",
+              "Medical Director of Clínica Uterus in João Pessoa",
+            ],
+            "Mônica Zomer Kondo": [
+              "Physician trained at the University of Southern Santa Catarina in 2006.",
+              "In 2009 she completed her residency in Obstetrics & Gynecology at Maternidade Darcy Vargas, Joinville, Santa Catarina.",
+              "As complementary training, in 2008 she took a course in Ultrasonography in Obstetrics & Gynecology at Diagnosis – Imaging Diagnostic Center in Ribeirão Preto – SP.",
+              "In 2010 she completed Basic and Advanced Video-hysteroscopy, Video-colposcopy & LEEP & Laser, and Gynecologic Video-laparoscopy courses at Gynelaser – Advanced Gynecology Center in Brasília.",
+              "Author of several scientific articles published in national and international journals and co-author of a book on Video Surgery, she has presented numerous works at courses and congresses.",
+              "She also teaches in the field of minimally invasive surgery, where, together with Dr. William Kondo, she runs a Continuing Training course in Gynecologic Laparoscopy for physicians, which since 2014 has trained more than 60 professionals from across Brazil.",
+              "She serves as *faculty* at IRCAD LATIN AMERICA in Barretos – SP.",
+              "She serves as *faculty* at the AAGL (Advancing Minimally Invasive Gynecology Worldwide).",
+              "Certified for the insertion of hormonal implants by ELMECO.",
+              "Full member of SOBRACIL.",
+              "She works in minimally invasive gynecologic surgery, focusing on endometriosis treatments.",
+            ],
+          },
+          "sch.openCongress": `
+                <tr><td>08:00 - 08:15</td><td colspan="2" class="session-break"><strong>Accreditation</strong></td></tr>
+                <tr><td>08:15 - 08:30</td><td>Opening</td><td class="speaker-name">Érica Batista <br />Edilberto Rocha <br />Jardel Soares <br />Iolanda Matias <br />Agostinho Machado Juliana Zaidan</td></tr>`,
+          "sch.friAudA": `
+                <tr><td colspan="3" class="session-header"><strong>08:30 - 09:50<br />(1 hour and<br />20 min)</strong><br />PANEL 1 - Nerve-sparing in Endometriosis Surgery<br />Chair: Priscila Vieira - PE<br />Discussants: Renato Barreto - SP, Melissandro Lacerda - PB, Anna Luiza Lobão - PB</td></tr>
+                <tr><td>08:30 - 09:00<br />(30 min)</td><td>Do you know where the main pelvic nerves run? Why does it matter in complex Endometriosis surgery?</td><td class="speaker-name">Kathyane Lustosa - CE</td></tr>
+                <tr><td>09:00 - 09:20<br />(20 min)</td><td>Main nerve injuries in Endometriosis. What are the main symptoms?</td><td class="speaker-name">Patrick Bellelis - SP</td></tr>
+                <tr><td>09:20 - 09:40<br />(20 min)</td><td>Should every nerve injury from endometriosis be operated on?</td><td class="speaker-name">Raquel Magalhães - SP</td></tr>
+                <tr><td>09:40 - 09:50<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
+                <tr><td>09:50 - 10:20<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>10:20 - 11:40<br />(1 hour and<br />20 min)</strong><br />PANEL 2 - Video Hysteroscopy<br />Chair: Helena Nagle - PE<br />Discussants: Neidson Menezes - PE, Aurélio Costa - PE, Vera Sena - PE, Felipe Rocha - PE</td></tr>
+                <tr><td>10:20 - 10:30<br />(10 min)</td><td>Outpatient Video Hysteroscopy: how far can we go? How to minimize fear?<br />How to reduce pain?</td><td class="speaker-name">Mariana Vieira - SP</td></tr>
+                <tr><td>10:30 - 10:45<br />(15 min)</td><td>Endometrial Hyperplasia and Endometrial Cancer. Can it still be managed conservatively? Until when?</td><td class="speaker-name">Yole Minervino - PB</td></tr>
+                <tr><td>10:45 - 11:00<br />(15 min)</td><td>Using Hysteroscopy to treat AUB (abnormal uterine bleeding).<br />Where does it apply? What is the limit?</td><td class="speaker-name">Maria Roma - PE</td></tr>
+                <tr><td>11:00 - 11:15<br />(15 min)</td><td>How to minimize complications in Hysteroscopy and how to handle them if they occur?</td><td class="speaker-name">Ana Carolina Serafim - PE</td></tr>
+                <tr><td>11:15 - 11:30<br />(15 min)</td><td>The challenges of retained products of conception — how can Hysteroscopy help?</td><td></td></tr>
+                <tr><td>11:30 - 11:40<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
+                <tr><td>11:40 - 12:00<br />(20 min)</td><td>SYMPOSIUM - Iron replacement - A key item for safe surgery</td><td class="speaker-name">Jardel Soares - PE</td></tr>
+                <tr><td>12:00 - 13:30<br />(1 hour and<br />30 min)</td><td colspan="2" class="session-break"><strong>FREE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-podcast">🎙️ <strong>PODCAST</strong></td></tr>
+                <tr><td>13:30 - 15:30<br />(2 hours)</td><td colspan="2" class="session-live"><strong>LIVE SURGERIES Chair: Mauro Aguiar - PE</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife - PE <br />Case lead: Mari Cecília - PE <br />Kathyane Lustosa CE - surgeon<br /> <br />* Hospital Barão de Lucena - PE<br />Case lead: Carolina Feitosa - PE <br />Patrick Bellelis - SP / <br />Mariana Vieira - SP<br /><br />* Hospital das Nações CWB <br />Mônica Zomer PR <br />William Kondo PR<br /><br />* Hospital Campinas - SP<br />Carlos Godoy - SP</div></td></tr>
+                <tr><td>15:30 - 16:00<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>16:00 - 16:50<br />(50 min)</strong><br />PANEL 3 - Uterine Fibroids<br />Chair: Mariana Santiago - PE<br />Discussants: Jessica Cesario - PE, Rafael Alves - PE, Alisson Chianca - MA, Lilian Mendes - CE</td></tr>
+                <tr><td>16:00 - 16:10<br />(10 min)</td><td>Strategies to reduce bleeding in myomectomies — what is my strategy?</td><td class="speaker-name">Melissandro Lacerda - PB</td></tr>
+                <tr><td>16:10 - 16:20<br />(10 min)</td><td>Fibroid extraction — is there a best technique?</td><td class="speaker-name">Mauro Aguiar - PE</td></tr>
+                <tr><td>16:20 - 16:30<br />(10 min)</td><td>Surgical conversion in myomectomy — failure of indication or the right decision?</td><td class="speaker-name">Ana Luiza Lobão - PB</td></tr>
+                <tr><td>16:30 - 16:50<br />(20 min)</td><td>Myomectomy — which incision, suture and thread for a refined, fast and bloodless surgery?</td><td class="speaker-name">Andreissa Paiva - CE</td></tr>
+                <tr><td>16:50 - 17:15<br />(25 min)</td><td>Lecture - How can AI influence your practice from the office to post-op?<br />Chair: Edilberto Rocha - PE</td><td class="speaker-name">Jardel Soares - PE</td></tr>
+                <tr><td>17:15 - 17:25<br />(10 min)</td><td>Complications in minimally invasive surgery — how should I manage them?</td><td class="speaker-name">Giuliano Borrelli - SP</td></tr>
+                <tr><td>17:25 - 18:05<br />(40 min)</td><td>TALK SHOW - &quot;The endometriosis patient's journey&quot;<br />How to build a successful practice. Coordinator: Mariana Muniz</td><td class="speaker-name">Rosaura Almeida - PE, Marcos Saturnino - PE, Isaura Vieira - DF<br />Urologist <br />Kathyane Lustosa - CE, Mayara Macedo - PE, Pericles Oliveira - PB, Psychologist</td></tr>
+                <tr><td colspan="3" class="session-break"><strong>Opening ceremony</strong></td></tr>`,
+          "sch.friAudB": `
+                <tr><td colspan="3" class="session-header"><strong>08:25 - 10:05<br />(1 hour and<br />40 min)</strong><br />PANEL 1 - In my office<br />Chair: Simone Carvalho - PE <br />Discussants:</td></tr>
+                <tr><td>08:25 - 08:45 <br />(20 min)</td><td>Climacteric and Menopause in the patient with Endometriosis. How do I manage case by case?</td><td class="speaker-name">Priscila Vieira - PE</td></tr>
+                <tr><td>08:45 - 09:05<br />(20 min)</td><td>Diagnostic methods for endometriosis — what do we have? What are the new perspectives?</td><td class="speaker-name">Cicilia Pontes - PE</td></tr>
+                <tr><td>09:05 - 9:25 <br />(20 min)</td><td>Endometriosis in adolescence: how do I manage it? How to avoid excessive surgeries?</td><td class="speaker-name">Lilia Mendes - CE</td></tr>
+                <tr><td>09:25 - 09:45<br />(20 min)</td><td>Painful intercourse, vaginismus and relationship difficulties as sequelae of endometriosis. How to manage?</td><td class="speaker-name">Aleite Tavares - PE</td></tr>
+                <tr><td>09:45 - 09:55<br />(10 min)</td><td>Negative impacts of endometriosis on society. How can we reverse this?</td><td class="speaker-name">Iolanda Matias - PE</td></tr>
+                <tr><td>09:55 - 10:05<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
+                <tr><td>10:05 - 10:35 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>10:35 - 12:15<br />(1 hour and<br />40 min)</strong><br />VIDEO SHOWCASES - Semi-edited videos</td></tr>
+                <tr><td>10:35 - 10:55<br />(20 min)</td><td>How the use of fluorescence helped me in this case</td><td class="speaker-name">Guilherme Zanluchi - PE</td></tr>
+                <tr><td>10:55 - 11:15<br />(20 min)</td><td>I had to change my strategy in treating this bowel disease</td><td class="speaker-name">Claudia Joaquim - RJ</td></tr>
+                <tr><td>11:15 - 11:35<br />(20 min)</td><td>How I treated this ureteral endometriosis lesion</td><td class="speaker-name">Rogerson Andrade - PE</td></tr>
+                <tr><td>11:35 - 11:55<br />(20 min)</td><td>My strategy for this difficult myomectomy</td><td class="speaker-name">Alisson Chianca - MA</td></tr>
+                <tr><td>11:55 - 12:15<br />(20 min)</td><td>Robotic Cerclage. When? Tips and tricks?</td><td class="speaker-name">Patrick Bellelis - SP</td></tr>
+                <tr><td>12:15 - 12:35<br />(20 min)</td><td>Isthmocele — treat via laparoscopy, robotics or hysteroscopy?</td><td class="speaker-name">Mariana Vieira - SP</td></tr>
+                <tr><td>12:35 - 12:50<br />(15 min)</td><td>SYMPOSIUM - Iron replacement - A key item for safe surgery</td><td class="speaker-name">Jardel Soares - PE</td></tr>
+                <tr><td>12:50 - 13:30<br />(40 min)</td><td colspan="2" class="session-break"><strong>FREE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-podcast">🎙️ <strong>PODCAST</strong></td></tr>
+                <tr><td>13:30 - 15:30<br />(2 hours)</td><td colspan="2" class="session-live"><strong>LIVE SURGERIES</strong></td></tr>
+                <tr><td>15:30 - 16:00<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>16:00 - 17:10<br />(1 hour and<br />10 min)</strong><br />PANEL 2 - Imaging<br />Chair: Taciana Morais</td></tr>
+                <tr><td>16:00 - 16:30<br />(30 min)</td><td>CROSS FIRE - Present your strengths</td><td></td></tr>
+                <tr><td></td><td>What can't be missing in endometriosis mapping ultrasound?<br />What has technology improved?</td><td class="speaker-name">Penélope Melo - PE</td></tr>
+                <tr><td></td><td>What can't be missing in MRI for endometriosis screening?</td><td class="speaker-name">Rafaela Agonis - BA</td></tr>
+                <tr><td>16:30 - 16:45<br />(15 min)</td><td>How has 3D reconstruction come to support the surgeon? I'll show you in practice</td><td class="speaker-name">Italo Cruz - PE</td></tr>
+                <tr><td>16:45 - 17:00<br />(15 min)</td><td>Will AI replace humans in the radiological diagnosis of endometriosis?</td><td class="speaker-name">Nadja Rolim - PE</td></tr>
+                <tr><td>17:00 - 17:10<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
+                <tr><td>17:10 - 17:25<br />(15 min)</td><td>BAYER SPONSORED SYMPOSIUM - Medical treatment of Endometriosis according to the ACOH 2026 protocol</td><td class="speaker-name">Jardel Soares - PE</td></tr>
+                <tr><td>17:15 - 18:00<br />(45 min)</td><td>Making decisions in surgical treatment in gynecology<br />YOU DECIDE!</td><td></td></tr>
+                <tr><td></td><td>Clinical Case 1 - ADNEXAL TUMOR</td><td></td></tr>
+                <tr><td></td><td>Clinical Case 2 - PROLAPSE + URINARY INCONTINENCE</td><td class="speaker-name">Sara Arcanjo - PE</td></tr>
+                <tr><td></td><td>Clinical Case 3 - ADENOMYOSIS</td><td class="speaker-name">Raquel Magalhães - PE</td></tr>
+                <tr><td>18:00</td><td colspan="2" class="session-break"><strong>Closing</strong></td></tr>
+                <tr><td>Opening ceremony</td><td colspan="2" class="session-live"><strong>CONTINUATION</strong></td></tr>`,
+          "sch.satAudA": `
+                <tr><td>08:00 - 10:00 (2 hours)</td><td colspan="2" class="session-live"><strong>LIVE SURGERIES Chair: Iolanda Matias - PE</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife - PE<br />Case lead: Sidraiton Melo - PE <br />Raquel Magalhães SP<br /><br />* Hospital Barão de Lucena - PE<br />Case lead: Eveline Martins - PE <br />Sara Arcanjo - PE /<br />Andreissa Paiva - CE</div></td></tr>
+                <tr><td>10:00 - 10:30 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>10:30 - 10:50 (20 min)</td><td>Lecture: Robotic Surgery in Gynecology and other associated technologies —<br />What benefits have we already proven?</td><td class="speaker-name">Jordanna Diniz - DF<br />*Online*</td></tr>
+                <tr><td>10:50 - 11:10 (20 min)</td><td>Lecture: ERAS Protocol - Does it apply even in highly complex surgeries?</td><td class="speaker-name">Carlos Godoy - SP</td></tr>
+                <tr><td>11:10 - 11:25 (15 min)</td><td>Lecture: Clinical pain management - What's new? Cannabis?<br />And what's new in advanced pain management?</td><td class="speaker-name">Luiz Severo - PE</td></tr>
+                <tr><td colspan="3" class="session-header"><strong>11:25 - 12:35<br />(1 hour and<br />10 min)</strong><br />PANEL 1 - Infertility and Endometriosis <br />Chair:<br />Discussants:</td></tr>
+                <tr><td>11:25 - 11:40 <br />(15 min)</td><td>What to do first in the patient with endometriosis: IVF before and then operate, or operate and then IVF?</td><td class="speaker-name">Patrick Bellelis - SP</td></tr>
+                <tr><td>11:40 - 11:55<br />(15 min)</td><td>In the hysteroscopic workup of the infertile woman: what should I look for? How to treat?</td><td class="speaker-name">Altina Castelo Branco - PE</td></tr>
+                <tr><td>11:55 - 12:10<br />(15 min)</td><td>The challenge of managing uterine malformations: from diagnosis to choosing the ideal approach. What is the best surgical strategy?</td><td class="speaker-name">Mariana Vieira - SP</td></tr>
+                <tr><td>12:10 - 12:25<br />(15 min)</td><td>From implantation to delivery — does anything change in the follow-up of women with endometriosis and infertility?</td><td class="speaker-name">Edilberto Rocha - PE</td></tr>
+                <tr><td>12:25 - 12:35<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
+                <tr><td>12:35 - 12:55<br />(20 min)</td><td colspan="2" class="session-break"><strong>BREAK</strong></td></tr>
+                <tr><td>12:55 - 13:15<br />(20 min)</td><td>Life lessons: The survival of the laparoscopic and robotic surgeon — from ergonomics to mental health</td><td class="speaker-name">Fernando Heredia - Chile <br />*Online*</td></tr>
+                <tr><td>13:15 - 13:35<br />(20 min)</td><td>Life lessons: Deciding is harder than operating</td><td class="speaker-name">Ana Sierra - Mexico <br />*Online*</td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:35 - 14:25 (50 min)</strong><br />PANEL 2 - Coloproctology panel<br />Chair: Marcos Saturnino - PE<br />Discussants:</td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:35 - 14:05 (30 min)</strong><br />TRIPLE CROSS FIRE — the TRIELO</td></tr>
+                <tr><td></td><td>Shaving</td><td class="speaker-name">Paulo Mozart - PE</td></tr>
+                <tr><td></td><td>Discoid and double discoid</td><td class="speaker-name">Claudia Joaquim - RJ</td></tr>
+                <tr><td></td><td>Segmental resection</td><td class="speaker-name">Renato Leal - SP</td></tr>
+                <tr><td>14:05 - 14:15 (10 min)</td><td>Intestinal fistulas — how to manage?</td><td class="speaker-name">Cláudia Joaquim - RJ</td></tr>
+                <tr><td>14:15 - 14:25 (10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
+                <tr><td>14:25 - 14:35</td><td colspan="2" class="session-break"><strong>BREAK</strong></td></tr>
+                <tr><td>14:35 - 16:15<br />(1 hour and 40 min)</td><td colspan="2" class="session-live"><strong>LIVE SURGERIES</strong></td></tr>
+                <tr><td>16:15</td><td colspan="2" class="session-break"><strong>Closing and Feijoada by the Pool</strong></td></tr>`,
+          "sch.satAudB": `
+                <tr><td>08:00 - 10:00</td><td colspan="2" class="session-live"><strong>LIVE SURGERIES Chair: Iolanda Matias</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife PE - Raquel Magalhães - SP<br /><br />* Hospital Barão de Lucena - PE <br />Sara Arcanjo - CE / <br />Andreissa Paiva - CE</div></td></tr>
+                <tr><td>10:00 - 10:30 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>10:30 - 11:10<br />(40 min)</td><td>Urology in action<br />Chair: Guilherme Lima - PE<br />Discussants: Evandilson Guenes - PE, Rafael Oliveira - PE, Gilberto Pagnosin - PE</td><td></td></tr>
+                <tr><td>10:30 - 10:45<br />(15 min)</td><td>Treatment of ureteral endometriosis — in frozen pelvis, is there a best technique?<br />Is there superiority in the approach route?</td><td class="speaker-name">Antônio César Cruz - PE</td></tr>
+                <tr><td>10:45 - 11:00<br />(15 min)</td><td>Bladder injury — limits of resection. Are there long-term repercussions?</td><td class="speaker-name">Rogerson Camargo - PE</td></tr>
+                <tr><td>11:00 - 11:10 <br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>11:10 - 11:40 (30 min)</strong><br />Lectures Chair: Valter Ivo Paiva PE</td></tr>
+                <tr><td>11:10 - 11:25 <br />(15 min)</td><td>Lecture: When pelvic pain is much more than endometriosis</td><td class="speaker-name">Giuliano Borrelli - SP</td></tr>
+                <tr><td>11:25 - 11:40 (15 min)</td><td>Lecture: PBM (Patient Blood Management) — How to prepare the patient for surgery? How long to tolerate anemia? How to optimize your surgical outcomes?</td><td class="speaker-name">Dahra Telles - PE</td></tr>
+                <tr><td colspan="3" class="session-header"><strong>11:40 - 12:30<br />(50 min)</strong><br />PANEL 1 - Multidisciplinarity<br />Chair: Juliana Zaidan - PE<br />Discussants: Natália Fernandes - PE, Rita Santos - PE, Leonardo Lima - PE, Shirley Portela - PE</td></tr>
+                <tr><td>11:40 - 11:50<br />(10 min)</td><td>The best diet for the endometriosis patient? Is there room for supplements?</td><td class="speaker-name">Nara Parente - CE</td></tr>
+                <tr><td>11:50 - 12:00<br />(10 min)</td><td>Pelvic physiotherapy before and after surgery. What proven results do we have?</td><td class="speaker-name">Isabella Frota - CE</td></tr>
+                <tr><td>12:00 - 12:10<br />(10 min)</td><td>Acupuncture as an adjuvant treatment in gynecologic conditions.</td><td class="speaker-name">Isaura Vieira - DF</td></tr>
+                <tr><td>12:10 - 12:20<br />(10 min)</td><td>The impacts of physical activity on endometriosis treatment.<br />What is the best exercise?</td><td></td></tr>
+                <tr><td>12:20 - 12:30<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
+                <tr><td>12:30 - 13:00<br />(1 hour and 10 min)</td><td colspan="2" class="session-break"><strong>BREAK (SYMPOSIUM)</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:40 - 14:20<br />(40 min)</strong><br />Urogynecology in Focus<br />Chair: Eveline Martins - PE<br />Discussants: Sônia Lavínia - PE, Vanessa Freitas - PE, Arthur Rangel - PE, Guilherme Zanluchi - SP</td></tr>
+                <tr><td>13:40 - 13:50<br />(10 min)</td><td>Urodynamic study — when to order? How to interpret?</td><td class="speaker-name">Mônica Diniz - PE</td></tr>
+                <tr><td>13:50 - 14:00<br />(10 min)</td><td>Treatment of genital prolapse — which technique is best? And the results? I'll show you in practice</td><td class="speaker-name">Sara Arcanjo - CE</td></tr>
+                <tr><td>14:00 - 14:10<br />(10 min)</td><td>Urinary incontinence — how to manage? When to operate? I'll show you in practice</td><td class="speaker-name">Andreissa Paiva - CE</td></tr>
+                <tr><td>14:10 - 14:20<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
+                <tr><td>14:20 - 14:35<br />(15 min)</td><td colspan="2" class="session-break"><strong>BREAK</strong></td></tr>
+                <tr><td>14:35 - 16:15<br />(1 hour and 40 min)</td><td colspan="2" class="session-live"><strong>LIVE SURGERIES Coordinator: Jardel Soares - PE</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife - PE Giuliano Borrelli - SP<br /><br />* Hospital Barão de Lucena - PE<br />Fabio Ohara - SP <br /><br />* BOGOTÁ - Colombia <br />Santiago Machicado</div></td></tr>
+                <tr><td>16:15</td><td colspan="2" class="session-break"><strong>Closing and Feijoada by the Pool</strong></td></tr>`,
+          "sch.preVideocirurgia": `
+                <tr><td>13:00-13:15</td><td colspan="2" class="session-break"><strong>Opening</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:30 - 17:30</strong><br />AUDITORIUM A - Video Surgery in Oncogynecology<br />Coordination: Iolanda Matias - PE</td></tr>
+                <tr><td></td><td>Laparoscopic hysterectomies<br />Clinical signs and oncologic risk patients</td><td></td></tr>
+                <tr><td></td><td>Malignant transformation of endometriosis — when to suspect</td><td></td></tr>
+                <tr><td></td><td>Use of luminescence and its indication</td><td></td></tr>
+                <tr><td>15:30 - 16:00</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td></td><td>Coloproctology – When to suspect malignant disease and what to do?</td><td></td></tr>
+                <tr><td></td><td>Preoperative laboratory — markers in oncology</td><td></td></tr>
+                <tr><td></td><td>Preoperative ultrasound – Risk classification for ovarian cancer</td><td></td></tr>
+                <tr><td></td><td>Pelvic MRI and warning signs</td><td></td></tr>
+                <tr><td></td><td>Oncologic treatments and their impact on the surgical field</td><td></td></tr>`,
+          "sch.preNutricao": `
+                <tr><td>13:00-13:15</td><td colspan="2" class="session-break"><strong>Opening</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:30 - 17:30</strong><br />AUDITORIUM B - Nutrition Course for patients with Endometriosis <br />Coordination: Rosaura Santos - PE</td></tr>
+                <tr><td>13:30 - 13:40</td><td colspan="2" class="session-break"><strong>Opening and presentation - Overview of endometriosis and nutritional impact.<br />Moderator: Nutritionist Rosaura</strong></td></tr>
+                <tr><td>13:40 - 14:20</td><td>CLASS 1</td><td class="speaker-name">Nut. Natalia Fernandes</td></tr>
+                <tr><td></td><td>Evidence on anti-inflammatory diet and symptoms.</td><td></td></tr>
+                <tr><td colspan="3" class="session-break"><strong>Discussion of clinical cases: patients with pelvic pain and eating disorders.</strong></td></tr>
+                <tr><td>14:20 - 15:00</td><td>CLASS 2</td><td class="speaker-name">Nut. Gil Barbieri</td></tr>
+                <tr><td></td><td>Metabolic environment and reproductive success</td><td></td></tr>
+                <tr><td></td><td>Relationship between insulin resistance, obesity and fertility.</td><td></td></tr>
+                <tr><td></td><td>Nutritional strategies to optimize the metabolic environment.</td><td></td></tr>
+                <tr><td></td><td>Clinical cases: infertility associated with metabolic syndrome.</td><td></td></tr>
+                <tr><td>15:00 to 15:40</td><td>CLASS 3</td><td class="speaker-name">Nut. Adriana Soares</td></tr>
+                <tr><td></td><td>Nutrition modulating inflammation</td><td></td></tr>
+                <tr><td></td><td>Nutrients and bioactive compounds with anti-inflammatory action.</td><td></td></tr>
+                <tr><td></td><td>Role of omega-3 fatty acids, antioxidants and fiber.</td><td></td></tr>
+                <tr><td></td><td>Clinical cases: patients with endometriosis and systemic inflammation.</td><td></td></tr>
+                <tr><td>15:40 - 16:00</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>16:00 to 16:30</td><td>CLASS 4</td><td class="speaker-name">Nut. Nara Parente</td></tr>
+                <tr><td></td><td>Perioperative Nutritional Protocol</td><td></td></tr>
+                <tr><td></td><td>Nutritional preparation for endometriosis surgery.</td><td></td></tr>
+                <tr><td></td><td>Strategies to reduce complications and speed up recovery.</td><td></td></tr>
+                <tr><td></td><td>Clinical case: patients in pre- and post-operative period.</td><td></td></tr>
+                <tr><td>16:30 - 17:00</td><td>CLASS 5</td><td class="speaker-name">Nut. Lais Sousa</td></tr>
+                <tr><td></td><td>Pelvic pain and nutritional approach</td><td></td></tr>
+                <tr><td></td><td>Relationship between chronic pain and diet.</td><td></td></tr>
+                <tr><td></td><td>Nutritional interventions to improve quality of life.</td><td></td></tr>
+                <tr><td></td><td>Clinical cases: patients with refractory pelvic pain.</td><td></td></tr>
+                <tr><td>17:00 - 17:30</td><td>CLASS 6</td><td class="speaker-name">Pharmacist: Catarina (Roval)</td></tr>
+                <tr><td></td><td>Pharmacotherapeutic supplementation in the different phases of Endometriosis</td><td></td></tr>
+                <tr><td></td><td>Supplements with scientific evidence (vitamin D, antioxidants, probiotics).</td><td></td></tr>
+                <tr><td></td><td>Adjustments according to disease phase and medical treatment.</td><td></td></tr>
+                <tr><td></td><td>Practice: Creating an assertive prescription</td><td></td></tr>`,
+          "sch.preUsg": `
+                <tr><td>13:00-13:15</td><td colspan="2" class="session-break"><strong>Opening</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:15 - 17:00</strong><br />AUDITORIUM C - Course on Ultrasound Mapping of Endometriosis<br />Coordination: MEDERE (Cecília Pontes - PE and Penélope Melo - PE)</td></tr>
+                <tr><td>13:30 - 14:30</td><td>Block 1 - Fundamentals &amp; Applied Anatomy</td><td></td></tr>
+                <tr><td></td><td>The &quot;Face&quot; of the disease on US and MRI imaging</td><td></td></tr>
+                <tr><td></td><td>Compartmentalization of the pelvis: how the disease presents and spreads.</td><td></td></tr>
+                <tr><td></td><td>Anterior compartment: about the bladder — when the imaging finding triggers a change in strategy or calling the urologist.</td><td></td></tr>
+                <tr><td></td><td>Posterior compartment: retrocervical space and bowel. Unveiling the pelvis before opening: how we can help the surgeon.</td><td></td></tr>
+                <tr><td></td><td>Lateral compartment: when the lesion infiltrates more than expected</td><td></td></tr>
+                <tr><td>14:30 - 15:30</td><td>Block 2 - Clinical reasoning and office practice</td><td></td></tr>
+                <tr><td colspan="3" class="session-break"><strong>Practical correlation (US vs MRI): Interactive discussion of real cases focused on pain, infertility and surgical planning. Where the methods agree, where they disagree and how this changes your management.</strong></td></tr>
+                <tr><td></td><td>&quot;The translated report&quot;: how to interpret the radiology report, understanding the findings and how to avoid overdiagnosis</td><td></td></tr>
+                <tr><td>15:30 - 16:00</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>16:00 - 17:00</td><td>Block 3 - Frontiers, infertility and the future of imaging</td><td></td></tr>
+                <tr><td></td><td>Assessment of tubes and cavity by US</td><td></td></tr>
+                <tr><td></td><td>Advanced challenges:</td><td></td></tr>
+                <tr><td></td><td>How to assess lesions in atypical sites (diaphragm and wall)</td><td></td></tr>
+                <tr><td></td><td>The pitfalls of postoperative mapping (fibrosis vs recurrence vs residual lesion) and the impact of hormonal suppression on reading the exams.</td><td></td></tr>
+                <tr><td></td><td>What's new in the world literature: the latest scientific evidence and international guidelines that are changing management in deep endometriosis.</td><td></td></tr>`,
+          "sch.preSutura": `
+                <tr><td colspan="3" class="session-header"><strong>12:30 - 19:00</strong><br />FOYER - Dry Lab Course in Endoscopic Suturing <br />Coordination: Guilherme Zanluchi - SP</td></tr>
+                <tr><td>12:30 - 13:00</td><td>Basic rules of needle and thread positioning - Nomenclature and needle systematization</td><td class="speaker-name">professor 1</td></tr>
+                <tr><td>13:00 - 13:30</td><td>Theory of the perfect stitch and needle passage</td><td class="speaker-name">professor 2</td></tr>
+                <tr><td>13:30-14:00</td><td>Practical suture application on videos: vaginal cuff closure and myomectomies</td><td class="speaker-name">professor 3</td></tr>
+                <tr><td>14:00 - 15:30</td><td>Practical station</td><td></td></tr>
+                <tr><td>14:00-14:30</td><td>First-degree systematization and waking up the hands</td><td></td></tr>
+                <tr><td>14:30-15:00</td><td>Systematizations and verification cross</td><td></td></tr>
+                <tr><td>15:00 -15:30</td><td>The perfect stitch</td><td></td></tr>
+                <tr><td>15:30 - 16:00</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>16:00 - 16:30</td><td>Theory of knots: square knot and half-hitches</td><td class="speaker-name">professor 1</td></tr>
+                <tr><td>16:30 - 17:30</td><td>My preferred knots - Applying knots to each tissue type and surgery</td><td class="speaker-name">professor 2</td></tr>
+                <tr><td>17:30 - 19:00</td><td>Practical station</td><td class="speaker-name">professor 3</td></tr>
+                <tr><td>17:30 - 18:00</td><td>Triple double - one-handed and two-handed</td><td></td></tr>
+                <tr><td>18:00 - 18:30</td><td>Sequence of locking half-hitches</td><td></td></tr>
+                <tr><td>18:30 - 19:00</td><td>Competition - Prize</td><td></td></tr>`,
+        },
+        es: {
+          "nav.home": "Inicio",
+          "nav.about": "Acerca",
+          "nav.committee": "Comité",
+          "nav.schedule": "Programa",
+          "nav.speakers": "Ponentes",
+          "nav.precongress": "Pre-congreso",
+          "nav.papers": "Trabajos Científicos",
+          "nav.venue": "Lugar",
+          "nav.sponsors": "Patrocinadores",
+          "nav.gallery": "Galería",
+          "nav.register": "Inscríbete",
+          "hero.chipPre": "Pre-congreso: 27 de agosto de 2026",
+          "hero.chipCongress": "Congreso: 28 y 29 de agosto de 2026",
+          "hero.chipVenue": "Mar Hotel Conventions · Recife/PE",
+          "hero.btnPre": "Conozca el Pre-congreso",
+          "hero.btnRegister": "Inscríbete en el Congreso",
+          "hero.btnSchedule": "Programa del Congreso",
+          "hero.realization": "Organización",
+          "hero.support": "Apoyo Institucional",
+          "about.eyebrow": "Sobre el evento",
+          "about.title": "El Congreso Endogineco 2026",
+          "about.p1":
+            "El <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong> tiene la satisfacción de presentar el <strong>Congreso Endogineco 2026</strong>, que se realizará los días <strong>27, 28 y 29 de agosto de 2026</strong>, en Recife/PE.",
+          "about.p2":
+            "En 2025, el evento fue un gran éxito, reuniendo a profesionales reconocidos en el tratamiento de la endometriosis de todas las regiones del país, además de cirugías en vivo, lanzamientos y diversas innovaciones tecnológicas.",
+          "about.p3":
+            "En 2026, el Congreso llega con aún más innovaciones: premios para trabajos científicos, videos semi-editados de cirugías y un estudio de podcast — todo para fortalecer la endoginecología e inspirar a nuevos profesionales.",
+          "about.p4":
+            "El evento contará con la participación de médicos de diferentes especialidades, residentes y un equipo multidisciplinario de todo Brasil.",
+          "about.chip1": "🎬 9 Cirugías en Vivo",
+          "about.chip2": "⚡ Cross Fires",
+          "about.chip3": "📹 Videos Show Cases",
+          "about.chip4": "🎙️ Podcasts",
+          "about.chip5": "🎭 Talk Shows",
+          "about.chip6": "🏥 Casos Clínicos",
+          "about.chip7": "📣 Ponencias",
+          "about.chip8": "🎓 Conferencias",
+          "about.chip9": "✨ ¡Y mucho más!",
+          "countdown.title": "Cuenta",
+          "countdown.sub": "Regresiva para el inicio del Congreso Endogineco 2026",
+          "countdown.days": "Días",
+          "countdown.hours": "Horas",
+          "countdown.minutes": "Minutos",
+          "countdown.seconds": "Segundos",
+          "committee.title": "Comité Organizador",
+          "schedule.title": "Programa científico",
+          "schedule.downloadPdf": "Descargar PDF",
+          "schedule.downloadXlsx": "Descargar planilla",
+          "schedule.tabFriday": "Viernes, 28/08",
+          "schedule.tabSaturday": "Sábado, 29/08",
+          "schedule.congressOpening": "Apertura del congreso",
+          "schedule.colTime": "Horario",
+          "schedule.colActivity": "Actividad",
+          "schedule.colSpeaker": "Ponente",
+          "schedule.audA": "Auditorio A",
+          "schedule.audB": "Auditorio B",
+          "speakers.title": "Ponentes",
+          "speakers.learnMore": "Saber más",
+          "speakers.bioEmpty": "Currículo en actualización.",
+          "precongress.title": "Pre-congreso",
+          "precongress.coursesTitle": "Programa de los cursos",
+          "precongress.tabVideo": "La Videocirugía en Oncoginecología",
+          "precongress.tabNutrition": "Nutrición para pacientes con Endometriosis",
+          "precongress.tabUsg": "Ecografía de Mapeo de Endometriosis",
+          "precongress.tabSuture": "Sutura Dry Lab en sutura endoscópica",
+          "precongress.card1Title": "La Videocirugía en Oncoginecología",
+          "precongress.card1Date": "27/08 · 13:15 – 17:00 · Auditorio A",
+          "precongress.card1Coord": "Coordinación: Dra. Iolanda Matias (PE)",
+          "precongress.card2Title": "Curso de Nutrición para pacientes con Endometriosis",
+          "precongress.card2Date": "27/08 · 13:15 – 17:00 · Auditorio B",
+          "precongress.card2Coord": "Coordinación: Dra. Rosaura Santos (PE)",
+          "precongress.card3Title": "Curso de Ecografía de Mapeo de Endometriosis",
+          "precongress.card3Date": "27/08 · 13:15 – 17:00 · Auditorio C",
+          "precongress.card3Coord": "Coordinación: MEDERE (Dra. Cecília Pontes y Dra. Penélope Melo — PE)",
+          "precongress.card4Title": "Curso de Sutura Dry Lab en sutura endoscópica",
+          "precongress.card4Date": "27/08 · 12:30 – 19:00 · Foyer",
+          "precongress.card4Coord": "Coordinación: Dr. Guilherme Zanluchi (SP)",
+          "precongress.cardRegister": "Inscríbete",
+          "precongress.cardProgram": "Programa",
+          "precongress.imageCredit":
+            'Imagen «Sutura Dry Lab»: Anpol42 — <a href="https://commons.wikimedia.org/wiki/File:Instruments_for_laparoscopic_Hernia_Operation.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>).',
+          "papers.title": "Envío de Trabajos Científicos",
+          "papers.accessGuidelines": "Acceder a las bases",
+          "papers.submit": "Envíe su trabajo",
+          "papers.judgingCommittee": "Comité Evaluador",
+          "papers.evaluator": "Evaluador",
+          "papers.judgingCommitteeCard": "Comité evaluador",
+          "venue.title": "Lugar del evento",
+          "venue.intro":
+            "El Congreso Endogineco 2026 se realizará en el <strong>Mar Hotel Conventions</strong>, uno de los principales centros de convenciones de Recife, ubicado en Boa Viagem.",
+          "venue.address":
+            "<strong>Dirección:</strong><br /> Rua Barão de Souza Leão, 451<br /> Boa Viagem — Recife/PE — CP 51030-300",
+          "venue.dates":
+            "<strong>Pre-congreso:</strong> 27 de agosto de 2026<br /> <strong>Congreso:</strong> 28 y 29 de agosto de 2026",
+          "registration.title": "Inscripciones",
+          "registration.button": "Inscríbete en el Congreso",
+          "sponsors.title": "Patrocinadores",
+          "gallery.title": "Galería",
+          "gallery.tab2025": "Edición 2025",
+          "gallery.tab2026": "Edición 2026",
+          "gallery.loading": "Cargando fotos…",
+          "gallery.loadMore": "Cargar más fotos",
+          "footer.brandName": "Congreso Internacional Endogineco 2026",
+          "footer.brandDates": "27, 28 y 29 de agosto · Recife/PE",
+          "footer.navTitle": "Navegación",
+          "footer.venueTitle": "Lugar",
+          "footer.datesLabel": "Fechas",
+          "footer.datesValue": "27, 28 y 29 de agosto de 2026",
+          "footer.contactTitle": "Contacto",
+          "footer.copyright": "&copy; 2026 Congreso Internacional Endogineco — Recife/PE",
+          "footer.producedBy": "Producido por:",
+          "footer.developedBy": "Desarrollado por:",
+          "submission.title": "Confirmación de envío",
+          "submission.text":
+            "Declaro que he leído las bases de envío de trabajos científicos y que el material enviado cumple con las reglas descritas en ellas. Los trabajos que no sigan las instrucciones de las bases <strong>no serán aprobados</strong> por el Comité Evaluador.",
+          "submission.cancel": "Cancelar",
+          "submission.proceed": "Continuar al formulario",
+          "speakerBios": {
+            "Aleide Tavares": [
+              "Residencia en GO por la UPE;",
+              "Residencia en Reproducción Humana por el IMIP;",
+              "Máster en Ciencias de la Salud por la UFPE;",
+              "Título de especialista en sexología por la FEBRASGO",
+              "Actividades actuales:",
+              "Supervisora de la residencia médica de GO - HFPE;",
+              "Responsable del ambulatorio de climaterio HC-UFPE",
+              "Ginecóloga del espacio Trans - UFPE",
+            ],
+            "Andreissa Paiva": [
+              "Profesora Adjunta de Ginecología de la Universidad Federal de Ceará.",
+              "Doctora en Ginecología por la Universidad Federal de São Paulo (UNIFESP)",
+              "Uroginecología y Cirugía vaginal por la UNIFESP.",
+              "Miembro de la Comisión Nacional de Uroginecología de la FEBRASGO.",
+              "Título de especialista en endoscopia ginecológica por la FEBRASGO y SOBRACIL.",
+              "Preceptora del internado y residencia médica de Ginecología y obstetricia de la Maternidade Escola Assis Chateaubriand.",
+              "Preceptora de la residencia médica de Ginecología y obstetricia de la Escuela de salud pública de Ceará.",
+              "Coordinadora del fellowship en cirugías ginecológicas mínimamente invasivas del Instituto Salvata y Rede D'Or.",
+              "Vicepresidenta de la Sociedad Cearense de Ginecología y Obstetricia (SOCEGO).",
+            ],
+            "Carlos Godoy": [
+              "Cirujano Ginecológico graduado por la UNICAMP, con especialización en Oncología Pélvica y Cirugía Mínimamente Invasiva, con énfasis en el tratamiento de Endometriosis y Cáncer Ginecológico.",
+              "Máster en Ginecología por la UNICAMP.",
+              "Médico Líder del Núcleo de Endometriosis del Hospital São Luiz Campinas y del sector de Oncología Ginecológica del Hospital Vera Cruz Campinas. Proctor en Robótica por Intuitive.",
+            ],
+            "Iolanda Matias": [
+              "Ginecóloga oncológica del Hospital Santa Joana Recife",
+              "Cirugía Oncológica del HC/UFPE",
+              "Especialista en cirugía mínimamente invasiva por el Hospital Sírio Libanês",
+              "Cancerología Quirúrgica por el HCP",
+              "Máster en oncología ginecológica UPE",
+              "Doctora en biología molecular en el cáncer ginecológico - LIKA/UFPE",
+            ],
+            "Jardel Soares": [
+              "[Especialidades]",
+              "TOCOGINECOLOGÍA, ENDOSCOPIA GINECOLÓGICA.",
+              "[Formación]",
+              "Graduado en Medicina UNIVALLE/UFPE. Residencia Médica en Tocoginecología IMIP (Instituto Materno Infantil Fernando Figueira) - Recife - PE. Posgrado en Video-Histeroscopia por GYNELASER/FERTILITÉ - Brasília - DF. Posgrado en Videolaparoscopia UNICETREX/UNICEMEX - Brasília - DF. Curso Avanzado en Endometriosis Profunda - Santa Casa de Misericórdia - São Paulo - SP. Mentoría Cirujano de Élite - Dr. Marcelo Vieira - São Paulo. CADAVER LAB - Grupo Naveg - São Paulo. Fellowship en Cirugía Robótica - Hospital Santa Joana - Recife - PE (en curso).",
+              "[Sociedades]",
+              "Título de Especialista en Tocoginecología - AMB. Título de Especialista en Endoscopia Ginecológica - AMB. Miembro Titular de la Sociedad de Cirugía Mínimamente Invasiva y Robótica - SOBRACIL. Miembro Aspirante a la Presidencia de la SOBRACIL Capítulo Pernambuco. Miembro Titular de la FEBRASGO.",
+              "[Actuación actual]",
+              "Miembro del Grupo de Cirugía Mínimamente Invasiva - Hospital Santa Joana Recife - PE. Preceptor de la Residencia Médica del Hospital Barão de Lucena Recife. Director Médico de la Clínica Vida's - Recife - PE.",
+            ],
+            "Kathyane Lustosa": [
+              "Doctora y Máster en Cirugía por la Universidad Federal de Ceará",
+              "Ginecóloga formada por el HGF/CE con Título de especialista por la FEBRASGO en el área de actuación en Endoscopia ginecológica",
+              "Posgrado en Endometriosis y Ginecología Mínimamente Invasiva por el Hospital Sírio Libanês",
+              "Preceptora de la Residencia Médica en Ginecología y Obstetricia y en Endoscopia ginecológica de la ESP y del HGF",
+              "Coordinadora del Fellowship en Cirugías ginecológicas mínimamente invasivas del Instituto Salvata y Rede D'Or",
+              "Vicepresidenta Nordeste de la SOBRACIL",
+            ],
+            "Mariana Muniz": [
+              "Médica por la Universidad Federal de Campina Grande (UFCG)",
+              "Residencia Médica en Ginecología y Obstetricia por el Hospital Barão de Lucena (SES-PE)",
+              "Residencia Médica en Ginecología Oncológica por el Hospital das Clínicas (UFPE)",
+            ],
+            "Mauro Aguiar": [
+              "Máster en Ciencias de la Salud por la UFPE",
+              "Jefe del sector de endoscopia ginecológica del HC-UFPE",
+              "Vicedirector científico de la SOGOPE",
+              "Miembro de la cámara técnica de cirugía robótica del CREMEPE",
+            ],
+            "Melissandro Lacerda": [
+              "Médico Ginecólogo con Residencia Médica en Ginecología y Obstetricia",
+              "Especialización en Endoscopia Ginecológica por el IAMSPE São Paulo",
+              "Especialización en Reproducción Asistida por la Santa Casa de São Paulo",
+              "Posgrado en Cirugía Robótica por el Hospital Albert Einstein São Paulo",
+              "Director Médico de la Clínica Uterus en João Pessoa",
+            ],
+            "Mônica Zomer Kondo": [
+              "Médica formada por la Universidad del Sur de Santa Catarina en 2006.",
+              "En 2009 concluyó la residencia médica en Ginecología y Obstetricia por la Maternidade Darcy Vargas, Joinville, Santa Catarina.",
+              "Como formación complementaria, en 2008 realizó un curso de Ecografía en Ginecología y Obstetricia por Diagnosis – Centro de Diagnósticos por Imagen en Ribeirão Preto – SP.",
+              "En 2010 realizó los cursos de Videohisteroscopia Básico y Avanzado, de Videocolposcopia & LEEP & Láser y de Videolaparoscopia Ginecológica por Gynelaser – Núcleo de Ginecología Avanzada en Brasília.",
+              "Autora de varios artículos científicos publicados en revistas nacionales e internacionales y coautora de un libro sobre Videocirugía, ha presentado diversos trabajos en cursos y congresos.",
+              "También trabaja en la enseñanza del área de cirugía mínimamente invasiva, donde participa, junto con el Dr. William Kondo, en un curso para médicos de Entrenamiento Continuado en Laparoscopia Ginecológica, que desde 2014 ya ha capacitado a más de 60 profesionales de todo Brasil.",
+              "Participa como *faculty* en el IRCAD AMÉRICA LATINA en Barretos – SP.",
+              "Participa como *faculty* en la AAGL (Advancing Minimally Invasive Gynecology Worldwide).",
+              "Certificación para la inserción de implantes hormonales por ELMECO.",
+              "Miembro Titular de la SOBRACIL.",
+              "Actúa en el área de cirugía ginecológica mínimamente invasiva, con foco en tratamientos para endometriosis.",
+            ],
+          },
+          "sch.openCongress": `
+                <tr><td>08:00 - 08:15</td><td colspan="2" class="session-break"><strong>Acreditación</strong></td></tr>
+                <tr><td>08:15 - 08:30</td><td>Apertura</td><td class="speaker-name">Érica Batista <br />Edilberto Rocha <br />Jardel Soares <br />Iolanda Matias <br />Agostinho Machado Juliana Zaidan</td></tr>`,
+          "sch.friAudA": `
+                <tr><td colspan="3" class="session-header"><strong>08:30 - 09:50<br />(1 hora y<br />20 min)</strong><br />MESA 1 - Nerve-sparing (preservación nerviosa) en la Cirugía de Endometriosis<br />Presidente: Priscila Vieira - PE<br />Debatientes: Renato Barreto - SP, Melissandro Lacerda - PB, Anna Luiza Lobão - PB</td></tr>
+                <tr><td>08:30 - 09:00<br />(30 min)</td><td>¿Sabe por dónde pasan los principales nervios pélvicos? ¿Cuál es su importancia en la cirugía compleja de Endometriosis?</td><td class="speaker-name">Kathyane Lustosa - CE</td></tr>
+                <tr><td>09:00 - 09:20<br />(20 min)</td><td>¿Principales lesiones nerviosas en la Endometriosis? ¿Cuáles son los principales síntomas?</td><td class="speaker-name">Patrick Bellelis - SP</td></tr>
+                <tr><td>09:20 - 09:40<br />(20 min)</td><td>¿Toda lesión nerviosa por endometriosis debe ser operada?</td><td class="speaker-name">Raquel Magalhães - SP</td></tr>
+                <tr><td>09:40 - 09:50<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
+                <tr><td>09:50 - 10:20<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>10:20 - 11:40<br />(1 hora y<br />20 min)</strong><br />MESA 2 - Video Histeroscopia<br />Presidente: Helena Nagle - PE<br />Debatientes: Neidson Menezes - PE, Aurélio Costa - PE, Vera Sena - PE, Felipe Rocha - PE</td></tr>
+                <tr><td>10:20 - 10:30<br />(10 min)</td><td>Video Histeroscopia Ambulatoria: ¿hasta dónde llegar? ¿Cómo minimizar el temor?<br />¿Cómo disminuir el dolor?</td><td class="speaker-name">Mariana Vieira - SP</td></tr>
+                <tr><td>10:30 - 10:45<br />(15 min)</td><td>Hiperplasia Endometrial y Cáncer de Endometrio. ¿Aún se puede ser conservador? ¿Hasta cuándo?</td><td class="speaker-name">Yole Minervino - PB</td></tr>
+                <tr><td>10:45 - 11:00<br />(15 min)</td><td>Usando la Histeroscopia para el tratamiento del SUA (sangrado uterino anormal).<br />¿Dónde se aplica? ¿Cuál es el límite?</td><td class="speaker-name">Maria Roma - PE</td></tr>
+                <tr><td>11:00 - 11:15<br />(15 min)</td><td>¿Cómo minimizar las complicaciones en las Histeroscopias y, si ocurren, cómo manejarlas?</td><td class="speaker-name">Ana Carolina Serafim - PE</td></tr>
+                <tr><td>11:15 - 11:30<br />(15 min)</td><td>Los desafíos de la retención de restos ovulares — ¿Cómo puede ayudar la Histeroscopia?</td><td></td></tr>
+                <tr><td>11:30 - 11:40<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
+                <tr><td>11:40 - 12:00<br />(20 min)</td><td>SIMPOSIO - La reposición de Hierro - Ítem fundamental para una cirugía segura</td><td class="speaker-name">Jardel Soares - PE</td></tr>
+                <tr><td>12:00 - 13:30<br />(1 hora y<br />30 min)</td><td colspan="2" class="session-break"><strong>DESCANSO LIBRE</strong></td></tr>
+                <tr><td colspan="3" class="session-podcast">🎙️ <strong>PODCAST</strong></td></tr>
+                <tr><td>13:30 - 15:30<br />(2 horas)</td><td colspan="2" class="session-live"><strong>CIRUGÍAS EN VIVO Presidente: Mauro Aguiar - PE</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife - PE <br />Conducción del caso: Mari Cecília - PE <br />Kathyane Lustosa CE - cirujana<br /> <br />* Hospital Barão de Lucena - PE<br />Conducción del caso: Carolina Feitosa - PE <br />Patrick Bellelis - SP / <br />Mariana Vieira - SP<br /><br />* Hospital das Nações CWB <br />Mônica Zomer PR <br />William Kondo PR<br /><br />* Hospital Campinas - SP<br />Carlos Godoy - SP</div></td></tr>
+                <tr><td>15:30 - 16:00<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>16:00 - 16:50<br />(50 min)</strong><br />MESA 3 - Miomas Uterinos<br />Presidente: Mariana Santiago - PE<br />Debatientes: Jessica Cesario - PE, Rafael Alves - PE, Alisson Chianca - MA, Lilian Mendes - CE</td></tr>
+                <tr><td>16:00 - 16:10<br />(10 min)</td><td>Estrategias para disminuir el sangrado en las miomectomías — ¿cuál es mi estrategia?</td><td class="speaker-name">Melissandro Lacerda - PB</td></tr>
+                <tr><td>16:10 - 16:20<br />(10 min)</td><td>Extracción de miomas — ¿existe la mejor técnica?</td><td class="speaker-name">Mauro Aguiar - PE</td></tr>
+                <tr><td>16:20 - 16:30<br />(10 min)</td><td>Conversión quirúrgica en miomectomía — ¿falla en la indicación o decisión correcta?</td><td class="speaker-name">Ana Luiza Lobão - PB</td></tr>
+                <tr><td>16:30 - 16:50<br />(20 min)</td><td>Miomectomía — ¿cuál es la mejor incisión, el mejor punto y el mejor hilo para una cirugía refinada, rápida y sin sangrado?</td><td class="speaker-name">Andreissa Paiva - CE</td></tr>
+                <tr><td>16:50 - 17:15<br />(25 min)</td><td>Conferencia - ¿Cómo puede la IA influir en su conducta desde el consultorio al postoperatorio?<br />Presidente: Edilberto Rocha - PE</td><td class="speaker-name">Jardel Soares - PE</td></tr>
+                <tr><td>17:15 - 17:25<br />(10 min)</td><td>Complicaciones en cirugías mínimamente invasivas — ¿cómo debo conducir?</td><td class="speaker-name">Giuliano Borrelli - SP</td></tr>
+                <tr><td>17:25 - 18:05<br />(40 min)</td><td>TALK SHOW - &quot;La jornada de la paciente con endometriosis&quot;<br />Cómo tener un consultorio de éxito. Coordinadora: Mariana Muniz</td><td class="speaker-name">Rosaura Almeida - PE, Marcos Saturnino - PE, Isaura Vieira - DF<br />Urólogo <br />Kathyane Lustosa - CE, Mayara Macedo - PE, Pericles Oliveira - PB, Psicólogo</td></tr>
+                <tr><td colspan="3" class="session-break"><strong>Ceremonia de apertura</strong></td></tr>`,
+          "sch.friAudB": `
+                <tr><td colspan="3" class="session-header"><strong>08:25 - 10:05<br />(1 hora y<br />40 min)</strong><br />MESA 1 - En mi consultorio<br />Presidente: Simone Carvalho - PE <br />Debatientes:</td></tr>
+                <tr><td>08:25 - 08:45 <br />(20 min)</td><td>Climaterio y Menopausia en la paciente con Endometriosis. ¿Cómo conduzco caso por caso?</td><td class="speaker-name">Priscila Vieira - PE</td></tr>
+                <tr><td>08:45 - 09:05<br />(20 min)</td><td>Métodos de diagnóstico para endometriosis — ¿qué tenemos ya? ¿Cuáles son las nuevas perspectivas?</td><td class="speaker-name">Cicilia Pontes - PE</td></tr>
+                <tr><td>09:05 - 9:25 <br />(20 min)</td><td>Endometriosis en la adolescencia: ¿cómo la conduzco? ¿Cómo evitar el exceso de cirugías?</td><td class="speaker-name">Lilia Mendes - CE</td></tr>
+                <tr><td>09:25 - 09:45<br />(20 min)</td><td>Dolor en la relación sexual, vaginismo, dificultades de relación como secuela de la endometriosis. ¿Cómo conducir?</td><td class="speaker-name">Aleite Tavares - PE</td></tr>
+                <tr><td>09:45 - 09:55<br />(10 min)</td><td>Impactos negativos de la endometriosis en la sociedad. ¿Cómo podemos revertir esto?</td><td class="speaker-name">Iolanda Matias - PE</td></tr>
+                <tr><td>09:55 - 10:05<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
+                <tr><td>10:05 - 10:35 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>10:35 - 12:15<br />(1 hora y<br />40 min)</strong><br />VIDEOS SHOW CASES - Videos semi-editados</td></tr>
+                <tr><td>10:35 - 10:55<br />(20 min)</td><td>Cómo el uso de la fluorescencia me ayudó en este caso</td><td class="speaker-name">Guilherme Zanluchi - PE</td></tr>
+                <tr><td>10:55 - 11:15<br />(20 min)</td><td>Tuve que cambiar mi estrategia en el tratamiento de esa enfermedad intestinal</td><td class="speaker-name">Claudia Joaquim - RJ</td></tr>
+                <tr><td>11:15 - 11:35<br />(20 min)</td><td>Cómo traté esa lesión ureteral de endometriosis</td><td class="speaker-name">Rogerson Andrade - PE</td></tr>
+                <tr><td>11:35 - 11:55<br />(20 min)</td><td>Mi estrategia para esa miomectomía difícil</td><td class="speaker-name">Alisson Chianca - MA</td></tr>
+                <tr><td>11:55 - 12:15<br />(20 min)</td><td>Cerclaje Robótico. ¿Cuándo? ¿Tips y trucos?</td><td class="speaker-name">Patrick Bellelis - SP</td></tr>
+                <tr><td>12:15 - 12:35<br />(20 min)</td><td>Istmocele — ¿tratar por vía laparoscópica, robótica o histeroscopia?</td><td class="speaker-name">Mariana Vieira - SP</td></tr>
+                <tr><td>12:35 - 12:50<br />(15 min)</td><td>SIMPOSIO - La reposición de Hierro - Ítem fundamental para una cirugía segura</td><td class="speaker-name">Jardel Soares - PE</td></tr>
+                <tr><td>12:50 - 13:30<br />(40 min)</td><td colspan="2" class="session-break"><strong>DESCANSO LIBRE</strong></td></tr>
+                <tr><td colspan="3" class="session-podcast">🎙️ <strong>PODCAST</strong></td></tr>
+                <tr><td>13:30 - 15:30<br />(2 horas)</td><td colspan="2" class="session-live"><strong>CIRUGÍAS EN VIVO</strong></td></tr>
+                <tr><td>15:30 - 16:00<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>16:00 - 17:10<br />(1 hora y<br />10 min)</strong><br />MESA 2 - Imagen<br />Presidente: Taciana Morais</td></tr>
+                <tr><td>16:00 - 16:30<br />(30 min)</td><td>CROSS FIRE - Presente sus superioridades</td><td></td></tr>
+                <tr><td></td><td>¿Qué no puede faltar en la ecografía de mapeo de la endometriosis?<br />¿Qué se ha podido mejorar con la tecnología?</td><td class="speaker-name">Penélope Melo - PE</td></tr>
+                <tr><td></td><td>¿Qué no puede faltar en la resonancia para el cribado de endometriosis?</td><td class="speaker-name">Rafaela Agonis - BA</td></tr>
+                <tr><td>16:30 - 16:45<br />(15 min)</td><td>¿Cómo la reconstrucción 3D vino a dar apoyo al cirujano? Te lo muestro en la práctica</td><td class="speaker-name">Italo Cruz - PE</td></tr>
+                <tr><td>16:45 - 17:00<br />(15 min)</td><td>¿La IA sustituirá al humano en el diagnóstico radiológico de la endometriosis?</td><td class="speaker-name">Nadja Rolim - PE</td></tr>
+                <tr><td>17:00 - 17:10<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
+                <tr><td>17:10 - 17:25<br />(15 min)</td><td>SIMPOSIO PATROCINADO BAYER - Tratamiento Clínico de la Endometriosis según el protocolo de la ACOH 2026</td><td class="speaker-name">Jardel Soares - PE</td></tr>
+                <tr><td>17:15 - 18:00<br />(45 min)</td><td>Tomando decisiones en el tratamiento quirúrgico en ginecología<br />¡USTED DECIDE!</td><td></td></tr>
+                <tr><td></td><td>Caso Clínico 1 - TUMOR ANEXIAL</td><td></td></tr>
+                <tr><td></td><td>Caso Clínico 2 - PROLAPSO + INCONTINENCIA URINARIA</td><td class="speaker-name">Sara Arcanjo - PE</td></tr>
+                <tr><td></td><td>Caso Clínico 3 - ADENOMIOSIS</td><td class="speaker-name">Raquel Magalhães - PE</td></tr>
+                <tr><td>18:00</td><td colspan="2" class="session-break"><strong>Cierre</strong></td></tr>
+                <tr><td>Ceremonia de apertura</td><td colspan="2" class="session-live"><strong>CONTINUACIÓN</strong></td></tr>`,
+          "sch.satAudA": `
+                <tr><td>08:00 - 10:00 (2 horas)</td><td colspan="2" class="session-live"><strong>CIRUGÍAS EN VIVO Presidente: Iolanda Matias - PE</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife - PE<br />Conducción del caso: Sidraiton Melo - PE <br />Raquel Magalhães SP<br /><br />* Hospital Barão de Lucena - PE<br />Conducción del caso: Eveline Martins - PE <br />Sara Arcanjo - PE /<br />Andreissa Paiva - CE</div></td></tr>
+                <tr><td>10:00 - 10:30 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>10:30 - 10:50 (20 min)</td><td>Conferencia: Cirugía Robótica en la Ginecología y otras tecnologías asociadas —<br />¿Qué beneficios ya tenemos comprobados?</td><td class="speaker-name">Jordanna Diniz - DF<br />*Online*</td></tr>
+                <tr><td>10:50 - 11:10 (20 min)</td><td>Conferencia: Protocolo ERAS - ¿Se aplica incluso en cirugías de alta complejidad?</td><td class="speaker-name">Carlos Godoy - SP</td></tr>
+                <tr><td>11:10 - 11:25 (15 min)</td><td>Conferencia: Manejo clínico del dolor - ¿Qué hay de nuevo? ¿Cannabis?<br />¿Y en el manejo avanzado del dolor qué hay de nuevo?</td><td class="speaker-name">Luiz Severo - PE</td></tr>
+                <tr><td colspan="3" class="session-header"><strong>11:25 - 12:35<br />(1 hora y<br />10 min)</strong><br />MESA 1 - Infertilidad y Endometriosis <br />Presidente:<br />Debatientes:</td></tr>
+                <tr><td>11:25 - 11:40 <br />(15 min)</td><td>¿Qué hacer primero en la paciente con endometriosis: FIV antes y después operar, u operar y después la FIV?</td><td class="speaker-name">Patrick Bellelis - SP</td></tr>
+                <tr><td>11:40 - 11:55<br />(15 min)</td><td>En la investigación histeroscópica de la mujer infértil: ¿qué debo buscar? ¿Cómo tratar?</td><td class="speaker-name">Altina Castelo Branco - PE</td></tr>
+                <tr><td>11:55 - 12:10<br />(15 min)</td><td>El desafío del manejo de las malformaciones uterinas: del diagnóstico a la elección de la vía ideal de abordaje. ¿Cuál es la mejor estrategia quirúrgica?</td><td class="speaker-name">Mariana Vieira - SP</td></tr>
+                <tr><td>12:10 - 12:25<br />(15 min)</td><td>De la implantación al parto — ¿cambia algo en el seguimiento de la mujer que cursa con endometriosis e infertilidad?</td><td class="speaker-name">Edilberto Rocha - PE</td></tr>
+                <tr><td>12:25 - 12:35<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
+                <tr><td>12:35 - 12:55<br />(20 min)</td><td colspan="2" class="session-break"><strong>DESCANSO</strong></td></tr>
+                <tr><td>12:55 - 13:15<br />(20 min)</td><td>Lecciones para la vida: La supervivencia del cirujano videolaparoscópico y robótico — de la ergonomía a la salud mental</td><td class="speaker-name">Fernando Heredia - Chile <br />*Online*</td></tr>
+                <tr><td>13:15 - 13:35<br />(20 min)</td><td>Lecciones para la vida: Decidir es más difícil que operar</td><td class="speaker-name">Ana Sierra - México <br />*Online*</td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:35 - 14:25 (50 min)</strong><br />MESA 2 - Coloproctología en el panel<br />Presidente: Marcos Saturnino - PE<br />Debatientes:</td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:35 - 14:05 (30 min)</strong><br />TRIPLE CROSS FIRE o el TRIELO</td></tr>
+                <tr><td></td><td>Shaving</td><td class="speaker-name">Paulo Mozart - PE</td></tr>
+                <tr><td></td><td>Discoide y doble discoide</td><td class="speaker-name">Claudia Joaquim - RJ</td></tr>
+                <tr><td></td><td>Resección segmentaria</td><td class="speaker-name">Renato Leal - SP</td></tr>
+                <tr><td>14:05 - 14:15 (10 min)</td><td>Fístulas intestinales — ¿cómo conducir?</td><td class="speaker-name">Cláudia Joaquim - RJ</td></tr>
+                <tr><td>14:15 - 14:25 (10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
+                <tr><td>14:25 - 14:35</td><td colspan="2" class="session-break"><strong>DESCANSO</strong></td></tr>
+                <tr><td>14:35 - 16:15<br />(1 hora y 40 min)</td><td colspan="2" class="session-live"><strong>CIRUGÍAS EN VIVO</strong></td></tr>
+                <tr><td>16:15</td><td colspan="2" class="session-break"><strong>Cierre y Feijoada en la Piscina</strong></td></tr>`,
+          "sch.satAudB": `
+                <tr><td>08:00 - 10:00</td><td colspan="2" class="session-live"><strong>CIRUGÍAS EN VIVO Presidente: Iolanda Matias</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife PE - Raquel Magalhães - SP<br /><br />* Hospital Barão de Lucena - PE <br />Sara Arcanjo - CE / <br />Andreissa Paiva - CE</div></td></tr>
+                <tr><td>10:00 - 10:30 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>10:30 - 11:10<br />(40 min)</td><td>Urología en acción<br />Presidente: Guilherme Lima - PE<br />Debatientes: Evandilson Guenes - PE, Rafael Oliveira - PE, Gilberto Pagnosin - PE</td><td></td></tr>
+                <tr><td>10:30 - 10:45<br />(15 min)</td><td>Tratamiento de la endometriosis ureteral — en pelvis congeladas, ¿existe una mejor técnica?<br />¿Existe superioridad en la vía de abordaje?</td><td class="speaker-name">Antônio César Cruz - PE</td></tr>
+                <tr><td>10:45 - 11:00<br />(15 min)</td><td>Lesión vesical — límites de la resección. ¿Existen repercusiones a largo plazo?</td><td class="speaker-name">Rogerson Camargo - PE</td></tr>
+                <tr><td>11:00 - 11:10 <br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>11:10 - 11:40 (30 min)</strong><br />Conferencias Presidente: Valter Ivo Paiva PE</td></tr>
+                <tr><td>11:10 - 11:25 <br />(15 min)</td><td>Conferencia: Cuándo el dolor pélvico es mucho más que la endometriosis</td><td class="speaker-name">Giuliano Borrelli - SP</td></tr>
+                <tr><td>11:25 - 11:40 (15 min)</td><td>Conferencia: PBM (Patient Blood Management) — ¿Cómo preparar al paciente para la cirugía? ¿Hasta cuándo tolerar la anemia? ¿Cómo optimizar sus resultados quirúrgicos?</td><td class="speaker-name">Dahra Telles - PE</td></tr>
+                <tr><td colspan="3" class="session-header"><strong>11:40 - 12:30<br />(50 min)</strong><br />MESA 1 - La multidisciplinariedad<br />Presidente: Juliana Zaidan - PE<br />Debatientes: Natália Fernandes - PE, Rita Santos - PE, Leonardo Lima - PE, Shirley Portela - PE</td></tr>
+                <tr><td>11:40 - 11:50<br />(10 min)</td><td>¿La mejor dieta para la paciente con endometriosis? ¿Hay espacio para suplementos?</td><td class="speaker-name">Nara Parente - CE</td></tr>
+                <tr><td>11:50 - 12:00<br />(10 min)</td><td>Fisioterapia pélvica antes y después de la cirugía. ¿Qué resultados tenemos comprobados?</td><td class="speaker-name">Isabella Frota - CE</td></tr>
+                <tr><td>12:00 - 12:10<br />(10 min)</td><td>La acupuntura como tratamiento adyuvante en las patologías ginecológicas.</td><td class="speaker-name">Isaura Vieira - DF</td></tr>
+                <tr><td>12:10 - 12:20<br />(10 min)</td><td>Los impactos de la actividad física en el tratamiento de la endometriosis.<br />¿Cuál es el mejor ejercicio?</td><td></td></tr>
+                <tr><td>12:20 - 12:30<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
+                <tr><td>12:30 - 13:00<br />(1 hora y 10 min)</td><td colspan="2" class="session-break"><strong>DESCANSO (SIMPOSIO)</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:40 - 14:20<br />(40 min)</strong><br />Uroginecología en Foco<br />Presidente: Eveline Martins - PE<br />Debatientes: Sônia Lavínia - PE, Vanessa Freitas - PE, Arthur Rangel - PE, Guilherme Zanluchi - SP</td></tr>
+                <tr><td>13:40 - 13:50<br />(10 min)</td><td>Estudio urodinámico — ¿cuándo solicitar? ¿cómo interpretar?</td><td class="speaker-name">Mônica Diniz - PE</td></tr>
+                <tr><td>13:50 - 14:00<br />(10 min)</td><td>Tratamiento de las distopias genitales — ¿cuál es la mejor técnica? ¿Y los resultados? Te lo muestro en la práctica</td><td class="speaker-name">Sara Arcanjo - CE</td></tr>
+                <tr><td>14:00 - 14:10<br />(10 min)</td><td>Incontinencia urinaria — ¿cómo conducir? ¿cuál es el momento de operar? Te lo mostraré en la práctica</td><td class="speaker-name">Andreissa Paiva - CE</td></tr>
+                <tr><td>14:10 - 14:20<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
+                <tr><td>14:20 - 14:35<br />(15 min)</td><td colspan="2" class="session-break"><strong>DESCANSO</strong></td></tr>
+                <tr><td>14:35 - 16:15<br />(1 hora y 40 min)</td><td colspan="2" class="session-live"><strong>CIRUGÍAS EN VIVO Coordinador: Jardel Soares - PE</strong><div style='font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45'>* Hospital Santa Joana Recife - PE Giuliano Borrelli - SP<br /><br />* Hospital Barão de Lucena - PE<br />Fabio Ohara - SP <br /><br />* BOGOTÁ - Colombia <br />Santiago Machicado</div></td></tr>
+                <tr><td>16:15</td><td colspan="2" class="session-break"><strong>Cierre y Feijoada en la Piscina</strong></td></tr>`,
+          "sch.preVideocirurgia": `
+                <tr><td>13:00-13:15</td><td colspan="2" class="session-break"><strong>Apertura</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:30 - 17:30</strong><br />AUDITORIO A - La Videocirugía en Oncoginecología<br />Coordinación: Iolanda Matias - PE</td></tr>
+                <tr><td></td><td>Histerectomías laparoscópicas<br />Signos clínicos y pacientes de riesgo oncológico</td><td></td></tr>
+                <tr><td></td><td>Endometriosis malignizada — cuándo sospechar</td><td></td></tr>
+                <tr><td></td><td>Uso de la luminiscencia y su indicación</td><td></td></tr>
+                <tr><td>15:30 - 16:00</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td></td><td>Coloproctología – ¿Cuándo sospechar enfermedad maligna y qué hacer?</td><td></td></tr>
+                <tr><td></td><td>Laboratorio preoperatorio — marcadores en oncología</td><td></td></tr>
+                <tr><td></td><td>Ecografía preoperatoria – Clasificación de riesgo para cáncer de ovario</td><td></td></tr>
+                <tr><td></td><td>Resonancia pélvica y las señales de alerta</td><td></td></tr>
+                <tr><td></td><td>Tratamientos oncológicos y sus impactos en el campo quirúrgico</td><td></td></tr>`,
+          "sch.preNutricao": `
+                <tr><td>13:00-13:15</td><td colspan="2" class="session-break"><strong>Apertura</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:30 - 17:30</strong><br />AUDITORIO B - Curso de Nutrición para pacientes con Endometriosis <br />Coordinación: Rosaura Santos - PE</td></tr>
+                <tr><td>13:30 - 13:40</td><td colspan="2" class="session-break"><strong>Apertura y presentación - Panorama de la endometriosis e impacto nutricional.<br />Moderadora: Nut. Rosaura</strong></td></tr>
+                <tr><td>13:40 - 14:20</td><td>CLASE 1</td><td class="speaker-name">Nut. Natalia Fernandes</td></tr>
+                <tr><td></td><td>Evidencias sobre dieta antiinflamatoria y síntomas.</td><td></td></tr>
+                <tr><td colspan="3" class="session-break"><strong>Discusión de casos clínicos: pacientes con dolor pélvico y alteraciones alimentarias.</strong></td></tr>
+                <tr><td>14:20 - 15:00</td><td>CLASE 2</td><td class="speaker-name">Nut. Gil Barbieri</td></tr>
+                <tr><td></td><td>Ambiente metabólico y éxito reproductivo</td><td></td></tr>
+                <tr><td></td><td>Relación entre resistencia insulínica, obesidad y fertilidad.</td><td></td></tr>
+                <tr><td></td><td>Estrategias nutricionales para optimizar el ambiente metabólico.</td><td></td></tr>
+                <tr><td></td><td>Casos clínicos: infertilidad asociada al síndrome metabólico.</td><td></td></tr>
+                <tr><td>15:00 a 15:40</td><td>CLASE 3</td><td class="speaker-name">Nut. Adriana Soares</td></tr>
+                <tr><td></td><td>Nutrición modulando la inflamación</td><td></td></tr>
+                <tr><td></td><td>Nutrientes y compuestos bioactivos con acción antiinflamatoria.</td><td></td></tr>
+                <tr><td></td><td>Papel de los ácidos grasos omega-3, antioxidantes y fibras.</td><td></td></tr>
+                <tr><td></td><td>Casos clínicos: pacientes con endometriosis e inflamación sistémica.</td><td></td></tr>
+                <tr><td>15:40 - 16:00</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>16:00 a 16:30</td><td>CLASE 4</td><td class="speaker-name">Nut. Nara Parente</td></tr>
+                <tr><td></td><td>Protocolo Nutricional Perioperatorio</td><td></td></tr>
+                <tr><td></td><td>Preparación nutricional para cirugía de endometriosis.</td><td></td></tr>
+                <tr><td></td><td>Estrategias para reducir complicaciones y acelerar la recuperación.</td><td></td></tr>
+                <tr><td></td><td>Caso clínico: pacientes en pre y postoperatorio.</td><td></td></tr>
+                <tr><td>16:30 - 17:00</td><td>CLASE 5</td><td class="speaker-name">Nut. Lais Sousa</td></tr>
+                <tr><td></td><td>Dolores pélvicos y abordaje nutricional</td><td></td></tr>
+                <tr><td></td><td>Relación entre dolor crónico y dieta.</td><td></td></tr>
+                <tr><td></td><td>Intervenciones nutricionales para mejorar la calidad de vida.</td><td></td></tr>
+                <tr><td></td><td>Casos clínicos: pacientes con dolor pélvico refractario.</td><td></td></tr>
+                <tr><td>17:00 - 17:30</td><td>CLASE 6</td><td class="speaker-name">Farmacéutica: Catarina (Roval)</td></tr>
+                <tr><td></td><td>Suplementación farmacoterápica en las diferentes fases de la Endometriosis</td><td></td></tr>
+                <tr><td></td><td>Suplementos con evidencia científica (vitamina D, antioxidantes, probióticos).</td><td></td></tr>
+                <tr><td></td><td>Ajustes según la fase de la enfermedad y el tratamiento médico.</td><td></td></tr>
+                <tr><td></td><td>Práctica: Elaborando una prescripción asertiva</td><td></td></tr>`,
+          "sch.preUsg": `
+                <tr><td>13:00-13:15</td><td colspan="2" class="session-break"><strong>Apertura</strong></td></tr>
+                <tr><td colspan="3" class="session-header"><strong>13:15 - 17:00</strong><br />AUDITORIO C - Curso de Ecografía de Mapeo de Endometriosis<br />Coordinación: MEDERE (Cecília Pontes - PE y Penélope Melo - PE)</td></tr>
+                <tr><td>13:30 - 14:30</td><td>Bloque 1 - Fundamentos &amp; Anatomía Aplicada</td><td></td></tr>
+                <tr><td></td><td>La &quot;Cara&quot; de la enfermedad en los exámenes radiológicos US y RM</td><td></td></tr>
+                <tr><td></td><td>Compartimentalización de la pelvis: cómo se presenta y se propaga la enfermedad.</td><td></td></tr>
+                <tr><td></td><td>Compartimento anterior: hablando de la vejiga — cuándo el hallazgo de imagen enciende la alerta para cambiar la estrategia o llamar al urólogo.</td><td></td></tr>
+                <tr><td></td><td>Compartimento posterior: espacio retrocervical e intestino. Desvelando la pelvis antes de abrir: cómo podemos ayudar al cirujano.</td><td></td></tr>
+                <tr><td></td><td>Compartimento lateral: cuándo la lesión infiltra más de lo esperado</td><td></td></tr>
+                <tr><td>14:30 - 15:30</td><td>Bloque 2 - Razonamiento clínico y práctica de consultorio</td><td></td></tr>
+                <tr><td colspan="3" class="session-break"><strong>Correlación práctica (US vs RM): Discusión interactiva de casos reales centrados en dolor, infertilidad y planificación quirúrgica. Dónde concuerdan los métodos, dónde discrepan y cómo eso cambia su conducta.</strong></td></tr>
+                <tr><td></td><td>&quot;El informe traducido&quot;: cómo interpretar el informe radiológico, comprendiendo los hallazgos y cómo evitar el hiperdiagnóstico</td><td></td></tr>
+                <tr><td>15:30 - 16:00</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>16:00 - 17:00</td><td>Bloque 3 - Fronteras, infertilidad y el futuro de la imagen</td><td></td></tr>
+                <tr><td></td><td>Evaluación de trompas y cavidad por US</td><td></td></tr>
+                <tr><td></td><td>Desafíos avanzados:</td><td></td></tr>
+                <tr><td></td><td>Cómo evaluar lesiones en sitios atípicos (diafragma y pared)</td><td></td></tr>
+                <tr><td></td><td>Las trampas del mapeo postoperatorio (fibrosis vs recidiva vs lesión residual) y el impacto de los bloqueos hormonales en la lectura de los exámenes.</td><td></td></tr>
+                <tr><td></td><td>Lo nuevo en la literatura mundial: las evidencias científicas y directrices internacionales más recientes que están cambiando la conducta en la endometriosis profunda.</td><td></td></tr>`,
+          "sch.preSutura": `
+                <tr><td colspan="3" class="session-header"><strong>12:30 - 19:00</strong><br />FOYER - Curso de Sutura Dry Lab en sutura endoscópica <br />Coordinación: Guilherme Zanluchi - SP</td></tr>
+                <tr><td>12:30 - 13:00</td><td>Reglas básicas de posición de aguja e hilo - Nomenclatura y sistematización de aguja</td><td class="speaker-name">profesor 1</td></tr>
+                <tr><td>13:00 - 13:30</td><td>Teoría del punto perfecto y paso de aguja</td><td class="speaker-name">profesor 2</td></tr>
+                <tr><td>13:30-14:00</td><td>Aplicación práctica de sutura en videos: cierre de cúpula vaginal y miomectomías</td><td class="speaker-name">profesor 3</td></tr>
+                <tr><td>14:00 - 15:30</td><td>Estación práctica</td><td></td></tr>
+                <tr><td>14:00-14:30</td><td>Sistematización de 1.er grado y despertar las manos</td><td></td></tr>
+                <tr><td>14:30-15:00</td><td>Sistematizaciones y cruz de verificación</td><td></td></tr>
+                <tr><td>15:00 -15:30</td><td>El punto perfecto</td><td></td></tr>
+                <tr><td>15:30 - 16:00</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
+                <tr><td>16:00 - 16:30</td><td>Teoría de los nudos: nudo cuadrado y semillaves</td><td class="speaker-name">profesor 1</td></tr>
+                <tr><td>16:30 - 17:30</td><td>Los nudos de mi preferencia - Aplicación de los nudos en cada tipo de tejido y cirugía</td><td class="speaker-name">profesor 2</td></tr>
+                <tr><td>17:30 - 19:00</td><td>Estación práctica</td><td class="speaker-name">profesor 3</td></tr>
+                <tr><td>17:30 - 18:00</td><td>Triple doble - monomanual y bimanual</td><td></td></tr>
+                <tr><td>18:00 - 18:30</td><td>Secuencia de semillaves bloqueantes</td><td></td></tr>
+                <tr><td>18:30 - 19:00</td><td>Competición - Premio</td><td></td></tr>`,
+        },
+      };
+
+      const i18nElements = document.querySelectorAll("[data-i18n]");
+      const originalContent = {};
+      i18nElements.forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (key in originalContent) return;
+        originalContent[key] =
+          el.tagName === "INPUT" || el.tagName === "TEXTAREA"
+            ? el.placeholder
+            : el.innerHTML;
+      });
+
+      function applyLanguage(lang) {
+        const dict = translations[lang] || {};
+        i18nElements.forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          const value = key in dict ? dict[key] : originalContent[key];
+          if (value == null) return;
+          if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            el.placeholder = value;
+          } else {
+            el.innerHTML = value;
+          }
+        });
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.lang = lang === "pt" ? "pt-BR" : lang;
+        if (
+          speakerModal &&
+          speakerModal.classList.contains("show") &&
+          lastSpeakerCard
+        ) {
+          openSpeakerModal(lastSpeakerCard);
+        }
+      }
+
+      const languageSelect = document.getElementById("language-select");
+      const storedLang = localStorage.getItem("selectedLanguage") || "pt";
+      if (languageSelect) {
+        languageSelect.value = storedLang;
+        languageSelect.addEventListener("change", () => {
+          const lang = languageSelect.value;
+          localStorage.setItem("selectedLanguage", lang);
+          applyLanguage(lang);
+        });
+      }
+      applyLanguage(storedLang);
     </script>
   </body>
 </html>

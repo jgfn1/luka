@@ -1166,16 +1166,37 @@
       </button>
 
       <ul id="nav-menu">
-        <li><a href="#top">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#comissao">Comissão</a></li>
-        <li><a href="#programacao">Programação</a></li>
-        <li><a href="#palestrantes">Palestrantes</a></li>
-        <li><a href="#local">Local</a></li>
-        <li><a href="#fotos">Fotos</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="#top" data-i18n="nav.home">Início</a></li>
+        <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#comissao" data-i18n="nav.committee">Comissão</a></li>
+        <li><a href="#programacao" data-i18n="nav.schedule">Programação</a></li>
+        <li><a href="#palestrantes" data-i18n="nav.speakers">Palestrantes</a></li>
+        <li><a href="#local" data-i18n="nav.venue">Local</a></li>
+        <li><a href="#fotos" data-i18n="nav.photos">Fotos</a></li>
+        <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
         <li>
-          <a class="nav-cta" href="#inscricao">Inscrições encerradas</a>
+          <a class="nav-cta" href="#inscricao" data-i18n="nav.cta"
+            >Inscrições encerradas</a
+          >
+        </li>
+        <li class="nav-lang-selector">
+          <select
+            id="language-select"
+            aria-label="Selecione o idioma"
+            style="
+              background: transparent;
+              color: inherit;
+              border: 1px solid currentColor;
+              border-radius: 6px;
+              padding: 4px 8px;
+              font: inherit;
+              cursor: pointer;
+            "
+          >
+            <option value="pt">Português</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+          </select>
         </li>
       </ul>
     </nav>
@@ -1184,15 +1205,19 @@
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
-        <h1><span class="accent">II Simpósio</span> Oncoderma Recife</h1>
-        <p>
+        <h1 data-i18n="hero.title">
+          <span class="accent">II Simpósio</span> Oncoderma Recife
+        </h1>
+        <p data-i18n="hero.subtitle">
           <strong>5 de junho de 2026</strong> · Sexta-feira · 8h<br />
           Auditório Hospital Santa Joana Recife — Graças
         </p>
-        <a class="btn-primary" href="#inscricao">Inscrições encerradas</a>
+        <a class="btn-primary" href="#inscricao" data-i18n="hero.cta"
+          >Inscrições encerradas</a
+        >
 
         <div class="hero-logos-section">
-          <h3>Realização</h3>
+          <h3 data-i18n="hero.realization">Realização</h3>
           <div class="hero-logo-grid" style="grid-template-columns: repeat(3, 1fr)">
             <img
               src="organizers/Logo Isep Fundo Transparente (atual).png"
@@ -1207,7 +1232,9 @@
               alt="Rede Américas"
             />
           </div>
-          <h3 style="margin-top: 1rem">Apoio institucional</h3>
+          <h3 style="margin-top: 1rem" data-i18n="hero.support">
+            Apoio institucional
+          </h3>
           <div class="hero-logo-grid" style="grid-template-columns: 1fr">
             <img
               src="organizers/LOGO CLUPE DA PELE DE PE  (3).png"
@@ -1220,8 +1247,8 @@
 
     <section id="sobre" class="fade-in">
       <div class="container">
-        <h2>Sobre o evento</h2>
-        <p>
+        <h2 data-i18n="about.title">Sobre o evento</h2>
+        <p data-i18n="about.intro">
           O <strong>Hospital Santa Joana Recife</strong> e o
           <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong>, na
           condição de promotores do evento, ressaltam que o principal objetivo
@@ -1229,7 +1256,7 @@
           da <strong>oncologia cutânea</strong>, com apoio institucional da
           <strong>Clínica de Pele</strong>.
         </p>
-        <p style="margin-top: 1.25rem">
+        <p style="margin-top: 1.25rem" data-i18n="about.details">
           <strong>Modalidade do evento:</strong> aberto para todas as
           instituições.<br />
           <strong>Número de participantes:</strong> 70
@@ -1237,7 +1264,7 @@
 
         <div class="orgs-strip">
           <div>
-            <h3>Realização</h3>
+            <h3 data-i18n="hero.realization">Realização</h3>
             <img
               src="organizers/Logo Isep Fundo Transparente (atual).png"
               alt="ISEP"
@@ -1254,7 +1281,7 @@
             />
           </div>
           <div>
-            <h3>Apoio institucional</h3>
+            <h3 data-i18n="hero.support">Apoio institucional</h3>
             <img
               src="organizers/LOGO CLUPE DA PELE DE PE  (3).png"
               alt="Clínica de Pele"
@@ -1266,23 +1293,27 @@
 
     <section id="countdown-section" class="fade-in">
       <div class="container">
-        <h2>Contagem regressiva</h2>
+        <h2 data-i18n="countdown.title">Contagem regressiva</h2>
         <div class="countdown-timer">
           <div class="countdown-item">
             <span id="days" class="countdown-number">00</span>
-            <span class="countdown-label">Dias</span>
+            <span class="countdown-label" data-i18n="countdown.days">Dias</span>
           </div>
           <div class="countdown-item">
             <span id="hours" class="countdown-number">00</span>
-            <span class="countdown-label">Horas</span>
+            <span class="countdown-label" data-i18n="countdown.hours">Horas</span>
           </div>
           <div class="countdown-item">
             <span id="minutes" class="countdown-number">00</span>
-            <span class="countdown-label">Minutos</span>
+            <span class="countdown-label" data-i18n="countdown.minutes"
+              >Minutos</span
+            >
           </div>
           <div class="countdown-item">
             <span id="seconds" class="countdown-number">00</span>
-            <span class="countdown-label">Segundos</span>
+            <span class="countdown-label" data-i18n="countdown.seconds"
+              >Segundos</span
+            >
           </div>
         </div>
       </div>
@@ -1290,7 +1321,9 @@
 
     <section id="comissao" class="fade-in">
       <div class="container">
-        <h2 class="text-center">Comissão Organizadora</h2>
+        <h2 class="text-center" data-i18n="committee.title">
+          Comissão Organizadora
+        </h2>
         <p
           class="text-center"
           style="
@@ -1300,6 +1333,7 @@
             margin-left: auto;
             margin-right: auto;
           "
+          data-i18n="committee.intro"
         >
           A programação científica está sob responsabilidade de um time
           multidisciplinar de especialistas:
@@ -1377,7 +1411,9 @@
       <div class="container">
         <div class="schedule-header">
           <div class="schedule-title-row">
-            <h2 class="schedule-title">Programação científica</h2>
+            <h2 class="schedule-title" data-i18n="schedule.title">
+              Programação científica
+            </h2>
             <a
               href="schedule/programacao-preliminar-2026.pdf"
               class="download-pdf-btn"
@@ -1400,12 +1436,15 @@
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              Baixar PDF
+              <span data-i18n="schedule.downloadPdf">Baixar PDF</span>
             </a>
           </div>
         </div>
 
-        <p style="color: var(--muted-text); margin-bottom: 0.25rem">
+        <p
+          style="color: var(--muted-text); margin-bottom: 0.25rem"
+          data-i18n="schedule.dateLine"
+        >
           <strong>05/06/2026 (sexta-feira)</strong> — início às
           <strong>8h</strong>.
         </p>
@@ -1414,12 +1453,14 @@
           <table class="schedule-table">
             <thead>
               <tr>
-                <th style="width: 130px">Horário</th>
-                <th>Atividade</th>
-                <th style="width: 220px">Apresentador(a)</th>
+                <th style="width: 130px" data-i18n="schedule.colTime">Horário</th>
+                <th data-i18n="schedule.colActivity">Atividade</th>
+                <th style="width: 220px" data-i18n="schedule.colSpeaker">
+                  Apresentador(a)
+                </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody data-i18n="schedule.body">
               <tr>
                 <td>08:00 - 08:10</td>
                 <td colspan="2" class="session-break">
@@ -1725,166 +1766,166 @@
 
     <section id="palestrantes" class="fade-in">
       <div class="container">
-        <h2 class="text-center">Palestrantes</h2>
+        <h2 class="text-center" data-i18n="speakers.title">Palestrantes</h2>
         <div class="speakers-grid">
           <div class="speaker-item">
             <img src="speakers/aline-piol.jpeg" alt="Aline Piol Sá" loading="lazy" />
             <h4>Aline Piol Sá</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-aline-piol-sa">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-aline-piol-sa">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/antonio-douglas.webp" alt="Antônio Douglas" loading="lazy" />
             <h4>Antônio Douglas</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-antonio-douglas">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-antonio-douglas">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/beatriz-cavalcanti.jpeg" alt="Beatriz Cavalcanti" loading="lazy" />
             <h4>Beatriz Cavalcanti</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-beatriz-cavalcanti">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-beatriz-cavalcanti">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/claudia-fontan.jpeg" alt="Claudia Fontan" loading="lazy" />
             <h4>Claudia Fontan</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-claudia-fontan">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-claudia-fontan">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/daniela-takano.jpeg" alt="Daniela Takano" loading="lazy" />
             <h4>Daniela Takano</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-daniela-takano">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-daniela-takano">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/janielli-assis.jpeg" alt="Janielli Assis" loading="lazy" />
             <h4>Janielli Assis</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-janielli-assis">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-janielli-assis">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/jessica-guido.webp" alt="Jéssica Guido" loading="lazy" />
             <h4>Jéssica Guido</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-jessica-guido">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-jessica-guido">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/lais-principe.jpeg" alt="Laís Príncipe" loading="lazy" />
             <h4>Laís Príncipe</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-lais-principe">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-lais-principe">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/leandro-apolinario.jpeg" alt="Leandro Apolinário" loading="lazy" />
             <h4>Leandro Apolinário</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-leandro-apolinario">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-leandro-apolinario">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/luiz-felipe-carvalho.jpeg" alt="Luis Felipe Carvalho" loading="lazy" />
             <h4>Luis Felipe Carvalho</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-luis-felipe-carvalho">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-luis-felipe-carvalho">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/luiz-jose-batista.jpeg" alt="Luiz José Batista" loading="lazy" />
             <h4>Luiz José Batista</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-luiz-jose-batista">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-luiz-jose-batista">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/natalia-diniz.jpeg" alt="Natália Diniz" loading="lazy" />
             <h4>Natália Diniz</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-natalia-diniz">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-natalia-diniz">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/nildevande-firmino.jpeg" alt="Nildevande Firmino" loading="lazy" />
             <h4>Nildevande Firmino</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-nildevande-firmino">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-nildevande-firmino">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/paulo-miranda.jpeg" alt="Paulo Henrique Miranda" loading="lazy" />
             <h4>Paulo Henrique Miranda</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-paulo-henrique-miranda">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-paulo-henrique-miranda">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/rebeca-reis.jpeg" alt="Rebeca Reis" loading="lazy" />
             <h4>Rebeca Reis</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-rebeca-reis">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-rebeca-reis">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/rodrigo-arruda.jpeg" alt="Rodrigo Arruda" loading="lazy" />
             <h4>Rodrigo Arruda</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-rodrigo-arruda">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-rodrigo-arruda">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/rogerio-santos.jpeg" alt="Rogério Santos" loading="lazy" />
             <h4>Rogério Santos</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-rogerio-santos">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-rogerio-santos">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/silvana-cavalcante.jpeg" alt="Silvana Cavalcante" loading="lazy" />
             <h4>Silvana Cavalcante</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-silvana-cavalcante">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-silvana-cavalcante">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/silvia-fontan.jfif" alt="Silvia Fontan" loading="lazy" />
             <h4>Silvia Fontan</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-silvia-fontan">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-silvia-fontan">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/suzane-leite.jpeg" alt="Suzane Leite" loading="lazy" />
             <h4>Suzane Leite</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-suzane-leite">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-suzane-leite">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/tais-oliveira.jpeg" alt="Taís Oliveira" loading="lazy" />
             <h4>Taís Oliveira</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-tais-oliveira">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-tais-oliveira">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/thamires-alcantara.jpeg" alt="Thamires Alcântara" loading="lazy" />
             <h4>Thamires Alcântara</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-thamires-alcantara">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-thamires-alcantara">
               Saiba mais
             </button>
           </div>
           <div class="speaker-item">
             <img src="speakers/virginia-batista.jpeg" alt="Virgínia Batista" loading="lazy" />
             <h4>Virgínia Batista</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-virginia-batista">
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-virginia-batista">
               Saiba mais
             </button>
           </div>
@@ -1895,13 +1936,13 @@
     <section id="local" class="fade-in">
       <div class="container two-column">
         <div>
-          <h2>Local do evento</h2>
-          <p>
+          <h2 data-i18n="venue.title">Local do evento</h2>
+          <p data-i18n="venue.intro">
             O evento será realizado no
             <strong>Auditório do Hospital Santa Joana Recife</strong>, no bairro
             das Graças.
           </p>
-          <p style="margin-top: 1.25rem">
+          <p style="margin-top: 1.25rem" data-i18n="venue.address">
             <strong>Endereço:</strong><br />
             Av. Joaquim Nabuco, 200 — Graças<br />
             Recife — PE
@@ -1912,6 +1953,7 @@
               font-size: 0.95rem;
               color: var(--muted-text);
             "
+            data-i18n="venue.mapHint"
           >
             Use o mapa ao lado para orientação de acesso.
           </p>
@@ -1930,12 +1972,18 @@
 
     <section id="inscricao" class="fade-in">
       <div class="container text-center">
-        <h2>Inscrições encerradas</h2>
-        <p style="max-width: 640px; margin: 0 auto 1.75rem">
+        <h2 data-i18n="registration.title">Inscrições encerradas</h2>
+        <p
+          style="max-width: 640px; margin: 0 auto 1.75rem"
+          data-i18n="registration.text"
+        >
           As inscrições foram encerradas. Em caso de dúvidas, fale com a
           organização na seção de contato.
         </p>
-        <span class="btn-primary" style="cursor: default; opacity: 0.85"
+        <span
+          class="btn-primary"
+          style="cursor: default; opacity: 0.85"
+          data-i18n="registration.badge"
           >Inscrições encerradas</span
         >
       </div>
@@ -1943,10 +1991,11 @@
 
     <section id="patrocinadores" class="fade-in">
       <div class="container">
-        <h2 class="text-center">Patrocinadores</h2>
+        <h2 class="text-center" data-i18n="sponsors.title">Patrocinadores</h2>
         <p
           class="text-center"
           style="margin-bottom: 2rem; color: var(--muted-text)"
+          data-i18n="sponsors.text"
         >
           Agradecemos o apoio das empresas que viabilizam este simpósio.
         </p>
@@ -1966,7 +2015,7 @@
 
     <section id="fotos" class="fade-in">
       <div class="container">
-        <h2 class="text-center">Galeria de fotos</h2>
+        <h2 class="text-center" data-i18n="photos.title">Galeria de fotos</h2>
         <p
           class="text-center"
           style="
@@ -1975,6 +2024,7 @@
             margin: 0 auto 0.5rem;
             font-size: 1.05rem;
           "
+          data-i18n="photos.text"
         >
           Reviva os melhores momentos do II Simpósio Oncoderma Recife com os
           registros oficiais do evento.
@@ -1995,6 +2045,7 @@
               href="https://drive.google.com/drive/folders/1RJD-l7_z3aPqAHMh56LJ8TSamYFxaOrq?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
+              data-i18n="photos.driveLink"
             >
               Baixar todas as fotos no Google Drive
             </a>
@@ -2006,19 +2057,20 @@
     <section id="contato" class="fade-in">
       <div class="container two-column">
         <div>
-          <h2>Contato</h2>
-          <p>
+          <h2 data-i18n="contact.title">Contato</h2>
+          <p data-i18n="contact.intro">
             Para dúvidas sobre o simpósio ou suporte nas inscrições, entre em
             contato com a organização:
           </p>
           <h3>Luka Plan Promoções e Eventos</h3>
-          <p>
+          <p data-i18n="contact.address">
             <strong>Endereço:</strong><br />
             Rua João Eugênio de Lima, 143 – Sala 01<br />
             Boa Viagem – Recife – CEP 51.030-360
           </p>
           <p>
-            <strong>Telefone/WhatsApp:</strong><br />
+            <strong data-i18n="contact.phoneLabel">Telefone/WhatsApp:</strong
+            ><br />
             <a href="https://wa.me/5581999851712" target="_blank" rel="noopener"
               >(81) 99985-1712</a
             >
@@ -2028,7 +2080,7 @@
             >
           </p>
           <p>
-            <strong>E-mail:</strong><br />
+            <strong data-i18n="contact.emailLabel">E-mail:</strong><br />
             <a href="mailto:eventos@lukaplan.com.br">eventos@lukaplan.com.br</a
             ><br />
             <a href="mailto:simposiodeoncologiadohsj@gmail.com"
@@ -2079,8 +2131,8 @@
           </div>
         </div>
         <div>
-          <h2>Informações</h2>
-          <p>
+          <h2 data-i18n="contact.infoTitle">Informações</h2>
+          <p data-i18n="contact.infoText">
             As inscrições estão encerradas. Cancelamentos ou alterações devem
             ser comunicados com antecedência à organização, para permitir
             repasse da vaga quando aplicável.
@@ -2095,7 +2147,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/aline-piol.jpeg" alt="Aline Piol Sá" class="modal-avatar" loading="lazy" />
         <h3>Aline Piol Sá</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.aline-piol">
           <li>Médica Dermatologista</li>
           <li>Especialista em Oncologia Cutânea pelo Instituto Sírio Libanês</li>
           <li>Especialista em Cirurgia Dermatológica pelo IMS-Hospital da Gamboa</li>
@@ -2109,7 +2161,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/antonio-douglas.webp" alt="Antônio Douglas" class="modal-avatar" loading="lazy" />
         <h3>Antônio Douglas</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.antonio-douglas">
           <li>Oncologista Clínico Do Hospital Santa Joana – Rede Américas;</li>
           <li>Professor da UPE</li>
         </ul>
@@ -2120,7 +2172,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/beatriz-cavalcanti.jpeg" alt="Beatriz Cavalcanti" class="modal-avatar" loading="lazy" />
         <h3>Beatriz Cavalcanti</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.beatriz-cavalcanti">
           <li>Cirurgiã geral Pela universidade Federal do Rio Grande do Norte - HUOL</li>
           <li>Cirurgiã oncológica pelo hospital do câncer de Pernambuco</li>
           <li>Preceptora do serviço de oncoginecologia do Hospital do Câncer de Pernambuco</li>
@@ -2132,7 +2184,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/claudia-fontan.jpeg" alt="Claudia Fontan" class="modal-avatar" loading="lazy" />
         <h3>Claudia Fontan</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.claudia-fontan">
           <li>Médica radiologista especialista pelo Colégio Brasileiro de Radiologia – CBR</li>
           <li>Membro da Comissão Nacional de Ultrassonografia - CNUS/CBR</li>
           <li>Visiting Scholar MSK UCSD- San Diego</li>
@@ -2147,7 +2199,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/daniela-takano.jpeg" alt="Daniela Takano" class="modal-avatar" loading="lazy" />
         <h3>Daniela Takano</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.daniela-takano">
           <li>Residência médica em Anatomia Patológica pela Universidade Federal de São Paulo/Unifesp</li>
           <li>Mestre em Patologia pela Universidade Federal de Pernambuco/UFPE</li>
           <li>Título de especialista em Dermatopatologia pela International Society of Dermatopathology/ISDP</li>
@@ -2160,7 +2212,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/janielli-assis.jpeg" alt="Janielli Assis" class="modal-avatar" loading="lazy" />
         <h3>Janielli Assis</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.janielli-assis">
           <li>Médica pelo Centro Universitário Maurício de Nassau - UNINASSAU</li>
           <li>Dermatologista pelo IMIP</li>
           <li>Título de especialista pela Associação Médica Brasileira</li>
@@ -2174,7 +2226,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/jessica-guido.webp" alt="Jéssica Guido" class="modal-avatar" loading="lazy" />
         <h3>Jéssica Guido</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.jessica-guido">
           <li>Membro Titular da Sociedade Brasileira de Dermatologia</li>
           <li>Professora e Coordenadora da Disciplina de Dermatologia da Universidade Federal de Pernambuco e Universidade Católica de Pernambuco</li>
           <li>Preceptora da Residência Médica do HC-UFPE</li>
@@ -2188,7 +2240,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/lais-principe.jpeg" alt="Laís Príncipe" class="modal-avatar" loading="lazy" />
         <h3>Laís Príncipe</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.lais-principe">
           <li>Médica patologista com atuação em dermatopatologia</li>
           <li>Atualmente trabalha no Hospital Universitário Oswaldo Cruz, Laboratório PAS e Serviço de Verificação de Óbito</li>
         </ul>
@@ -2199,7 +2251,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/leandro-apolinario.jpeg" alt="Leandro Apolinário" class="modal-avatar" loading="lazy" />
         <h3>Leandro Apolinário</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.leandro-apolinario">
           <li>Oncologista clínico do Hospital Santa Joana Recife (Americas Oncologia) e do Hospital Universitário Oswaldo Cruz (Universidade de Pernambuco);</li>
           <li>Ex-research FELLOWSHIP IOSI, Switzerland</li>
         </ul>
@@ -2210,7 +2262,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/luiz-felipe-carvalho.jpeg" alt="Luis Felipe Carvalho" class="modal-avatar" loading="lazy" />
         <h3>Luis Felipe Carvalho</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.luis-felipe-carvalho">
           <li>Médico Oncologista Clínico</li>
           <li>Preceptor da Residência de Oncologia Clínica do IMIP</li>
           <li>Médico Oncologista da Rede Americas.</li>
@@ -2222,7 +2274,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/luiz-jose-batista.jpeg" alt="Luiz José Batista" class="modal-avatar" loading="lazy" />
         <h3>Luiz José Batista</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.luiz-jose-batista">
           <li>Médico oncologista Santa Joana Recife, Esperança Recife, HC UFPE</li>
           <li>Mestrado em cuidados paliativos pelo Imip</li>
           <li>Chefe da Unidade de Oncologia e Hematologia do Hospital das Clínicas da UFPE</li>
@@ -2234,7 +2286,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/natalia-diniz.jpeg" alt="Natália Diniz" class="modal-avatar" loading="lazy" />
         <h3>Natália Diniz</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.natalia-diniz">
           <li>Fellow Dermatologia em Oncologia Instituto Nacional de Câncer — INCA RJ</li>
           <li>Pós-graduação Dermatologia Oncológica Hospital Sírio Libanês</li>
           <li>Membro da Sociedade Brasileira de Cirurgia Dermatológica (SBCD)</li>
@@ -2250,7 +2302,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/nildevande-firmino.jpeg" alt="Nildevande Firmino" class="modal-avatar" loading="lazy" />
         <h3>Nildevande Firmino</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.nildevande-firmino">
           <li>Oncologista pelo Hospital Sírio Libanês (SP).</li>
           <li>Oncologista do Hospital Santa Joana e do Hospital do Câncer de Pernambuco.</li>
         </ul>
@@ -2261,7 +2313,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/paulo-miranda.jpeg" alt="Paulo Henrique Miranda" class="modal-avatar" loading="lazy" />
         <h3>Paulo Henrique Miranda</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.paulo-henrique-miranda">
           <li>Cirurgião oncológico pelo Ac Camargo Câncer Center</li>
           <li>Doutor em Oncologia/Melanoma pelo Ac camargo câncer Center/SP</li>
           <li>Coordenador da oncologia cutânea da clínico Unionco Pró-Pele, Clínica RICO e Hospital Barão de Lucena</li>
@@ -2275,7 +2327,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/rebeca-reis.jpeg" alt="Rebeca Reis" class="modal-avatar" loading="lazy" />
         <h3>Rebeca Reis</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.rebeca-reis">
           <li>Cirurgiã geral pelo Hosp Oswaldo Cruz.</li>
           <li>Cirurgiã oncológica pelo Hosp do Câncer de Pernambuco</li>
           <li>Coordenadora da residência de Cirurgia Oncológica do Hosp. do Câncer.</li>
@@ -2288,7 +2340,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/rodrigo-arruda.jpeg" alt="Rodrigo Arruda" class="modal-avatar" loading="lazy" />
         <h3>Rodrigo Arruda</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.rodrigo-arruda">
           <li>Coordenador Oncologia Clínica do Hospital do Câncer de Pernambuco;</li>
           <li>Oncologista Clínico do Imip, Santa Joana e Unionco;</li>
           <li>Mestre pelo IMIP</li>
@@ -2300,7 +2352,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/rogerio-santos.jpeg" alt="Rogério Santos" class="modal-avatar" loading="lazy" />
         <h3>Rogério Santos</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.rogerio-santos">
           <li>Cirurgião oncológico do Real instituto de cirurgia oncológica do Hospital Português</li>
           <li>Doutorado em oncologia pelo AC Camargo Câncer Center e Hospital do Câncer de Pernambuco</li>
         </ul>
@@ -2311,7 +2363,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/silvana-cavalcante.jpeg" alt="Silvana Cavalcante" class="modal-avatar" loading="lazy" />
         <h3>Silvana Cavalcante</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.silvana-cavalcante">
           <li>Residência médica em clínica médica e dermatologia</li>
           <li>Professora da disciplina dermatologia da UPE</li>
           <li>Preceptora da residência médica em dermatologia da UPE</li>
@@ -2325,7 +2377,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/silvia-fontan.jfif" alt="Silvia Fontan" class="modal-avatar" loading="lazy" />
         <h3>Silvia Fontan</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.silvia-fontan">
           <li>Oncologista do Hospital Santa Joana;</li>
           <li>Oncologista do Hospital Barão de Lucena;</li>
           <li>Oncologista do Hospital do Câncer</li>
@@ -2337,7 +2389,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/suzane-leite.jpeg" alt="Suzane Leite" class="modal-avatar" loading="lazy" />
         <h3>Suzane Leite</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.suzane-leite">
           <li>Médica radioterapeuta do RHP/ IMIP/ HUOC</li>
           <li>Membro titular pela sociedade Brasileira de radioterapia</li>
           <li>Membro titular da sociedade Brasileira de Radiocirurgia.</li>
@@ -2349,7 +2401,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/tais-oliveira.jpeg" alt="Taís Oliveira" class="modal-avatar" loading="lazy" />
         <h3>Taís Oliveira</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.tais-oliveira">
           <li>Médica Dermatologista pelo Hospital Otávio de Freitas (PE)</li>
           <li>Especialista em Cosmiatria, Laser e Procedimentos pelo Hospital Albert Einstein (SP)</li>
           <li>Membro Titular SBD e SBCD</li>
@@ -2362,7 +2414,7 @@
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
         <img src="speakers/thamires-alcantara.jpeg" alt="Thamires Alcântara" class="modal-avatar" loading="lazy" />
         <h3>Thamires Alcântara</h3>
-        <ul class="modal-bio">
+        <ul class="modal-bio" data-i18n="bio.thamires-alcantara">
           <li>Dermatologista pelo Hospital Universitário Oswaldo Cruz</li>
           <li>Membro titular da SBD</li>
           <li>Cirurgia dermatológica, cosmiatria e laser pela SBCD</li>
@@ -2374,8 +2426,8 @@
     <div class="modal" id="modal-virginia-batista">
       <div class="modal-content">
         <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
-        <img src="speakers/virginia-batista.jpeg" alt="Virgínia Batista" class="modal-avatar" loading="lazy" />
-        <ul class="modal-bio">
+        <img src="speakers/virginia-batista.jpeg"         alt="Virgínia Batista" class="modal-avatar" loading="lazy" />
+        <ul class="modal-bio" data-i18n="bio.virginia-batista">
           <li>Membro Titular da Sociedade Brasileira de Dermatologia;</li>
           <li>Especialista em cirurgia dermatológica pela faculdade do ABC;</li>
           <li>Cirurgiã especialista de Mohs pela SBD</li>
@@ -2384,19 +2436,21 @@
     </div>
 
     <footer>
-      <p style="font-size: 1.05rem; font-weight: 700">
+      <p style="font-size: 1.05rem; font-weight: 700" data-i18n="footer.copyright">
         &copy; 2026 II Simpósio Oncoderma Recife
       </p>
-      <p>Hospital Santa Joana · ISEP · Clínica de Pele (apoio)</p>
+      <p data-i18n="footer.orgs">
+        Hospital Santa Joana · ISEP · Clínica de Pele (apoio)
+      </p>
       <p style="margin-top: 2rem; font-size: 0.9rem">
-        Produzido por:
+        <span data-i18n="footer.producedBy">Produzido por:</span>
         <a
           href="https://instagram.com/lukaplan_"
           target="_blank"
           rel="noopener noreferrer"
           >Luka Plan Promoções e Eventos</a
         >
-        &nbsp;·&nbsp; Desenvolvido por:
+        &nbsp;·&nbsp; <span data-i18n="footer.developedBy">Desenvolvido por:</span>
         <a
           href="https://wa.me/5581995460140?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20um%20site%21%20%3A%29"
           target="_blank"
@@ -2405,7 +2459,7 @@
         >.
       </p>
       <p style="margin-top: 1.25rem">
-        <a href="#top">↑ Voltar ao topo</a>
+        <a href="#top" data-i18n="footer.backToTop">↑ Voltar ao topo</a>
       </p>
     </footer>
 
@@ -2556,6 +2610,684 @@
           navMenu.classList.remove("active");
           mobileMenuToggle.classList.remove("active");
         }
+      });
+
+      /* ---------------- Internationalization (PT / EN / ES) ---------------- */
+      const translations = {
+        en: {
+          "nav.home": "Home",
+          "nav.about": "About",
+          "nav.committee": "Committee",
+          "nav.schedule": "Program",
+          "nav.speakers": "Speakers",
+          "nav.venue": "Venue",
+          "nav.photos": "Photos",
+          "nav.contact": "Contact",
+          "nav.cta": "Registration closed",
+          "hero.title": '<span class="accent">2nd Symposium</span> Oncoderma Recife',
+          "hero.subtitle":
+            "<strong>June 5, 2026</strong> · Friday · 8 a.m.<br /> Hospital Santa Joana Recife Auditorium — Graças",
+          "hero.cta": "Registration closed",
+          "hero.realization": "Organized by",
+          "hero.support": "Institutional support",
+          "about.title": "About the event",
+          "about.intro":
+            "<strong>Hospital Santa Joana Recife</strong> and the <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong>, as the event's promoters, emphasize that the main goal of this meeting is to address updates in the diagnosis and treatment of <strong>cutaneous oncology</strong>, with institutional support from <strong>Clínica de Pele</strong>.",
+          "about.details":
+            "<strong>Event format:</strong> open to all institutions.<br /> <strong>Number of participants:</strong> 70",
+          "countdown.title": "Countdown",
+          "countdown.days": "Days",
+          "countdown.hours": "Hours",
+          "countdown.minutes": "Minutes",
+          "countdown.seconds": "Seconds",
+          "committee.title": "Organizing Committee",
+          "committee.intro":
+            "The scientific program is led by a multidisciplinary team of specialists:",
+          "schedule.title": "Scientific Program",
+          "schedule.downloadPdf": "Download PDF",
+          "schedule.dateLine":
+            "<strong>06/05/2026 (Friday)</strong> — starting at <strong>8 a.m.</strong>",
+          "schedule.colTime": "Time",
+          "schedule.colActivity": "Activity",
+          "schedule.colSpeaker": "Speaker",
+          "speakers.title": "Speakers",
+          "speakers.learnMore": "Learn more",
+          "venue.title": "Event venue",
+          "venue.intro":
+            "The event will take place at the <strong>Hospital Santa Joana Recife Auditorium</strong>, in the Graças neighborhood.",
+          "venue.address":
+            "<strong>Address:</strong><br /> Av. Joaquim Nabuco, 200 — Graças<br /> Recife — PE",
+          "venue.mapHint": "Use the map for directions.",
+          "registration.title": "Registration closed",
+          "registration.text":
+            "Registration is now closed. If you have any questions, contact the organizers in the contact section.",
+          "registration.badge": "Registration closed",
+          "sponsors.title": "Sponsors",
+          "sponsors.text":
+            "We thank the companies whose support makes this symposium possible.",
+          "photos.title": "Photo gallery",
+          "photos.text":
+            "Relive the best moments of the 2nd Oncoderma Recife Symposium through the official event photos.",
+          "photos.driveLink": "Download all photos on Google Drive",
+          "contact.title": "Contact",
+          "contact.intro":
+            "For questions about the symposium or registration support, contact the organizers:",
+          "contact.address":
+            "<strong>Address:</strong><br /> Rua João Eugênio de Lima, 143 – Room 01<br /> Boa Viagem – Recife – ZIP 51.030-360",
+          "contact.phoneLabel": "Phone/WhatsApp:",
+          "contact.emailLabel": "E-mail:",
+          "contact.infoTitle": "Information",
+          "contact.infoText":
+            "Registration is closed. Cancellations or changes must be communicated to the organizers in advance to allow the spot to be transferred when applicable.",
+          "footer.copyright": "&copy; 2026 2nd Oncoderma Recife Symposium",
+          "footer.orgs": "Hospital Santa Joana · ISEP · Clínica de Pele (support)",
+          "footer.producedBy": "Produced by:",
+          "footer.developedBy": "Developed by:",
+          "footer.backToTop": "↑ Back to top",
+          "bio.aline-piol":
+            "<li>Dermatologist</li><li>Specialist in Cutaneous Oncology at Instituto Sírio Libanês</li><li>Specialist in Dermatologic Surgery at IMS-Hospital da Gamboa</li><li>Specialist in Acupuncture at Colégio Médico de Acupuntura</li><li>Specialist in Family and Community Medicine (AMB)</li>",
+          "bio.antonio-douglas":
+            "<li>Medical Oncologist at Hospital Santa Joana – Rede Américas;</li><li>Professor at UPE</li>",
+          "bio.beatriz-cavalcanti":
+            "<li>General Surgeon — Universidade Federal do Rio Grande do Norte (HUOL)</li><li>Surgical Oncologist — Hospital do Câncer de Pernambuco</li><li>Preceptor of the gyne-oncology service at Hospital do Câncer de Pernambuco</li>",
+          "bio.claudia-fontan":
+            "<li>Radiologist certified by the Brazilian College of Radiology (CBR)</li><li>Member of the National Ultrasound Commission (CNUS/CBR)</li><li>Visiting Scholar, MSK / UCSD – San Diego</li><li>Founder and technical director of ULTRAPLENNA specialized ultrasound clinic.</li><li>Master's in Health Biology – HC/UFPE</li><li>PhD candidate, LIKA/Ageu Magalhães – UFPE</li>",
+          "bio.daniela-takano":
+            "<li>Medical residency in Pathology at Universidade Federal de São Paulo/Unifesp</li><li>Master's in Pathology at Universidade Federal de Pernambuco/UFPE</li><li>Specialist in Dermatopathology by the International Society of Dermatopathology (ISDP)</li><li>Pathologist at Hospital das Clínicas (UFPE) and at the Patologistas Associados/PAS laboratory</li>",
+          "bio.janielli-assis":
+            "<li>Physician — Centro Universitário Maurício de Nassau (UNINASSAU)</li><li>Dermatologist — IMIP</li><li>Board certification by the Brazilian Medical Association</li><li>Full member of the Brazilian Society of Dermatology</li><li>Postgraduate student in cutaneous oncology at A.C. Camargo Cancer Center</li>",
+          "bio.jessica-guido":
+            "<li>Full member of the Brazilian Society of Dermatology</li><li>Professor and Coordinator of Dermatology at Universidade Federal de Pernambuco and Universidade Católica de Pernambuco</li><li>Preceptor of the medical residency at HC-UFPE</li><li>Master's in Internal Medicine (UFPE) and PhD in Surgery (UFPE).</li><li>Head of the Outpatient Clinic for Cutaneous Toxicity to Chemotherapy and Immunosuppressants</li>",
+          "bio.lais-principe":
+            "<li>Pathologist working in dermatopathology</li><li>Currently works at Hospital Universitário Oswaldo Cruz, PAS Laboratory and the Death Verification Service</li>",
+          "bio.leandro-apolinario":
+            "<li>Medical oncologist at Hospital Santa Joana Recife (Americas Oncologia) and Hospital Universitário Oswaldo Cruz (Universidade de Pernambuco);</li><li>Former research fellow, IOSI, Switzerland</li>",
+          "bio.luis-felipe-carvalho":
+            "<li>Medical Oncologist</li><li>Preceptor of the Medical Oncology residency at IMIP</li><li>Oncologist at Rede Américas.</li>",
+          "bio.luiz-jose-batista":
+            "<li>Oncologist at Santa Joana Recife, Esperança Recife and HC UFPE</li><li>Master's in palliative care at IMIP</li><li>Head of the Oncology and Hematology Unit at Hospital das Clínicas (UFPE)</li>",
+          "bio.natalia-diniz":
+            "<li>Fellowship in Dermatology in Oncology, Instituto Nacional de Câncer — INCA RJ</li><li>Postgraduate in Oncologic Dermatology, Hospital Sírio Libanês</li><li>Member of the Brazilian Society of Dermatologic Surgery (SBCD)</li><li>Member of the Brazilian Society of Dermatology (SBD)</li><li>Member of the Brazilian Melanoma Group (GBM)</li><li>Medical residency in Dermatology, Universidade Federal de Alagoas</li><li>Medical degree, Universidade de Pernambuco</li>",
+          "bio.nildevande-firmino":
+            "<li>Oncologist trained at Hospital Sírio Libanês (SP).</li><li>Oncologist at Hospital Santa Joana and Hospital do Câncer de Pernambuco.</li>",
+          "bio.paulo-henrique-miranda":
+            "<li>Surgical oncologist trained at A.C. Camargo Cancer Center</li><li>PhD in Oncology/Melanoma from A.C. Camargo Cancer Center/SP</li><li>Coordinator of cutaneous oncology at Unionco Pró-Pele, Clínica RICO and Hospital Barão de Lucena</li><li>Founding member — Clube da Pele de Pernambuco.</li><li>Member of the Brazilian Melanoma Group and SBCO</li>",
+          "bio.rebeca-reis":
+            "<li>General surgeon — Hospital Oswaldo Cruz.</li><li>Surgical oncologist — Hospital do Câncer de Pernambuco</li><li>Coordinator of the Surgical Oncology residency at Hospital do Câncer.</li><li>Surgical oncologist at RICO and Unionco</li>",
+          "bio.rodrigo-arruda":
+            "<li>Coordinator of Medical Oncology at Hospital do Câncer de Pernambuco;</li><li>Medical oncologist at IMIP, Santa Joana and Unionco;</li><li>Master's from IMIP</li>",
+          "bio.rogerio-santos":
+            "<li>Surgical oncologist at the Real Instituto de Cirurgia Oncológica, Hospital Português</li><li>PhD in oncology from A.C. Camargo Cancer Center and Hospital do Câncer de Pernambuco</li>",
+          "bio.silvana-cavalcante":
+            "<li>Medical residency in internal medicine and dermatology</li><li>Professor of dermatology at UPE</li><li>Preceptor of the dermatology residency at UPE</li><li>Pursuing specialization in cutaneous oncology at Hospital Albert Einstein</li><li>PhD in Tropical Medicine</li>",
+          "bio.silvia-fontan":
+            "<li>Oncologist at Hospital Santa Joana;</li><li>Oncologist at Hospital Barão de Lucena;</li><li>Oncologist at Hospital do Câncer</li>",
+          "bio.suzane-leite":
+            "<li>Radiation oncologist at RHP / IMIP / HUOC</li><li>Full member of the Brazilian Society of Radiotherapy</li><li>Full member of the Brazilian Society of Radiosurgery.</li>",
+          "bio.tais-oliveira":
+            "<li>Dermatologist trained at Hospital Otávio de Freitas (PE)</li><li>Specialist in Cosmiatry, Laser and Procedures at Hospital Albert Einstein (SP)</li><li>Full member of SBD and SBCD</li><li>Volunteer preceptor of the Dermatology residency and head of the Total Body Mapping clinic at Hospital Otávio de Freitas (PE)</li>",
+          "bio.thamires-alcantara":
+            "<li>Dermatologist trained at Hospital Universitário Oswaldo Cruz</li><li>Full member of SBD</li><li>Dermatologic surgery, cosmiatry and laser certified by SBCD</li><li>Cutaneous Oncology at Hospital Sírio Libanês</li><li>Volunteer dermatology preceptor at Hospital Universitário Oswaldo Cruz</li>",
+          "bio.virginia-batista":
+            "<li>Full member of the Brazilian Society of Dermatology;</li><li>Specialist in dermatologic surgery at Faculdade do ABC;</li><li>Mohs surgery specialist certified by SBD</li>",
+          "schedule.body": `
+              <tr>
+                <td>08:00 - 08:10</td>
+                <td colspan="2" class="session-break"><strong>Opening</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>08:15 - 09:15<br />(1 hour)</strong><br />
+                  PANEL 1 - SKIN CANCER: PREVENTION AND EARLY DIAGNOSIS<br /><small>Chair: Cristiana Tavares<br />Discussants: Patrícia Guimarães, Ana Luiza Gadelha</small>
+                </td>
+              </tr>
+              <tr>
+                <td>08:15 – 08:30<br />(15 min)</td>
+                <td>Skin cancer prevention: what truly has scientific evidence in photoprotection?</td>
+                <td><span class="speaker-name">Thamires Alcântara</span></td>
+              </tr>
+              <tr>
+                <td>08:30 – 08:45<br />(15 min)</td>
+                <td>The role of chemoprophylaxis in NMSC.</td>
+                <td><span class="speaker-name">Aline Piol</span></td>
+              </tr>
+              <tr>
+                <td>08:45 – 09:00<br />(15 min)</td>
+                <td>Practical dermoscopy tips for diagnosing early lesions.</td>
+                <td><span class="speaker-name">Silvana Cavalcante</span></td>
+              </tr>
+              <tr>
+                <td>09:00 - 09:15<br />(15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSION</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>09:15 - 10:30 (1 hour and<br />15 min)</strong><br />
+                  PANEL 2 — NON-MELANOMA SKIN TUMORS: REFINING TREATMENT<br /><small>Chair: Luciana Câmara<br />Discussants: Rebeca Reis, Bruno Pacheco</small>
+                </td>
+              </tr>
+              <tr>
+                <td>09:15 - 09:30 (15 min)</td>
+                <td>Margin-controlled surgery for non-melanoma skin cancer</td>
+                <td><span class="speaker-name">Virgínia Batista</span></td>
+              </tr>
+              <tr>
+                <td>09:30 - 09:45 (15 min)</td>
+                <td>Is there a role for SLNB in high-risk SCC?</td>
+                <td><span class="speaker-name">Beatriz Cavalcanti</span></td>
+              </tr>
+              <tr>
+                <td>09:45 - 10:00 (15 min)</td>
+                <td>Classification and assessment of high-risk SCC: the pathologist's view post C-POST</td>
+                <td><span class="speaker-name">Laís Príncipe</span></td>
+              </tr>
+              <tr>
+                <td>10:00 - 10:15 (15 min)</td>
+                <td>High-risk SCC: the medical oncologist's approach</td>
+                <td><span class="speaker-name">Antônio Douglas</span></td>
+              </tr>
+              <tr>
+                <td>10:15 - 10:30 (15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSION</strong></td>
+              </tr>
+              <tr>
+                <td>10:30 - 10:50<br />(20 min)</td>
+                <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>10:50 - 11:50<br />(1 hour)</strong><br />
+                  PANEL 3 — CHALLENGES IN NON-MELANOMA SKIN CANCER<br /><small>Chair: Antônio de Pádua<br />Discussants: Rogério Santos, Daniela Takano</small>
+                </td>
+              </tr>
+              <tr>
+                <td>10:50 - 11:05 (15 min)</td>
+                <td>Systemic treatment in BCC</td>
+                <td><span class="speaker-name">Rodrigo Arruda</span></td>
+              </tr>
+              <tr>
+                <td>11:05 - 11:20 (15 min)</td>
+                <td>BCC with partial response to systemic treatment — how to proceed?</td>
+                <td><span class="speaker-name">Suzane Leite</span></td>
+              </tr>
+              <tr>
+                <td>11:20 - 11:50 (30 min)</td>
+                <td>Contextualized clinical case: Merkel cell carcinoma</td>
+                <td><span class="speaker-name">Presentation: Rogério Santos<br />Discussion:<br />Cristiana Tavares<br />Luis Felipe Carvalho<br />Suzane Leite<br />Daniela Takano<br />Claudia Fontan<br />Rodrigo Arruda</span></td>
+              </tr>
+              <tr>
+                <td>11:50 - 13:00</td>
+                <td colspan="2" class="session-break"><strong>Lunch</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>13:00 - 14:00<br />(1 hour)</strong><br />
+                  PANEL 4 — TOOLS IN THE MANAGEMENT OF SKIN TUMORS<br /><small>Chair: Jéssica Guido<br />Discussants: Gessiane Alves, Ilka Rocha</small>
+                </td>
+              </tr>
+              <tr>
+                <td>13:00 - 13:15<br />(15 min)</td>
+                <td>Total body mapping: who needs it and why?</td>
+                <td><span class="speaker-name">Taís Oliveira</span></td>
+              </tr>
+              <tr>
+                <td>13:15 - 13:30<br />(15 min)</td>
+                <td>When to refer skin cancer patients for genetic evaluation?</td>
+                <td><span class="speaker-name">Leandro Apolinário</span></td>
+              </tr>
+              <tr>
+                <td>13:30 - 13:45<br />(15 min)</td>
+                <td>High-frequency ultrasound for skin cancers: where are we?</td>
+                <td><span class="speaker-name">Cláudia Fontan</span></td>
+              </tr>
+              <tr>
+                <td>13:45 - 14:00<br />(15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSION</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>14:00 - 15:00<br />(1 hour)</strong><br />
+                  PANEL 5 — MANAGEMENT IN THE NEW ERA OF MELANOMA TREATMENT: NEW CHALLENGES<br /><small>Chair: Luciana Câmara<br />Discussants: Antônio de Pádua, Silvia Fontan</small>
+                </td>
+              </tr>
+              <tr>
+                <td>14:00 - 14:15<br />(15 min)</td>
+                <td>Neoadjuvant therapy for stage III melanoma</td>
+                <td><span class="speaker-name">Nildevande Firmino</span></td>
+              </tr>
+              <tr>
+                <td>14:15 - 14:30<br />(15 min)</td>
+                <td>Challenges in assessing pathological response post-NADINA</td>
+                <td><span class="speaker-name">Daniela Takano</span></td>
+              </tr>
+              <tr>
+                <td>14:30 - 14:45<br />(15 min)</td>
+                <td>Complete pathological response — is removing the index node alone enough?</td>
+                <td><span class="speaker-name">Paulo Miranda</span></td>
+              </tr>
+              <tr>
+                <td>14:45 - 15:00<br />(15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSION</strong></td>
+              </tr>
+              <tr>
+                <td>15:00 - 15:20<br />(20 min)</td>
+                <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>15:20 - 16:35<br />(1 hour and<br />15 min)</strong><br />
+                  PANEL 6 — MELANOMA IN FOCUS: STRATEGIES FROM THE ADJUVANT TO THE METASTATIC SETTING<br /><small>Chair: Nildevande Firmino<br />Discussants: Manoel Andrade, Domingo Lins</small>
+                </td>
+              </tr>
+              <tr>
+                <td>15:20 - 15:35<br />(15 min)</td>
+                <td>Optimizing adjuvant therapy for stage III melanoma</td>
+                <td><span class="speaker-name">Luis Felipe Carvalho</span></td>
+              </tr>
+              <tr>
+                <td>15:35 - 15:50<br />(15 min)</td>
+                <td>Iliac lymph node: treat as systemic disease?</td>
+                <td><span class="speaker-name">Rebeca Reis</span></td>
+              </tr>
+              <tr>
+                <td>15:50 - 16:05<br />(15 min)</td>
+                <td>BRAF+ metastatic melanoma: from tumor biology to systemic treatment</td>
+                <td><span class="speaker-name">Luiz José Batista</span></td>
+              </tr>
+              <tr>
+                <td>16:05 - 16:20<br />(15 min)</td>
+                <td>Therapeutic sequencing in metastatic melanoma</td>
+                <td><span class="speaker-name">Silvia Fontan</span></td>
+              </tr>
+              <tr>
+                <td>16:20 - 16:35<br />(15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSION</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>16:35 - 17:35<br />(1 hour)</strong><br />
+                  PANEL 7 — DERMATO-ONCOLOGY INTERFACE DURING CANCER TREATMENT<br /><small>Chair: Rossano Araújo<br />Discussants: Consuelo Albuquerque, Cristiane Violet</small>
+                </td>
+              </tr>
+              <tr>
+                <td>16:35 - 16:50<br />(15 min)</td>
+                <td>Cutaneous toxicity from immunotherapy</td>
+                <td><span class="speaker-name">Jessica Guido</span></td>
+              </tr>
+              <tr>
+                <td>16:50 - 17:05<br />(15 min)</td>
+                <td>The limits of aesthetics: how to care for the cancer patient's self-esteem?</td>
+                <td><span class="speaker-name">Janielli Assis</span></td>
+              </tr>
+              <tr>
+                <td>17:05 - 17:20<br />(15 min)</td>
+                <td>Dermato-oncology interface protocols during cancer treatment</td>
+                <td><span class="speaker-name">Natália Diniz</span></td>
+              </tr>
+              <tr>
+                <td>17:20 - 17:35<br />(15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSION</strong></td>
+              </tr>
+              <tr>
+                <td>17:35 - 17:45<br />(10 min)</td>
+                <td colspan="2" class="session-break"><strong>Closing</strong></td>
+              </tr>`,
+        },
+        es: {
+          "nav.home": "Inicio",
+          "nav.about": "Acerca",
+          "nav.committee": "Comité",
+          "nav.schedule": "Programa",
+          "nav.speakers": "Ponentes",
+          "nav.venue": "Lugar",
+          "nav.photos": "Fotos",
+          "nav.contact": "Contacto",
+          "nav.cta": "Inscripciones cerradas",
+          "hero.title": '<span class="accent">II Simposio</span> Oncoderma Recife',
+          "hero.subtitle":
+            "<strong>5 de junio de 2026</strong> · Viernes · 8h<br /> Auditorio Hospital Santa Joana Recife — Graças",
+          "hero.cta": "Inscripciones cerradas",
+          "hero.realization": "Organización",
+          "hero.support": "Apoyo institucional",
+          "about.title": "Sobre el evento",
+          "about.intro":
+            "El <strong>Hospital Santa Joana Recife</strong> y el <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong>, como promotores del evento, destacan que el principal objetivo de este encuentro es abordar las actualizaciones en el diagnóstico y tratamiento de la <strong>oncología cutánea</strong>, con apoyo institucional de la <strong>Clínica de Pele</strong>.",
+          "about.details":
+            "<strong>Modalidad del evento:</strong> abierto para todas las instituciones.<br /> <strong>Número de participantes:</strong> 70",
+          "countdown.title": "Cuenta regresiva",
+          "countdown.days": "Días",
+          "countdown.hours": "Horas",
+          "countdown.minutes": "Minutos",
+          "countdown.seconds": "Segundos",
+          "committee.title": "Comité Organizador",
+          "committee.intro":
+            "El programa científico está bajo la responsabilidad de un equipo multidisciplinario de especialistas:",
+          "schedule.title": "Programa científico",
+          "schedule.downloadPdf": "Descargar PDF",
+          "schedule.dateLine":
+            "<strong>05/06/2026 (viernes)</strong> — inicio a las <strong>8h</strong>.",
+          "schedule.colTime": "Horario",
+          "schedule.colActivity": "Actividad",
+          "schedule.colSpeaker": "Ponente",
+          "speakers.title": "Ponentes",
+          "speakers.learnMore": "Saber más",
+          "venue.title": "Lugar del evento",
+          "venue.intro":
+            "El evento se realizará en el <strong>Auditorio del Hospital Santa Joana Recife</strong>, en el barrio de Graças.",
+          "venue.address":
+            "<strong>Dirección:</strong><br /> Av. Joaquim Nabuco, 200 — Graças<br /> Recife — PE",
+          "venue.mapHint": "Use el mapa al lado para orientación de acceso.",
+          "registration.title": "Inscripciones cerradas",
+          "registration.text":
+            "Las inscripciones están cerradas. En caso de dudas, hable con la organización en la sección de contacto.",
+          "registration.badge": "Inscripciones cerradas",
+          "sponsors.title": "Patrocinadores",
+          "sponsors.text":
+            "Agradecemos el apoyo de las empresas que hacen posible este simposio.",
+          "photos.title": "Galería de fotos",
+          "photos.text":
+            "Reviva los mejores momentos del II Simposio Oncoderma Recife con los registros oficiales del evento.",
+          "photos.driveLink": "Descargar todas las fotos en Google Drive",
+          "contact.title": "Contacto",
+          "contact.intro":
+            "Para dudas sobre el simposio o soporte en las inscripciones, póngase en contacto con la organización:",
+          "contact.address":
+            "<strong>Dirección:</strong><br /> Rua João Eugênio de Lima, 143 – Sala 01<br /> Boa Viagem – Recife – CP 51.030-360",
+          "contact.phoneLabel": "Teléfono/WhatsApp:",
+          "contact.emailLabel": "Correo electrónico:",
+          "contact.infoTitle": "Información",
+          "contact.infoText":
+            "Las inscripciones están cerradas. Las cancelaciones o cambios deben comunicarse con antelación a la organización, para permitir el traspaso de la plaza cuando corresponda.",
+          "footer.copyright": "&copy; 2026 II Simposio Oncoderma Recife",
+          "footer.orgs": "Hospital Santa Joana · ISEP · Clínica de Pele (apoyo)",
+          "footer.producedBy": "Producido por:",
+          "footer.developedBy": "Desarrollado por:",
+          "footer.backToTop": "↑ Volver arriba",
+          "bio.aline-piol":
+            "<li>Médica Dermatóloga</li><li>Especialista en Oncología Cutánea por el Instituto Sírio Libanês</li><li>Especialista en Cirugía Dermatológica por el IMS-Hospital da Gamboa</li><li>Especialista en Acupuntura por el Colégio Médico de Acupuntura</li><li>Especialista en Medicina de Familia y Comunidad por la AMB</li>",
+          "bio.antonio-douglas":
+            "<li>Oncólogo Clínico del Hospital Santa Joana – Rede Américas;</li><li>Profesor de la UPE</li>",
+          "bio.beatriz-cavalcanti":
+            "<li>Cirujana general por la Universidad Federal de Rio Grande do Norte - HUOL</li><li>Cirujana oncológica por el Hospital do Câncer de Pernambuco</li><li>Preceptora del servicio de oncoginecología del Hospital do Câncer de Pernambuco</li>",
+          "bio.claudia-fontan":
+            "<li>Médica radióloga especialista por el Colégio Brasileiro de Radiologia – CBR</li><li>Miembro de la Comisión Nacional de Ecografía - CNUS/CBR</li><li>Visiting Scholar MSK UCSD - San Diego</li><li>Fundadora y responsable técnica de la clínica ULTRAPLENNA ecografía especializada.</li><li>Máster en biología de la salud – HC/UFPE</li><li>Doctoranda LIKA/Ageu Magalhães - UFPE</li>",
+          "bio.daniela-takano":
+            "<li>Residencia médica en Anatomía Patológica por la Universidade Federal de São Paulo/Unifesp</li><li>Máster en Patología por la Universidade Federal de Pernambuco/UFPE</li><li>Título de especialista en Dermatopatología por la International Society of Dermatopathology/ISDP</li><li>Patóloga del Hospital das Clínicas de la UFPE y del laboratorio Patologistas Associados/PAS</li>",
+          "bio.janielli-assis":
+            "<li>Médica por el Centro Universitário Maurício de Nassau - UNINASSAU</li><li>Dermatóloga por el IMIP</li><li>Título de especialista por la Asociación Médica Brasileña</li><li>Miembro titular de la Sociedad Brasileña de Dermatología</li><li>Posgraduanda en oncología cutánea en el A.C. Camargo Cancer Center</li>",
+          "bio.jessica-guido":
+            "<li>Miembro Titular de la Sociedad Brasileña de Dermatología</li><li>Profesora y Coordinadora de la Disciplina de Dermatología de la Universidade Federal de Pernambuco y la Universidade Católica de Pernambuco</li><li>Preceptora de la Residencia Médica del HC-UFPE</li><li>Máster en Medicina Interna por la UFPE y Doctora en Cirugía por la UFPE.</li><li>Jefa del Ambulatorio de Toxicidad Cutánea a Quimioterápicos e Inmunosupresores</li>",
+          "bio.lais-principe":
+            "<li>Médica patóloga con actuación en dermatopatología</li><li>Actualmente trabaja en el Hospital Universitário Oswaldo Cruz, Laboratorio PAS y Servicio de Verificación de Defunción</li>",
+          "bio.leandro-apolinario":
+            "<li>Oncólogo clínico del Hospital Santa Joana Recife (Americas Oncologia) y del Hospital Universitário Oswaldo Cruz (Universidad de Pernambuco);</li><li>Ex research fellow IOSI, Suiza</li>",
+          "bio.luis-felipe-carvalho":
+            "<li>Médico Oncólogo Clínico</li><li>Preceptor de la Residencia de Oncología Clínica del IMIP</li><li>Médico Oncólogo de Rede Américas.</li>",
+          "bio.luiz-jose-batista":
+            "<li>Médico oncólogo Santa Joana Recife, Esperança Recife, HC UFPE</li><li>Máster en cuidados paliativos por el IMIP</li><li>Jefe de la Unidad de Oncología y Hematología del Hospital das Clínicas de la UFPE</li>",
+          "bio.natalia-diniz":
+            "<li>Fellow de Dermatología en Oncología, Instituto Nacional de Câncer — INCA RJ</li><li>Posgrado en Dermatología Oncológica, Hospital Sírio Libanês</li><li>Miembro de la Sociedad Brasileña de Cirugía Dermatológica (SBCD)</li><li>Miembro de la Sociedad Brasileña de Dermatología (SBD)</li><li>Miembro del Grupo Brasileño de Melanoma (GBM)</li><li>Residencia médica en Dermatología, Universidade Federal de Alagoas</li><li>Licenciatura en medicina por la Universidad de Pernambuco</li>",
+          "bio.nildevande-firmino":
+            "<li>Oncólogo por el Hospital Sírio Libanês (SP).</li><li>Oncólogo del Hospital Santa Joana y del Hospital do Câncer de Pernambuco.</li>",
+          "bio.paulo-henrique-miranda":
+            "<li>Cirujano oncológico por el A.C. Camargo Câncer Center</li><li>Doctor en Oncología/Melanoma por el A.C. Camargo Câncer Center/SP</li><li>Coordinador de la oncología cutánea de Unionco Pró-Pele, Clínica RICO y Hospital Barão de Lucena</li><li>Miembro fundador - Clube da Pele de Pernambuco.</li><li>Miembro del Grupo Brasileño de Melanoma y SBCO</li>",
+          "bio.rebeca-reis":
+            "<li>Cirujana general por el Hosp. Oswaldo Cruz.</li><li>Cirujana oncológica por el Hosp. do Câncer de Pernambuco</li><li>Coordinadora de la residencia de Cirugía Oncológica del Hosp. do Câncer.</li><li>Cirujana oncológica de RICO y Unionco</li>",
+          "bio.rodrigo-arruda":
+            "<li>Coordinador de Oncología Clínica del Hospital do Câncer de Pernambuco;</li><li>Oncólogo Clínico del IMIP, Santa Joana y Unionco;</li><li>Máster por el IMIP</li>",
+          "bio.rogerio-santos":
+            "<li>Cirujano oncológico del Real Instituto de Cirugía Oncológica del Hospital Português</li><li>Doctorado en oncología por el A.C. Camargo Câncer Center y el Hospital do Câncer de Pernambuco</li>",
+          "bio.silvana-cavalcante":
+            "<li>Residencia médica en clínica médica y dermatología</li><li>Profesora de la disciplina de dermatología de la UPE</li><li>Preceptora de la residencia médica en dermatología de la UPE</li><li>Especializanda en oncología cutánea por el Hospital Albert Einstein</li><li>Doctorado en Medicina Tropical</li>",
+          "bio.silvia-fontan":
+            "<li>Oncóloga del Hospital Santa Joana;</li><li>Oncóloga del Hospital Barão de Lucena;</li><li>Oncóloga del Hospital do Câncer</li>",
+          "bio.suzane-leite":
+            "<li>Médica radioterapeuta del RHP/ IMIP/ HUOC</li><li>Miembro titular de la Sociedad Brasileña de Radioterapia</li><li>Miembro titular de la Sociedad Brasileña de Radiocirugía.</li>",
+          "bio.tais-oliveira":
+            "<li>Médica Dermatóloga por el Hospital Otávio de Freitas (PE)</li><li>Especialista en Cosmiatría, Láser y Procedimientos por el Hospital Albert Einstein (SP)</li><li>Miembro Titular de SBD y SBCD</li><li>Preceptora voluntaria de la Residencia en Dermatología y responsable del ambulatorio de Mapeo Corporal del Hospital Otávio de Freitas (PE)</li>",
+          "bio.thamires-alcantara":
+            "<li>Dermatóloga por el Hospital Universitário Oswaldo Cruz</li><li>Miembro titular de la SBD</li><li>Cirugía dermatológica, cosmiatría y láser por la SBCD</li><li>Oncología Cutánea por el Hospital Sírio Libanês</li><li>Preceptora voluntaria de dermatología en el Hospital Universitário Oswaldo Cruz</li>",
+          "bio.virginia-batista":
+            "<li>Miembro Titular de la Sociedad Brasileña de Dermatología;</li><li>Especialista en cirugía dermatológica por la Facultad del ABC;</li><li>Cirujana especialista en Mohs por la SBD</li>",
+          "schedule.body": `
+              <tr>
+                <td>08:00 - 08:10</td>
+                <td colspan="2" class="session-break"><strong>Apertura</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>08:15 - 09:15<br />(1 hora)</strong><br />
+                  MESA 1 - CÁNCER DE PIEL: PREVENCIÓN Y DIAGNÓSTICO PRECOZ<br /><small>Presidente: Cristiana Tavares<br />Debatientes: Patrícia Guimarães, Ana Luiza Gadelha</small>
+                </td>
+              </tr>
+              <tr>
+                <td>08:15 – 08:30<br />(15 min)</td>
+                <td>Prevención del cáncer de piel: ¿qué tiene realmente evidencia científica en fotoprotección?</td>
+                <td><span class="speaker-name">Thamires Alcântara</span></td>
+              </tr>
+              <tr>
+                <td>08:30 – 08:45<br />(15 min)</td>
+                <td>El papel de la quimioprofilaxis en el CPNM.</td>
+                <td><span class="speaker-name">Aline Piol</span></td>
+              </tr>
+              <tr>
+                <td>08:45 – 09:00<br />(15 min)</td>
+                <td>Consejos prácticos de dermatoscopia para diagnosticar lesiones precoces.</td>
+                <td><span class="speaker-name">Silvana Cavalcante</span></td>
+              </tr>
+              <tr>
+                <td>09:00 - 09:15<br />(15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSIÓN</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>09:15 - 10:30 (1 hora y<br />15 min)</strong><br />
+                  MESA 2 — TUMORES CUTÁNEOS NO MELANOMA: REFINANDO EL TRATAMIENTO<br /><small>Presidente: Luciana Câmara<br />Debatientes: Rebeca Reis, Bruno Pacheco</small>
+                </td>
+              </tr>
+              <tr>
+                <td>09:15 - 09:30 (15 min)</td>
+                <td>Cirugía con control de márgenes en el cáncer de piel no melanoma</td>
+                <td><span class="speaker-name">Virgínia Batista</span></td>
+              </tr>
+              <tr>
+                <td>09:30 - 09:45 (15 min)</td>
+                <td>¿Hay lugar para la BSGC en el CEC de alto riesgo?</td>
+                <td><span class="speaker-name">Beatriz Cavalcanti</span></td>
+              </tr>
+              <tr>
+                <td>09:45 - 10:00 (15 min)</td>
+                <td>Clasificación y evaluación del CEC de alto riesgo: la mirada del patólogo post C-POST</td>
+                <td><span class="speaker-name">Laís Príncipe</span></td>
+              </tr>
+              <tr>
+                <td>10:00 - 10:15 (15 min)</td>
+                <td>CEC de alto riesgo: el abordaje del oncólogo clínico</td>
+                <td><span class="speaker-name">Antônio Douglas</span></td>
+              </tr>
+              <tr>
+                <td>10:15 - 10:30 (15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSIÓN</strong></td>
+              </tr>
+              <tr>
+                <td>10:30 - 10:50<br />(20 min)</td>
+                <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>10:50 - 11:50<br />(1 hora)</strong><br />
+                  MESA 3 — DESAFÍOS EN EL CÁNCER DE PIEL NO MELANOMA<br /><small>Presidente: Antônio de Pádua<br />Debatientes: Rogério Santos, Daniela Takano</small>
+                </td>
+              </tr>
+              <tr>
+                <td>10:50 - 11:05 (15 min)</td>
+                <td>Tratamiento sistémico en el CBC</td>
+                <td><span class="speaker-name">Rodrigo Arruda</span></td>
+              </tr>
+              <tr>
+                <td>11:05 - 11:20 (15 min)</td>
+                <td>CBC con respuesta parcial al tratamiento sistémico — ¿cómo proceder?</td>
+                <td><span class="speaker-name">Suzane Leite</span></td>
+              </tr>
+              <tr>
+                <td>11:20 - 11:50 (30 min)</td>
+                <td>Caso clínico contextualizado: carcinoma de Merkel</td>
+                <td><span class="speaker-name">Presentación: Rogério Santos<br />Discusión:<br />Cristiana Tavares<br />Luis Felipe Carvalho<br />Suzane Leite<br />Daniela Takano<br />Claudia Fontan<br />Rodrigo Arruda</span></td>
+              </tr>
+              <tr>
+                <td>11:50 - 13:00</td>
+                <td colspan="2" class="session-break"><strong>Almuerzo</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>13:00 - 14:00<br />(1 hora)</strong><br />
+                  MESA 4 — HERRAMIENTAS EN EL MANEJO DE TUMORES CUTÁNEOS<br /><small>Presidente: Jéssica Guido<br />Debatientes: Gessiane Alves, Ilka Rocha</small>
+                </td>
+              </tr>
+              <tr>
+                <td>13:00 - 13:15<br />(15 min)</td>
+                <td>Mapeo corporal: ¿quién necesita hacerlo y por qué?</td>
+                <td><span class="speaker-name">Taís Oliveira</span></td>
+              </tr>
+              <tr>
+                <td>13:15 - 13:30<br />(15 min)</td>
+                <td>¿Cuándo indicar la evaluación genética al paciente con cáncer de piel?</td>
+                <td><span class="speaker-name">Leandro Apolinário</span></td>
+              </tr>
+              <tr>
+                <td>13:30 - 13:45<br />(15 min)</td>
+                <td>Ecografía de alta frecuencia para los cánceres de piel: ¿dónde estamos?</td>
+                <td><span class="speaker-name">Cláudia Fontan</span></td>
+              </tr>
+              <tr>
+                <td>13:45 - 14:00<br />(15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSIÓN</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>14:00 - 15:00<br />(1 hora)</strong><br />
+                  MESA 5 — MANEJO EN LA NUEVA ERA DE TRATAMIENTO DEL MELANOMA: NUEVOS DESAFÍOS<br /><small>Presidente: Luciana Câmara<br />Debatientes: Antônio de Pádua, Silvia Fontan</small>
+                </td>
+              </tr>
+              <tr>
+                <td>14:00 - 14:15<br />(15 min)</td>
+                <td>Neoadyuvancia del melanoma EC III</td>
+                <td><span class="speaker-name">Nildevande Firmino</span></td>
+              </tr>
+              <tr>
+                <td>14:15 - 14:30<br />(15 min)</td>
+                <td>Desafíos en la evaluación de respuesta patológica post-NADINA</td>
+                <td><span class="speaker-name">Daniela Takano</span></td>
+              </tr>
+              <tr>
+                <td>14:30 - 14:45<br />(15 min)</td>
+                <td>Respuesta patológica completa — ¿es suficiente solo la extirpación del ganglio índice?</td>
+                <td><span class="speaker-name">Paulo Miranda</span></td>
+              </tr>
+              <tr>
+                <td>14:45 - 15:00<br />(15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSIÓN</strong></td>
+              </tr>
+              <tr>
+                <td>15:00 - 15:20<br />(20 min)</td>
+                <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>15:20 - 16:35<br />(1 hora y<br />15 min)</strong><br />
+                  MESA 6 — MELANOMA EN FOCO: ESTRATEGIAS DEL ESCENARIO ADYUVANTE AL METASTÁSICO<br /><small>Presidente: Nildevande Firmino<br />Debatientes: Manoel Andrade, Domingo Lins</small>
+                </td>
+              </tr>
+              <tr>
+                <td>15:20 - 15:35<br />(15 min)</td>
+                <td>Optimizando la adyuvancia del melanoma ECIII</td>
+                <td><span class="speaker-name">Luis Felipe Carvalho</span></td>
+              </tr>
+              <tr>
+                <td>15:35 - 15:50<br />(15 min)</td>
+                <td>Ganglio ilíaco: ¿tratar como enfermedad sistémica?</td>
+                <td><span class="speaker-name">Rebeca Reis</span></td>
+              </tr>
+              <tr>
+                <td>15:50 - 16:05<br />(15 min)</td>
+                <td>Melanoma metastásico BRAF+: de la biología tumoral al tratamiento sistémico</td>
+                <td><span class="speaker-name">Luiz José Batista</span></td>
+              </tr>
+              <tr>
+                <td>16:05 - 16:20<br />(15 min)</td>
+                <td>Secuenciación terapéutica del melanoma metastásico</td>
+                <td><span class="speaker-name">Silvia Fontan</span></td>
+              </tr>
+              <tr>
+                <td>16:20 - 16:35<br />(15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSIÓN</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>16:35 - 17:35<br />(1 hora)</strong><br />
+                  MESA 7 — INTERFAZ DERMATO-ONCO DURANTE EL TRATAMIENTO ONCOLÓGICO<br /><small>Presidente: Rossano Araújo<br />Debatientes: Consuelo Albuquerque, Cristiane Violet</small>
+                </td>
+              </tr>
+              <tr>
+                <td>16:35 - 16:50<br />(15 min)</td>
+                <td>Toxicidad cutánea por inmunoterapia</td>
+                <td><span class="speaker-name">Jessica Guido</span></td>
+              </tr>
+              <tr>
+                <td>16:50 - 17:05<br />(15 min)</td>
+                <td>Los límites de la estética: ¿cómo cuidar la autoestima del paciente oncológico?</td>
+                <td><span class="speaker-name">Janielli Assis</span></td>
+              </tr>
+              <tr>
+                <td>17:05 - 17:20<br />(15 min)</td>
+                <td>Protocolos de interfaz dermato-oncología durante el tratamiento oncológico</td>
+                <td><span class="speaker-name">Natália Diniz</span></td>
+              </tr>
+              <tr>
+                <td>17:20 - 17:35<br />(15 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSIÓN</strong></td>
+              </tr>
+              <tr>
+                <td>17:35 - 17:45<br />(10 min)</td>
+                <td colspan="2" class="session-break"><strong>Cierre</strong></td>
+              </tr>`,
+        },
+      };
+
+      const i18nElements = document.querySelectorAll("[data-i18n]");
+      const originalContent = {};
+      i18nElements.forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (key in originalContent) return;
+        originalContent[key] =
+          el.tagName === "INPUT" || el.tagName === "TEXTAREA"
+            ? el.placeholder
+            : el.innerHTML;
+      });
+
+      function applyLanguage(lang) {
+        const dict = translations[lang] || {};
+        i18nElements.forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          const value = key in dict ? dict[key] : originalContent[key];
+          if (value == null) return;
+          if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            el.placeholder = value;
+          } else {
+            el.innerHTML = value;
+          }
+        });
+        document.documentElement.lang = lang === "pt" ? "pt-BR" : lang;
+      }
+
+      const languageSelect = document.getElementById("language-select");
+      const storedLang = localStorage.getItem("selectedLanguage") || "pt";
+      languageSelect.value = storedLang;
+      applyLanguage(storedLang);
+      languageSelect.addEventListener("change", () => {
+        const lang = languageSelect.value;
+        localStorage.setItem("selectedLanguage", lang);
+        applyLanguage(lang);
       });
     </script>
   </body>
