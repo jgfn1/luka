@@ -49,7 +49,7 @@ with the same technical pattern (one repo per client, host-based routing in
 
 ### Portfolio (Automa IT & Development)
 
-- **Default URL**: [lukaplan.vercel.app](https://lukaplan.vercel.app/) (also any
+- **Default URL**: [automaitdev.vercel.app](https://automaitdev.vercel.app/) (also any
   other `*.vercel.app` hostname for this project)
 - **Folder**: `/portfolio/`
 - **Languages**: EN, PT, ES

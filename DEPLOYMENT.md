@@ -11,7 +11,7 @@ Complete guide for deploying the event sites with custom domains on Vercel.
   - **Headers** add baseline security headers to every response.
 - The portfolio lives in `/portfolio/` (there is no root `index.html`) so the
   host-based rules work cleanly on custom domains. In production the default URL
-  is [lukaplan.vercel.app](https://lukaplan.vercel.app/); preview deploys on
+  is [automaitdev.vercel.app](https://automaitdev.vercel.app/); preview deploys on
   other `*.vercel.app` hostnames also serve the portfolio.
 - `cleanUrls` is enabled and `trailingSlash` is disabled.
 - Deployments run automatically on push to `main`.
@@ -28,7 +28,7 @@ Complete guide for deploying the event sites with custom domains on Vercel.
 | `www.congressoendoginecorecife.com.br`| Endogineco 2026 | `/endogineco2026/`    |
 | `oncodermarecife2026.com.br`          | Oncoderma 2026  | `/oncoderma2026/`     |
 | `www.oncodermarecife2026.com.br`      | Oncoderma 2026  | `/oncoderma2026/`     |
-| `lukaplan.vercel.app`                 | Portfolio       | `/portfolio/`         |
+| `automaitdev.vercel.app`              | Portfolio       | `/portfolio/`         |
 | `*.vercel.app` (other preview URLs)   | Portfolio       | `/portfolio/`         |
 
 ## Setup Steps
@@ -189,7 +189,7 @@ Then add the domain in the Vercel Dashboard and configure its DNS.
 # Start local dev server
 vercel dev
 
-# Portfolio: http://localhost:3000/  (or lukaplan.vercel.app in production)
+# Portfolio: http://localhost:3000/  (or automaitdev.vercel.app in production)
 # Or modify /etc/hosts to test domain routing:
 # 127.0.0.1 tgirecife.com.br
 # 127.0.0.1 www.tgirecife.com.br

@@ -60,7 +60,7 @@ default URL falls through to the portfolio:
 | `gastroconecta2026.com.br`, `www.gastroconecta2026.com.br`         | Gastro Conecta  | `/gastroconecta2026/` |
 | `congressoendoginecorecife.com.br`, `www.…`                        | Endogineco 2026 | `/endogineco2026/`  |
 | `oncodermarecife2026.com.br`, `www.oncodermarecife2026.com.br`     | Oncoderma 2026  | `/oncoderma2026/`   |
-| `*.vercel.app` (default, incl. `lukaplan.vercel.app`)              | Portfolio       | `/portfolio/`       |
+| `*.vercel.app` (default, incl. `automaitdev.vercel.app`)           | Portfolio       | `/portfolio/`       |
 
 Redirects mirror these hosts to remove the folder prefix from public URLs, so
 `tgirecife.com.br/tgi` and `tgirecife.com.br/tgi/<path>` permanently redirect to
