@@ -13,19 +13,19 @@ PRECONGRESS_DIR = ROOT / "pre-congress"
 PRECONGRESS_COURSES = [
     {
         "id": "videocirurgia",
-        "csv": "programacao-a-videocirurgia-na-oncologia.csv",
+        "csv": "curso-a-videocirurgia-na-oncologia.csv",
     },
     {
         "id": "nutricao",
-        "csv": "programacao-nutricao-para-pacientes-com-endometriose.csv",
+        "csv": "curso-nutricao-para-pacientes-com-endometriose.csv",
     },
     {
         "id": "usg",
-        "csv": "programacao-usg-mapeamento-de-endometriose.csv",
+        "csv": "curso-usg-mapeamento-de-endometriose.csv",
     },
     {
         "id": "sutura",
-        "csv": "programacao-sutura-dry-lab-em-sutura-endoscopica.csv",
+        "csv": "curso-sutura-dry-lab-em-sutura-endoscopica.csv",
     },
 ]
 
