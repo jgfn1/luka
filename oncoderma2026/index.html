@@ -256,6 +256,7 @@
         position: absolute;
         inset: 0;
         z-index: 0;
+        overflow: hidden;
         background:
           linear-gradient(
             145deg,
@@ -275,13 +276,13 @@
           );
       }
 
-      header.hero .hero-bg::after {
-        content: "";
+      header.hero .hero-video {
         position: absolute;
         inset: 0;
-        opacity: 0.35;
-        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30 30 60 0 30z' fill='none' stroke='%23ffffff' stroke-opacity='0.08'/%3E%3C/svg%3E");
-        background-size: 48px 48px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
       }
 
       header.hero .hero-overlay {
@@ -289,6 +290,32 @@
         inset: 0;
         z-index: 1;
         pointer-events: none;
+        background:
+          linear-gradient(
+            145deg,
+            rgba(90, 26, 49, 0.72) 0%,
+            rgba(209, 77, 51, 0.62) 48%,
+            rgba(229, 179, 51, 0.52) 100%
+          ),
+          radial-gradient(
+            circle at 20% 30%,
+            rgba(229, 179, 51, 0.28) 0%,
+            transparent 45%
+          ),
+          radial-gradient(
+            circle at 85% 70%,
+            rgba(90, 26, 49, 0.4) 0%,
+            transparent 55%
+          );
+      }
+
+      header.hero .hero-overlay::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.35;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30 30 60 0 30z' fill='none' stroke='%23ffffff' stroke-opacity='0.08'/%3E%3C/svg%3E");
+        background-size: 48px 48px;
       }
 
       header.hero .hero-content {
@@ -407,6 +434,10 @@
         .fade-in {
           opacity: 1;
           transform: none;
+        }
+
+        header.hero .hero-video {
+          display: none;
         }
       }
 
@@ -1202,7 +1233,22 @@
     </nav>
 
     <header class="hero" id="top">
-      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-bg" aria-hidden="true">
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          disablepictureinpicture
+        >
+          <source
+            src="assets/hjsr-ii-oncoderma.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
         <h1 data-i18n="hero.title">
@@ -2504,6 +2550,23 @@
       window.addEventListener("scroll", () => {
         nav.classList.toggle("scrolled", window.pageYOffset > 80);
       });
+
+      const heroVideo = document.querySelector(".hero-video");
+      if (
+        heroVideo &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        const playHeroVideo = () => {
+          heroVideo.play().catch(() => {});
+        };
+
+        playHeroVideo();
+        document.addEventListener("visibilitychange", () => {
+          if (!document.hidden) {
+            playHeroVideo();
+          }
+        });
+      }
 
       function updateCountdown() {
         const eventDate = new Date("2026-06-05T08:00:00-03:00").getTime();
