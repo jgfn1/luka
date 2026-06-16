@@ -397,6 +397,63 @@
         color: var(--maroon) !important;
       }
 
+      .btn-secondary {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.95);
+        color: var(--maroon) !important;
+        padding: 1rem 2.2rem;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 1rem;
+        transition: all 0.35s ease;
+        box-shadow: 0 4px 22px rgba(0, 0, 0, 0.2);
+        letter-spacing: 0.04em;
+      }
+
+      .btn-secondary:hover,
+      .btn-secondary:focus {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+        background: #fff;
+        color: var(--terracotta) !important;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.85rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .about-video {
+        margin-top: 2.5rem;
+        text-align: center;
+      }
+
+      .video-embed {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 6px 22px rgba(90, 26, 49, 0.15);
+        background: #000;
+        border: 1px solid rgba(90, 26, 49, 0.08);
+      }
+
+      .video-embed--short {
+        max-width: 360px;
+        margin: 0 auto;
+        aspect-ratio: 9 / 16;
+      }
+
+      .video-embed iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
       section {
         padding: 4.5rem 2rem;
       }
@@ -1258,9 +1315,17 @@
           <strong>5 de junho de 2026</strong> · Sexta-feira · 8h<br />
           Auditório Hospital Santa Joana Recife — Graças
         </p>
-        <a class="btn-primary" href="#inscricao" data-i18n="hero.cta"
-          >Inscrições encerradas</a
-        >
+        <div class="hero-actions">
+          <a class="btn-primary" href="#inscricao" data-i18n="hero.cta"
+            >Inscrições encerradas</a
+          >
+          <a
+            class="btn-secondary"
+            href="#video-institucional"
+            data-i18n="hero.watchVideo"
+            >Assistir ao vídeo completo ↓</a
+          >
+        </div>
 
         <div class="hero-logos-section">
           <h3 data-i18n="hero.realization">Realização</h3>
@@ -1307,6 +1372,19 @@
           instituições.<br />
           <strong>Número de participantes:</strong> 70
         </p>
+
+        <div class="about-video" id="video-institucional">
+          <div class="video-embed video-embed--short">
+            <iframe
+              src="https://www.youtube.com/embed/3MoljQ09ToI"
+              loading="lazy"
+              title="II Simpósio Oncoderma Recife — vídeo institucional"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
 
         <div class="orgs-strip">
           <div>
@@ -2691,6 +2769,7 @@
           "hero.subtitle":
             "<strong>June 5, 2026</strong> · Friday · 8 a.m.<br /> Hospital Santa Joana Recife Auditorium — Graças",
           "hero.cta": "Registration closed",
+          "hero.watchVideo": "Watch the full video ↓",
           "hero.realization": "Organized by",
           "hero.support": "Institutional support",
           "about.title": "About the event",
@@ -3010,6 +3089,7 @@
           "hero.subtitle":
             "<strong>5 de junio de 2026</strong> · Viernes · 8h<br /> Auditorio Hospital Santa Joana Recife — Graças",
           "hero.cta": "Inscripciones cerradas",
+          "hero.watchVideo": "Ver el video completo ↓",
           "hero.realization": "Organización",
           "hero.support": "Apoyo institucional",
           "about.title": "Sobre el evento",
