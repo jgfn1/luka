@@ -220,6 +220,16 @@
         color: #fff !important;
       }
 
+      .nav-lang select {
+        background: transparent;
+        color: var(--primary);
+        border: 1px solid rgba(17, 78, 125, 0.4);
+        border-radius: 8px;
+        padding: 0.32rem 0.5rem;
+        font: 600 0.82rem "Open Sans", sans-serif;
+        cursor: pointer;
+      }
+
       .mobile-menu-toggle {
         display: none;
         flex-direction: column;
@@ -1378,16 +1388,28 @@
       </button>
 
       <ul id="nav-menu">
-        <li><a href="#top">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#comissao">Comissão</a></li>
-        <li><a href="#pre-simposio">Pré-Simpósio</a></li>
-        <li><a href="#programacao">Programação</a></li>
-        <li><a href="#palestrantes">Palestrantes</a></li>
-        <li><a href="#local">Local</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="#top" data-i18n="nav.home">Início</a></li>
+        <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#comissao" data-i18n="nav.committee">Comissão</a></li>
+        <li><a href="#pre-simposio" data-i18n="nav.pre">Pré-Simpósio</a></li>
+        <li><a href="#programacao" data-i18n="nav.schedule">Programação</a></li>
+        <li><a href="#palestrantes" data-i18n="nav.speakers">Palestrantes</a></li>
+        <li><a href="#local" data-i18n="nav.venue">Local</a></li>
+        <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
         <li>
-          <a class="nav-cta" href="#inscricao">Inscrições em breve</a>
+          <a class="nav-cta" href="#inscricao" data-i18n="nav.cta"
+            >Inscrições em breve</a
+          >
+        </li>
+        <li class="nav-lang">
+          <select
+            id="language-select"
+            aria-label="Selecione o idioma / Select language"
+          >
+            <option value="pt">PT</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
         </li>
       </ul>
     </nav>
@@ -1397,26 +1419,30 @@
       <div class="hero-blob hero-blob--1" aria-hidden="true"></div>
       <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
       <div class="hero-content">
-        <span class="hero-badge"
+        <span class="hero-badge" data-i18n="hero.badge"
           ><span class="dot"></span> Recife · 21 e 22 de agosto de 2026</span
         >
-        <h1>
+        <h1 data-i18n="hero.title">
           II Simpósio Pernambucano Multidisciplinar de
           <span class="accent">Prevenção de Quedas</span>
         </h1>
-        <p class="hero-sub">
+        <p class="hero-sub" data-i18n="hero.sub">
           <strong>21 e 22 de agosto de 2026</strong><br />
           Auditório do Hospital Santa Joana Recife — Graças
         </p>
         <div class="hero-actions">
-          <span class="btn-soon"><span class="dot"></span> Inscrições em breve</span>
-          <a class="btn-outline" href="#programacao">Ver programação</a>
+          <span class="btn-soon" data-i18n="hero.soon"
+            ><span class="dot"></span> Inscrições em breve</span
+          >
+          <a class="btn-outline" href="#programacao" data-i18n="hero.seeProgram"
+            >Ver programação</a
+          >
         </div>
 
         <div class="hero-logos-section">
           <div class="hero-logos-cols">
             <div class="hero-logos-col">
-              <h3>Realização</h3>
+              <h3 data-i18n="hero.realization">Realização</h3>
               <div class="hero-logo-grid">
                 <span class="logo-chip"
                   ><img
@@ -1437,7 +1463,7 @@
             </div>
             <div class="hero-logos-col-divider" aria-hidden="true"></div>
             <div class="hero-logos-col">
-              <h3>Apoio Institucional</h3>
+              <h3 data-i18n="hero.support">Apoio Institucional</h3>
               <div class="hero-logo-grid">
                 <span class="logo-chip logo-chip--round"
                   ><img
@@ -1457,9 +1483,9 @@
 
     <section id="sobre" class="fade-in">
       <div class="container">
-        <span class="section-eyebrow">O evento</span>
-        <h2 class="text-center">Sobre o Simpósio</h2>
-        <p class="lead" style="margin: 0 auto; text-align: center">
+        <span class="section-eyebrow" data-i18n="about.eyebrow">O evento</span>
+        <h2 class="text-center" data-i18n="about.title">Sobre o Simpósio</h2>
+        <p class="lead" style="margin: 0 auto; text-align: center" data-i18n="about.p1">
           O <strong>Hospital Santa Joana Recife</strong>, o
           <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong> e a
           <strong>Rede Américas</strong> promovem o
@@ -1470,7 +1496,7 @@
           maiores desafios do cuidado à pessoa idosa: prevenir quedas e suas
           consequências.
         </p>
-        <p class="lead" style="margin: 1.25rem auto 0; text-align: center">
+        <p class="lead" style="margin: 1.25rem auto 0; text-align: center" data-i18n="about.p2">
           Com olhar verdadeiramente multidisciplinar, o simpósio aborda desde a
           prevenção primária até a reabilitação, integrando medicina,
           fisioterapia, enfermagem, nutrição, fonoaudiologia, terapia
@@ -1481,20 +1507,20 @@
 
         <div class="info-cards">
           <div class="info-card">
-            <h4>Quando</h4>
-            <p>21 e 22 de agosto de 2026<br />(sexta e sábado)</p>
+            <h4 data-i18n="about.card1Title">Quando</h4>
+            <p data-i18n="about.card1Body">21 e 22 de agosto de 2026<br />(sexta e sábado)</p>
           </div>
           <div class="info-card">
-            <h4>Onde</h4>
-            <p>Auditório do Hospital Santa Joana Recife — Graças</p>
+            <h4 data-i18n="about.card2Title">Onde</h4>
+            <p data-i18n="about.card2Body">Auditório do Hospital Santa Joana Recife — Graças</p>
           </div>
           <div class="info-card">
-            <h4>Pré-Simpósio</h4>
-            <p>Oficinas práticas e abertura oficial na sexta-feira (21/08)</p>
+            <h4 data-i18n="about.card3Title">Pré-Simpósio</h4>
+            <p data-i18n="about.card3Body">Oficinas práticas e abertura oficial na sexta-feira (21/08)</p>
           </div>
           <div class="info-card">
-            <h4>Público</h4>
-            <p>Evento presencial e multiprofissional da saúde</p>
+            <h4 data-i18n="about.card4Title">Público</h4>
+            <p data-i18n="about.card4Body">Evento presencial e multiprofissional da saúde</p>
           </div>
         </div>
       </div>
@@ -1502,23 +1528,23 @@
 
     <section id="countdown-section" class="fade-in">
       <div class="container">
-        <h2>Contagem regressiva para o evento</h2>
+        <h2 data-i18n="countdown.title">Contagem regressiva para o evento</h2>
         <div class="countdown-timer">
           <div class="countdown-item">
             <span id="days" class="countdown-number">00</span>
-            <span class="countdown-label">Dias</span>
+            <span class="countdown-label" data-i18n="countdown.days">Dias</span>
           </div>
           <div class="countdown-item">
             <span id="hours" class="countdown-number">00</span>
-            <span class="countdown-label">Horas</span>
+            <span class="countdown-label" data-i18n="countdown.hours">Horas</span>
           </div>
           <div class="countdown-item">
             <span id="minutes" class="countdown-number">00</span>
-            <span class="countdown-label">Minutos</span>
+            <span class="countdown-label" data-i18n="countdown.minutes">Minutos</span>
           </div>
           <div class="countdown-item">
             <span id="seconds" class="countdown-number">00</span>
-            <span class="countdown-label">Segundos</span>
+            <span class="countdown-label" data-i18n="countdown.seconds">Segundos</span>
           </div>
         </div>
       </div>
@@ -1526,8 +1552,8 @@
 
     <section id="comissao" class="fade-in">
       <div class="container">
-        <span class="section-eyebrow">Quem organiza</span>
-        <h2 class="text-center">Comissão Organizadora</h2>
+        <span class="section-eyebrow" data-i18n="committee.eyebrow">Quem organiza</span>
+        <h2 class="text-center" data-i18n="committee.title">Comissão Organizadora</h2>
         <p
           class="text-center"
           style="
@@ -1536,6 +1562,7 @@
             max-width: 720px;
             color: var(--muted-text);
           "
+          data-i18n="committee.intro"
         >
           A coordenação científica do simpósio está sob responsabilidade de um
           time multidisciplinar de especialistas:
@@ -1546,11 +1573,12 @@
               <img src="committee/carolina-nanque.jpeg" alt="Carolina Nanque" />
             </div>
             <h4>Carolina Nanque</h4>
-            <span class="person-spec">Fisioterapeuta</span>
+            <span class="person-spec" data-i18n="t.physio">Fisioterapeuta</span>
             <button
               type="button"
               class="saiba-mais-btn"
               data-modal="modal-carolina-nanque"
+              data-i18n="ui.learnMore"
             >
               Saiba mais
             </button>
@@ -1560,11 +1588,12 @@
               <img src="committee/juliana-zaidan.jpeg" alt="Juliana Zaidan" />
             </div>
             <h4>Juliana Zaidan</h4>
-            <span class="person-spec">Enfermeira · ISEP</span>
+            <span class="person-spec" data-i18n="spec.juliana">Enfermeira · ISEP</span>
             <button
               type="button"
               class="saiba-mais-btn"
               data-modal="modal-juliana-zaidan"
+              data-i18n="ui.learnMore"
             >
               Saiba mais
             </button>
@@ -1577,11 +1606,12 @@
               />
             </div>
             <h4>Renato Leitão de Almeida Neto</h4>
-            <span class="person-spec">Fisioterapeuta</span>
+            <span class="person-spec" data-i18n="t.physio">Fisioterapeuta</span>
             <button
               type="button"
               class="saiba-mais-btn"
               data-modal="modal-renato-leitao"
+              data-i18n="ui.learnMore"
             >
               Saiba mais
             </button>
@@ -1592,8 +1622,8 @@
 
     <section id="pre-simposio" class="fade-in">
       <div class="container">
-        <span class="section-eyebrow">21 de agosto de 2026 · sexta-feira</span>
-        <h2 class="text-center">Pré-Simpósio</h2>
+        <span class="section-eyebrow" data-i18n="pre.eyebrow">21 de agosto de 2026 · sexta-feira</span>
+        <h2 class="text-center" data-i18n="pre.title">Pré-Simpósio</h2>
         <p
           class="text-center"
           style="
@@ -1602,6 +1632,7 @@
             max-width: 760px;
             color: var(--muted-text);
           "
+          data-i18n="pre.intro"
         >
           A programação começa na sexta-feira com
           <strong>oficinas práticas simultâneas</strong>, seguidas da abertura
@@ -1610,35 +1641,35 @@
 
         <div class="workshop-grid">
           <div class="workshop-card">
-            <span class="workshop-tag">Oficina Prática · 14h15 – 17h15</span>
-            <h4>
+            <span class="workshop-tag" data-i18n="ws.tag">Oficina Prática · 14h15 – 17h15</span>
+            <h4 data-i18n="ws1.title">
               DAM no contexto hospitalar: um processo de manutenção e facilitação
               da mobilidade
             </h4>
             <div class="workshop-speaker">
               <span
                 ><strong>Alexsandra Santos</strong>
-                <span class="ws-role">Fisioterapeuta</span></span
+                <span class="ws-role" data-i18n="t.physio">Fisioterapeuta</span></span
               >
             </div>
           </div>
           <div class="workshop-card">
-            <span class="workshop-tag">Oficina Prática · 14h15 – 17h15</span>
-            <h4>Realidade Virtual na prevenção de quedas</h4>
+            <span class="workshop-tag" data-i18n="ws.tag">Oficina Prática · 14h15 – 17h15</span>
+            <h4 data-i18n="ws2.title">Realidade Virtual na prevenção de quedas</h4>
             <div class="workshop-speaker">
               <span
                 ><strong>Amanda Perez</strong>
-                <span class="ws-role">Fisioterapeuta</span></span
+                <span class="ws-role" data-i18n="t.physio">Fisioterapeuta</span></span
               >
             </div>
           </div>
           <div class="workshop-card">
-            <span class="workshop-tag">Oficina Prática · 14h15 – 17h15</span>
-            <h4>Estimulação Cognitiva aplicada ao risco de quedas</h4>
+            <span class="workshop-tag" data-i18n="ws.tag">Oficina Prática · 14h15 – 17h15</span>
+            <h4 data-i18n="ws3.title">Estimulação Cognitiva aplicada ao risco de quedas</h4>
             <div class="workshop-speaker">
               <span
                 ><strong>Pamela Nascimento</strong>
-                <span class="ws-role">Terapeuta Ocupacional</span></span
+                <span class="ws-role" data-i18n="t.to">Terapeuta Ocupacional</span></span
               >
             </div>
           </div>
@@ -1648,12 +1679,12 @@
           <table class="schedule-table">
             <thead>
               <tr>
-                <th style="width: 150px">Horário</th>
-                <th>Atividade</th>
-                <th style="width: 220px">Palestrante</th>
+                <th style="width: 150px" data-i18n="sch.colTime">Horário</th>
+                <th data-i18n="sch.colActivity">Atividade</th>
+                <th style="width: 220px" data-i18n="sch.colSpeaker">Palestrante</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody data-i18n="sch.preBody">
               <tr>
                 <td colspan="3" class="session-header">
                   <strong>14h15 – 17h15 (03 horas)</strong><br />
@@ -1718,7 +1749,7 @@
             </tbody>
           </table>
         </div>
-        <p class="schedule-note">
+        <p class="schedule-note" data-i18n="sch.note">
           Programação preliminar, sujeita a alterações.
         </p>
       </div>
@@ -1729,10 +1760,10 @@
         <div class="schedule-header">
           <div class="schedule-title-row">
             <div>
-              <span class="section-eyebrow" style="text-align: left"
+              <span class="section-eyebrow" style="text-align: left" data-i18n="prog.eyebrow"
                 >22 de agosto de 2026 · sábado</span
               >
-              <h2 class="schedule-title">Programação Científica</h2>
+              <h2 class="schedule-title" data-i18n="prog.title">Programação Científica</h2>
             </div>
             <div class="download-actions">
               <a
@@ -1756,7 +1787,7 @@
                   <polyline points="7 10 12 15 17 10" />
                   <line x1="12" y1="15" x2="12" y2="3" />
                 </svg>
-                <span>Baixar PDF</span>
+                <span data-i18n="sch.downloadPdf">Baixar PDF</span>
               </a>
               <a
                 href="schedule/programacao-preliminar.xlsx"
@@ -1778,7 +1809,7 @@
                   <polyline points="7 10 12 15 17 10" />
                   <line x1="12" y1="15" x2="12" y2="3" />
                 </svg>
-                <span>Baixar planilha</span>
+                <span data-i18n="sch.downloadXlsx">Baixar planilha</span>
               </a>
             </div>
           </div>
@@ -1788,12 +1819,12 @@
           <table class="schedule-table">
             <thead>
               <tr>
-                <th style="width: 150px">Horário</th>
-                <th>Atividade</th>
-                <th style="width: 230px">Palestrante</th>
+                <th style="width: 150px" data-i18n="sch.colTime">Horário</th>
+                <th data-i18n="sch.colActivity">Atividade</th>
+                <th style="width: 230px" data-i18n="sch.colSpeaker">Palestrante</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody data-i18n="sch.mainBody">
               <tr>
                 <td>08h15 – 08h45<br />(30 min)</td>
                 <td>
@@ -2220,7 +2251,7 @@
             </tbody>
           </table>
         </div>
-        <p class="schedule-note">
+        <p class="schedule-note" data-i18n="sch.note">
           Programação preliminar, sujeita a alterações.
         </p>
       </div>
@@ -2228,8 +2259,8 @@
 
     <section id="palestrantes" class="fade-in">
       <div class="container">
-        <span class="section-eyebrow">Confirmados</span>
-        <h2 class="text-center">Palestrantes</h2>
+        <span class="section-eyebrow" data-i18n="speakers.eyebrow">Confirmados</span>
+        <h2 class="text-center" data-i18n="speakers.title">Palestrantes</h2>
         <p
           class="text-center"
           style="
@@ -2238,6 +2269,7 @@
             max-width: 720px;
             color: var(--muted-text);
           "
+          data-i18n="speakers.intro"
         >
           Conheça os palestrantes com presença confirmada. Em breve novos nomes
           serão anunciados.
@@ -2252,11 +2284,12 @@
               </div>
             </div>
             <h4>Alexsandra Santos</h4>
-            <span class="person-spec">Fisioterapeuta</span>
+            <span class="person-spec" data-i18n="t.physio">Fisioterapeuta</span>
             <button
               type="button"
               class="saiba-mais-btn"
               data-modal="modal-alexsandra-santos"
+              data-i18n="ui.learnMore"
             >
               Saiba mais
             </button>
@@ -2270,11 +2303,12 @@
               </div>
             </div>
             <h4>Bárbara Nunes</h4>
-            <span class="person-spec">Farmacêutica</span>
+            <span class="person-spec" data-i18n="t.pharma">Farmacêutica</span>
             <button
               type="button"
               class="saiba-mais-btn"
               data-modal="modal-barbara-nunes"
+              data-i18n="ui.learnMore"
             >
               Saiba mais
             </button>
@@ -2288,11 +2322,12 @@
               </div>
             </div>
             <h4>Camilla Bianca</h4>
-            <span class="person-spec">Fisioterapeuta</span>
+            <span class="person-spec" data-i18n="t.physio">Fisioterapeuta</span>
             <button
               type="button"
               class="saiba-mais-btn"
               data-modal="modal-camilla-bianca"
+              data-i18n="ui.learnMore"
             >
               Saiba mais
             </button>
@@ -2304,19 +2339,19 @@
     <section id="local" class="fade-in">
       <div class="container two-column">
         <div>
-          <span class="section-eyebrow" style="text-align: left">Como chegar</span>
-          <h2>Local do evento</h2>
-          <p>
+          <span class="section-eyebrow" style="text-align: left" data-i18n="venue.eyebrow">Como chegar</span>
+          <h2 data-i18n="venue.title">Local do evento</h2>
+          <p data-i18n="venue.p1">
             O simpósio será realizado no
             <strong>Auditório do Hospital Santa Joana Recife</strong>, no bairro
             das Graças.
           </p>
-          <p style="margin-top: 1.25rem">
+          <p style="margin-top: 1.25rem" data-i18n="venue.address">
             <strong>Endereço:</strong><br />
             Rua Joaquim Nabuco, 200 — Graças<br />
             Recife — PE
           </p>
-          <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--muted-text)">
+          <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--muted-text)" data-i18n="venue.mapHint">
             Use o mapa ao lado para orientação de acesso.
           </p>
         </div>
@@ -2334,15 +2369,15 @@
 
     <section id="inscricao" class="fade-in">
       <div class="container">
-        <span class="section-eyebrow">Participe</span>
-        <h2 class="text-center">Inscrições</h2>
+        <span class="section-eyebrow" data-i18n="reg.eyebrow">Participe</span>
+        <h2 class="text-center" data-i18n="reg.title">Inscrições</h2>
         <div class="reg-box">
-          <p style="max-width: 560px; margin: 0 auto 1.75rem">
+          <p style="max-width: 560px; margin: 0 auto 1.75rem" data-i18n="reg.text">
             As inscrições para o II Simpósio Pernambucano Multidisciplinar de
             Prevenção de Quedas serão abertas em breve. Acompanhe nossos canais
             para não perder a data de abertura.
           </p>
-          <span class="reg-badge"><span class="dot"></span> Inscrições em breve</span>
+          <span class="reg-badge" data-i18n="reg.badge"><span class="dot"></span> Inscrições em breve</span>
         </div>
       </div>
     </section>
@@ -2350,20 +2385,20 @@
     <section id="contato" class="fade-in">
       <div class="container two-column">
         <div>
-          <span class="section-eyebrow" style="text-align: left">Fale conosco</span>
-          <h2>Contato</h2>
-          <p>
+          <span class="section-eyebrow" style="text-align: left" data-i18n="contact.eyebrow">Fale conosco</span>
+          <h2 data-i18n="contact.title">Contato</h2>
+          <p data-i18n="contact.intro">
             Para dúvidas sobre o simpósio ou suporte às inscrições, entre em
             contato com a organização:
           </p>
           <h3>Luka Plan Promoções e Eventos</h3>
-          <p>
+          <p data-i18n="contact.address">
             <strong>Endereço:</strong><br />
             Rua João Eugênio de Lima, 143 – Sala 01<br />
             Boa Viagem – Recife – CEP 51.030-360
           </p>
           <p>
-            <strong>Telefone/WhatsApp:</strong><br />
+            <strong data-i18n="contact.phoneLabel">Telefone/WhatsApp:</strong><br />
             <a href="https://wa.me/5581999851712" target="_blank" rel="noopener"
               >(81) 99985-1712</a
             >
@@ -2373,7 +2408,7 @@
             >
           </p>
           <p>
-            <strong>E-mail:</strong><br />
+            <strong data-i18n="contact.emailLabel">E-mail:</strong><br />
             <a href="mailto:eventos@lukaplan.com.br">eventos@lukaplan.com.br</a>
           </p>
           <div class="social-links">
@@ -2420,14 +2455,14 @@
           </div>
         </div>
         <div>
-          <h2>Informações</h2>
-          <p>
+          <h2 data-i18n="contact.infoTitle">Informações</h2>
+          <p data-i18n="contact.info1">
             O <strong>pré-simpósio</strong> acontece na sexta-feira (21/08), com
             oficinas práticas, abertura oficial e palestra magna. No sábado
             (22/08) realiza-se a programação científica completa, com mesas
             redondas, painéis e palestras multidisciplinares.
           </p>
-          <p>
+          <p data-i18n="contact.info2">
             Em breve divulgaremos os valores, lotes e o link oficial de
             inscrição. Fique atento aos nossos canais.
           </p>
@@ -2445,8 +2480,8 @@
           <img src="committee/carolina-nanque.jpeg" alt="Carolina Nanque" />
         </div>
         <h3>Carolina Nanque</h3>
-        <p class="modal-role">Fisioterapeuta</p>
-        <ul class="modal-bio">
+        <p class="modal-role" data-i18n="t.physio">Fisioterapeuta</p>
+        <ul class="modal-bio" data-i18n="bio.carolina">
           <li>Fisioterapeuta — Bacharelado pela UFPE</li>
           <li>Mestrado em Gerontologia — UFPE</li>
           <li>
@@ -2481,8 +2516,8 @@
           <img src="committee/juliana-zaidan.jpeg" alt="Juliana Zaidan" />
         </div>
         <h3>Juliana Zaidan</h3>
-        <p class="modal-role">Enfermeira · Coordenadora do ISEP</p>
-        <ul class="modal-bio">
+        <p class="modal-role" data-i18n="role.juliana">Enfermeira · Coordenadora do ISEP</p>
+        <ul class="modal-bio" data-i18n="bio.juliana">
           <li>CEO e Co-fundadora da Empresa Dyname — soluções em saúde</li>
           <li>Bacharel em Enfermagem</li>
           <li>
@@ -2522,8 +2557,8 @@
           />
         </div>
         <h3>Renato Leitão de Almeida Neto</h3>
-        <p class="modal-role">Fisioterapeuta</p>
-        <ul class="modal-bio">
+        <p class="modal-role" data-i18n="t.physio">Fisioterapeuta</p>
+        <ul class="modal-bio" data-i18n="bio.renato">
           <li>Fisioterapeuta — UFPE</li>
           <li>
             Pós-graduado em Fisioterapia Neurofuncional — Faculdade Estácio
@@ -2551,8 +2586,8 @@
           </div>
         </div>
         <h3>Alexsandra Santos</h3>
-        <p class="modal-role">Fisioterapeuta</p>
-        <p class="modal-bio-pending">Informações em breve.</p>
+        <p class="modal-role" data-i18n="t.physio">Fisioterapeuta</p>
+        <p class="modal-bio-pending" data-i18n="ui.bioPending">Informações em breve.</p>
       </div>
     </div>
 
@@ -2569,8 +2604,8 @@
           </div>
         </div>
         <h3>Bárbara Nunes</h3>
-        <p class="modal-role">Farmacêutica</p>
-        <p class="modal-bio-pending">Informações em breve.</p>
+        <p class="modal-role" data-i18n="t.pharma">Farmacêutica</p>
+        <p class="modal-bio-pending" data-i18n="ui.bioPending">Informações em breve.</p>
       </div>
     </div>
 
@@ -2587,27 +2622,27 @@
           </div>
         </div>
         <h3>Camilla Bianca</h3>
-        <p class="modal-role">Fisioterapeuta</p>
-        <p class="modal-bio-pending">Informações em breve.</p>
+        <p class="modal-role" data-i18n="t.physio">Fisioterapeuta</p>
+        <p class="modal-bio-pending" data-i18n="ui.bioPending">Informações em breve.</p>
       </div>
     </div>
 
     <footer>
-      <p style="font-size: 1.05rem; font-weight: 700">
+      <p style="font-size: 1.05rem; font-weight: 700" data-i18n="footer.copyright">
         &copy; 2026 II Simpósio Pernambucano Multidisciplinar de Prevenção de
         Quedas
       </p>
-      <p>Realização: Hospital Santa Joana Recife · ISEP · Rede Américas</p>
-      <p>Apoio institucional: ABRAFIGE · SBGG</p>
+      <p data-i18n="footer.realization">Realização: Hospital Santa Joana Recife · ISEP · Rede Américas</p>
+      <p data-i18n="footer.support">Apoio institucional: ABRAFIGE · SBGG</p>
       <p style="margin-top: 2rem; font-size: 0.9rem">
-        Produzido por:
+        <span data-i18n="footer.producedBy">Produzido por:</span>
         <a
           href="https://instagram.com/lukaplan_"
           target="_blank"
           rel="noopener noreferrer"
           >Luka Plan Promoções e Eventos</a
         >
-        &nbsp;·&nbsp; Desenvolvido por:
+        &nbsp;·&nbsp; <span data-i18n="footer.developedBy">Desenvolvido por:</span>
         <a
           href="https://wa.me/5581995460140?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20um%20site%21%20%3A%29"
           target="_blank"
@@ -2616,7 +2651,7 @@
         >.
       </p>
       <p style="margin-top: 1.25rem">
-        <a href="#top">↑ Voltar ao topo</a>
+        <a href="#top" data-i18n="footer.backToTop">↑ Voltar ao topo</a>
       </p>
     </footer>
 
@@ -2770,6 +2805,761 @@
           navMenu.classList.remove("active");
           mobileMenuToggle.classList.remove("active");
         }
+      });
+
+      /* ---------------- Internationalization (PT / EN / ES) ---------------- */
+      const translations = {
+        en: {
+          "nav.home": "Home",
+          "nav.about": "About",
+          "nav.committee": "Committee",
+          "nav.pre": "Pre-Symposium",
+          "nav.schedule": "Program",
+          "nav.speakers": "Speakers",
+          "nav.venue": "Venue",
+          "nav.contact": "Contact",
+          "nav.cta": "Registration soon",
+          "hero.badge":
+            '<span class="dot"></span> Recife · August 21–22, 2026',
+          "hero.title":
+            '2nd Pernambuco Multidisciplinary Symposium on <span class="accent">Falls Prevention</span>',
+          "hero.sub":
+            "<strong>August 21–22, 2026</strong><br /> Hospital Santa Joana Recife Auditorium — Graças",
+          "hero.soon": '<span class="dot"></span> Registration soon',
+          "hero.seeProgram": "View program",
+          "hero.realization": "Organized by",
+          "hero.support": "Institutional support",
+          "about.eyebrow": "The event",
+          "about.title": "About the Symposium",
+          "about.p1":
+            "<strong>Hospital Santa Joana Recife</strong>, the <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong> and <strong>Rede Américas</strong> present the <strong>2nd Pernambuco Multidisciplinary Symposium on Falls Prevention</strong>, a meeting that brings together different specialties around one of the greatest challenges in caring for older adults: preventing falls and their consequences.",
+          "about.p2":
+            "With a truly multidisciplinary perspective, the symposium covers everything from primary prevention to rehabilitation, integrating medicine, physiotherapy, nursing, nutrition, speech therapy, occupational therapy, pharmacy and the psychosocial fields. The event has the institutional support of <strong>ABRAFIGE</strong> and <strong>SBGG</strong>.",
+          "about.card1Title": "When",
+          "about.card1Body": "August 21–22, 2026<br />(Friday and Saturday)",
+          "about.card2Title": "Where",
+          "about.card2Body": "Hospital Santa Joana Recife Auditorium — Graças",
+          "about.card3Title": "Pre-Symposium",
+          "about.card3Body":
+            "Practical workshops and official opening on Friday (08/21)",
+          "about.card4Title": "Audience",
+          "about.card4Body": "In-person, multi-professional health event",
+          "countdown.title": "Countdown to the event",
+          "countdown.days": "Days",
+          "countdown.hours": "Hours",
+          "countdown.minutes": "Minutes",
+          "countdown.seconds": "Seconds",
+          "committee.eyebrow": "Who organizes",
+          "committee.title": "Organizing Committee",
+          "committee.intro":
+            "The scientific coordination of the symposium is led by a multidisciplinary team of specialists:",
+          "ui.learnMore": "Learn more",
+          "ui.bioPending": "Information coming soon.",
+          "t.physio": "Physiotherapist",
+          "t.pharma": "Pharmacist",
+          "t.to": "Occupational Therapist",
+          "spec.juliana": "Nurse · ISEP",
+          "role.juliana": "Nurse · ISEP Coordinator",
+          "pre.eyebrow": "August 21, 2026 · Friday",
+          "pre.title": "Pre-Symposium",
+          "pre.intro":
+            "The program begins on Friday with <strong>simultaneous practical workshops</strong>, followed by the official opening and the event's keynote lecture.",
+          "ws.tag": "Practical Workshop · 2:15 – 5:15 p.m.",
+          "ws1.title":
+            "DAM in the hospital setting: a process of maintaining and facilitating mobility",
+          "ws2.title": "Virtual Reality in falls prevention",
+          "ws3.title": "Cognitive Stimulation applied to falls risk",
+          "sch.colTime": "Time",
+          "sch.colActivity": "Activity",
+          "sch.colSpeaker": "Speaker",
+          "sch.note": "Preliminary program, subject to change.",
+          "sch.downloadPdf": "Download PDF",
+          "sch.downloadXlsx": "Download spreadsheet",
+          "prog.eyebrow": "August 22, 2026 · Saturday",
+          "prog.title": "Scientific Program",
+          "speakers.eyebrow": "Confirmed",
+          "speakers.title": "Speakers",
+          "speakers.intro":
+            "Meet the speakers with confirmed attendance. New names will be announced soon.",
+          "venue.eyebrow": "Getting there",
+          "venue.title": "Event venue",
+          "venue.p1":
+            "The symposium will be held at the <strong>Hospital Santa Joana Recife Auditorium</strong>, in the Graças neighborhood.",
+          "venue.address":
+            "<strong>Address:</strong><br /> Rua Joaquim Nabuco, 200 — Graças<br /> Recife — PE",
+          "venue.mapHint": "Use the map for directions.",
+          "reg.eyebrow": "Take part",
+          "reg.title": "Registration",
+          "reg.text":
+            "Registration for the 2nd Pernambuco Multidisciplinary Symposium on Falls Prevention will open soon. Follow our channels so you don't miss the opening date.",
+          "reg.badge": '<span class="dot"></span> Registration soon',
+          "contact.eyebrow": "Talk to us",
+          "contact.title": "Contact",
+          "contact.intro":
+            "For questions about the symposium or registration support, contact the organizers:",
+          "contact.address":
+            "<strong>Address:</strong><br /> Rua João Eugênio de Lima, 143 – Room 01<br /> Boa Viagem – Recife – ZIP 51.030-360",
+          "contact.phoneLabel": "Phone/WhatsApp:",
+          "contact.emailLabel": "E-mail:",
+          "contact.infoTitle": "Information",
+          "contact.info1":
+            "The <strong>pre-symposium</strong> takes place on Friday (08/21), with practical workshops, the official opening and the keynote lecture. On Saturday (08/22) the full scientific program is held, with roundtables, panels and multidisciplinary lectures.",
+          "contact.info2":
+            "We will soon announce prices, registration batches and the official registration link. Stay tuned to our channels.",
+          "footer.copyright":
+            "&copy; 2026 2nd Pernambuco Multidisciplinary Symposium on Falls Prevention",
+          "footer.realization":
+            "Organized by: Hospital Santa Joana Recife · ISEP · Rede Américas",
+          "footer.support": "Institutional support: ABRAFIGE · SBGG",
+          "footer.producedBy": "Produced by:",
+          "footer.developedBy": "Developed by:",
+          "footer.backToTop": "↑ Back to top",
+          "bio.carolina":
+            "<li>Physiotherapist — Bachelor's degree from UFPE</li><li>Master's in Gerontology — UFPE</li><li>PhD candidate in Physiotherapy — UFPE (research focus on Gerontology and Public Health)</li><li>Specialist in Gerontology — SBGG</li><li>Specialist in Physiotherapy in Gerontology — ABRAFIGE/COFFITO</li><li>Specialist in Respiratory Physiotherapy — ASSOBRAFIR/COFFITO</li><li>Physiotherapist at Hospital Sírio-Libanês (SP) — working in Inpatient Units</li><li>Coordinator of the Technical Chamber of Physiotherapy in Gerontology at CREFITO-1</li><li>Coordinator and Lecturer in graduate programs in Physiotherapy in Gerontology and Hospital Physiotherapy</li>",
+          "bio.juliana":
+            "<li>CEO and Co-founder of Dyname — healthcare solutions</li><li>Bachelor's in Nursing</li><li>Specialist in Didactics for nursing education; Master's in nursing and health promotion</li><li>Clinical experience in internal medicine, surgery and oncology</li><li>Worked for 12 years as supervisor of the corporate education service and application of active methodologies in the teaching/learning process</li><li>Coordinator of the Instituto Santa Joana Recife de Ensino e Pesquisa — ISEP</li><li>Coordinates the Nursing Intensive Care residency program at Hospital Santa Joana Recife and the multidisciplinary internship program</li>",
+          "bio.renato":
+            "<li>Physiotherapist — UFPE</li><li>Postgraduate in Neurofunctional Physiotherapy — Faculdade Estácio</li><li>Postgraduate in Physiotherapy Management — PUC-PR</li><li>Physiotherapy Supervisor — Hospital Santa Joana Recife</li><li>Manager of the Falls Prevention team — Hospital Santa Joana Recife</li>",
+          "sch.preBody": `
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>2:15 – 5:15 p.m. (3 hours)</strong><br />
+                  PRACTICAL WORKSHOPS (simultaneous sessions)
+                </td>
+              </tr>
+              <tr>
+                <td>2:15 – 5:15 p.m.</td>
+                <td>DAM in the hospital setting: a process of maintaining and facilitating mobility</td>
+                <td><span class="speaker-name">Alexsandra Santos<small>Physiotherapist</small></span></td>
+              </tr>
+              <tr>
+                <td>2:15 – 5:15 p.m.</td>
+                <td>Virtual Reality in falls prevention</td>
+                <td><span class="speaker-name">Amanda Perez<small>Physiotherapist</small></span></td>
+              </tr>
+              <tr>
+                <td>2:15 – 5:15 p.m.</td>
+                <td>Cognitive Stimulation applied to falls risk</td>
+                <td><span class="speaker-name">Pamela Nascimento<small>Occupational Therapist</small></span></td>
+              </tr>
+              <tr>
+                <td>5:15 – 6:00 p.m.<br />(45 min)</td>
+                <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
+              </tr>
+              <tr>
+                <td>6:00 – 6:20 p.m.<br />(20 min)</td>
+                <td colspan="2" class="session-break"><strong>OFFICIAL OPENING</strong></td>
+              </tr>
+              <tr>
+                <td>6:20 – 7:10 p.m.<br />(50 min)</td>
+                <td><strong>OPENING KEYNOTE LECTURE</strong><br /> Falls as a Geriatric Syndrome: from the Isolated Event to the Frailty Marker — what is essential?</td>
+                <td><span class="speaker-name">Alexandre Matos<small>Geriatrician</small></span></td>
+              </tr>`,
+          "sch.mainBody": `
+              <tr>
+                <td>8:15 – 8:45 a.m.<br />(30 min)</td>
+                <td>Epidemiological overview of falls in Brazil and the Northeast: socioeconomic and care impact</td>
+                <td><span class="speaker-name">Camila Mendes<small>Ministry of Health – DF</small></span></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>8:50 – 10:00 a.m. (1 hr 10 min)</strong><br />
+                  ROUNDTABLE 1 — Secondary Prevention of Fragility Bone Fractures in Older Adults<br /><small>Moderator: Marina Hazin (Physiotherapist)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>8:50 – 9:05 a.m.<br />(15 min)</td>
+                <td>Clinical and functional vulnerability after fracture in older adults</td>
+                <td><span class="speaker-name">Talina Tássi<small>Ortho-geriatrics</small></span></td>
+              </tr>
+              <tr>
+                <td>9:05 – 9:20 a.m.<br />(15 min)</td>
+                <td>The fragility fracture as a high-risk marker: what cannot be overlooked</td>
+                <td><span class="speaker-name">Múcio Vaz<small>Orthopedist / Surgeon</small></span></td>
+              </tr>
+              <tr>
+                <td>9:20 – 9:35 a.m.<br />(15 min)</td>
+                <td>Rehabilitation and secondary prevention after fragility fracture: what we already know and what we still haven't implemented?</td>
+                <td><span class="speaker-name">Alexsandra Santos<small>Physiotherapist</small></span></td>
+              </tr>
+              <tr>
+                <td>9:35 – 9:50 a.m.<br />(15 min)</td>
+                <td>Medication safety in older adults: implications for the risk of falls and fractures</td>
+                <td><span class="speaker-name">Bárbara Nunes<small>Pharmacist</small></span></td>
+              </tr>
+              <tr>
+                <td>9:50 – 10:00 a.m.<br />(10 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSION</strong></td>
+              </tr>
+              <tr>
+                <td>10:00 – 10:20 a.m.<br />(20 min)</td>
+                <td colspan="2" class="session-break"><strong>BREAK</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>10:20 – 11:10 a.m. (50 min)</strong><br />
+                  MULTIDISCIPLINARY PANEL — Motoric Cognitive Syndrome and Falls<br /><small>Moderator: Isaac Newton (Physiotherapist)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>10:20 – 10:35 a.m.<br />(15 min)</td>
+                <td>Neurocognitive Bases of Gait and Postural Control</td>
+                <td><span class="speaker-name">Ana Paula Oliveira<small>Physiotherapist</small></span></td>
+              </tr>
+              <tr>
+                <td>10:35 – 10:50 a.m.<br />(15 min)</td>
+                <td>Cognitive-Motor Assessment of Falls Risk</td>
+                <td><span class="speaker-name">Ana Paula Oliveira<small>Physiotherapist</small></span></td>
+              </tr>
+              <tr>
+                <td>10:50 – 11:05 a.m.<br />(15 min)</td>
+                <td>Cognitive-Motor Therapeutic Strategies in Falls Prevention</td>
+                <td><span class="speaker-name">Camilla Bianca<small>Physiotherapist</small></span></td>
+              </tr>
+              <tr>
+                <td>11:05 – 11:10 a.m.<br />(05 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSION</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>11:10 – 11:50 a.m. (40 min)</strong><br />
+                  ROUNDTABLE 2 — Modifiable clinical factors in falls prevention: contributions from internal medicine and endocrinology<br /><small>Moderator: Renato Leitão (Physiotherapist)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>11:10 – 11:30 a.m.<br />(20 min)</td>
+                <td>The impact of nutritional factors and inappropriate medication use on the occurrence of falls and severe falls</td>
+                <td><span class="speaker-name">Marcela Santos<small>Internal Medicine</small></span></td>
+              </tr>
+              <tr>
+                <td>11:30 – 11:50 a.m.<br />(20 min)</td>
+                <td>Before the first fall: contributions of endocrinology to primary prevention</td>
+                <td><span class="speaker-name">Ana Carla Montenegro<small>Endocrinologist</small></span></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>11:50 a.m. – 12:20 p.m. (30 min)</strong><br />
+                  SHORT PANEL — Quality and Safety Indicators in Falls Prevention
+                </td>
+              </tr>
+              <tr>
+                <td>11:50 a.m. – 12:20 p.m.</td>
+                <td>Care indicators · Safety culture · Institutional monitoring</td>
+                <td><span class="speaker-name">Stheffany Assunção<small>Nurse</small></span></td>
+              </tr>
+              <tr>
+                <td>12:20 – 1:30 p.m.<br />(1 hr 10 min)</td>
+                <td colspan="2" class="session-break"><strong>FREE LUNCH</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>1:30 – 2:30 p.m. (1 hour)</strong><br />
+                  MULTIDISCIPLINARY TABLE — Correlation between Dysphagia, Inappetence and Falls<br /><small>Moderator: Isis Amaral (Physiotherapist)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>1:30 – 1:45 p.m.<br />(15 min)</td>
+                <td>Geriatric syndromes associated with dysphagia, inappetence and falls risk</td>
+                <td><span class="speaker-name">Carlos Henrique<small>Geriatrician</small></span></td>
+              </tr>
+              <tr>
+                <td>1:45 – 2:00 p.m.<br />(15 min)</td>
+                <td>Inappetence, malnutrition and muscle mass loss: how falls risk sets in</td>
+                <td><span class="speaker-name">Priscila Vieira<small>Nutritionist</small></span></td>
+              </tr>
+              <tr>
+                <td>2:00 – 2:15 p.m.<br />(15 min)</td>
+                <td>Dysphagia in older adults: when eating becomes a vulnerability factor</td>
+                <td><span class="speaker-name">Mariana Amorim<small>Speech Therapist</small></span></td>
+              </tr>
+              <tr>
+                <td>2:15 – 2:30 p.m.<br />(15 min)</td>
+                <td>From muscle loss to falls: impacts of dysphagia and inappetence on mobility and functionality</td>
+                <td><span class="speaker-name">Marina Hazin<small>Physiotherapist</small></span></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>2:30 – 3:15 p.m. (45 min)</strong><br />
+                  SCIENTIFIC LECTURE — Frailty, Sarcopenia and Falls in the Hospital: what we already know and what we need to do?
+                </td>
+              </tr>
+              <tr>
+                <td>2:30 – 3:15 p.m.</td>
+                <td>Frailty, Sarcopenia and Falls in the Hospital: what we already know and what we need to do?</td>
+                <td><span class="speaker-name">Carolina Nanque<small>Physiotherapist</small></span></td>
+              </tr>
+              <tr>
+                <td>3:15 – 3:35 p.m.<br />(20 min)</td>
+                <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>3:35 – 4:05 p.m. (30 min)</strong><br />
+                  THEMATIC LECTURE — The Occupational Therapy Approach in the Hospital Environment: Safety, Functionality and Responsible Discharge
+                </td>
+              </tr>
+              <tr>
+                <td>3:35 – 4:05 p.m.</td>
+                <td>Assessment centered on occupational performance · Safe organization of the hospital environment · Meaningful routines during hospitalization · Discharge planning and home adaptation</td>
+                <td><span class="speaker-name">Genaína Couto<small>Occupational Therapist</small></span></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>4:05 – 4:55 p.m. (50 min)</strong><br />
+                  INTEGRATED TABLE — Psychosocial Aspects of Falls: Functional Grief, Isolation and Community Reintegration<br /><small>Moderator: Michelle Santos (Physiotherapist)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>4:05 – 4:20 p.m.<br />(15 min)</td>
+                <td>Emotional impact after a fall</td>
+                <td><span class="speaker-name">Clara Maia<small>Psychologist</small></span></td>
+              </tr>
+              <tr>
+                <td>4:20 – 4:35 p.m.<br />(15 min)</td>
+                <td>Social restriction</td>
+                <td><span class="speaker-name">Luciana Karoline<small>Social Worker</small></span></td>
+              </tr>
+              <tr>
+                <td>4:35 – 4:50 p.m.<br />(15 min)</td>
+                <td>Reintegration strategies and support network</td>
+                <td><span class="speaker-name">Pamela Nascimento<small>Occupational Therapist</small></span></td>
+              </tr>
+              <tr>
+                <td>4:50 – 4:55 p.m.<br />(05 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSION</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>4:55 – 5:25 p.m. (30 min)</strong><br />
+                  TECHNOLOGY LECTURE — Gerontechnology: AI from prediction to falls prevention
+                </td>
+              </tr>
+              <tr>
+                <td>4:55 – 5:25 p.m.</td>
+                <td>Gerontechnology: AI from prediction to falls prevention</td>
+                <td><span class="speaker-name">Amanda Perez<small>Physiotherapist</small></span></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>5:25 – 6:10 p.m. (45 min)</strong><br />
+                  CLOSING TABLE — Multidisciplinary Integration in the Care Pathway of the Older Adult at Risk of Falling<br /><small>Moderator: Renato Leitão (Physiotherapist)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>5:25 – 5:35 p.m.<br />(10 min)</td>
+                <td>Synthesis of consensus · Technical recommendations · Institutional referrals</td>
+                <td><span class="speaker-name">Danielle Ferraz<small>Nurse · Santa Joana Recife</small></span></td>
+              </tr>
+              <tr>
+                <td>5:35 – 5:45 p.m.<br />(10 min)</td>
+                <td>Synthesis of consensus · Technical recommendations · Institutional referrals</td>
+                <td><span class="speaker-name">Cecília Prado<small>Physiotherapist · Hospital da Pessoa Idosa Recife</small></span></td>
+              </tr>
+              <tr>
+                <td>5:45 – 5:55 p.m.<br />(10 min)</td>
+                <td>Synthesis of consensus · Technical recommendations · Institutional referrals</td>
+                <td><span class="speaker-name">Eduardo De Holanda<small>Geriatrician · IMIP</small></span></td>
+              </tr>
+              <tr>
+                <td>5:55 – 6:05 p.m.<br />(10 min)</td>
+                <td>Synthesis of consensus · Technical recommendations · Institutional referrals</td>
+                <td><span class="speaker-name">Fábia Lima<small>Nurse · Oswaldo Cruz</small></span></td>
+              </tr>
+              <tr>
+                <td>6:05 – 6:10 p.m.<br />(05 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSSION</strong></td>
+              </tr>`,
+        },
+        es: {
+          "nav.home": "Inicio",
+          "nav.about": "Acerca",
+          "nav.committee": "Comité",
+          "nav.pre": "Pre-Simposio",
+          "nav.schedule": "Programa",
+          "nav.speakers": "Ponentes",
+          "nav.venue": "Lugar",
+          "nav.contact": "Contacto",
+          "nav.cta": "Inscripciones pronto",
+          "hero.badge":
+            '<span class="dot"></span> Recife · 21 y 22 de agosto de 2026',
+          "hero.title":
+            'II Simposio Pernambucano Multidisciplinario de <span class="accent">Prevención de Caídas</span>',
+          "hero.sub":
+            "<strong>21 y 22 de agosto de 2026</strong><br /> Auditorio del Hospital Santa Joana Recife — Graças",
+          "hero.soon": '<span class="dot"></span> Inscripciones pronto',
+          "hero.seeProgram": "Ver programa",
+          "hero.realization": "Organización",
+          "hero.support": "Apoyo institucional",
+          "about.eyebrow": "El evento",
+          "about.title": "Sobre el Simposio",
+          "about.p1":
+            "El <strong>Hospital Santa Joana Recife</strong>, el <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong> y la <strong>Rede Américas</strong> promueven el <strong>II Simposio Pernambucano Multidisciplinario de Prevención de Caídas</strong>, un encuentro que reúne diferentes especialidades en torno a uno de los mayores desafíos del cuidado de la persona mayor: prevenir caídas y sus consecuencias.",
+          "about.p2":
+            "Con una mirada verdaderamente multidisciplinaria, el simposio aborda desde la prevención primaria hasta la rehabilitación, integrando medicina, fisioterapia, enfermería, nutrición, fonoaudiología, terapia ocupacional, farmacia y las áreas psicosociales. El evento cuenta con el apoyo institucional de <strong>ABRAFIGE</strong> y <strong>SBGG</strong>.",
+          "about.card1Title": "Cuándo",
+          "about.card1Body": "21 y 22 de agosto de 2026<br />(viernes y sábado)",
+          "about.card2Title": "Dónde",
+          "about.card2Body": "Auditorio del Hospital Santa Joana Recife — Graças",
+          "about.card3Title": "Pre-Simposio",
+          "about.card3Body":
+            "Talleres prácticos y apertura oficial el viernes (21/08)",
+          "about.card4Title": "Público",
+          "about.card4Body": "Evento presencial y multiprofesional de la salud",
+          "countdown.title": "Cuenta regresiva para el evento",
+          "countdown.days": "Días",
+          "countdown.hours": "Horas",
+          "countdown.minutes": "Minutos",
+          "countdown.seconds": "Segundos",
+          "committee.eyebrow": "Quién organiza",
+          "committee.title": "Comité Organizador",
+          "committee.intro":
+            "La coordinación científica del simposio está bajo la responsabilidad de un equipo multidisciplinario de especialistas:",
+          "ui.learnMore": "Saber más",
+          "ui.bioPending": "Información próximamente.",
+          "t.physio": "Fisioterapeuta",
+          "t.pharma": "Farmacéutica",
+          "t.to": "Terapeuta Ocupacional",
+          "spec.juliana": "Enfermera · ISEP",
+          "role.juliana": "Enfermera · Coordinadora del ISEP",
+          "pre.eyebrow": "21 de agosto de 2026 · viernes",
+          "pre.title": "Pre-Simposio",
+          "pre.intro":
+            "La programación comienza el viernes con <strong>talleres prácticos simultáneos</strong>, seguidos de la apertura oficial y la conferencia magna del evento.",
+          "ws.tag": "Taller Práctico · 14:15 – 17:15",
+          "ws1.title":
+            "DAM en el contexto hospitalario: un proceso de mantenimiento y facilitación de la movilidad",
+          "ws2.title": "Realidad Virtual en la prevención de caídas",
+          "ws3.title": "Estimulación Cognitiva aplicada al riesgo de caídas",
+          "sch.colTime": "Horario",
+          "sch.colActivity": "Actividad",
+          "sch.colSpeaker": "Ponente",
+          "sch.note": "Programación preliminar, sujeta a cambios.",
+          "sch.downloadPdf": "Descargar PDF",
+          "sch.downloadXlsx": "Descargar planilla",
+          "prog.eyebrow": "22 de agosto de 2026 · sábado",
+          "prog.title": "Programación Científica",
+          "speakers.eyebrow": "Confirmados",
+          "speakers.title": "Ponentes",
+          "speakers.intro":
+            "Conozca a los ponentes con presencia confirmada. Pronto se anunciarán nuevos nombres.",
+          "venue.eyebrow": "Cómo llegar",
+          "venue.title": "Lugar del evento",
+          "venue.p1":
+            "El simposio se realizará en el <strong>Auditorio del Hospital Santa Joana Recife</strong>, en el barrio de Graças.",
+          "venue.address":
+            "<strong>Dirección:</strong><br /> Rua Joaquim Nabuco, 200 — Graças<br /> Recife — PE",
+          "venue.mapHint": "Use el mapa para orientación de acceso.",
+          "reg.eyebrow": "Participe",
+          "reg.title": "Inscripciones",
+          "reg.text":
+            "Las inscripciones para el II Simposio Pernambucano Multidisciplinario de Prevención de Caídas se abrirán pronto. Siga nuestros canales para no perder la fecha de apertura.",
+          "reg.badge": '<span class="dot"></span> Inscripciones pronto',
+          "contact.eyebrow": "Hable con nosotros",
+          "contact.title": "Contacto",
+          "contact.intro":
+            "Para dudas sobre el simposio o soporte en las inscripciones, póngase en contacto con la organización:",
+          "contact.address":
+            "<strong>Dirección:</strong><br /> Rua João Eugênio de Lima, 143 – Sala 01<br /> Boa Viagem – Recife – CP 51.030-360",
+          "contact.phoneLabel": "Teléfono/WhatsApp:",
+          "contact.emailLabel": "Correo electrónico:",
+          "contact.infoTitle": "Información",
+          "contact.info1":
+            "El <strong>pre-simposio</strong> se realiza el viernes (21/08), con talleres prácticos, apertura oficial y conferencia magna. El sábado (22/08) se realiza la programación científica completa, con mesas redondas, paneles y conferencias multidisciplinarias.",
+          "contact.info2":
+            "Pronto divulgaremos los valores, lotes y el enlace oficial de inscripción. Manténgase atento a nuestros canales.",
+          "footer.copyright":
+            "&copy; 2026 II Simposio Pernambucano Multidisciplinario de Prevención de Caídas",
+          "footer.realization":
+            "Organización: Hospital Santa Joana Recife · ISEP · Rede Américas",
+          "footer.support": "Apoyo institucional: ABRAFIGE · SBGG",
+          "footer.producedBy": "Producido por:",
+          "footer.developedBy": "Desarrollado por:",
+          "footer.backToTop": "↑ Volver arriba",
+          "bio.carolina":
+            "<li>Fisioterapeuta — Licenciatura por la UFPE</li><li>Maestría en Gerontología — UFPE</li><li>Doctoranda en Fisioterapia — UFPE (línea de investigación en Gerontología y Salud Pública)</li><li>Especialista en Gerontología — SBGG</li><li>Especialista en Fisioterapia en Gerontología — ABRAFIGE/COFFITO</li><li>Especialista en Fisioterapia Respiratoria — ASSOBRAFIR/COFFITO</li><li>Fisioterapeuta del Hospital Sírio-Libanês (SP) — actuación en Unidades de Internación</li><li>Coordinadora de la Cámara Técnica de Fisioterapia en Gerontología del CREFITO-1</li><li>Coordinadora y Docente de posgrado en Fisioterapia en Gerontología y en Fisioterapia Hospitalaria</li>",
+          "bio.juliana":
+            "<li>CEO y Cofundadora de la Empresa Dyname — soluciones en salud</li><li>Licenciada en Enfermería</li><li>Especialista en Didáctica para la enseñanza de enfermería; magíster en enfermería y promoción de la salud</li><li>Experiencia asistencial en clínica médica, quirúrgica y oncología</li><li>Actuó por 12 años como supervisora del servicio de educación corporativa y aplicación de metodologías activas en el proceso de enseñanza/aprendizaje</li><li>Coordinadora del Instituto Santa Joana Recife de Ensino e Pesquisa — ISEP</li><li>Coordina el Programa de residencia en Terapia Intensiva de enfermería del Hospital Santa Joana Recife y el programa de pasantía multidisciplinaria</li>",
+          "bio.renato":
+            "<li>Fisioterapeuta — UFPE</li><li>Posgrado en Fisioterapia Neurofuncional — Faculdade Estácio</li><li>Posgrado en Gestión en Fisioterapia — PUC-PR</li><li>Supervisor de Fisioterapia — Hospital Santa Joana Recife</li><li>Gestor del equipo de Prevención de Caídas — Hospital Santa Joana Recife</li>",
+          "sch.preBody": `
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>14:15 – 17:15 (03 horas)</strong><br />
+                  TALLERES PRÁCTICOS (sesiones simultáneas)
+                </td>
+              </tr>
+              <tr>
+                <td>14:15 – 17:15</td>
+                <td>DAM en el contexto hospitalario: un proceso de mantenimiento y facilitación de la movilidad</td>
+                <td><span class="speaker-name">Alexsandra Santos<small>Fisioterapeuta</small></span></td>
+              </tr>
+              <tr>
+                <td>14:15 – 17:15</td>
+                <td>Realidad Virtual en la prevención de caídas</td>
+                <td><span class="speaker-name">Amanda Perez<small>Fisioterapeuta</small></span></td>
+              </tr>
+              <tr>
+                <td>14:15 – 17:15</td>
+                <td>Estimulación Cognitiva aplicada al riesgo de caídas</td>
+                <td><span class="speaker-name">Pamela Nascimento<small>Terapeuta Ocupacional</small></span></td>
+              </tr>
+              <tr>
+                <td>17:15 – 18:00<br />(45 min)</td>
+                <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
+              </tr>
+              <tr>
+                <td>18:00 – 18:20<br />(20 min)</td>
+                <td colspan="2" class="session-break"><strong>APERTURA OFICIAL DEL EVENTO</strong></td>
+              </tr>
+              <tr>
+                <td>18:20 – 19:10<br />(50 min)</td>
+                <td><strong>CONFERENCIA MAGNA DE APERTURA</strong><br /> Caídas como Síndrome Geriátrico: del Evento Aislado al Marcador de Fragilidad — ¿qué es imprescindible?</td>
+                <td><span class="speaker-name">Alexandre Matos<small>Geriatra</small></span></td>
+              </tr>`,
+          "sch.mainBody": `
+              <tr>
+                <td>08:15 – 08:45<br />(30 min)</td>
+                <td>Panorama epidemiológico de las caídas en Brasil y el Nordeste: impacto socioeconómico y asistencial</td>
+                <td><span class="speaker-name">Camila Mendes<small>Ministerio de Salud – DF</small></span></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>08:50 – 10:00 (1 hora y 10 min)</strong><br />
+                  MESA REDONDA 1 — Prevención Secundaria de Fractura por Fragilidad Ósea en Personas Mayores<br /><small>Moderadora: Marina Hazin (Fisioterapeuta)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>08:50 – 09:05<br />(15 min)</td>
+                <td>Vulnerabilidad clínica y funcional tras la fractura en la persona mayor</td>
+                <td><span class="speaker-name">Talina Tássi<small>Ortogeriatría</small></span></td>
+              </tr>
+              <tr>
+                <td>09:05 – 09:20<br />(15 min)</td>
+                <td>La fractura por fragilidad como marcador de alto riesgo: lo que no puede ser descuidado</td>
+                <td><span class="speaker-name">Múcio Vaz<small>Ortopedista / Cirujano</small></span></td>
+              </tr>
+              <tr>
+                <td>09:20 – 09:35<br />(15 min)</td>
+                <td>Rehabilitación y prevención secundaria tras fractura por fragilidad: ¿qué ya sabemos y qué aún no implementamos?</td>
+                <td><span class="speaker-name">Alexsandra Santos<small>Fisioterapeuta</small></span></td>
+              </tr>
+              <tr>
+                <td>09:35 – 09:50<br />(15 min)</td>
+                <td>Seguridad medicamentosa en la persona mayor: implicaciones en el riesgo de caídas y fracturas</td>
+                <td><span class="speaker-name">Bárbara Nunes<small>Farmacéutica</small></span></td>
+              </tr>
+              <tr>
+                <td>09:50 – 10:00<br />(10 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSIÓN</strong></td>
+              </tr>
+              <tr>
+                <td>10:00 – 10:20<br />(20 min)</td>
+                <td colspan="2" class="session-break"><strong>RECESO</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>10:20 – 11:10 (50 min)</strong><br />
+                  PANEL MULTIDISCIPLINARIO — Síndrome Cognitivo Motor y Caídas<br /><small>Moderador: Isaac Newton (Fisioterapeuta)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>10:20 – 10:35<br />(15 min)</td>
+                <td>Bases Neurocognitivas de la Marcha y del Control Postural</td>
+                <td><span class="speaker-name">Ana Paula Oliveira<small>Fisioterapeuta</small></span></td>
+              </tr>
+              <tr>
+                <td>10:35 – 10:50<br />(15 min)</td>
+                <td>Evaluación Cognitivo-Motora del Riesgo de Caídas</td>
+                <td><span class="speaker-name">Ana Paula Oliveira<small>Fisioterapeuta</small></span></td>
+              </tr>
+              <tr>
+                <td>10:50 – 11:05<br />(15 min)</td>
+                <td>Estrategias Terapéuticas Cognitivo-Motoras en la Prevención de Caídas</td>
+                <td><span class="speaker-name">Camilla Bianca<small>Fisioterapeuta</small></span></td>
+              </tr>
+              <tr>
+                <td>11:05 – 11:10<br />(05 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSIÓN</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>11:10 – 11:50 (40 min)</strong><br />
+                  MESA REDONDA 2 — Factores clínicos modificables en la prevención de caídas: las contribuciones de la medicina interna y la endocrinología<br /><small>Moderador: Renato Leitão (Fisioterapeuta)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>11:10 – 11:30<br />(20 min)</td>
+                <td>El impacto de factores nutricionales y el uso de medicamentos inapropiados en la ocurrencia de caídas y caídas graves</td>
+                <td><span class="speaker-name">Marcela Santos<small>Medicina Interna</small></span></td>
+              </tr>
+              <tr>
+                <td>11:30 – 11:50<br />(20 min)</td>
+                <td>Antes de la primera caída: contribuciones de la endocrinología a la prevención primaria</td>
+                <td><span class="speaker-name">Ana Carla Montenegro<small>Endocrinóloga</small></span></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>11:50 – 12:20 (30 min)</strong><br />
+                  PANEL CORTO — Indicadores de Calidad y Seguridad en la Prevención de Caídas
+                </td>
+              </tr>
+              <tr>
+                <td>11:50 – 12:20</td>
+                <td>Indicadores asistenciales · Cultura de seguridad · Monitoreo institucional</td>
+                <td><span class="speaker-name">Stheffany Assunção<small>Enfermera</small></span></td>
+              </tr>
+              <tr>
+                <td>12:20 – 13:30<br />(1 h y 10 min)</td>
+                <td colspan="2" class="session-break"><strong>ALMUERZO LIBRE</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>13:30 – 14:30 (1 hora)</strong><br />
+                  MESA MULTIDISCIPLINARIA — Correlación entre Disfagia, Inapetencia y Caídas<br /><small>Moderadora: Isis Amaral (Fisioterapeuta)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>13:30 – 13:45<br />(15 min)</td>
+                <td>Síndromes geriátricos asociados a la disfagia, inapetencia y riesgo de caídas</td>
+                <td><span class="speaker-name">Carlos Henrique<small>Geriatra</small></span></td>
+              </tr>
+              <tr>
+                <td>13:45 – 14:00<br />(15 min)</td>
+                <td>Inapetencia, desnutrición y pérdida de masa muscular: cómo se instala el riesgo de caídas</td>
+                <td><span class="speaker-name">Priscila Vieira<small>Nutricionista</small></span></td>
+              </tr>
+              <tr>
+                <td>14:00 – 14:15<br />(15 min)</td>
+                <td>Disfagia en la persona mayor: cuándo la alimentación se convierte en un factor de vulnerabilidad</td>
+                <td><span class="speaker-name">Mariana Amorim<small>Fonoaudióloga</small></span></td>
+              </tr>
+              <tr>
+                <td>14:15 – 14:30<br />(15 min)</td>
+                <td>De la pérdida muscular a la caída: impactos de la disfagia y la inapetencia en la movilidad y funcionalidad</td>
+                <td><span class="speaker-name">Marina Hazin<small>Fisioterapeuta</small></span></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>14:30 – 15:15 (45 min)</strong><br />
+                  CONFERENCIA CIENTÍFICA — Fragilidad, Sarcopenia y Caídas en el Hospital: ¿qué ya sabemos y qué necesitamos hacer?
+                </td>
+              </tr>
+              <tr>
+                <td>14:30 – 15:15</td>
+                <td>Fragilidad, Sarcopenia y Caídas en el Hospital: ¿qué ya sabemos y qué necesitamos hacer?</td>
+                <td><span class="speaker-name">Carolina Nanque<small>Fisioterapeuta</small></span></td>
+              </tr>
+              <tr>
+                <td>15:15 – 15:35<br />(20 min)</td>
+                <td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>15:35 – 16:05 (30 min)</strong><br />
+                  CONFERENCIA TEMÁTICA — El Abordaje de la Terapia Ocupacional en el Ambiente Hospitalario: Seguridad, Funcionalidad y Alta Responsable
+                </td>
+              </tr>
+              <tr>
+                <td>15:35 – 16:05</td>
+                <td>Evaluación centrada en el desempeño ocupacional · Organización segura del ambiente hospitalario · Rutinas significativas durante la internación · Planificación del alta y adaptación domiciliaria</td>
+                <td><span class="speaker-name">Genaína Couto<small>Terapeuta Ocupacional</small></span></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>16:05 – 16:55 (50 min)</strong><br />
+                  MESA INTEGRADA — Aspectos Psicosociales de las Caídas: Duelo Funcional, Aislamiento y Reinserción Comunitaria<br /><small>Moderadora: Michelle Santos (Fisioterapeuta)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>16:05 – 16:20<br />(15 min)</td>
+                <td>Impacto emocional tras la caída</td>
+                <td><span class="speaker-name">Clara Maia<small>Psicóloga</small></span></td>
+              </tr>
+              <tr>
+                <td>16:20 – 16:35<br />(15 min)</td>
+                <td>Restricción social</td>
+                <td><span class="speaker-name">Luciana Karoline<small>Trabajadora Social</small></span></td>
+              </tr>
+              <tr>
+                <td>16:35 – 16:50<br />(15 min)</td>
+                <td>Estrategias de reinserción y red de apoyo</td>
+                <td><span class="speaker-name">Pamela Nascimento<small>Terapeuta Ocupacional</small></span></td>
+              </tr>
+              <tr>
+                <td>16:50 – 16:55<br />(05 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSIÓN</strong></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>16:55 – 17:25 (30 min)</strong><br />
+                  CONFERENCIA TECNOLOGÍA — Gerontecnología: IA de la predicción a la prevención de caídas
+                </td>
+              </tr>
+              <tr>
+                <td>16:55 – 17:25</td>
+                <td>Gerontecnología: IA de la predicción a la prevención de caídas</td>
+                <td><span class="speaker-name">Amanda Perez<small>Fisioterapeuta</small></span></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>17:25 – 18:10 (45 min)</strong><br />
+                  MESA DE CIERRE — Integración Multidisciplinaria en la Línea de Cuidado de la Persona Mayor en Riesgo de Caída<br /><small>Moderador: Renato Leitão (Fisioterapeuta)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>17:25 – 17:35<br />(10 min)</td>
+                <td>Síntesis de los consensos · Recomendaciones técnicas · Derivaciones institucionales</td>
+                <td><span class="speaker-name">Danielle Ferraz<small>Enfermera · Santa Joana Recife</small></span></td>
+              </tr>
+              <tr>
+                <td>17:35 – 17:45<br />(10 min)</td>
+                <td>Síntesis de los consensos · Recomendaciones técnicas · Derivaciones institucionales</td>
+                <td><span class="speaker-name">Cecília Prado<small>Fisioterapeuta · Hospital da Pessoa Idosa Recife</small></span></td>
+              </tr>
+              <tr>
+                <td>17:45 – 17:55<br />(10 min)</td>
+                <td>Síntesis de los consensos · Recomendaciones técnicas · Derivaciones institucionales</td>
+                <td><span class="speaker-name">Eduardo De Holanda<small>Geriatra · IMIP</small></span></td>
+              </tr>
+              <tr>
+                <td>17:55 – 18:05<br />(10 min)</td>
+                <td>Síntesis de los consensos · Recomendaciones técnicas · Derivaciones institucionales</td>
+                <td><span class="speaker-name">Fábia Lima<small>Enfermera · Oswaldo Cruz</small></span></td>
+              </tr>
+              <tr>
+                <td>18:05 – 18:10<br />(05 min)</td>
+                <td colspan="2" class="session-break"><strong>DISCUSIÓN</strong></td>
+              </tr>`,
+        },
+      };
+
+      const i18nElements = document.querySelectorAll("[data-i18n]");
+      const originalContent = {};
+      i18nElements.forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (key in originalContent) return;
+        originalContent[key] = el.innerHTML;
+      });
+
+      function applyLanguage(lang) {
+        const dict = translations[lang] || {};
+        i18nElements.forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          const value = key in dict ? dict[key] : originalContent[key];
+          if (value == null) return;
+          el.innerHTML = value;
+        });
+        document.documentElement.lang = lang === "pt" ? "pt-BR" : lang;
+      }
+
+      const languageSelect = document.getElementById("language-select");
+      const storedLang = localStorage.getItem("selectedLanguage") || "pt";
+      languageSelect.value = storedLang;
+      applyLanguage(storedLang);
+      languageSelect.addEventListener("change", () => {
+        const lang = languageSelect.value;
+        localStorage.setItem("selectedLanguage", lang);
+        applyLanguage(lang);
       });
     </script>
   </body>
