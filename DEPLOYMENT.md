@@ -28,6 +28,8 @@ Complete guide for deploying the event sites with custom domains on Vercel.
 | `www.congressoendoginecorecife.com.br`| Endogineco 2026 | `/endogineco2026/`    |
 | `oncodermarecife2026.com.br`          | Oncoderma 2026  | `/oncoderma2026/`     |
 | `www.oncodermarecife2026.com.br`      | Oncoderma 2026  | `/oncoderma2026/`     |
+| `spmpq.com.br`                        | SPMPQ 2026      | `/spmpq/`             |
+| `www.spmpq.com.br`                    | SPMPQ 2026      | `/spmpq/`             |
 | `automaitdev.vercel.app`              | Portfolio       | `/portfolio/`         |
 | `*.vercel.app` (other preview URLs)   | Portfolio       | `/portfolio/`         |
 
@@ -54,6 +56,7 @@ In the Vercel Dashboard:
    - `gastroconecta2026.com.br` + `www.gastroconecta2026.com.br`
    - `congressoendoginecorecife.com.br` + `www.congressoendoginecorecife.com.br`
    - `oncodermarecife2026.com.br` + `www.oncodermarecife2026.com.br`
+   - `spmpq.com.br` + `www.spmpq.com.br`
 
 > Any domain or rule you add in the Dashboard must also have matching rewrite and
 > redirect entries in `vercel.json` (see "Adding a New Domain" below).

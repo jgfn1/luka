@@ -1,0 +1,2776 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      II Simpósio Pernambucano Multidisciplinar de Prevenção de Quedas | 21 e 22
+      de agosto de 2026
+    </title>
+    <meta
+      name="description"
+      content="II Simpósio Pernambucano Multidisciplinar de Prevenção de Quedas — 21 e 22 de agosto de 2026, Auditório do Hospital Santa Joana Recife. Pré-simpósio com oficinas práticas e programação científica multidisciplinar."
+    />
+    <link rel="canonical" href="https://www.spmpq.com.br/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.spmpq.com.br/" />
+    <meta
+      property="og:title"
+      content="II Simpósio Pernambucano Multidisciplinar de Prevenção de Quedas"
+    />
+    <meta
+      property="og:description"
+      content="21 e 22 de agosto de 2026 — Auditório do Hospital Santa Joana Recife"
+    />
+    <meta
+      property="og:image"
+      content="https://www.spmpq.com.br/assets/logo-spmpq.png"
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.spmpq.com.br/" />
+    <meta
+      property="twitter:title"
+      content="II Simpósio Pernambucano Multidisciplinar de Prevenção de Quedas"
+    />
+    <meta
+      property="twitter:description"
+      content="21 e 22 de agosto de 2026 — Auditório do Hospital Santa Joana Recife"
+    />
+    <meta
+      property="twitter:image"
+      content="https://www.spmpq.com.br/assets/logo-spmpq.png"
+    />
+
+    <link rel="icon" type="image/png" href="assets/logo-spmpq.png" />
+    <link rel="apple-touch-icon" href="assets/logo-spmpq.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --navy: #0c3a5e;
+        --primary: #114e7d;
+        --blue: #1d6fa6;
+        --teal: #1a9c93;
+        --teal-2: #28b3a3;
+        --cyan: #4cbcd1;
+        --accent: #1aa399;
+        --light-bg: #eef6f9;
+        --dark-text: #1d2b33;
+        --muted-text: #586b74;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Open Sans", Arial, sans-serif;
+        color: var(--dark-text);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Montserrat", sans-serif;
+        color: var(--primary);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+      }
+      h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+      h3 {
+        font-size: 1.35rem;
+        font-weight: 600;
+        margin: 1.5rem 0 1rem;
+      }
+
+      p {
+        margin: 0.5rem 0 1rem;
+      }
+
+      a {
+        color: var(--blue);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover,
+      a:focus {
+        color: var(--teal);
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      /* ---------------- Navbar ---------------- */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0.65rem 1.5rem;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(12, 58, 94, 0.12);
+        transition: all 0.3s ease;
+      }
+
+      nav.scrolled {
+        padding: 0.45rem 1.5rem;
+        box-shadow: 0 4px 14px rgba(12, 58, 94, 0.16);
+      }
+
+      nav .logo-small {
+        height: 56px;
+        transition: height 0.3s ease;
+        display: flex;
+        align-items: center;
+      }
+
+      nav .logo-small img {
+        height: 100%;
+        width: auto;
+        max-width: 240px;
+        object-fit: contain;
+        object-position: left center;
+      }
+
+      nav.scrolled .logo-small {
+        height: 48px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.3rem;
+        align-items: center;
+      }
+
+      nav ul li a {
+        font-weight: 600;
+        font-size: 0.88rem;
+        padding: 0.4rem 0;
+        position: relative;
+        color: var(--primary);
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--teal-2);
+        transition: width 0.3s ease;
+      }
+
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+
+      .nav-cta {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--teal) 0%, var(--cyan) 100%);
+        color: #fff !important;
+        padding: 0.65rem 1.25rem;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.82rem;
+        letter-spacing: 0.03em;
+        box-shadow: 0 3px 14px rgba(26, 156, 147, 0.35);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .nav-cta::after {
+        display: none;
+      }
+
+      .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(26, 156, 147, 0.45);
+        color: #fff !important;
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 1001;
+      }
+
+      .mobile-menu-toggle span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: var(--primary);
+        transition: all 0.3s ease;
+        border-radius: 3px;
+      }
+
+      .mobile-menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      /* ---------------- Hero ---------------- */
+      header.hero {
+        position: relative;
+        min-height: 92vh;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 120px 1rem 3.5rem;
+        overflow: hidden;
+      }
+
+      header.hero .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background:
+          radial-gradient(
+            circle at 16% 22%,
+            rgba(76, 188, 209, 0.5) 0%,
+            transparent 42%
+          ),
+          radial-gradient(
+            circle at 84% 14%,
+            rgba(40, 179, 163, 0.42) 0%,
+            transparent 46%
+          ),
+          radial-gradient(
+            circle at 78% 86%,
+            rgba(12, 58, 94, 0.6) 0%,
+            transparent 55%
+          ),
+          linear-gradient(
+            135deg,
+            #0c3a5e 0%,
+            #134e7d 36%,
+            #1b86a0 70%,
+            #28b3a3 100%
+          );
+      }
+
+      header.hero .hero-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.3;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30 30 60 0 30z' fill='none' stroke='%23ffffff' stroke-opacity='0.07'/%3E%3C/svg%3E");
+        background-size: 46px 46px;
+      }
+
+      .hero-blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(8px);
+        opacity: 0.5;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .hero-blob--1 {
+        width: 320px;
+        height: 320px;
+        top: -90px;
+        left: -80px;
+        background: radial-gradient(
+          circle,
+          rgba(76, 188, 209, 0.55),
+          transparent 70%
+        );
+        animation: floatY 14s ease-in-out infinite;
+      }
+
+      .hero-blob--2 {
+        width: 380px;
+        height: 380px;
+        bottom: -140px;
+        right: -110px;
+        background: radial-gradient(
+          circle,
+          rgba(40, 179, 163, 0.45),
+          transparent 70%
+        );
+        animation: floatY 18s ease-in-out infinite reverse;
+      }
+
+      @keyframes floatY {
+        0%,
+        100% {
+          transform: translateY(0) translateX(0);
+        }
+        50% {
+          transform: translateY(30px) translateX(18px);
+        }
+      }
+
+      header.hero .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 960px;
+        width: 100%;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.16);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(6px);
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.45rem 1.1rem;
+        border-radius: 999px;
+        margin-bottom: 1.4rem;
+      }
+
+      .hero-badge .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--cyan);
+        box-shadow: 0 0 0 4px rgba(76, 188, 209, 0.3);
+      }
+
+      header.hero h1 {
+        color: #fff;
+        margin-bottom: 0.9rem;
+        font-size: clamp(1.7rem, 4vw, 2.85rem);
+        line-height: 1.18;
+        text-shadow: 0 3px 16px rgba(0, 0, 0, 0.3);
+      }
+
+      header.hero h1 .accent {
+        background: linear-gradient(120deg, #bff0f7, #7fd9e8);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      header.hero p.hero-sub {
+        color: #eaf7fa;
+        font-size: 1.16rem;
+        margin-bottom: 2rem;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .btn-primary {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--teal) 0%, var(--cyan) 100%);
+        color: #fff !important;
+        padding: 1rem 2.2rem;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 1rem;
+        transition: all 0.35s ease;
+        box-shadow: 0 6px 22px rgba(26, 156, 147, 0.45);
+        letter-spacing: 0.03em;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 28px rgba(26, 156, 147, 0.55);
+        color: #fff !important;
+      }
+
+      .btn-soon {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        background: rgba(255, 255, 255, 0.95);
+        color: var(--primary) !important;
+        padding: 1rem 2.2rem;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 1rem;
+        letter-spacing: 0.03em;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
+        cursor: default;
+      }
+
+      .btn-soon .dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--teal-2);
+        animation: pulseDot 1.8s ease-in-out infinite;
+      }
+
+      @keyframes pulseDot {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.4;
+          transform: scale(0.7);
+        }
+      }
+
+      .btn-outline {
+        display: inline-block;
+        background: transparent;
+        color: #fff !important;
+        padding: 1rem 2.2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1rem;
+        border: 2px solid rgba(255, 255, 255, 0.7);
+        transition: all 0.3s ease;
+      }
+
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.14);
+        border-color: #fff;
+        color: #fff !important;
+        transform: translateY(-3px);
+      }
+
+      /* Hero logos */
+      .hero-logos-section {
+        margin-top: 2.4rem;
+        padding-top: 1.9rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .hero-logos-cols {
+        display: grid;
+        grid-template-columns: 1.6fr auto 1fr;
+        gap: 1.5rem;
+        align-items: center;
+        max-width: 880px;
+        margin: 0 auto;
+      }
+
+      .hero-logos-col h3 {
+        color: #fff;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin: 0 0 1rem;
+        opacity: 0.95;
+      }
+
+      .hero-logos-col-divider {
+        width: 1px;
+        align-self: stretch;
+        background: rgba(255, 255, 255, 0.22);
+      }
+
+      .hero-logo-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .logo-chip {
+        background: #fff;
+        border-radius: 12px;
+        padding: 0.6rem 0.95rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+        min-height: 62px;
+      }
+
+      .logo-chip img {
+        height: 40px;
+        width: auto;
+        max-width: 150px;
+        object-fit: contain;
+        display: block;
+      }
+
+      .logo-chip.logo-chip--round img {
+        height: 52px;
+      }
+
+      /* ---------------- Generic sections ---------------- */
+      section {
+        padding: 4.5rem 2rem;
+      }
+
+      section:nth-of-type(even) {
+        background: var(--light-bg);
+      }
+
+      .container {
+        max-width: 1140px;
+        margin: 0 auto;
+      }
+
+      .two-column {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+        align-items: start;
+      }
+
+      .section-eyebrow {
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--teal);
+        margin-bottom: 0.5rem;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .fade-in {
+          opacity: 1;
+          transform: none;
+        }
+        .hero-blob {
+          animation: none;
+        }
+      }
+
+      .lead {
+        font-size: 1.12rem;
+        max-width: 820px;
+      }
+
+      .info-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+      }
+
+      .info-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 1.6rem 1.4rem;
+        box-shadow: 0 6px 18px rgba(12, 58, 94, 0.08);
+        border-left: 4px solid var(--teal-2);
+      }
+
+      .info-card h4 {
+        font-family: "Montserrat", sans-serif;
+        color: var(--primary);
+        font-size: 1.05rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .info-card p {
+        margin: 0;
+        color: var(--muted-text);
+        font-size: 0.96rem;
+      }
+
+      /* ---------------- Countdown ---------------- */
+      #countdown-section {
+        background: linear-gradient(
+          135deg,
+          var(--navy) 0%,
+          var(--primary) 45%,
+          var(--teal) 100%
+        );
+        color: #fff;
+        padding: 2.8rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #countdown-section h2 {
+        color: #fff;
+        font-size: 1.45rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .countdown-timer {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      .countdown-item {
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-radius: 16px;
+        padding: 0.9rem 1.15rem;
+        min-width: 88px;
+      }
+
+      .countdown-number {
+        font-size: 2.1rem;
+        font-weight: 800;
+        display: block;
+        line-height: 1;
+        margin-bottom: 0.35rem;
+        color: #bdeef4;
+      }
+
+      .countdown-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        opacity: 0.92;
+      }
+
+      /* ---------------- Committee & Speakers cards ---------------- */
+      .people-grid {
+        display: grid;
+        gap: 1.8rem;
+        margin: 2.5rem auto 0;
+      }
+
+      .committee-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-width: 920px;
+      }
+
+      .speakers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        max-width: 920px;
+      }
+
+      .person-card {
+        position: relative;
+        text-align: center;
+        padding: 2.2rem 1.25rem 1.6rem;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 8px 24px rgba(12, 58, 94, 0.09);
+        transition:
+          transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          box-shadow 0.35s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .person-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(90deg, var(--blue), var(--teal-2), var(--cyan));
+      }
+
+      .person-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 18px 36px rgba(12, 58, 94, 0.16);
+      }
+
+      .avatar-ring {
+        width: 132px;
+        height: 132px;
+        border-radius: 50%;
+        padding: 4px;
+        background: linear-gradient(135deg, var(--blue), var(--teal-2));
+        margin-bottom: 1rem;
+        flex-shrink: 0;
+      }
+
+      .avatar-ring img,
+      .avatar-ring .avatar-empty {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center top;
+        border: 3px solid #fff;
+        display: block;
+      }
+
+      .avatar-ring .avatar-empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(180deg, #e4eef2 0%, #d3e3e8 100%);
+        color: #7c95a0;
+      }
+
+      .avatar-ring .avatar-empty svg {
+        width: 54%;
+        height: 54%;
+      }
+
+      .person-card h4 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin: 0 0 0.45rem;
+        font-family: "Montserrat", sans-serif;
+        line-height: 1.3;
+      }
+
+      .person-spec {
+        display: inline-block;
+        background: rgba(26, 156, 147, 0.12);
+        color: var(--teal);
+        font-size: 0.78rem;
+        font-weight: 700;
+        padding: 0.25rem 0.8rem;
+        border-radius: 999px;
+        margin-bottom: 1rem;
+        letter-spacing: 0.02em;
+      }
+
+      .saiba-mais-btn {
+        margin-top: auto;
+        background: transparent;
+        color: var(--blue);
+        border: 2px solid var(--blue);
+        border-radius: 999px;
+        padding: 0.5rem 1.4rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        font-size: 0.88rem;
+        font-family: inherit;
+      }
+
+      .saiba-mais-btn:hover {
+        background: var(--blue);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      /* ---------------- Pre-symposium cards ---------------- */
+      .workshop-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0 2.5rem;
+      }
+
+      .workshop-card {
+        background: #fff;
+        border-radius: 18px;
+        padding: 1.6rem 1.5rem;
+        box-shadow: 0 8px 22px rgba(12, 58, 94, 0.08);
+        border-top: 5px solid var(--teal-2);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .workshop-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 32px rgba(12, 58, 94, 0.15);
+      }
+
+      .workshop-card .workshop-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--teal);
+        margin-bottom: 0.75rem;
+      }
+
+      .workshop-card h4 {
+        font-family: "Montserrat", sans-serif;
+        color: var(--primary);
+        font-size: 1.08rem;
+        line-height: 1.35;
+        margin: 0 0 0.9rem;
+      }
+
+      .workshop-card .workshop-speaker {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-size: 0.92rem;
+        color: var(--dark-text);
+        border-top: 1px solid #e6eef1;
+        padding-top: 0.85rem;
+      }
+
+      .workshop-card .workshop-speaker strong {
+        color: var(--primary);
+      }
+
+      .workshop-card .workshop-speaker .ws-role {
+        display: block;
+        font-size: 0.8rem;
+        color: var(--muted-text);
+        font-weight: 400;
+      }
+
+      /* ---------------- Schedule ---------------- */
+      .schedule-header {
+        margin-bottom: 1.5rem;
+      }
+
+      .schedule-title-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .schedule-title {
+        margin: 0;
+      }
+
+      .download-actions {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .download-pdf-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.55rem 1.1rem;
+        background: rgba(17, 78, 125, 0.08);
+        border-radius: 8px;
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 0.88rem;
+        border: 1px solid rgba(17, 78, 125, 0.18);
+        transition:
+          background 0.25s ease,
+          transform 0.2s ease;
+      }
+
+      .download-pdf-btn:hover {
+        background: rgba(26, 156, 147, 0.14);
+        transform: translateY(-1px);
+        color: var(--primary);
+      }
+
+      .download-icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+      }
+
+      .schedule-scroll {
+        overflow-x: auto;
+        margin-top: 1.5rem;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 10px;
+      }
+
+      .schedule-table {
+        width: 100%;
+        min-width: 640px;
+        border-collapse: collapse;
+        margin-bottom: 0;
+        font-size: 0.95rem;
+        box-shadow: 0 2px 12px rgba(12, 58, 94, 0.12);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .schedule-table th,
+      .schedule-table td {
+        padding: 0.95rem 0.8rem;
+        border: 1px solid #e2ecf0;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .schedule-table th {
+        background: var(--primary);
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .schedule-table tbody tr {
+        transition: background 0.2s ease;
+      }
+
+      .schedule-table tbody tr:nth-child(odd) {
+        background: #f9fcfd;
+      }
+
+      .schedule-table tbody tr:hover {
+        background: rgba(26, 156, 147, 0.07);
+      }
+
+      .session-header {
+        background: linear-gradient(135deg, var(--teal) 0%, var(--blue) 100%) !important;
+        color: #fff !important;
+        font-weight: 700 !important;
+        font-size: 1rem !important;
+        line-height: 1.45;
+      }
+
+      .session-header strong {
+        font-size: 0.95rem;
+        display: inline-block;
+        margin-bottom: 0.35rem;
+        opacity: 0.95;
+      }
+
+      .session-header small {
+        display: block;
+        margin-top: 0.35rem;
+        font-weight: 600;
+        opacity: 0.92;
+        line-height: 1.5;
+      }
+
+      .session-break {
+        background: #e9f6f4 !important;
+        font-weight: 700;
+        text-align: center;
+        color: #156158;
+      }
+
+      .speaker-name {
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1.45;
+      }
+
+      .speaker-name small {
+        display: block;
+        font-weight: 400;
+        color: var(--muted-text);
+        font-size: 0.82rem;
+      }
+
+      .schedule-note {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        color: var(--muted-text);
+        font-style: italic;
+      }
+
+      /* ---------------- Modal ---------------- */
+      .modal {
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        background: rgba(12, 58, 94, 0.78);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .modal.show {
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+
+      .modal-content {
+        background: #fff;
+        color: var(--dark-text);
+        border-radius: 14px;
+        box-shadow: 0 8px 32px rgba(12, 58, 94, 0.3);
+        max-width: 460px;
+        width: 90vw;
+        max-height: 88vh;
+        overflow-y: auto;
+        padding: 2.6rem 1.8rem 1.6rem;
+        position: relative;
+        text-align: center;
+        opacity: 0;
+        animation: speakerModalFadeIn 0.3s ease-out forwards;
+      }
+
+      @keyframes speakerModalFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 0.85rem;
+        right: 1rem;
+        font-size: 2rem;
+        color: var(--primary);
+        cursor: pointer;
+        line-height: 1;
+        padding: 0.25rem 0.45rem;
+        background: none;
+        border: none;
+        font-family: inherit;
+      }
+
+      .close-modal:hover {
+        color: var(--teal);
+      }
+
+      .modal-avatar-ring {
+        width: 124px;
+        height: 124px;
+        border-radius: 50%;
+        padding: 4px;
+        background: linear-gradient(135deg, var(--blue), var(--teal-2));
+        margin: 0 auto 0.5rem;
+      }
+
+      .modal-avatar-ring img,
+      .modal-avatar-ring .avatar-empty {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center top;
+        border: 3px solid #fff;
+        display: block;
+      }
+
+      .modal-avatar-ring .avatar-empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(180deg, #e4eef2 0%, #d3e3e8 100%);
+        color: #7c95a0;
+      }
+
+      .modal-avatar-ring .avatar-empty svg {
+        width: 54%;
+        height: 54%;
+      }
+
+      .modal-content h3 {
+        font-size: 1.25rem;
+        color: var(--primary);
+        margin: 0.75rem 0 0;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .modal-content .modal-role {
+        color: var(--teal);
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-top: 0.25rem;
+      }
+
+      ul.modal-bio {
+        margin: 1.2rem 0 0;
+        padding: 0 0 0 1.35rem;
+        text-align: left;
+        list-style-type: disc;
+        font-size: 0.98rem;
+        color: #444;
+        line-height: 1.6;
+      }
+
+      ul.modal-bio li {
+        margin: 0.4rem 0;
+      }
+
+      .modal-bio-pending {
+        margin-top: 1.4rem;
+        text-align: center;
+        font-style: italic;
+        color: var(--muted-text);
+      }
+
+      /* ---------------- Venue / map ---------------- */
+      .map-frame {
+        border: 0;
+        width: 100%;
+        height: 400px;
+        border-radius: 14px;
+        box-shadow: 0 6px 22px rgba(12, 58, 94, 0.15);
+      }
+
+      /* ---------------- Registration ---------------- */
+      .reg-box {
+        background: #fff;
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        box-shadow: 0 10px 30px rgba(12, 58, 94, 0.1);
+        max-width: 720px;
+        margin: 0 auto;
+        text-align: center;
+        border-top: 6px solid var(--teal-2);
+      }
+
+      .reg-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: linear-gradient(135deg, var(--teal) 0%, var(--cyan) 100%);
+        color: #fff;
+        padding: 1rem 2.4rem;
+        border-radius: 999px;
+        font-weight: 800;
+        font-size: 1.05rem;
+        box-shadow: 0 6px 20px rgba(26, 156, 147, 0.35);
+        cursor: default;
+      }
+
+      .reg-badge .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #fff;
+        animation: pulseDot 1.8s ease-in-out infinite;
+      }
+
+      /* ---------------- Footer ---------------- */
+      footer {
+        background: linear-gradient(
+          135deg,
+          var(--navy) 0%,
+          var(--primary) 50%,
+          var(--teal) 100%
+        );
+        color: #fff;
+        padding: 3rem 2rem 2rem;
+        text-align: center;
+      }
+
+      footer a {
+        color: #bdeef4;
+        font-weight: 600;
+      }
+
+      footer a:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+
+      footer p {
+        margin: 0.65rem 0;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 0.75rem;
+      }
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.12);
+        transition:
+          background 0.25s ease,
+          transform 0.2s ease;
+      }
+
+      .social-link:hover {
+        background: rgba(76, 188, 209, 0.4);
+        transform: translateY(-2px);
+      }
+
+      .social-link svg {
+        width: 22px;
+        height: 22px;
+        fill: #fff;
+      }
+
+      /* ---------------- Responsive ---------------- */
+      @media (max-width: 900px) {
+        .hero-logos-cols {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        .hero-logos-col-divider {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding: 0.55rem 1rem;
+        }
+
+        .mobile-menu-toggle {
+          display: flex;
+        }
+
+        nav ul {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(10px);
+          flex-direction: column;
+          align-items: stretch;
+          padding: 0.5rem 0;
+          box-shadow: 0 8px 24px rgba(12, 58, 94, 0.12);
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+
+        nav ul.active {
+          max-height: 620px;
+          opacity: 1;
+          overflow-y: auto;
+        }
+
+        nav ul li {
+          border-bottom: 1px solid rgba(12, 58, 94, 0.08);
+        }
+
+        nav ul li a,
+        nav ul li .nav-cta {
+          display: block;
+          padding: 1rem 1.5rem;
+        }
+
+        nav ul li .nav-cta {
+          margin: 0.5rem 1.25rem 1rem;
+          text-align: center;
+          border-radius: 999px;
+        }
+
+        h1 {
+          font-size: 1.85rem;
+        }
+        h2 {
+          font-size: 1.55rem;
+        }
+
+        .committee-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .schedule-table {
+          font-size: 0.86rem;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+          padding: 0.65rem 0.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .committee-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="main-nav">
+      <a href="#top" class="logo-small"
+        ><img
+          src="assets/logo-spmpq.png"
+          alt="II Simpósio Pernambucano Multidisciplinar de Prevenção de Quedas"
+      /></a>
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobile-menu-toggle"
+        aria-label="Abrir menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul id="nav-menu">
+        <li><a href="#top">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#comissao">Comissão</a></li>
+        <li><a href="#pre-simposio">Pré-Simpósio</a></li>
+        <li><a href="#programacao">Programação</a></li>
+        <li><a href="#palestrantes">Palestrantes</a></li>
+        <li><a href="#local">Local</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li>
+          <a class="nav-cta" href="#inscricao">Inscrições em breve</a>
+        </li>
+      </ul>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob--1" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
+      <div class="hero-content">
+        <span class="hero-badge"
+          ><span class="dot"></span> Recife · 21 e 22 de agosto de 2026</span
+        >
+        <h1>
+          II Simpósio Pernambucano Multidisciplinar de
+          <span class="accent">Prevenção de Quedas</span>
+        </h1>
+        <p class="hero-sub">
+          <strong>21 e 22 de agosto de 2026</strong><br />
+          Auditório do Hospital Santa Joana Recife — Graças
+        </p>
+        <div class="hero-actions">
+          <span class="btn-soon"><span class="dot"></span> Inscrições em breve</span>
+          <a class="btn-outline" href="#programacao">Ver programação</a>
+        </div>
+
+        <div class="hero-logos-section">
+          <div class="hero-logos-cols">
+            <div class="hero-logos-col">
+              <h3>Realização</h3>
+              <div class="hero-logo-grid">
+                <span class="logo-chip"
+                  ><img
+                    src="organizers/logo-hospital-santa-joana.png"
+                    alt="Hospital Santa Joana Recife"
+                    loading="eager"
+                /></span>
+                <span class="logo-chip"
+                  ><img src="organizers/logo-isep.png" alt="ISEP" loading="eager"
+                /></span>
+                <span class="logo-chip"
+                  ><img
+                    src="organizers/logo-rede-americas.png"
+                    alt="Rede Américas"
+                    loading="eager"
+                /></span>
+              </div>
+            </div>
+            <div class="hero-logos-col-divider" aria-hidden="true"></div>
+            <div class="hero-logos-col">
+              <h3>Apoio Institucional</h3>
+              <div class="hero-logo-grid">
+                <span class="logo-chip logo-chip--round"
+                  ><img
+                    src="organizers/logo-abrafige.png"
+                    alt="ABRAFIGE"
+                    loading="eager"
+                /></span>
+                <span class="logo-chip logo-chip--round"
+                  ><img src="organizers/logo-sbgg.png" alt="SBGG" loading="eager"
+                /></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="sobre" class="fade-in">
+      <div class="container">
+        <span class="section-eyebrow">O evento</span>
+        <h2 class="text-center">Sobre o Simpósio</h2>
+        <p class="lead" style="margin: 0 auto; text-align: center">
+          O <strong>Hospital Santa Joana Recife</strong>, o
+          <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong> e a
+          <strong>Rede Américas</strong> promovem o
+          <strong
+            >II Simpósio Pernambucano Multidisciplinar de Prevenção de
+            Quedas</strong
+          >, um encontro que reúne diferentes especialidades em torno de um dos
+          maiores desafios do cuidado à pessoa idosa: prevenir quedas e suas
+          consequências.
+        </p>
+        <p class="lead" style="margin: 1.25rem auto 0; text-align: center">
+          Com olhar verdadeiramente multidisciplinar, o simpósio aborda desde a
+          prevenção primária até a reabilitação, integrando medicina,
+          fisioterapia, enfermagem, nutrição, fonoaudiologia, terapia
+          ocupacional, farmácia e as áreas psicossociais. O evento conta com o
+          apoio institucional da <strong>ABRAFIGE</strong> e da
+          <strong>SBGG</strong>.
+        </p>
+
+        <div class="info-cards">
+          <div class="info-card">
+            <h4>Quando</h4>
+            <p>21 e 22 de agosto de 2026<br />(sexta e sábado)</p>
+          </div>
+          <div class="info-card">
+            <h4>Onde</h4>
+            <p>Auditório do Hospital Santa Joana Recife — Graças</p>
+          </div>
+          <div class="info-card">
+            <h4>Pré-Simpósio</h4>
+            <p>Oficinas práticas e abertura oficial na sexta-feira (21/08)</p>
+          </div>
+          <div class="info-card">
+            <h4>Público</h4>
+            <p>Evento presencial e multiprofissional da saúde</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="countdown-section" class="fade-in">
+      <div class="container">
+        <h2>Contagem regressiva para o evento</h2>
+        <div class="countdown-timer">
+          <div class="countdown-item">
+            <span id="days" class="countdown-number">00</span>
+            <span class="countdown-label">Dias</span>
+          </div>
+          <div class="countdown-item">
+            <span id="hours" class="countdown-number">00</span>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <div class="countdown-item">
+            <span id="minutes" class="countdown-number">00</span>
+            <span class="countdown-label">Minutos</span>
+          </div>
+          <div class="countdown-item">
+            <span id="seconds" class="countdown-number">00</span>
+            <span class="countdown-label">Segundos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comissao" class="fade-in">
+      <div class="container">
+        <span class="section-eyebrow">Quem organiza</span>
+        <h2 class="text-center">Comissão Organizadora</h2>
+        <p
+          class="text-center"
+          style="
+            font-size: 1.1rem;
+            margin: 0 auto;
+            max-width: 720px;
+            color: var(--muted-text);
+          "
+        >
+          A coordenação científica do simpósio está sob responsabilidade de um
+          time multidisciplinar de especialistas:
+        </p>
+        <div class="people-grid committee-grid">
+          <div class="person-card">
+            <div class="avatar-ring">
+              <img src="committee/carolina-nanque.jpeg" alt="Carolina Nanque" />
+            </div>
+            <h4>Carolina Nanque</h4>
+            <span class="person-spec">Fisioterapeuta</span>
+            <button
+              type="button"
+              class="saiba-mais-btn"
+              data-modal="modal-carolina-nanque"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="person-card">
+            <div class="avatar-ring">
+              <img src="committee/juliana-zaidan.jpeg" alt="Juliana Zaidan" />
+            </div>
+            <h4>Juliana Zaidan</h4>
+            <span class="person-spec">Enfermeira · ISEP</span>
+            <button
+              type="button"
+              class="saiba-mais-btn"
+              data-modal="modal-juliana-zaidan"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="person-card">
+            <div class="avatar-ring">
+              <img
+                src="committee/renato-leitao-de-almeida-neto.jpeg"
+                alt="Renato Leitão de Almeida Neto"
+              />
+            </div>
+            <h4>Renato Leitão de Almeida Neto</h4>
+            <span class="person-spec">Fisioterapeuta</span>
+            <button
+              type="button"
+              class="saiba-mais-btn"
+              data-modal="modal-renato-leitao"
+            >
+              Saiba mais
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pre-simposio" class="fade-in">
+      <div class="container">
+        <span class="section-eyebrow">21 de agosto de 2026 · sexta-feira</span>
+        <h2 class="text-center">Pré-Simpósio</h2>
+        <p
+          class="text-center"
+          style="
+            font-size: 1.1rem;
+            margin: 0 auto 0.5rem;
+            max-width: 760px;
+            color: var(--muted-text);
+          "
+        >
+          A programação começa na sexta-feira com
+          <strong>oficinas práticas simultâneas</strong>, seguidas da abertura
+          oficial e da palestra magna do evento.
+        </p>
+
+        <div class="workshop-grid">
+          <div class="workshop-card">
+            <span class="workshop-tag">Oficina Prática · 14h15 – 17h15</span>
+            <h4>
+              DAM no contexto hospitalar: um processo de manutenção e facilitação
+              da mobilidade
+            </h4>
+            <div class="workshop-speaker">
+              <span
+                ><strong>Alexsandra Santos</strong>
+                <span class="ws-role">Fisioterapeuta</span></span
+              >
+            </div>
+          </div>
+          <div class="workshop-card">
+            <span class="workshop-tag">Oficina Prática · 14h15 – 17h15</span>
+            <h4>Realidade Virtual na prevenção de quedas</h4>
+            <div class="workshop-speaker">
+              <span
+                ><strong>Amanda Perez</strong>
+                <span class="ws-role">Fisioterapeuta</span></span
+              >
+            </div>
+          </div>
+          <div class="workshop-card">
+            <span class="workshop-tag">Oficina Prática · 14h15 – 17h15</span>
+            <h4>Estimulação Cognitiva aplicada ao risco de quedas</h4>
+            <div class="workshop-speaker">
+              <span
+                ><strong>Pamela Nascimento</strong>
+                <span class="ws-role">Terapeuta Ocupacional</span></span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-scroll">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th style="width: 150px">Horário</th>
+                <th>Atividade</th>
+                <th style="width: 220px">Palestrante</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>14h15 – 17h15 (03 horas)</strong><br />
+                  OFICINAS PRÁTICAS (sessões simultâneas)
+                </td>
+              </tr>
+              <tr>
+                <td>14h15 – 17h15</td>
+                <td>
+                  DAM no contexto hospitalar: um processo de manutenção e
+                  facilitação da mobilidade
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Alexsandra Santos<small>Fisioterapeuta</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>14h15 – 17h15</td>
+                <td>Realidade Virtual na prevenção de quedas</td>
+                <td>
+                  <span class="speaker-name"
+                    >Amanda Perez<small>Fisioterapeuta</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>14h15 – 17h15</td>
+                <td>Estimulação Cognitiva aplicada ao risco de quedas</td>
+                <td>
+                  <span class="speaker-name"
+                    >Pamela Nascimento<small>Terapeuta Ocupacional</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>17h15 – 18h00<br />(45 min)</td>
+                <td colspan="2" class="session-break">
+                  <strong>COFFEE BREAK</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>18h00 – 18h20<br />(20 min)</td>
+                <td colspan="2" class="session-break">
+                  <strong>ABERTURA OFICIAL DO EVENTO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>18h20 – 19h10<br />(50 min)</td>
+                <td>
+                  <strong>PALESTRA MAGNA DE ABERTURA</strong><br />
+                  Quedas como Síndrome Geriátrica: do Evento Isolado ao Marcador
+                  de Fragilidade — o que é imprescindível?
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Alexandre Matos<small>Geriatra</small></span
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="schedule-note">
+          Programação preliminar, sujeita a alterações.
+        </p>
+      </div>
+    </section>
+
+    <section id="programacao" class="fade-in">
+      <div class="container">
+        <div class="schedule-header">
+          <div class="schedule-title-row">
+            <div>
+              <span class="section-eyebrow" style="text-align: left"
+                >22 de agosto de 2026 · sábado</span
+              >
+              <h2 class="schedule-title">Programação Científica</h2>
+            </div>
+            <div class="download-actions">
+              <a
+                href="schedule/programacao-preliminar.pdf"
+                class="download-pdf-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  class="download-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Baixar PDF</span>
+              </a>
+              <a
+                href="schedule/programacao-preliminar.xlsx"
+                class="download-pdf-btn"
+                download
+              >
+                <svg
+                  class="download-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Baixar planilha</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-scroll">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th style="width: 150px">Horário</th>
+                <th>Atividade</th>
+                <th style="width: 230px">Palestrante</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>08h15 – 08h45<br />(30 min)</td>
+                <td>
+                  Panorama epidemiológico das quedas no Brasil e no Nordeste:
+                  impacto socioeconômico e assistencial
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Camila Mendes<small>Ministério da Saúde – DF</small></span
+                  >
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>08h50 – 10h00 (1 hora e 10 min)</strong><br />
+                  MESA REDONDA 1 — Prevenção Secundária de Fratura por
+                  Fragilidade Óssea em Pessoas Idosas<br /><small
+                    >Moderadora: Marina Hazin (Fisioterapeuta)</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>08h50 – 09h05<br />(15 min)</td>
+                <td>
+                  Vulnerabilidade clínica e funcional após a fratura na pessoa
+                  idosa
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Talina Tássi<small>Ortogeriatria</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>09h05 – 09h20<br />(15 min)</td>
+                <td>
+                  A fratura por fragilidade como marcador de alto risco: o que
+                  não pode ser negligenciado
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Múcio Vaz<small>Ortopedista / Cirurgião</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>09h20 – 09h35<br />(15 min)</td>
+                <td>
+                  Reabilitação e prevenção secundária após fratura por
+                  fragilidade: o que já sabemos e o que ainda não implantamos?
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Alexsandra Santos<small>Fisioterapeuta</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>09h35 – 09h50<br />(15 min)</td>
+                <td>
+                  Segurança medicamentosa na pessoa idosa: implicações no risco
+                  de quedas e fraturas
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Bárbara Nunes<small>Farmacêutica</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>09h50 – 10h00<br />(10 min)</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>10h00 – 10h20<br />(20 min)</td>
+                <td colspan="2" class="session-break">
+                  <strong>INTERVALO</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>10h20 – 11h10 (50 min)</strong><br />
+                  PAINEL MULTIDISCIPLINAR — Síndrome Cognitiva Motora e
+                  Quedas<br /><small
+                    >Moderador: Isaac Newton (Fisioterapeuta)</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>10h20 – 10h35<br />(15 min)</td>
+                <td>Bases Neurocognitivas da Marcha e do Controle Postural</td>
+                <td>
+                  <span class="speaker-name"
+                    >Ana Paula Oliveira<small>Fisioterapeuta</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>10h35 – 10h50<br />(15 min)</td>
+                <td>Avaliação Cognitivo-Motora do Risco de Quedas</td>
+                <td>
+                  <span class="speaker-name"
+                    >Ana Paula Oliveira<small>Fisioterapeuta</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>10h50 – 11h05<br />(15 min)</td>
+                <td>
+                  Estratégias Terapêuticas Cognitivo-Motoras na Prevenção de
+                  Quedas
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Camilla Bianca<small>Fisioterapeuta</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>11h05 – 11h10<br />(05 min)</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>11h10 – 11h50 (40 min)</strong><br />
+                  MESA REDONDA 2 — Fatores clínicos modificáveis na prevenção de
+                  quedas: as contribuições da clínica médica e da
+                  endocrinologia<br /><small
+                    >Moderador: Renato Leitão (Fisioterapeuta)</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>11h10 – 11h30<br />(20 min)</td>
+                <td>
+                  O impacto de fatores nutricionais e uso de medicamentos
+                  inapropriados na ocorrência de quedas e quedas graves
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Marcela Santos<small>Clínica Médica</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>11h30 – 11h50<br />(20 min)</td>
+                <td>
+                  Antes da primeira queda: contribuições da endocrinologia para a
+                  prevenção primária
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Ana Carla Montenegro<small>Endocrinologista</small></span
+                  >
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>11h50 – 12h20 (30 min)</strong><br />
+                  PAINEL CURTO — Indicadores de Qualidade e Segurança na
+                  Prevenção de Quedas
+                </td>
+              </tr>
+              <tr>
+                <td>11h50 – 12h20</td>
+                <td>
+                  Indicadores assistenciais · Cultura de segurança ·
+                  Monitoramento institucional
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Stheffany Assunção<small>Enfermeira</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>12h20 – 13h30<br />(1 h e 10 min)</td>
+                <td colspan="2" class="session-break">
+                  <strong>ALMOÇO LIVRE</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>13h30 – 14h30 (1 hora)</strong><br />
+                  MESA MULTIDISCIPLINAR — Correlação entre Disfagia, Inapetência
+                  e Quedas<br /><small
+                    >Moderadora: Isis Amaral (Fisioterapeuta)</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>13h30 – 13h45<br />(15 min)</td>
+                <td>
+                  Síndromes geriátricas associadas à disfagia, inapetência e
+                  risco de quedas
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Carlos Henrique<small>Geriatra</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>13h45 – 14h00<br />(15 min)</td>
+                <td>
+                  Inapetência, desnutrição e perda de massa muscular: como o
+                  risco de quedas se instala
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Priscila Vieira<small>Nutricionista</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>14h00 – 14h15<br />(15 min)</td>
+                <td>
+                  Disfagia na pessoa idosa: quando a alimentação se torna um
+                  fator de vulnerabilidade
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Mariana Amorim<small>Fonoaudióloga</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>14h15 – 14h30<br />(15 min)</td>
+                <td>
+                  Da perda muscular à queda: impactos da disfagia e da
+                  inapetência na mobilidade e funcionalidade
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Marina Hazin<small>Fisioterapeuta</small></span
+                  >
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>14h30 – 15h15 (45 min)</strong><br />
+                  PALESTRA CIENTÍFICA — Fragilidade, Sarcopenia e Quedas no
+                  Hospital: o que já sabemos e o que precisamos fazer?
+                </td>
+              </tr>
+              <tr>
+                <td>14h30 – 15h15</td>
+                <td>
+                  Fragilidade, Sarcopenia e Quedas no Hospital: o que já sabemos
+                  e o que precisamos fazer?
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Carolina Nanque<small>Fisioterapeuta</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>15h15 – 15h35<br />(20 min)</td>
+                <td colspan="2" class="session-break">
+                  <strong>COFFEE BREAK</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>15h35 – 16h05 (30 min)</strong><br />
+                  PALESTRA TEMÁTICA — A Abordagem da Terapia Ocupacional no
+                  Ambiente Hospitalar: Segurança, Funcionalidade e Alta
+                  Responsável
+                </td>
+              </tr>
+              <tr>
+                <td>15h35 – 16h05</td>
+                <td>
+                  Avaliação centrada no desempenho ocupacional · Organização
+                  segura do ambiente hospitalar · Rotinas significativas durante
+                  a internação · Planejamento da alta e adaptação domiciliar
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Genaína Couto<small>Terapeuta Ocupacional</small></span
+                  >
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>16h05 – 16h55 (50 min)</strong><br />
+                  MESA INTEGRADA — Aspectos Psicossociais das Quedas: Luto
+                  Funcional, Isolamento e Reinserção Comunitária<br /><small
+                    >Moderadora: Michelle Santos (Fisioterapeuta)</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>16h05 – 16h20<br />(15 min)</td>
+                <td>Impacto emocional pós-queda</td>
+                <td>
+                  <span class="speaker-name"
+                    >Clara Maia<small>Psicóloga</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>16h20 – 16h35<br />(15 min)</td>
+                <td>Restrição social</td>
+                <td>
+                  <span class="speaker-name"
+                    >Luciana Karoline<small>Assistente Social</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>16h35 – 16h50<br />(15 min)</td>
+                <td>Estratégias de reinserção e rede de apoio</td>
+                <td>
+                  <span class="speaker-name"
+                    >Pamela Nascimento<small>Terapeuta Ocupacional</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>16h50 – 16h55<br />(05 min)</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>16h55 – 17h25 (30 min)</strong><br />
+                  PALESTRA TECNOLOGIA — Gerontecnologia: IA da predição à
+                  prevenção de quedas
+                </td>
+              </tr>
+              <tr>
+                <td>16h55 – 17h25</td>
+                <td>Gerontecnologia: IA da predição à prevenção de quedas</td>
+                <td>
+                  <span class="speaker-name"
+                    >Amanda Perez<small>Fisioterapeuta</small></span
+                  >
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="session-header">
+                  <strong>17h25 – 18h10 (45 min)</strong><br />
+                  MESA DE ENCERRAMENTO — Integração Multidisciplinar na Linha de
+                  Cuidado da Pessoa Idosa em Risco de Queda<br /><small
+                    >Moderador: Renato Leitão (Fisioterapeuta)</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>17h25 – 17h35<br />(10 min)</td>
+                <td>
+                  Síntese dos consensos · Recomendações técnicas ·
+                  Encaminhamentos institucionais
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Danielle Ferraz<small
+                      >Enfermeira · Santa Joana Recife</small
+                    ></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>17h35 – 17h45<br />(10 min)</td>
+                <td>
+                  Síntese dos consensos · Recomendações técnicas ·
+                  Encaminhamentos institucionais
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Cecília Prado<small
+                      >Fisioterapeuta · Hospital da Pessoa Idosa Recife</small
+                    ></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>17h45 – 17h55<br />(10 min)</td>
+                <td>
+                  Síntese dos consensos · Recomendações técnicas ·
+                  Encaminhamentos institucionais
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Eduardo De Holanda<small>Geriatra · IMIP</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>17h55 – 18h05<br />(10 min)</td>
+                <td>
+                  Síntese dos consensos · Recomendações técnicas ·
+                  Encaminhamentos institucionais
+                </td>
+                <td>
+                  <span class="speaker-name"
+                    >Fábia Lima<small>Enfermeira · Oswaldo Cruz</small></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>18h05 – 18h10<br />(05 min)</td>
+                <td colspan="2" class="session-break">
+                  <strong>DISCUSSÃO</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="schedule-note">
+          Programação preliminar, sujeita a alterações.
+        </p>
+      </div>
+    </section>
+
+    <section id="palestrantes" class="fade-in">
+      <div class="container">
+        <span class="section-eyebrow">Confirmados</span>
+        <h2 class="text-center">Palestrantes</h2>
+        <p
+          class="text-center"
+          style="
+            font-size: 1.05rem;
+            margin: 0 auto;
+            max-width: 720px;
+            color: var(--muted-text);
+          "
+        >
+          Conheça os palestrantes com presença confirmada. Em breve novos nomes
+          serão anunciados.
+        </p>
+        <div class="people-grid speakers-grid">
+          <div class="person-card">
+            <div class="avatar-ring">
+              <div class="avatar-empty" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/>
+                </svg>
+              </div>
+            </div>
+            <h4>Alexsandra Santos</h4>
+            <span class="person-spec">Fisioterapeuta</span>
+            <button
+              type="button"
+              class="saiba-mais-btn"
+              data-modal="modal-alexsandra-santos"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="person-card">
+            <div class="avatar-ring">
+              <div class="avatar-empty" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/>
+                </svg>
+              </div>
+            </div>
+            <h4>Bárbara Nunes</h4>
+            <span class="person-spec">Farmacêutica</span>
+            <button
+              type="button"
+              class="saiba-mais-btn"
+              data-modal="modal-barbara-nunes"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="person-card">
+            <div class="avatar-ring">
+              <div class="avatar-empty" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/>
+                </svg>
+              </div>
+            </div>
+            <h4>Camilla Bianca</h4>
+            <span class="person-spec">Fisioterapeuta</span>
+            <button
+              type="button"
+              class="saiba-mais-btn"
+              data-modal="modal-camilla-bianca"
+            >
+              Saiba mais
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="local" class="fade-in">
+      <div class="container two-column">
+        <div>
+          <span class="section-eyebrow" style="text-align: left">Como chegar</span>
+          <h2>Local do evento</h2>
+          <p>
+            O simpósio será realizado no
+            <strong>Auditório do Hospital Santa Joana Recife</strong>, no bairro
+            das Graças.
+          </p>
+          <p style="margin-top: 1.25rem">
+            <strong>Endereço:</strong><br />
+            Rua Joaquim Nabuco, 200 — Graças<br />
+            Recife — PE
+          </p>
+          <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--muted-text)">
+            Use o mapa ao lado para orientação de acesso.
+          </p>
+        </div>
+        <div>
+          <iframe
+            class="map-frame"
+            loading="lazy"
+            allowfullscreen
+            title="Mapa — Hospital Santa Joana Recife"
+            src="https://maps.google.com/maps?q=Hospital+Santa+Joana+Recife+Rua+Joaquim+Nabuco,+200+Gra%C3%A7as+Recife&output=embed"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="inscricao" class="fade-in">
+      <div class="container">
+        <span class="section-eyebrow">Participe</span>
+        <h2 class="text-center">Inscrições</h2>
+        <div class="reg-box">
+          <p style="max-width: 560px; margin: 0 auto 1.75rem">
+            As inscrições para o II Simpósio Pernambucano Multidisciplinar de
+            Prevenção de Quedas serão abertas em breve. Acompanhe nossos canais
+            para não perder a data de abertura.
+          </p>
+          <span class="reg-badge"><span class="dot"></span> Inscrições em breve</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="fade-in">
+      <div class="container two-column">
+        <div>
+          <span class="section-eyebrow" style="text-align: left">Fale conosco</span>
+          <h2>Contato</h2>
+          <p>
+            Para dúvidas sobre o simpósio ou suporte às inscrições, entre em
+            contato com a organização:
+          </p>
+          <h3>Luka Plan Promoções e Eventos</h3>
+          <p>
+            <strong>Endereço:</strong><br />
+            Rua João Eugênio de Lima, 143 – Sala 01<br />
+            Boa Viagem – Recife – CEP 51.030-360
+          </p>
+          <p>
+            <strong>Telefone/WhatsApp:</strong><br />
+            <a href="https://wa.me/5581999851712" target="_blank" rel="noopener"
+              >(81) 99985-1712</a
+            >
+            ·
+            <a href="https://wa.me/5581992325922" target="_blank" rel="noopener"
+              >(81) 9232-5922</a
+            >
+          </p>
+          <p>
+            <strong>E-mail:</strong><br />
+            <a href="mailto:eventos@lukaplan.com.br">eventos@lukaplan.com.br</a>
+          </p>
+          <div class="social-links">
+            <a
+              href="https://instagram.com/lukaplan_"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              title="Instagram"
+              aria-label="Instagram Luka Plan"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://wa.me/5581999851712"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              title="WhatsApp"
+              aria-label="WhatsApp"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+            </a>
+            <a
+              href="mailto:eventos@lukaplan.com.br"
+              class="social-link"
+              title="E-mail"
+              aria-label="E-mail"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2>Informações</h2>
+          <p>
+            O <strong>pré-simpósio</strong> acontece na sexta-feira (21/08), com
+            oficinas práticas, abertura oficial e palestra magna. No sábado
+            (22/08) realiza-se a programação científica completa, com mesas
+            redondas, painéis e palestras multidisciplinares.
+          </p>
+          <p>
+            Em breve divulgaremos os valores, lotes e o link oficial de
+            inscrição. Fique atento aos nossos canais.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modais — Comissão Organizadora -->
+    <div class="modal" id="modal-carolina-nanque">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fechar">
+          &times;
+        </button>
+        <div class="modal-avatar-ring">
+          <img src="committee/carolina-nanque.jpeg" alt="Carolina Nanque" />
+        </div>
+        <h3>Carolina Nanque</h3>
+        <p class="modal-role">Fisioterapeuta</p>
+        <ul class="modal-bio">
+          <li>Fisioterapeuta — Bacharelado pela UFPE</li>
+          <li>Mestrado em Gerontologia — UFPE</li>
+          <li>
+            Doutoranda em Fisioterapia — UFPE (linha de pesquisa em Gerontologia
+            e Saúde Pública)
+          </li>
+          <li>Especialista em Gerontologia — SBGG</li>
+          <li>Especialista em Fisioterapia em Gerontologia — ABRAFIGE/COFFITO</li>
+          <li>Especialista em Fisioterapia Respiratória — ASSOBRAFIR/COFFITO</li>
+          <li>
+            Fisioterapeuta do Hospital Sírio-Libanês (SP) — atuação em Unidades
+            de Internação
+          </li>
+          <li>
+            Coordenadora da Câmara Técnica de Fisioterapia em Gerontologia do
+            CREFITO-1
+          </li>
+          <li>
+            Coordenadora e Docente de pós-graduação em Fisioterapia em
+            Gerontologia e em Fisioterapia Hospitalar
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-juliana-zaidan">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fechar">
+          &times;
+        </button>
+        <div class="modal-avatar-ring">
+          <img src="committee/juliana-zaidan.jpeg" alt="Juliana Zaidan" />
+        </div>
+        <h3>Juliana Zaidan</h3>
+        <p class="modal-role">Enfermeira · Coordenadora do ISEP</p>
+        <ul class="modal-bio">
+          <li>CEO e Co-fundadora da Empresa Dyname — soluções em saúde</li>
+          <li>Bacharel em Enfermagem</li>
+          <li>
+            Especialista em Didática para o ensino de enfermagem; mestre em
+            enfermagem e promoção à saúde
+          </li>
+          <li>
+            Experiência assistencial em clínica médica, cirúrgica e oncologia
+          </li>
+          <li>
+            Atuou por 12 anos como supervisora do serviço de educação corporativa
+            e aplicação de metodologias ativas no processo de
+            ensino/aprendizagem
+          </li>
+          <li>
+            Coordenadora do Instituto Santa Joana Recife de Ensino e Pesquisa —
+            ISEP
+          </li>
+          <li>
+            Coordena o Programa de residência em Terapia Intensiva de enfermagem
+            do Hospital Santa Joana Recife e o programa de estágio
+            multidisciplinar
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-renato-leitao">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fechar">
+          &times;
+        </button>
+        <div class="modal-avatar-ring">
+          <img
+            src="committee/renato-leitao-de-almeida-neto.jpeg"
+            alt="Renato Leitão de Almeida Neto"
+          />
+        </div>
+        <h3>Renato Leitão de Almeida Neto</h3>
+        <p class="modal-role">Fisioterapeuta</p>
+        <ul class="modal-bio">
+          <li>Fisioterapeuta — UFPE</li>
+          <li>
+            Pós-graduado em Fisioterapia Neurofuncional — Faculdade Estácio
+          </li>
+          <li>Pós-graduado em Gestão em Fisioterapia — PUC-PR</li>
+          <li>Supervisor de Fisioterapia — Hospital Santa Joana Recife</li>
+          <li>
+            Gestor do time de Prevenção de Quedas — Hospital Santa Joana Recife
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Modais — Palestrantes -->
+    <div class="modal" id="modal-alexsandra-santos">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fechar">
+          &times;
+        </button>
+        <div class="modal-avatar-ring">
+          <div class="avatar-empty" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/>
+            </svg>
+          </div>
+        </div>
+        <h3>Alexsandra Santos</h3>
+        <p class="modal-role">Fisioterapeuta</p>
+        <p class="modal-bio-pending">Informações em breve.</p>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-barbara-nunes">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fechar">
+          &times;
+        </button>
+        <div class="modal-avatar-ring">
+          <div class="avatar-empty" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/>
+            </svg>
+          </div>
+        </div>
+        <h3>Bárbara Nunes</h3>
+        <p class="modal-role">Farmacêutica</p>
+        <p class="modal-bio-pending">Informações em breve.</p>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-camilla-bianca">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fechar">
+          &times;
+        </button>
+        <div class="modal-avatar-ring">
+          <div class="avatar-empty" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/>
+            </svg>
+          </div>
+        </div>
+        <h3>Camilla Bianca</h3>
+        <p class="modal-role">Fisioterapeuta</p>
+        <p class="modal-bio-pending">Informações em breve.</p>
+      </div>
+    </div>
+
+    <footer>
+      <p style="font-size: 1.05rem; font-weight: 700">
+        &copy; 2026 II Simpósio Pernambucano Multidisciplinar de Prevenção de
+        Quedas
+      </p>
+      <p>Realização: Hospital Santa Joana Recife · ISEP · Rede Américas</p>
+      <p>Apoio institucional: ABRAFIGE · SBGG</p>
+      <p style="margin-top: 2rem; font-size: 0.9rem">
+        Produzido por:
+        <a
+          href="https://instagram.com/lukaplan_"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Luka Plan Promoções e Eventos</a
+        >
+        &nbsp;·&nbsp; Desenvolvido por:
+        <a
+          href="https://wa.me/5581995460140?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20um%20site%21%20%3A%29"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Automa IT &amp; Development</a
+        >.
+      </p>
+      <p style="margin-top: 1.25rem">
+        <a href="#top">↑ Voltar ao topo</a>
+      </p>
+    </footer>
+
+    <script>
+      function revealFadeIn(el) {
+        el.classList.add("visible");
+      }
+
+      function revealFadeInsInView() {
+        const viewportHeight =
+          window.innerHeight || document.documentElement.clientHeight;
+        document.querySelectorAll(".fade-in:not(.visible)").forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (
+            rect.top < viewportHeight * 0.92 &&
+            rect.bottom > viewportHeight * 0.05
+          ) {
+            revealFadeIn(el);
+          }
+        });
+      }
+
+      const fadeInObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              revealFadeIn(entry.target);
+              fadeInObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0, rootMargin: "0px 0px 80px 0px" },
+      );
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        fadeInObserver.observe(el);
+      });
+
+      revealFadeInsInView();
+      window.addEventListener("scroll", revealFadeInsInView, { passive: true });
+      window.addEventListener("resize", revealFadeInsInView, { passive: true });
+      window.addEventListener("orientationchange", revealFadeInsInView);
+
+      const nav = document.getElementById("main-nav");
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("scrolled", window.pageYOffset > 80);
+      });
+
+      function updateCountdown() {
+        const eventDate = new Date("2026-08-21T14:15:00-03:00").getTime();
+        const now = Date.now();
+        const distance = eventDate - now;
+
+        const pad2 = (n) => String(Math.max(0, n)).padStart(2, "0");
+
+        if (distance <= 0) {
+          ["days", "hours", "minutes", "seconds"].forEach((id) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = id === "days" ? "0" : "00";
+          });
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = String(days);
+        document.getElementById("hours").textContent = pad2(hours);
+        document.getElementById("minutes").textContent = pad2(minutes);
+        document.getElementById("seconds").textContent = pad2(seconds);
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (!href || href === "#") return;
+          e.preventDefault();
+          const target = document.getElementById(href.slice(1));
+          if (!target) return;
+          if (target.classList.contains("fade-in")) {
+            revealFadeIn(target);
+          }
+          const navHeight = document.getElementById("main-nav").offsetHeight;
+          const top =
+            target.getBoundingClientRect().top +
+            window.pageYOffset -
+            navHeight -
+            16;
+          window.scrollTo({ top, behavior: "smooth" });
+          window.setTimeout(revealFadeInsInView, 450);
+          window.setTimeout(revealFadeInsInView, 900);
+          const navMenu = document.getElementById("nav-menu");
+          const menuToggle = document.getElementById("mobile-menu-toggle");
+          if (navMenu && navMenu.classList.contains("active")) {
+            navMenu.classList.remove("active");
+            menuToggle.classList.remove("active");
+          }
+        });
+      });
+
+      document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("saiba-mais-btn")) {
+          const modalId = e.target.dataset.modal;
+          const modal = document.getElementById(modalId);
+          if (modal) {
+            modal.classList.add("show");
+            document.body.style.overflow = "hidden";
+          }
+        }
+        if (e.target.classList.contains("close-modal")) {
+          const modal = e.target.closest(".modal");
+          if (modal) {
+            modal.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        }
+        if (
+          e.target.classList.contains("modal") &&
+          e.target.classList.contains("show")
+        ) {
+          e.target.classList.remove("show");
+          document.body.style.overflow = "";
+        }
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          document.querySelectorAll(".modal.show").forEach((modal) => {
+            modal.classList.remove("show");
+            document.body.style.overflow = "";
+          });
+        }
+      });
+
+      const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+      mobileMenuToggle.addEventListener("click", () => {
+        mobileMenuToggle.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest("nav")) {
+          navMenu.classList.remove("active");
+          mobileMenuToggle.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

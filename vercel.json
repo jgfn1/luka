@@ -97,6 +97,30 @@
       "has": [{ "type": "host", "value": "www.oncodermarecife2026.com.br" }],
       "destination": "/:path*",
       "permanent": true
+    },
+    {
+      "source": "/spmpq",
+      "has": [{ "type": "host", "value": "spmpq.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/spmpq/:path*",
+      "has": [{ "type": "host", "value": "spmpq.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/spmpq",
+      "has": [{ "type": "host", "value": "www.spmpq.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/spmpq/:path*",
+      "has": [{ "type": "host", "value": "www.spmpq.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -181,7 +205,27 @@
       "destination": "/oncoderma2026/:path*"
     },
     {
-      "source": "/:path((?!portfolio|tgi|gastroconecta2026|endogineco2026|oncoderma2026).*)*",
+      "source": "/:path((?!spmpq).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "spmpq.com.br"
+        }
+      ],
+      "destination": "/spmpq/:path*"
+    },
+    {
+      "source": "/:path((?!spmpq).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.spmpq.com.br"
+        }
+      ],
+      "destination": "/spmpq/:path*"
+    },
+    {
+      "source": "/:path((?!portfolio|tgi|gastroconecta2026|endogineco2026|oncoderma2026|spmpq).*)*",
       "has": [
         {
           "type": "host",
@@ -191,7 +235,7 @@
       "destination": "/portfolio/:path*"
     },
     {
-      "source": "/:path((?!portfolio|tgi|gastroconecta2026|endogineco2026|oncoderma2026).*)*",
+      "source": "/:path((?!portfolio|tgi|gastroconecta2026|endogineco2026|oncoderma2026|spmpq).*)*",
       "has": [
         {
           "type": "host",
