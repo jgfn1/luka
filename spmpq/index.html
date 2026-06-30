@@ -1212,7 +1212,20 @@
         font-weight: 800;
         font-size: 1.05rem;
         box-shadow: 0 6px 20px rgba(26, 156, 147, 0.35);
-        cursor: default;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      a.reg-badge {
+        color: #fff !important;
+        cursor: pointer;
+      }
+
+      a.reg-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(26, 156, 147, 0.45);
+        color: #fff !important;
       }
 
       .reg-badge .dot {
@@ -1397,8 +1410,13 @@
         <li><a href="#local" data-i18n="nav.venue">Local</a></li>
         <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
         <li>
-          <a class="nav-cta" href="#inscricao" data-i18n="nav.cta"
-            >Inscrições em breve</a
+          <a
+            class="nav-cta"
+            href="https://www.sympla.com.br/evento/ii-simposio-pernambucano-multidisciplinar-de-prevencao-de-quedas/3484647"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="nav.cta"
+            >Inscreva-se</a
           >
         </li>
         <li class="nav-lang">
@@ -1431,8 +1449,13 @@
           Auditório do Hospital Santa Joana Recife — Graças
         </p>
         <div class="hero-actions">
-          <span class="btn-soon" data-i18n="hero.soon"
-            ><span class="dot"></span> Inscrições em breve</span
+          <a
+            class="btn-primary"
+            href="https://www.sympla.com.br/evento/ii-simposio-pernambucano-multidisciplinar-de-prevencao-de-quedas/3484647"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="hero.register"
+            >Inscreva-se</a
           >
           <a class="btn-outline" href="#programacao" data-i18n="hero.seeProgram"
             >Ver programação</a
@@ -2076,15 +2099,17 @@
               <tr>
                 <td colspan="3" class="session-header">
                   <strong>14h30 – 15h15 (45 min)</strong><br />
-                  PALESTRA CIENTÍFICA — Fragilidade, Sarcopenia e Quedas no
-                  Hospital: o que já sabemos e o que precisamos fazer?
+                  PALESTRA CIENTÍFICA — Além da capacidade funcional:
+                  autoeficácia, confiança funcional e os mecanismos invisíveis
+                  do risco de quedas em pessoas idosas
                 </td>
               </tr>
               <tr>
                 <td>14h30 – 15h15</td>
                 <td>
-                  Fragilidade, Sarcopenia e Quedas no Hospital: o que já sabemos
-                  e o que precisamos fazer?
+                  Além da capacidade funcional: autoeficácia, confiança
+                  funcional e os mecanismos invisíveis do risco de quedas em
+                  pessoas idosas
                 </td>
                 <td>
                   <span class="speaker-name"
@@ -2205,20 +2230,6 @@
                 </td>
               </tr>
               <tr>
-                <td>17h35 – 17h45<br />(10 min)</td>
-                <td>
-                  Síntese dos consensos · Recomendações técnicas ·
-                  Encaminhamentos institucionais
-                </td>
-                <td>
-                  <span class="speaker-name"
-                    >Cecília Prado<small
-                      >Fisioterapeuta · Hospital da Pessoa Idosa Recife</small
-                    ></span
-                  >
-                </td>
-              </tr>
-              <tr>
                 <td>17h45 – 17h55<br />(10 min)</td>
                 <td>
                   Síntese dos consensos · Recomendações técnicas ·
@@ -2227,18 +2238,6 @@
                 <td>
                   <span class="speaker-name"
                     >Eduardo De Holanda<small>Geriatra · IMIP</small></span
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>17h55 – 18h05<br />(10 min)</td>
-                <td>
-                  Síntese dos consensos · Recomendações técnicas ·
-                  Encaminhamentos institucionais
-                </td>
-                <td>
-                  <span class="speaker-name"
-                    >Fábia Lima<small>Enfermeira · Oswaldo Cruz</small></span
                   >
                 </td>
               </tr>
@@ -2277,11 +2276,10 @@
         <div class="people-grid speakers-grid">
           <div class="person-card">
             <div class="avatar-ring">
-              <div class="avatar-empty" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/>
-                </svg>
-              </div>
+              <img
+                src="speakers/alexsandra-santos-fisioterapeuta.jpeg"
+                alt="Alexsandra Santos"
+              />
             </div>
             <h4>Alexsandra Santos</h4>
             <span class="person-spec" data-i18n="t.physio">Fisioterapeuta</span>
@@ -2296,11 +2294,28 @@
           </div>
           <div class="person-card">
             <div class="avatar-ring">
-              <div class="avatar-empty" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/>
-                </svg>
-              </div>
+              <img
+                src="speakers/amanda-perez-fisioterapeuta.jpeg"
+                alt="Amanda Perez"
+              />
+            </div>
+            <h4>Amanda Perez</h4>
+            <span class="person-spec" data-i18n="t.physio">Fisioterapeuta</span>
+            <button
+              type="button"
+              class="saiba-mais-btn"
+              data-modal="modal-amanda-perez"
+              data-i18n="ui.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="person-card">
+            <div class="avatar-ring">
+              <img
+                src="speakers/barbara-nunes-farmaceutica.jpeg"
+                alt="Bárbara Nunes"
+              />
             </div>
             <h4>Bárbara Nunes</h4>
             <span class="person-spec" data-i18n="t.pharma">Farmacêutica</span>
@@ -2315,18 +2330,68 @@
           </div>
           <div class="person-card">
             <div class="avatar-ring">
-              <div class="avatar-empty" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/>
-                </svg>
-              </div>
+              <img
+                src="speakers/carolina-nanque-fisioterapeuta.jpeg"
+                alt="Carolina Nanque"
+              />
             </div>
-            <h4>Camilla Bianca</h4>
+            <h4>Carolina Nanque</h4>
             <span class="person-spec" data-i18n="t.physio">Fisioterapeuta</span>
             <button
               type="button"
               class="saiba-mais-btn"
-              data-modal="modal-camilla-bianca"
+              data-modal="modal-carolina-nanque"
+              data-i18n="ui.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="person-card">
+            <div class="avatar-ring">
+              <img src="speakers/clara-maia-psicologa.jpeg" alt="Clara Maia" />
+            </div>
+            <h4>Clara Maia</h4>
+            <span class="person-spec" data-i18n="t.psych">Psicóloga</span>
+            <button
+              type="button"
+              class="saiba-mais-btn"
+              data-modal="modal-clara-maia"
+              data-i18n="ui.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="person-card">
+            <div class="avatar-ring">
+              <img
+                src="speakers/genaina-couto-terapeuta-ocupacional.jpeg"
+                alt="Genaína Couto"
+              />
+            </div>
+            <h4>Genaína Couto</h4>
+            <span class="person-spec" data-i18n="t.to">Terapeuta Ocupacional</span>
+            <button
+              type="button"
+              class="saiba-mais-btn"
+              data-modal="modal-genaina-couto"
+              data-i18n="ui.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="person-card">
+            <div class="avatar-ring">
+              <img
+                src="speakers/priscila-viera-nutricionista.jpeg"
+                alt="Priscila Vieira"
+              />
+            </div>
+            <h4>Priscila Vieira</h4>
+            <span class="person-spec" data-i18n="t.nutrition">Nutricionista</span>
+            <button
+              type="button"
+              class="saiba-mais-btn"
+              data-modal="modal-priscila-vieira"
               data-i18n="ui.learnMore"
             >
               Saiba mais
@@ -2374,10 +2439,16 @@
         <div class="reg-box">
           <p style="max-width: 560px; margin: 0 auto 1.75rem" data-i18n="reg.text">
             As inscrições para o II Simpósio Pernambucano Multidisciplinar de
-            Prevenção de Quedas serão abertas em breve. Acompanhe nossos canais
-            para não perder a data de abertura.
+            Prevenção de Quedas estão abertas. Garanta sua vaga pelo Sympla.
           </p>
-          <span class="reg-badge" data-i18n="reg.badge"><span class="dot"></span> Inscrições em breve</span>
+          <a
+            class="reg-badge"
+            href="https://www.sympla.com.br/evento/ii-simposio-pernambucano-multidisciplinar-de-prevencao-de-quedas/3484647"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="reg.badge"
+            >Inscreva-se</a
+          >
         </div>
       </div>
     </section>
@@ -2463,8 +2534,8 @@
             redondas, painéis e palestras multidisciplinares.
           </p>
           <p data-i18n="contact.info2">
-            Em breve divulgaremos os valores, lotes e o link oficial de
-            inscrição. Fique atento aos nossos canais.
+            Consulte valores, lotes e condições de inscrição diretamente na
+            página oficial do evento no Sympla.
           </p>
         </div>
       </div>
@@ -2579,15 +2650,61 @@
           &times;
         </button>
         <div class="modal-avatar-ring">
-          <div class="avatar-empty" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/>
-            </svg>
-          </div>
+          <img
+            src="speakers/alexsandra-santos-fisioterapeuta.jpeg"
+            alt="Alexsandra Santos"
+          />
         </div>
         <h3>Alexsandra Santos</h3>
         <p class="modal-role" data-i18n="t.physio">Fisioterapeuta</p>
-        <p class="modal-bio-pending" data-i18n="ui.bioPending">Informações em breve.</p>
+        <ul class="modal-bio" data-i18n="bio.alexsandra">
+          <li>Fisioterapeuta (2023.1)</li>
+          <li>
+            Mestranda em Fisioterapia pela UFPE, linha de pesquisa: Saúde da
+            mulher, do homem e processo de envelhecimento
+          </li>
+          <li>Pós-graduada em Fisioterapia Neurofuncional e Gerontologia</li>
+          <li>
+            Atuação em Traumato-Ortopedia, Reabilitação Neurofuncional e
+            Gerontologia, com foco em funcionalidade, prevenção de quedas e
+            promoção da autonomia e qualidade de vida no envelhecimento
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-amanda-perez">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fechar">
+          &times;
+        </button>
+        <div class="modal-avatar-ring">
+          <img
+            src="speakers/amanda-perez-fisioterapeuta.jpeg"
+            alt="Amanda Perez"
+          />
+        </div>
+        <h3>Amanda Perez</h3>
+        <p class="modal-role" data-i18n="t.physio">Fisioterapeuta</p>
+        <ul class="modal-bio" data-i18n="bio.amanda">
+          <li>
+            Fisioterapeuta, Doutora em Ciências Biológicas e Mestra em
+            Engenharia Biomédica
+          </li>
+          <li>
+            Especialização em Fisioterapia Neurofuncional chancelada pelo COFFITO
+          </li>
+          <li>
+            Pesquisadora vinculada ao Laboratório de Interface Homem-Máquina,
+            com investigações focadas na análise do movimento humano e no
+            desenvolvimento de tecnologias aplicadas à saúde
+          </li>
+          <li>
+            Sólida atuação clínica em reabilitação neurológica e geriátrica, com
+            ênfase na assistência domiciliar a pacientes com limitações
+            funcionais
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -2597,33 +2714,125 @@
           &times;
         </button>
         <div class="modal-avatar-ring">
-          <div class="avatar-empty" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/>
-            </svg>
-          </div>
+          <img
+            src="speakers/barbara-nunes-farmaceutica.jpeg"
+            alt="Bárbara Nunes"
+          />
         </div>
         <h3>Bárbara Nunes</h3>
         <p class="modal-role" data-i18n="t.pharma">Farmacêutica</p>
-        <p class="modal-bio-pending" data-i18n="ui.bioPending">Informações em breve.</p>
+        <ul class="modal-bio" data-i18n="bio.barbara">
+          <li>Farmacêutica pela Universidade Federal de Pernambuco (UFPE)</li>
+          <li>
+            Especialista em Farmácia Hospitalar pelo Programa de Residência do
+            IMIP e em Farmácia Hospitalar e Clínica pela Faculdade de Ciências
+            e Educação em Saúde
+          </li>
+          <li>
+            Atua em Farmácia Clínica em Terapia Intensiva Pediátrica
+          </li>
+          <li>
+            Experiência em gerenciamento de antimicrobianos e gestão de riscos
+            relacionados à cadeia medicamentosa
+          </li>
+          <li>
+            Preceptora de Programa de Residência Multiprofissional em Terapia
+            Intensiva e docente de cursos de pós-graduação nas áreas de
+            Fisioterapia, Enfermagem e Farmácia
+          </li>
+          <li>
+            Integrante do Grupo Técnico de Trabalho de Farmácia Clínica do
+            Conselho Regional de Farmácia de Pernambuco (CRF-PE)
+          </li>
+        </ul>
       </div>
     </div>
 
-    <div class="modal" id="modal-camilla-bianca">
+    <div class="modal" id="modal-clara-maia">
       <div class="modal-content">
         <button type="button" class="close-modal" aria-label="Fechar">
           &times;
         </button>
         <div class="modal-avatar-ring">
-          <div class="avatar-empty" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/>
-            </svg>
-          </div>
+          <img src="speakers/clara-maia-psicologa.jpeg" alt="Clara Maia" />
         </div>
-        <h3>Camilla Bianca</h3>
-        <p class="modal-role" data-i18n="t.physio">Fisioterapeuta</p>
-        <p class="modal-bio-pending" data-i18n="ui.bioPending">Informações em breve.</p>
+        <h3>Clara Maia</h3>
+        <p class="modal-role" data-i18n="t.psych">Psicóloga</p>
+        <ul class="modal-bio" data-i18n="bio.clara">
+          <li>Psicóloga formada pela Universidade Federal de Pernambuco (UFPE)</li>
+          <li>
+            Especialista em Terapia Intensiva pelo Real Hospital Português/UFPE
+          </li>
+          <li>
+            Psicóloga da UTI geral e do Protocolo de Cuidados Paliativos do
+            Hospital Santa Joana Recife
+          </li>
+          <li>
+            Em formação em Gestalt-Terapia pelo Instituto Figura Viva
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-genaina-couto">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fechar">
+          &times;
+        </button>
+        <div class="modal-avatar-ring">
+          <img
+            src="speakers/genaina-couto-terapeuta-ocupacional.jpeg"
+            alt="Genaína Couto"
+          />
+        </div>
+        <h3>Genaína Couto</h3>
+        <p class="modal-role" data-i18n="t.to">Terapeuta Ocupacional</p>
+        <ul class="modal-bio" data-i18n="bio.genaina">
+          <li>Terapeuta Ocupacional — UNICAP</li>
+          <li>Titulada especialista em Gerontologia pela SBGG</li>
+          <li>Especialização em Neurogerontologia IDE</li>
+          <li>Gestora e responsável técnica da REABILITO</li>
+          <li>Docente do curso de Terapia Ocupacional da UNIFACOL</li>
+          <li>Atual diretora executiva SBGG-PE, gestão 2025–2027</li>
+          <li>Integrante da Equipe do Instituto de Medicina do Idoso — IMEDI</li>
+          <li>Especialização em Cuidados Paliativos — UPE</li>
+          <li>
+            Conselheira do Conselho Municipal de Direito da Pessoa Idosa do
+            Recife
+          </li>
+          <li>Formação Internacional no Snoezelen</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-priscila-vieira">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fechar">
+          &times;
+        </button>
+        <div class="modal-avatar-ring">
+          <img
+            src="speakers/priscila-viera-nutricionista.jpeg"
+            alt="Priscila Vieira"
+          />
+        </div>
+        <h3>Priscila Vieira</h3>
+        <p class="modal-role" data-i18n="t.nutrition">Nutricionista</p>
+        <ul class="modal-bio" data-i18n="bio.priscila">
+          <li>
+            Nutricionista Clínica no Hospital Santa Joana Recife — ênfase na UTI
+          </li>
+          <li>Graduação em Ciências da Nutrição — UFPE</li>
+          <li>Residência em Nutrição Clínica — HC/UFPE</li>
+          <li>
+            Mestre em Nutrição Clínica — FCNAUP (Universidade do Porto,
+            Portugal)
+          </li>
+          <li>
+            Pós-graduada em Oncologia — Liga Portuguesa Contra o Cancro (LPCC,
+            Portugal)
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -2818,14 +3027,14 @@
           "nav.speakers": "Speakers",
           "nav.venue": "Venue",
           "nav.contact": "Contact",
-          "nav.cta": "Registration soon",
+          "nav.cta": "Register",
           "hero.badge":
             '<span class="dot"></span> Recife · August 21–22, 2026',
           "hero.title":
             '2nd Pernambuco Multidisciplinary Symposium on <span class="accent">Falls Prevention</span>',
           "hero.sub":
             "<strong>August 21–22, 2026</strong><br /> Hospital Santa Joana Recife Auditorium — Graças",
-          "hero.soon": '<span class="dot"></span> Registration soon',
+          "hero.register": "Register",
           "hero.seeProgram": "View program",
           "hero.realization": "Organized by",
           "hero.support": "Institutional support",
@@ -2858,6 +3067,8 @@
           "t.physio": "Physiotherapist",
           "t.pharma": "Pharmacist",
           "t.to": "Occupational Therapist",
+          "t.psych": "Psychologist",
+          "t.nutrition": "Nutritionist",
           "spec.juliana": "Nurse · ISEP",
           "role.juliana": "Nurse · ISEP Coordinator",
           "pre.eyebrow": "August 21, 2026 · Friday",
@@ -2891,8 +3102,8 @@
           "reg.eyebrow": "Take part",
           "reg.title": "Registration",
           "reg.text":
-            "Registration for the 2nd Pernambuco Multidisciplinary Symposium on Falls Prevention will open soon. Follow our channels so you don't miss the opening date.",
-          "reg.badge": '<span class="dot"></span> Registration soon',
+            "Registration for the 2nd Pernambuco Multidisciplinary Symposium on Falls Prevention is open. Secure your spot on Sympla.",
+          "reg.badge": "Register",
           "contact.eyebrow": "Talk to us",
           "contact.title": "Contact",
           "contact.intro":
@@ -2905,7 +3116,7 @@
           "contact.info1":
             "The <strong>pre-symposium</strong> takes place on Friday (08/21), with practical workshops, the official opening and the keynote lecture. On Saturday (08/22) the full scientific program is held, with roundtables, panels and multidisciplinary lectures.",
           "contact.info2":
-            "We will soon announce prices, registration batches and the official registration link. Stay tuned to our channels.",
+            "See prices, batches and registration details on the official Sympla event page.",
           "footer.copyright":
             "&copy; 2026 2nd Pernambuco Multidisciplinary Symposium on Falls Prevention",
           "footer.realization":
@@ -2920,6 +3131,18 @@
             "<li>CEO and Co-founder of Dyname — healthcare solutions</li><li>Bachelor's in Nursing</li><li>Specialist in Didactics for nursing education; Master's in nursing and health promotion</li><li>Clinical experience in internal medicine, surgery and oncology</li><li>Worked for 12 years as supervisor of the corporate education service and application of active methodologies in the teaching/learning process</li><li>Coordinator of the Instituto Santa Joana Recife de Ensino e Pesquisa — ISEP</li><li>Coordinates the Nursing Intensive Care residency program at Hospital Santa Joana Recife and the multidisciplinary internship program</li>",
           "bio.renato":
             "<li>Physiotherapist — UFPE</li><li>Postgraduate in Neurofunctional Physiotherapy — Faculdade Estácio</li><li>Postgraduate in Physiotherapy Management — PUC-PR</li><li>Physiotherapy Supervisor — Hospital Santa Joana Recife</li><li>Manager of the Falls Prevention team — Hospital Santa Joana Recife</li>",
+          "bio.alexsandra":
+            "<li>Physiotherapist (2023.1)</li><li>Master's student in Physiotherapy at UFPE, research line: Women's and men's health and the aging process</li><li>Postgraduate in Neurofunctional Physiotherapy and Gerontology</li><li>Works in Trauma-Orthopedics, Neurofunctional Rehabilitation and Gerontology, focused on functionality, falls prevention and promoting autonomy and quality of life in aging</li>",
+          "bio.amanda":
+            "<li>Physiotherapist, PhD in Biological Sciences and Master's in Biomedical Engineering</li><li>Specialization in Neurofunctional Physiotherapy certified by COFFITO</li><li>Researcher at the Human-Machine Interface Laboratory, focused on human movement analysis and health-applied technologies</li><li>Strong clinical experience in neurological and geriatric rehabilitation, with emphasis on home care for patients with functional limitations</li>",
+          "bio.barbara":
+            "<li>Pharmacist — Federal University of Pernambuco (UFPE)</li><li>Specialist in Hospital Pharmacy through the IMIP Residency Program and in Hospital and Clinical Pharmacy from the Faculty of Health Sciences and Education</li><li>Works in Clinical Pharmacy in Pediatric Intensive Care</li><li>Experience in antimicrobial stewardship and medication chain risk management</li><li>Preceptor in the Multiprofessional Intensive Care Residency Program and lecturer in postgraduate courses in Physiotherapy, Nursing and Pharmacy</li><li>Member of the Clinical Pharmacy Technical Working Group of the Regional Pharmacy Council of Pernambuco (CRF-PE)</li>",
+          "bio.clara":
+            "<li>Psychologist — Federal University of Pernambuco (UFPE)</li><li>Specialist in Intensive Care through Real Hospital Português/UFPE</li><li>Psychologist in the general ICU and Palliative Care Protocol at Hospital Santa Joana Recife</li><li>Training in Gestalt Therapy at Instituto Figura Viva</li>",
+          "bio.genaina":
+            "<li>Occupational Therapist — UNICAP</li><li>Certified specialist in Gerontology by SBGG</li><li>Specialization in Neurogerontology IDE</li><li>Manager and technical director of REABILITO</li><li>Lecturer in the Occupational Therapy course at UNIFACOL</li><li>Current executive director of SBGG-PE, 2025–2027 term</li><li>Member of the Institute of Elderly Medicine team — IMEDI</li><li>Specialization in Palliative Care — UPE</li><li>Councilor of the Recife Municipal Council for the Rights of Older Adults</li><li>International training in Snoezelen</li>",
+          "bio.priscila":
+            "<li>Clinical Nutritionist at Hospital Santa Joana Recife — ICU focus</li><li>Bachelor's in Nutrition Sciences — UFPE</li><li>Clinical Nutrition Residency — HC/UFPE</li><li>Master's in Clinical Nutrition — FCNAUP (University of Porto, Portugal)</li><li>Postgraduate in Oncology — Liga Portuguesa Contra o Cancro (LPCC, Portugal)</li>",
           "sch.preBody": `
               <tr>
                 <td colspan="3" class="session-header">
@@ -3080,12 +3303,12 @@
               <tr>
                 <td colspan="3" class="session-header">
                   <strong>2:30 – 3:15 p.m. (45 min)</strong><br />
-                  SCIENTIFIC LECTURE — Frailty, Sarcopenia and Falls in the Hospital: what we already know and what we need to do?
+                  SCIENTIFIC LECTURE — Beyond functional capacity: self-efficacy, functional confidence and the invisible mechanisms of falls risk in older adults
                 </td>
               </tr>
               <tr>
                 <td>2:30 – 3:15 p.m.</td>
-                <td>Frailty, Sarcopenia and Falls in the Hospital: what we already know and what we need to do?</td>
+                <td>Beyond functional capacity: self-efficacy, functional confidence and the invisible mechanisms of falls risk in older adults</td>
                 <td><span class="speaker-name">Carolina Nanque<small>Physiotherapist</small></span></td>
               </tr>
               <tr>
@@ -3151,19 +3374,9 @@
                 <td><span class="speaker-name">Danielle Ferraz<small>Nurse · Santa Joana Recife</small></span></td>
               </tr>
               <tr>
-                <td>5:35 – 5:45 p.m.<br />(10 min)</td>
-                <td>Synthesis of consensus · Technical recommendations · Institutional referrals</td>
-                <td><span class="speaker-name">Cecília Prado<small>Physiotherapist · Hospital da Pessoa Idosa Recife</small></span></td>
-              </tr>
-              <tr>
                 <td>5:45 – 5:55 p.m.<br />(10 min)</td>
                 <td>Synthesis of consensus · Technical recommendations · Institutional referrals</td>
                 <td><span class="speaker-name">Eduardo De Holanda<small>Geriatrician · IMIP</small></span></td>
-              </tr>
-              <tr>
-                <td>5:55 – 6:05 p.m.<br />(10 min)</td>
-                <td>Synthesis of consensus · Technical recommendations · Institutional referrals</td>
-                <td><span class="speaker-name">Fábia Lima<small>Nurse · Oswaldo Cruz</small></span></td>
               </tr>
               <tr>
                 <td>6:05 – 6:10 p.m.<br />(05 min)</td>
@@ -3179,14 +3392,14 @@
           "nav.speakers": "Ponentes",
           "nav.venue": "Lugar",
           "nav.contact": "Contacto",
-          "nav.cta": "Inscripciones pronto",
+          "nav.cta": "Inscríbete",
           "hero.badge":
             '<span class="dot"></span> Recife · 21 y 22 de agosto de 2026',
           "hero.title":
             'II Simposio Pernambucano Multidisciplinario de <span class="accent">Prevención de Caídas</span>',
           "hero.sub":
             "<strong>21 y 22 de agosto de 2026</strong><br /> Auditorio del Hospital Santa Joana Recife — Graças",
-          "hero.soon": '<span class="dot"></span> Inscripciones pronto',
+          "hero.register": "Inscríbete",
           "hero.seeProgram": "Ver programa",
           "hero.realization": "Organización",
           "hero.support": "Apoyo institucional",
@@ -3219,6 +3432,8 @@
           "t.physio": "Fisioterapeuta",
           "t.pharma": "Farmacéutica",
           "t.to": "Terapeuta Ocupacional",
+          "t.psych": "Psicóloga",
+          "t.nutrition": "Nutricionista",
           "spec.juliana": "Enfermera · ISEP",
           "role.juliana": "Enfermera · Coordinadora del ISEP",
           "pre.eyebrow": "21 de agosto de 2026 · viernes",
@@ -3252,8 +3467,8 @@
           "reg.eyebrow": "Participe",
           "reg.title": "Inscripciones",
           "reg.text":
-            "Las inscripciones para el II Simposio Pernambucano Multidisciplinario de Prevención de Caídas se abrirán pronto. Siga nuestros canales para no perder la fecha de apertura.",
-          "reg.badge": '<span class="dot"></span> Inscripciones pronto',
+            "Las inscripciones para el II Simposio Pernambucano Multidisciplinario de Prevención de Caídas están abiertas. Asegure su lugar en Sympla.",
+          "reg.badge": "Inscríbete",
           "contact.eyebrow": "Hable con nosotros",
           "contact.title": "Contacto",
           "contact.intro":
@@ -3266,7 +3481,7 @@
           "contact.info1":
             "El <strong>pre-simposio</strong> se realiza el viernes (21/08), con talleres prácticos, apertura oficial y conferencia magna. El sábado (22/08) se realiza la programación científica completa, con mesas redondas, paneles y conferencias multidisciplinarias.",
           "contact.info2":
-            "Pronto divulgaremos los valores, lotes y el enlace oficial de inscripción. Manténgase atento a nuestros canales.",
+            "Consulte valores, lotes y condiciones de inscripción directamente en la página oficial del evento en Sympla.",
           "footer.copyright":
             "&copy; 2026 II Simposio Pernambucano Multidisciplinario de Prevención de Caídas",
           "footer.realization":
@@ -3281,6 +3496,18 @@
             "<li>CEO y Cofundadora de la Empresa Dyname — soluciones en salud</li><li>Licenciada en Enfermería</li><li>Especialista en Didáctica para la enseñanza de enfermería; magíster en enfermería y promoción de la salud</li><li>Experiencia asistencial en clínica médica, quirúrgica y oncología</li><li>Actuó por 12 años como supervisora del servicio de educación corporativa y aplicación de metodologías activas en el proceso de enseñanza/aprendizaje</li><li>Coordinadora del Instituto Santa Joana Recife de Ensino e Pesquisa — ISEP</li><li>Coordina el Programa de residencia en Terapia Intensiva de enfermería del Hospital Santa Joana Recife y el programa de pasantía multidisciplinaria</li>",
           "bio.renato":
             "<li>Fisioterapeuta — UFPE</li><li>Posgrado en Fisioterapia Neurofuncional — Faculdade Estácio</li><li>Posgrado en Gestión en Fisioterapia — PUC-PR</li><li>Supervisor de Fisioterapia — Hospital Santa Joana Recife</li><li>Gestor del equipo de Prevención de Caídas — Hospital Santa Joana Recife</li>",
+          "bio.alexsandra":
+            "<li>Fisioterapeuta (2023.1)</li><li>Maestranda en Fisioterapia por la UFPE, línea de investigación: Salud de la mujer, del hombre y proceso de envejecimiento</li><li>Posgrado en Fisioterapia Neurofuncional y Gerontología</li><li>Actuación en Traumatología-Ortopedia, Rehabilitación Neurofuncional y Gerontología, enfocada en funcionalidad, prevención de caídas y promoción de la autonomía y calidad de vida en el envejecimiento</li>",
+          "bio.amanda":
+            "<li>Fisioterapeuta, Doctora en Ciencias Biológicas y Magíster en Ingeniería Biomédica</li><li>Especialización en Fisioterapia Neurofuncional avalada por el COFFITO</li><li>Investigadora vinculada al Laboratorio de Interfaz Hombre-Máquina, con investigaciones enfocadas en el análisis del movimiento humano y el desarrollo de tecnologías aplicadas a la salud</li><li>Sólida actuación clínica en rehabilitación neurológica y geriátrica, con énfasis en la asistencia domiciliaria a pacientes con limitaciones funcionales</li>",
+          "bio.barbara":
+            "<li>Farmacéutica por la Universidad Federal de Pernambuco (UFPE)</li><li>Especialista en Farmacia Hospitalaria por el Programa de Residencia del IMIP y en Farmacia Hospitalaria y Clínica por la Facultad de Ciencias y Educación en Salud</li><li>Actúa en Farmacia Clínica en Terapia Intensiva Pediátrica</li><li>Experiencia en gestión de antimicrobianos y gestión de riesgos relacionados con la cadena medicamentosa</li><li>Preceptora de Programa de Residencia Multiprofesional en Terapia Intensiva y docente de cursos de posgrado en Fisioterapia, Enfermería y Farmacia</li><li>Integrante del Grupo Técnico de Trabajo de Farmacia Clínica del Consejo Regional de Farmacia de Pernambuco (CRF-PE)</li>",
+          "bio.clara":
+            "<li>Psicóloga formada por la Universidad Federal de Pernambuco (UFPE)</li><li>Especialista en Terapia Intensiva por el Real Hospital Português/UFPE</li><li>Psicóloga de la UTI general y del Protocolo de Cuidados Paliativos del Hospital Santa Joana Recife</li><li>En formación en Gestalt-Terapia por el Instituto Figura Viva</li>",
+          "bio.genaina":
+            "<li>Terapeuta Ocupacional — UNICAP</li><li>Titulada especialista en Gerontología por la SBGG</li><li>Especialización en Neurogerontología IDE</li><li>Gestora y responsable técnica de REABILITO</li><li>Docente del curso de Terapia Ocupacional de la UNIFACOL</li><li>Actual directora ejecutiva SBGG-PE, gestión 2025–2027</li><li>Integrante del Equipo del Instituto de Medicina del Anciano — IMEDI</li><li>Especialización en Cuidados Paliativos — UPE</li><li>Consejera del Consejo Municipal de Derecho de la Persona Anciana de Recife</li><li>Formación Internacional en Snoezelen</li>",
+          "bio.priscila":
+            "<li>Nutricionista Clínica en el Hospital Santa Joana Recife — énfasis en la UTI</li><li>Licenciatura en Ciencias de la Nutrición — UFPE</li><li>Residencia en Nutrición Clínica — HC/UFPE</li><li>Magíster en Nutrición Clínica — FCNAUP (Universidad de Oporto, Portugal)</li><li>Posgrado en Oncología — Liga Portuguesa Contra o Cancro (LPCC, Portugal)</li>",
           "sch.preBody": `
               <tr>
                 <td colspan="3" class="session-header">
@@ -3441,12 +3668,12 @@
               <tr>
                 <td colspan="3" class="session-header">
                   <strong>14:30 – 15:15 (45 min)</strong><br />
-                  CONFERENCIA CIENTÍFICA — Fragilidad, Sarcopenia y Caídas en el Hospital: ¿qué ya sabemos y qué necesitamos hacer?
+                  CONFERENCIA CIENTÍFICA — Más allá de la capacidad funcional: autoeficacia, confianza funcional y los mecanismos invisibles del riesgo de caídas en personas mayores
                 </td>
               </tr>
               <tr>
                 <td>14:30 – 15:15</td>
-                <td>Fragilidad, Sarcopenia y Caídas en el Hospital: ¿qué ya sabemos y qué necesitamos hacer?</td>
+                <td>Más allá de la capacidad funcional: autoeficacia, confianza funcional y los mecanismos invisibles del riesgo de caídas en personas mayores</td>
                 <td><span class="speaker-name">Carolina Nanque<small>Fisioterapeuta</small></span></td>
               </tr>
               <tr>
@@ -3512,19 +3739,9 @@
                 <td><span class="speaker-name">Danielle Ferraz<small>Enfermera · Santa Joana Recife</small></span></td>
               </tr>
               <tr>
-                <td>17:35 – 17:45<br />(10 min)</td>
-                <td>Síntesis de los consensos · Recomendaciones técnicas · Derivaciones institucionales</td>
-                <td><span class="speaker-name">Cecília Prado<small>Fisioterapeuta · Hospital da Pessoa Idosa Recife</small></span></td>
-              </tr>
-              <tr>
                 <td>17:45 – 17:55<br />(10 min)</td>
                 <td>Síntesis de los consensos · Recomendaciones técnicas · Derivaciones institucionales</td>
                 <td><span class="speaker-name">Eduardo De Holanda<small>Geriatra · IMIP</small></span></td>
-              </tr>
-              <tr>
-                <td>17:55 – 18:05<br />(10 min)</td>
-                <td>Síntesis de los consensos · Recomendaciones técnicas · Derivaciones institucionales</td>
-                <td><span class="speaker-name">Fábia Lima<small>Enfermera · Oswaldo Cruz</small></span></td>
               </tr>
               <tr>
                 <td>18:05 – 18:10<br />(05 min)</td>
