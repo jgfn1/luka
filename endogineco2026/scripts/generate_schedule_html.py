@@ -118,10 +118,14 @@ def tr_row(time: str, activity: str, speaker: str) -> str:
     if kind == "ceremony":
         return f'<tr><td colspan="3" class="session-break"><strong>{br(activity)}</strong></td></tr>'
 
-    if not activity and time:
+    if not activity and not speaker and time:
+        if "CERIMÔNIA" in time.upper() or "CERIMONIA" in time.upper():
+            return (
+                f'<tr><td colspan="3" class="session-break">'
+                f"<strong>{br(time)}</strong></td></tr>"
+            )
         return (
-            f"<tr><td>{br(time)}</td>"
-            f'<td colspan="2" class="session-live"><strong>CONTINUAÇÃO</strong></td></tr>'
+            f'<tr><td colspan="3" class="session-header">{br(time)}</td></tr>'
         )
 
     if kind == "break" and not speaker:
@@ -133,17 +137,23 @@ def tr_row(time: str, activity: str, speaker: str) -> str:
         return f'<tr><td colspan="3" class="session-break"><strong>{br(activity)}</strong></td></tr>'
 
     if kind == "live":
-        body = br(activity)
+        activity_lines = activity.split("\n")
+        first_line = activity_lines[0].strip() if activity_lines else activity
+        rest = "\n".join(activity_lines[1:]).strip()
+        detail_style = (
+            "font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45"
+        )
+        body = f"<strong>{br(first_line)}</strong>"
+        if rest:
+            body += f'<div style="{detail_style}">{br(rest)}</div>'
         if speaker:
-            body += f'<div style="font-weight:400;margin-top:.5rem;font-size:.88rem;line-height:1.45">{br(speaker)}</div>'
+            body += f'<div style="{detail_style}">{br(speaker)}</div>'
         if time:
             return (
                 f"<tr><td>{br(time)}</td>"
-                f'<td colspan="2" class="session-live"><strong>{br(activity.split(chr(10))[0])}</strong>'
-                f'{("" if not speaker else f"<div style=\'font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45\'>{br(speaker)}</div>")}'
-                f"</td></tr>"
+                f'<td colspan="2" class="session-live">{body}</td></tr>'
             )
-        return f'<tr><td colspan="3" class="session-live"><strong>{body}</strong></td></tr>'
+        return f'<tr><td colspan="3" class="session-live">{body}</td></tr>'
 
     sp = f'<td class="speaker-name">{br(speaker)}</td>' if speaker else "<td></td>"
     return f"<tr><td>{br(time)}</td><td>{br(activity)}</td>{sp}</tr>"
