@@ -46,6 +46,12 @@ custom domain. The portfolio lives in `/portfolio/` (there is no root
 │   ├── assets/ committee/ speakers/ sponsors/ organizers/
 │   ├── schedule/ (+ backup/)
 │   └── resumes/
+├── spmpq/
+│   ├── index.html                      # II Simpósio Pernambucano Multidisciplinar de Prevenção de Quedas
+│   └── assets/ committee/ speakers/ sponsors/ organizers/ schedule/
+├── recifetorax2026/
+│   ├── index.html                      # Recife Tórax 2026
+│   └── assets/ committee/ speakers/ sponsors/ organizers/ schedule/
 └── vercel.json                         # Routing, redirects, and headers
 ```
 
@@ -60,6 +66,8 @@ default URL falls through to the portfolio:
 | `gastroconecta2026.com.br`, `www.gastroconecta2026.com.br`         | Gastro Conecta  | `/gastroconecta2026/` |
 | `congressoendoginecorecife.com.br`, `www.…`                        | Endogineco 2026 | `/endogineco2026/`  |
 | `oncodermarecife2026.com.br`, `www.oncodermarecife2026.com.br`     | Oncoderma 2026  | `/oncoderma2026/`   |
+| `spmpq.com.br`, `www.spmpq.com.br`                                 | SPMPQ           | `/spmpq/`           |
+| `recifetorax2026.com.br`, `www.recifetorax2026.com.br`             | Recife Tórax 2026 | `/recifetorax2026/` |
 | `*.vercel.app` (default, incl. `automaitdev.vercel.app`)           | Portfolio       | `/portfolio/`       |
 
 Redirects mirror these hosts to remove the folder prefix from public URLs, so

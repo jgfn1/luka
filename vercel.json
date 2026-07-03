@@ -121,6 +121,30 @@
       "has": [{ "type": "host", "value": "www.spmpq.com.br" }],
       "destination": "/:path*",
       "permanent": true
+    },
+    {
+      "source": "/recifetorax2026",
+      "has": [{ "type": "host", "value": "recifetorax2026.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/recifetorax2026/:path*",
+      "has": [{ "type": "host", "value": "recifetorax2026.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/recifetorax2026",
+      "has": [{ "type": "host", "value": "www.recifetorax2026.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/recifetorax2026/:path*",
+      "has": [{ "type": "host", "value": "www.recifetorax2026.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -225,7 +249,27 @@
       "destination": "/spmpq/:path*"
     },
     {
-      "source": "/:path((?!portfolio|tgi|gastroconecta2026|endogineco2026|oncoderma2026|spmpq).*)*",
+      "source": "/:path((?!recifetorax2026).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "recifetorax2026.com.br"
+        }
+      ],
+      "destination": "/recifetorax2026/:path*"
+    },
+    {
+      "source": "/:path((?!recifetorax2026).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.recifetorax2026.com.br"
+        }
+      ],
+      "destination": "/recifetorax2026/:path*"
+    },
+    {
+      "source": "/:path((?!portfolio|tgi|gastroconecta2026|endogineco2026|oncoderma2026|spmpq|recifetorax2026).*)*",
       "has": [
         {
           "type": "host",
@@ -235,7 +279,7 @@
       "destination": "/portfolio/:path*"
     },
     {
-      "source": "/:path((?!portfolio|tgi|gastroconecta2026|endogineco2026|oncoderma2026|spmpq).*)*",
+      "source": "/:path((?!portfolio|tgi|gastroconecta2026|endogineco2026|oncoderma2026|spmpq|recifetorax2026).*)*",
       "has": [
         {
           "type": "host",

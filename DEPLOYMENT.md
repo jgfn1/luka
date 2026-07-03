@@ -30,6 +30,8 @@ Complete guide for deploying the event sites with custom domains on Vercel.
 | `www.oncodermarecife2026.com.br`      | Oncoderma 2026  | `/oncoderma2026/`     |
 | `spmpq.com.br`                        | SPMPQ 2026      | `/spmpq/`             |
 | `www.spmpq.com.br`                    | SPMPQ 2026      | `/spmpq/`             |
+| `recifetorax2026.com.br`              | Recife Tórax 2026 | `/recifetorax2026/` |
+| `www.recifetorax2026.com.br`          | Recife Tórax 2026 | `/recifetorax2026/` |
 | `automaitdev.vercel.app`              | Portfolio       | `/portfolio/`         |
 | `*.vercel.app` (other preview URLs)   | Portfolio       | `/portfolio/`         |
 
@@ -57,6 +59,7 @@ In the Vercel Dashboard:
    - `congressoendoginecorecife.com.br` + `www.congressoendoginecorecife.com.br`
    - `oncodermarecife2026.com.br` + `www.oncodermarecife2026.com.br`
    - `spmpq.com.br` + `www.spmpq.com.br`
+   - `recifetorax2026.com.br` + `www.recifetorax2026.com.br`
 
 > Any domain or rule you add in the Dashboard must also have matching rewrite and
 > redirect entries in `vercel.json` (see "Adding a New Domain" below).
@@ -199,6 +202,8 @@ vercel dev
 # 127.0.0.1 gastroconecta2026.com.br
 # 127.0.0.1 congressoendoginecorecife.com.br
 # 127.0.0.1 www.oncodermarecife2026.com.br
+# 127.0.0.1 www.spmpq.com.br
+# 127.0.0.1 www.recifetorax2026.com.br
 ```
 
 ## Build Configuration

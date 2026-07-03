@@ -47,6 +47,24 @@ with the same technical pattern (one repo per client, host-based routing in
 - **Folder**: `/endogineco2026/`
 - **Languages**: PT
 
+### II Simpósio Pernambucano Multidisciplinar de Prevenção de Quedas
+
+- **Domain**: [www.spmpq.com.br](https://www.spmpq.com.br/)
+- **Topic**: Multidisciplinary fall prevention
+- **Date**: August 21–22, 2026 (2 days)
+- **Location**: Auditório do Hospital Santa Joana Recife
+- **Folder**: `/spmpq/`
+- **Languages**: PT, EN, ES
+
+### Recife Tórax 2026
+
+- **Domain**: [www.recifetorax2026.com.br](https://www.recifetorax2026.com.br/)
+- **Topic**: Thoracic oncology
+- **Date**: July 31, 2026 (1 day)
+- **Location**: Auditório do Hospital Santa Joana Recife
+- **Folder**: `/recifetorax2026/`
+- **Languages**: PT
+
 ### Portfolio (Automa IT & Development)
 
 - **Default URL**: [automaitdev.vercel.app](https://automaitdev.vercel.app/) (also any
@@ -88,6 +106,14 @@ with the same technical pattern (one repo per client, host-based routing in
 │   ├── assets/  committee/  speakers/  sponsors/  organizers/
 │   ├── schedule/  resumes/
 │   └── (…)
+├── spmpq/                     # II Simpósio Pernambucano de Prevenção de Quedas
+│   ├── index.html
+│   ├── assets/  committee/  speakers/  sponsors/  organizers/
+│   └── schedule/
+├── recifetorax2026/           # Recife Tórax 2026
+│   ├── index.html
+│   ├── assets/  committee/  speakers/  sponsors/  organizers/
+│   └── schedule/
 ├── vercel.json                # Domain routing, redirects, and headers
 ├── DEPLOYMENT.md              # Deployment & DNS guide
 └── PROJECT_STRUCTURE.md       # Routing & folder conventions
@@ -121,6 +147,8 @@ Open any site's `index.html` directly in a browser:
 - Gastro Conecta: `/gastroconecta2026/index.html`
 - Endogineco 2026: `/endogineco2026/index.html`
 - Oncoderma 2026: `/oncoderma2026/index.html`
+- SPMPQ: `/spmpq/index.html`
+- Recife Tórax 2026: `/recifetorax2026/index.html`
 
 Or run `vercel dev` to test host-based routing and redirects locally.
 
