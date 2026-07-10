@@ -947,7 +947,8 @@
         .hero-logos-col-divider { display: none; }
         .footer-inner-wide { grid-template-columns: 1fr 1fr; gap: 2rem; }
       }
-      @media (max-width: 900px) {
+      /* Collapse nav before mid-width desktop overflow (~half of 1920px) */
+      @media (max-width: 1100px) {
         /*
           backdrop-filter no <nav> cria bloco de contenção no Chrome: filhos position:fixed
           ficam presos ao nav (~uma linha de altura). Sem blur no mobile o drawer usa o viewport.
