@@ -722,7 +722,8 @@
         max-width: 920px;
       }
 
-      .speakers-grid {
+      .speakers-grid,
+      .moderators-grid {
         grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
         max-width: 920px;
       }
@@ -1198,15 +1199,40 @@
       }
 
       /* ---------------- Registration ---------------- */
+      .reg-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        max-width: 920px;
+        margin: 0 auto;
+      }
+
       .reg-box {
         background: #fff;
         border-radius: 20px;
-        padding: 3rem 2rem;
+        padding: 2.4rem 1.75rem;
         box-shadow: 0 10px 30px rgba(12, 58, 94, 0.1);
-        max-width: 720px;
-        margin: 0 auto;
         text-align: center;
         border-top: 6px solid var(--teal-2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .reg-box h3 {
+        font-family: "Montserrat", sans-serif;
+        color: var(--primary);
+        font-size: 1.15rem;
+        margin: 0 0 0.85rem;
+        line-height: 1.35;
+      }
+
+      .reg-box p {
+        margin: 0 0 1.5rem;
+        color: var(--muted-text);
+        font-size: 0.98rem;
+        line-height: 1.55;
+        max-width: 420px;
       }
 
       .reg-badge {
@@ -1313,7 +1339,8 @@
         }
       }
 
-      @media (max-width: 768px) {
+      /* Collapse nav earlier — many links + CTA overflow below ~1100px */
+      @media (max-width: 1100px) {
         nav {
           padding: 0.55rem 1rem;
         }
@@ -1332,35 +1359,64 @@
           flex-direction: column;
           align-items: stretch;
           padding: 0.5rem 0;
+          padding-bottom: max(1rem, env(safe-area-inset-bottom));
           box-shadow: 0 8px 24px rgba(12, 58, 94, 0.12);
           max-height: 0;
           overflow: hidden;
           opacity: 0;
-          transition: all 0.3s ease;
+          transition:
+            max-height 0.3s ease,
+            opacity 0.3s ease;
+          -webkit-overflow-scrolling: touch;
+          overscroll-behavior: contain;
         }
 
         nav ul.active {
-          max-height: 620px;
+          max-height: calc(100vh - 72px);
+          max-height: calc(100dvh - 72px);
           opacity: 1;
           overflow-y: auto;
         }
 
         nav ul li {
           border-bottom: 1px solid rgba(12, 58, 94, 0.08);
+          flex-shrink: 0;
         }
 
         nav ul li a,
         nav ul li .nav-cta {
           display: block;
-          padding: 1rem 1.5rem;
+          padding: 0.85rem 1.5rem;
         }
 
         nav ul li .nav-cta {
-          margin: 0.5rem 1.25rem 1rem;
+          margin: 0.65rem 1.25rem 0.35rem;
           text-align: center;
           border-radius: 999px;
+          padding: 0.85rem 1.25rem;
         }
 
+        nav ul li:has(.nav-cta) {
+          position: sticky;
+          bottom: 0;
+          border-bottom: none;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(10px);
+          box-shadow: 0 -6px 16px rgba(12, 58, 94, 0.06);
+          padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+        }
+
+        nav ul li.nav-lang {
+          padding: 0.75rem 1.5rem;
+          border-bottom: none;
+        }
+
+        nav ul li.nav-lang select {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
         h1 {
           font-size: 1.85rem;
         }
@@ -1415,18 +1471,9 @@
         <li><a href="#pre-simposio" data-i18n="nav.pre">Pré-Simpósio</a></li>
         <li><a href="#programacao" data-i18n="nav.schedule">Programação</a></li>
         <li><a href="#palestrantes" data-i18n="nav.speakers">Palestrantes</a></li>
+        <li><a href="#moderadores" data-i18n="nav.moderators">Moderadores</a></li>
         <li><a href="#local" data-i18n="nav.venue">Local</a></li>
         <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
-        <li>
-          <a
-            class="nav-cta"
-            href="https://www.sympla.com.br/evento/ii-simposio-pernambucano-multidisciplinar-de-prevencao-de-quedas/3484647"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-i18n="nav.cta"
-            >Inscreva-se</a
-          >
-        </li>
         <li class="nav-lang">
           <select
             id="language-select"
@@ -1436,6 +1483,14 @@
             <option value="en">English</option>
             <option value="es">Español</option>
           </select>
+        </li>
+        <li>
+          <a
+            class="nav-cta"
+            href="#inscricao"
+            data-i18n="nav.cta"
+            >Inscreva-se</a
+          >
         </li>
       </ul>
     </nav>
@@ -1459,9 +1514,7 @@
         <div class="hero-actions">
           <a
             class="btn-primary"
-            href="https://www.sympla.com.br/evento/ii-simposio-pernambucano-multidisciplinar-de-prevencao-de-quedas/3484647"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#inscricao"
             data-i18n="hero.register"
             >Inscreva-se</a
           >
@@ -1526,6 +1579,12 @@
                       alt="Escola Doutores"
                       loading="eager"
                   /></span>
+                  <span class="logo-chip"
+                    ><img
+                      src="organizers/logo-sanape.png"
+                      alt="sana.pé Ortopedia"
+                      loading="eager"
+                  /></span>
                 </div>
               </div>
             </div>
@@ -1556,8 +1615,9 @@
           ocupacional, farmácia e as áreas psicossociais. O evento conta com o
           apoio institucional da <strong>ABRAFIGE</strong> e do
           <strong>CREFITO-1</strong>, e apoio da
-          <strong>RV Prestadora de Serviços</strong> e da
-          <strong>Escola Doutores</strong>.
+          <strong>RV Prestadora de Serviços</strong>, da
+          <strong>Escola Doutores</strong> e da
+          <strong>sana.pé Ortopedia</strong>.
         </p>
 
         <div class="info-cards">
@@ -2455,11 +2515,10 @@
           </div>
           <div class="person-card">
             <div class="avatar-ring">
-              <div class="avatar-empty" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                </svg>
-              </div>
+              <img
+                src="speakers/carlos-henrique.jpeg"
+                alt="Carlos Henrique"
+              />
             </div>
             <h4>Carlos Henrique</h4>
             <span class="person-spec" data-i18n="t.geriatra">Geriatra</span>
@@ -2510,11 +2569,10 @@
           </div>
           <div class="person-card">
             <div class="avatar-ring">
-              <div class="avatar-empty" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                </svg>
-              </div>
+              <img
+                src="speakers/danielle-ferraz.jpeg"
+                alt="Danielle Ferraz"
+              />
             </div>
             <h4>Danielle Ferraz</h4>
             <span class="person-spec" data-i18n="t.nurse">Enfermeira</span>
@@ -2565,25 +2623,6 @@
           </div>
           <div class="person-card">
             <div class="avatar-ring">
-              <div class="avatar-empty" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                </svg>
-              </div>
-            </div>
-            <h4>Isaac Newton</h4>
-            <span class="person-spec" data-i18n="t.physio">Fisioterapeuta</span>
-            <button
-              type="button"
-              class="saiba-mais-btn"
-              data-modal="modal-isaac-newton"
-              data-i18n="ui.learnMore"
-            >
-              Saiba mais
-            </button>
-          </div>
-          <div class="person-card">
-            <div class="avatar-ring">
               <img
                 src="speakers/isabelle-violet.jpg"
                 alt="Isabelle Violet"
@@ -2595,25 +2634,6 @@
               type="button"
               class="saiba-mais-btn"
               data-modal="modal-isabelle-violet"
-              data-i18n="ui.learnMore"
-            >
-              Saiba mais
-            </button>
-          </div>
-          <div class="person-card">
-            <div class="avatar-ring">
-              <div class="avatar-empty" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                </svg>
-              </div>
-            </div>
-            <h4>Isis Amaral</h4>
-            <span class="person-spec" data-i18n="t.physio">Fisioterapeuta</span>
-            <button
-              type="button"
-              class="saiba-mais-btn"
-              data-modal="modal-isis-amaral"
               data-i18n="ui.learnMore"
             >
               Saiba mais
@@ -2639,6 +2659,17 @@
           </div>
           <div class="person-card">
             <div class="avatar-ring">
+              <div class="avatar-empty" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+              </div>
+            </div>
+            <h4>Marcela Santos</h4>
+            <span class="person-spec" data-i18n="t.internalMedicine">Clínica Médica</span>
+          </div>
+          <div class="person-card">
+            <div class="avatar-ring">
               <img
                 src="speakers/mariana-de-amorim.jpg"
                 alt="Mariana de Amorim"
@@ -2657,11 +2688,10 @@
           </div>
           <div class="person-card">
             <div class="avatar-ring">
-              <div class="avatar-empty" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                </svg>
-              </div>
+              <img
+                src="speakers/marina-hazin.jpeg"
+                alt="Marina Hazin"
+              />
             </div>
             <h4>Marina Hazin</h4>
             <span class="person-spec" data-i18n="t.physio">Fisioterapeuta</span>
@@ -2676,18 +2706,17 @@
           </div>
           <div class="person-card">
             <div class="avatar-ring">
-              <div class="avatar-empty" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                </svg>
-              </div>
+              <img
+                src="speakers/mucio-vaz.jpeg"
+                alt="Múcio Vaz"
+              />
             </div>
-            <h4>Michelle Santos</h4>
-            <span class="person-spec" data-i18n="t.physio">Fisioterapeuta</span>
+            <h4>Múcio Vaz</h4>
+            <span class="person-spec" data-i18n="t.orthopedist">Ortopedista</span>
             <button
               type="button"
               class="saiba-mais-btn"
-              data-modal="modal-michelle-santos"
+              data-modal="modal-mucio-vaz"
               data-i18n="ui.learnMore"
             >
               Saiba mais
@@ -2751,6 +2780,100 @@
       </div>
     </section>
 
+    <section id="moderadores" class="fade-in">
+      <div class="container">
+        <span class="section-eyebrow" data-i18n="moderators.eyebrow">Confirmados</span>
+        <h2 class="text-center" data-i18n="moderators.title">Moderadores</h2>
+        <p
+          class="text-center"
+          style="
+            font-size: 1.05rem;
+            margin: 0 auto;
+            max-width: 720px;
+            color: var(--muted-text);
+          "
+          data-i18n="moderators.intro"
+        >
+          Conheça os moderadores confirmados para o simpósio.
+        </p>
+        <div class="people-grid moderators-grid">
+          <div class="person-card">
+            <div class="avatar-ring">
+              <div class="avatar-empty" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+              </div>
+            </div>
+            <h4>Isaac Newton</h4>
+            <span class="person-spec" data-i18n="t.physio">Fisioterapeuta</span>
+            <button
+              type="button"
+              class="saiba-mais-btn"
+              data-modal="modal-isaac-newton"
+              data-i18n="ui.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="person-card">
+            <div class="avatar-ring">
+              <img
+                src="moderators/isis-amaral.jpeg"
+                alt="Isis Amaral"
+              />
+            </div>
+            <h4>Isis Amaral</h4>
+            <span class="person-spec" data-i18n="t.physio">Fisioterapeuta</span>
+            <button
+              type="button"
+              class="saiba-mais-btn"
+              data-modal="modal-isis-amaral"
+              data-i18n="ui.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="person-card">
+            <div class="avatar-ring">
+              <img
+                src="moderators/michelle-santos.jpeg"
+                alt="Michelle Santos"
+              />
+            </div>
+            <h4>Michelle Santos</h4>
+            <span class="person-spec" data-i18n="t.physio">Fisioterapeuta</span>
+            <button
+              type="button"
+              class="saiba-mais-btn"
+              data-modal="modal-michelle-santos"
+              data-i18n="ui.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+          <div class="person-card">
+            <div class="avatar-ring">
+              <img
+                src="moderators/renato-leitao.jpeg"
+                alt="Renato Leitão"
+              />
+            </div>
+            <h4>Renato Leitão</h4>
+            <span class="person-spec" data-i18n="t.physio">Fisioterapeuta</span>
+            <button
+              type="button"
+              class="saiba-mais-btn"
+              data-modal="modal-renato-leitao"
+              data-i18n="ui.learnMore"
+            >
+              Saiba mais
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="local" class="fade-in">
       <div class="container two-column">
         <div>
@@ -2786,19 +2909,51 @@
       <div class="container">
         <span class="section-eyebrow" data-i18n="reg.eyebrow">Participe</span>
         <h2 class="text-center" data-i18n="reg.title">Inscrições</h2>
-        <div class="reg-box">
-          <p style="max-width: 560px; margin: 0 auto 1.75rem" data-i18n="reg.text">
-            As inscrições para o II Simpósio Pernambucano Multidisciplinar de
-            Prevenção de Quedas estão abertas. Garanta sua vaga pelo Sympla.
-          </p>
-          <a
-            class="reg-badge"
-            href="https://www.sympla.com.br/evento/ii-simposio-pernambucano-multidisciplinar-de-prevencao-de-quedas/3484647"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-i18n="reg.badge"
-            >Inscreva-se</a
-          >
+        <p
+          class="text-center"
+          style="
+            font-size: 1.05rem;
+            margin: 0 auto 1.75rem;
+            max-width: 720px;
+            color: var(--muted-text);
+          "
+          data-i18n="reg.text"
+        >
+          As inscrições para o II Simpósio Pernambucano Multidisciplinar de
+          Prevenção de Quedas estão abertas. Escolha a modalidade e garanta sua
+          vaga pelo Sympla.
+        </p>
+        <div class="reg-options">
+          <div class="reg-box">
+            <h3 data-i18n="reg.comboTitle">Inscrição Combo (Oficinas &amp; Simpósio)</h3>
+            <p data-i18n="reg.comboText">
+              Dá direito a participar de uma das oficinas oferecidas em 21/08 e
+              inclui automaticamente a inscrição no simpósio de 22/08.
+            </p>
+            <a
+              class="reg-badge"
+              href="https://www.sympla.com.br/evento/inscricao-combo-oficinas-e-ii-simposio-pernambucano-multidisciplinar-de-prevencao-de-quedas/3498073"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="reg.badge"
+              >Inscreva-se</a
+            >
+          </div>
+          <div class="reg-box">
+            <h3 data-i18n="reg.symposiumTitle">Inscrição Simpósio</h3>
+            <p data-i18n="reg.symposiumText">
+              Somente para o simpósio em 22/08. Não inclui participação nas
+              oficinas do pré-simpósio em 21/08.
+            </p>
+            <a
+              class="reg-badge"
+              href="https://www.sympla.com.br/evento/ii-simposio-pernambucano-multidisciplinar-de-prevencao-de-quedas/3484647"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="reg.badge"
+              >Inscreva-se</a
+            >
+          </div>
         </div>
       </div>
     </section>
@@ -2973,7 +3128,7 @@
         </button>
         <div class="modal-avatar-ring">
           <img
-            src="committee/renato-leitao-de-almeida-neto.jpeg"
+            src="moderators/renato-leitao.jpeg"
             alt="Renato Leitão de Almeida Neto"
           />
         </div>
@@ -3163,11 +3318,10 @@
           &times;
         </button>
         <div class="modal-avatar-ring">
-          <div class="avatar-empty" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-            </svg>
-          </div>
+          <img
+            src="speakers/carlos-henrique.jpeg"
+            alt="Carlos Henrique"
+          />
         </div>
         <h3>Carlos Henrique</h3>
         <p class="modal-role" data-i18n="t.geriatra">Geriatra</p>
@@ -3205,11 +3359,10 @@
           &times;
         </button>
         <div class="modal-avatar-ring">
-          <div class="avatar-empty" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-            </svg>
-          </div>
+          <img
+            src="speakers/danielle-ferraz.jpeg"
+            alt="Danielle Ferraz"
+          />
         </div>
         <h3>Danielle Ferraz</h3>
         <p class="modal-role" data-i18n="t.nurse">Enfermeira</p>
@@ -3271,6 +3424,7 @@
         </ul>
       </div>
     </div>
+    <!-- Modais — Moderadores -->
     <div class="modal" id="modal-isaac-newton">
       <div class="modal-content">
         <button type="button" class="close-modal" aria-label="Fechar">
@@ -3317,11 +3471,10 @@
           &times;
         </button>
         <div class="modal-avatar-ring">
-          <div class="avatar-empty" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-            </svg>
-          </div>
+          <img
+            src="moderators/isis-amaral.jpeg"
+            alt="Isis Amaral"
+          />
         </div>
         <h3>Isis Amaral</h3>
         <p class="modal-role" data-i18n="t.physio">Fisioterapeuta</p>
@@ -3380,11 +3533,10 @@
           &times;
         </button>
         <div class="modal-avatar-ring">
-          <div class="avatar-empty" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-            </svg>
-          </div>
+          <img
+            src="speakers/marina-hazin.jpeg"
+            alt="Marina Hazin"
+          />
         </div>
         <h3>Marina Hazin</h3>
         <p class="modal-role" data-i18n="t.physio">Fisioterapeuta</p>
@@ -3397,17 +3549,38 @@
         </ul>
       </div>
     </div>
+    <div class="modal" id="modal-mucio-vaz">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fechar">
+          &times;
+        </button>
+        <div class="modal-avatar-ring">
+          <img
+            src="speakers/mucio-vaz.jpeg"
+            alt="Múcio Vaz"
+          />
+        </div>
+        <h3>Múcio Vaz</h3>
+        <p class="modal-role" data-i18n="t.orthopedist">Ortopedista</p>
+        <ul class="modal-bio" data-i18n="bio.mucio-vaz">
+          <li>Ortopedista e Traumatologista pela SBOT</li>
+          <li>Especialista em Quadril e Trauma</li>
+          <li>Mestre e Doutor em Cirurgia (Ortopedia/Traumatologia) pela UFPE</li>
+          <li>Professor Adjunto da Universidade Federal de Pernambuco - UFPE</li>
+          <li>Ortopedista do Hospital Santa Joana</li>
+        </ul>
+      </div>
+    </div>
     <div class="modal" id="modal-michelle-santos">
       <div class="modal-content">
         <button type="button" class="close-modal" aria-label="Fechar">
           &times;
         </button>
         <div class="modal-avatar-ring">
-          <div class="avatar-empty" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-            </svg>
-          </div>
+          <img
+            src="moderators/michelle-santos.jpeg"
+            alt="Michelle Santos"
+          />
         </div>
         <h3>Michelle Santos</h3>
         <p class="modal-role" data-i18n="t.physio">Fisioterapeuta</p>
@@ -3501,7 +3674,7 @@
       </p>
       <p data-i18n="footer.realization">Realização: Hospital Santa Joana Recife · ISEP · Rede Américas</p>
       <p data-i18n="footer.support">Apoio institucional: ABRAFIGE · CREFITO-1</p>
-      <p data-i18n="footer.apoio">Apoio: RV Prestadora de Serviços · Escola Doutores</p>
+      <p data-i18n="footer.apoio">Apoio: RV Prestadora de Serviços · Escola Doutores · sana.pé Ortopedia</p>
       <p style="margin-top: 2rem; font-size: 0.9rem">
         <span data-i18n="footer.producedBy">Produzido por:</span>
         <a
@@ -3684,6 +3857,7 @@
           "nav.pre": "Pre-Symposium",
           "nav.schedule": "Program",
           "nav.speakers": "Speakers",
+          "nav.moderators": "Moderators",
           "nav.venue": "Venue",
           "nav.contact": "Contact",
           "nav.cta": "Register",
@@ -3703,7 +3877,7 @@
           "about.p1":
             "<strong>Hospital Santa Joana Recife</strong>, the <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong> and <strong>Rede Américas</strong> present the <strong>2nd Pernambuco Multidisciplinary Symposium on Falls Prevention</strong>, a meeting that brings together different specialties around one of the greatest challenges in caring for older adults: preventing falls and their consequences.",
           "about.p2":
-            "With a truly multidisciplinary perspective, the symposium covers everything from primary prevention to rehabilitation, integrating medicine, physiotherapy, nursing, nutrition, speech therapy, occupational therapy, pharmacy and the psychosocial fields. The event has the institutional support of <strong>ABRAFIGE</strong> and <strong>CREFITO-1</strong>, and support from <strong>RV Prestadora de Serviços</strong> and <strong>Escola Doutores</strong>.",
+            "With a truly multidisciplinary perspective, the symposium covers everything from primary prevention to rehabilitation, integrating medicine, physiotherapy, nursing, nutrition, speech therapy, occupational therapy, pharmacy and the psychosocial fields. The event has the institutional support of <strong>ABRAFIGE</strong> and <strong>CREFITO-1</strong>, and support from <strong>RV Prestadora de Serviços</strong>, <strong>Escola Doutores</strong> and <strong>sana.pé Ortopedia</strong>.",
           "about.card1Title": "When",
           "about.card1Body": "August 21–22, 2026<br />(Friday and Saturday)",
           "about.card2Title": "Where",
@@ -3734,6 +3908,8 @@
           "t.speech": "Speech Therapist",
           "t.nurse": "Nurse",
           "t.social": "Social Worker",
+          "t.orthopedist": "Orthopedist",
+          "t.internalMedicine": "Internal Medicine",
           "spec.juliana": "Nurse · ISEP",
           "role.juliana": "Nurse · ISEP Coordinator",
           "pre.eyebrow": "August 21, 2026 · Friday",
@@ -3757,6 +3933,10 @@
           "speakers.title": "Speakers",
           "speakers.intro":
             "Meet the confirmed speakers for the symposium.",
+          "moderators.eyebrow": "Confirmed",
+          "moderators.title": "Moderators",
+          "moderators.intro":
+            "Meet the confirmed moderators for the symposium.",
           "venue.eyebrow": "Getting there",
           "venue.title": "Event venue",
           "venue.p1":
@@ -3767,7 +3947,13 @@
           "reg.eyebrow": "Take part",
           "reg.title": "Registration",
           "reg.text":
-            "Registration for the 2nd Pernambuco Multidisciplinary Symposium on Falls Prevention is open. Secure your spot on Sympla.",
+            "Registration for the 2nd Pernambuco Multidisciplinary Symposium on Falls Prevention is open. Choose your option and secure your spot on Sympla.",
+          "reg.comboTitle": "Combo Registration (Workshops & Symposium)",
+          "reg.comboText":
+            "Includes participation in one of the workshops on 08/21 and automatic registration for the symposium on 08/22.",
+          "reg.symposiumTitle": "Symposium Registration",
+          "reg.symposiumText":
+            "Symposium only on 08/22. Does not include the pre-symposium workshops on 08/21.",
           "reg.badge": "Register",
           "contact.eyebrow": "Talk to us",
           "contact.title": "Contact",
@@ -3787,7 +3973,7 @@
           "footer.realization":
             "Organized by: Hospital Santa Joana Recife · ISEP · Rede Américas",
           "footer.support": "Institutional support: ABRAFIGE · CREFITO-1",
-          "footer.apoio": "Support: RV Prestadora de Serviços · Escola Doutores",
+          "footer.apoio": "Support: RV Prestadora de Serviços · Escola Doutores · sana.pé Ortopedia",
           "footer.producedBy": "Produced by:",
           "footer.developedBy": "Developed by:",
           "footer.backToTop": "↑ Back to top",
@@ -4066,6 +4252,7 @@
           "nav.pre": "Pre-Simposio",
           "nav.schedule": "Programa",
           "nav.speakers": "Ponentes",
+          "nav.moderators": "Moderadores",
           "nav.venue": "Lugar",
           "nav.contact": "Contacto",
           "nav.cta": "Inscríbete",
@@ -4085,7 +4272,7 @@
           "about.p1":
             "El <strong>Hospital Santa Joana Recife</strong>, el <strong>Instituto Santa Joana de Ensino e Pesquisa – ISEP</strong> y la <strong>Rede Américas</strong> promueven el <strong>II Simposio Pernambucano Multidisciplinario de Prevención de Caídas</strong>, un encuentro que reúne diferentes especialidades en torno a uno de los mayores desafíos del cuidado de la persona mayor: prevenir caídas y sus consecuencias.",
           "about.p2":
-            "Con una mirada verdaderamente multidisciplinaria, el simposio aborda desde la prevención primaria hasta la rehabilitación, integrando medicina, fisioterapia, enfermería, nutrición, fonoaudiología, terapia ocupacional, farmacia y las áreas psicosociales. El evento cuenta con el apoyo institucional de <strong>ABRAFIGE</strong> y <strong>CREFITO-1</strong>, y apoyo de <strong>RV Prestadora de Serviços</strong> y <strong>Escola Doutores</strong>.",
+            "Con una mirada verdaderamente multidisciplinaria, el simposio aborda desde la prevención primaria hasta la rehabilitación, integrando medicina, fisioterapia, enfermería, nutrición, fonoaudiología, terapia ocupacional, farmacia y las áreas psicosociales. El evento cuenta con el apoyo institucional de <strong>ABRAFIGE</strong> y <strong>CREFITO-1</strong>, y apoyo de <strong>RV Prestadora de Serviços</strong>, <strong>Escola Doutores</strong> y <strong>sana.pé Ortopedia</strong>.",
           "about.card1Title": "Cuándo",
           "about.card1Body": "21 y 22 de agosto de 2026<br />(viernes y sábado)",
           "about.card2Title": "Dónde",
@@ -4116,6 +4303,8 @@
           "t.speech": "Fonoaudióloga",
           "t.nurse": "Enfermera",
           "t.social": "Trabajadora Social",
+          "t.orthopedist": "Ortopedista",
+          "t.internalMedicine": "Medicina Interna",
           "spec.juliana": "Enfermera · ISEP",
           "role.juliana": "Enfermera · Coordinadora del ISEP",
           "pre.eyebrow": "21 de agosto de 2026 · viernes",
@@ -4139,6 +4328,10 @@
           "speakers.title": "Ponentes",
           "speakers.intro":
             "Conozca a los ponentes confirmados para el simposio.",
+          "moderators.eyebrow": "Confirmados",
+          "moderators.title": "Moderadores",
+          "moderators.intro":
+            "Conozca a los moderadores confirmados para el simposio.",
           "venue.eyebrow": "Cómo llegar",
           "venue.title": "Lugar del evento",
           "venue.p1":
@@ -4149,7 +4342,13 @@
           "reg.eyebrow": "Participe",
           "reg.title": "Inscripciones",
           "reg.text":
-            "Las inscripciones para el II Simposio Pernambucano Multidisciplinario de Prevención de Caídas están abiertas. Asegure su lugar en Sympla.",
+            "Las inscripciones para el II Simposio Pernambucano Multidisciplinario de Prevención de Caídas están abiertas. Elija la modalidad y asegure su lugar en Sympla.",
+          "reg.comboTitle": "Inscripción Combo (Talleres y Simposio)",
+          "reg.comboText":
+            "Da derecho a participar en uno de los talleres del 21/08 e incluye automáticamente la inscripción al simposio del 22/08.",
+          "reg.symposiumTitle": "Inscripción Simposio",
+          "reg.symposiumText":
+            "Solo para el simposio del 22/08. No incluye los talleres del pre-simposio del 21/08.",
           "reg.badge": "Inscríbete",
           "contact.eyebrow": "Hable con nosotros",
           "contact.title": "Contacto",
@@ -4169,7 +4368,7 @@
           "footer.realization":
             "Organización: Hospital Santa Joana Recife · ISEP · Rede Américas",
           "footer.support": "Apoyo institucional: ABRAFIGE · CREFITO-1",
-          "footer.apoio": "Apoyo: RV Prestadora de Serviços · Escola Doutores",
+          "footer.apoio": "Apoyo: RV Prestadora de Serviços · Escola Doutores · sana.pé Ortopedia",
           "footer.producedBy": "Producido por:",
           "footer.developedBy": "Desarrollado por:",
           "footer.backToTop": "↑ Volver arriba",
