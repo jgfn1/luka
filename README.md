@@ -18,7 +18,7 @@ with the same technical pattern (one repo per client, host-based routing in
 - **Date**: October 31 – November 1, 2025 (2 days)
 - **Location**: Novotel Recife Marina
 - **Folder**: `/tgi/`
-- **Languages**: PT, EN, ES, FR
+- **Languages**: PT, EN, ES
 
 ### Gastro Conecta & Nutri Conecta 2026
 
@@ -27,25 +27,25 @@ with the same technical pattern (one repo per client, host-based routing in
 - **Date**: March 27, 2026 (1 day)
 - **Location**: Novotel Recife Marina
 - **Folder**: `/gastroconecta2026/`
-- **Languages**: PT, EN, FR
+- **Languages**: PT, EN, ES
 
 ### II Simpósio Oncoderma Recife
 
 - **Domain**: [www.oncodermarecife2026.com.br](https://www.oncodermarecife2026.com.br/)
 - **Topic**: Cutaneous oncology
 - **Date**: June 5, 2026 (1 day)
-- **Location**: Hospital Santa Joana Recife
+- **Location**: Auditório do Hospital Santa Joana Recife
 - **Folder**: `/oncoderma2026/`
-- **Languages**: PT
+- **Languages**: PT, EN, ES
 
 ### Congresso Internacional Endogineco 2026
 
 - **Domain**: [www.congressoendoginecorecife.com.br](https://www.congressoendoginecorecife.com.br/)
-- **Topic**: Gynecology and endoscopy
-- **Date**: August 27–29, 2026 (3 days)
-- **Location**: Recife
+- **Topic**: Gynecology and endoscopy (endometriosis / minimally invasive gynecology)
+- **Date**: August 27–29, 2026 (pré-congresso 27; congresso 28–29)
+- **Location**: Mar Hotel Conventions · Recife/PE
 - **Folder**: `/endogineco2026/`
-- **Languages**: PT
+- **Languages**: PT, EN, ES
 
 ### II Simpósio Pernambucano Multidisciplinar de Prevenção de Quedas
 
@@ -79,7 +79,7 @@ with the same technical pattern (one repo per client, host-based routing in
 - Per-site client-side language switchers (where applicable)
 - Fully responsive design
 - Host-based routing and redirects via `vercel.json`
-- Optional Python helper scripts for generating schedule tables (Endogineco)
+- Optional Python helper scripts for schedule tables and speaker cards (Endogineco)
 
 ## Project Structure
 
@@ -97,23 +97,27 @@ with the same technical pattern (one repo per client, host-based routing in
 │   └── logo-gastro.png  logo-nutri.png  favicon.svg
 ├── endogineco2026/            # Congresso Internacional Endogineco 2026
 │   ├── index.html
-│   ├── assets/  committee/  speakers/  organizers/  institutional-support/
-│   ├── sponsors/  resumes/   # reserved for future client assets (may be empty)
+│   ├── assets/  committee/  speakers/  surgeons/  organizers/
+│   ├── institutional-support/
+│   ├── sponsors/  resumes/    # reserved for future client assets (may be empty)
 │   ├── schedule/  pre-congress/  scientific-papers/  previous-edition/
-│   └── scripts/               # Python schedule generators
+│   ├── orphaned-photos/       # photos without an active speaker/surgeon card
+│   └── scripts/               # Python schedule & speaker helpers
 ├── oncoderma2026/             # II Simpósio Oncoderma Recife
 │   ├── index.html
 │   ├── assets/  committee/  speakers/  sponsors/  organizers/
-│   ├── schedule/  resumes/
+│   ├── schedule/ (+ backup/)  resumes/
 │   └── (…)
 ├── spmpq/                     # II Simpósio Pernambucano de Prevenção de Quedas
 │   ├── index.html
-│   ├── assets/  committee/  speakers/  sponsors/  organizers/
-│   └── schedule/
+│   ├── assets/  committee/  speakers/  moderators/  organizers/
+│   ├── schedule/
+│   └── sponsors/              # reserved (may be empty)
 ├── recifetorax2026/           # Recife Tórax 2026
 │   ├── index.html
-│   ├── assets/  committee/  speakers/  sponsors/  organizers/
-│   └── schedule/
+│   ├── assets/  committee/  speakers/  organizers/  resumes/
+│   ├── schedule/
+│   └── sponsors/              # reserved (may be empty)
 ├── vercel.json                # Domain routing, redirects, and headers
 ├── DEPLOYMENT.md              # Deployment & DNS guide
 └── PROJECT_STRUCTURE.md       # Routing & folder conventions
@@ -121,8 +125,8 @@ with the same technical pattern (one repo per client, host-based routing in
 
 Each event folder is self-contained: images, PDFs, and data files live inside
 that folder. There are no shared root-level assets. Some subfolders (e.g.
-`endogineco2026/sponsors/`, `endogineco2026/resumes/`) are kept in the tree even
-when empty, so incoming sponsor logos or speaker CVs have a defined place.
+`endogineco2026/sponsors/`, `spmpq/sponsors/`, `recifetorax2026/sponsors/`) are
+kept in the tree even when empty, so incoming logos or CVs have a defined place.
 
 ## Deployment
 

@@ -24,34 +24,40 @@ custom domain. The portfolio lives in `/portfolio/` (there is no root
 ├── portfolio/
 │   └── index.html                      # Automa IT & Development portfolio (EN/PT/ES)
 ├── tgi/
-│   ├── index.html                      # III Simpósio TGI
+│   ├── index.html                      # III Simpósio TGI (PT/EN/ES)
 │   ├── LOGO-TGI.png
 │   └── assets/
 │       ├── committee/ speakers/ sponsors/ logos/
 │       └── programacao_completa.pdf
 ├── gastroconecta2026/
-│   ├── index.html                      # Gastro Conecta & Nutri Conecta 2026
+│   ├── index.html                      # Gastro Conecta & Nutri Conecta 2026 (PT/EN/ES)
 │   ├── committee/ speakers/ sponsors/
 │   ├── schedule_resumes/
 │   └── logo-gastro.png  logo-nutri.png  favicon.svg
 ├── endogineco2026/
-│   ├── index.html                      # Congresso Internacional Endogineco 2026
-│   ├── assets/ committee/ speakers/ organizers/ institutional-support/
+│   ├── index.html                      # Congresso Internacional Endogineco 2026 (PT/EN/ES)
+│   ├── assets/ committee/ speakers/ surgeons/ organizers/
+│   ├── institutional-support/
 │   ├── sponsors/ resumes/              # reserved for future assets (may be empty)
-│   ├── schedule/ (+ backup/)
+│   ├── schedule/                       # congress CSV / PDF / XLSX sources
 │   ├── pre-congress/ scientific-papers/ previous-edition/
-│   └── scripts/                        # Python schedule generators
+│   ├── orphaned-photos/                # photos with no active speaker/surgeon card
+│   └── scripts/                        # Python schedule & speaker helpers
 ├── oncoderma2026/
-│   ├── index.html                      # II Simpósio Oncoderma Recife
+│   ├── index.html                      # II Simpósio Oncoderma Recife (PT/EN/ES)
 │   ├── assets/ committee/ speakers/ sponsors/ organizers/
 │   ├── schedule/ (+ backup/)
 │   └── resumes/
 ├── spmpq/
-│   ├── index.html                      # II Simpósio Pernambucano Multidisciplinar de Prevenção de Quedas
-│   └── assets/ committee/ speakers/ sponsors/ organizers/ schedule/
+│   ├── index.html                      # II Simpósio Pernambucano de Prevenção de Quedas (PT/EN/ES)
+│   ├── assets/ committee/ speakers/ moderators/ organizers/
+│   ├── schedule/
+│   └── sponsors/                       # reserved (may be empty)
 ├── recifetorax2026/
-│   ├── index.html                      # Recife Tórax 2026
-│   └── assets/ committee/ speakers/ sponsors/ organizers/ schedule/
+│   ├── index.html                      # Recife Tórax 2026 (PT)
+│   ├── assets/ committee/ speakers/ organizers/ resumes/
+│   ├── schedule/
+│   └── sponsors/                       # reserved (may be empty)
 └── vercel.json                         # Routing, redirects, and headers
 ```
 
@@ -111,21 +117,38 @@ in the event's `index.html` therefore resolve correctly on the custom domain.
 ## Asset Organization
 
 - **Per event**: event-specific images, PDFs, and data files live in
-  subfolders such as `committee/`, `speakers/`, `sponsors/`, `organizers/`,
-  `schedule/`, `resumes/`, and `assets/`.
+  subfolders such as `committee/`, `speakers/`, `surgeons/`, `moderators/`,
+  `sponsors/`, `organizers/`, `schedule/`, `resumes/`, and `assets/`.
 - **No shared root assets**: each event is fully self-contained in its folder.
 - **Empty folders**: some directories (e.g. `endogineco2026/sponsors/`,
-  `endogineco2026/resumes/`) are documented and kept in the repo even without
-  files yet, so future sponsor logos or speaker CVs have a fixed location.
+  `endogineco2026/resumes/`, `spmpq/sponsors/`, `recifetorax2026/sponsors/`)
+  are kept in the repo even without files yet, so future logos or CVs have a
+  fixed location.
+- **Orphan photos (Endogineco)**: `endogineco2026/orphaned-photos/` holds image
+  files that are no longer linked to an active speaker or surgeon card (see the
+  README in that folder).
 
 ## Helper Scripts (Endogineco)
 
-`endogineco2026/scripts/` contains Python utilities used to build the schedule
-section of that site from CSV source files:
+`endogineco2026/scripts/` contains Python utilities used while authoring that
+site. They are not part of the Vercel build.
 
-- `generate_schedule_html.py` — generates schedule table HTML from the
-  `schedule/` and `pre-congress/` CSV files.
-- `patch_schedule_in_index.py` — runs the generator and patches the rendered
-  panels back into `endogineco2026/index.html`.
+Run from the repository root (requires Python 3):
 
-These scripts are authoring helpers only; they are not part of the Vercel build.
+```bash
+# Generate schedule table HTML from CSV (congress or pre-congress)
+python3 endogineco2026/scripts/generate_schedule_html.py congress
+python3 endogineco2026/scripts/generate_schedule_html.py precongress
+
+# Patch the generated schedule panels into index.html
+python3 endogineco2026/scripts/patch_schedule_in_index.py
+
+# Regenerate speaker cards in index.html from speakers/palestrantes.csv
+python3 endogineco2026/scripts/patch_speakers_in_index.py
+```
+
+| Script | Role |
+| ------ | ---- |
+| `generate_schedule_html.py` | Builds schedule table HTML from the `schedule/` and `pre-congress/` CSV files |
+| `patch_schedule_in_index.py` | Runs the generator and patches the rendered panels back into `index.html` |
+| `patch_speakers_in_index.py` | Rebuilds speaker cards from `speakers/palestrantes.csv` and photos in `speakers/` |

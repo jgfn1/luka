@@ -196,14 +196,13 @@ Then add the domain in the Vercel Dashboard and configure its DNS.
 vercel dev
 
 # Portfolio: http://localhost:3000/  (or automaitdev.vercel.app in production)
-# Or modify /etc/hosts to test domain routing:
-# 127.0.0.1 tgirecife.com.br
-# 127.0.0.1 www.tgirecife.com.br
-# 127.0.0.1 gastroconecta2026.com.br
-# 127.0.0.1 congressoendoginecorecife.com.br
-# 127.0.0.1 www.oncodermarecife2026.com.br
-# 127.0.0.1 www.spmpq.com.br
-# 127.0.0.1 www.recifetorax2026.com.br
+# Or modify /etc/hosts to test domain routing (apex + www for each event):
+# 127.0.0.1 tgirecife.com.br www.tgirecife.com.br
+# 127.0.0.1 gastroconecta2026.com.br www.gastroconecta2026.com.br
+# 127.0.0.1 congressoendoginecorecife.com.br www.congressoendoginecorecife.com.br
+# 127.0.0.1 oncodermarecife2026.com.br www.oncodermarecife2026.com.br
+# 127.0.0.1 spmpq.com.br www.spmpq.com.br
+# 127.0.0.1 recifetorax2026.com.br www.recifetorax2026.com.br
 ```
 
 ## Build Configuration
