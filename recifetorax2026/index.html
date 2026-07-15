@@ -1073,6 +1073,212 @@
         color: var(--muted-text);
       }
 
+      /* ── PALESTRANTES ── */
+      .speakers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 1.4rem;
+        margin: 2.5rem auto 0;
+        max-width: 1140px;
+      }
+      .speaker-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.75rem 1.1rem;
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: var(--r-lg);
+        transition: background 0.28s var(--ease), transform 0.28s var(--ease), border-color 0.28s var(--ease);
+      }
+      .speaker-item:hover {
+        background: rgba(255, 255, 255, 0.13);
+        border-color: rgba(0, 173, 222, 0.55);
+        transform: translateY(-6px);
+      }
+      .speaker-item img,
+      .speaker-item .avatar-empty {
+        width: 108px;
+        height: 108px;
+        border-radius: 50%;
+        border: 3px solid var(--sky);
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        transition: border-color 0.28s var(--ease), transform 0.28s var(--ease);
+      }
+      .speaker-item:hover img,
+      .speaker-item:hover .avatar-empty {
+        border-color: #fff;
+        transform: scale(1.05);
+      }
+      .speaker-item img {
+        object-fit: cover;
+        object-position: center top;
+      }
+      .speaker-item .avatar-empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.45);
+      }
+      .speaker-item .avatar-empty svg {
+        width: 46%;
+        height: 46%;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.5;
+      }
+      .speaker-item h4 {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin: 0;
+      }
+      .speaker-item .speaker-region {
+        display: block;
+        font-size: 0.76rem;
+        color: rgba(255, 255, 255, 0.55);
+        margin-top: 0.15rem;
+        letter-spacing: 0.02em;
+      }
+      .saiba-mais-btn {
+        margin-top: 1rem;
+        background: linear-gradient(135deg, var(--sky) 0%, var(--blue) 100%);
+        color: #fff;
+        border: none;
+        border-radius: 99px;
+        padding: 0.5rem 1.3rem;
+        font-weight: 600;
+        font-size: 0.85rem;
+        font-family: inherit;
+        cursor: pointer;
+        transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+      }
+      .saiba-mais-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(0, 173, 222, 0.35);
+      }
+      .speaker-modal {
+        position: fixed;
+        z-index: 10000;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        background: rgba(1, 28, 41, 0.82);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.25rem;
+        overflow-y: auto;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .speaker-modal.show {
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+      .speaker-modal-content {
+        background: #fff;
+        color: var(--dark-text);
+        border-radius: var(--r-lg);
+        box-shadow: 0 8px 32px rgba(1, 28, 41, 0.3);
+        max-width: 460px;
+        width: 100%;
+        padding: 2.5rem 1.8rem 1.6rem;
+        position: relative;
+        text-align: center;
+        opacity: 0;
+        animation: speakerModalFadeIn 0.3s ease-out forwards;
+        margin: auto;
+      }
+      @keyframes speakerModalFadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      .speaker-modal-close {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.9rem;
+        font-size: 2rem;
+        color: var(--navy);
+        cursor: pointer;
+        line-height: 1;
+        padding: 0.25rem 0.45rem;
+        background: none;
+        border: none;
+        font-family: inherit;
+      }
+      .speaker-modal-close:hover {
+        color: var(--sky);
+      }
+      .speaker-modal-avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid var(--navy);
+        margin: 0 auto 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .speaker-modal-avatar img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center top;
+      }
+      .speaker-modal-avatar.avatar-empty {
+        background: linear-gradient(180deg, #eef7fb 0%, #dcedf5 100%);
+        color: var(--navy);
+        opacity: 0.55;
+      }
+      .speaker-modal-avatar.avatar-empty svg {
+        width: 46%;
+        height: 46%;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.5;
+      }
+      .speaker-modal-content h3 {
+        font-size: 1.25rem;
+        color: var(--navy);
+        margin: 0.5rem 0 0;
+      }
+      .speaker-modal-region {
+        display: block;
+        font-size: 0.8rem;
+        color: var(--muted-text);
+        margin-top: 0.2rem;
+        letter-spacing: 0.03em;
+      }
+      .speaker-modal-bio {
+        margin: 1.2rem 0 0;
+        padding: 0 0 0 1.35rem;
+        text-align: left;
+        list-style-type: disc;
+        color: #444;
+        font-size: 0.98rem;
+        line-height: 1.6;
+      }
+      .speaker-modal-bio li {
+        margin: 0.4rem 0;
+      }
+      .speaker-modal-bio-pending {
+        margin: 1.2rem 0 0;
+        text-align: center;
+        font-style: italic;
+        color: var(--muted-text);
+        font-size: 0.95rem;
+      }
+
       /* ── SPONSORS ── */
       .sponsors-grid {
         display: flex;
@@ -1771,12 +1977,222 @@
       <div class="container text-center">
         <span class="section-eyebrow">Convidados</span>
         <h2 class="section-title text-center" style="display: block">Palestrantes</h2>
-        <div class="coming-soon-card">
-          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          <p>Em breve divulgaremos a lista de palestrantes confirmados para o Recife Tórax 2026.</p>
+        <div class="speakers-grid">
+          <div class="speaker-item">
+            <img src="speakers/antonio-douglas.jpg" alt="Antônio Douglas" loading="lazy" />
+            <h4>Antônio Douglas</h4>
+            <button type="button" class="saiba-mais-btn" data-modal="modal-antonio-douglas">Saiba mais</button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/bruna-rocha.jpg" alt="Bruna Rocha" loading="lazy" />
+            <h4>Bruna Rocha</h4>
+            <button type="button" class="saiba-mais-btn" data-modal="modal-bruna-rocha">Saiba mais</button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/camila-saito.jpg" alt="Camila Saito" loading="lazy" />
+            <h4>Camila Saito</h4>
+            <button type="button" class="saiba-mais-btn" data-modal="modal-camila-saito">Saiba mais</button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/danielli-matias.jpg" alt="Danielli Matias" loading="lazy" />
+            <h4>Danielli Matias</h4>
+            <span class="speaker-region">RN</span>
+            <button type="button" class="saiba-mais-btn" data-modal="modal-danielli-matias">Saiba mais</button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/filippe-gouvea.jpg" alt="Filippe Gouvêa" loading="lazy" />
+            <h4>Filippe Gouvêa</h4>
+            <button type="button" class="saiba-mais-btn" data-modal="modal-filippe-gouvea">Saiba mais</button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/francisco-sarmento.jpeg" alt="Francisco Sarmento" loading="lazy" />
+            <h4>Francisco Sarmento</h4>
+            <button type="button" class="saiba-mais-btn" data-modal="modal-francisco-sarmento">Saiba mais</button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/hugo-veiga.jpg" alt="Hugo Veiga" loading="lazy" />
+            <h4>Hugo Veiga</h4>
+            <button type="button" class="saiba-mais-btn" data-modal="modal-hugo-veiga">Saiba mais</button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/leticia-lauricella.jpeg" alt="Letícia Lauricella" loading="lazy" />
+            <h4>Letícia Lauricella</h4>
+            <span class="speaker-region">SP</span>
+            <button type="button" class="saiba-mais-btn" data-modal="modal-leticia-lauricella">Saiba mais</button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/luiz-felipe-carvalho.jpg" alt="Luiz Felipe Carvalho" loading="lazy" />
+            <h4>Luiz Felipe Carvalho</h4>
+            <button type="button" class="saiba-mais-btn" data-modal="modal-luiz-felipe-carvalho">Saiba mais</button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/thiago-apolinario.jpg" alt="Thiago Apolinário" loading="lazy" />
+            <h4>Thiago Apolinário</h4>
+            <button type="button" class="saiba-mais-btn" data-modal="modal-thiago-apolinario">Saiba mais</button>
+          </div>
+          <div class="speaker-item">
+            <div class="avatar-empty" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h4>Victor Gondim</h4>
+            <span class="speaker-region">RJ</span>
+            <button type="button" class="saiba-mais-btn" data-modal="modal-victor-gondim">Saiba mais</button>
+          </div>
+          <div class="speaker-item">
+            <div class="avatar-empty" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h4>Vladmir</h4>
+            <span class="speaker-region">SP</span>
+            <button type="button" class="saiba-mais-btn" data-modal="modal-vladmir">Saiba mais</button>
+          </div>
+          <div class="speaker-item">
+            <img src="speakers/yally-nascimento.jpg" alt="Yally Nascimento" loading="lazy" />
+            <h4>Yally Nascimento</h4>
+            <button type="button" class="saiba-mais-btn" data-modal="modal-yally-nascimento">Saiba mais</button>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- ── Modais: currículos dos palestrantes ── -->
+    <div class="speaker-modal" id="modal-antonio-douglas">
+      <div class="speaker-modal-content">
+        <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
+        <div class="speaker-modal-avatar"><img src="speakers/antonio-douglas.jpg" alt="Antônio Douglas" loading="lazy" /></div>
+        <h3>Antônio Douglas</h3>
+        <ul class="speaker-modal-bio">
+          <li>Oncologista Clínico do Hospital Santa Joana – Rede Américas</li>
+          <li>Professor da UPE</li>
+        </ul>
+      </div>
+    </div>
+    <div class="speaker-modal" id="modal-bruna-rocha">
+      <div class="speaker-modal-content">
+        <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
+        <div class="speaker-modal-avatar"><img src="speakers/bruna-rocha.jpg" alt="Bruna Rocha" loading="lazy" /></div>
+        <h3>Bruna Rocha</h3>
+        <ul class="speaker-modal-bio">
+          <li>Formação em Endoscopia Respiratória (com treinamento em EBUS radial e setorial e Criobiópsia) pela Universidade de São Paulo - USP/INCOR</li>
+          <li>Pneumologia pela Universidade Federal de São Paulo (Unifesp - EPM)</li>
+          <li>Atuação em Pneumologia e Endoscopia Respiratória no Real Hospital Português, Hospital Otávio de Freitas e IMIP, Recife - PE</li>
+          <li>Professora da Faculdade Pernambucana de Saúde (FPS)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="speaker-modal" id="modal-camila-saito">
+      <div class="speaker-modal-content">
+        <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
+        <div class="speaker-modal-avatar"><img src="speakers/camila-saito.jpg" alt="Camila Saito" loading="lazy" /></div>
+        <h3>Camila Saito</h3>
+        <ul class="speaker-modal-bio">
+          <li>Pneumologista e Médica do sono pela USP-SP</li>
+          <li>Assistente do Hospital Otávio de Freitas</li>
+        </ul>
+      </div>
+    </div>
+    <div class="speaker-modal" id="modal-danielli-matias">
+      <div class="speaker-modal-content">
+        <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
+        <div class="speaker-modal-avatar"><img src="speakers/danielli-matias.jpg" alt="Danielli Matias" loading="lazy" /></div>
+        <h3>Danielli Matias</h3>
+        <span class="speaker-modal-region">RN</span>
+        <ul class="speaker-modal-bio">
+          <li>Oncologista do Oncology Group e grupo Oncoclínicas</li>
+          <li>Membro do comitê de tórax Lacog e SBOC e comitê de pesquisa clínica GBOT</li>
+        </ul>
+      </div>
+    </div>
+    <div class="speaker-modal" id="modal-filippe-gouvea">
+      <div class="speaker-modal-content">
+        <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
+        <div class="speaker-modal-avatar"><img src="speakers/filippe-gouvea.jpg" alt="Filippe Gouvêa" loading="lazy" /></div>
+        <h3>Filippe Gouvêa</h3>
+        <p class="speaker-modal-bio-pending">Currículo em breve.</p>
+      </div>
+    </div>
+    <div class="speaker-modal" id="modal-francisco-sarmento">
+      <div class="speaker-modal-content">
+        <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
+        <div class="speaker-modal-avatar"><img src="speakers/francisco-sarmento.jpeg" alt="Francisco Sarmento" loading="lazy" /></div>
+        <h3>Francisco Sarmento</h3>
+        <ul class="speaker-modal-bio">
+          <li>Médico radiologista</li>
+          <li>Mestre em ciências pela USP/SP</li>
+          <li>Co-fundador da Healthtech NaviSmart</li>
+        </ul>
+      </div>
+    </div>
+    <div class="speaker-modal" id="modal-hugo-veiga">
+      <div class="speaker-modal-content">
+        <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
+        <div class="speaker-modal-avatar"><img src="speakers/hugo-veiga.jpg" alt="Hugo Veiga" loading="lazy" /></div>
+        <h3>Hugo Veiga</h3>
+        <p class="speaker-modal-bio-pending">Currículo em breve.</p>
+      </div>
+    </div>
+    <div class="speaker-modal" id="modal-leticia-lauricella">
+      <div class="speaker-modal-content">
+        <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
+        <div class="speaker-modal-avatar"><img src="speakers/leticia-lauricella.jpeg" alt="Letícia Lauricella" loading="lazy" /></div>
+        <h3>Letícia Lauricella</h3>
+        <span class="speaker-modal-region">SP</span>
+        <ul class="speaker-modal-bio">
+          <li>Professora colaboradora da disciplina de cirurgia torácica da FMUSP</li>
+          <li>Cirurgiã torácica ICESP / Rede Américas Hospital Samaritano Higienópolis / Einstein Hospital Israelita</li>
+          <li>Proctor de cirurgia robótica</li>
+        </ul>
+      </div>
+    </div>
+    <div class="speaker-modal" id="modal-luiz-felipe-carvalho">
+      <div class="speaker-modal-content">
+        <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
+        <div class="speaker-modal-avatar"><img src="speakers/luiz-felipe-carvalho.jpg" alt="Luiz Felipe Carvalho" loading="lazy" /></div>
+        <h3>Luiz Felipe Carvalho</h3>
+        <p class="speaker-modal-bio-pending">Currículo em breve.</p>
+      </div>
+    </div>
+    <div class="speaker-modal" id="modal-thiago-apolinario">
+      <div class="speaker-modal-content">
+        <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
+        <div class="speaker-modal-avatar"><img src="speakers/thiago-apolinario.jpg" alt="Thiago Apolinário" loading="lazy" /></div>
+        <h3>Thiago Apolinário</h3>
+        <p class="speaker-modal-bio-pending">Currículo em breve.</p>
+      </div>
+    </div>
+    <div class="speaker-modal" id="modal-victor-gondim">
+      <div class="speaker-modal-content">
+        <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
+        <div class="speaker-modal-avatar avatar-empty" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>Victor Gondim</h3>
+        <span class="speaker-modal-region">RJ</span>
+        <p class="speaker-modal-bio-pending">Currículo em breve.</p>
+      </div>
+    </div>
+    <div class="speaker-modal" id="modal-vladmir">
+      <div class="speaker-modal-content">
+        <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
+        <div class="speaker-modal-avatar avatar-empty" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>Vladmir</h3>
+        <span class="speaker-modal-region">SP</span>
+        <p class="speaker-modal-bio-pending">Currículo em breve.</p>
+      </div>
+    </div>
+    <div class="speaker-modal" id="modal-yally-nascimento">
+      <div class="speaker-modal-content">
+        <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
+        <div class="speaker-modal-avatar"><img src="speakers/yally-nascimento.jpg" alt="Yally Nascimento" loading="lazy" /></div>
+        <h3>Yally Nascimento</h3>
+        <ul class="speaker-modal-bio">
+          <li>Pneumologista e especialista em Circulação Pulmonar pelo HCFMUSP</li>
+          <li>Pneumologista assistente do Hospital Santa Joana</li>
+        </ul>
+      </div>
+    </div>
 
     <!-- ── LOCAL ── -->
     <section id="local" class="section-light fade-in">
@@ -1971,6 +2387,41 @@
         el.classList.add("fade-in");
         el.style.transitionDelay = `${i * 70}ms`;
         cardObserver.observe(el);
+      });
+      document.querySelectorAll(".speaker-item").forEach((el, i) => {
+        el.classList.add("fade-in");
+        el.style.transitionDelay = `${i * 60}ms`;
+        cardObserver.observe(el);
+      });
+
+      /* ── Modais de palestrantes ── */
+      document.addEventListener("click", (e) => {
+        if (e.target.classList.contains("saiba-mais-btn")) {
+          const modal = document.getElementById(e.target.dataset.modal);
+          if (modal) {
+            modal.classList.add("show");
+            document.body.style.overflow = "hidden";
+          }
+        }
+        if (e.target.classList.contains("speaker-modal-close")) {
+          const modal = e.target.closest(".speaker-modal");
+          if (modal) {
+            modal.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        }
+        if (e.target.classList.contains("speaker-modal") && e.target.classList.contains("show")) {
+          e.target.classList.remove("show");
+          document.body.style.overflow = "";
+        }
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          document.querySelectorAll(".speaker-modal.show").forEach((modal) => {
+            modal.classList.remove("show");
+            document.body.style.overflow = "";
+          });
+        }
       });
 
       /* ── Nav scroll ── */
