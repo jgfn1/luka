@@ -1758,8 +1758,8 @@
               <button type="button" class="netflix-card-saiba-mais" data-i18n="speakers.learnMore">Saiba mais</button>
             </div>
           </div>
-<div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Macira Sotero" data-speaker-name="Macira Sotero" data-speaker-region="PE" data-speaker-photo="speakers/macira-sotero-pe.jpeg" data-speaker-bio="[&quot;Psicóloga clínica e mestre pela UFPE em cooperação com o PNUD, com mais de 40 anos de carreira dedicada à saúde. Atuou como Gestora Pública na área da saúde na Sudene e possui especializações pelo Instituto Sedes Sapientiae (SP), Santa Casa de São Paulo (Psicossomática) e formação em Terapia de Família e Casal pela UFPE. Unindo experiência institucional e clínica, atualmente amplia sua prática com formação em Neuropsicologia.&quot;]">
-            <div class="netflix-card-bg" style="background-image:url('speakers/macira-sotero-pe.jpeg');" role="img" aria-label="Foto de Macira Sotero"></div>
+<div class="netflix-card netflix-card--speaker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Macira Sotero" data-speaker-name="Macira Sotero" data-speaker-region="PE" data-speaker-photo="speakers/macira-sotero-pe.jpeg" data-speaker-photo-position="center 42%" data-speaker-bio="[&quot;Psicóloga clínica e mestre pela UFPE em cooperação com o PNUD, com mais de 40 anos de carreira dedicada à saúde. Atuou como Gestora Pública na área da saúde na Sudene e possui especializações pelo Instituto Sedes Sapientiae (SP), Santa Casa de São Paulo (Psicossomática) e formação em Terapia de Família e Casal pela UFPE. Unindo experiência institucional e clínica, atualmente amplia sua prática com formação em Neuropsicologia.&quot;]">
+            <div class="netflix-card-bg" style="background-image:url('speakers/macira-sotero-pe.jpeg'); background-position:center 42%;" role="img" aria-label="Foto de Macira Sotero"></div>
             <div class="netflix-card-overlay"></div>
             <div class="netflix-card-content">
               <h3>Macira Sotero</h3>
@@ -2915,18 +2915,20 @@
         return match ? match[1].trim() : "";
       }
 
-      function setSpeakerModalPhoto(photo, name) {
+      function setSpeakerModalPhoto(photo, name, photoPosition) {
         if (!speakerModalPhoto) return;
         if (!photo) {
           speakerModalPhoto.removeAttribute("src");
           speakerModalPhoto.alt = "";
           speakerModalPhoto.hidden = true;
+          speakerModalPhoto.style.objectPosition = "";
           return;
         }
         const url = new URL(photo, window.location.href).href;
         speakerModalPhoto.alt = name;
         speakerModalPhoto.hidden = false;
         speakerModalPhoto.removeAttribute("hidden");
+        speakerModalPhoto.style.objectPosition = photoPosition || "";
         if (speakerModalPhoto.src !== url) {
           speakerModalPhoto.src = url;
         }
@@ -2947,6 +2949,7 @@
         const name = card.dataset.speakerName || "Palestrante";
         const region = card.dataset.speakerRegion || "";
         const photo = getSpeakerPhoto(card);
+        const photoPosition = (card.dataset.speakerPhotoPosition || "").trim();
         let bioItems = [];
         const lang = document.documentElement.getAttribute("data-lang") || "pt";
         const translatedBios =
@@ -2960,7 +2963,7 @@
             bioItems = [];
           }
         }
-        setSpeakerModalPhoto(photo, name);
+        setSpeakerModalPhoto(photo, name, photoPosition);
         if (speakerModalName) {
           speakerModalName.textContent = name;
           speakerModal.setAttribute("aria-label", name);
