@@ -557,6 +557,30 @@
         transform: translateY(-1px);
       }
 
+      /* Pré-congresso: títulos longos + 2 CTAs precisam de mais altura e botões que não estourem */
+      #precongresso-carousel .netflix-card {
+        flex: 0 0 260px;
+        height: 400px;
+      }
+      #precongresso-carousel .netflix-card-overlay {
+        background: linear-gradient(to top, rgba(0,0,0,.95) 0%, rgba(0,0,0,.55) 52%, rgba(0,0,0,.12) 100%);
+      }
+      #precongresso-carousel .netflix-card-content {
+        padding: 1rem .9rem 1.05rem;
+      }
+      #precongresso-carousel .netflix-card-content h3 {
+        font-size: .95rem;
+        line-height: 1.35;
+        padding-top: .08em;
+        overflow-wrap: anywhere;
+      }
+      #precongresso-carousel .netflix-card-actions .netflix-card-btn {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        line-height: 1.25;
+        word-break: break-word;
+      }
+
       .schedule-block--precongress { margin-top: 2.5rem; }
       .schedule-block--precongress .day-tabs { width: 100%; max-width: 100%; }
       .schedule-block--precongress .day-tab-btn {
@@ -1045,6 +1069,22 @@
         .schedule-table th, .schedule-table td { padding: .6rem .5rem; }
         .day-tabs { width: 100%; }
         .netflix-card { flex: 0 0 180px; height: 270px; }
+        #precongresso-carousel .netflix-card {
+          flex: 0 0 200px;
+          height: 350px;
+        }
+        #precongresso-carousel .netflix-card-content h3 { font-size: .86rem; }
+        #precongresso-carousel .netflix-card-content p { font-size: .74rem; }
+        #precongresso-carousel .netflix-card-actions {
+          flex-direction: column;
+          gap: .35rem;
+        }
+        #precongresso-carousel .netflix-card-actions .netflix-card-btn {
+          flex: none;
+          width: 100%;
+          font-size: .7rem;
+          padding: .42rem .55rem;
+        }
         .netflix-arrow { width: 36px; height: 36px; font-size: 1.2rem; }
         .netflix-carousel { padding: .5rem 2.5rem .75rem; }
         .gallery-grid { grid-template-columns: 1fr; }
@@ -1057,6 +1097,14 @@
         .btn-group { gap: .6rem; }
         .btn-primary, .btn-outline { font-size: .9rem; padding: .85rem 1.6rem; }
         .netflix-card { flex: 0 0 155px; height: 235px; }
+        #precongresso-carousel .netflix-card {
+          flex: 0 0 178px;
+          height: 335px;
+        }
+        #precongresso-carousel .netflix-card-content {
+          padding: .85rem .75rem .95rem;
+        }
+        #precongresso-carousel .netflix-card-content h3 { font-size: .82rem; }
         .netflix-carousel { padding: .5rem 2rem .75rem; }
         .netflix-arrow { width: 32px; height: 32px; font-size: 1rem; }
       }
