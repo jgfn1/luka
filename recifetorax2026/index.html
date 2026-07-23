@@ -511,6 +511,66 @@
         object-fit: contain;
       }
 
+      /* Hero sponsors carousel */
+      .hero-sponsors-carousel {
+        margin-top: 1.75rem;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: var(--r-lg);
+        padding: 0.9rem 0 1rem;
+        box-shadow: var(--shadow-md);
+        overflow: hidden;
+      }
+      .hero-sponsors-carousel .hero-sponsor-label {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--muted-text);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        margin-bottom: 0.75rem;
+      }
+      .hero-sponsors-carousel .carousel-track {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        animation: hero-sponsors-scroll 28s linear infinite;
+      }
+      .hero-sponsors-carousel .carousel-track:hover {
+        animation-play-state: paused;
+      }
+      .hero-sponsors-carousel .carousel-track img {
+        max-height: 36px;
+        width: auto;
+        margin: 0 1.75rem;
+        object-fit: contain;
+        object-position: center;
+        flex-shrink: 0;
+      }
+      @keyframes hero-sponsors-scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hero-sponsors-carousel .carousel-track {
+          animation: none;
+          flex-wrap: wrap;
+          justify-content: center;
+          width: 100%;
+          row-gap: 0.75rem;
+        }
+        .hero-sponsors-carousel .carousel-track img:nth-child(n + 6) {
+          display: none;
+        }
+      }
+
       .hero-scroll {
         position: absolute;
         bottom: 1.75rem;
@@ -1283,11 +1343,17 @@
       .sponsors-grid {
         display: flex;
         flex-wrap: wrap;
-        gap: 2.5rem;
+        gap: 1.75rem 2.5rem;
         margin: 2rem auto 0;
         align-items: center;
         justify-content: center;
-        max-width: 900px;
+        max-width: 960px;
+      }
+      .sponsor-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.65rem 1rem;
       }
       .sponsor-item img {
         max-width: 180px;
@@ -1295,6 +1361,7 @@
         width: auto;
         height: auto;
         object-fit: contain;
+        display: block;
       }
 
       /* ── MAP ── */
@@ -1575,6 +1642,14 @@
         .hero-scroll {
           display: none;
         }
+        .hero-sponsors-carousel {
+          max-width: 100%;
+          padding: 0.75rem 0 0.85rem;
+        }
+        .hero-sponsors-carousel .carousel-track img {
+          max-height: 30px;
+          margin: 0 1.25rem;
+        }
         h1 {
           font-size: 1.75rem;
         }
@@ -1714,6 +1789,23 @@
             <img src="organizers/logo-hospital-santa-joana.png" alt="Hospital Santa Joana Recife" loading="eager" />
             <img src="organizers/logo-isep.png" alt="ISEP — Instituto Santa Joana Recife de Ensino e Pesquisa" loading="eager" />
             <img src="organizers/logo-rede-americas.png" alt="Rede Américas" loading="eager" />
+          </div>
+        </div>
+
+        <div class="hero-sponsors-carousel">
+          <div class="hero-sponsor-label">Patrocinadores</div>
+          <div class="carousel-track">
+            <img src="sponsors/logo-astrazeneca.png" alt="AstraZeneca" />
+            <img src="sponsors/logo-johnson-e-johnson.png" alt="Johnson &amp; Johnson" />
+            <img src="sponsors/logo-roche.png" alt="Roche" />
+            <img src="sponsors/logo-amgen.png" alt="Amgen" />
+            <img src="sponsors/logo-bristol-myers-squibb.png" alt="Bristol Myers Squibb" />
+            <!-- Duplicado para loop contínuo -->
+            <img src="sponsors/logo-astrazeneca.png" alt="" aria-hidden="true" />
+            <img src="sponsors/logo-johnson-e-johnson.png" alt="" aria-hidden="true" />
+            <img src="sponsors/logo-roche.png" alt="" aria-hidden="true" />
+            <img src="sponsors/logo-amgen.png" alt="" aria-hidden="true" />
+            <img src="sponsors/logo-bristol-myers-squibb.png" alt="" aria-hidden="true" />
           </div>
         </div>
       </div>
@@ -1924,20 +2016,20 @@
             <tbody>
               <tr><td>08:00 – 08:30</td><td colspan="2" class="session-break"><strong>Credenciamento</strong></td></tr>
 
-              <tr><td colspan="3" class="session-header"><strong>08:30 – 09:40</strong> <span class="session-duration">(1h10)</span><br />Mesa 1 · Atualização em Fatores de Risco e Diagnóstico Precoce<br />Presidente: Alfredo Leite<br />Moderadores: Leonardo Pontual, Antônio Douglas</td></tr>
+              <tr><td colspan="3" class="session-header"><strong>08:30 – 09:40</strong> <span class="session-duration">(1h10)</span><br />Mesa 1 · Atualização em Fatores de Risco e Diagnóstico Precoce<br />Presidente: Alfredo Leite<br />Moderadores: Leonardo Pontual, Antônio Douglas, Paulo Almeida</td></tr>
               <tr><td>08:30 – 08:45<br /><span class="session-duration">(15 min)</span></td><td>Fatores de risco além do tabaco</td><td class="speaker-name">Camila Saito</td></tr>
               <tr><td>08:45 – 09:00<br /><span class="session-duration">(15 min)</span></td><td>Atualizações na avaliação pré-operatória para ressecção pulmonar</td><td class="speaker-name">Yally Nascimento</td></tr>
               <tr><td>09:00 – 09:15<br /><span class="session-duration">(15 min)</span></td><td>Nódulo pulmonar periférico: estratégias modernas de avaliação e abordagem diagnóstica</td><td class="speaker-name">Bruna Rocha</td></tr>
               <tr><td>09:15 – 09:30<br /><span class="session-duration">(15 min)</span></td><td>Estado da arte no uso de inteligência artificial no rastreio</td><td class="speaker-name">Francisco Sarmento</td></tr>
-              <tr><td>09:30 – 09:40<br /><span class="session-duration">(10 min)</span></td><td colspan="2" class="session-break">Debate</td></tr>
+              <tr><td>09:30 – 09:40<br /><span class="session-duration">(10 min)</span></td><td colspan="2" class="session-break">Discussão</td></tr>
 
-              <tr><td colspan="3" class="session-header"><strong>09:40 – 10:20</strong> <span class="session-duration">(40 min)</span><br />Mesa 2 · Doença localizada<br />Presidente: Bruno Pacheco<br />Moderadores: José Fernando Prado, Ricardo Machado, Gustavo Ferreira</td></tr>
+              <tr><td colspan="3" class="session-header"><strong>09:40 – 10:20</strong> <span class="session-duration">(40 min)</span><br />Mesa 2 · Doença localizada<br />Presidente: Bruno Pacheco<br />Moderadores: Ilka Rocha, Ricardo Machado, Gustavo Ferreira</td></tr>
               <tr><td></td><td>Caso clínico</td><td class="speaker-name">Hugo Veiga</td></tr>
               <tr><td></td><td colspan="2" class="session-break">Discussão</td></tr>
 
               <tr><td>10:20 – 10:40<br /><span class="session-duration">(20 min)</span></td><td colspan="2" class="session-break"><strong>Coffee break</strong></td></tr>
 
-              <tr><td colspan="3" class="session-header"><strong>10:40 – 11:50</strong> <span class="session-duration">(1h10)</span><br />Mesa 3 · Desafios na cirurgia<br />Presidente: Tomás Béder<br />Moderadores: Eriberto, Paula Abreu e Lima, France Anne Reinaldo</td></tr>
+              <tr><td colspan="3" class="session-header"><strong>10:40 – 11:30</strong> <span class="session-duration">(50 min)</span><br />Mesa 3 · Desafios na cirurgia<br />Presidente: Tomás Béder<br />Moderadores: Eriberto Marques, Paula Abreu e Lima, France Anne Reinaldo</td></tr>
               <tr><td>10:40 – 10:55<br /><span class="session-duration">(15 min)</span></td><td>Ressecabilidade e cirurgia de conversão no estádio III</td><td class="speaker-name">Letícia Lauricella — SP</td></tr>
               <tr><td>10:55 – 11:10<br /><span class="session-duration">(15 min)</span></td><td>Desafios na doença N2</td><td class="speaker-name">Filippe Gouvêa</td></tr>
               <tr><td>11:10 – 11:30<br /><span class="session-duration">(20 min)</span></td><td colspan="2" class="session-break">Discussão</td></tr>
@@ -1946,16 +2038,16 @@
 
               <tr><td>12:15 – 13:15<br /><span class="session-duration">(1h)</span></td><td colspan="2" class="session-break"><strong>Almoço</strong></td></tr>
 
-              <tr><td colspan="3" class="session-header"><strong>13:15 – 13:55</strong> <span class="session-duration">(40 min)</span><br />Mesa 4 · Doença localmente irressecável e oligometastática<br />Presidente: Petrúcio Sarmento<br />Moderadores: Victor Gondim, Thiago Darlan, Suzane Leite</td></tr>
+              <tr><td colspan="3" class="session-header"><strong>13:15 – 13:55</strong> <span class="session-duration">(40 min)</span><br />Mesa 4 · Doença localmente irressecável e oligometastática<br />Presidente: Filippe Gouvêa<br />Moderadores: Victor Gondim, Thiago Darlan, Suzane Leite</td></tr>
               <tr><td>13:15 – 13:35<br /><span class="session-duration">(20 min)</span></td><td>Caso clínico</td><td class="speaker-name">Thiago Apolinário</td></tr>
               <tr><td>13:35 – 13:55<br /><span class="session-duration">(20 min)</span></td><td colspan="2" class="session-break">Discussão</td></tr>
 
-              <tr><td colspan="3" class="session-sponsor"><strong>13:55 – 14:35</strong> <span class="session-duration">(40 min)</span><br />Simpósio Satélite Johnson — Anticorpos biespecíficos transformando a biologia do câncer de pulmão<div class="session-speaker-line">Danielli Mathias — RN</div></td></tr>
+              <tr><td colspan="3" class="session-sponsor"><strong>13:55 – 14:35</strong> <span class="session-duration">(40 min)</span><br />Simpósio Satélite Johnson — Anticorpos biespecíficos transformando a biologia do câncer de pulmão<div class="session-speaker-line">Danielli Matias — RN</div></td></tr>
 
-              <tr><td colspan="3" class="session-header"><strong>14:35 – 15:05</strong> <span class="session-duration">(40 min)</span><br />Mesa 5 · Módulo doença avançada — pacientes com mutação driver<br />Presidente: Selem Asmar<br />Moderadores: Danielli Mathias, Leonardo Vila, PET</td></tr>
+              <tr><td colspan="3" class="session-header"><strong>14:35 – 15:30</strong> <span class="session-duration">(55 min)</span><br />Mesa 5 · Módulo doença avançada — pacientes com mutação driver<br />Presidente: José Fernando Prado<br />Moderadores: Danielli Matias — RN, Leonardo Vila, Ana Rita Carvalho</td></tr>
               <tr><td>14:35 – 14:55<br /><span class="session-duration">(20 min)</span></td><td>Caso clínico</td><td class="speaker-name">Luiz Felipe Carvalho</td></tr>
-              <tr><td>14:55 – 15:15<br /><span class="session-duration">(20 min)</span></td><td>Toxicidade dermatológica pós-tratamento</td><td class="speaker-name">Jessica Guido</td></tr>
-              <tr><td>15:15 – 15:30</td><td colspan="2" class="session-break">Discussão</td></tr>
+              <tr><td>14:55 – 15:15<br /><span class="session-duration">(20 min)</span></td><td>Toxicidade dermatológica pós-tratamento</td><td class="speaker-name">Jéssica Guido <em>(online)</em></td></tr>
+              <tr><td>15:15 – 15:30<br /><span class="session-duration">(15 min)</span></td><td colspan="2" class="session-break">Discussão</td></tr>
 
               <tr><td>15:30 – 15:50<br /><span class="session-duration">(20 min)</span></td><td colspan="2" class="session-break"><strong>Coffee break</strong></td></tr>
 
@@ -2247,12 +2339,23 @@
       <div class="container text-center">
         <span class="section-eyebrow">Apoio</span>
         <h2 class="section-title" style="display: block">Patrocinadores</h2>
-        <div class="coming-soon-card">
-          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          <p>Em breve divulgaremos as marcas parceiras do Recife Tórax 2026.</p>
+        <div class="sponsors-grid">
+          <div class="sponsor-item">
+            <img src="sponsors/logo-astrazeneca.png" alt="AstraZeneca" loading="lazy" />
+          </div>
+          <div class="sponsor-item">
+            <img src="sponsors/logo-johnson-e-johnson.png" alt="Johnson &amp; Johnson" loading="lazy" />
+          </div>
+          <div class="sponsor-item">
+            <img src="sponsors/logo-roche.png" alt="Roche" loading="lazy" />
+          </div>
+          <div class="sponsor-item">
+            <img src="sponsors/logo-amgen.png" alt="Amgen" loading="lazy" />
+          </div>
+          <div class="sponsor-item">
+            <img src="sponsors/logo-bristol-myers-squibb.png" alt="Bristol Myers Squibb" loading="lazy" />
+          </div>
         </div>
-        <!-- Logos dos patrocinadores entram aqui quando confirmados -->
-        <div class="sponsors-grid"></div>
       </div>
     </section>
 
