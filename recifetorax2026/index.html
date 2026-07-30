@@ -6,7 +6,7 @@
     <title>Recife Tórax 2026 | 31 de julho de 2026 — Hospital Santa Joana Recife</title>
     <meta
       name="description"
-      content="Recife Tórax 2026 — encontro de atualização em oncologia torácica, 31 de julho de 2026, Auditório do Hospital Santa Joana Recife. Inscrição gratuita."
+      content="Recife Tórax 2026 — encontro de atualização em oncologia torácica, 31 de julho de 2026, Auditório do Hospital Santa Joana Recife. Inscrições encerradas."
     />
     <link rel="canonical" href="https://www.recifetorax2026.com.br/" />
 
@@ -689,6 +689,32 @@
         letter-spacing: 0.03em;
         font-family: "Montserrat", sans-serif;
         cursor: default;
+        pointer-events: none;
+        text-align: center;
+        max-width: 28rem;
+        justify-content: center;
+      }
+
+      .registration-status {
+        max-width: 36rem;
+        margin: 0 auto;
+        font-size: 1.05rem;
+        font-weight: 600;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      .nav-cta.nav-cta-disabled,
+      .nav-menu-inscricao.nav-cta-disabled {
+        background: rgba(0, 94, 137, 0.12) !important;
+        color: rgba(18, 49, 61, 0.55) !important;
+        box-shadow: none !important;
+        cursor: default;
+        pointer-events: none;
+      }
+      .nav-cta.nav-cta-disabled:hover {
+        transform: none;
+        box-shadow: none !important;
       }
 
       /* ── CONTAINER ── */
@@ -1396,6 +1422,53 @@
         margin-bottom: 1rem;
         font-family: "Montserrat", sans-serif;
       }
+      .registration-badge.registration-badge-closed {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.28);
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      /* ── GALERIA ── */
+      .photo-gallery {
+        margin-top: 2rem;
+      }
+      .photo-embed {
+        position: relative;
+        width: 100%;
+        padding-top: 62.5%;
+        border-radius: var(--r-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .photo-embed iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .photo-drive-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin-top: 1.25rem;
+        padding: 0.55rem 1.1rem;
+        background: rgba(0, 173, 222, 0.18);
+        border: 1px solid rgba(0, 173, 222, 0.35);
+        border-radius: 8px;
+        color: var(--sky-light) !important;
+        font-weight: 600;
+        font-size: 0.92rem;
+        font-family: "Montserrat", sans-serif;
+        transition: background 0.22s var(--ease), transform 0.2s var(--ease);
+      }
+      .photo-drive-link:hover {
+        background: rgba(0, 173, 222, 0.3);
+        transform: translateY(-1px);
+        color: #fff !important;
+      }
 
       /* ── SOCIAL LINKS ── */
       .social-links {
@@ -1424,6 +1497,17 @@
         width: 18px;
         height: 18px;
         fill: #fff;
+      }
+      .section-light .social-link {
+        background: rgba(0, 94, 137, 0.08);
+        border-color: rgba(0, 94, 137, 0.18);
+      }
+      .section-light .social-link:hover {
+        background: rgba(0, 173, 222, 0.18);
+        border-color: rgba(0, 173, 222, 0.4);
+      }
+      .section-light .social-link svg {
+        fill: var(--navy);
       }
 
       /* ── FOOTER ── */
@@ -1730,12 +1814,13 @@
         <li><a href="#palestrantes">Palestrantes</a></li>
         <li><a href="#local">Local</a></li>
         <li><a href="#patrocinadores">Patrocinadores</a></li>
+        <li><a href="#galeria">Galeria</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li class="nav-menu-item-cta"><a href="https://www.sympla.com.br/evento/iii-simposio-recife-torax/3491575" class="nav-menu-inscricao" target="_blank" rel="noopener noreferrer">Inscrição Gratuita</a></li>
+        <li class="nav-menu-item-cta"><a href="#inscricao" class="nav-menu-inscricao nav-cta-disabled" aria-disabled="true" tabindex="-1">Inscrições encerradas</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a class="nav-cta" href="https://www.sympla.com.br/evento/iii-simposio-recife-torax/3491575" target="_blank" rel="noopener noreferrer">Inscrição Gratuita</a>
+        <a class="nav-cta nav-cta-disabled" href="#inscricao" aria-disabled="true" tabindex="-1">Inscrições encerradas</a>
         <button
           type="button"
           class="mobile-menu-toggle"
@@ -1775,11 +1860,8 @@
           </a>
         </div>
 
-        <div class="btn-group">
-          <a class="btn-primary" href="https://www.sympla.com.br/evento/iii-simposio-recife-torax/3491575" target="_blank" rel="noopener noreferrer">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-            <span>Inscrição Gratuita</span>
-          </a>
+        <div class="btn-group" style="flex-direction: column; align-items: center; gap: 1.1rem">
+          <p class="registration-status" role="status">Inscrições encerradas. Agradecemos a participação e até o próximo evento!</p>
           <a class="btn-outline" href="#programacao">Ver Programação</a>
         </div>
 
@@ -1879,7 +1961,7 @@
                 <span class="info-icon">
                   <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
                 </span>
-                <div><strong>Inscrição</strong><span>Gratuita, via Sympla</span></div>
+                <div><strong>Inscrição</strong><span>Inscrições encerradas. Agradecemos a participação e até o próximo evento!</span></div>
               </div>
             </div>
           </div>
@@ -2249,7 +2331,12 @@
         <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
         <div class="speaker-modal-avatar"><img src="speakers/thiago-apolinario.jpg" alt="Thiago Apolinário" loading="lazy" /></div>
         <h3>Thiago Apolinário</h3>
-        <p class="speaker-modal-bio-pending">Currículo em breve.</p>
+        <ul class="speaker-modal-bio">
+          <li>Residência em Oncologia Clínica pelo IMIP-PE</li>
+          <li>Oncologista clínico do Hospital Santa Joana</li>
+          <li>Oncologista clínico do Hospital Universitário Oswaldo Cruz — Universidade de Pernambuco</li>
+          <li>Membro ASCO, ESMO, SBOC e GBOT</li>
+        </ul>
       </div>
     </div>
     <div class="speaker-modal" id="modal-victor-gondim">
@@ -2321,16 +2408,11 @@
     <!-- ── INSCRIÇÃO ── -->
     <section id="inscricao" class="section-dark fade-in">
       <div class="container text-center">
-        <span class="registration-badge">Inscrição gratuita</span>
+        <span class="registration-badge registration-badge-closed">Inscrições encerradas</span>
         <h2 class="section-title text-center" style="display: block">Inscrições</h2>
-        <p class="registration-note">
-          As inscrições para o Recife Tórax 2026 são <strong>gratuitas</strong> e já estão abertas na plataforma
-          <strong>Sympla</strong>. Garanta sua vaga pelo link abaixo.
+        <p class="registration-note" role="status">
+          Inscrições encerradas. Agradecemos a participação e até o próximo evento!
         </p>
-        <a href="https://www.sympla.com.br/evento/iii-simposio-recife-torax/3491575" class="btn-primary" target="_blank" rel="noopener noreferrer">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-          <span>Inscreva-se no Recife Tórax</span>
-        </a>
       </div>
     </section>
 
@@ -2359,14 +2441,45 @@
       </div>
     </section>
 
+    <!-- ── GALERIA ── -->
+    <section id="galeria" class="section-dark fade-in">
+      <div class="container text-center">
+        <span class="section-eyebrow">Registros</span>
+        <h2 class="section-title text-center" style="display: block">Galeria de fotos</h2>
+        <p class="muted-text" style="max-width: 560px; margin: 0.5rem auto 0">
+          Reviva os melhores momentos do Recife Tórax 2026 com os registros oficiais do evento.
+        </p>
+        <div class="photo-gallery">
+          <div class="photo-embed">
+            <iframe
+              src="https://drive.google.com/embeddedfolderview?id=1FDYoxFbR_ri455h_6QcebYL7mGX0MWgw#grid"
+              loading="lazy"
+              title="Galeria de fotos — Recife Tórax 2026"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p>
+            <a
+              class="photo-drive-link"
+              href="https://drive.google.com/drive/folders/1FDYoxFbR_ri455h_6QcebYL7mGX0MWgw"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver todas as fotos no Google Drive
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- ── CONTATO ── -->
-    <section id="contato" class="section-dark fade-in">
+    <section id="contato" class="section-light fade-in">
       <div class="container two-column">
         <div>
           <span class="section-eyebrow">Fale conosco</span>
           <h2 class="section-title">Contato</h2>
           <p>
-            Para dúvidas sobre o evento ou suporte nas inscrições, entre em contato com a organização:
+            Para dúvidas sobre o evento, entre em contato com a organização:
           </p>
           <h3>Luka Plan Promoções e Eventos</h3>
           <p>
@@ -2398,10 +2511,8 @@
         </div>
         <div>
           <h2 class="section-title">Informações</h2>
-          <p>
-            A inscrição no Recife Tórax 2026 é gratuita e está aberta na
-            <a href="https://www.sympla.com.br/evento/iii-simposio-recife-torax/3491575" target="_blank" rel="noopener noreferrer">Sympla</a>.
-            Garanta sua vaga enquanto houver vagas disponíveis.
+          <p role="status">
+            Inscrições encerradas. Agradecemos a participação e até o próximo evento!
           </p>
         </div>
       </div>
@@ -2441,6 +2552,7 @@
               <li><a href="#palestrantes">Palestrantes</a></li>
               <li><a href="#local">Local</a></li>
               <li><a href="#patrocinadores">Patrocinadores</a></li>
+              <li><a href="#galeria">Galeria</a></li>
               <li><a href="#contato">Contato</a></li>
             </ul>
           </div>
