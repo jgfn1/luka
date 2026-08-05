@@ -263,6 +263,17 @@ def parse_precongress_section(csv_path: Path):
     }
 
 
+def aud_label_i18n(name: str) -> str | None:
+    label = auditorium_label(name)
+    if label == "Abertura do congresso":
+        return "schedule.congressOpening"
+    if label == "Auditório A":
+        return "schedule.audA"
+    if label == "Auditório B":
+        return "schedule.audB"
+    return None
+
+
 def render_panel(section, col3="Palestrante", hide_single_label=True):
     parts = []
     auditoriums = section["auditoriums"]
@@ -270,13 +281,17 @@ def render_panel(section, col3="Palestrante", hide_single_label=True):
         if hide_single_label and len(auditoriums) == 1 and aud["name"] == "Programação":
             pass
         else:
-            parts.append(f'          <p class="aud-label">{esc(auditorium_label(aud["name"]))}</p>')
+            label = auditorium_label(aud["name"])
+            i18n = aud_label_i18n(aud["name"])
+            attr = f' data-i18n="{i18n}"' if i18n else ""
+            parts.append(f'          <p class="aud-label"{attr}>{esc(label)}</p>')
         parts.append('          <div class="schedule-scroll">')
         parts.append('            <table class="schedule-table">')
         w_time = "155px"
         parts.append(
-            f'              <thead><tr><th style="width:{w_time}">Horário</th>'
-            f'<th>Atividade</th><th style="width:220px">{col3}</th></tr></thead>'
+            f'              <thead><tr><th style="width:{w_time}" data-i18n="schedule.colTime">Horário</th>'
+            f'<th data-i18n="schedule.colActivity">Atividade</th>'
+            f'<th style="width:220px" data-i18n="schedule.colSpeaker">{col3}</th></tr></thead>'
         )
         parts.append("              <tbody>")
         for time, activity, speaker in aud["rows"]:
