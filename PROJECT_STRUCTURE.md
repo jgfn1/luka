@@ -54,7 +54,7 @@ custom domain. The portfolio lives in `/portfolio/` (there is no root
 │   ├── schedule/
 │   └── sponsors/                       # reserved (may be empty)
 ├── recifetorax2026/
-│   ├── index.html                      # Recife Tórax 2026 (PT)
+│   ├── index.html                      # Recife Tórax 2026 (PT/EN/ES)
 │   ├── assets/ committee/ speakers/ organizers/ resumes/
 │   ├── schedule/
 │   └── sponsors/                       # reserved (may be empty)

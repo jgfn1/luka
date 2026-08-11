@@ -63,7 +63,7 @@ with the same technical pattern (one repo per client, host-based routing in
 - **Date**: July 31, 2026 (1 day)
 - **Location**: Auditório do Hospital Santa Joana Recife
 - **Folder**: `/recifetorax2026/`
-- **Languages**: PT
+- **Languages**: PT, EN, ES
 
 ### Portfolio (Automa IT & Development)
 
