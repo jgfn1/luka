@@ -332,6 +332,16 @@
         color: #fff !important;
       }
 
+      .nav-lang select {
+        background: transparent;
+        color: var(--primary);
+        border: 1px solid rgba(0, 94, 137, 0.4);
+        border-radius: 8px;
+        padding: 0.32rem 0.5rem;
+        font: 600 0.82rem "Open Sans", sans-serif;
+        cursor: pointer;
+      }
+
       .mobile-menu-toggle {
         display: none;
         flex-direction: column;
@@ -1681,6 +1691,13 @@
           display: block;
           padding: 0.9rem 1.5rem;
         }
+        nav ul li.nav-lang {
+          padding: 0.75rem 1.5rem;
+          border-bottom: none;
+        }
+        nav ul li.nav-lang select {
+          width: 100%;
+        }
         .nav-menu-item-cta {
           display: list-item;
           border-bottom: none !important;
@@ -1807,20 +1824,27 @@
       </a>
 
       <ul id="nav-menu">
-        <li><a href="#top">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#comissao">Comissão</a></li>
-        <li><a href="#programacao">Programação</a></li>
-        <li><a href="#palestrantes">Palestrantes</a></li>
-        <li><a href="#local">Local</a></li>
-        <li><a href="#patrocinadores">Patrocinadores</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li class="nav-menu-item-cta"><a href="#inscricao" class="nav-menu-inscricao nav-cta-disabled" aria-disabled="true" tabindex="-1">Inscrições encerradas</a></li>
+        <li><a href="#top" data-i18n="nav.home">Início</a></li>
+        <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#comissao" data-i18n="nav.committee">Comissão</a></li>
+        <li><a href="#programacao" data-i18n="nav.schedule">Programação</a></li>
+        <li><a href="#palestrantes" data-i18n="nav.speakers">Palestrantes</a></li>
+        <li><a href="#local" data-i18n="nav.venue">Local</a></li>
+        <li><a href="#patrocinadores" data-i18n="nav.sponsors">Patrocinadores</a></li>
+        <li><a href="#galeria" data-i18n="nav.gallery">Galeria</a></li>
+        <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
+        <li class="nav-lang">
+          <select id="language-select" aria-label="Selecione o idioma / Select language">
+            <option value="pt">Português</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+          </select>
+        </li>
+        <li class="nav-menu-item-cta"><a href="#inscricao" class="nav-menu-inscricao nav-cta-disabled" data-i18n="nav.cta" aria-disabled="true" tabindex="-1">Inscrições encerradas</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a class="nav-cta nav-cta-disabled" href="#inscricao" aria-disabled="true" tabindex="-1">Inscrições encerradas</a>
+        <a class="nav-cta nav-cta-disabled" href="#inscricao" data-i18n="nav.cta" aria-disabled="true" tabindex="-1">Inscrições encerradas</a>
         <button
           type="button"
           class="mobile-menu-toggle"
@@ -1839,7 +1863,7 @@
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
-        <h1 class="visually-hidden">Recife Tórax 2026 — Encontro de Atualização em Oncologia Torácica</h1>
+        <h1 class="visually-hidden" data-i18n="hero.title">Recife Tórax 2026 — Encontro de Atualização em Oncologia Torácica</h1>
 
         <div class="hero-logo-wrap">
           <img src="assets/logo-recife-torax.png" alt="Recife Tórax 2026" class="hero-logo" fetchpriority="high" />
@@ -1848,25 +1872,25 @@
         <div class="hero-chips">
           <a href="#programacao" class="hero-chip">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <span>31 de julho de 2026</span>
+            <span data-i18n="hero.chipDate">31 de julho de 2026</span>
           </a>
           <a href="#programacao" class="hero-chip">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg>
-            <span>08h às 18h</span>
+            <span data-i18n="hero.chipTime">08h às 18h</span>
           </a>
           <a href="#local" class="hero-chip">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Auditório Hospital Santa Joana</span>
+            <span data-i18n="hero.chipVenue">Auditório Hospital Santa Joana</span>
           </a>
         </div>
 
         <div class="btn-group" style="flex-direction: column; align-items: center; gap: 1.1rem">
-          <p class="registration-status" role="status">Inscrições encerradas. Agradecemos a participação e até o próximo evento!</p>
-          <a class="btn-outline" href="#programacao">Ver Programação</a>
+          <p class="registration-status" role="status" data-i18n="reg.message">Inscrições encerradas. Agradecemos a participação e até o próximo evento!</p>
+          <a class="btn-outline" href="#programacao" data-i18n="hero.seeProgram">Ver Programação</a>
         </div>
 
         <div class="hero-logos-section">
-          <h3>Realização</h3>
+          <h3 data-i18n="hero.realization">Realização</h3>
           <div class="hero-org-card">
             <img src="organizers/logo-hospital-santa-joana.png" alt="Hospital Santa Joana Recife" loading="eager" />
             <img src="organizers/logo-isep.png" alt="ISEP — Instituto Santa Joana Recife de Ensino e Pesquisa" loading="eager" />
@@ -1875,7 +1899,7 @@
         </div>
 
         <div class="hero-sponsors-carousel">
-          <div class="hero-sponsor-label">Patrocinadores</div>
+          <div class="hero-sponsor-label" data-i18n="hero.sponsorsLabel">Patrocinadores</div>
           <div class="carousel-track">
             <img src="sponsors/logo-astrazeneca.png" alt="AstraZeneca" />
             <img src="sponsors/logo-johnson-e-johnson.png" alt="Johnson &amp; Johnson" />
@@ -1900,34 +1924,34 @@
       <div class="container">
         <div class="sobre-layout">
           <div class="sobre-text">
-            <span class="section-eyebrow">Sobre o evento</span>
-            <h2 class="section-title">Recife Tórax 2026</h2>
-            <p>
+            <span class="section-eyebrow" data-i18n="about.eyebrow">Sobre o evento</span>
+            <h2 class="section-title" data-i18n="about.title">Recife Tórax 2026</h2>
+            <p data-i18n="about.p1">
               O <strong>Recife Tórax</strong> é um encontro científico dedicado à
               <strong>oncologia torácica</strong>, reunindo especialistas de todo o Brasil para um dia de
               atualização, discussão e troca de experiências.
             </p>
-            <p>
+            <p data-i18n="about.p2">
               O principal objetivo deste encontro é promover a <strong>atualização, discussão e troca de
               experiências</strong> voltadas à área da oncologia torácica, em um ambiente colaborativo e
               multidisciplinar.
             </p>
-            <p>
+            <p data-i18n="about.p3">
               <strong>Público-alvo:</strong> oncologistas clínicos, cirurgiões oncológicos, patologistas,
               radiologistas, radioncologistas, oncogeneticistas, médicos nucleares, cardiologistas e
               geriatras de todo o Brasil.
             </p>
 
             <div class="sobre-chips">
-              <span class="sobre-chip">🩺 Oncologia Clínica</span>
-              <span class="sobre-chip">🔪 Cirurgia Oncológica</span>
-              <span class="sobre-chip">🔬 Patologia</span>
-              <span class="sobre-chip">🩻 Radiologia</span>
-              <span class="sobre-chip">☢️ Radioncologia</span>
-              <span class="sobre-chip">🧬 Oncogenética</span>
-              <span class="sobre-chip">⚛️ Medicina Nuclear</span>
-              <span class="sobre-chip">❤️ Cardiologia</span>
-              <span class="sobre-chip">🧓 Geriatria</span>
+              <span class="sobre-chip" data-i18n="about.chip1">🩺 Oncologia Clínica</span>
+              <span class="sobre-chip" data-i18n="about.chip2">🔪 Cirurgia Oncológica</span>
+              <span class="sobre-chip" data-i18n="about.chip3">🔬 Patologia</span>
+              <span class="sobre-chip" data-i18n="about.chip4">🩻 Radiologia</span>
+              <span class="sobre-chip" data-i18n="about.chip5">☢️ Radioncologia</span>
+              <span class="sobre-chip" data-i18n="about.chip6">🧬 Oncogenética</span>
+              <span class="sobre-chip" data-i18n="about.chip7">⚛️ Medicina Nuclear</span>
+              <span class="sobre-chip" data-i18n="about.chip8">❤️ Cardiologia</span>
+              <span class="sobre-chip" data-i18n="about.chip9">🧓 Geriatria</span>
             </div>
           </div>
 
@@ -1937,44 +1961,44 @@
                 <span class="info-icon">
                   <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                 </span>
-                <div><strong>Data</strong><span>31 de julho de 2026 (sexta-feira)</span></div>
+                <div><strong data-i18n="about.factDateLabel">Data</strong><span data-i18n="about.factDateValue">31 de julho de 2026 (sexta-feira)</span></div>
               </div>
               <div class="info-row">
                 <span class="info-icon">
                   <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg>
                 </span>
-                <div><strong>Horário</strong><span>08h às 18h</span></div>
+                <div><strong data-i18n="about.factTimeLabel">Horário</strong><span data-i18n="about.factTimeValue">08h às 18h</span></div>
               </div>
               <div class="info-row">
                 <span class="info-icon">
                   <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 </span>
-                <div><strong>Local</strong><span>Auditório do Hospital Santa Joana Recife</span></div>
+                <div><strong data-i18n="about.factVenueLabel">Local</strong><span data-i18n="about.factVenueValue">Auditório do Hospital Santa Joana Recife</span></div>
               </div>
               <div class="info-row">
                 <span class="info-icon">
                   <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                 </span>
-                <div><strong>Formato</strong><span>Presencial</span></div>
+                <div><strong data-i18n="about.factFormatLabel">Formato</strong><span data-i18n="about.factFormatValue">Presencial</span></div>
               </div>
               <div class="info-row">
                 <span class="info-icon">
                   <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
                 </span>
-                <div><strong>Inscrição</strong><span>Inscrições encerradas. Agradecemos a participação e até o próximo evento!</span></div>
+                <div><strong data-i18n="about.factRegLabel">Inscrição</strong><span data-i18n="reg.message">Inscrições encerradas. Agradecemos a participação e até o próximo evento!</span></div>
               </div>
             </div>
           </div>
         </div>
 
         <div class="countdown-wrap">
-          <h3>Contagem regressiva</h3>
-          <p class="countdown-sub">Faltam poucos dias para o Recife Tórax 2026</p>
+          <h3 data-i18n="countdown.title">Contagem regressiva</h3>
+          <p class="countdown-sub" data-i18n="countdown.sub">Faltam poucos dias para o Recife Tórax 2026</p>
           <div class="countdown-timer">
-            <div class="countdown-item"><span id="days" class="countdown-number">00</span><span class="countdown-label">Dias</span></div>
-            <div class="countdown-item"><span id="hours" class="countdown-number">00</span><span class="countdown-label">Horas</span></div>
-            <div class="countdown-item"><span id="minutes" class="countdown-number">00</span><span class="countdown-label">Minutos</span></div>
-            <div class="countdown-item"><span id="seconds" class="countdown-number">00</span><span class="countdown-label">Segundos</span></div>
+            <div class="countdown-item"><span id="days" class="countdown-number">00</span><span class="countdown-label" data-i18n="countdown.days">Dias</span></div>
+            <div class="countdown-item"><span id="hours" class="countdown-number">00</span><span class="countdown-label" data-i18n="countdown.hours">Horas</span></div>
+            <div class="countdown-item"><span id="minutes" class="countdown-number">00</span><span class="countdown-label" data-i18n="countdown.minutes">Minutos</span></div>
+            <div class="countdown-item"><span id="seconds" class="countdown-number">00</span><span class="countdown-label" data-i18n="countdown.seconds">Segundos</span></div>
           </div>
         </div>
       </div>
@@ -1983,9 +2007,9 @@
     <!-- ── COMISSÃO ── -->
     <section id="comissao" class="section-dark fade-in">
       <div class="container text-center">
-        <span class="section-eyebrow">Quem organiza</span>
-        <h2 class="section-title text-center" style="display: block">Comissão Organizadora</h2>
-        <p class="committee-intro">
+        <span class="section-eyebrow" data-i18n="committee.eyebrow">Quem organiza</span>
+        <h2 class="section-title text-center" style="display: block" data-i18n="committee.title">Comissão Organizadora</h2>
+        <p class="committee-intro" data-i18n="committee.intro">
           A programação científica está sob responsabilidade de um time multidisciplinar de especialistas
           em oncologia torácica.
         </p>
@@ -1996,7 +2020,7 @@
             </div>
             <div class="committee-info">
               <h4>Dr. Alfredo Leite</h4>
-              <span>Comissão Organizadora</span>
+              <span data-i18n="committee.role">Comissão Organizadora</span>
             </div>
           </div>
           <div class="committee-card">
@@ -2005,7 +2029,7 @@
             </div>
             <div class="committee-info">
               <h4>Dr. Antônio Douglas</h4>
-              <span>Comissão Organizadora</span>
+              <span data-i18n="committee.role">Comissão Organizadora</span>
             </div>
           </div>
           <div class="committee-card">
@@ -2014,7 +2038,7 @@
             </div>
             <div class="committee-info">
               <h4>Dra. Cristiana Tavares</h4>
-              <span>Comissão Organizadora</span>
+              <span data-i18n="committee.role">Comissão Organizadora</span>
             </div>
           </div>
           <div class="committee-card">
@@ -2023,7 +2047,7 @@
             </div>
             <div class="committee-info">
               <h4>Dr. Filippe Gouveia</h4>
-              <span>Comissão Organizadora</span>
+              <span data-i18n="committee.role">Comissão Organizadora</span>
             </div>
           </div>
           <div class="committee-card">
@@ -2032,7 +2056,7 @@
             </div>
             <div class="committee-info">
               <h4>Dr. Hugo Veiga</h4>
-              <span>Comissão Organizadora</span>
+              <span data-i18n="committee.role">Comissão Organizadora</span>
             </div>
           </div>
           <div class="committee-card">
@@ -2041,7 +2065,7 @@
             </div>
             <div class="committee-info">
               <h4>Dr. Luiz Felipe Carvalho</h4>
-              <span>Comissão Organizadora</span>
+              <span data-i18n="committee.role">Comissão Organizadora</span>
             </div>
           </div>
           <div class="committee-card">
@@ -2050,7 +2074,7 @@
             </div>
             <div class="committee-info">
               <h4>Dr. Thiago Apolinário</h4>
-              <span>Comissão Organizadora</span>
+              <span data-i18n="committee.role">Comissão Organizadora</span>
             </div>
           </div>
           <div class="committee-card">
@@ -2059,7 +2083,7 @@
             </div>
             <div class="committee-info">
               <h4>Dr. Tomás Béder</h4>
-              <span>Comissão Organizadora</span>
+              <span data-i18n="committee.role">Comissão Organizadora</span>
             </div>
           </div>
         </div>
@@ -2072,30 +2096,30 @@
         <div class="schedule-header">
           <div class="schedule-title-row">
             <div>
-              <span class="section-eyebrow">Agenda científica</span>
-              <h2 class="schedule-title section-title">Programação Preliminar</h2>
+              <span class="section-eyebrow" data-i18n="prog.eyebrow">Agenda científica</span>
+              <h2 class="schedule-title section-title" data-i18n="prog.title">Programação Preliminar</h2>
             </div>
             <div class="download-buttons">
               <a href="schedule/programacao-preliminar.pdf" class="download-pdf-btn" target="_blank" rel="noopener noreferrer">
                 <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                <span>Baixar PDF</span>
+                <span data-i18n="prog.downloadPdf">Baixar PDF</span>
               </a>
               <a href="schedule/programacao-preliminar.xlsx" class="download-pdf-btn" download>
                 <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                <span>Baixar planilha</span>
+                <span data-i18n="prog.downloadXlsx">Baixar planilha</span>
               </a>
             </div>
           </div>
         </div>
 
-        <p class="aud-label">31 de julho de 2026 — Sexta-feira</p>
+        <p class="aud-label" data-i18n="prog.dateLine">31 de julho de 2026 — Sexta-feira</p>
 
         <div class="schedule-scroll">
           <table class="schedule-table">
             <thead>
-              <tr><th style="width: 160px">Horário</th><th>Atividade</th><th style="width: 220px">Palestrante</th></tr>
+              <tr><th style="width: 160px" data-i18n="prog.colTime">Horário</th><th data-i18n="prog.colActivity">Atividade</th><th style="width: 220px" data-i18n="prog.colSpeaker">Palestrante</th></tr>
             </thead>
-            <tbody>
+            <tbody data-i18n="prog.body">
               <tr><td>08:00 – 08:30</td><td colspan="2" class="session-break"><strong>Credenciamento</strong></td></tr>
 
               <tr><td colspan="3" class="session-header"><strong>08:30 – 09:40</strong> <span class="session-duration">(1h10)</span><br />Mesa 1 · Atualização em Fatores de Risco e Diagnóstico Precoce<br />Presidente: Alfredo Leite<br />Moderadores: Leonardo Pontual, Antônio Douglas, Paulo Almeida, Maria Rosa Gomes</td></tr>
@@ -2149,60 +2173,60 @@
     <!-- ── PALESTRANTES ── -->
     <section id="palestrantes" class="section-dark fade-in">
       <div class="container text-center">
-        <span class="section-eyebrow">Convidados</span>
-        <h2 class="section-title text-center" style="display: block">Palestrantes</h2>
+        <span class="section-eyebrow" data-i18n="speakers.eyebrow">Convidados</span>
+        <h2 class="section-title text-center" style="display: block" data-i18n="speakers.title">Palestrantes</h2>
         <div class="speakers-grid">
           <div class="speaker-item">
             <img src="speakers/antonio-douglas.jpg" alt="Antônio Douglas" loading="lazy" />
             <h4>Antônio Douglas</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-antonio-douglas">Saiba mais</button>
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-antonio-douglas">Saiba mais</button>
           </div>
           <div class="speaker-item">
             <img src="speakers/bruna-rocha.jpg" alt="Bruna Rocha" loading="lazy" />
             <h4>Bruna Rocha</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-bruna-rocha">Saiba mais</button>
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-bruna-rocha">Saiba mais</button>
           </div>
           <div class="speaker-item">
             <img src="speakers/camila-saito.jpg" alt="Camila Saito" loading="lazy" />
             <h4>Camila Saito</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-camila-saito">Saiba mais</button>
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-camila-saito">Saiba mais</button>
           </div>
           <div class="speaker-item">
             <img src="speakers/danielli-matias.jpg" alt="Danielli Matias" loading="lazy" />
             <h4>Danielli Matias</h4>
             <span class="speaker-region">RN</span>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-danielli-matias">Saiba mais</button>
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-danielli-matias">Saiba mais</button>
           </div>
           <div class="speaker-item">
             <img src="speakers/filippe-gouvea.jpg" alt="Filippe Gouvêa" loading="lazy" />
             <h4>Filippe Gouvêa</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-filippe-gouvea">Saiba mais</button>
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-filippe-gouvea">Saiba mais</button>
           </div>
           <div class="speaker-item">
             <img src="speakers/francisco-sarmento.jpeg" alt="Francisco Sarmento" loading="lazy" />
             <h4>Francisco Sarmento</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-francisco-sarmento">Saiba mais</button>
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-francisco-sarmento">Saiba mais</button>
           </div>
           <div class="speaker-item">
             <img src="speakers/hugo-veiga.jpg" alt="Hugo Veiga" loading="lazy" />
             <h4>Hugo Veiga</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-hugo-veiga">Saiba mais</button>
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-hugo-veiga">Saiba mais</button>
           </div>
           <div class="speaker-item">
             <img src="speakers/leticia-lauricella.jpeg" alt="Letícia Lauricella" loading="lazy" />
             <h4>Letícia Lauricella</h4>
             <span class="speaker-region">SP</span>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-leticia-lauricella">Saiba mais</button>
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-leticia-lauricella">Saiba mais</button>
           </div>
           <div class="speaker-item">
             <img src="speakers/luiz-felipe-carvalho.jpg" alt="Luiz Felipe Carvalho" loading="lazy" />
             <h4>Luiz Felipe Carvalho</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-luiz-felipe-carvalho">Saiba mais</button>
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-luiz-felipe-carvalho">Saiba mais</button>
           </div>
           <div class="speaker-item">
             <img src="speakers/thiago-apolinario.jpg" alt="Thiago Apolinário" loading="lazy" />
             <h4>Thiago Apolinário</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-thiago-apolinario">Saiba mais</button>
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-thiago-apolinario">Saiba mais</button>
           </div>
           <div class="speaker-item">
             <div class="avatar-empty" aria-hidden="true">
@@ -2210,7 +2234,7 @@
             </div>
             <h4>Victor Gondim</h4>
             <span class="speaker-region">RJ</span>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-victor-gondim">Saiba mais</button>
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-victor-gondim">Saiba mais</button>
           </div>
           <div class="speaker-item">
             <div class="avatar-empty" aria-hidden="true">
@@ -2218,12 +2242,12 @@
             </div>
             <h4>Vladmir</h4>
             <span class="speaker-region">SP</span>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-vladmir">Saiba mais</button>
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-vladmir">Saiba mais</button>
           </div>
           <div class="speaker-item">
             <img src="speakers/yally-nascimento.jpg" alt="Yally Nascimento" loading="lazy" />
             <h4>Yally Nascimento</h4>
-            <button type="button" class="saiba-mais-btn" data-modal="modal-yally-nascimento">Saiba mais</button>
+            <button type="button" class="saiba-mais-btn" data-i18n="speakers.learnMore" data-modal="modal-yally-nascimento">Saiba mais</button>
           </div>
         </div>
       </div>
@@ -2235,7 +2259,7 @@
         <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
         <div class="speaker-modal-avatar"><img src="speakers/antonio-douglas.jpg" alt="Antônio Douglas" loading="lazy" /></div>
         <h3>Antônio Douglas</h3>
-        <ul class="speaker-modal-bio">
+        <ul class="speaker-modal-bio" data-i18n="bio.antonio-douglas">
           <li>Oncologista Clínico do Hospital Santa Joana – Rede Américas</li>
           <li>Professor da UPE</li>
         </ul>
@@ -2246,7 +2270,7 @@
         <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
         <div class="speaker-modal-avatar"><img src="speakers/bruna-rocha.jpg" alt="Bruna Rocha" loading="lazy" /></div>
         <h3>Bruna Rocha</h3>
-        <ul class="speaker-modal-bio">
+        <ul class="speaker-modal-bio" data-i18n="bio.bruna-rocha">
           <li>Formação em Endoscopia Respiratória (com treinamento em EBUS radial e setorial e Criobiópsia) pela Universidade de São Paulo - USP/INCOR</li>
           <li>Pneumologia pela Universidade Federal de São Paulo (Unifesp - EPM)</li>
           <li>Atuação em Pneumologia e Endoscopia Respiratória no Real Hospital Português, Hospital Otávio de Freitas e IMIP, Recife - PE</li>
@@ -2259,7 +2283,7 @@
         <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
         <div class="speaker-modal-avatar"><img src="speakers/camila-saito.jpg" alt="Camila Saito" loading="lazy" /></div>
         <h3>Camila Saito</h3>
-        <ul class="speaker-modal-bio">
+        <ul class="speaker-modal-bio" data-i18n="bio.camila-saito">
           <li>Pneumologista e Médica do sono pela USP-SP</li>
           <li>Assistente do Hospital Otávio de Freitas</li>
         </ul>
@@ -2271,7 +2295,7 @@
         <div class="speaker-modal-avatar"><img src="speakers/danielli-matias.jpg" alt="Danielli Matias" loading="lazy" /></div>
         <h3>Danielli Matias</h3>
         <span class="speaker-modal-region">RN</span>
-        <ul class="speaker-modal-bio">
+        <ul class="speaker-modal-bio" data-i18n="bio.danielli-matias">
           <li>Oncologista do Oncology Group e grupo Oncoclínicas</li>
           <li>Membro do comitê de tórax Lacog e SBOC e comitê de pesquisa clínica GBOT</li>
         </ul>
@@ -2282,7 +2306,7 @@
         <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
         <div class="speaker-modal-avatar"><img src="speakers/filippe-gouvea.jpg" alt="Filippe Gouvêa" loading="lazy" /></div>
         <h3>Filippe Gouvêa</h3>
-        <p class="speaker-modal-bio-pending">Currículo em breve.</p>
+        <p class="speaker-modal-bio-pending" data-i18n="speakers.bioPending">Currículo em breve.</p>
       </div>
     </div>
     <div class="speaker-modal" id="modal-francisco-sarmento">
@@ -2290,7 +2314,7 @@
         <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
         <div class="speaker-modal-avatar"><img src="speakers/francisco-sarmento.jpeg" alt="Francisco Sarmento" loading="lazy" /></div>
         <h3>Francisco Sarmento</h3>
-        <ul class="speaker-modal-bio">
+        <ul class="speaker-modal-bio" data-i18n="bio.francisco-sarmento">
           <li>Médico radiologista</li>
           <li>Mestre em ciências pela USP/SP</li>
           <li>Co-fundador da Healthtech NaviSmart</li>
@@ -2302,7 +2326,7 @@
         <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
         <div class="speaker-modal-avatar"><img src="speakers/hugo-veiga.jpg" alt="Hugo Veiga" loading="lazy" /></div>
         <h3>Hugo Veiga</h3>
-        <p class="speaker-modal-bio-pending">Currículo em breve.</p>
+        <p class="speaker-modal-bio-pending" data-i18n="speakers.bioPending">Currículo em breve.</p>
       </div>
     </div>
     <div class="speaker-modal" id="modal-leticia-lauricella">
@@ -2311,7 +2335,7 @@
         <div class="speaker-modal-avatar"><img src="speakers/leticia-lauricella.jpeg" alt="Letícia Lauricella" loading="lazy" /></div>
         <h3>Letícia Lauricella</h3>
         <span class="speaker-modal-region">SP</span>
-        <ul class="speaker-modal-bio">
+        <ul class="speaker-modal-bio" data-i18n="bio.leticia-lauricella">
           <li>Professora colaboradora da disciplina de cirurgia torácica da FMUSP</li>
           <li>Cirurgiã torácica ICESP / Rede Américas Hospital Samaritano Higienópolis / Einstein Hospital Israelita</li>
           <li>Proctor de cirurgia robótica</li>
@@ -2323,7 +2347,7 @@
         <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
         <div class="speaker-modal-avatar"><img src="speakers/luiz-felipe-carvalho.jpg" alt="Luiz Felipe Carvalho" loading="lazy" /></div>
         <h3>Luiz Felipe Carvalho</h3>
-        <p class="speaker-modal-bio-pending">Currículo em breve.</p>
+        <p class="speaker-modal-bio-pending" data-i18n="speakers.bioPending">Currículo em breve.</p>
       </div>
     </div>
     <div class="speaker-modal" id="modal-thiago-apolinario">
@@ -2331,7 +2355,7 @@
         <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
         <div class="speaker-modal-avatar"><img src="speakers/thiago-apolinario.jpg" alt="Thiago Apolinário" loading="lazy" /></div>
         <h3>Thiago Apolinário</h3>
-        <ul class="speaker-modal-bio">
+        <ul class="speaker-modal-bio" data-i18n="bio.thiago-apolinario">
           <li>Residência em Oncologia Clínica pelo IMIP-PE</li>
           <li>Oncologista clínico do Hospital Santa Joana</li>
           <li>Oncologista clínico do Hospital Universitário Oswaldo Cruz — Universidade de Pernambuco</li>
@@ -2347,7 +2371,7 @@
         </div>
         <h3>Victor Gondim</h3>
         <span class="speaker-modal-region">RJ</span>
-        <p class="speaker-modal-bio-pending">Currículo em breve.</p>
+        <p class="speaker-modal-bio-pending" data-i18n="speakers.bioPending">Currículo em breve.</p>
       </div>
     </div>
     <div class="speaker-modal" id="modal-vladmir">
@@ -2358,7 +2382,7 @@
         </div>
         <h3>Vladmir</h3>
         <span class="speaker-modal-region">SP</span>
-        <p class="speaker-modal-bio-pending">Currículo em breve.</p>
+        <p class="speaker-modal-bio-pending" data-i18n="speakers.bioPending">Currículo em breve.</p>
       </div>
     </div>
     <div class="speaker-modal" id="modal-yally-nascimento">
@@ -2366,7 +2390,7 @@
         <button type="button" class="speaker-modal-close" aria-label="Fechar">&times;</button>
         <div class="speaker-modal-avatar"><img src="speakers/yally-nascimento.jpg" alt="Yally Nascimento" loading="lazy" /></div>
         <h3>Yally Nascimento</h3>
-        <ul class="speaker-modal-bio">
+        <ul class="speaker-modal-bio" data-i18n="bio.yally-nascimento">
           <li>Pneumologista e especialista em Circulação Pulmonar pelo HCFMUSP</li>
           <li>Pneumologista assistente do Hospital Santa Joana</li>
         </ul>
@@ -2377,18 +2401,18 @@
     <section id="local" class="section-light fade-in">
       <div class="container two-column">
         <div>
-          <span class="section-eyebrow">Onde será</span>
-          <h2 class="section-title">Local do evento</h2>
-          <p>
+          <span class="section-eyebrow" data-i18n="venue.eyebrow">Onde será</span>
+          <h2 class="section-title" data-i18n="venue.title">Local do evento</h2>
+          <p data-i18n="venue.p1">
             O Recife Tórax 2026 será realizado no <strong>Auditório do Hospital Santa Joana Recife</strong>,
             no bairro das Graças.
           </p>
-          <p style="margin-top: 1.25rem">
+          <p style="margin-top: 1.25rem" data-i18n="venue.address">
             <strong>Endereço:</strong><br />
             Rua Joaquim Nabuco, 200 — Graças<br />
             Recife — PE
           </p>
-          <p style="margin-top: 1rem">
+          <p style="margin-top: 1rem" data-i18n="venue.dateTime">
             <strong>Data:</strong> 31 de julho de 2026 (sexta-feira)<br />
             <strong>Horário:</strong> 08h às 18h
           </p>
@@ -2408,9 +2432,9 @@
     <!-- ── INSCRIÇÃO ── -->
     <section id="inscricao" class="section-dark fade-in">
       <div class="container text-center">
-        <span class="registration-badge registration-badge-closed">Inscrições encerradas</span>
-        <h2 class="section-title text-center" style="display: block">Inscrições</h2>
-        <p class="registration-note" role="status">
+        <span class="registration-badge registration-badge-closed" data-i18n="reg.badge">Inscrições encerradas</span>
+        <h2 class="section-title text-center" style="display: block" data-i18n="reg.title">Inscrições</h2>
+        <p class="registration-note" role="status" data-i18n="reg.message">
           Inscrições encerradas. Agradecemos a participação e até o próximo evento!
         </p>
       </div>
@@ -2419,8 +2443,8 @@
     <!-- ── PATROCINADORES ── -->
     <section id="patrocinadores" class="section-light fade-in">
       <div class="container text-center">
-        <span class="section-eyebrow">Apoio</span>
-        <h2 class="section-title" style="display: block">Patrocinadores</h2>
+        <span class="section-eyebrow" data-i18n="sponsors.eyebrow">Apoio</span>
+        <h2 class="section-title" style="display: block" data-i18n="sponsors.title">Patrocinadores</h2>
         <div class="sponsors-grid">
           <div class="sponsor-item">
             <img src="sponsors/logo-astrazeneca.png" alt="AstraZeneca" loading="lazy" />
@@ -2444,9 +2468,9 @@
     <!-- ── GALERIA ── -->
     <section id="galeria" class="section-dark fade-in">
       <div class="container text-center">
-        <span class="section-eyebrow">Registros</span>
-        <h2 class="section-title text-center" style="display: block">Galeria de fotos</h2>
-        <p class="muted-text" style="max-width: 560px; margin: 0.5rem auto 0">
+        <span class="section-eyebrow" data-i18n="gallery.eyebrow">Registros</span>
+        <h2 class="section-title text-center" style="display: block" data-i18n="gallery.title">Galeria de fotos</h2>
+        <p class="muted-text" style="max-width: 560px; margin: 0.5rem auto 0" data-i18n="gallery.text">
           Reviva os melhores momentos do Recife Tórax 2026 com os registros oficiais do evento.
         </p>
         <div class="photo-gallery">
@@ -2464,6 +2488,7 @@
               href="https://drive.google.com/drive/folders/1FDYoxFbR_ri455h_6QcebYL7mGX0MWgw"
               target="_blank"
               rel="noopener noreferrer"
+              data-i18n="gallery.driveLink"
             >
               Ver todas as fotos no Google Drive
             </a>
@@ -2476,25 +2501,25 @@
     <section id="contato" class="section-light fade-in">
       <div class="container two-column">
         <div>
-          <span class="section-eyebrow">Fale conosco</span>
-          <h2 class="section-title">Contato</h2>
-          <p>
+          <span class="section-eyebrow" data-i18n="contact.eyebrow">Fale conosco</span>
+          <h2 class="section-title" data-i18n="contact.title">Contato</h2>
+          <p data-i18n="contact.intro">
             Para dúvidas sobre o evento, entre em contato com a organização:
           </p>
           <h3>Luka Plan Promoções e Eventos</h3>
-          <p>
+          <p data-i18n="contact.address">
             <strong>Endereço:</strong><br />
             Rua João Eugênio de Lima, 143 – Sala 01<br />
             Boa Viagem – Recife/PE – CEP 51.030-360
           </p>
           <p>
-            <strong>Telefone/WhatsApp:</strong><br />
+            <strong data-i18n="contact.phoneLabel">Telefone/WhatsApp:</strong><br />
             <a href="https://wa.me/5581999851712" target="_blank" rel="noopener">(81) 99985-1712</a>
             ·
             <a href="https://wa.me/5581992325922" target="_blank" rel="noopener">(81) 99232-5922</a>
           </p>
           <p>
-            <strong>E-mail:</strong><br />
+            <strong data-i18n="contact.emailLabel">E-mail:</strong><br />
             <a href="mailto:eventos@lukaplan.com.br">eventos@lukaplan.com.br</a>
           </p>
           <div class="social-links">
@@ -2510,8 +2535,8 @@
           </div>
         </div>
         <div>
-          <h2 class="section-title">Informações</h2>
-          <p role="status">
+          <h2 class="section-title" data-i18n="contact.infoTitle">Informações</h2>
+          <p role="status" data-i18n="reg.message">
             Inscrições encerradas. Agradecemos a participação e até o próximo evento!
           </p>
         </div>
@@ -2525,7 +2550,7 @@
           <div class="footer-brand">
             <img src="assets/logo-recife-torax.png" alt="Recife Tórax 2026" loading="lazy" />
             <p>Recife Tórax 2026</p>
-            <p>31 de julho de 2026 · Recife/PE</p>
+            <p data-i18n="footer.dateLocation">31 de julho de 2026 · Recife/PE</p>
             <p style="margin-top: 0.25rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.4)">
               Hospital Santa Joana Recife · ISEP · Rede Américas
             </p>
@@ -2543,45 +2568,45 @@
           </div>
 
           <div class="footer-col">
-            <h4>Navegação</h4>
+            <h4 data-i18n="footer.navTitle">Navegação</h4>
             <ul>
-              <li><a href="#top">Início</a></li>
-              <li><a href="#sobre">Sobre</a></li>
-              <li><a href="#comissao">Comissão</a></li>
-              <li><a href="#programacao">Programação</a></li>
-              <li><a href="#palestrantes">Palestrantes</a></li>
-              <li><a href="#local">Local</a></li>
-              <li><a href="#patrocinadores">Patrocinadores</a></li>
-              <li><a href="#galeria">Galeria</a></li>
-              <li><a href="#contato">Contato</a></li>
+              <li><a href="#top" data-i18n="nav.home">Início</a></li>
+              <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+              <li><a href="#comissao" data-i18n="nav.committee">Comissão</a></li>
+              <li><a href="#programacao" data-i18n="nav.schedule">Programação</a></li>
+              <li><a href="#palestrantes" data-i18n="nav.speakers">Palestrantes</a></li>
+              <li><a href="#local" data-i18n="nav.venue">Local</a></li>
+              <li><a href="#patrocinadores" data-i18n="nav.sponsors">Patrocinadores</a></li>
+              <li><a href="#galeria" data-i18n="nav.gallery">Galeria</a></li>
+              <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
             </ul>
           </div>
 
           <div class="footer-col">
-            <h4>Local</h4>
+            <h4 data-i18n="footer.venueTitle">Local</h4>
             <address>
               Hospital Santa Joana Recife<br />
               Rua Joaquim Nabuco, 200 — Graças<br />
               Recife — PE
             </address>
             <p style="margin-top: 0.75rem">
-              <strong style="color: rgba(255, 255, 255, 0.55); font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; font-family: 'Montserrat', sans-serif;">Data</strong><br />
-              31 de julho de 2026
+              <strong style="color: rgba(255, 255, 255, 0.55); font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; font-family: 'Montserrat', sans-serif;" data-i18n="footer.dateLabel">Data</strong><br />
+              <span data-i18n="hero.chipDate">31 de julho de 2026</span>
             </p>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Recife Tórax — Recife/PE</p>
+        <p data-i18n="footer.copyright">&copy; 2026 Recife Tórax — Recife/PE</p>
         <p>
-          <span>Produzido por:</span> <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener">Luka Plan Promoções e Eventos</a>
+          <span data-i18n="footer.producedBy">Produzido por:</span> <a href="https://instagram.com/lukaplan_" target="_blank" rel="noopener">Luka Plan Promoções e Eventos</a>
           &nbsp;&middot;&nbsp;
-          <span>Desenvolvido por:</span> <a href="https://wa.me/5581995460140?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20um%20site!%20%3A)" target="_blank" rel="noopener noreferrer">Automa IT &amp; Development</a>
+          <span data-i18n="footer.developedBy">Desenvolvido por:</span> <a href="https://wa.me/5581995460140?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20um%20site!%20%3A)" target="_blank" rel="noopener noreferrer">Automa IT &amp; Development</a>
         </p>
       </div>
       <div class="footer-backtop">
-        <a href="#top">↑ Voltar ao topo</a>
+        <a href="#top" data-i18n="footer.backToTop">↑ Voltar ao topo</a>
       </div>
     </footer>
 
@@ -2717,6 +2742,367 @@
       });
       document.addEventListener("click", (e) => {
         if (!e.target.closest("nav")) closeMobileNavPanel();
+      });
+
+      /* ── Internationalization (PT / EN / ES) ── */
+      const translations = {
+        en: {
+          "nav.home": "Home",
+          "nav.about": "About",
+          "nav.committee": "Committee",
+          "nav.schedule": "Program",
+          "nav.speakers": "Speakers",
+          "nav.venue": "Venue",
+          "nav.sponsors": "Sponsors",
+          "nav.gallery": "Gallery",
+          "nav.contact": "Contact",
+          "nav.cta": "Registration closed",
+          "hero.title": "Recife Tórax 2026 — Thoracic Oncology Update Meeting",
+          "hero.chipDate": "July 31, 2026",
+          "hero.chipTime": "8 a.m. to 6 p.m.",
+          "hero.chipVenue": "Hospital Santa Joana Auditorium",
+          "hero.seeProgram": "View Program",
+          "hero.realization": "Organized by",
+          "hero.sponsorsLabel": "Sponsors",
+          "about.eyebrow": "About the event",
+          "about.title": "Recife Tórax 2026",
+          "about.p1":
+            "The <strong>Recife Tórax</strong> is a scientific meeting dedicated to <strong>thoracic oncology</strong>, bringing together specialists from all over Brazil for a day of updates, discussion and exchange of experiences.",
+          "about.p2":
+            "The main goal of this meeting is to promote <strong>updates, discussion and exchange of experiences</strong> in the field of thoracic oncology, in a collaborative and multidisciplinary environment.",
+          "about.p3":
+            "<strong>Target audience:</strong> clinical oncologists, surgical oncologists, pathologists, radiologists, radiation oncologists, oncogeneticists, nuclear medicine physicians, cardiologists and geriatricians from all over Brazil.",
+          "about.chip1": "🩺 Clinical Oncology",
+          "about.chip2": "🔪 Surgical Oncology",
+          "about.chip3": "🔬 Pathology",
+          "about.chip4": "🩻 Radiology",
+          "about.chip5": "☢️ Radiation Oncology",
+          "about.chip6": "🧬 Oncogenetics",
+          "about.chip7": "⚛️ Nuclear Medicine",
+          "about.chip8": "❤️ Cardiology",
+          "about.chip9": "🧓 Geriatrics",
+          "about.factDateLabel": "Date",
+          "about.factDateValue": "July 31, 2026 (Friday)",
+          "about.factTimeLabel": "Time",
+          "about.factTimeValue": "8 a.m. to 6 p.m.",
+          "about.factVenueLabel": "Venue",
+          "about.factVenueValue": "Hospital Santa Joana Recife Auditorium",
+          "about.factFormatLabel": "Format",
+          "about.factFormatValue": "In person",
+          "about.factRegLabel": "Registration",
+          "countdown.title": "Countdown",
+          "countdown.sub": "Just a few days left until Recife Tórax 2026",
+          "countdown.days": "Days",
+          "countdown.hours": "Hours",
+          "countdown.minutes": "Minutes",
+          "countdown.seconds": "Seconds",
+          "committee.eyebrow": "Who organizes it",
+          "committee.title": "Organizing Committee",
+          "committee.intro":
+            "The scientific program is led by a multidisciplinary team of thoracic oncology specialists.",
+          "committee.role": "Organizing Committee",
+          "prog.eyebrow": "Scientific agenda",
+          "prog.title": "Preliminary Program",
+          "prog.downloadPdf": "Download PDF",
+          "prog.downloadXlsx": "Download spreadsheet",
+          "prog.dateLine": "July 31, 2026 — Friday",
+          "prog.colTime": "Time",
+          "prog.colActivity": "Activity",
+          "prog.colSpeaker": "Speaker",
+          "speakers.eyebrow": "Guests",
+          "speakers.title": "Speakers",
+          "speakers.learnMore": "Learn more",
+          "speakers.bioPending": "Bio coming soon.",
+          "bio.antonio-douglas":
+            "<li>Clinical Oncologist at Hospital Santa Joana – Rede Américas</li><li>Professor at UPE</li>",
+          "bio.bruna-rocha":
+            "<li>Training in Respiratory Endoscopy (with training in radial and sectorial EBUS and Cryobiopsy) from Universidade de São Paulo - USP/INCOR</li><li>Pulmonology from Universidade Federal de São Paulo (Unifesp - EPM)</li><li>Practices Pulmonology and Respiratory Endoscopy at Real Hospital Português, Hospital Otávio de Freitas and IMIP, Recife - PE</li><li>Professor at Faculdade Pernambucana de Saúde (FPS)</li>",
+          "bio.camila-saito":
+            "<li>Pulmonologist and Sleep Medicine physician from USP-SP</li><li>Staff physician at Hospital Otávio de Freitas</li>",
+          "bio.danielli-matias":
+            "<li>Oncologist at Oncology Group and Oncoclínicas group</li><li>Member of the Lacog and SBOC thoracic committee and GBOT clinical research committee</li>",
+          "bio.francisco-sarmento":
+            "<li>Radiologist</li><li>Master's degree in sciences from USP/SP</li><li>Co-founder of the healthtech NaviSmart</li>",
+          "bio.leticia-lauricella":
+            "<li>Collaborating professor in the thoracic surgery discipline at FMUSP</li><li>Thoracic surgeon at ICESP / Rede Américas Hospital Samaritano Higienópolis / Einstein Hospital Israelita</li><li>Robotic surgery proctor</li>",
+          "bio.thiago-apolinario":
+            "<li>Residency in Clinical Oncology at IMIP-PE</li><li>Clinical oncologist at Hospital Santa Joana</li><li>Clinical oncologist at Hospital Universitário Oswaldo Cruz — Universidade de Pernambuco</li><li>Member of ASCO, ESMO, SBOC and GBOT</li>",
+          "bio.yally-nascimento":
+            "<li>Pulmonologist and specialist in Pulmonary Circulation from HCFMUSP</li><li>Staff pulmonologist at Hospital Santa Joana</li>",
+          "venue.eyebrow": "Where it will take place",
+          "venue.title": "Event venue",
+          "venue.p1":
+            "Recife Tórax 2026 will take place at the <strong>Hospital Santa Joana Recife Auditorium</strong>, in the Graças neighborhood.",
+          "venue.address":
+            "<strong>Address:</strong><br />Rua Joaquim Nabuco, 200 — Graças<br />Recife — PE",
+          "venue.dateTime":
+            "<strong>Date:</strong> July 31, 2026 (Friday)<br /><strong>Time:</strong> 8 a.m. to 6 p.m.",
+          "reg.badge": "Registration closed",
+          "reg.title": "Registration",
+          "reg.message":
+            "Registration is closed. Thank you for participating, and see you at the next event!",
+          "sponsors.eyebrow": "Support",
+          "sponsors.title": "Sponsors",
+          "gallery.eyebrow": "Highlights",
+          "gallery.title": "Photo gallery",
+          "gallery.text":
+            "Relive the best moments of Recife Tórax 2026 through the event's official photos.",
+          "gallery.driveLink": "View all photos on Google Drive",
+          "contact.eyebrow": "Get in touch",
+          "contact.title": "Contact",
+          "contact.intro": "For questions about the event, contact the organizers:",
+          "contact.address":
+            "<strong>Address:</strong><br />Rua João Eugênio de Lima, 143 – Room 01<br />Boa Viagem – Recife/PE – ZIP 51.030-360",
+          "contact.phoneLabel": "Phone/WhatsApp:",
+          "contact.emailLabel": "E-mail:",
+          "contact.infoTitle": "Information",
+          "footer.dateLocation": "July 31, 2026 · Recife/PE",
+          "footer.navTitle": "Navigation",
+          "footer.venueTitle": "Venue",
+          "footer.dateLabel": "Date",
+          "footer.copyright": "&copy; 2026 Recife Tórax — Recife/PE",
+          "footer.producedBy": "Produced by:",
+          "footer.developedBy": "Developed by:",
+          "footer.backToTop": "↑ Back to top",
+          "prog.body": `
+              <tr><td>08:00 – 08:30</td><td colspan="2" class="session-break"><strong>Check-in</strong></td></tr>
+
+              <tr><td colspan="3" class="session-header"><strong>08:30 – 09:40</strong> <span class="session-duration">(1h10)</span><br />Panel 1 · Update on Risk Factors and Early Diagnosis<br />Chair: Alfredo Leite<br />Moderators: Leonardo Pontual, Antônio Douglas, Paulo Almeida, Maria Rosa Gomes</td></tr>
+              <tr><td>08:30 – 08:45<br /><span class="session-duration">(15 min)</span></td><td>Risk factors beyond tobacco</td><td class="speaker-name">Camila Saito</td></tr>
+              <tr><td>08:45 – 09:00<br /><span class="session-duration">(15 min)</span></td><td>Updates in preoperative assessment for lung resection</td><td class="speaker-name">Yally Nascimento</td></tr>
+              <tr><td>09:00 – 09:15<br /><span class="session-duration">(15 min)</span></td><td>Peripheral pulmonary nodule: modern strategies for assessment and diagnostic approach</td><td class="speaker-name">Bruna Rocha</td></tr>
+              <tr><td>09:15 – 09:30<br /><span class="session-duration">(15 min)</span></td><td>State of the art in the use of artificial intelligence in screening</td><td class="speaker-name">Francisco Sarmento</td></tr>
+              <tr><td>09:30 – 09:40<br /><span class="session-duration">(10 min)</span></td><td colspan="2" class="session-break">Discussion</td></tr>
+
+              <tr><td colspan="3" class="session-header"><strong>09:40 – 10:20</strong> <span class="session-duration">(40 min)</span><br />Panel 2 · Localized disease<br />Chair: Bruno Pacheco<br />Moderators: Ilka Rocha, Ricardo Machado, Gustavo Ferreira</td></tr>
+              <tr><td></td><td>Clinical case</td><td class="speaker-name">Hugo Veiga</td></tr>
+              <tr><td></td><td colspan="2" class="session-break">Discussion</td></tr>
+
+              <tr><td>10:20 – 10:40<br /><span class="session-duration">(20 min)</span></td><td colspan="2" class="session-break"><strong>Coffee break</strong></td></tr>
+
+              <tr><td colspan="3" class="session-header"><strong>10:40 – 11:30</strong> <span class="session-duration">(50 min)</span><br />Panel 3 · Challenges in surgery<br />Chair: Tomás Béder<br />Moderators: Eriberto Marques, Paula Abreu e Lima, France Anne Reinaldo</td></tr>
+              <tr><td>10:40 – 10:55<br /><span class="session-duration">(15 min)</span></td><td>Resectability and conversion surgery in stage III</td><td class="speaker-name">Letícia Lauricella — SP</td></tr>
+              <tr><td>10:55 – 11:10<br /><span class="session-duration">(15 min)</span></td><td>Challenges in N2 disease</td><td class="speaker-name">Filippe Gouvêa</td></tr>
+              <tr><td>11:10 – 11:30<br /><span class="session-duration">(20 min)</span></td><td colspan="2" class="session-break">Discussion</td></tr>
+
+              <tr><td colspan="3" class="session-sponsor"><strong>11:30 – 12:15</strong> <span class="session-duration">(45 min)</span><br />AstraZeneca Satellite Symposium — Unresectable disease: PACIFIC / LAURA<div class="session-speaker-line">Victor Gondim — RJ</div></td></tr>
+
+              <tr><td>12:15 – 13:15<br /><span class="session-duration">(1h)</span></td><td colspan="2" class="session-break"><strong>Lunch</strong></td></tr>
+
+              <tr><td colspan="3" class="session-header"><strong>13:15 – 13:55</strong> <span class="session-duration">(40 min)</span><br />Panel 4 · Locally unresectable and oligometastatic disease<br />Chair: Rodrigo Arruda<br />Moderators: Victor Gondim — RJ, Thiago Darlan, Suzane Leite</td></tr>
+              <tr><td>13:15 – 13:35<br /><span class="session-duration">(20 min)</span></td><td>Clinical case</td><td class="speaker-name">Thiago Apolinário</td></tr>
+              <tr><td>13:35 – 13:55<br /><span class="session-duration">(20 min)</span></td><td colspan="2" class="session-break">Discussion</td></tr>
+
+              <tr><td colspan="3" class="session-header"><strong>13:55 – 14:50</strong> <span class="session-duration">(45 min)</span><br />Panel 5 · Advanced disease module — driver mutation patients<br />Chair: José Fernando Prado<br />Moderators: Danielli Matias — RN, Leonardo Vila, Ana Rita Carvalho, Jéssica Guido <em>(online)</em></td></tr>
+              <tr><td>13:55 – 14:15<br /><span class="session-duration">(20 min)</span></td><td>Post-treatment dermatological toxicity</td><td class="speaker-name">Jéssica Guido <em>(online)</em></td></tr>
+              <tr><td>14:15 – 14:35<br /><span class="session-duration">(20 min)</span></td><td>Clinical case</td><td class="speaker-name">Luiz Felipe Carvalho</td></tr>
+              <tr><td>14:35 – 14:50<br /><span class="session-duration">(15 min)</span></td><td colspan="2" class="session-break">Discussion</td></tr>
+
+              <tr><td colspan="3" class="session-sponsor"><strong>14:50 – 15:30</strong> <span class="session-duration">(40 min)</span><br />Johnson &amp; Johnson Satellite Symposium — Bispecific antibodies transforming lung cancer biology<div class="session-speaker-line">Danielli Matias — RN</div></td></tr>
+
+              <tr><td>15:30 – 15:50<br /><span class="session-duration">(20 min)</span></td><td colspan="2" class="session-break"><strong>Coffee break</strong></td></tr>
+
+              <tr><td colspan="3" class="session-sponsor"><strong>15:50 – 16:30</strong> <span class="session-duration">(40 min)</span><br />Roche Symposium — Treatment of metastatic small cell disease<div class="session-speaker-line">Antônio Douglas</div></td></tr>
+
+              <tr><td colspan="3" class="session-header"><strong>16:30 – 17:10</strong> <span class="session-duration">(40 min)</span><br />Panel 6 · Advanced disease module — patients without driver mutation<br />Chair: Sandra Oliveira<br />Moderators: Nadja Rolim, Débora Porto, Luiz José de Barros</td></tr>
+              <tr><td>16:30 – 16:50<br /><span class="session-duration">(20 min)</span></td><td>Clinical case — metastatic disease</td><td class="speaker-name">Vladmir Lima — SP <em>(online)</em></td></tr>
+              <tr><td>16:50 – 17:10<br /><span class="session-duration">(20 min)</span></td><td colspan="2" class="session-break">Discussion</td></tr>
+
+              <tr><td>17:10</td><td colspan="2" class="session-break"><strong>Closing</strong></td></tr>`,
+        },
+        es: {
+          "nav.home": "Inicio",
+          "nav.about": "Sobre",
+          "nav.committee": "Comisión",
+          "nav.schedule": "Programación",
+          "nav.speakers": "Ponentes",
+          "nav.venue": "Sede",
+          "nav.sponsors": "Patrocinadores",
+          "nav.gallery": "Galería",
+          "nav.contact": "Contacto",
+          "nav.cta": "Inscripciones cerradas",
+          "hero.title": "Recife Tórax 2026 — Encuentro de Actualización en Oncología Torácica",
+          "hero.chipDate": "31 de julio de 2026",
+          "hero.chipTime": "8h a 18h",
+          "hero.chipVenue": "Auditorio Hospital Santa Joana",
+          "hero.seeProgram": "Ver Programación",
+          "hero.realization": "Organización",
+          "hero.sponsorsLabel": "Patrocinadores",
+          "about.eyebrow": "Sobre el evento",
+          "about.title": "Recife Tórax 2026",
+          "about.p1":
+            "El <strong>Recife Tórax</strong> es un encuentro científico dedicado a la <strong>oncología torácica</strong>, que reúne a especialistas de todo Brasil para un día de actualización, debate e intercambio de experiencias.",
+          "about.p2":
+            "El principal objetivo de este encuentro es promover la <strong>actualización, el debate y el intercambio de experiencias</strong> en el área de la oncología torácica, en un ambiente colaborativo y multidisciplinario.",
+          "about.p3":
+            "<strong>Público objetivo:</strong> oncólogos clínicos, cirujanos oncológicos, patólogos, radiólogos, radioncólogos, oncogenetistas, médicos nucleares, cardiólogos y geriatras de todo Brasil.",
+          "about.chip1": "🩺 Oncología Clínica",
+          "about.chip2": "🔪 Cirugía Oncológica",
+          "about.chip3": "🔬 Patología",
+          "about.chip4": "🩻 Radiología",
+          "about.chip5": "☢️ Radioncología",
+          "about.chip6": "🧬 Oncogenética",
+          "about.chip7": "⚛️ Medicina Nuclear",
+          "about.chip8": "❤️ Cardiología",
+          "about.chip9": "🧓 Geriatría",
+          "about.factDateLabel": "Fecha",
+          "about.factDateValue": "31 de julio de 2026 (viernes)",
+          "about.factTimeLabel": "Horario",
+          "about.factTimeValue": "8h a 18h",
+          "about.factVenueLabel": "Sede",
+          "about.factVenueValue": "Auditorio del Hospital Santa Joana Recife",
+          "about.factFormatLabel": "Formato",
+          "about.factFormatValue": "Presencial",
+          "about.factRegLabel": "Inscripción",
+          "countdown.title": "Cuenta regresiva",
+          "countdown.sub": "Quedan pocos días para el Recife Tórax 2026",
+          "countdown.days": "Días",
+          "countdown.hours": "Horas",
+          "countdown.minutes": "Minutos",
+          "countdown.seconds": "Segundos",
+          "committee.eyebrow": "Quién organiza",
+          "committee.title": "Comisión Organizadora",
+          "committee.intro":
+            "La programación científica está a cargo de un equipo multidisciplinario de especialistas en oncología torácica.",
+          "committee.role": "Comisión Organizadora",
+          "prog.eyebrow": "Agenda científica",
+          "prog.title": "Programación Preliminar",
+          "prog.downloadPdf": "Descargar PDF",
+          "prog.downloadXlsx": "Descargar planilla",
+          "prog.dateLine": "31 de julio de 2026 — Viernes",
+          "prog.colTime": "Horario",
+          "prog.colActivity": "Actividad",
+          "prog.colSpeaker": "Ponente",
+          "speakers.eyebrow": "Invitados",
+          "speakers.title": "Ponentes",
+          "speakers.learnMore": "Saber más",
+          "speakers.bioPending": "Currículo próximamente.",
+          "bio.antonio-douglas":
+            "<li>Oncólogo Clínico del Hospital Santa Joana – Rede Américas</li><li>Profesor de la UPE</li>",
+          "bio.bruna-rocha":
+            "<li>Formación en Endoscopia Respiratoria (con entrenamiento en EBUS radial y sectorial y Criobiopsia) por la Universidade de São Paulo - USP/INCOR</li><li>Neumología por la Universidade Federal de São Paulo (Unifesp - EPM)</li><li>Actuación en Neumología y Endoscopia Respiratoria en el Real Hospital Português, Hospital Otávio de Freitas e IMIP, Recife - PE</li><li>Profesora de la Faculdade Pernambucana de Saúde (FPS)</li>",
+          "bio.camila-saito":
+            "<li>Neumóloga y Médica del sueño por la USP-SP</li><li>Asistente del Hospital Otávio de Freitas</li>",
+          "bio.danielli-matias":
+            "<li>Oncóloga del Oncology Group y grupo Oncoclínicas</li><li>Miembro del comité de tórax Lacog y SBOC y comité de investigación clínica GBOT</li>",
+          "bio.francisco-sarmento":
+            "<li>Médico radiólogo</li><li>Máster en ciencias por la USP/SP</li><li>Cofundador de la Healthtech NaviSmart</li>",
+          "bio.leticia-lauricella":
+            "<li>Profesora colaboradora de la disciplina de cirugía torácica de la FMUSP</li><li>Cirujana torácica del ICESP / Rede Américas Hospital Samaritano Higienópolis / Einstein Hospital Israelita</li><li>Proctora de cirugía robótica</li>",
+          "bio.thiago-apolinario":
+            "<li>Residencia en Oncología Clínica por el IMIP-PE</li><li>Oncólogo clínico del Hospital Santa Joana</li><li>Oncólogo clínico del Hospital Universitário Oswaldo Cruz — Universidade de Pernambuco</li><li>Miembro de ASCO, ESMO, SBOC y GBOT</li>",
+          "bio.yally-nascimento":
+            "<li>Neumóloga y especialista en Circulación Pulmonar por el HCFMUSP</li><li>Neumóloga asistente del Hospital Santa Joana</li>",
+          "venue.eyebrow": "Dónde será",
+          "venue.title": "Sede del evento",
+          "venue.p1":
+            "El Recife Tórax 2026 se realizará en el <strong>Auditorio del Hospital Santa Joana Recife</strong>, en el barrio de Graças.",
+          "venue.address":
+            "<strong>Dirección:</strong><br />Rua Joaquim Nabuco, 200 — Graças<br />Recife — PE",
+          "venue.dateTime":
+            "<strong>Fecha:</strong> 31 de julio de 2026 (viernes)<br /><strong>Horario:</strong> 8h a 18h",
+          "reg.badge": "Inscripciones cerradas",
+          "reg.title": "Inscripciones",
+          "reg.message":
+            "Inscripciones cerradas. ¡Agradecemos su participación y hasta el próximo evento!",
+          "sponsors.eyebrow": "Apoyo",
+          "sponsors.title": "Patrocinadores",
+          "gallery.eyebrow": "Registros",
+          "gallery.title": "Galería de fotos",
+          "gallery.text":
+            "Revive los mejores momentos del Recife Tórax 2026 con los registros oficiales del evento.",
+          "gallery.driveLink": "Ver todas las fotos en Google Drive",
+          "contact.eyebrow": "Póngase en contacto",
+          "contact.title": "Contacto",
+          "contact.intro": "Para dudas sobre el evento, póngase en contacto con la organización:",
+          "contact.address":
+            "<strong>Dirección:</strong><br />Rua João Eugênio de Lima, 143 – Sala 01<br />Boa Viagem – Recife/PE – CP 51.030-360",
+          "contact.phoneLabel": "Teléfono/WhatsApp:",
+          "contact.emailLabel": "Correo electrónico:",
+          "contact.infoTitle": "Información",
+          "footer.dateLocation": "31 de julio de 2026 · Recife/PE",
+          "footer.navTitle": "Navegación",
+          "footer.venueTitle": "Sede",
+          "footer.dateLabel": "Fecha",
+          "footer.copyright": "&copy; 2026 Recife Tórax — Recife/PE",
+          "footer.producedBy": "Producido por:",
+          "footer.developedBy": "Desarrollado por:",
+          "footer.backToTop": "↑ Volver arriba",
+          "prog.body": `
+              <tr><td>08:00 – 08:30</td><td colspan="2" class="session-break"><strong>Acreditación</strong></td></tr>
+
+              <tr><td colspan="3" class="session-header"><strong>08:30 – 09:40</strong> <span class="session-duration">(1h10)</span><br />Mesa 1 · Actualización en Factores de Riesgo y Diagnóstico Precoz<br />Presidente: Alfredo Leite<br />Moderadores: Leonardo Pontual, Antônio Douglas, Paulo Almeida, Maria Rosa Gomes</td></tr>
+              <tr><td>08:30 – 08:45<br /><span class="session-duration">(15 min)</span></td><td>Factores de riesgo más allá del tabaco</td><td class="speaker-name">Camila Saito</td></tr>
+              <tr><td>08:45 – 09:00<br /><span class="session-duration">(15 min)</span></td><td>Actualizaciones en la evaluación preoperatoria para la resección pulmonar</td><td class="speaker-name">Yally Nascimento</td></tr>
+              <tr><td>09:00 – 09:15<br /><span class="session-duration">(15 min)</span></td><td>Nódulo pulmonar periférico: estrategias modernas de evaluación y abordaje diagnóstico</td><td class="speaker-name">Bruna Rocha</td></tr>
+              <tr><td>09:15 – 09:30<br /><span class="session-duration">(15 min)</span></td><td>Estado del arte en el uso de inteligencia artificial en el cribado</td><td class="speaker-name">Francisco Sarmento</td></tr>
+              <tr><td>09:30 – 09:40<br /><span class="session-duration">(10 min)</span></td><td colspan="2" class="session-break">Discusión</td></tr>
+
+              <tr><td colspan="3" class="session-header"><strong>09:40 – 10:20</strong> <span class="session-duration">(40 min)</span><br />Mesa 2 · Enfermedad localizada<br />Presidente: Bruno Pacheco<br />Moderadores: Ilka Rocha, Ricardo Machado, Gustavo Ferreira</td></tr>
+              <tr><td></td><td>Caso clínico</td><td class="speaker-name">Hugo Veiga</td></tr>
+              <tr><td></td><td colspan="2" class="session-break">Discusión</td></tr>
+
+              <tr><td>10:20 – 10:40<br /><span class="session-duration">(20 min)</span></td><td colspan="2" class="session-break"><strong>Coffee break</strong></td></tr>
+
+              <tr><td colspan="3" class="session-header"><strong>10:40 – 11:30</strong> <span class="session-duration">(50 min)</span><br />Mesa 3 · Desafíos en la cirugía<br />Presidente: Tomás Béder<br />Moderadores: Eriberto Marques, Paula Abreu e Lima, France Anne Reinaldo</td></tr>
+              <tr><td>10:40 – 10:55<br /><span class="session-duration">(15 min)</span></td><td>Resecabilidad y cirugía de conversión en estadio III</td><td class="speaker-name">Letícia Lauricella — SP</td></tr>
+              <tr><td>10:55 – 11:10<br /><span class="session-duration">(15 min)</span></td><td>Desafíos en la enfermedad N2</td><td class="speaker-name">Filippe Gouvêa</td></tr>
+              <tr><td>11:10 – 11:30<br /><span class="session-duration">(20 min)</span></td><td colspan="2" class="session-break">Discusión</td></tr>
+
+              <tr><td colspan="3" class="session-sponsor"><strong>11:30 – 12:15</strong> <span class="session-duration">(45 min)</span><br />Simposio Satélite AstraZeneca — Enfermedad irresecable: PACIFIC / LAURA<div class="session-speaker-line">Victor Gondim — RJ</div></td></tr>
+
+              <tr><td>12:15 – 13:15<br /><span class="session-duration">(1h)</span></td><td colspan="2" class="session-break"><strong>Almuerzo</strong></td></tr>
+
+              <tr><td colspan="3" class="session-header"><strong>13:15 – 13:55</strong> <span class="session-duration">(40 min)</span><br />Mesa 4 · Enfermedad localmente irresecable y oligometastásica<br />Presidente: Rodrigo Arruda<br />Moderadores: Victor Gondim — RJ, Thiago Darlan, Suzane Leite</td></tr>
+              <tr><td>13:15 – 13:35<br /><span class="session-duration">(20 min)</span></td><td>Caso clínico</td><td class="speaker-name">Thiago Apolinário</td></tr>
+              <tr><td>13:35 – 13:55<br /><span class="session-duration">(20 min)</span></td><td colspan="2" class="session-break">Discusión</td></tr>
+
+              <tr><td colspan="3" class="session-header"><strong>13:55 – 14:50</strong> <span class="session-duration">(45 min)</span><br />Mesa 5 · Módulo enfermedad avanzada — pacientes con mutación driver<br />Presidente: José Fernando Prado<br />Moderadores: Danielli Matias — RN, Leonardo Vila, Ana Rita Carvalho, Jéssica Guido <em>(en línea)</em></td></tr>
+              <tr><td>13:55 – 14:15<br /><span class="session-duration">(20 min)</span></td><td>Toxicidad dermatológica postratamiento</td><td class="speaker-name">Jéssica Guido <em>(en línea)</em></td></tr>
+              <tr><td>14:15 – 14:35<br /><span class="session-duration">(20 min)</span></td><td>Caso clínico</td><td class="speaker-name">Luiz Felipe Carvalho</td></tr>
+              <tr><td>14:35 – 14:50<br /><span class="session-duration">(15 min)</span></td><td colspan="2" class="session-break">Discusión</td></tr>
+
+              <tr><td colspan="3" class="session-sponsor"><strong>14:50 – 15:30</strong> <span class="session-duration">(40 min)</span><br />Simposio Satélite Johnson &amp; Johnson — Anticuerpos biespecíficos transformando la biología del cáncer de pulmón<div class="session-speaker-line">Danielli Matias — RN</div></td></tr>
+
+              <tr><td>15:30 – 15:50<br /><span class="session-duration">(20 min)</span></td><td colspan="2" class="session-break"><strong>Coffee break</strong></td></tr>
+
+              <tr><td colspan="3" class="session-sponsor"><strong>15:50 – 16:30</strong> <span class="session-duration">(40 min)</span><br />Simposio Roche — Tratamiento de la enfermedad de células pequeñas metastásica<div class="session-speaker-line">Antônio Douglas</div></td></tr>
+
+              <tr><td colspan="3" class="session-header"><strong>16:30 – 17:10</strong> <span class="session-duration">(40 min)</span><br />Mesa 6 · Módulo enfermedad avanzada — pacientes sin mutación driver<br />Presidente: Sandra Oliveira<br />Moderadores: Nadja Rolim, Débora Porto, Luiz José de Barros</td></tr>
+              <tr><td>16:30 – 16:50<br /><span class="session-duration">(20 min)</span></td><td>Caso clínico — enfermedad metastásica</td><td class="speaker-name">Vladmir Lima — SP <em>(en línea)</em></td></tr>
+              <tr><td>16:50 – 17:10<br /><span class="session-duration">(20 min)</span></td><td colspan="2" class="session-break">Discusión</td></tr>
+
+              <tr><td>17:10</td><td colspan="2" class="session-break"><strong>Cierre</strong></td></tr>`,
+        },
+      };
+
+      const i18nElements = document.querySelectorAll("[data-i18n]");
+      const originalContent = {};
+      i18nElements.forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (key in originalContent) return;
+        originalContent[key] = el.innerHTML;
+      });
+
+      function applyLanguage(lang) {
+        const dict = translations[lang] || {};
+        i18nElements.forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          const value = key in dict ? dict[key] : originalContent[key];
+          if (value == null) return;
+          el.innerHTML = value;
+        });
+        document.documentElement.lang = lang === "pt" ? "pt-BR" : lang;
+      }
+
+      const languageSelect = document.getElementById("language-select");
+      const storedLang = localStorage.getItem("selectedLanguage") || "pt";
+      languageSelect.value = storedLang;
+      applyLanguage(storedLang);
+      languageSelect.addEventListener("change", () => {
+        const lang = languageSelect.value;
+        localStorage.setItem("selectedLanguage", lang);
+        applyLanguage(lang);
       });
     </script>
   </body>
