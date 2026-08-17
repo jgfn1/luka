@@ -1,265 +1,425 @@
 #!/usr/bin/env python3
-"""Patch EN/ES schedule tbody translations from the updated Portuguese panels."""
+"""Patch EN/ES schedule tbody translations from the current Portuguese panels."""
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "index.html"
 
-DETAIL = "font-weight:400;margin-top:.35rem;font-size:.88rem;line-height:1.45"
+KEYS = (
+    "sch.openCongress",
+    "sch.friAudA",
+    "sch.friAudB",
+    "sch.satAudA",
+    "sch.satAudB",
+    "sch.preVideocirurgia",
+    "sch.preNutricao",
+    "sch.preUsg",
+    "sch.preSutura",
+)
 
-EN = {
-    "sch.openCongress": f"""
-                <tr><td>08:00 - 08:15</td><td colspan="2" class="session-break"><strong>Accreditation</strong></td></tr>
-                <tr><td>08:15 -  08:30</td><td>Opening</td><td class="speaker-name">Érica Batista <br />Edilberto Rocha <br />Jardel Soares <br />Iolanda Matias <br />Agostinho Machado <br />Juliana Zaidan</td></tr>""",
-    "sch.friAudA": f"""
-                <tr><td colspan="3" class="session-header"><strong>08:30 - 09:50<br />(1 hour and<br />20 min)</strong><br />PANEL 1 - Nerve-sparing in Endometriosis Surgery<br />Chair: Fernando Prado - PE<br />Discussants: Renato Barretto - SP, Melissandro Lacerda - PB, Anna Luiza Lobão - PB</td></tr>
-                <tr><td>08:30 - 09:00<br />(30 min)</td><td>Do you know where the main pelvic nerves run? Why does it matter in complex Endometriosis surgery?</td><td class="speaker-name">Kathiane Lustosa - CE</td></tr>
-                <tr><td>09:00 - 09:20<br />(20 min)</td><td>Main nerve injuries in Endometriosis. What are the main symptoms?</td><td class="speaker-name">Fabio Ohara - SP</td></tr>
-                <tr><td>09:20 - 09:40<br />(20 min)</td><td>Should every nerve injury from endometriosis be operated on?</td><td class="speaker-name">Raquel Magalhães - SP</td></tr>
-                <tr><td>09:40 - 09:50<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
-                <tr><td>09:50 - 10:20<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>10:20 - 11:40<br />(1 hour and<br />20 min)</strong><br />PANEL 2 - Video Hysteroscopy<br />Chair: Helena Nagy - PE<br />Discussants: Neidson Menezes - PE, Aurélio Costa - PE, Felipe Rocha - PE</td></tr>
-                <tr><td>10:20 - 10:30<br />(10 min)</td><td>Outpatient Video Hysteroscopy: how far can we go? How to minimize fear?<br />How to reduce pain?</td><td class="speaker-name">Mariana Vieira  - SP</td></tr>
-                <tr><td>10:30 - 10:45<br />(15 min)</td><td>Endometrial Hyperplasia and Endometrial Cancer. Can it still be managed conservatively? Until when?</td><td class="speaker-name">Jaime Calderon - Mexico <br />*Online*</td></tr>
-                <tr><td>10:45 - 11:00<br />(15 min)</td><td>Using Hysteroscopy to treat AUB (abnormal uterine bleeding).<br />Where does it apply? What is the limit?</td><td class="speaker-name">Mariana Roma - PE</td></tr>
-                <tr><td>11:00 - 11:15<br />(15 min)</td><td>How to minimize complications in Hysteroscopy and how to handle them if they occur?</td><td class="speaker-name">Ana Carolina Serafim - PE</td></tr>
-                <tr><td>11:15 - 11:30<br />(15 min)</td><td>The challenges of retained products of conception — how can Hysteroscopy help?</td><td class="speaker-name">Guilherme Zanluchi -SP</td></tr>
-                <tr><td>11:30 - 11:40<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
-                <tr><td>11:40 - 12:00<br />(20 min)</td><td>ZYDUS SYMPOSIUM - Iron replacement - A key item for safe surgery</td><td class="speaker-name">Jardel Soares - PE</td></tr>
-                <tr><td>12:00 - 13:30<br />(1 hour and<br />30 min)</td><td colspan="2" class="session-break"><strong>FREE BREAK</strong></td></tr>
-                <tr><td>13:30 - 15:30<br />(2 hours)</td><td colspan="2" class="session-live"><strong>LIVE SURGERIES</strong><div style="{DETAIL}">Chair: Mauro Aguiar - PE<br />Discussants: Kelwin Madson - PE , Neidson Menezes PE , Phabllo Rodrigo - PE</div><div style="{DETAIL}">* Hospital Santa Joana Recife - PE <br />Kathyane Lustosa CE <br />Case lead:  Maria Cecília Siqueira - PE <br /> <br />* Hospital Barão de Lucena - PE<br />Patrick Bellelis - SP  <br />Mariana Vieira  - SP<br />Case lead: Carolina Feitosa - PE <br /><br />* Hospital das Nações CWB  <br />Mônica Zomer PR -  ROOM 1 <br />William Kondo PR - ROOM 2 <br /><br />* Hospital Campinas - SP<br />Carlos Godoy - SP</div></td></tr>
-                <tr><td>15:30 - 16:00<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>16:00 - 16:50<br />(50 min)</strong><br />PANEL 3 - Uterine Fibroids<br />Chair: Mariana Santiago - PE <br />Discussants: Jessica Cesario - PE, Rafael Alves - PE, Alisson Chianca - MA, Lilia Mendes - CE</td></tr>
-                <tr><td>16:00 - 16:10<br />(10 min)</td><td>Strategies to reduce bleeding in myomectomies — what is my strategy?</td><td class="speaker-name">Melissandro Lacerda - PB</td></tr>
-                <tr><td>16:10 - 16:20<br />(10 min)</td><td>Fibroid extraction — is there a best technique?</td><td class="speaker-name">Mauro Aguiar - PE</td></tr>
-                <tr><td>16:20 - 16:30<br />(10 min)</td><td>Surgical conversion in myomectomy — failure of indication or the right decision?</td><td class="speaker-name">Anna Luiza Lobão - PB</td></tr>
-                <tr><td>16:30 - 16:40<br />(10 min)</td><td>Myomectomy — which incision, suture and thread for a refined, fast and bloodless surgery?</td><td class="speaker-name">Andreisa Bilhar - CE</td></tr>
-                <tr><td>16:40 - 16:50<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>16:50 - 17:20<br />(30 min)</strong><br />Lectures<br />Chair: Dr. Edilberto Rocha - PE</td></tr>
-                <tr><td>16:50 - 17:05 <br />(15 min)</td><td>How can AI influence your practice from the office to post-op?<br />Chair: Edilberto Rocha - PE</td><td class="speaker-name">Jardel Soares - PE</td></tr>
-                <tr><td>17:05 - 17:20<br />(15 min)</td><td>Complications in minimally invasive surgery — how should I manage them?</td><td class="speaker-name">Giuliano Borrelli - SP</td></tr>
-                <tr><td>17:25 - 18:10<br />(45 min)</td><td>TALK SHOW - &quot;The endometriosis patient's journey&quot;<br />How to build a successful practice<br />Coordinator: Mariana Muniz - PE</td><td class="speaker-name">Rosaura Almeida - PE (nutritionist)<br />Isaura Vieira - PE (acupuncturist)<br />Arthur Farias -PB (urologist)<br />Kathyane Lustosa - CE, (gynecologist)<br />Mayara Macedo -PE, (pelvic physiotherapist)<br />Macira Sotero- PE, (psychologist)</td></tr>
-                <tr><td>18:10</td><td colspan="2" class="session-break"><strong>Closing</strong></td></tr>""",
-    "sch.friAudB": f"""
-                <tr><td colspan="3" class="session-header"><strong>08:30 - 10:10<br />(1 hour and 40 min)</strong><br />VIDEO SHOWCASES - Semi-edited videos</td></tr>
-                <tr><td>08:30 - 08:50<br />(20 min)</td><td>How the use of fluorescence helped me in this case</td><td class="speaker-name">Guilherme Zanluchi - SP</td></tr>
-                <tr><td>08:50 - 09:10<br />(20 min)</td><td>I had to change my strategy in treating this bowel disease</td><td class="speaker-name">Claudia Joaquim - RJ</td></tr>
-                <tr><td>09:10 - 09:30<br />(20 min)</td><td>My strategy for this difficult myomectomy</td><td class="speaker-name">Alisson Chianca - MA</td></tr>
-                <tr><td>09:30 - 09:50<br />(20 min)</td><td>Robotic Cerclage. When? Tips and tricks?</td><td class="speaker-name">Patrick Bellelis - SP</td></tr>
-                <tr><td>09:50 - 10:10<br />(20  min)</td><td>Isthmocele — treat via laparoscopy, robotics or hysteroscopy?</td><td class="speaker-name">Mariana Vieira - SP</td></tr>
-                <tr><td>10:10 - 10:40 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>10:40 - 11:50<br />(1 hour and<br />10 min)</strong><br />PANEL 1 - Imaging<br />Chair: Taciana Morais - PE<br />Discussants: Marina Almeida - DF</td></tr>
-                <tr><td>10:40 - 11:10<br />(30 min)</td><td>CROSS FIRE - Present your strengths</td><td></td></tr>
-                <tr><td></td><td>What can't be missing in endometriosis mapping ultrasound?<br />What has technology improved?</td><td class="speaker-name">Penélope Melo - PE</td></tr>
-                <tr><td></td><td>What can't be missing in MRI for endometriosis screening?</td><td class="speaker-name">Pedro Guedes - PE</td></tr>
-                <tr><td>11:10 - 11:25<br />(15 min)</td><td>How has 3D reconstruction come to support the surgeon? I'll show you in practice</td><td class="speaker-name">Italo Cruz - PE</td></tr>
-                <tr><td>11:25 - 11:40<br />(15 min)</td><td>Will AI replace humans in the radiological diagnosis of endometriosis?</td><td class="speaker-name">Nadja Rolim - PE</td></tr>
-                <tr><td>11:40 - 11:50<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
-                <tr><td>11:50 - 13:30<br />(1 hour and 40 min)</td><td colspan="2" class="session-break"><strong>FREE BREAK</strong></td></tr>
-                <tr><td>13:30 - 15:30<br />(2 hours)</td><td colspan="2" class="session-live"><strong>LIVE SURGERIES - IN ROOM A</strong></td></tr>
-                <tr><td>15:30 - 16:00<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td>16:00 - 16:15<br />(15 min)</td><td>BAYER SYMPOSIUM - Medical treatment of Endometriosis according to the ACOH 2026 protocol</td><td class="speaker-name">Jardel Soares - PE</td></tr>
-                <tr><td colspan="3" class="session-header"><strong>16:15 - 17:55<br />(1 hour and<br />40 min)</strong><br />PANEL 2 - In my office<br />Chair: Simone Carvalho - PE <br />Discussants: Leonardo Lima - PE, Érica</td></tr>
-                <tr><td>16:15 - 16:35 <br />(20 min)</td><td>Climacteric and Menopause in the patient with Endometriosis. How do I manage case by case?</td><td class="speaker-name">Priscilla Vieira - PE</td></tr>
-                <tr><td>16:35 - 16:55<br />(20 min)</td><td>Diagnostic methods for endometriosis — what do we have? What are the new perspectives?</td><td class="speaker-name">Cicilia Pontes - PE</td></tr>
-                <tr><td>16:55 - 17:15 <br />(20 min)</td><td>Endometriosis in adolescence: how do I manage it? How to avoid excessive surgeries?</td><td class="speaker-name">Lilia Mendes - CE</td></tr>
-                <tr><td>17:15 - 17:35<br />(20 min)</td><td>Painful intercourse, vaginismus and relationship difficulties as sequelae of endometriosis. How to manage?</td><td class="speaker-name">Aleide Tavares - PE</td></tr>
-                <tr><td>17:35 - 17:45<br />(10  min)</td><td>Negative impacts of endometriosis on society. How can we reverse this?</td><td class="speaker-name">Iolanda Matias - PE</td></tr>
-                <tr><td>17:45 - 17:55<br />(10  min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
-                <tr><td>17:55 - 18:40<br />(45 min)</td><td>YOU DECIDE!<br />Making decisions in surgical treatment in gynecology<br />Coordination: Iolanda Matias - PE</td><td></td></tr>
-                <tr><td></td><td>Clinical Case 1 - Severe endometriosis with renal exclusion</td><td class="speaker-name">Andréa Perez - SP</td></tr>
-                <tr><td></td><td>Clinical Case 2 - PROLAPSE + URINARY INCONTINENCE</td><td class="speaker-name">Sara Arcanjo - CE</td></tr>
-                <tr><td></td><td>Clinical Case 3 - ADENOMYOSIS</td><td class="speaker-name">Raquel Magalhães - SP</td></tr>
-                <tr><td>18:40</td><td colspan="2" class="session-break"><strong>Closing</strong></td></tr>""",
-    "sch.satAudA": f"""
-                <tr><td>08:00 - 10:00            (2 hours)</td><td colspan="2" class="session-live"><strong>LIVE SURGERIES                                                                                                                                                                           Chair: Iolanda Matias - PE</strong><div style="{DETAIL}">Discussants:  Mariana Roma - PE, Felipe Rocha - PE, Guilherme Zanluchi - SP, Felipe Rocha - PB</div><div style="{DETAIL}">* Hospital Santa Joana Recife  - PE<br />Raquel Magalhães SP<br />Case lead: Sidraiton Melo - PE <br /><br />* Hospital Barão de Lucena  - PE<br />Sara Arcanjo - CE <br />Andreisa Bilhar - CE <br />Case lead: Eveline Martins Sampaio - PE <br /><br />* Hospital  Bragança Paulista <br />Dr. Rodrigo Sader Heck SP<br /><br />* Hospital Itaim Bibi - SP <br />Dr Paulo Ayroza /<br />Helizabeth Salomão</div></td></tr>
-                <tr><td>10:00 - 10:30 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>10:30<br />(1 hour and<br />10 min)</strong><br />PANEL 1 - Infertility and Endometriosis <br />Chair:<br />Discussants:</td></tr>
-                <tr><td>10:30 - 10:45<br />(15 min)</td><td>What to do first in the patient with endometriosis: IVF before and then operate, or operate and then IVF?</td><td class="speaker-name">Patrick Bellelis - SP<br />*Online*</td></tr>
-                <tr><td>10:45 - 11:00<br />(15 min)</td><td>In the hysteroscopic workup of the infertile woman: what should I look for? How to treat?</td><td class="speaker-name">Altina Castelo Branco - PE</td></tr>
-                <tr><td>11:00 - 11:15<br />(15 min)</td><td>The challenge of managing uterine malformations: from diagnosis to choosing the ideal approach. What is the best surgical strategy?</td><td class="speaker-name">Mariana Vieira - SP<br />*Online*</td></tr>
-                <tr><td>11:15 - 11:30<br />(15 min)</td><td>From implantation to delivery — does anything change in the follow-up of women with endometriosis and infertility?</td><td class="speaker-name">Edilberto Rocha - PE</td></tr>
-                <tr><td>11:30 - 11:40 <br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>11:40 - 12:35<br />(55 min)</strong><br />Lectures<br /> Chair: Walter Ivo Paiva PE</td></tr>
-                <tr><td>11:40 - 12:00<br />(20 min)</td><td>Lecture: Robotic Surgery in Gynecology and other associated technologies —<br />What benefits have we already proven?</td><td class="speaker-name">Jordanna Diniz - DF<br />*Online*</td></tr>
-                <tr><td>12:00 - 12:20<br />(20 min)</td><td>Lecture: ERAS Protocol - Does it apply even in highly complex surgeries?</td><td class="speaker-name">Carlos Godoy - SP</td></tr>
-                <tr><td>12:20 - 12:35<br />(15 min)</td><td>Lecture: Clinical pain management - What's new? Cannabis?<br />And what's new in advanced pain management?</td><td class="speaker-name">Luiz Severo - PE</td></tr>
-                <tr><td>12:35 - 12:55<br />(20 min)</td><td>ABIOCON SYMPOSIUM</td><td class="speaker-name">Fernando Prado - PE</td></tr>
-                <tr><td colspan="3" class="session-header"><strong>12:55 - 13:35<br />(40 min)</strong><br />Lectures<br /> Chair: Jardel Soares - PE</td></tr>
-                <tr><td>12:55 - 13:15<br />(20 min)</td><td>Life lessons: The survival of the laparoscopic and robotic surgeon — from ergonomics to mental health</td><td class="speaker-name">Fernando Heredia - Chile <br />*Online*</td></tr>
-                <tr><td>13:15 - 13:35<br />(20 min)</td><td>Life lessons: Deciding is harder than operating</td><td class="speaker-name">Ana Sierra - Mexico <br />*Online*</td></tr>
-                <tr><td colspan="3" class="session-header"><strong>13:35 - 14:25            (50 min)</strong><br />PANEL 2 - Coloproctology panel<br />Chair: Marcos Saturnino - PE<br />Discussants: Gilberto Pagnissin - PE</td></tr>
-                <tr><td colspan="3" class="session-header"><strong>13:35 - 14:05            (30 min)</strong><br />TRIPLE CROSS FIRE — the TRIELO</td></tr>
-                <tr><td></td><td>Shaving</td><td class="speaker-name">Paulo Mozart - PE</td></tr>
-                <tr><td></td><td>Discoid and double discoid</td><td class="speaker-name">Claudia Joaquim - RJ</td></tr>
-                <tr><td></td><td>Segmental resection</td><td class="speaker-name">Renato Barretto - SP</td></tr>
-                <tr><td>14:05 - 14:15            (10 min)</td><td>Intestinal dehiscences — how to manage?</td><td class="speaker-name">Cláudia Joaquim - RJ</td></tr>
-                <tr><td>14:15 - 14:25            (10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
-                <tr><td>14:25 - 14:35<br />(10 min)</td><td colspan="2" class="session-break"><strong>BREAK</strong></td></tr>
-                <tr><td>14:35 - 16:15<br />(1 hour and 40 min)</td><td colspan="2" class="session-live"><strong>LIVE SURGERIES                                                                                                                                                                                        Coordinator: Jardel Soares - PE</strong><div style="{DETAIL}">Discussants: Sidraiton Melo - PE, Andreisa Bilhar - CE, Yole Minervino - PB</div><div style="{DETAIL}">* Hospital Santa Joana Recife - PE<br />Giuliano Borrelli - SP<br />Case lead: <br /><br />* Hospital Barão de Lucena - PE<br />Fabio Ohara - SP <br />Case lead:<br /><br />*Cúcuta - Colombia  <br />Santiago Machicado <br /><br />* CUSCO - Peru<br />Eric Arancibia<br /><br />*Hospital Mocelia - Mexico <br />Armando Menocau</div></td></tr>
-                <tr><td>16:15</td><td colspan="2" class="session-break"><strong>Closing</strong></td></tr>
-                <tr><td>16:30</td><td colspan="2" class="session-break"><strong>Feijoada (optional)</strong></td></tr>""",
-    "sch.satAudB": f"""
-                <tr><td>08:00 - 10:00</td><td colspan="2" class="session-live"><strong>LIVE SURGERIES - ROOM A</strong></td></tr>
-                <tr><td>10:00 - 10:30 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>10:30  - 11:10<br />(40 min)</strong><br />Lectures - Urology in action<br />Chair: Guilherme Lima - PE<br />Discussants: Evandilson Guenes - PE, Rafael Oliveira - PE</td></tr>
-                <tr><td>10:30 - 10:45<br />(15 min)</td><td>Treatment of ureteral endometriosis — in frozen pelvis, is there a best technique?<br />Is there superiority in the approach route?</td><td class="speaker-name">Antônio César Cruz - PE</td></tr>
-                <tr><td>10:45 - 11:00<br />(15 min)</td><td>Bladder injury — limits of resection. Are there long-term repercussions?</td><td class="speaker-name">Arthur Farias - PB</td></tr>
-                <tr><td>11:00 -11:10              <br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>11:10 - 11:40<br />(30 min)</strong><br />Lectures<br />Chair: Diogenes Fontão - PE</td></tr>
-                <tr><td>11:10 - 11:25 <br />(15 min)</td><td>Lecture: When pelvic pain is much more than endometriosis</td><td class="speaker-name">Giuliano Borrelli - SP</td></tr>
-                <tr><td>11:25 - 11:40            (15 min)</td><td>Lecture: PBM (Patient Blood Management) — How to prepare the patient for surgery? How long to tolerate anemia? How to optimize your surgical outcomes?</td><td class="speaker-name">Dahra Teles - PE</td></tr>
-                <tr><td colspan="3" class="session-header"><strong>11:40 - 12:30<br />(50 min)</strong><br />PANEL 1 - Multidisciplinarity<br />Chair: Juliana  Zaidan - PE<br />Discussants: Natália  Fernandes - PE, Rita Santos - PE, Leonardo Lima - PE, Sirley Portela - PE</td></tr>
-                <tr><td>11:40 - 11:50<br />(10 min)</td><td>The best diet for the endometriosis patient? Is there room for supplements?</td><td class="speaker-name">Nara Parente - CE</td></tr>
-                <tr><td>11:50 - 12:00<br />(10 min)</td><td>Pelvic physiotherapy before and after surgery. What proven results do we have?</td><td class="speaker-name">Isabella Frota - CE</td></tr>
-                <tr><td>12:00 - 12:10<br />(10 min)</td><td>Acupuncture as an adjuvant treatment in gynecologic conditions.</td><td class="speaker-name">Isaura Vieira  - PE</td></tr>
-                <tr><td>12:10 - 12:20<br />(10 min)</td><td>The impacts of physical activity on endometriosis treatment.<br />What is the best exercise?</td><td class="speaker-name">Paulo Carvalho - PE</td></tr>
-                <tr><td>12:20 - 12:30<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
-                <tr><td>12:35 - 12:55<br />(20 min)</td><td>ABIOCON SYMPOSIUM - (ROOM A)</td><td></td></tr>
-                <tr><td>12:55 - 13:40<br />(45 min)</td><td colspan="2" class="session-break"><strong>FREE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>13:40 - 14:20<br />(40 min)</strong><br />Urogynecology in Focus<br />Chair: Eveline Martins Sampaio - PE<br />Discussants: Sônia Lavínia - PE, Vanessa Freitas - PE, Arthur Rangel - PE, Guilherme Zanluchi - SP</td></tr>
-                <tr><td>13:40 - 13:50<br />(10 min)</td><td>Urodynamic study — when to order? How to interpret?</td><td class="speaker-name">Mônica Diniz - PE</td></tr>
-                <tr><td>13:50 - 14:00<br />(10 min)</td><td>Treatment of genital prolapse — which technique is best? And the results? I'll show you in practice</td><td class="speaker-name">Sara Arcanjo - CE</td></tr>
-                <tr><td>14:00 - 14:10<br />(10 min)</td><td>Urinary incontinence — how to manage? When to operate? I'll show you in practice</td><td class="speaker-name">Andreisa Bilhar  - CE</td></tr>
-                <tr><td>14:10 - 14:20<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discussion</strong></td></tr>
-                <tr><td>14:20 - 14:35<br />(15 min)</td><td colspan="2" class="session-break"><strong>BREAK</strong></td></tr>
-                <tr><td>14:35 - 16:15<br />(1 hour and 40 min)</td><td colspan="2" class="session-live"><strong>LIVE SURGERIES - ROOM A</strong></td></tr>
-                <tr><td>16:15</td><td colspan="2" class="session-break"><strong>Closing</strong></td></tr>
-                <tr><td>16:30</td><td colspan="2" class="session-break"><strong>Feijoada (optional)</strong></td></tr>""",
+EN_PHRASES = {
+    "Credenciamento cursos Pré Congresso": "Registration for pre-congress courses",
+    "Credenciamento": "Accreditation",
+    "Abertura e apresentação - Panorama da endometriose e impacto nutricional.": "Opening and presentation - Overview of endometriosis and nutritional impact.",
+    "Moderadora: Nut Rosaura": "Moderator: Nutritionist Rosaura",
+    "Abertura": "Opening",
+    "Presidente:": "Chair:",
+    "Presidente :": "Chair:",
+    "Debatedores:": "Discussants:",
+    "Debatedores :": "Discussants:",
+    "Coordenadora:": "Coordinator:",
+    "Coordenação:": "Coordination:",
+    "Coordenador :": "Coordinator:",
+    "Condução caso:": "Case lead:",
+    "Condução Caso:": "Case lead:",
+    "Discussão final: principais mensagens e encerramento": "Final discussion: key takeaways and closing",
+    "Discussão de casos clínicos: pacientes com dor pélvica e alterações alimentares.": "Discussion of clinical cases: patients with pelvic pain and dietary changes.",
+    "Discussão": "Discussion",
+    "INTERVALO LIVRE": "FREE BREAK",
+    "INTERVALO": "BREAK",
+    "ENCERRAMENTO": "Closing",
+    "Encerramento": "Closing",
+    "Feijoada adesão": "Feijoada (optional)",
+    "CIRURGIAS AO VIVO - NA SALA A": "LIVE SURGERIES - IN ROOM A",
+    "CIRURGIAS AO VIVO  - SALA A": "LIVE SURGERIES - ROOM A",
+    "CIRURGIAS AO VIVO - SALA A": "LIVE SURGERIES - ROOM A",
+    "CIRURGIAS AO VIVO": "LIVE SURGERIES",
+    "SALA 1": "ROOM 1",
+    "SALA 2": "ROOM 2",
+    "SALA A": "ROOM A",
+    "MESA 1 - Nerve-sparing (preservação nervosa) na Cirurgia de Endometriose": "PANEL 1 - Nerve-sparing in Endometriosis Surgery",
+    "MESA 2 - Vídeo Histeroscopia": "PANEL 2 - Video Hysteroscopy",
+    "MESA 3 - Miomas Uterinos": "PANEL 3 - Uterine Fibroids",
+    "MESA 1 - Imagem": "PANEL 1 - Imaging",
+    "MESA 2 -  No meu consultório": "PANEL 2 - In my office",
+    "MESA 1 - Infertilidade e Endometriose": "PANEL 1 - Infertility and Endometriosis",
+    "MESA 2 - Coloproctologia no painel": "PANEL 2 - Coloproctology panel",
+    "MESA 1 -  Urologia em ação": "PANEL 1 - Urology in action",
+    "MESA 2 - A multidisciplinaridade": "PANEL 2 - Multidisciplinarity",
+    "MESA 3 - Uroginecologia em Foco": "PANEL 3 - Urogynecology in Focus",
+    "VÍDEOS SHOWS CASE - Vídeos semi-editados": "VIDEO SHOWCASES - Semi-edited videos",
+    "Conferências": "Lectures",
+    "Conferência:": "Lecture:",
+    "SIMPÓSIO ZYDUS -  A reposição de Ferro - Item fundamental para uma cirurgia segura": "ZYDUS SYMPOSIUM - Iron replacement - A key item for safe surgery",
+    "SIMPÓSIO BAYER  - Tratamento Clínico da Endometriose segundo o protocolo da ACOH 2026": "BAYER SYMPOSIUM - Medical treatment of Endometriosis according to the ACOH 2026 protocol",
+    "SIMPÓSIO (SALA A)": "SYMPOSIUM (ROOM A)",
+    "SIMPÓSIO": "SYMPOSIUM",
+    "TALK SHOW - &quot;Jornada da paciente com endometriose&quot;": "TALK SHOW - &quot;The endometriosis patient's journey&quot;",
+    "Como ter um consultório de sucesso": "How to build a successful practice",
+    "VOCÊ DECIDE!": "YOU DECIDE!",
+    "Tomando decisões no  tratamento cirúrgico no ginecologia": "Making decisions in surgical treatment in gynecology",
+    "Caso Clínico 1 - Endometeiose severa com exclusão renal": "Clinical Case 1 - Severe endometriosis with renal exclusion",
+    "Caso Clínico 2 - PROLAPSO + INCONTINÊNCIA URINÁRIA": "Clinical Case 2 - PROLAPSE + URINARY INCONTINENCE",
+    "Caso Clínico 3 - ADENOMIOSE": "Clinical Case 3 - ADENOMYOSIS",
+    "CROSS FIRE  - Apresente suas superioridades": "CROSS FIRE - Present your strengths",
+    "TRIPLO CROSS FIRE o TRIELO": "TRIPLE CROSS FIRE — the TRIELO",
+    "Discoide e duplo discoide": "Discoid and double discoid",
+    "Ressecção Segmentar": "Segmental resection",
+    "Deiscências intestinais - Como conduzir ?": "Intestinal dehiscences — how to manage?",
+    "nutricionista": "nutritionist",
+    "acupunturista": "acupuncturist",
+    "urologista": "urologist",
+    "ginecologista": "gynecologist",
+    "fisioterapeuta pelvica": "pelvic physiotherapist",
+    "psicóloga": "psychologist",
+    "coloproctologista": "coloproctologist",
+    "(01 hora e <br />20 min)": "(1 hour and<br />20 min)",
+    "(1 hora e <br />20 min)": "(1 hour and<br />20 min)",
+    "(01 hora e <br />10 min)": "(1 hour and<br />10 min)",
+    "(01 hora e 40 min)": "(1 hour and 40 min)",
+    "(01 hora e 10 min)": "(1 hour and 10 min)",
+    "(01 hora e <br />30 min)": "(1 hour and<br />30 min)",
+    "(01 hora e <br />45 minutos)": "(1 hour and<br />45 minutes)",
+    "(2 horas)": "(2 hours)",
+    "(2 horas)": "(2 hours)",
+    "            (2 horas)": "            (2 hours)",
+    "            (50 min)": "            (50 min)",
+    "            (30 min)": "            (30 min)",
+    "            (10 min)": "            (10 min)",
+    "            (15 min)": "            (15 min)",
+    "AUDITÓRIO A  - A Videocirurgia na Oncoginecologia": "AUDITORIUM A - Video Surgery in Oncogynecology",
+    "AUDITÓRIO B  - Curso Nutrição para pacientes com Endometriose": "AUDITORIUM B - Nutrition Course for patients with Endometriosis",
+    "AUDITÓRIO C - Curso de USG Mapeamento de Endometriose": "AUDITORIUM C - Endometriosis Mapping Ultrasound Course",
+    "FOYER - Curso de Sutura Dry Lab em sutura Endoscópica": "FOYER - Endoscopic Suture Dry Lab Course",
+    "AULA 1": "CLASS 1",
+    "AULA 2": "CLASS 2",
+    "AULA 3": "CLASS 3",
+    "AULA 4": "CLASS 4",
+    "AULA 5": "CLASS 5",
+    "AULA 6": "CLASS 6",
+    "Bloco 1 - Fundamentos &amp; Anatomia Aplicada": "Block 1 - Fundamentals &amp; Applied Anatomy",
+    "Bloco 2 - Raciocínio Clínico e Prática de Consultório": "Block 2 - Clinical reasoning and office practice",
+    "Estação prática": "Practical station",
+    "Monitores:": "Monitors:",
+    "México": "Mexico",
+    "Colômbia": "Colombia",
+    "hora e": "hour and",
 }
 
-ES = {
-    "sch.openCongress": f"""
-                <tr><td>08:00 - 08:15</td><td colspan="2" class="session-break"><strong>Acreditación</strong></td></tr>
-                <tr><td>08:15 -  08:30</td><td>Apertura</td><td class="speaker-name">Érica Batista <br />Edilberto Rocha <br />Jardel Soares <br />Iolanda Matias <br />Agostinho Machado <br />Juliana Zaidan</td></tr>""",
-    "sch.friAudA": f"""
-                <tr><td colspan="3" class="session-header"><strong>08:30 - 09:50<br />(1 hora y<br />20 min)</strong><br />MESA 1 - Nerve-sparing (preservación nerviosa) en la Cirugía de Endometriosis<br />Presidente: Fernando Prado - PE<br />Debatientes: Renato Barretto - SP, Melissandro Lacerda - PB, Anna Luiza Lobão - PB</td></tr>
-                <tr><td>08:30 - 09:00<br />(30 min)</td><td>¿Sabe por dónde pasan los principales nervios pélvicos? ¿Cuál es su importancia en la cirugía compleja de Endometriosis?</td><td class="speaker-name">Kathiane Lustosa - CE</td></tr>
-                <tr><td>09:00 - 09:20<br />(20 min)</td><td>¿Principales lesiones nerviosas en la Endometriosis? ¿Cuáles son los principales síntomas?</td><td class="speaker-name">Fabio Ohara - SP</td></tr>
-                <tr><td>09:20 - 09:40<br />(20 min)</td><td>¿Toda lesión nerviosa por endometriosis debe ser operada?</td><td class="speaker-name">Raquel Magalhães - SP</td></tr>
-                <tr><td>09:40 - 09:50<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
-                <tr><td>09:50 - 10:20<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>10:20 - 11:40<br />(1 hora y<br />20 min)</strong><br />MESA 2 - Video Histeroscopia<br />Presidente: Helena Nagy - PE<br />Debatientes: Neidson Menezes - PE, Aurélio Costa - PE, Felipe Rocha - PE</td></tr>
-                <tr><td>10:20 - 10:30<br />(10 min)</td><td>Video Histeroscopia Ambulatoria: ¿hasta dónde llegar? ¿Cómo minimizar el temor?<br />¿Cómo disminuir el dolor?</td><td class="speaker-name">Mariana Vieira  - SP</td></tr>
-                <tr><td>10:30 - 10:45<br />(15 min)</td><td>Hiperplasia Endometrial y Cáncer de Endometrio. ¿Aún se puede ser conservador? ¿Hasta cuándo?</td><td class="speaker-name">Jaime Calderon - México <br />*Online*</td></tr>
-                <tr><td>10:45 - 11:00<br />(15 min)</td><td>Usando la Histeroscopia para el tratamiento del SUA (sangrado uterino anormal).<br />¿Dónde se aplica? ¿Cuál es el límite?</td><td class="speaker-name">Mariana Roma - PE</td></tr>
-                <tr><td>11:00 - 11:15<br />(15 min)</td><td>¿Cómo minimizar las complicaciones en las Histeroscopias y, si ocurren, cómo manejarlas?</td><td class="speaker-name">Ana Carolina Serafim - PE</td></tr>
-                <tr><td>11:15 - 11:30<br />(15 min)</td><td>Los desafíos de la retención de restos ovulares — ¿Cómo puede ayudar la Histeroscopia?</td><td class="speaker-name">Guilherme Zanluchi -SP</td></tr>
-                <tr><td>11:30 - 11:40<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
-                <tr><td>11:40 - 12:00<br />(20 min)</td><td>SIMPOSIO ZYDUS - La reposición de Hierro - Ítem fundamental para una cirugía segura</td><td class="speaker-name">Jardel Soares - PE</td></tr>
-                <tr><td>12:00 - 13:30<br />(1 hora y<br />30 min)</td><td colspan="2" class="session-break"><strong>DESCANSO LIBRE</strong></td></tr>
-                <tr><td>13:30 - 15:30<br />(2 horas)</td><td colspan="2" class="session-live"><strong>CIRUGÍAS EN VIVO</strong><div style="{DETAIL}">Presidente: Mauro Aguiar - PE<br />Debatientes: Kelwin Madson - PE , Neidson Menezes PE , Phabllo Rodrigo - PE</div><div style="{DETAIL}">* Hospital Santa Joana Recife - PE <br />Kathyane Lustosa CE <br />Conducción del caso:  Maria Cecília Siqueira - PE <br /> <br />* Hospital Barão de Lucena - PE<br />Patrick Bellelis - SP  <br />Mariana Vieira  - SP<br />Conducción del caso: Carolina Feitosa - PE <br /><br />* Hospital das Nações CWB  <br />Mônica Zomer PR -  SALA 1 <br />William Kondo PR - SALA 2 <br /><br />* Hospital Campinas - SP<br />Carlos Godoy - SP</div></td></tr>
-                <tr><td>15:30 - 16:00<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>16:00 - 16:50<br />(50 min)</strong><br />MESA 3 - Miomas Uterinos<br />Presidente: Mariana Santiago - PE <br />Debatientes: Jessica Cesario - PE, Rafael Alves - PE, Alisson Chianca - MA, Lilia Mendes - CE</td></tr>
-                <tr><td>16:00 - 16:10<br />(10 min)</td><td>Estrategias para disminuir el sangrado en las miomectomías — ¿cuál es mi estrategia?</td><td class="speaker-name">Melissandro Lacerda - PB</td></tr>
-                <tr><td>16:10 - 16:20<br />(10 min)</td><td>Extracción de miomas — ¿existe la mejor técnica?</td><td class="speaker-name">Mauro Aguiar - PE</td></tr>
-                <tr><td>16:20 - 16:30<br />(10 min)</td><td>Conversión quirúrgica en miomectomía — ¿falla en la indicación o decisión correcta?</td><td class="speaker-name">Anna Luiza Lobão - PB</td></tr>
-                <tr><td>16:30 - 16:40<br />(10 min)</td><td>Miomectomía — ¿cuál es la mejor incisión, el mejor punto y el mejor hilo para una cirugía refinada, rápida y sin sangrado?</td><td class="speaker-name">Andreisa Bilhar - CE</td></tr>
-                <tr><td>16:40 - 16:50<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>16:50 - 17:20<br />(30 min)</strong><br />Conferencias<br />Presidente: Dr. Edilberto Rocha - PE</td></tr>
-                <tr><td>16:50 - 17:05 <br />(15 min)</td><td>¿Cómo puede la IA influir en su conducta desde el consultorio al postoperatorio?<br />Presidente: Edilberto Rocha - PE</td><td class="speaker-name">Jardel Soares - PE</td></tr>
-                <tr><td>17:05 - 17:20<br />(15 min)</td><td>Complicaciones en cirugías mínimamente invasivas — ¿cómo debo conducir?</td><td class="speaker-name">Giuliano Borrelli - SP</td></tr>
-                <tr><td>17:25 - 18:10<br />(45 min)</td><td>TALK SHOW - &quot;La jornada de la paciente con endometriosis&quot;<br />Cómo tener un consultorio de éxito<br />Coordinadora: Mariana Muniz - PE</td><td class="speaker-name">Rosaura Almeida - PE (nutricionista)<br />Isaura Vieira - PE (acupunturista)<br />Arthur Farias -PB (urólogo)<br />Kathyane Lustosa - CE, (ginecóloga)<br />Mayara Macedo -PE, (fisioterapeuta pélvica)<br />Macira Sotero- PE, (psicóloga)</td></tr>
-                <tr><td>18:10</td><td colspan="2" class="session-break"><strong>Cierre</strong></td></tr>""",
-    "sch.friAudB": f"""
-                <tr><td colspan="3" class="session-header"><strong>08:30 - 10:10<br />(1 hora y 40 min)</strong><br />VIDEOS SHOW CASES - Videos semi-editados</td></tr>
-                <tr><td>08:30 - 08:50<br />(20 min)</td><td>Cómo el uso de la fluorescencia me ayudó en este caso</td><td class="speaker-name">Guilherme Zanluchi - SP</td></tr>
-                <tr><td>08:50 - 09:10<br />(20 min)</td><td>Tuve que cambiar mi estrategia en el tratamiento de esa enfermedad intestinal</td><td class="speaker-name">Claudia Joaquim - RJ</td></tr>
-                <tr><td>09:10 - 09:30<br />(20 min)</td><td>Mi estrategia para esa miomectomía difícil</td><td class="speaker-name">Alisson Chianca - MA</td></tr>
-                <tr><td>09:30 - 09:50<br />(20 min)</td><td>Cerclaje Robótico. ¿Cuándo? ¿Tips y trucos?</td><td class="speaker-name">Patrick Bellelis - SP</td></tr>
-                <tr><td>09:50 - 10:10<br />(20  min)</td><td>Istmocele — ¿tratar por vía laparoscópica, robótica o histeroscopia?</td><td class="speaker-name">Mariana Vieira - SP</td></tr>
-                <tr><td>10:10 - 10:40 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>10:40 - 11:50<br />(1 hora y<br />10 min)</strong><br />MESA 1 - Imagen<br />Presidente: Taciana Morais - PE<br />Debatientes: Marina Almeida - DF</td></tr>
-                <tr><td>10:40 - 11:10<br />(30 min)</td><td>CROSS FIRE - Presente sus superioridades</td><td></td></tr>
-                <tr><td></td><td>¿Qué no puede faltar en la ecografía de mapeo de la endometriosis?<br />¿Qué se ha podido mejorar con la tecnología?</td><td class="speaker-name">Penélope Melo - PE</td></tr>
-                <tr><td></td><td>¿Qué no puede faltar en la resonancia para el cribado de endometriosis?</td><td class="speaker-name">Pedro Guedes - PE</td></tr>
-                <tr><td>11:10 - 11:25<br />(15 min)</td><td>¿Cómo la reconstrucción 3D vino a dar apoyo al cirujano? Te lo muestro en la práctica</td><td class="speaker-name">Italo Cruz - PE</td></tr>
-                <tr><td>11:25 - 11:40<br />(15 min)</td><td>¿La IA sustituirá al humano en el diagnóstico radiológico de la endometriosis?</td><td class="speaker-name">Nadja Rolim - PE</td></tr>
-                <tr><td>11:40 - 11:50<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
-                <tr><td>11:50 - 13:30<br />(1 hora y 40 min)</td><td colspan="2" class="session-break"><strong>DESCANSO LIBRE</strong></td></tr>
-                <tr><td>13:30 - 15:30<br />(2 horas)</td><td colspan="2" class="session-live"><strong>CIRUGÍAS EN VIVO - EN SALA A</strong></td></tr>
-                <tr><td>15:30 - 16:00<br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td>16:00 - 16:15<br />(15 min)</td><td>SIMPOSIO BAYER - Tratamiento Clínico de la Endometriosis según el protocolo de la ACOH 2026</td><td class="speaker-name">Jardel Soares - PE</td></tr>
-                <tr><td colspan="3" class="session-header"><strong>16:15 - 17:55<br />(1 hora y<br />40 min)</strong><br />MESA 2 - En mi consultorio<br />Presidente: Simone Carvalho - PE <br />Debatientes: Leonardo Lima - PE, Érica</td></tr>
-                <tr><td>16:15 - 16:35 <br />(20 min)</td><td>Climaterio y Menopausia en la paciente con Endometriosis. ¿Cómo conduzco caso por caso?</td><td class="speaker-name">Priscilla Vieira - PE</td></tr>
-                <tr><td>16:35 - 16:55<br />(20 min)</td><td>Métodos de diagnóstico para endometriosis — ¿qué tenemos ya? ¿Cuáles son las nuevas perspectivas?</td><td class="speaker-name">Cicilia Pontes - PE</td></tr>
-                <tr><td>16:55 - 17:15 <br />(20 min)</td><td>Endometriosis en la adolescencia: ¿cómo la conduzco? ¿Cómo evitar el exceso de cirugías?</td><td class="speaker-name">Lilia Mendes - CE</td></tr>
-                <tr><td>17:15 - 17:35<br />(20 min)</td><td>Dolor en la relación sexual, vaginismo, dificultades de relación como secuela de la endometriosis. ¿Cómo conducir?</td><td class="speaker-name">Aleide Tavares - PE</td></tr>
-                <tr><td>17:35 - 17:45<br />(10  min)</td><td>Impactos negativos de la endometriosis en la sociedad. ¿Cómo podemos revertir esto?</td><td class="speaker-name">Iolanda Matias - PE</td></tr>
-                <tr><td>17:45 - 17:55<br />(10  min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
-                <tr><td>17:55 - 18:40<br />(45 min)</td><td>¡USTED DECIDE!<br />Tomando decisiones en el tratamiento quirúrgico en ginecología<br />Coordinación: Iolanda Matias - PE</td><td></td></tr>
-                <tr><td></td><td>Caso Clínico 1 - Endometriosis severa con exclusión renal</td><td class="speaker-name">Andréa Perez - SP</td></tr>
-                <tr><td></td><td>Caso Clínico 2 - PROLAPSO + INCONTINENCIA URINARIA</td><td class="speaker-name">Sara Arcanjo - CE</td></tr>
-                <tr><td></td><td>Caso Clínico 3 - ADENOMIOSIS</td><td class="speaker-name">Raquel Magalhães - SP</td></tr>
-                <tr><td>18:40</td><td colspan="2" class="session-break"><strong>Cierre</strong></td></tr>""",
-    "sch.satAudA": f"""
-                <tr><td>08:00 - 10:00            (2 horas)</td><td colspan="2" class="session-live"><strong>CIRUGÍAS EN VIVO                                                                                                                                                                           Presidente: Iolanda Matias - PE</strong><div style="{DETAIL}">Debatientes:  Mariana Roma - PE, Felipe Rocha - PE, Guilherme Zanluchi - SP, Felipe Rocha - PB</div><div style="{DETAIL}">* Hospital Santa Joana Recife  - PE<br />Raquel Magalhães SP<br />Conducción del caso: Sidraiton Melo - PE <br /><br />* Hospital Barão de Lucena  - PE<br />Sara Arcanjo - CE <br />Andreisa Bilhar - CE <br />Conducción del caso: Eveline Martins Sampaio - PE <br /><br />* Hospital  Bragança Paulista <br />Dr. Rodrigo Sader Heck SP<br /><br />* Hospital Itaim Bibi - SP <br />Dr Paulo Ayroza /<br />Helizabeth Salomão</div></td></tr>
-                <tr><td>10:00 - 10:30 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>10:30<br />(1 hora y<br />10 min)</strong><br />MESA 1 - Infertilidad y Endometriosis <br />Presidente:<br />Debatientes:</td></tr>
-                <tr><td>10:30 - 10:45<br />(15 min)</td><td>¿Qué hacer primero en la paciente con endometriosis: FIV antes y después operar, u operar y después la FIV?</td><td class="speaker-name">Patrick Bellelis - SP<br />*Online*</td></tr>
-                <tr><td>10:45 - 11:00<br />(15 min)</td><td>En la investigación histeroscópica de la mujer infértil: ¿qué debo buscar? ¿Cómo tratar?</td><td class="speaker-name">Altina Castelo Branco - PE</td></tr>
-                <tr><td>11:00 - 11:15<br />(15 min)</td><td>El desafío del manejo de las malformaciones uterinas: del diagnóstico a la elección de la vía ideal de abordaje. ¿Cuál es la mejor estrategia quirúrgica?</td><td class="speaker-name">Mariana Vieira - SP<br />*Online*</td></tr>
-                <tr><td>11:15 - 11:30<br />(15 min)</td><td>De la implantación al parto — ¿cambia algo en el seguimiento de la mujer que cursa con endometriosis e infertilidad?</td><td class="speaker-name">Edilberto Rocha - PE</td></tr>
-                <tr><td>11:30 - 11:40 <br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>11:40 - 12:35<br />(55 min)</strong><br />Conferencias<br /> Presidente: Walter Ivo Paiva PE</td></tr>
-                <tr><td>11:40 - 12:00<br />(20 min)</td><td>Conferencia: Cirugía Robótica en la Ginecología y otras tecnologías asociadas —<br />¿Qué beneficios ya tenemos comprobados?</td><td class="speaker-name">Jordanna Diniz - DF<br />*Online*</td></tr>
-                <tr><td>12:00 - 12:20<br />(20 min)</td><td>Conferencia: Protocolo ERAS - ¿Se aplica incluso en cirugías de alta complejidad?</td><td class="speaker-name">Carlos Godoy - SP</td></tr>
-                <tr><td>12:20 - 12:35<br />(15 min)</td><td>Conferencia: Manejo clínico del dolor - ¿Qué hay de nuevo? ¿Cannabis?<br />¿Y en el manejo avanzado del dolor qué hay de nuevo?</td><td class="speaker-name">Luiz Severo - PE</td></tr>
-                <tr><td>12:35 - 12:55<br />(20 min)</td><td>SIMPOSIO ABIOCON</td><td class="speaker-name">Fernando Prado - PE</td></tr>
-                <tr><td colspan="3" class="session-header"><strong>12:55 - 13:35<br />(40 min)</strong><br />Conferencias<br /> Presidente: Jardel Soares - PE</td></tr>
-                <tr><td>12:55 - 13:15<br />(20 min)</td><td>Lecciones para la vida: La supervivencia del cirujano videolaparoscópico y robótico — de la ergonomía a la salud mental</td><td class="speaker-name">Fernando Heredia - Chile <br />*Online*</td></tr>
-                <tr><td>13:15 - 13:35<br />(20 min)</td><td>Lecciones para la vida: Decidir es más difícil que operar</td><td class="speaker-name">Ana Sierra - México <br />*Online*</td></tr>
-                <tr><td colspan="3" class="session-header"><strong>13:35 - 14:25            (50 min)</strong><br />MESA 2 - Coloproctología en el panel<br />Presidente: Marcos Saturnino - PE<br />Debatientes: Gilberto Pagnissin - PE</td></tr>
-                <tr><td colspan="3" class="session-header"><strong>13:35 - 14:05            (30 min)</strong><br />TRIPLE CROSS FIRE o el TRIELO</td></tr>
-                <tr><td></td><td>Shaving</td><td class="speaker-name">Paulo Mozart - PE</td></tr>
-                <tr><td></td><td>Discoide y doble discoide</td><td class="speaker-name">Claudia Joaquim - RJ</td></tr>
-                <tr><td></td><td>Resección segmentaria</td><td class="speaker-name">Renato Barretto - SP</td></tr>
-                <tr><td>14:05 - 14:15            (10 min)</td><td>Dehiscencias intestinales — ¿cómo conducir?</td><td class="speaker-name">Cláudia Joaquim - RJ</td></tr>
-                <tr><td>14:15 - 14:25            (10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
-                <tr><td>14:25 - 14:35<br />(10 min)</td><td colspan="2" class="session-break"><strong>DESCANSO</strong></td></tr>
-                <tr><td>14:35 - 16:15<br />(1 hora y 40 min)</td><td colspan="2" class="session-live"><strong>CIRUGÍAS EN VIVO                                                                                                                                                                                        Coordinador: Jardel Soares - PE</strong><div style="{DETAIL}">Debatientes: Sidraiton Melo - PE, Andreisa Bilhar - CE, Yole Minervino - PB</div><div style="{DETAIL}">* Hospital Santa Joana Recife - PE<br />Giuliano Borrelli - SP<br />Conducción del caso: <br /><br />* Hospital Barão de Lucena - PE<br />Fabio Ohara - SP <br />Conducción del caso:<br /><br />*Cúcuta - Colombia  <br />Santiago Machicado <br /><br />* CUSCO - Peru<br />Eric Arancibia<br /><br />*Hospital Mocelia - México <br />Armando Menocau</div></td></tr>
-                <tr><td>16:15</td><td colspan="2" class="session-break"><strong>Cierre</strong></td></tr>
-                <tr><td>16:30</td><td colspan="2" class="session-break"><strong>Feijoada (adhesión)</strong></td></tr>""",
-    "sch.satAudB": f"""
-                <tr><td>08:00 - 10:00</td><td colspan="2" class="session-live"><strong>CIRUGÍAS EN VIVO - SALA A</strong></td></tr>
-                <tr><td>10:00 - 10:30 <br />(30 min)</td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>10:30  - 11:10<br />(40 min)</strong><br />Conferencias - Urología en acción<br />Presidente: Guilherme Lima - PE<br />Debatientes: Evandilson Guenes - PE, Rafael Oliveira - PE</td></tr>
-                <tr><td>10:30 - 10:45<br />(15 min)</td><td>Tratamiento de la endometriosis ureteral — en pelvis congeladas, ¿existe una mejor técnica?<br />¿Existe superioridad en la vía de abordaje?</td><td class="speaker-name">Antônio César Cruz - PE</td></tr>
-                <tr><td>10:45 - 11:00<br />(15 min)</td><td>Lesión vesical — límites de la resección. ¿Existen repercusiones a largo plazo?</td><td class="speaker-name">Arthur Farias - PB</td></tr>
-                <tr><td>11:00 -11:10              <br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>11:10 - 11:40<br />(30 min)</strong><br />Conferencias<br />Presidente: Diogenes Fontão - PE</td></tr>
-                <tr><td>11:10 - 11:25 <br />(15 min)</td><td>Conferencia: Cuándo el dolor pélvico es mucho más que la endometriosis</td><td class="speaker-name">Giuliano Borrelli - SP</td></tr>
-                <tr><td>11:25 - 11:40            (15 min)</td><td>Conferencia: PBM (Patient Blood Management) — ¿Cómo preparar al paciente para la cirugía? ¿Hasta cuándo tolerar la anemia? ¿Cómo optimizar sus resultados quirúrgicos?</td><td class="speaker-name">Dahra Teles - PE</td></tr>
-                <tr><td colspan="3" class="session-header"><strong>11:40 - 12:30<br />(50 min)</strong><br />MESA 1 - La multidisciplinariedad<br />Presidente: Juliana  Zaidan - PE<br />Debatientes: Natália  Fernandes - PE, Rita Santos - PE, Leonardo Lima - PE, Sirley Portela - PE</td></tr>
-                <tr><td>11:40 - 11:50<br />(10 min)</td><td>¿La mejor dieta para la paciente con endometriosis? ¿Hay espacio para suplementos?</td><td class="speaker-name">Nara Parente - CE</td></tr>
-                <tr><td>11:50 - 12:00<br />(10 min)</td><td>Fisioterapia pélvica antes y después de la cirugía. ¿Qué resultados tenemos comprobados?</td><td class="speaker-name">Isabella Frota - CE</td></tr>
-                <tr><td>12:00 - 12:10<br />(10 min)</td><td>La acupuntura como tratamiento adyuvante en las patologías ginecológicas.</td><td class="speaker-name">Isaura Vieira  - PE</td></tr>
-                <tr><td>12:10 - 12:20<br />(10 min)</td><td>Los impactos de la actividad física en el tratamiento de la endometriosis.<br />¿Cuál es el mejor ejercicio?</td><td class="speaker-name">Paulo Carvalho - PE</td></tr>
-                <tr><td>12:20 - 12:30<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
-                <tr><td>12:35 - 12:55<br />(20 min)</td><td>SIMPOSIO ABIOCON - (SALA A)</td><td></td></tr>
-                <tr><td>12:55 - 13:40<br />(45 min)</td><td colspan="2" class="session-break"><strong>DESCANSO LIBRE</strong></td></tr>
-                <tr><td colspan="3" class="session-header"><strong>13:40 - 14:20<br />(40 min)</strong><br />Uroginecología en Foco<br />Presidente: Eveline Martins Sampaio - PE<br />Debatientes: Sônia Lavínia - PE, Vanessa Freitas - PE, Arthur Rangel - PE, Guilherme Zanluchi - SP</td></tr>
-                <tr><td>13:40 - 13:50<br />(10 min)</td><td>Estudio urodinámico — ¿cuándo solicitar? ¿cómo interpretar?</td><td class="speaker-name">Mônica Diniz - PE</td></tr>
-                <tr><td>13:50 - 14:00<br />(10 min)</td><td>Tratamiento de las distopias genitales — ¿cuál es la mejor técnica? ¿Y los resultados? Te lo muestro en la práctica</td><td class="speaker-name">Sara Arcanjo - CE</td></tr>
-                <tr><td>14:00 - 14:10<br />(10 min)</td><td>Incontinencia urinaria — ¿cómo conducir? ¿cuál es el momento de operar? Te lo mostraré en la práctica</td><td class="speaker-name">Andreisa Bilhar  - CE</td></tr>
-                <tr><td>14:10 - 14:20<br />(10 min)</td><td colspan="2" class="session-break"><strong>Discusión</strong></td></tr>
-                <tr><td>14:20 - 14:35<br />(15 min)</td><td colspan="2" class="session-break"><strong>DESCANSO</strong></td></tr>
-                <tr><td>14:35 - 16:15<br />(1 hora y 40 min)</td><td colspan="2" class="session-live"><strong>CIRUGÍAS EN VIVO - SALA A</strong></td></tr>
-                <tr><td>16:15</td><td colspan="2" class="session-break"><strong>Cierre</strong></td></tr>
-                <tr><td>16:30</td><td colspan="2" class="session-break"><strong>Feijoada (adhesión)</strong></td></tr>""",
+EN_TITLES = {
+    "Você sabe onde passam os principais nervos pélvicos ? Qual a importância na Cirurgia complexa de Endometriose?": "Do you know where the main pelvic nerves run? Why does it matter in complex Endometriosis surgery?",
+    "Principais lesões nervosas na Endometriose ? Quais os principais sintomas ?": "Main nerve injuries in Endometriosis. What are the main symptoms?",
+    "Toda lesão nervosa por endometriose deve ser operada?": "Should every nerve injury from endometriosis be operated on?",
+    "Vídeo Histeroscopia Ambulatorial qual o espaço até onde ir? Como minimizar o temor? <br />Como diminuir a dor?": "Outpatient Video Hysteroscopy: how far can we go? How to minimize fear?<br />How to reduce pain?",
+    "Hiperplasia Endometrial e Câncer de Endométrio. Ainda posso ser conservado e ? Até Quando ?": "Endometrial Hyperplasia and Endometrial Cancer. Can it still be managed conservatively? Until when?",
+    "Utilizando a Histeroscopia para o tratamento da SUA (sangramento uterino anormal). <br />Onde se aplica ? Qual o limite ?": "Using Hysteroscopy to treat AUB (abnormal uterine bleeding).<br />Where does it apply? What is the limit?",
+    "Como minimizar as complicações na Histeroscopia e se ocorrerem como lidar com elas ?": "How to minimize complications in Hysteroscopy and how to handle them if they occur?",
+    "Os desafios da retenção de restos ovulares - Como a Histeroscopia pode ajudar?": "The challenges of retained products of conception — how can Hysteroscopy help?",
+    "Estratégias para Diminuir o Sangramento nas miomectomias - Qual a minha estratégia ?": "Strategies to reduce bleeding in myomectomies — what is my strategy?",
+    "Extração de miomas - Existe a melhor técnica ?": "Fibroid extraction — is there a best technique?",
+    "Conversão cirúrgica em miomectomia - falha na indicação ou decisão correta ?": "Surgical conversion in myomectomy — failure of indication or the right decision?",
+    "Miomectomia - Qual a melhor incisão, o melhor ponto e o melhor  fio para uma cirurgia refinada , rápida e sem sangramentos ?": "Myomectomy — which incision, suture and thread for a refined, fast and bloodless surgery?",
+    "Como a IA pode influenciar  sua conduta do consultório ao pós- cirúrgico?": "How can AI influence your practice from the office to post-op?",
+    "Complicações em cirurgias minimamente invasiva - Como eu devo conduzir?": "Complications in minimally invasive surgery — how should I manage them?",
+    "Como o uso da fluorescência me ajudou nesse caso": "How the use of fluorescence helped me in this case",
+    "Tive que mudar minha estratégia no tratamento dessa doença intestinal": "I had to change my strategy in treating this bowel disease",
+    "Minha estratégia para essa miomectomia difícil": "My strategy for this difficult myomectomy",
+    "Cerclagem Robótica . Quando? Tips e Truques ?": "Robotic Cerclage. When? Tips and tricks?",
+    "Istmocele -Tratar por via laparoscópica, robótica ou Histeroscopia ?": "Isthmocele — treat via laparoscopy, robotics or hysteroscopy?",
+    "O que  não pode faltar na ultrassom  de mapeamento da endometriose ?<br />O que foi possível melhorar com a tecnologia ?": "What can't be missing in endometriosis mapping ultrasound?<br />What has technology improved?",
+    "O que não pode faltar na ressonância para rastreio de endometriose ?": "What can't be missing in MRI for endometriosis screening?",
+    "Como a  reconstrução três D veio para trazer um  apoio ao cirurgião ? Te mostro na prática": "How has 3D reconstruction come to support the surgeon? I'll show you in practice",
+    "A IA substituirá o humano  no diagnóstico radiológico da endometriose?": "Will AI replace humans in the radiological diagnosis of endometriosis?",
+    "Impactos negativos da endometriose na sociedade . Como podemos reverter isso ?": "Negative impacts of endometriosis on society. How can we reverse this?",
+    "Métodos de Diagnóstico para endometriose o que já temos ? Quais as novas perspectivas?": "Diagnostic methods for endometriosis — what do we have? What are the new perspectives?",
+    "Endometriose na adolescência: Como conduzo? Como evitar o excesso de cirurgias ?": "Endometriosis in adolescence: how do I manage it? How to avoid excessive surgeries?",
+    "Dor na relação sexual ,Vaginismo , dificuldades de relacionamento como sequela da endometriose . Como conduzir ?": "Painful intercourse, vaginismus and relationship difficulties as sequelae of endometriosis. How to manage?",
+    "Climatério E Menopausa na paciente com Endometriose. Como eu conduzo caso a caso?": "Climacteric and Menopause in the patient with Endometriosis. How do I manage case by case?",
+    "O que fazer primeiro na paciente com endometriose : FiV  antes e depois operar ou operar e depois a FIV ?": "What to do first in the patient with endometriosis: IVF before and then operate, or operate and then IVF?",
+    "Na investigação Histeroscopica da mulher infértil : O que devo procurar ? Como tratar ?": "In the hysteroscopic workup of the infertile woman: what should I look for? How to treat?",
+    "O desafio do manejo das malformações uterinas: do diagnóstico à escolha da via ideal de abordagem. Qual a melhor estratégia cirúrgica?": "The challenge of managing uterine malformations: from diagnosis to choosing the ideal approach. What is the best surgical strategy?",
+    "Da implantação até o parto - Muda alguma coisa no acompanhamento da mulher que cursa com endometriose e infertilidade ?": "From implantation to delivery — does anything change in the follow-up of women with endometriosis and infertility?",
+    "Cirurgia Robótica na Ginecologia e outras tecnologias associadas- <br />Que benefícios já temos comprovado ?": "Robotic Surgery in Gynecology and other associated technologies —<br />What benefits have we already proven?",
+    "Protocolo ERAS - Se aplica mesmo em cirurgias de alta complexidade ?": "ERAS Protocol - Does it apply even in highly complex surgeries?",
+    "Manejo clínico da dor - O que temos de novo ? Canabbis? <br />E no manejo avançado da dor o que temos de novo ?": "Clinical pain management - What's new? Cannabis?<br />And what's new in advanced pain management?",
+    "Lições pra vida: A sobrevida do cirurgião Videolaparoscopico  e  Robótico  da ergonomia à saúde mental": "Life lessons: The survival of the laparoscopic and robotic surgeon — from ergonomics to mental health",
+    "Lições pra vida: Decidir é mais difícil do que operar": "Life lessons: Deciding is harder than operating",
+    "Tratamento da endometriose ureteral, em pelves congeladas existe uma melhor técnica?  <br />Existe superioridade na via de abordagem ?": "Treatment of ureteral endometriosis — in frozen pelvis, is there a best technique?<br />Is there superiority in the approach route?",
+    "Lesão vesical - limites da ressecção. Existem repercussões a longo prazo?": "Bladder injury — limits of resection. Are there long-term repercussions?",
+    "Quando a dor pélvica é muito mais do que a endometriose": "When pelvic pain is much more than endometriosis",
+    "PBM ( patient blood Management) Como o preparar o paciente para cirugia? Até quando  tolerar a anemia ? Como otimizar seus resultados cirúrgicos ?": "PBM (Patient Blood Management) — How to prepare the patient for surgery? How long to tolerate anemia? How to optimize your surgical outcomes?",
+    "A melhor dieta para paciente com endometriose ? Ha espaço para suplementos?": "The best diet for the endometriosis patient? Is there room for supplements?",
+    "Fisioterapia Pélvica antes e após a cirurgia. Que resultados temos comprovados ?": "Pelvic physiotherapy before and after surgery. What proven results do we have?",
+    "A acupuntura como tratamento adjuvante nas patologias ginecológicas.": "Acupuncture as an adjuvant treatment in gynecologic conditions.",
+    "Os impactos da atividade física no tratamento da endometriose. <br />Qual o melhor exercício ?": "The impacts of physical activity on endometriosis treatment.<br />What is the best exercise?",
+    "Estudo Urodinâmico Quando pedir? Como interpretar?": "Urodynamic study — when to order? How to interpret?",
+    "Tratamento das distopias genitais - Qual a melhor técnica ? E os resultados ? Eu te mostro na prática": "Treatment of genital prolapse — which technique is best? And the results? I'll show you in practice",
+    "Incontinecia Urinária - Como conduzir ? Qual a hora de operar ? Vou te mostrar na prática": "Urinary incontinence — how to manage? When to operate? I'll show you in practice",
+    "Histeroscopia e histerectomia laparoscópica: Achados clínicos e pacientes de risco oncológico": "Hysteroscopy and laparoscopic hysterectomy: Clinical findings and oncologic-risk patients",
+    "Endometriose Intestinal ou câncer colorretal? Quando o achado deve mudar nossa conduta?": "Intestinal endometriosis or colorectal cancer? When should the finding change our approach?",
+    "Efeitos dos tratamentos em Oncologia para cirurgiões: Radioterapia": "Effects of oncology treatments for surgeons: Radiotherapy",
+    "Efeito dos tratamentos oncológicos para os cirurgiões: Químio e Imunoterapia": "Effect of oncologic treatments for surgeons: Chemo and immunotherapy",
+    "ACHADOS SUSPEITOS vistos a RNM": "SUSPICIOUS FINDINGS seen on MRI",
+    "Evidências sobre dieta anti-inflamatória e sintomas.": "Evidence on anti-inflammatory diet and symptoms.",
+    "Ambiente Metabólico e Sucesso Reprodutivo": "Metabolic environment and reproductive success",
+    "Relação entre resistência insulínica, obesidade e fertilidade.": "Relationship between insulin resistance, obesity and fertility.",
+    "Estratégias nutricionais para otimizar ambiente metabólico.": "Nutritional strategies to optimize the metabolic environment.",
+    "Casos clínicos: infertilidade associada a síndrome metabólica.": "Clinical cases: infertility associated with metabolic syndrome.",
+    "Nutrição Modulando a Inflamação": "Nutrition modulating inflammation",
+    "Nutrientes e compostos bioativos com ação anti-inflamatória.": "Nutrients and bioactive compounds with anti-inflammatory action.",
+    "Papel dos ácidos graxos ômega-3, antioxidantes e fibras.": "Role of omega-3 fatty acids, antioxidants and fiber.",
+    "Casos clínicos: pacientes com endometriose e inflamação sistêmica.": "Clinical cases: patients with endometriosis and systemic inflammation.",
+    "Protocolo Nutricional Perioperatório": "Perioperative nutritional protocol",
+    "Preparação nutricional para cirurgia de endometriose.": "Nutritional preparation for endometriosis surgery.",
+    "Estratégias para reduzir complicações e acelerar recuperação.": "Strategies to reduce complications and speed recovery.",
+    "Caso clínico: pacientes em pré e pós-operatório.": "Clinical case: patients in the pre- and postoperative period.",
+    "Dores Pélvicas e Abordagem Nutricional": "Pelvic pain and nutritional approach",
+    "Relação entre dor crônica e dieta.": "Relationship between chronic pain and diet.",
+    "Intervenções nutricionais para melhora da qualidade de vida.": "Nutritional interventions to improve quality of life.",
+    "Casos clínico: pacientes com dor pélvica refratária.": "Clinical cases: patients with refractory pelvic pain.",
+    "Suplementação Farmacoterápica nas Diferentes Fases da Endometriose": "Pharmacotherapeutic supplementation in the different phases of Endometriosis",
+    "Suplementos com evidência científica (vitamina D, antioxidantes, probióticos).": "Supplements with scientific evidence (vitamin D, antioxidants, probiotics).",
+    "Ajustes conforme fase da doença e tratamento médico.": "Adjustments according to disease phase and medical treatment.",
+    "Prática: Elaborando uma prescrição assertiva": "Practice: Preparing an assertive prescription",
+    "Anatomia ultrassonografica da pelve aplicada ao mapeamento da endometriose": "Ultrasound anatomy of the pelvis applied to endometriosis mapping",
+    "Conceitos diagnósticos: fundamentos essenciais no mapeamento da endometriose": "Diagnostic concepts: essential foundations in endometriosis mapping",
+    "Compartimento médio: avaliação sistemática e principais achados": "Middle compartment: systematic assessment and main findings",
+    "Compartimento anterior: como reconhecer o acometimento e evitar armadilhas": "Anterior compartment: how to recognize involvement and avoid pitfalls",
+    "Compartimento posterior: passo a passo na avaliação do espaço retrocervical": "Posterior compartment: step by step in assessing the retrocervical space",
+    "Endometriose intestinal: conceitos essenciais": "Intestinal endometriosis: essential concepts",
+    "Compartimento lateral: como não perder lesões": "Lateral compartment: how not to miss lesions",
+    "Ressonância magnética na endometriose: da anatomia normal aos padrões clássicos de doença": "MRI in endometriosis: from normal anatomy to classic disease patterns",
+    "Do exame ao laudo: como transformar imagens em informações que mudam a conduta clínica": "From exam to report: how to turn images into information that changes clinical management",
+    "Regras básicas de posição de agulha e fio - Nomenclatura e sistematização de agulha": "Basic rules of needle and suture positioning - Needle nomenclature and systematization",
+    "Teoria do Ponto perfeito e passagem de agulha": "Theory of the perfect stitch and needle passage",
+    "Aplicação prática de sutura em videos: Fechamento de cúpula vaginal e miomectomias": "Practical application of suture in videos: Vaginal cuff closure and myomectomies",
+    "Sistematização de 1 grau e acordar as mãos": "1st-degree systematization and waking up the hands",
+    "Sistematizaçoes e Cruz de verificaçao": "Systematizations and verification cross",
+    "O Ponto Perfeito": "The Perfect Stitch",
+    "Teoria dos nós: Nó quadrado e semi-chaves": "Knot theory: Square knot and half-hitches",
+    "Segurança dos nós": "Knot security",
+    "Os nós da minha preferência - Aplicação dos nós em cada tipo de tecido e cirurgia": "My preferred knots - Applying knots to each tissue type and surgery",
+    "Triplo Duplo - Monomanual e bimanual": "Triple Double - One-handed and two-handed",
+    "Sequência de semi-chaves bloqueantes": "Sequence of locking half-hitches",
+    "Competição - Prêmio": "Competition - Prize",
 }
+
+ES_PHRASES = {
+    "Credenciamento cursos Pré Congresso": "Acreditación de los cursos del Pre-congreso",
+    "Credenciamento": "Acreditación",
+    "Abertura e apresentação - Panorama da endometriose e impacto nutricional.": "Apertura y presentación - Panorama de la endometriosis e impacto nutricional.",
+    "Moderadora: Nut Rosaura": "Moderadora: Nut. Rosaura",
+    "Abertura": "Apertura",
+    "Presidente:": "Presidente:",
+    "Presidente :": "Presidente:",
+    "Debatedores:": "Debatientes:",
+    "Debatedores :": "Debatientes:",
+    "Coordenadora:": "Coordinadora:",
+    "Coordenação:": "Coordinación:",
+    "Coordenador :": "Coordinador:",
+    "Condução caso:": "Conducción del caso:",
+    "Condução Caso:": "Conducción del caso:",
+    "Discussão final: principais mensagens e encerramento": "Discusión final: mensajes principales y cierre",
+    "Discussão de casos clínicos: pacientes com dor pélvica e alterações alimentares.": "Discusión de casos clínicos: pacientes con dolor pélvico y alteraciones alimentarias.",
+    "Discussão": "Discusión",
+    "INTERVALO LIVRE": "DESCANSO LIBRE",
+    "INTERVALO": "DESCANSO",
+    "ENCERRAMENTO": "Cierre",
+    "Encerramento": "Cierre",
+    "Feijoada adesão": "Feijoada (adhesión)",
+    "CIRURGIAS AO VIVO - NA SALA A": "CIRUGÍAS EN VIVO - EN SALA A",
+    "CIRURGIAS AO VIVO  - SALA A": "CIRUGÍAS EN VIVO - SALA A",
+    "CIRURGIAS AO VIVO - SALA A": "CIRUGÍAS EN VIVO - SALA A",
+    "CIRURGIAS AO VIVO": "CIRUGÍAS EN VIVO",
+    "MESA 1 - Nerve-sparing (preservação nervosa) na Cirurgia de Endometriose": "MESA 1 - Nerve-sparing (preservación nerviosa) en la Cirugía de Endometriosis",
+    "MESA 2 - Vídeo Histeroscopia": "MESA 2 - Video Histeroscopia",
+    "MESA 3 - Miomas Uterinos": "MESA 3 - Miomas Uterinos",
+    "MESA 1 - Imagem": "MESA 1 - Imagen",
+    "MESA 2 -  No meu consultório": "MESA 2 - En mi consultorio",
+    "MESA 1 - Infertilidade e Endometriose": "MESA 1 - Infertilidad y Endometriosis",
+    "MESA 2 - Coloproctologia no painel": "MESA 2 - Coloproctología en el panel",
+    "MESA 1 -  Urologia em ação": "MESA 1 - Urología en acción",
+    "MESA 2 - A multidisciplinaridade": "MESA 2 - La multidisciplinariedad",
+    "MESA 3 - Uroginecologia em Foco": "MESA 3 - Uroginecología en Foco",
+    "VÍDEOS SHOWS CASE - Vídeos semi-editados": "VIDEOS SHOW CASES - Videos semi-editados",
+    "Conferências": "Conferencias",
+    "Conferência:": "Conferencia:",
+    "SIMPÓSIO ZYDUS -  A reposição de Ferro - Item fundamental para uma cirurgia segura": "SIMPOSIO ZYDUS - La reposición de Hierro - Ítem fundamental para una cirugía segura",
+    "SIMPÓSIO BAYER  - Tratamento Clínico da Endometriose segundo o protocolo da ACOH 2026": "SIMPOSIO BAYER - Tratamiento Clínico de la Endometriosis según el protocolo de la ACOH 2026",
+    "SIMPÓSIO (SALA A)": "SIMPOSIO (SALA A)",
+    "SIMPÓSIO": "SIMPOSIO",
+    "TALK SHOW - &quot;Jornada da paciente com endometriose&quot;": "TALK SHOW - &quot;La jornada de la paciente con endometriosis&quot;",
+    "Como ter um consultório de sucesso": "Cómo tener un consultorio de éxito",
+    "VOCÊ DECIDE!": "¡USTED DECIDE!",
+    "Tomando decisões no  tratamento cirúrgico no ginecologia": "Tomando decisiones en el tratamiento quirúrgico en ginecología",
+    "Caso Clínico 1 - Endometeiose severa com exclusão renal": "Caso Clínico 1 - Endometriosis severa con exclusión renal",
+    "Caso Clínico 2 - PROLAPSO + INCONTINÊNCIA URINÁRIA": "Caso Clínico 2 - PROLAPSO + INCONTINENCIA URINARIA",
+    "Caso Clínico 3 - ADENOMIOSE": "Caso Clínico 3 - ADENOMIOSIS",
+    "CROSS FIRE  - Apresente suas superioridades": "CROSS FIRE - Presente sus superioridades",
+    "TRIPLO CROSS FIRE o TRIELO": "TRIPLE CROSS FIRE o el TRIELO",
+    "Discoide e duplo discoide": "Discoide y doble discoide",
+    "Ressecção Segmentar": "Resección segmentaria",
+    "Deiscências intestinais - Como conduzir ?": "Dehiscencias intestinales — ¿cómo conducir?",
+    "urologista": "urólogo",
+    "ginecologista": "ginecóloga",
+    "fisioterapeuta pelvica": "fisioterapeuta pélvica",
+    "(01 hora e <br />20 min)": "(1 hora y<br />20 min)",
+    "(1 hora e <br />20 min)": "(1 hora y<br />20 min)",
+    "(01 hora e <br />10 min)": "(1 hora y<br />10 min)",
+    "(01 hora e 40 min)": "(1 hora y 40 min)",
+    "(01 hora e 10 min)": "(1 hora y 10 min)",
+    "(01 hora e <br />30 min)": "(1 hora y<br />30 min)",
+    "(01 hora e <br />45 minutos)": "(1 hora y<br />45 minutos)",
+    "hora e": "hora y",
+    "AUDITÓRIO A  - A Videocirurgia na Oncoginecologia": "AUDITORIO A - La Videocirugía en Oncoginecología",
+    "AUDITÓRIO B  - Curso Nutrição para pacientes com Endometriose": "AUDITORIO B - Curso de Nutrición para pacientes con Endometriosis",
+    "AUDITÓRIO C - Curso de USG Mapeamento de Endometriose": "AUDITORIO C - Curso de Ecografía de Mapeo de Endometriosis",
+    "FOYER - Curso de Sutura Dry Lab em sutura Endoscópica": "FOYER - Curso de Sutura Dry Lab en sutura Endoscópica",
+    "AULA 1": "CLASE 1",
+    "AULA 2": "CLASE 2",
+    "AULA 3": "CLASE 3",
+    "AULA 4": "CLASE 4",
+    "AULA 5": "CLASE 5",
+    "AULA 6": "CLASE 6",
+    "Bloco 1 - Fundamentos &amp; Anatomia Aplicada": "Bloque 1 - Fundamentos &amp; Anatomía Aplicada",
+    "Bloco 2 - Raciocínio Clínico e Prática de Consultório": "Bloque 2 - Razonamiento clínico y práctica de consultorio",
+    "Estação prática": "Estación práctica",
+    "Monitores:": "Monitores:",
+}
+
+ES_TITLES = {
+    "Você sabe onde passam os principais nervos pélvicos ? Qual a importância na Cirurgia complexa de Endometriose?": "¿Sabe por dónde pasan los principales nervios pélvicos? ¿Cuál es su importancia en la cirugía compleja de Endometriosis?",
+    "Principais lesões nervosas na Endometriose ? Quais os principais sintomas ?": "¿Principales lesiones nerviosas en la Endometriosis? ¿Cuáles son los principales síntomas?",
+    "Toda lesão nervosa por endometriose deve ser operada?": "¿Toda lesión nerviosa por endometriosis debe ser operada?",
+    "Vídeo Histeroscopia Ambulatorial qual o espaço até onde ir? Como minimizar o temor? <br />Como diminuir a dor?": "Video Histeroscopia Ambulatoria: ¿hasta dónde llegar? ¿Cómo minimizar el temor?<br />¿Cómo disminuir el dolor?",
+    "Hiperplasia Endometrial e Câncer de Endométrio. Ainda posso ser conservado e ? Até Quando ?": "Hiperplasia Endometrial y Cáncer de Endometrio. ¿Aún se puede ser conservador? ¿Hasta cuándo?",
+    "Utilizando a Histeroscopia para o tratamento da SUA (sangramento uterino anormal). <br />Onde se aplica ? Qual o limite ?": "Usando la Histeroscopia para el tratamiento del SUA (sangrado uterino anormal).<br />¿Dónde se aplica? ¿Cuál es el límite?",
+    "Como minimizar as complicações na Histeroscopia e se ocorrerem como lidar com elas ?": "¿Cómo minimizar las complicaciones en las Histeroscopias y, si ocurren, cómo manejarlas?",
+    "Os desafios da retenção de restos ovulares - Como a Histeroscopia pode ajudar?": "Los desafíos de la retención de restos ovulares — ¿Cómo puede ayudar la Histeroscopia?",
+    "Estratégias para Diminuir o Sangramento nas miomectomias - Qual a minha estratégia ?": "Estrategias para disminuir el sangrado en las miomectomías — ¿cuál es mi estrategia?",
+    "Extração de miomas - Existe a melhor técnica ?": "Extracción de miomas — ¿existe la mejor técnica?",
+    "Conversão cirúrgica em miomectomia - falha na indicação ou decisão correta ?": "Conversión quirúrgica en miomectomía — ¿falla en la indicación o decisión correcta?",
+    "Miomectomia - Qual a melhor incisão, o melhor ponto e o melhor  fio para uma cirurgia refinada , rápida e sem sangramentos ?": "Miomectomía — ¿cuál es la mejor incisión, el mejor punto y el mejor hilo para una cirugía refinada, rápida y sin sangrado?",
+    "Como a IA pode influenciar  sua conduta do consultório ao pós- cirúrgico?": "¿Cómo puede la IA influir en su conducta desde el consultorio al postoperatorio?",
+    "Complicações em cirurgias minimamente invasiva - Como eu devo conduzir?": "Complicaciones en cirugías mínimamente invasivas — ¿cómo debo conducir?",
+    "Como o uso da fluorescência me ajudou nesse caso": "Cómo el uso de la fluorescencia me ayudó en este caso",
+    "Tive que mudar minha estratégia no tratamento dessa doença intestinal": "Tuve que cambiar mi estrategia en el tratamiento de esa enfermedad intestinal",
+    "Minha estratégia para essa miomectomia difícil": "Mi estrategia para esa miomectomía difícil",
+    "Cerclagem Robótica . Quando? Tips e Truques ?": "Cerclaje Robótico. ¿Cuándo? ¿Tips y trucos?",
+    "Istmocele -Tratar por via laparoscópica, robótica ou Histeroscopia ?": "Istmocele — ¿tratar por vía laparoscópica, robótica o histeroscopia?",
+    "O que  não pode faltar na ultrassom  de mapeamento da endometriose ?<br />O que foi possível melhorar com a tecnologia ?": "¿Qué no puede faltar en la ecografía de mapeo de la endometriosis?<br />¿Qué se ha podido mejorar con la tecnología?",
+    "O que não pode faltar na ressonância para rastreio de endometriose ?": "¿Qué no puede faltar en la resonancia para el cribado de endometriosis?",
+    "Como a  reconstrução três D veio para trazer um  apoio ao cirurgião ? Te mostro na prática": "¿Cómo la reconstrucción 3D vino a dar apoyo al cirujano? Te lo muestro en la práctica",
+    "A IA substituirá o humano  no diagnóstico radiológico da endometriose?": "¿La IA sustituirá al humano en el diagnóstico radiológico de la endometriosis?",
+    "Impactos negativos da endometriose na sociedade . Como podemos reverter isso ?": "Impactos negativos de la endometriosis en la sociedad. ¿Cómo podemos revertir esto?",
+    "Métodos de Diagnóstico para endometriose o que já temos ? Quais as novas perspectivas?": "Métodos de diagnóstico para endometriosis — ¿qué tenemos ya? ¿Cuáles son las nuevas perspectivas?",
+    "Endometriose na adolescência: Como conduzo? Como evitar o excesso de cirurgias ?": "Endometriosis en la adolescencia: ¿cómo la conduzco? ¿Cómo evitar el exceso de cirugías?",
+    "Dor na relação sexual ,Vaginismo , dificuldades de relacionamento como sequela da endometriose . Como conduzir ?": "Dolor en la relación sexual, vaginismo, dificultades de relación como secuela de la endometriosis. ¿Cómo conducir?",
+    "Climatério E Menopausa na paciente com Endometriose. Como eu conduzo caso a caso?": "Climaterio y Menopausia en la paciente con Endometriosis. ¿Cómo conduzco caso por caso?",
+    "O que fazer primeiro na paciente com endometriose : FiV  antes e depois operar ou operar e depois a FIV ?": "¿Qué hacer primero en la paciente con endometriosis: FIV antes y después operar, u operar y después la FIV?",
+    "Na investigação Histeroscopica da mulher infértil : O que devo procurar ? Como tratar ?": "En la investigación histeroscópica de la mujer infértil: ¿qué debo buscar? ¿Cómo tratar?",
+    "O desafio do manejo das malformações uterinas: do diagnóstico à escolha da via ideal de abordagem. Qual a melhor estratégia cirúrgica?": "El desafío del manejo de las malformaciones uterinas: del diagnóstico a la elección de la vía ideal de abordaje. ¿Cuál es la mejor estrategia quirúrgica?",
+    "Da implantação até o parto - Muda alguma coisa no acompanhamento da mulher que cursa com endometriose e infertilidade ?": "De la implantación al parto — ¿cambia algo en el seguimiento de la mujer que cursa con endometriosis e infertilidad?",
+    "Cirurgia Robótica na Ginecologia e outras tecnologias associadas- <br />Que benefícios já temos comprovado ?": "Cirugía Robótica en la Ginecología y otras tecnologías asociadas —<br />¿Qué beneficios ya tenemos comprobados?",
+    "Protocolo ERAS - Se aplica mesmo em cirurgias de alta complexidade ?": "Protocolo ERAS - ¿Se aplica incluso en cirugías de alta complejidad?",
+    "Manejo clínico da dor - O que temos de novo ? Canabbis? <br />E no manejo avançado da dor o que temos de novo ?": "Manejo clínico del dolor - ¿Qué hay de nuevo? ¿Cannabis?<br />¿Y en el manejo avanzado del dolor qué hay de nuevo?",
+    "Lições pra vida: A sobrevida do cirurgião Videolaparoscopico  e  Robótico  da ergonomia à saúde mental": "Lecciones para la vida: La supervivencia del cirujano videolaparoscópico y robótico — de la ergonomía a la salud mental",
+    "Lições pra vida: Decidir é mais difícil do que operar": "Lecciones para la vida: Decidir es más difícil que operar",
+    "Tratamento da endometriose ureteral, em pelves congeladas existe uma melhor técnica?  <br />Existe superioridade na via de abordagem ?": "Tratamiento de la endometriosis ureteral — en pelvis congeladas, ¿existe una mejor técnica?<br />¿Existe superioridad en la vía de abordaje?",
+    "Lesão vesical - limites da ressecção. Existem repercussões a longo prazo?": "Lesión vesical — límites de la resección. ¿Existen repercusiones a largo plazo?",
+    "Quando a dor pélvica é muito mais do que a endometriose": "Cuándo el dolor pélvico es mucho más que la endometriosis",
+    "PBM ( patient blood Management) Como o preparar o paciente para cirugia? Até quando  tolerar a anemia ? Como otimizar seus resultados cirúrgicos ?": "PBM (Patient Blood Management) — ¿Cómo preparar al paciente para la cirugía? ¿Hasta cuándo tolerar la anemia? ¿Cómo optimizar sus resultados quirúrgicos?",
+    "A melhor dieta para paciente com endometriose ? Ha espaço para suplementos?": "¿La mejor dieta para la paciente con endometriosis? ¿Hay espacio para suplementos?",
+    "Fisioterapia Pélvica antes e após a cirurgia. Que resultados temos comprovados ?": "Fisioterapia pélvica antes y después de la cirugía. ¿Qué resultados tenemos comprobados?",
+    "A acupuntura como tratamento adjuvante nas patologias ginecológicas.": "La acupuntura como tratamiento adyuvante en las patologías ginecológicas.",
+    "Os impactos da atividade física no tratamento da endometriose. <br />Qual o melhor exercício ?": "Los impactos de la actividad física en el tratamiento de la endometriosis.<br />¿Cuál es el mejor ejercicio?",
+    "Estudo Urodinâmico Quando pedir? Como interpretar?": "Estudio urodinámico — ¿cuándo solicitar? ¿cómo interpretar?",
+    "Tratamento das distopias genitais - Qual a melhor técnica ? E os resultados ? Eu te mostro na prática": "Tratamiento de las distopias genitales — ¿cuál es la mejor técnica? ¿Y los resultados? Te lo muestro en la práctica",
+    "Incontinecia Urinária - Como conduzir ? Qual a hora de operar ? Vou te mostrar na prática": "Incontinencia urinaria — ¿cómo conducir? ¿cuál es el momento de operar? Te lo mostraré en la práctica",
+    "Histeroscopia e histerectomia laparoscópica: Achados clínicos e pacientes de risco oncológico": "Histeroscopia e histerectomía laparoscópica: Hallazgos clínicos y pacientes de riesgo oncológico",
+    "Endometriose Intestinal ou câncer colorretal? Quando o achado deve mudar nossa conduta?": "¿Endometriosis intestinal o cáncer colorrectal? ¿Cuándo el hallazgo debe cambiar nuestra conducta?",
+    "Efeitos dos tratamentos em Oncologia para cirurgiões: Radioterapia": "Efectos de los tratamientos en Oncología para cirujanos: Radioterapia",
+    "Efeito dos tratamentos oncológicos para os cirurgiões: Químio e Imunoterapia": "Efecto de los tratamientos oncológicos para los cirujanos: Quimio e inmunoterapia",
+    "ACHADOS SUSPEITOS vistos a RNM": "HALLAZGOS SOSPECHOSOS vistos en RM",
+    "Evidências sobre dieta anti-inflamatória e sintomas.": "Evidencias sobre dieta antiinflamatoria y síntomas.",
+    "Ambiente Metabólico e Sucesso Reprodutivo": "Ambiente metabólico y éxito reproductivo",
+    "Relação entre resistência insulínica, obesidade e fertilidade.": "Relación entre resistencia insulínica, obesidad y fertilidad.",
+    "Estratégias nutricionais para otimizar ambiente metabólico.": "Estrategias nutricionales para optimizar el ambiente metabólico.",
+    "Casos clínicos: infertilidade associada a síndrome metabólica.": "Casos clínicos: infertilidad asociada al síndrome metabólico.",
+    "Nutrição Modulando a Inflamação": "Nutrición modulando la inflamación",
+    "Nutrientes e compostos bioativos com ação anti-inflamatória.": "Nutrientes y compuestos bioactivos con acción antiinflamatoria.",
+    "Papel dos ácidos graxos ômega-3, antioxidantes e fibras.": "Papel de los ácidos grasos omega-3, antioxidantes y fibras.",
+    "Casos clínicos: pacientes com endometriose e inflamação sistêmica.": "Casos clínicos: pacientes con endometriosis e inflamación sistémica.",
+    "Protocolo Nutricional Perioperatório": "Protocolo nutricional perioperatorio",
+    "Preparação nutricional para cirurgia de endometriose.": "Preparación nutricional para cirugía de endometriosis.",
+    "Estratégias para reduzir complicações e acelerar recuperação.": "Estrategias para reducir complicaciones y acelerar la recuperación.",
+    "Caso clínico: pacientes em pré e pós-operatório.": "Caso clínico: pacientes en pre y postoperatorio.",
+    "Dores Pélvicas e Abordagem Nutricional": "Dolores pélvicos y abordaje nutricional",
+    "Relação entre dor crônica e dieta.": "Relación entre dolor crónico y dieta.",
+    "Intervenções nutricionais para melhora da qualidade de vida.": "Intervenciones nutricionales para mejorar la calidad de vida.",
+    "Casos clínico: pacientes com dor pélvica refratária.": "Casos clínicos: pacientes con dolor pélvico refractario.",
+    "Suplementação Farmacoterápica nas Diferentes Fases da Endometriose": "Suplementación farmacoterápica en las diferentes fases de la Endometriosis",
+    "Suplementos com evidência científica (vitamina D, antioxidantes, probióticos).": "Suplementos con evidencia científica (vitamina D, antioxidantes, probióticos).",
+    "Ajustes conforme fase da doença e tratamento médico.": "Ajustes según la fase de la enfermedad y el tratamiento médico.",
+    "Prática: Elaborando uma prescrição assertiva": "Práctica: Elaborando una prescripción asertiva",
+    "Anatomia ultrassonografica da pelve aplicada ao mapeamento da endometriose": "Anatomía ultrasonográfica de la pelvis aplicada al mapeo de la endometriosis",
+    "Conceitos diagnósticos: fundamentos essenciais no mapeamento da endometriose": "Conceptos diagnósticos: fundamentos esenciales en el mapeo de la endometriosis",
+    "Compartimento médio: avaliação sistemática e principais achados": "Compartimento medio: evaluación sistemática y principales hallazgos",
+    "Compartimento anterior: como reconhecer o acometimento e evitar armadilhas": "Compartimento anterior: cómo reconocer el acometimiento y evitar trampas",
+    "Compartimento posterior: passo a passo na avaliação do espaço retrocervical": "Compartimento posterior: paso a paso en la evaluación del espacio retrocervical",
+    "Endometriose intestinal: conceitos essenciais": "Endometriosis intestinal: conceptos esenciales",
+    "Compartimento lateral: como não perder lesões": "Compartimento lateral: cómo no perder lesiones",
+    "Ressonância magnética na endometriose: da anatomia normal aos padrões clássicos de doença": "Resonancia magnética en la endometriosis: de la anatomía normal a los patrones clásicos de enfermedad",
+    "Do exame ao laudo: como transformar imagens em informações que mudam a conduta clínica": "Del examen al informe: cómo transformar imágenes en información que cambia la conducta clínica",
+    "Regras básicas de posição de agulha e fio - Nomenclatura e sistematização de agulha": "Reglas básicas de posición de aguja e hilo - Nomenclatura y sistematización de aguja",
+    "Teoria do Ponto perfeito e passagem de agulha": "Teoría del Punto perfecto y paso de aguja",
+    "Aplicação prática de sutura em videos: Fechamento de cúpula vaginal e miomectomias": "Aplicación práctica de sutura en videos: Cierre de cúpula vaginal y miomectomías",
+    "Sistematização de 1 grau e acordar as mãos": "Sistematización de 1er grado y despertar las manos",
+    "Sistematizaçoes e Cruz de verificaçao": "Sistematizaciones y Cruz de verificación",
+    "O Ponto Perfeito": "El Punto Perfecto",
+    "Teoria dos nós: Nó quadrado e semi-chaves": "Teoría de los nudos: Nudo cuadrado y medio nudos",
+    "Segurança dos nós": "Seguridad de los nudos",
+    "Os nós da minha preferência - Aplicação dos nós em cada tipo de tecido e cirurgia": "Los nudos de mi preferencia - Aplicación de los nudos en cada tipo de tejido y cirugía",
+    "Triplo Duplo - Monomanual e bimanual": "Triple Doble - Monomanual y bimanual",
+    "Sequência de semi-chaves bloqueantes": "Secuencia de medio nudos bloqueantes",
+    "Competição - Prêmio": "Competición - Premio",
+}
+
+
+def apply_map(text: str, mapping: dict[str, str]) -> str:
+    for src, dst in sorted(mapping.items(), key=lambda item: len(item[0]), reverse=True):
+        text = text.replace(src, dst)
+    return text
+
+
+def extract_pt_bodies(html: str) -> dict[str, str]:
+    pt = html[: html.index("const translations")]
+    out = {}
+    for key in KEYS:
+        match = re.search(rf'<tbody data-i18n="{re.escape(key)}">(.*?)</tbody>', pt, re.S)
+        if not match:
+            raise SystemExit(f"PT tbody {key} not found")
+        out[key] = match.group(1)
+    return out
 
 
 def replace_lang_block(html: str, lang: str, updates: dict[str, str]) -> str:
-    # Find the language object: en: { ... }, or es: { ... },
-    lang_pat = rf"({lang}:\s*\{{)"
-    m = re.search(lang_pat, html)
-    if not m:
+    match = re.search(rf"({lang}:\s*\{{)", html)
+    if not match:
         raise SystemExit(f"language block {lang} not found")
-    start = m.start()
-    # Find matching closing brace of this language object by nesting count from m.end()-1
-    i = m.end() - 1
+    start = match.start()
+    i = match.end() - 1
     depth = 0
     end = None
     while i < len(html):
@@ -277,7 +437,13 @@ def replace_lang_block(html: str, lang: str, updates: dict[str, str]) -> str:
     block = html[start:end]
     for key, value in updates.items():
         pattern = rf'("{re.escape(key)}":\s*`)(.*?)(`)'
-        block, n = re.subn(pattern, lambda m, v=value: f"{m.group(1)}{v}{m.group(3)}", block, count=1, flags=re.S)
+        block, n = re.subn(
+            pattern,
+            lambda m, v=value: f"{m.group(1)}{v}{m.group(3)}",
+            block,
+            count=1,
+            flags=re.S,
+        )
         if n != 1:
             raise SystemExit(f"{lang}.{key} replace failed ({n})")
     return html[:start] + block + html[end:]
@@ -285,10 +451,18 @@ def replace_lang_block(html: str, lang: str, updates: dict[str, str]) -> str:
 
 def main():
     html = INDEX.read_text(encoding="utf-8")
-    html = replace_lang_block(html, "en", EN)
-    html = replace_lang_block(html, "es", ES)
+    pt_bodies = extract_pt_bodies(html)
+    en = {key: apply_map(apply_map(body, EN_TITLES), EN_PHRASES) for key, body in pt_bodies.items()}
+    es = {key: apply_map(apply_map(body, ES_TITLES), ES_PHRASES) for key, body in pt_bodies.items()}
+    for lang, bodies in (("en", en), ("es", es)):
+        for key, body in bodies.items():
+            pt_trs = pt_bodies[key].count("<tr>")
+            if body.count("<tr>") != pt_trs:
+                raise SystemExit(f"{lang}.{key} tr mismatch: {body.count('<tr>')} vs PT {pt_trs}")
+    html = replace_lang_block(html, "en", en)
+    html = replace_lang_block(html, "es", es)
     INDEX.write_text(html, encoding="utf-8")
-    print("Patched EN/ES schedule i18n keys:", ", ".join(EN))
+    print("Patched EN/ES schedule i18n keys:", ", ".join(KEYS))
 
 
 if __name__ == "__main__":

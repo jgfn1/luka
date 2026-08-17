@@ -124,9 +124,7 @@ def tr_row(time: str, activity: str, speaker: str) -> str:
                 f'<tr><td colspan="3" class="session-break">'
                 f"<strong>{br(time)}</strong></td></tr>"
             )
-        return (
-            f'<tr><td colspan="3" class="session-header">{br(time)}</td></tr>'
-        )
+        return f"<tr><td>{br(time)}</td><td></td><td></td></tr>"
 
     if kind == "break" and not speaker:
         if time:
@@ -246,10 +244,10 @@ def parse_precongress_section(csv_path: Path):
         activity = row[1] if len(row) > 1 else ""
         speaker = row[2] if len(row) > 2 else ""
 
-        upper = (time + activity).upper()
-        if "PRÉ CONGRESSO" in upper or "PRE CONGRESSO" in upper:
+        t_upper = time.upper()
+        if "PRÉ CONGRESSO" in t_upper or "PRE CONGRESSO" in t_upper:
             continue
-        if "CONGRESSO ENDOGINECO" in upper:
+        if "CONGRESSO ENDOGINECO" in t_upper:
             continue
         if time.strip().lower() in ("horário", "horario"):
             started = True
