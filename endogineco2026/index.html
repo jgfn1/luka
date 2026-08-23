@@ -244,9 +244,13 @@
       }
       header.hero .hero-main { width: 100%; }
 
-      header.hero .hero-logo-wrap { position: relative; display: inline-block; margin-bottom: clamp(1.75rem, 4.2vh, 3.25rem); }
+      header.hero .hero-logo-wrap {
+        position: relative; display: inline-block;
+        margin-bottom: clamp(1.75rem, 4.2vh, 3.25rem);
+        transform: translateX(-15px);
+      }
       header.hero .hero-logo-wrap::before {
-        content: ""; position: absolute; inset: -16px -32px; border-radius: 50%;
+        content: ""; position: absolute; inset: -16px -52px -16px -22px; border-radius: 50%;
         border: 1.5px solid rgba(240,160,32,.35); animation: ring-pulse 3s ease-in-out infinite;
         pointer-events: none;
       }
@@ -1198,7 +1202,8 @@
       @media (max-height: 820px) and (min-width: 861px) {
         header.hero { padding: 5.8rem 1.25rem 3.25rem; }
         header.hero .hero-logo { max-height: clamp(120px, 18vh, 190px); }
-        header.hero .hero-logo-wrap::before { inset: -14px -28px; }
+        header.hero .hero-logo-wrap { transform: translateX(-12px); }
+        header.hero .hero-logo-wrap::before { inset: -14px -44px -14px -20px; }
         .hero-scroll { display: none; }
       }
 
