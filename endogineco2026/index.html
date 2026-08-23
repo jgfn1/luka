@@ -220,9 +220,9 @@
 
       /* ── HERO ── */
       header.hero {
-        position: relative; min-height: 100svh; color: #fff;
-        display: flex; align-items: center; justify-content: center;
-        text-align: center; padding: 110px 1.5rem 5rem; overflow: hidden;
+        position: relative; min-height: 100svh; height: 100svh; color: #fff;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        text-align: center; padding: 6.5rem 1.5rem 4rem; overflow: hidden;
       }
       header.hero .hero-bg {
         position: absolute; inset: 0; z-index: 0;
@@ -237,22 +237,29 @@
         position: absolute; inset: 0; z-index: 1; pointer-events: none;
         background: linear-gradient(to bottom, transparent 70%, rgba(2,5,15,.55) 100%);
       }
-      header.hero .hero-content { position: relative; z-index: 2; max-width: 960px; width: 100%; }
+      header.hero .hero-content {
+        position: relative; z-index: 2; max-width: 1100px; width: 100%;
+        flex: 0 1 auto;
+        display: flex; flex-direction: column; align-items: center;
+      }
+      header.hero .hero-main { width: 100%; }
 
-      header.hero .hero-logo-wrap { position: relative; display: inline-block; margin-bottom: 1.75rem; }
+      header.hero .hero-logo-wrap { position: relative; display: inline-block; margin-bottom: clamp(1.75rem, 4.2vh, 3.25rem); }
       header.hero .hero-logo-wrap::before {
-        content: ""; position: absolute; inset: -16px; border-radius: 50%;
+        content: ""; position: absolute; inset: -16px -32px; border-radius: 50%;
         border: 1.5px solid rgba(240,160,32,.35); animation: ring-pulse 3s ease-in-out infinite;
+        pointer-events: none;
       }
       @keyframes ring-pulse { 0%, 100% { transform: scale(1); opacity: .6; } 50% { transform: scale(1.06); opacity: .2; } }
       header.hero .hero-logo {
-        max-width: 320px; width: 75%; height: auto; display: block;
+        max-width: 260px; width: min(70vw, 260px); max-height: clamp(132px, 20vh, 220px);
+        height: auto; display: block; margin-inline: auto;
         animation: logo-float 6s ease-in-out infinite;
         filter: drop-shadow(0 8px 28px rgba(0,0,0,.40));
       }
       @keyframes logo-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
-      .hero-chips { display: flex; flex-wrap: wrap; gap: .65rem; justify-content: center; margin-bottom: 2rem; }
+      .hero-chips { display: flex; flex-wrap: nowrap; gap: .65rem; justify-content: center; margin-bottom: clamp(1.25rem, 3.4vh, 2.6rem); }
       .hero-chip {
         display: inline-flex; align-items: center; gap: .45rem;
         background: rgba(255,255,255,.10); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
@@ -266,33 +273,82 @@
 
       header.hero p { color: rgba(232,240,255,.9); font-size: 1.1rem; margin-bottom: 2rem; text-shadow: 0 2px 8px rgba(0,0,0,.2); }
 
-      /* Hero logos two-column */
+      /* Hero logos: Realização + Apoio on one row when width allows */
       .hero-logos-section {
-        margin-top: 2.25rem; padding-top: 1.75rem;
+        margin-top: clamp(1.65rem, 4.8vh, 3.5rem); padding-top: clamp(1.5rem, 4.2vh, 3.1rem); width: 100%;
         border-top: 1px solid rgba(255,255,255,.20);
       }
       .hero-logos-cols {
-        display: grid; grid-template-columns: 1fr 1px 1fr;
-        gap: 0 1.5rem; align-items: start; max-width: 700px; margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+        align-items: start;
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
       }
-      .hero-logos-col-divider { background: rgba(255,255,255,.18); margin: 0; width: 1px; align-self: stretch; }
-      .hero-logos-col { padding: 0 .5rem; }
-      .hero-logos-col h3 {
+      .hero-logos-col-divider { background: rgba(255,255,255,.18); width: 1px; align-self: stretch; }
+      .hero-logos-col { padding: 0 1.15rem; min-width: 0; }
+      .hero-logos-col h3,
+      .hero-sponsors h3 {
         color: rgba(255,255,255,.75); font-size: .72rem; font-weight: 700;
-        text-transform: uppercase; letter-spacing: .14em; margin-bottom: 1.1rem; margin-top: 0;
+        text-transform: uppercase; letter-spacing: .14em; margin-bottom: clamp(.85rem, 1.8vh, 1.25rem); margin-top: 0;
       }
       .hero-logo-grid {
-        display: flex; flex-wrap: wrap; gap: 1rem 1.75rem;
+        display: flex; flex-wrap: nowrap; gap: .7rem 1rem;
         align-items: center; justify-content: center;
       }
       .hero-logo-grid img {
-        max-width: 132px; max-height: 52px; width: auto; height: auto; object-fit: contain;
+        width: auto; height: auto; object-fit: contain;
         filter: drop-shadow(0 2px 10px rgba(0,0,0,.35));
         opacity: 1; transition: opacity .2s, transform .2s;
+      }
+      .hero-logos-col--realization .hero-logo-grid img {
+        max-width: calc((100% - 2rem) / 3);
+        max-height: 46px;
+      }
+      .hero-logos-col--support .hero-logo-grid img {
+        max-width: calc((100% - 3rem) / 4);
+        max-height: 42px;
       }
       .hero-logo-grid img:hover { opacity: .95; transform: scale(1.03); }
       .hero-logos-col .coming-soon-text {
         color: rgba(255,255,255,.45); font-size: .78rem; font-style: italic; margin: 0; text-align: center;
+      }
+
+      .hero-sponsors { margin-top: clamp(1.4rem, 3.8vh, 2.85rem); padding-top: 0; border-top: none; }
+      .hero-sponsors-carousel {
+        overflow: hidden;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
+        mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
+      }
+      .hero-sponsors-track {
+        display: flex; align-items: center; width: max-content;
+        padding: .15rem 0;
+        animation: hero-sponsors-scroll 28s linear infinite;
+      }
+      .hero-sponsors-set {
+        display: flex; align-items: center;
+        gap: 2.85rem;
+        padding-right: 2.85rem;
+      }
+      .hero-sponsors-carousel:hover .hero-sponsors-track,
+      .hero-sponsors-carousel:focus-within .hero-sponsors-track {
+        animation-play-state: paused;
+      }
+      .hero-sponsor-card {
+        flex: 0 0 auto;
+        display: flex; align-items: center; justify-content: center;
+        background: none;
+        padding: 0;
+        min-width: 0;
+      }
+      .hero-sponsor-card img {
+        max-width: 148px; max-height: 40px; width: auto; height: auto; object-fit: contain;
+        filter: drop-shadow(0 2px 10px rgba(0,0,0,.35));
+      }
+      @keyframes hero-sponsors-scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
       }
 
       .hero-scroll {
@@ -327,7 +383,7 @@
       }
       .btn-outline:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.85); color: #fff !important; }
 
-      .btn-group { display: flex; flex-wrap: wrap; gap: .85rem; justify-content: center; }
+      .btn-group { display: flex; flex-wrap: nowrap; gap: .85rem; justify-content: center; }
 
       .btn-section-cta {
         display: inline-flex; align-items: center; gap: .5rem;
@@ -693,9 +749,30 @@
       .committee-item p { font-size: .82rem; color: var(--muted-text); margin: 0; }
 
       /* ── SPONSORS ── */
-      .sponsors-grid { display: flex; flex-wrap: wrap; gap: 2.5rem; margin: 2rem auto; align-items: center; justify-content: center; max-width: 900px; min-height: 6rem; }
-      .sponsor-item img { max-width: 180px; max-height: 68px; width: auto; height: auto; object-fit: contain; filter: grayscale(.15); transition: filter .2s; opacity: .85; }
-      .sponsor-item img:hover { filter: none; opacity: 1; }
+      .sponsors-grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 1.15rem 1.15rem;
+        margin: 2rem auto 0;
+        align-items: stretch;
+        justify-content: center;
+        max-width: 1140px;
+      }
+      .sponsor-item {
+        display: flex; align-items: center; justify-content: center;
+        background: #fff;
+        border: 1px solid rgba(26,56,112,.08);
+        border-radius: var(--r-md);
+        padding: .3rem .4rem;
+        height: 88px;
+        box-shadow: var(--shadow-xs);
+        transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+      }
+      .sponsor-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+      .sponsor-item img {
+        width: 100%; height: 100%; object-fit: contain;
+        filter: none; opacity: 1;
+      }
 
       /* ── MAP ── */
       .map-frame { border: 0; width: 100%; height: 420px; border-radius: var(--r-md); box-shadow: var(--shadow-md); display: block; }
@@ -967,9 +1044,16 @@
       @media (max-width: 1024px) {
         .sobre-layout { grid-template-columns: 1fr; gap: 2.5rem; }
         .dvs-outer { height: 320px; }
-        .hero-logos-cols { grid-template-columns: 1fr; gap: 1.5rem; }
-        .hero-logos-col-divider { display: none; }
         .footer-inner-wide { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      }
+      @media (max-width: 860px) {
+        header.hero { height: auto; min-height: 100svh; max-height: none; overflow: visible; }
+        .hero-chips, .btn-group { flex-wrap: wrap; }
+        .hero-logos-cols { grid-template-columns: 1fr; gap: 1.35rem; }
+        .hero-logos-col-divider { display: none; }
+        .hero-logo-grid { flex-wrap: wrap; }
+        .sponsors-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .sponsor-item { height: 92px; }
       }
       /* Collapse nav before mid-width desktop overflow (~half of 1920px) */
       @media (max-width: 1100px) {
@@ -1055,8 +1139,8 @@
         nav ul li a::after { display: none; }
         .mobile-menu-toggle { display: flex; }
         .nav-actions .nav-cta { display: none; }
-        header.hero { min-height: 100svh; padding: 90px 1rem 4rem; }
-        header.hero .hero-logo { max-width: 240px; }
+        header.hero { padding: 5.75rem 1rem 3rem; }
+        header.hero .hero-logo { max-width: 220px; max-height: 170px; }
         .hero-chip { font-size: .78rem; padding: .4rem .9rem; }
         .hero-scroll { display: none; }
         h1 { font-size: 1.75rem; }
@@ -1095,6 +1179,8 @@
         .hero-chips { gap: .45rem; }
         .hero-chip { font-size: .74rem; padding: .35rem .8rem; }
         .btn-group { gap: .6rem; }
+        .sponsors-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; }
+        .sponsor-item { height: 80px; padding: .25rem .35rem; }
         .btn-primary, .btn-outline { font-size: .9rem; padding: .85rem 1.6rem; }
         .netflix-card { flex: 0 0 155px; height: 235px; }
         #precongresso-carousel .netflix-card {
@@ -1109,8 +1195,17 @@
         .netflix-arrow { width: 32px; height: 32px; font-size: 1rem; }
       }
 
+      @media (max-height: 820px) and (min-width: 861px) {
+        header.hero { padding: 5.8rem 1.25rem 3.25rem; }
+        header.hero .hero-logo { max-height: clamp(120px, 18vh, 190px); }
+        header.hero .hero-logo-wrap::before { inset: -14px -28px; }
+        .hero-scroll { display: none; }
+      }
+
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+        .hero-sponsors-track { animation: none; }
+        .hero-sponsors-carousel { overflow-x: auto; -webkit-overflow-scrolling: touch; }
       }
     </style>
   </head>
@@ -1167,6 +1262,7 @@
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
 
+        <div class="hero-main">
         <div class="hero-logo-wrap">
           <img src="assets/logo-endogineco.png" alt="Congresso Internacional Endogineco 2026" class="hero-logo" fetchpriority="high" />
         </div>
@@ -1195,40 +1291,59 @@
           </a>
           <a class="btn-outline" href="#programacao" data-i18n="hero.btnSchedule">Programação Congresso</a>
         </div>
+        </div>
 
-        <!-- Logos section: two columns -->
+        <!-- Logos: Realização + Apoio na mesma linha; Patrocinadores em carrossel -->
         <div class="hero-logos-section">
           <div class="hero-logos-cols">
-            <div class="hero-logos-col">
+            <div class="hero-logos-col hero-logos-col--realization">
               <h3 data-i18n="hero.realization">Realização</h3>
               <div class="hero-logo-grid">
                 <img src="organizers/logo-isep.png" alt="ISEP" loading="eager" />
-                <img src="organizers/logo-hospital-santa-joana.png" alt="Hospital Santa Joana" loading="eager" />
+                <img src="organizers/logo-hospital-santa-joana.png" alt="Hospital Santa Joana Recife" loading="eager" />
                 <img src="organizers/logo-rede-americas.png" alt="Rede Américas" loading="eager" />
               </div>
             </div>
             <div class="hero-logos-col-divider" aria-hidden="true"></div>
-            <div class="hero-logos-col">
+            <div class="hero-logos-col hero-logos-col--support">
               <h3 data-i18n="hero.support">Apoio Institucional</h3>
               <div class="hero-logo-grid">
                 <img src="institutional-support/gimi.png" alt="GIMI" loading="eager" />
                 <img src="institutional-support/sogope.png" alt="SOGOPE" loading="eager" />
+                <img src="institutional-support/copego.png" alt="COPEGO" loading="eager" />
+                <img src="institutional-support/sobracil.png" alt="SOBRACIL" loading="eager" />
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-sponsors">
+            <h3 data-i18n="hero.sponsors">Patrocinadores</h3>
+            <div class="hero-sponsors-carousel" aria-label="Logotipos dos patrocinadores">
+              <div class="hero-sponsors-track" id="hero-sponsors-track">
+                <div class="hero-sponsors-set">
+                  <div class="hero-sponsor-card"><img src="sponsors/zydus.png" alt="Zydus" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/marlex.png" alt="Marlex" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/premium-tech.png" alt="Premium Tech" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/kiron.png" alt="Kiron" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/taimin.png" alt="Taimin" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/endosurgical.png" alt="Endosurgical" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/medere.png" alt="Medere" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/panther2.png" alt="Panther Healthcare" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/j-e-j.png" alt="Johnson &amp; Johnson MedTech" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/bayer-horizontal.png" alt="Bayer" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/baxter.png" alt="Baxter" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/steincares-branco.png" alt="SteinCares" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/safety-cirurgica-horizontal.png" alt="Safety Cirúrgica" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/support-care.png" alt="Support Care" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/e-tamussino-horizontal.png" alt="E. Tamussino &amp; Cia" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/re9-medical.png" alt="Re9 Medical" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/ur-55-anos.png" alt="Unimed Recife" /></div>
+                  <div class="hero-sponsor-card"><img src="sponsors/uro-surgery2.png" alt="Uro Surgery" /></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- ======================================================
-             CARROSSEL DE PATROCINADORES — descomenta quando tiver os logos
-             ======================================================
-        <div class="sponsors-marquee" style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,.15); overflow: hidden;">
-          <div class="sponsors-marquee-track" style="display: flex; gap: 2.5rem; animation: marquee-scroll 30s linear infinite;">
-            <img src="sponsors/patrocinador-1.png" alt="Patrocinador" style="max-height: 40px; filter: brightness(0) invert(1); opacity: .7;" />
-            <img src="sponsors/patrocinador-2.png" alt="Patrocinador" style="max-height: 40px; filter: brightness(0) invert(1); opacity: .7;" />
-          </div>
-        </div>
-        @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        -->
 
       </div>
 
@@ -2463,7 +2578,26 @@
     <section id="patrocinadores" class="section-light fade-in">
       <div class="container text-center">
         <h2 class="section-title" style="display:block" data-i18n="sponsors.title">Patrocinadores</h2>
-        <div class="sponsors-grid"></div>
+        <div class="sponsors-grid">
+          <div class="sponsor-item"><img src="sponsors/zydus.png" alt="Zydus" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/marlex.png" alt="Marlex" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/premium-tech.png" alt="Premium Tech" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/kiron.png" alt="Kiron" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/taimin.png" alt="Taimin" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/endosurgical.png" alt="Endosurgical" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/medere.png" alt="Medere" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/panther2.png" alt="Panther Healthcare" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/j-e-j.png" alt="Johnson &amp; Johnson MedTech" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/bayer.png" alt="Bayer" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/baxter.png" alt="Baxter" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/steincares-azul.png" alt="SteinCares" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/safety-cirurgica-horizontal.png" alt="Safety Cirúrgica" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/support-care.png" alt="Support Care" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/e-tamussino-horizontal.png" alt="E. Tamussino &amp; Cia" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/re9-medical.png" alt="Re9 Medical" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/ur-55-anos.png" alt="Unimed Recife" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/uro-surgery2.png" alt="Uro Surgery" loading="lazy" /></div>
+        </div>
       </div>
     </section>
 
@@ -2627,6 +2761,18 @@
         { threshold: 0.08, rootMargin: "0px 0px -48px 0px" }
       );
       document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+
+      /* ── Hero sponsors: duplicate set for seamless marquee ── */
+      (function duplicateHeroSponsors() {
+        const track = document.getElementById("hero-sponsors-track");
+        const set = track && track.querySelector(".hero-sponsors-set");
+        if (!set || track.dataset.duplicated === "true") return;
+        const clone = set.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        clone.querySelectorAll("img").forEach((img) => { img.alt = ""; });
+        track.appendChild(clone);
+        track.dataset.duplicated = "true";
+      })();
 
       /* ── Stagger for committee cards ── */
       const cardObserver = new IntersectionObserver(
@@ -3199,6 +3345,7 @@
           "hero.btnSchedule": "Congress Program",
           "hero.realization": "Organized by",
           "hero.support": "Institutional Support",
+          "hero.sponsors": "Sponsors",
           "about.eyebrow": "About the event",
           "about.title": "The Endogineco Congress 2026",
           "about.p1":
@@ -3759,6 +3906,7 @@
           "hero.btnSchedule": "Programa del Congreso",
           "hero.realization": "Organización",
           "hero.support": "Apoyo Institucional",
+          "hero.sponsors": "Patrocinadores",
           "about.eyebrow": "Sobre el evento",
           "about.title": "El Congreso Endogineco 2026",
           "about.p1":
