@@ -321,47 +321,20 @@
       }
 
       .hero-sponsors { margin-top: clamp(1.4rem, 3.8vh, 2.85rem); padding-top: 0; border-top: none; }
-      /* TMP local: botão de teste da faixa — excluir depois */
-      .hero-sponsors-variant-toggle {
-        position: fixed; right: 1rem; bottom: 1rem; z-index: 2000;
-        font-family: "Montserrat", sans-serif; font-size: .72rem; font-weight: 700;
-        letter-spacing: .04em; text-transform: uppercase;
-        color: var(--navy-dark); background: var(--gold);
-        border: none; border-radius: 99px; padding: .55rem 1rem;
-        box-shadow: 0 4px 16px rgba(0,0,0,.28); cursor: pointer;
-      }
       .hero-sponsors-carousel {
-        position: relative;
         overflow: hidden;
-        padding: .7rem 0 .75rem;
-        margin: -.7rem 0 -.75rem;
-        border-radius: 16px;
-        background: #fff;
-        transition: background .45s ease, padding .45s ease, margin .45s ease, border-radius .45s ease;
-        -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
-        mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
-      }
-      .hero-sponsors-carousel::before {
-        content: "";
-        position: absolute; inset: 0; z-index: 0; pointer-events: none;
-        opacity: 0;
+        padding: .95rem 0 1rem;
+        margin: -.95rem 0 -1rem;
         background:
           radial-gradient(ellipse 82% 68% at 50% 50%,
             rgba(236, 242, 252, .86) 0%,
             rgba(232, 240, 255, .5) 54%,
             rgba(232, 240, 255, .1) 78%,
             transparent 100%);
-        transition: opacity .45s ease;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+        mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
       }
-      .hero-sponsors-carousel.is-frost {
-        background: transparent;
-        padding: .95rem 0 1rem;
-        margin: -.95rem 0 -1rem;
-        border-radius: 0;
-      }
-      .hero-sponsors-carousel.is-frost::before { opacity: 1; }
       .hero-sponsors-track {
-        position: relative; z-index: 1;
         display: flex; align-items: center; width: max-content;
         padding: .15rem 0;
         animation: hero-sponsors-scroll 28s linear infinite;
@@ -384,10 +357,6 @@
       }
       .hero-sponsor-card img {
         max-width: 148px; max-height: 40px; width: auto; height: auto; object-fit: contain;
-        filter: none;
-        transition: filter .45s ease;
-      }
-      .hero-sponsors-carousel.is-frost .hero-sponsor-card img {
         filter: drop-shadow(0 1px 6px rgba(16, 36, 80, .12));
       }
       @keyframes hero-sponsors-scroll {
@@ -1363,8 +1332,6 @@
 
           <div class="hero-sponsors">
             <h3 data-i18n="hero.sponsors">Patrocinadores</h3>
-            <!-- TMP local: botão de teste da faixa — excluir depois -->
-            <button type="button" class="hero-sponsors-variant-toggle" id="hero-sponsors-variant-toggle">Ver faixa gelo</button>
             <div class="hero-sponsors-carousel" aria-label="Logotipos dos patrocinadores">
               <div class="hero-sponsors-track" id="hero-sponsors-track">
                 <div class="hero-sponsors-set">
@@ -2807,17 +2774,6 @@
         { threshold: 0.08, rootMargin: "0px 0px -48px 0px" }
       );
       document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
-
-      /* TMP local: toggle faixa branca / gelo — excluir depois */
-      (function toggleHeroSponsorsVariant() {
-        const btn = document.getElementById("hero-sponsors-variant-toggle");
-        const carousel = document.querySelector(".hero-sponsors-carousel");
-        if (!btn || !carousel) return;
-        btn.addEventListener("click", () => {
-          const frost = carousel.classList.toggle("is-frost");
-          btn.textContent = frost ? "Ver faixa branca" : "Ver faixa gelo";
-        });
-      })();
 
       /* ── Hero sponsors: duplicate set for seamless marquee ── */
       (function duplicateHeroSponsors() {
