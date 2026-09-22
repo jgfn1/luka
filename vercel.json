@@ -27,6 +27,30 @@
       "permanent": true
     },
     {
+      "source": "/tgi2026",
+      "has": [{ "type": "host", "value": "tgirecife2026.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tgi2026/:path*",
+      "has": [{ "type": "host", "value": "tgirecife2026.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tgi2026",
+      "has": [{ "type": "host", "value": "www.tgirecife2026.com.br" }],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tgi2026/:path*",
+      "has": [{ "type": "host", "value": "www.tgirecife2026.com.br" }],
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
       "source": "/gastroconecta2026",
       "has": [{ "type": "host", "value": "gastroconecta2026.com.br" }],
       "destination": "/",
@@ -169,6 +193,26 @@
       "destination": "/tgi/:path*"
     },
     {
+      "source": "/:path((?!tgi2026).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "tgirecife2026.com.br"
+        }
+      ],
+      "destination": "/tgi2026/:path*"
+    },
+    {
+      "source": "/:path((?!tgi2026).*)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tgirecife2026.com.br"
+        }
+      ],
+      "destination": "/tgi2026/:path*"
+    },
+    {
       "source": "/:path((?!gastroconecta2026).*)*",
       "has": [
         {
@@ -269,7 +313,7 @@
       "destination": "/recifetorax2026/:path*"
     },
     {
-      "source": "/:path((?!portfolio|tgi|gastroconecta2026|endogineco2026|oncoderma2026|spmpq|recifetorax2026).*)*",
+      "source": "/:path((?!portfolio|tgi|tgi2026|gastroconecta2026|endogineco2026|oncoderma2026|spmpq|recifetorax2026).*)*",
       "has": [
         {
           "type": "host",
@@ -279,7 +323,7 @@
       "destination": "/portfolio/:path*"
     },
     {
-      "source": "/:path((?!portfolio|tgi|gastroconecta2026|endogineco2026|oncoderma2026|spmpq|recifetorax2026).*)*",
+      "source": "/:path((?!portfolio|tgi|tgi2026|gastroconecta2026|endogineco2026|oncoderma2026|spmpq|recifetorax2026).*)*",
       "has": [
         {
           "type": "host",

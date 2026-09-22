@@ -20,6 +20,18 @@ with the same technical pattern (one repo per client, host-based routing in
 - **Folder**: `/tgi/`
 - **Languages**: PT, EN, ES
 
+The 2025 site stays online on its own domain. The 2026 edition is a separate
+site (`tgirecife2026.com.br` → `/tgi2026/`).
+
+### IV Simpósio de Oncologia Gastrointestinal (TGI 2026)
+
+- **Domain**: [www.tgirecife2026.com.br](https://www.tgirecife2026.com.br/)
+- **Topic**: Gastrointestinal oncology
+- **Date**: October 16–17, 2026 (2 days)
+- **Location**: JCPM Trade Center · Recife/PE
+- **Folder**: `/tgi2026/`
+- **Languages**: PT, EN, ES
+
 ### Gastro Conecta & Nutri Conecta 2026
 
 - **Domain**: [gastroconecta2026.com.br](https://gastroconecta2026.com.br/)
@@ -79,7 +91,7 @@ with the same technical pattern (one repo per client, host-based routing in
 - Per-site client-side language switchers (where applicable)
 - Fully responsive design
 - Host-based routing and redirects via `vercel.json`
-- Optional Python helper scripts for schedule tables and speaker cards (Endogineco)
+- Optional Python helper scripts for schedule tables and speaker cards (Endogineco, TGI 2026)
 
 ## Project Structure
 
@@ -87,10 +99,17 @@ with the same technical pattern (one repo per client, host-based routing in
 /
 ├── portfolio/                 # Automa portfolio (default Vercel URL)
 │   └── index.html
-├── tgi/                       # III Simpósio TGI (tgirecife.com.br)
+├── tgi/                       # III Simpósio TGI 2025 (tgirecife.com.br)
 │   ├── index.html
 │   ├── LOGO-TGI.png
 │   └── assets/                # committee, speakers, sponsors, logos, PDFs
+├── tgi2026/                   # IV Simpósio TGI 2026 (tgirecife2026.com.br)
+│   ├── index.html
+│   ├── assets/  committee/  speakers/  organizers/
+│   ├── schedule/  resumes/
+│   ├── sponsors/              # reserved (may be empty)
+│   ├── build/                 # generated fragments (not part of the Vercel build)
+│   └── scripts/               # Python schedule & speaker helpers
 ├── gastroconecta2026/         # Gastro Conecta & Nutri Conecta 2026
 │   ├── index.html
 │   ├── committee/  speakers/  sponsors/  schedule_resumes/
@@ -125,8 +144,9 @@ with the same technical pattern (one repo per client, host-based routing in
 
 Each event folder is self-contained: images, PDFs, and data files live inside
 that folder. There are no shared root-level assets. Some subfolders (e.g.
-`endogineco2026/sponsors/`, `spmpq/sponsors/`, `recifetorax2026/sponsors/`) are
-kept in the tree even when empty, so incoming logos or CVs have a defined place.
+`endogineco2026/sponsors/`, `spmpq/sponsors/`, `recifetorax2026/sponsors/`,
+`tgi2026/sponsors/`) are kept in the tree even when empty, so incoming logos or
+CVs have a defined place.
 
 ## Deployment
 
@@ -147,7 +167,8 @@ guide.
 Open any site's `index.html` directly in a browser:
 
 - Portfolio: `/portfolio/index.html`
-- TGI: `/tgi/index.html`
+- TGI 2025: `/tgi/index.html`
+- TGI 2026: `/tgi2026/index.html`
 - Gastro Conecta: `/gastroconecta2026/index.html`
 - Endogineco 2026: `/endogineco2026/index.html`
 - Oncoderma 2026: `/oncoderma2026/index.html`

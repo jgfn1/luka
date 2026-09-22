@@ -15,13 +15,19 @@ Complete guide for deploying the event sites with custom domains on Vercel.
   other `*.vercel.app` hostnames also serve the portfolio.
 - `cleanUrls` is enabled and `trailingSlash` is disabled.
 - Deployments run automatically on push to `main`.
+- TGI 2025 (`tgirecife.com.br` → `/tgi/`) and TGI 2026
+  (`tgirecife2026.com.br` → `/tgi2026/`) are independent sites. Both stay
+  online. Do not reuse the 2025 host for the 2026 folder, and do not remove
+  the 2025 rules when adding or changing 2026.
 
 ## Domains
 
 | Domain                                | Site            | Folder                |
 | ------------------------------------- | --------------- | --------------------- |
-| `tgirecife.com.br`                    | TGI             | `/tgi/`               |
-| `www.tgirecife.com.br`                | TGI             | `/tgi/`               |
+| `tgirecife.com.br`                    | TGI 2025        | `/tgi/`               |
+| `www.tgirecife.com.br`                | TGI 2025        | `/tgi/`               |
+| `tgirecife2026.com.br`                | TGI 2026        | `/tgi2026/`           |
+| `www.tgirecife2026.com.br`            | TGI 2026        | `/tgi2026/`           |
 | `gastroconecta2026.com.br`            | Gastro Conecta  | `/gastroconecta2026/` |
 | `www.gastroconecta2026.com.br`        | Gastro Conecta  | `/gastroconecta2026/` |
 | `congressoendoginecorecife.com.br`    | Endogineco 2026 | `/endogineco2026/`    |
@@ -54,7 +60,8 @@ In the Vercel Dashboard:
 1. Go to **Project Settings** → **Domains**.
 2. Click **Add Domain**.
 3. Add each domain (apex + `www.`):
-   - `tgirecife.com.br` + `www.tgirecife.com.br`
+   - `tgirecife.com.br` + `www.tgirecife.com.br` (TGI 2025 — keep both)
+   - `tgirecife2026.com.br` + `www.tgirecife2026.com.br` (TGI 2026)
    - `gastroconecta2026.com.br` + `www.gastroconecta2026.com.br`
    - `congressoendoginecorecife.com.br` + `www.congressoendoginecorecife.com.br`
    - `oncodermarecife2026.com.br` + `www.oncodermarecife2026.com.br`
@@ -198,6 +205,7 @@ vercel dev
 # Portfolio: http://localhost:3000/  (or automaitdev.vercel.app in production)
 # Or modify /etc/hosts to test domain routing (apex + www for each event):
 # 127.0.0.1 tgirecife.com.br www.tgirecife.com.br
+# 127.0.0.1 tgirecife2026.com.br www.tgirecife2026.com.br
 # 127.0.0.1 gastroconecta2026.com.br www.gastroconecta2026.com.br
 # 127.0.0.1 congressoendoginecorecife.com.br www.congressoendoginecorecife.com.br
 # 127.0.0.1 oncodermarecife2026.com.br www.oncodermarecife2026.com.br

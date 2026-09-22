@@ -24,11 +24,17 @@ custom domain. The portfolio lives in `/portfolio/` (there is no root
 ├── portfolio/
 │   └── index.html                      # Automa IT & Development portfolio (EN/PT/ES)
 ├── tgi/
-│   ├── index.html                      # III Simpósio TGI (PT/EN/ES)
+│   ├── index.html                      # III Simpósio TGI 2025 (PT/EN/ES)
 │   ├── LOGO-TGI.png
 │   └── assets/
 │       ├── committee/ speakers/ sponsors/ logos/
 │       └── programacao_completa.pdf
+├── tgi2026/
+│   ├── index.html                      # IV Simpósio TGI 2026 (PT/EN/ES)
+│   ├── assets/ committee/ speakers/ organizers/ sponsors/
+│   ├── schedule/ resumes/
+│   ├── build/                          # generated fragments (not deployed)
+│   └── scripts/                        # Python schedule & speaker helpers
 ├── gastroconecta2026/
 │   ├── index.html                      # Gastro Conecta & Nutri Conecta 2026 (PT/EN/ES)
 │   ├── committee/ speakers/ sponsors/
@@ -68,7 +74,8 @@ default URL falls through to the portfolio:
 
 | Domain                                                              | Serves          | Folder              |
 | ------------------------------------------------------------------ | --------------- | ------------------- |
-| `tgirecife.com.br`, `www.tgirecife.com.br`                         | TGI             | `/tgi/`             |
+| `tgirecife.com.br`, `www.tgirecife.com.br`                         | TGI 2025        | `/tgi/`             |
+| `tgirecife2026.com.br`, `www.tgirecife2026.com.br`                 | TGI 2026        | `/tgi2026/`         |
 | `gastroconecta2026.com.br`, `www.gastroconecta2026.com.br`         | Gastro Conecta  | `/gastroconecta2026/` |
 | `congressoendoginecorecife.com.br`, `www.…`                        | Endogineco 2026 | `/endogineco2026/`  |
 | `oncodermarecife2026.com.br`, `www.oncodermarecife2026.com.br`     | Oncoderma 2026  | `/oncoderma2026/`   |
@@ -78,7 +85,10 @@ default URL falls through to the portfolio:
 
 Redirects mirror these hosts to remove the folder prefix from public URLs, so
 `tgirecife.com.br/tgi` and `tgirecife.com.br/tgi/<path>` permanently redirect to
-`tgirecife.com.br/` and `tgirecife.com.br/<path>`.
+`tgirecife.com.br/` and `tgirecife.com.br/<path>`. The same pattern applies to
+TGI 2026 (`tgirecife2026.com.br/tgi2026` → `tgirecife2026.com.br/`). Both TGI
+editions stay online on their own domains; the 2025 host must keep pointing at
+`/tgi/`.
 
 ## Path Strategy
 
@@ -121,12 +131,37 @@ in the event's `index.html` therefore resolve correctly on the custom domain.
   `sponsors/`, `organizers/`, `schedule/`, `resumes/`, and `assets/`.
 - **No shared root assets**: each event is fully self-contained in its folder.
 - **Empty folders**: some directories (e.g. `endogineco2026/sponsors/`,
-  `endogineco2026/resumes/`, `spmpq/sponsors/`, `recifetorax2026/sponsors/`)
-  are kept in the repo even without files yet, so future logos or CVs have a
-  fixed location.
+  `endogineco2026/resumes/`, `spmpq/sponsors/`, `recifetorax2026/sponsors/`,
+  `tgi2026/sponsors/`) are kept in the repo even without files yet, so future
+  logos or CVs have a fixed location.
 - **Orphan photos (Endogineco)**: `endogineco2026/orphaned-photos/` holds image
   files that are no longer linked to an active speaker or surgeon card (see the
   README in that folder).
+
+## Helper Scripts (TGI 2026)
+
+`tgi2026/scripts/` contains Python utilities used while authoring that site.
+They are not part of the Vercel build.
+
+Run from the repository root (requires Python 3):
+
+```bash
+# Generate schedule rows and speaker cards from CSV + photos
+python3 tgi2026/scripts/generate_content.py
+
+# Patch the generated fragments into index.html
+python3 tgi2026/scripts/patch_index.py
+
+# Optional: rebuild logo / OG assets from the source JPEGs
+python3 tgi2026/scripts/build_assets.py
+```
+
+| Script | Role |
+| ------ | ---- |
+| `generate_content.py` | Builds schedule HTML (PT/EN/ES) and speaker cards from `schedule/` and `resumes/resumes.csv` |
+| `patch_index.py` | Injects the generated fragments into `index.html` |
+| `schedule_i18n.py` | Title and role translations used by the generator |
+| `build_assets.py` | Derives transparent logo / OG images from the source artworks |
 
 ## Helper Scripts (Endogineco)
 
