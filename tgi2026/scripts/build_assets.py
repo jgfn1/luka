@@ -98,13 +98,24 @@ def main() -> None:
     og.alpha_composite(og_logo, ((1200 - og_logo.width) // 2, 95))
     og_date = scaled_to_width(date_block, 660)
     og.alpha_composite(og_date, ((1200 - og_date.width) // 2, 410))
-    og.convert("RGB").save(ASSETS / "og-tgi2026.png")
+    rgb = og.convert("RGB")
+    rgb.save(ASSETS / "og-tgi2026.png")
+    # WhatsApp is unreliable with PNG and with a previously cached 404.
+    # Baseline JPEG + a new filename forces a fresh image fetch.
+    rgb.save(
+        ASSETS / "og-tgi2026.jpg",
+        "JPEG",
+        quality=88,
+        optimize=True,
+        progressive=False,
+    )
 
     for path in (
         "logo-tgi2026.png",
         "emblem-tgi2026.png",
         "favicon.png",
         "og-tgi2026.png",
+        "og-tgi2026.jpg",
     ):
         print(path, Image.open(ASSETS / path).size)
 
