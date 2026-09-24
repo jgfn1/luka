@@ -31,6 +31,8 @@ ROLES = {
     "Oncologista": {"en": "Clinical Oncologist", "es": "Oncólogo Clínico"},
     "Oncologista Clínico": {"en": "Clinical Oncologist", "es": "Oncólogo Clínico"},
     "Cirurgião": {"en": "Surgeon", "es": "Cirujano"},
+    "Cirurgiã": {"en": "Surgeon", "es": "Cirujana"},
+    "Cirurgião Oncológico": {"en": "Surgical Oncologist", "es": "Cirujano Oncólogo"},
     "Cirurgião Geral": {"en": "General Surgeon", "es": "Cirujano General"},
     "Cirurgião Abdominal": {"en": "Abdominal Surgeon", "es": "Cirujano Abdominal"},
     "Cirurgião Vascular": {"en": "Vascular Surgeon", "es": "Cirujano Vascular"},

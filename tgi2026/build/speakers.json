@@ -1,0 +1,923 @@
+[
+  {
+    "name": "Alexandre da Fonte",
+    "role": "Radiologista",
+    "region": "",
+    "photo": "guests/alexandre-da-fonte-radiologista.jpg",
+    "bio": [
+      "Coordenador do Jayme da Fonte diagnósticos",
+      "Membro da comissão científica do colégio brasileiro de radiologia"
+    ],
+    "specialties": [
+      "radiologia"
+    ],
+    "slug": "alexandre-da-fonte",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Amanda Marquim",
+    "role": "Enfermeira",
+    "region": "",
+    "photo": "guests/amanda-marquim-enfermeira.jpg",
+    "bio": [
+      "Enfermaria formada pela Universidade de Pernambuco, com experiência em navegação oncológica. Atualmente ocupa o cargo de supervisão das linhas de cuidados do hospital Santa Joana Recife.",
+      "Possui experiência em gestão de centro cirúrgico no Hospital Universitário Oswaldo Cruz. MBA em central de materiais e esterilização."
+    ],
+    "specialties": [
+      "enfermagem"
+    ],
+    "slug": "amanda-marquim",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Américo Gusmão",
+    "role": "Cirurgião",
+    "region": "",
+    "photo": "guests/americo-gusmao-cirurgiao.jpeg",
+    "bio": [
+      "Professor adjunto de cirurgia da Universidade de Pernambuco. Preceptor da Residência em Cirurgia Geral e Digestiva da Universidade de Pernambuco. Cirurgião transplantador de fígado do Hospital Universitário Osvaldo Cruz e do Hospital Nossa Senhora das Neves"
+    ],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "americo-gusmao",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Ana Rita Carvalho",
+    "role": "Radiologista",
+    "region": "",
+    "photo": "guests/ana-rita-carvalho-radiologista.jpg",
+    "bio": [
+      "Radiologista Rede D'Or",
+      "Coordenadora Radiologia HSE",
+      "Membro Titular CBR"
+    ],
+    "specialties": [
+      "radiologia"
+    ],
+    "slug": "ana-rita-carvalho",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Antônio Douglas",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "guests/antonio-douglas-oncologista.webp",
+    "bio": [
+      "Oncologista Clínico Do Hospital Santa Joana – Rede Américas",
+      "Professor da UPE"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "antonio-douglas",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Beatriz Cavalcanti",
+    "role": "Cirurgiã",
+    "region": "",
+    "photo": "guests/beatriz-cavalcanti-cirurgia.jpeg",
+    "bio": [
+      "Cirurgiã geral Pela universidade Federal do Rio Grande do Norte - HUOL",
+      "Cirurgiã oncológica pelo hospital do câncer de Pernambuco",
+      "Preceptora do serviço de oncoginecologia do Hospital do Câncer de Pernambuco",
+      "Cirurgiã oncológica do grupo Américas - Hospital Santa Joana"
+    ],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "beatriz-cavalcanti",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Carolina Reis",
+    "role": "Hepatologista",
+    "region": "",
+    "photo": "",
+    "bio": [
+      "Médica graduada pela Universidade Federal de Pernambuco - UFPE",
+      "Residência em Clínica médica e Hepatologia",
+      "Hepatologista do Hospital Santa Joana Recife e Hospital Esperança Recife",
+      "Preceptora da residência de Clínica médica do Hospital Esperança Recife - rede D’Or"
+    ],
+    "specialties": [
+      "hepatologia"
+    ],
+    "slug": "carolina-reis",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Christiane Violet",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "guests/christiane-violet-oncologista.jpeg",
+    "bio": [
+      "Ex residente de oncologia clínica do INCA",
+      "Oncologista clínico da Onkos",
+      "Presidente e voluntária do Instituto Cristina Tavares",
+      "Mãe de Pedro, Luísa e Júlia",
+      "Avó de Fernanda"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "christiane-violet",
+    "functions": [
+      "presidente"
+    ]
+  },
+  {
+    "name": "Cristiana Tavares",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "guests/cristiana-tavares-oncologista.jpeg",
+    "bio": [
+      "Oncologista do Hospital Santa Joana e do Hospital Universitário Oswaldo Cruz / UPE",
+      "Preceptora de graduação e pós-graduação da FCM - Faculdade de Ciências Médicas / UPE",
+      "Mestre pela UPE",
+      "Doutoranda em medicina translacional pela UNIFESP."
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "cristiana-tavares",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Diogo Sales",
+    "role": "Oncologista Clínico",
+    "region": "",
+    "photo": "guests/diogo-sales-oncologista-clinico.jfif",
+    "bio": [
+      "Oncologista clínico Rede Americas, IMIP, HBL",
+      "PhD pela Unifesp"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "diogo-sales",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Edite Magalhães",
+    "role": "Nutróloga",
+    "region": "",
+    "photo": "guests/edite-magalhaes-nutrologa.webp",
+    "bio": [
+      "Médica Nutróloga - Título de especialista ABRAN/CFM",
+      "Especialista em terapia parenteral e enteral - SBNPE/CFM",
+      "Residência em Clínica médica - Santa casa de misericórdia do Recife",
+      "Coordenadora da equipe de terapia nutricional e do serviço de nutrologia do hospital Santa Joana"
+    ],
+    "specialties": [
+      "nutricao"
+    ],
+    "slug": "edite-magalhaes",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Eduardo Inojosa",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "",
+    "bio": [
+      "Oncologista clínico grupo Oncoclínicas e do Hospital Barão de Lucena e preceptor da residência de oncologia do Hospital do câncer de Pernambuco"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "eduardo-inojosa",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Eriberto Marques",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "",
+    "bio": [
+      "Oncologista da rede Américas",
+      "Fellow oncologia Sylvester cancer center",
+      "Ex presidente da SBOC Nordeste"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "eriberto-marques",
+    "functions": [
+      "presidente"
+    ]
+  },
+  {
+    "name": "Felipe Coelho",
+    "role": "Radioterapeuta",
+    "region": "",
+    "photo": "guests/felipe-coelho-radioterapeuta.jpg",
+    "bio": [
+      "Graduação em medicina pela Universidade Federal de Pernambuco (UFPE)",
+      "Residência médica em Radioterapia no IMIP",
+      "Membro titular da Sociedade Brasileira de radioterapia",
+      "Rádio-oncologista do HUOC-PE (Hospital Universitário Oswaldo Cruz) e da Oncoclínicas Radioterapia Recife , sendo também responsável Técnico deste último."
+    ],
+    "specialties": [
+      "radioterapia"
+    ],
+    "slug": "felipe-coelho",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Flávio Fernandes",
+    "role": "Cirurgião Abdominal",
+    "region": "",
+    "photo": "guests/flavio-fernandes-cirurgiao-abdominal.jpeg",
+    "bio": [
+      "Cirurgião do Aparelho Digestivo do Santa Joana, Ebserh e Hospital dos Servidores."
+    ],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "flavio-fernandes",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Francisco Ambrósio",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "guests/francisco-ambrosio-oncologista.jpg",
+    "bio": [
+      "Especialização em Clínica médica no Hospital das Clínicas - UFPE",
+      "Especialização em Oncologia Clínica no Real Hospital Português da beneficência em Pernambuco",
+      "Oncologista clínico pela Unionco Recife e Rede Americas"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "francisco-ambrosio",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Gustavo Fernandes",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "guests/gustavo-fernandes-oncologista-clinico.jpg",
+    "bio": [
+      "VP de oncologia da Rede Américas.",
+      "Fellowship em Oncologia Gastrointestinal pelo Memorial Sloan Kettering Cancer Center",
+      "Ex-presidente da SBOC(sociedade brasileira de oncologia clínica)"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "gustavo-fernandes",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Gustavo Ferreira",
+    "role": "Patologista",
+    "region": "",
+    "photo": "guests/gustavo-ferreira-patologista.jpeg",
+    "bio": [
+      "Graduação pela UFPE, mestrando e professor substituto na mesma instituição.",
+      "Residência médica na EPM(escola paulista de medicina)/UNIFESP.",
+      "Trabalha no Hospital Otávio de Freitas e também nos laboratórios SPAC e Citomaxx."
+    ],
+    "specialties": [
+      "patologia"
+    ],
+    "slug": "gustavo-ferreira",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Gustavo Lima",
+    "role": "Gastroenterologista",
+    "region": "",
+    "photo": "guests/gustavo-lima-gastro-hepatologista.jfif",
+    "bio": [
+      "Médico do ambulatório de Pâncreas e doença inflamatória intestinal ( HC-UFPE )",
+      "Membro titular da FBG ( Federação Brasileira de Gastroenterologia)",
+      "Membro titular do Gediib ( Grupo de estudo da doença inflamatória intestinal)",
+      "Professor da disciplina de Gastroenterologia ( Uninassau )"
+    ],
+    "specialties": [
+      "hepatologia"
+    ],
+    "slug": "gustavo-lima",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Ilan Pedrosa",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "guests/ilan-pedrosa-oncologista.jpeg",
+    "bio": [
+      "Oncologista clínico do Hospital Santa Joana e Onkos.",
+      "Preceptor da Residência médica em Oncologia do Hospital de câncer de Pernambuco.",
+      "Coordenador da Residência médica em Oncologia Clínica do Santa Joana"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "ilan-pedrosa",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Ilka Rocha",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "guests/ilka-rocha-oncologista.jpeg",
+    "bio": [
+      "Oncologista Clínica Hospital Santa Joana Rede Américas"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "ilka-rocha",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Isaac Esmeraldo",
+    "role": "Cirurgião",
+    "region": "",
+    "photo": "guests/isaac-esmeraldo-cirurgiao.jpg",
+    "bio": [
+      "Médico cirurgião, especialista em Cirurgia Geral, Cirurgia do Aparelho Digestivo, minimamente invasivas e robóticas.",
+      "Chefe da Emergência e Preceptor das Residências Médicas de Cirurgia Geral e Cirurgia do Aparelho Digestivo do Hospital Getúlio Vargas (HGV). Atua também como cirurgião das clínicas Cirúrgica e Digest."
+    ],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "isaac-esmeraldo",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Ítalo Cruz",
+    "role": "Radiologista",
+    "region": "",
+    "photo": "guests/italo-cruz-radiologista.jpg",
+    "bio": [
+      "Radiologista Abdominal e Oncorradiologista pela Beneficência Portuguesa de São Paulo.",
+      "Radiologista do Hospital Santa Joana",
+      "Preceptor da residência médica em radiologia e diagnóstico por imagem do Hospital da Restauração.",
+      "Criador do perfil educacional e pós graduação @radiologiabdominal"
+    ],
+    "specialties": [
+      "radiologia"
+    ],
+    "slug": "italo-cruz",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "João Mangueira",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "",
+    "bio": [
+      "Residência em Oncologia Clínica pelo IMIP",
+      "Oncologista Clínico da Rede Américas e do Hospital do Câncer de Pernambuco",
+      "Pós-Graduação em cuidados Paliativos pela Santa Casa de Misericórdia da Bahia"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "joao-mangueira",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "João Paulo Ayub",
+    "role": "Radiologista",
+    "region": "",
+    "photo": "guests/joao-paulo-ayub-radiologista.jfif",
+    "bio": [
+      "Membro Titular da Sociedade Brasileira de Radiologia Intervencionista e Cirurgia Endovascular - SOBRICE",
+      "Radiologista Intervencionista e Cirurgião Vascular do IMIP, Barão de Lucena e Angiorad"
+    ],
+    "specialties": [
+      "radiologia"
+    ],
+    "slug": "joao-paulo-ayub",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Joyce Cavalcanti",
+    "role": "Coloproctologista",
+    "region": "",
+    "photo": "guests/joyce-cavalcanti-coloproctologista.jpg",
+    "bio": [
+      "Médica Coloproctologista pelo hospital Barão de Lucena",
+      "Atua como Coloproctologista no Hospital Santa Joana",
+      "Preceptora da residência de Coloproctologia do Hospital Barão de Lucena"
+    ],
+    "specialties": [
+      "coloproctologia"
+    ],
+    "slug": "joyce-cavalcanti",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Leandro Apolinário",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "guests/leandro-apolinario-oncologista.jpeg",
+    "bio": [
+      "Oncologista clínico do Hospital Santa Joana Recife (Americas Oncologia) e do Hospital Universitário Oswaldo Cruz (Universidade de Pernambuco)",
+      "Ex-research FELLOWSHIP IOSI, Switzerland"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "leandro-apolinario",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Leila Beltrão",
+    "role": "Hepatologista",
+    "region": "",
+    "photo": "",
+    "bio": [
+      "Prof titular de gastroenterologia - FCM/UPE",
+      "Chefe do serviço de gastrohepatologia - HUOC/UPE",
+      "Presidente do Instituto e transplantes de PE"
+    ],
+    "specialties": [
+      "hepatologia"
+    ],
+    "slug": "leila-beltrao",
+    "functions": [
+      "presidente"
+    ]
+  },
+  {
+    "name": "Lilian Rose Gomes",
+    "role": "Hepatologista",
+    "region": "",
+    "photo": "",
+    "bio": [
+      "Gastrohepatologista do Hospital Santa Joana",
+      "Coordenadora da hepatologia do Imip",
+      "Mestre em Medicina tropical pela UFPE"
+    ],
+    "specialties": [
+      "hepatologia"
+    ],
+    "slug": "lilian-rose-gomes",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Luis Felipe Carvalho",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "guests/luis-felipe-carvalho-oncologista.jpeg",
+    "bio": [
+      "Preceptor da Residência de Oncologia Clínica do IMIP",
+      "Médico Oncologista da Rede Americas.",
+      "Médico Oncologista no IONE"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "luis-felipe-carvalho",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Manoel de Andrade",
+    "role": "Cirurgião",
+    "region": "",
+    "photo": "guests/manoel-de-andrade-cirurgiao.jpg",
+    "bio": [
+      "Cirurgião Oncológico",
+      "Titular da SBCO",
+      "Preceptor da residência de cirurgia Oncológica IMIP",
+      "Preceptor de residência Cirurgia Geral Hospital Barão de Lucena",
+      "Cirurgião Oncológico Rede D’Or São Luiz - Memorial São José e Memorial Star",
+      "CirurgiãoVideolaparoscópico e Cirugião Robótico",
+      "Cirurgião Oncológico Santa Joana"
+    ],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "manoel-de-andrade",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Marcella Campos",
+    "role": "Nutricionista",
+    "region": "",
+    "photo": "guests/marcella-campos-nutricionista.jpg",
+    "bio": [
+      "Nutricionista pela UFPE",
+      "Pós graduada em nutrição clínica pelo IMIP",
+      "Especialista em Nutrição Oncológica pela SBNO",
+      "Doutoranda e Mestre em Nutrição pela UFPE",
+      "Nutricionista do ambulatório de oncologia do hospital das clínicas de Pernambuco",
+      "Atendimento em consultório particular",
+      "Professora de pós graduação"
+    ],
+    "specialties": [
+      "nutricao"
+    ],
+    "slug": "marcella-campos",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Murilo Araújo",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "",
+    "bio": [
+      "Chefe da Subseção de Oncologia clínica do Hospital de Aeronáutica de Recife.",
+      "Oncologista clínico da Rede OC e Onkos",
+      "Preceptor da residência de Clínica Médica do Hospital Getúlio Vargas e do Hospital de Aeronautica de Recife"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "murilo-araujo",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Nadja Rolim",
+    "role": "Radiologista",
+    "region": "",
+    "photo": "",
+    "bio": [
+      "Médico Radiologista com título de especialista pelo CBR",
+      "Mestrado pela UFPE",
+      "Pós graduação em medicina interna e saúde da mulher",
+      "Preceptora de radiologia no HC e HGV"
+    ],
+    "specialties": [
+      "radiologia"
+    ],
+    "slug": "nadja-rolim",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Nildevande Firmino",
+    "role": "Oncologista Clínico",
+    "region": "",
+    "photo": "guests/nildevande-firmino-oncologista-clinico.jpeg",
+    "bio": [
+      "Oncologista pelo Hospital Sírio Libanês (SP).",
+      "Oncologista do Hospital Santa Joana"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "nildevande-firmino",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Olival Lucena",
+    "role": "Cirurgião Abdominal",
+    "region": "",
+    "photo": "guests/olival-lucena-cirurgiao.jfif",
+    "bio": [
+      "Professor Adjunto de Cirurgia da UPE",
+      "Professor de medicina de emergência da UNINASSAU",
+      "Cirurgião do Aparelho Digestivo e Transplante de Fígado HUOC, HCP e HSJ"
+    ],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "olival-lucena",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Omar Jacobina",
+    "role": "Cirurgião Geral",
+    "region": "",
+    "photo": "committee/omar-jacobina-cirurgiao-geral.jpeg",
+    "bio": [
+      "Cirurgião Geral e do Aparelho Digestivo do Hospital Santa Joana Recife",
+      "Coordenador Médico da Linha Cirúrgica do Hospital Santa Joana.",
+      "Coordenador médico do Bloco Cirúrgico do Hospital Alfa"
+    ],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "omar-jacobina",
+    "functions": [
+      "presidente"
+    ]
+  },
+  {
+    "name": "Paulo Carvalho",
+    "role": "Preparador Físico",
+    "region": "",
+    "photo": "guests/paulo-carvalho-preparador-fisico.jpg",
+    "bio": [
+      "Professor Titular da Universidade Federal de Pernambuco.",
+      "Pós doutorado em Biologia aplicada a Saúde - LIKA.",
+      "Chefe do Serviço de Promoção de Saúde e Qualidade de Vida - HC/UFPE/HUBrasil.",
+      "Membro da COESAS - Sociedade Brasileira de Cirurgia Bariátrica e Metabólica.",
+      "Docente Permanente do Programas de Pós Graduação em Educação Física e Cirurgia da UFPE.",
+      "Mais de 30 anos Elabora e Prescreve programas de Treinamento para pessoas portadoras de doenças crônicas não transmissíveis.",
+      "Especialista em programas de treinamento especializados para redução da inflamação e dor."
+    ],
+    "specialties": [
+      "fisica"
+    ],
+    "slug": "paulo-carvalho",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Phabllo Rodrigo",
+    "role": "Cirurgião",
+    "region": "",
+    "photo": "guests/phabllo-rodrigo-coloproctologista.png",
+    "bio": [
+      "Especialista em Cirurgia Geral e Coloproctologia",
+      "Memorial São José/Star e Unimed"
+    ],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "phabllo-rodrigo",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Rafael Caires",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "",
+    "bio": [
+      "Oncologista Clínico da Rede D’Or e Gerente Médico do IDOR Pernambuco",
+      "Formado pelo ICESP/USP"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "rafael-caires",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Rafael Fontolan",
+    "role": "Cirurgião",
+    "region": "",
+    "photo": "guests/rafael-fontolan-cirurgiao.jpg",
+    "bio": [
+      "Cirurgião do Aparelho Digestivo e transplante de fígado pela FAMERP.",
+      "Mestrado em cirurgia pela FAMERP.",
+      "Proctor de cirurgia robótica pelo Colégio Brasileiro de Cirurgiões e Intuitive surgical.",
+      "Responsável pelo programa de transplante hepático robótico dos hospitais: 9 de julho e beneficência portuguesa."
+    ],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "rafael-fontolan",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Ricardo Machado",
+    "role": "Medicina Nuclear",
+    "region": "",
+    "photo": "guests/ricardo-machado-medicina-nuclear.jpg",
+    "bio": [
+      "Médico do serviço de Medicina Nuclear do Hospital Santa Joana e do setor de",
+      "PET/CT do Hospital Memorial Star e da clínica CEMUPE.",
+      "Coordenador da Residência de medicina nuclear do Hospital IMIP"
+    ],
+    "specialties": [
+      "nuclear"
+    ],
+    "slug": "ricardo-machado",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Roberto Borges",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "guests/roberto-borges-oncologista.jpg",
+    "bio": [
+      "Oncologista clínico RedeDor, IMIP e Hospital Barao de Lucena"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "roberto-borges",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Rodrigo Arruda",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "guests/rodrigo-arruda-oncologista.jpeg",
+    "bio": [
+      "Coordenador Oncologia Clínica do Hospital do Câncer de Pernambuco",
+      "Oncologista Clínico do Imip, Santa Joana e Unionco",
+      "Mestre pelo IMIP"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "rodrigo-arruda",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Rossano Araújo",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "guests/rossano-araujo-oncologista.jpg",
+    "bio": [
+      "Oncologista clínico do hospital Santa Joana Recife e da clínica professor Antônio Figueira Filho.",
+      "Mestre em medicina pela UPE.",
+      "Doutorando em medicina translacional -UNIFESP -SP.",
+      "Especialista em oncologia mamária pelo MD Anderson Cancer Center, Houston/TX, EUA. Especialização em tumores ginecológicos pela Escola de Tumores Ginecológicos do Instituto Oncoclínicas.",
+      "Professor assistente de oncologia mamária da disciplina de mastologia da UPE-PE"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "rossano-araujo",
+    "functions": [
+      "presidente"
+    ]
+  },
+  {
+    "name": "Samara Duarte",
+    "role": "Coloproctologista",
+    "region": "",
+    "photo": "guests/samara-duarte-coloproctologista.jpeg",
+    "bio": [
+      "Membro da regional norte e nordeste de Coloproctologia",
+      "Membro da Sociedade Brasileira de Coloproctologia",
+      "Coloproctologista da Endograstro"
+    ],
+    "specialties": [
+      "coloproctologia"
+    ],
+    "slug": "samara-duarte",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Simone Fumolaro",
+    "role": "Cirurgião Hepatobiliar",
+    "region": "Itália",
+    "photo": "guests/simone-fumolaro-it-cirugiao-hepatobiliar.jpg",
+    "bio": [
+      "Cirurgião Hepatobiliar e Cientista, Policlinico Universitario Gemelli (Roma) - Professor Assistente, Universidade Católica do Sagrado Coração - Pesquisador Sênior, IRCAD França"
+    ],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "simone-fumolaro",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Tainã Reis",
+    "role": "Nutricionista",
+    "region": "",
+    "photo": "guests/taina-reis-nutricionista.jpg",
+    "bio": [
+      "Graduada em Nutrição pela UNINASSAU",
+      "Atuante em Nutrição Clínica hospitalar",
+      "Atualmente Nutricionista Oncológica no Hospital Santa Joana Recife"
+    ],
+    "specialties": [
+      "nutricao"
+    ],
+    "slug": "taina-reis",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Thiago Apolinário",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "guests/thiago-apolinario-oncologista.jpeg",
+    "bio": [
+      "Residência em Oncologia Clínica pelo IMIP-PE",
+      "Oncologista clínico do Hospital Santa Joana",
+      "Oncologista clínico do Hospital Universitário Oswaldo Cruz - Universidade de Pernambuco",
+      "Membro ASCO, ESMO e SBOC e GBOT"
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "thiago-apolinario",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Tibério Medeiros",
+    "role": "Gastro Hepatologista",
+    "region": "",
+    "photo": "guests/tiberio-medeiros-gastro-hepatologista.jfif",
+    "bio": [
+      "Médico gastrohepatologista e Coordenador do Instituto do fígado do Hospital Santa Joana.",
+      "Médico hepatologista do IMIP",
+      "Professor de Gastroenterologia da Faculdade de Ciências Médicas - PB"
+    ],
+    "specialties": [
+      "hepatologia"
+    ],
+    "slug": "tiberio-medeiros",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Tien Chang",
+    "role": "Medicina Nuclear",
+    "region": "",
+    "photo": "guests/tien-chang-medicina-nuclear.jpg",
+    "bio": [
+      "Coordenador do serviço de Medicina Nuclear e PET/CT do IMIP",
+      "Médico Nuclear dos Hospitais Santa Joana e Memorial Star"
+    ],
+    "specialties": [
+      "nuclear"
+    ],
+    "slug": "tien-chang",
+    "functions": [
+      "moderador"
+    ]
+  }
+]

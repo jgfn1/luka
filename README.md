@@ -105,7 +105,7 @@ site (`tgirecife2026.com.br` → `/tgi2026/`).
 │   └── assets/                # committee, speakers, sponsors, logos, PDFs
 ├── tgi2026/                   # IV Simpósio TGI 2026 (tgirecife2026.com.br)
 │   ├── index.html
-│   ├── assets/  committee/  speakers/  organizers/
+│   ├── assets/  committee/  guests/  organizers/
 │   ├── schedule/  resumes/
 │   ├── sponsors/              # reserved (may be empty)
 │   ├── build/                 # generated fragments (not part of the Vercel build)

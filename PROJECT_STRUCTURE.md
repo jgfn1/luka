@@ -31,7 +31,7 @@ custom domain. The portfolio lives in `/portfolio/` (there is no root
 │       └── programacao_completa.pdf
 ├── tgi2026/
 │   ├── index.html                      # IV Simpósio TGI 2026 (PT/EN/ES)
-│   ├── assets/ committee/ speakers/ organizers/ sponsors/
+│   ├── assets/ committee/ guests/ organizers/ sponsors/
 │   ├── schedule/ resumes/
 │   ├── build/                          # generated fragments (not deployed)
 │   └── scripts/                        # Python schedule & speaker helpers
@@ -146,7 +146,7 @@ They are not part of the Vercel build.
 Run from the repository root (requires Python 3):
 
 ```bash
-# Generate schedule rows and speaker cards from CSV + photos
+# Generate schedule rows and guest cards from CSV + photos
 python3 tgi2026/scripts/generate_content.py
 
 # Patch the generated fragments into index.html
