@@ -29,9 +29,7 @@
       "enfermagem"
     ],
     "slug": "amanda-marquim",
-    "functions": [
-      "moderador"
-    ]
+    "functions": []
   },
   {
     "name": "Américo Gusmão",
@@ -162,6 +160,23 @@
     ]
   },
   {
+    "name": "Débora Medeiros",
+    "role": "Enfermeira",
+    "region": "",
+    "photo": "",
+    "bio": [
+      "Enfermeira graduada pela Universidade de Pernambuco.",
+      "Atua como Enfermeira navegadora da linha de cuidados em Tumores GastroIntestinais (TGI) do Hospital Santa Joana Recife."
+    ],
+    "specialties": [
+      "enfermagem"
+    ],
+    "slug": "debora-medeiros",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
     "name": "Diogo Sales",
     "role": "Oncologista Clínico",
     "region": "",
@@ -203,7 +218,9 @@
     "region": "",
     "photo": "",
     "bio": [
-      "Oncologista clínico grupo Oncoclínicas e do Hospital Barão de Lucena e preceptor da residência de oncologia do Hospital do câncer de Pernambuco"
+      "Oncologista do Grupo Américas",
+      "Oncologista e preceptor da residência da oncologia do Hospital do Câncer de Pe.",
+      "Oncologista do Hospital Barão de Lucena"
     ],
     "specialties": [
       "oncologia"
@@ -229,6 +246,26 @@
     "slug": "eriberto-marques",
     "functions": [
       "presidente"
+    ]
+  },
+  {
+    "name": "Euclides Dias",
+    "role": "Cirurgião",
+    "region": "",
+    "photo": "guests/euclides-dias-cirurgiao.jpeg",
+    "bio": [
+      "Professor Adjunto de Cirurgia Abdominal da Universidade Federal de Pernambuco",
+      "Cirurgião do Real Instituto de Cirurgia Oncológica - Hospital Português - Recife",
+      "Supervisor da Residência de Cirurgia Geral do Hospital da Restauração - Recife",
+      "Titular do CBCD, do CBC e da ABCG",
+      "Proctor em Cirurgia Robótica pelo CBC"
+    ],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "euclides-dias",
+    "functions": [
+      "moderador"
     ]
   },
   {
@@ -386,6 +423,24 @@
       "cirurgia"
     ],
     "slug": "isaac-esmeraldo",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Isis Catharine",
+    "role": "Enfermeira",
+    "region": "",
+    "photo": "",
+    "bio": [
+      "Enfermeira pela Universidade Federal de Pernambuco",
+      "Residência em Oncologia pela Universidade de Pernambuco",
+      "Enfermeira Navegadora em Oncologia do Hospital Santa Joana Recife"
+    ],
+    "specialties": [
+      "enfermagem"
+    ],
+    "slug": "isis-catharine",
     "functions": [
       "moderador"
     ]
@@ -573,24 +628,6 @@
       "nutricao"
     ],
     "slug": "marcella-campos",
-    "functions": [
-      "palestrante"
-    ]
-  },
-  {
-    "name": "Murilo Araújo",
-    "role": "Oncologista",
-    "region": "",
-    "photo": "",
-    "bio": [
-      "Chefe da Subseção de Oncologia clínica do Hospital de Aeronáutica de Recife.",
-      "Oncologista clínico da Rede OC e Onkos",
-      "Preceptor da residência de Clínica Médica do Hospital Getúlio Vargas e do Hospital de Aeronautica de Recife"
-    ],
-    "specialties": [
-      "oncologia"
-    ],
-    "slug": "murilo-araujo",
     "functions": [
       "palestrante"
     ]
@@ -916,6 +953,24 @@
       "nuclear"
     ],
     "slug": "tien-chang",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
+    "name": "Victor Lira",
+    "role": "Endoscopista",
+    "region": "",
+    "photo": "guests/victor-lira-endoscopista.jpeg",
+    "bio": [
+      "Residência em Endoscopia e Fellowship em Endoscopia Avançada pelo HC-FMUSP",
+      "Preceptor da residência médica de endoscopia do IMIP",
+      "Endoscopista Colaborador da Endogastro (Hospital Santa Joana)"
+    ],
+    "specialties": [
+      "endoscopia"
+    ],
+    "slug": "victor-lira",
     "functions": [
       "moderador"
     ]

@@ -48,6 +48,7 @@ ROLES = {
     "Nutricionista": {"en": "Dietitian", "es": "Nutricionista"},
     "Nutróloga": {"en": "Nutrition Physician", "es": "Nutrióloga"},
     "Enfermeira": {"en": "Nurse", "es": "Enfermera"},
+    "Endoscopista": {"en": "Endoscopist", "es": "Endoscopista"},
     "Endocrinologista": {"en": "Endocrinologist", "es": "Endocrinólogo"},
     "Preparador Físico": {"en": "Exercise Physiologist", "es": "Preparador Físico"},
 }

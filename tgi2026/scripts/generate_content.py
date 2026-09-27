@@ -142,6 +142,7 @@ SPECIALTY_GROUPS = [
     ("nuclear", "Medicina Nuclear", ("Medicina Nuclear",)),
     ("nutricao", "Nutrição", ("Nutricionista", "Nutróloga")),
     ("enfermagem", "Enfermagem", ("Enfermeira",)),
+    ("endoscopia", "Endoscopia", ("Endoscopista",)),
     ("endocrinologia", "Endocrinologia", ("Endocrinologista",)),
     ("fisica", "Preparação Física", ("Preparador Físico",)),
 ]
@@ -210,7 +211,7 @@ def people_list(raw: str, lang: str = "pt") -> str:
         if not token:
             continue
         name, role = split_name_role(token)
-        if slugify(name) in TBD_TOKENS and not role:
+        if not name or (slugify(name) in TBD_TOKENS and not role):
             chips.append(f'<span class="session-person session-person--tbd">{tbd}</span>')
             continue
         chip = f'<span class="session-person">{html.escape(name)}'
@@ -275,7 +276,9 @@ def parse_panel(cell: str) -> dict[str, str]:
 def speaker_cell(raw: str, lang: str = "pt") -> str:
     name, role = split_name_role(raw.replace("*Online*", "").strip())
     if not name:
-        return ""
+        if not role and slugify(raw) not in TBD_TOKENS:
+            return ""
+        return f'<span class="speaker-name speaker-name--tbd">{lookup(LABELS, TBD, lang)}</span>'
     if slugify(name) in TBD_TOKENS and not role:
         return f'<span class="speaker-name speaker-name--tbd">{lookup(LABELS, TBD, lang)}</span>'
     out = f'<span class="speaker-name">{html.escape(name)}</span>'

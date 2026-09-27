@@ -1,7 +1,6 @@
 ﻿NOME,CATEGORIA,,,,,,,,,,,
 "Alexandre da Fonte
 (Radiologista)",MODERADOR,,,,,,,,,,,
-Amanda Marquim (Enfermeira),MODERADOR,,,,,,,,,,,
 "Américo Gusmão
 (Cirurgião)",MODERADOR,,,,,,,,,,,
 "Ana Rita Carvalho
@@ -12,7 +11,6 @@ Amanda Marquim (Enfermeira),MODERADOR,,,,,,,,,,,
 Artur Lima (Oncologista),MODERADOR,,,,,,,,,,,
 "Beatriz Cavalcanti
 (Cirurgiã) ",MODERADOR,,,,,,,,,,,
-Bernardo Domingues ,MODERADOR,,,,,,,,,,,
 "Carlos Abath
 (Cirurgião Vascular)",PALESTRANTE,,,,,,,,,,,
 Carolina Reis (Hepatologista),MODERADOR,,,,,,,,,,,
@@ -21,7 +19,7 @@ Carolina Reis (Hepatologista),MODERADOR,,,,,,,,,,,
 ,PRESIDENTE,,,,,,,,,,,
 "Christiane Violet
 (Oncologista)",PRESIDENTE,,,,,,,,,,,
-"Débora  
+"Débora Medeiros
 (Enfermeira) ",PALESTRANTE,,,,,,,,,,,
 "Diogo Sales
 (Oncologista Clinico)",PALESTRANTE,,,,,,,,,,,
@@ -30,6 +28,8 @@ Edite Magalhães (Nutróloga) ,MODERADOR,,,,,,,,,,,
 (Oncologista)",PALESTRANTE,,,,,,,,,,,
 "Eriberto Marques 
 (Oncologista)",PRESIDENTE,,,,,,,,,,,
+"Euclides Dias
+(Cirurgião)",MODERADOR,,,,,,,,,,,
 "Felipe Coelho
 (Radioterapeuta)",MODERADOR,,,,,,,,,,,
 "Flávio Fernandes 
@@ -47,6 +47,8 @@ Gustavo Ferreira (Patologista) ,PALESTRANTE,,,,,,,,,,,
 (Oncologista)",PALESTRANTE,,,,,,,,,,,
 "Isaac Esmeraldo
 (Cirurgião)",MODERADOR,,,,,,,,,,,
+"Isis Catharine 
+(Enfermeira)",MODERADOR,,,,,,,,,,,
 "Ítalo Cruz 
 (Radiologista)",MODERADOR,,,,,,,,,,,
 "João Mangueira
@@ -68,8 +70,6 @@ Gustavo Ferreira (Patologista) ,PALESTRANTE,,,,,,,,,,,
 (Cirurgião)",MODERADOR,,,,,,,,,,,
 "Marcella Campos 
 (Nutricionista)",PALESTRANTE,,,,,,,,,,,
-"Murilo Araújo
-(Oncologista)",PALESTRANTE,,,,,,,,,,,
 "Nadja Rolim 
 (Radiologista)",PALESTRANTE,,,,,,,,,,,
 "Nildevande Firmino
@@ -98,7 +98,6 @@ Rafael Caires (Oncologista),MODERADOR,,,,,,,,,,,
 Roberto Lustosa ,PALESTRANTE,,,,,,,,,,,
 "Rodrigo Arruda
 (Oncologista) ",PALESTRANTE,,,,,,,,,,,
-Romulo Furtado (Cirugião),MODERADOR,,,,,,,,,,,
 "Rossano Araújo 
 (Oncologista)",PRESIDENTE,,,,,,,,,,,
 "Samara Duarte
@@ -109,8 +108,6 @@ Romulo Furtado (Cirugião),MODERADOR,,,,,,,,,,,
 (Nutricionista) ",MODERADOR,,,,,,,,,,,
 "Thaís Gelenske
 (Endocrinologista) ",PALESTRANTE,,,,,,,,,,,
-"Thales Batista
-(Cirugião)",MODERADOR,,,,,,,,,,,
 "Thiago Apolinário
 (Oncologista) ",PALESTRANTE,,,,,,,,,,,
 "Tiago Iwanaga
@@ -119,7 +116,7 @@ Romulo Furtado (Cirugião),MODERADOR,,,,,,,,,,,
 (Gastro Hepatologista) ",PALESTRANTE,,,,,,,,,,,
 "Tien Chang
 (PET)",MODERADOR,,,,,,,,,,,
-,,,,,,,,,,,,
+Victor Lira (Endoscopista),MODERADOR,,,,,,,,,,,
 ,,,,,,,,,,,,
 ,,,,,,,,,,,,
 ,,,,,,,,,,,,
