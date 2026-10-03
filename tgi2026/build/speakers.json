@@ -62,7 +62,7 @@
     ],
     "slug": "ana-rita-carvalho",
     "functions": [
-      "moderador"
+      "palestrante"
     ]
   },
   {
@@ -105,7 +105,7 @@
     "name": "Carolina Reis",
     "role": "Hepatologista",
     "region": "",
-    "photo": "",
+    "photo": "guests/carolina-reis-hepatologista.png",
     "bio": [
       "Médica graduada pela Universidade Federal de Pernambuco - UFPE",
       "Residência em Clínica médica e Hepatologia",
@@ -156,6 +156,7 @@
     ],
     "slug": "cristiana-tavares",
     "functions": [
+      "presidente",
       "palestrante"
     ]
   },
@@ -163,7 +164,7 @@
     "name": "Débora Medeiros",
     "role": "Enfermeira",
     "region": "",
-    "photo": "",
+    "photo": "guests/debora-medeiros-enfermeira.jpg",
     "bio": [
       "Enfermeira graduada pela Universidade de Pernambuco.",
       "Atua como Enfermeira navegadora da linha de cuidados em Tumores GastroIntestinais (TGI) do Hospital Santa Joana Recife."
@@ -216,7 +217,7 @@
     "name": "Eduardo Inojosa",
     "role": "Oncologista",
     "region": "",
-    "photo": "",
+    "photo": "guests/eduardo-inojosa-oncologista.jpg",
     "bio": [
       "Oncologista do Grupo Américas",
       "Oncologista e preceptor da residência da oncologia do Hospital do Câncer de Pe.",
@@ -391,6 +392,7 @@
     ],
     "slug": "ilan-pedrosa",
     "functions": [
+      "moderador",
       "palestrante"
     ]
   },
@@ -431,7 +433,7 @@
     "name": "Isis Catharine",
     "role": "Enfermeira",
     "region": "",
-    "photo": "",
+    "photo": "guests/isis-catharine-enfermeira.jpg",
     "bio": [
       "Enfermeira pela Universidade Federal de Pernambuco",
       "Residência em Oncologia pela Universidade de Pernambuco",
@@ -468,7 +470,7 @@
     "name": "João Mangueira",
     "role": "Oncologista",
     "region": "",
-    "photo": "",
+    "photo": "guests/joao-mangueira-oncologista.jpg",
     "bio": [
       "Residência em Oncologia Clínica pelo IMIP",
       "Oncologista Clínico da Rede Américas e do Hospital do Câncer de Pernambuco",
@@ -495,24 +497,6 @@
       "radiologia"
     ],
     "slug": "joao-paulo-ayub",
-    "functions": [
-      "palestrante"
-    ]
-  },
-  {
-    "name": "Joyce Cavalcanti",
-    "role": "Coloproctologista",
-    "region": "",
-    "photo": "guests/joyce-cavalcanti-coloproctologista.jpg",
-    "bio": [
-      "Médica Coloproctologista pelo hospital Barão de Lucena",
-      "Atua como Coloproctologista no Hospital Santa Joana",
-      "Preceptora da residência de Coloproctologia do Hospital Barão de Lucena"
-    ],
-    "specialties": [
-      "coloproctologia"
-    ],
-    "slug": "joyce-cavalcanti",
     "functions": [
       "palestrante"
     ]
@@ -648,7 +632,7 @@
     ],
     "slug": "nadja-rolim",
     "functions": [
-      "palestrante"
+      "moderador"
     ]
   },
   {
@@ -683,6 +667,7 @@
     ],
     "slug": "olival-lucena",
     "functions": [
+      "presidente",
       "palestrante"
     ]
   },
@@ -722,6 +707,26 @@
       "fisica"
     ],
     "slug": "paulo-carvalho",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Pedro Paulo",
+    "role": "Cirurgião",
+    "region": "",
+    "photo": "guests/pedro-paulo-cirurgiao.jpg",
+    "bio": [
+      "Médico formado pela UPE",
+      "Residência de Cir Oncologica pelo INCA",
+      "Coordenador do departamento de cirurgia oncologica do HUOC/ UPE",
+      "Preceptor no programa de residência do HCP",
+      "Cirurgião pelo Grupo COP/ Oncologia D'Or"
+    ],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "pedro-paulo",
     "functions": [
       "palestrante"
     ]

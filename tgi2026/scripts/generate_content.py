@@ -404,21 +404,33 @@ def iter_named_people(raw: str):
         yield name
 
 
-def read_csv_functions() -> dict[str, str]:
-    """Official role from chairs-moderators-speakers.csv, keyed by name slug."""
-    functions: dict[str, str] = {}
+def read_csv_functions() -> dict[str, set[str]]:
+    """Roles from chairs-moderators-speakers.csv, keyed by name slug.
+
+    A category on a nameless row belongs to the person above it. The sheet
+    does that when someone is, for example, both a speaker and a chair.
+    """
+    functions: dict[str, set[str]] = {}
+    last_slug = ""
     path = BASE / "guests" / "chairs-moderators-speakers.csv"
     with path.open(encoding="utf-8-sig") as handle:
         reader = csv.reader(handle)
         next(reader, None)
         for row in reader:
-            if not row or not squash(row[0]):
+            if not row:
                 continue
-            name, _role = split_name_role(row[0])
             label = squash(row[1] if len(row) > 1 else "").upper()
             function = FUNCTION_FROM_LABEL.get(label)
-            if name and function:
-                functions[slugify(name)] = function
+            name = squash(row[0])
+            if not name:
+                if function and last_slug:
+                    functions.setdefault(last_slug, set()).add(function)
+                continue
+            person, _role = split_name_role(name)
+            if not person or not function:
+                continue
+            last_slug = slugify(person)
+            functions.setdefault(last_slug, set()).add(function)
     return functions
 
 
@@ -451,7 +463,7 @@ def read_schedule_functions() -> dict[str, set[str]]:
 
 
 def assign_functions(people: list[dict]) -> dict[str, list[str]]:
-    """CSV decides the role. The programme fills anyone the CSV does not list."""
+    """CSV decides the roles. The programme fills anyone the CSV does not list."""
     csv_functions = read_csv_functions()
     schedule_functions = read_schedule_functions()
     known = {person["slug"] for person in people}
@@ -466,11 +478,11 @@ def assign_functions(people: list[dict]) -> dict[str, list[str]]:
         scheduled = schedule_functions.get(slug, set())
         if slug in csv_functions:
             chosen = csv_functions[slug]
-            person["functions"] = [chosen]
-            extra = sorted(scheduled - {chosen})
+            person["functions"] = [item for item in FUNCTION_ORDER if item in chosen]
+            extra = sorted(scheduled - chosen)
             if extra:
                 notes["csv_vs_schedule"].append(
-                    f"{person['name']}: CSV {chosen}; programação também {', '.join(extra)}"
+                    f"{person['name']}: CSV {', '.join(person['functions'])}; programação também {', '.join(extra)}"
                 )
         elif scheduled:
             person["functions"] = [item for item in FUNCTION_ORDER if item in scheduled]
@@ -480,9 +492,10 @@ def assign_functions(people: list[dict]) -> dict[str, list[str]]:
         else:
             person["functions"] = []
             notes["unclassified"].append(person["name"])
-    for slug, function in sorted(csv_functions.items()):
+    for slug, functions in sorted(csv_functions.items()):
         if slug not in known:
-            notes["csv_without_card"].append(f"{slug} ({function})")
+            labels = ", ".join(item for item in FUNCTION_ORDER if item in functions)
+            notes["csv_without_card"].append(f"{slug} ({labels})")
     return notes
 
 
