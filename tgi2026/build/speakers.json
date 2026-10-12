@@ -232,24 +232,6 @@
     ]
   },
   {
-    "name": "Eriberto Marques",
-    "role": "Oncologista",
-    "region": "",
-    "photo": "",
-    "bio": [
-      "Oncologista da rede Américas",
-      "Fellow oncologia Sylvester cancer center",
-      "Ex presidente da SBOC Nordeste"
-    ],
-    "specialties": [
-      "oncologia"
-    ],
-    "slug": "eriberto-marques",
-    "functions": [
-      "presidente"
-    ]
-  },
-  {
     "name": "Euclides Dias",
     "role": "Cirurgião",
     "region": "",
@@ -522,7 +504,7 @@
     "name": "Leila Beltrão",
     "role": "Hepatologista",
     "region": "",
-    "photo": "",
+    "photo": "guests/leila-beltrao-hepatologista.jpeg",
     "bio": [
       "Prof titular de gastroenterologia - FCM/UPE",
       "Chefe do serviço de gastrohepatologia - HUOC/UPE",
@@ -617,10 +599,27 @@
     ]
   },
   {
+    "name": "Marcos Saturnino",
+    "role": "Coloproctologista",
+    "region": "",
+    "photo": "guests/marcos-saturnino-coloproctologista.jpeg",
+    "bio": [
+      "Membro Titular da Sociedade Brasileira de Coloproctologia",
+      "Coloproctologista do Real Hospital Português"
+    ],
+    "specialties": [
+      "coloproctologia"
+    ],
+    "slug": "marcos-saturnino",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
     "name": "Nadja Rolim",
     "role": "Radiologista",
     "region": "",
-    "photo": "",
+    "photo": "guests/nadja-rolim-radiologista.jpg",
     "bio": [
       "Médico Radiologista com título de especialista pelo CBR",
       "Mestrado pela UFPE",
@@ -653,6 +652,22 @@
     ]
   },
   {
+    "name": "Norton Nunes",
+    "role": "Cirurgião",
+    "region": "",
+    "photo": "guests/norton-nunes-cirurgiao.jpg",
+    "bio": [
+      "Graduação em Medicina na Universidade de Pernambuco (2013); Pós-graduação em Cirurgia Geral com aperfeiçoamento em videolaparoscopia no Hospital Getúlio Vargas - Recife-PE (2016-2019) e em Cirurgia do Aparelho Digestivo pelo Hospital Universitário de Sergipe-Ebserh (2020-2022). Cirurgião e preceptor do serviço de Cirurgia Geral do Hospital Agamenon Magalhães e do serviço de Cirurgia Geral e Aparelho Digestivo do Hospital Universitário Oswaldo Cruz - HUOC em Recife-PE. Mestrando no programa de pós-graduação em cirurgia da Universidade Federal de Pernambuco (UFPE)"
+    ],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "norton-nunes",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
     "name": "Olival Lucena",
     "role": "Cirurgião Abdominal",
     "region": "",
@@ -675,7 +690,7 @@
     "name": "Omar Jacobina",
     "role": "Cirurgião Geral",
     "region": "",
-    "photo": "committee/omar-jacobina-cirurgiao-geral.jpeg",
+    "photo": "guests/omar-jacobina-cirurgiao-geral.jpg",
     "bio": [
       "Cirurgião Geral e do Aparelho Digestivo do Hospital Santa Joana Recife",
       "Coordenador Médico da Linha Cirúrgica do Hospital Santa Joana.",
@@ -727,6 +742,39 @@
       "cirurgia"
     ],
     "slug": "pedro-paulo",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Pedro Pinheiro",
+    "role": "Cirurgião",
+    "region": "",
+    "photo": "",
+    "bio": [
+      "Cirurgião do aparelho digestivo formado na UFPE 1984",
+      "Cirurgião da Rede Dor São Luiz, Unimed, Américas Santa Joana"
+    ],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "pedro-pinheiro",
+    "functions": [
+      "presidente"
+    ]
+  },
+  {
+    "name": "Pedro Uson",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "guests/pedro-uson-oncologista.jpeg",
+    "bio": [
+      "Oncologista do Einstein Hospital Israelita."
+    ],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "pedro-uson",
     "functions": [
       "palestrante"
     ]
@@ -816,6 +864,24 @@
     "slug": "roberto-borges",
     "functions": [
       "moderador"
+    ]
+  },
+  {
+    "name": "Roberto Lustosa",
+    "role": "Cirurgião",
+    "region": "",
+    "photo": "guests/roberto-lustosa-cirurgiao.jpeg",
+    "bio": [
+      "Cirurgião do Aparelho Digestivo",
+      "Atuação em cirurgia Hepato-Bileo-Pancreática",
+      "Huoc/ imip/ Hosp Santa Joana"
+    ],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "roberto-lustosa",
+    "functions": [
+      "palestrante"
     ]
   },
   {
@@ -909,6 +975,25 @@
     ]
   },
   {
+    "name": "Thaís Gelenske",
+    "role": "Endocrinologista",
+    "region": "",
+    "photo": "guests/thais-gelenske-endocrinologista.jpg",
+    "bio": [
+      "Preceptora da residencia de clínica medica do HSJ Recife",
+      "Preceptora da residencia de endocrinologia do IMIP",
+      "Doutora pela UFPE",
+      "Membro do departamento de lipodistrofia da ABESO e membro eleito do departamento de dislipidemia da SBEM"
+    ],
+    "specialties": [
+      "endocrinologia"
+    ],
+    "slug": "thais-gelenske",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
     "name": "Thiago Apolinário",
     "role": "Oncologista",
     "region": "",
@@ -923,6 +1008,20 @@
       "oncologia"
     ],
     "slug": "thiago-apolinario",
+    "functions": [
+      "palestrante"
+    ]
+  },
+  {
+    "name": "Tiago Iwanaga",
+    "role": "Cirurgião",
+    "region": "",
+    "photo": "guests/tiago-iwanaga-cirurgiao.jpeg",
+    "bio": [],
+    "specialties": [
+      "cirurgia"
+    ],
+    "slug": "tiago-iwanaga",
     "functions": [
       "palestrante"
     ]

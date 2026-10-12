@@ -93,6 +93,10 @@ TITLES = {
         "en": "Cancer, metabolism and new drugs: obesity, diabetes and GLP-1 in the cancer patient",
         "es": "Cáncer, metabolismo y nuevos fármacos: obesidad, diabetes y GLP-1 en el paciente oncológico",
     },
+    "Análogos de GLP-1 em oncologia": {
+        "en": "GLP-1 analogues in oncology",
+        "es": "Análogos de GLP-1 en oncología",
+    },
     "A importância da atividade física no tratamento oncológico": {
         "en": "The role of physical activity in cancer treatment",
         "es": "La importancia de la actividad física en el tratamiento oncológico",
