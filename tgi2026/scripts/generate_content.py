@@ -50,6 +50,7 @@ ROLE_FIXES = {
 # Names that resumes.csv abbreviates or that carry a country suffix.
 NAME_FIXES = {
     "Luis Felipe": "Luis Felipe Carvalho",
+    "Luis Felipe Cavalho": "Luis Felipe Carvalho",
     "Simone Fumolaro - IT": "Simone Fumolaro",
     "Antônio de Padua": "Antônio de Pádua",
     "Cristiane Violet": "Christiane Violet",
@@ -124,11 +125,6 @@ TBD_TOKENS = {
 }
 
 FUNCTION_ORDER = ("presidente", "moderador", "palestrante")
-FUNCTION_FROM_LABEL = {
-    "PRESIDENTE": "presidente",
-    "MODERADOR": "moderador",
-    "PALESTRANTE": "palestrante",
-}
 PHOTO_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp", ".jfif", ".gif"}
 
 SPECIALTY_GROUPS = [
@@ -319,6 +315,12 @@ def render_schedule(path: Path, lang: str = "pt") -> str:
             )
             continue
 
+        # The sheet sometimes marks an online talk on the title instead of the name.
+        if "*Online*" in activity:
+            activity = activity.replace("*Online*", "")
+            if "*Online*" not in speaker:
+                speaker = f"{speaker} *Online*"
+
         label, duration = split_time(first)
         time_cell = html.escape(label)
         if duration:
@@ -404,38 +406,8 @@ def iter_named_people(raw: str):
         yield name
 
 
-def read_csv_functions() -> dict[str, set[str]]:
-    """Roles from chairs-moderators-speakers.csv, keyed by name slug.
-
-    A category on a nameless row belongs to the person above it. The sheet
-    does that when someone is, for example, both a speaker and a chair.
-    """
-    functions: dict[str, set[str]] = {}
-    last_slug = ""
-    path = BASE / "guests" / "chairs-moderators-speakers.csv"
-    with path.open(encoding="utf-8-sig") as handle:
-        reader = csv.reader(handle)
-        next(reader, None)
-        for row in reader:
-            if not row:
-                continue
-            label = squash(row[1] if len(row) > 1 else "").upper()
-            function = FUNCTION_FROM_LABEL.get(label)
-            name = squash(row[0])
-            if not name:
-                if function and last_slug:
-                    functions.setdefault(last_slug, set()).add(function)
-                continue
-            person, _role = split_name_role(name)
-            if not person or not function:
-                continue
-            last_slug = slugify(person)
-            functions.setdefault(last_slug, set()).add(function)
-    return functions
-
-
 def read_schedule_functions() -> dict[str, set[str]]:
-    """Roles implied by the programme, used only when the CSV has no row."""
+    """Roles taken from the programme: chair, moderator and speaker."""
     functions: dict[str, set[str]] = {}
 
     def add(raw: str, function: str) -> None:
@@ -463,39 +435,14 @@ def read_schedule_functions() -> dict[str, set[str]]:
 
 
 def assign_functions(people: list[dict]) -> dict[str, list[str]]:
-    """CSV decides the roles. The programme fills anyone the CSV does not list."""
-    csv_functions = read_csv_functions()
+    """The programme decides who is a chair, a moderator or a speaker."""
     schedule_functions = read_schedule_functions()
-    known = {person["slug"] for person in people}
-    notes = {
-        "csv_vs_schedule": [],
-        "from_schedule": [],
-        "unclassified": [],
-        "csv_without_card": [],
-    }
+    notes = {"unclassified": []}
     for person in people:
-        slug = person["slug"]
-        scheduled = schedule_functions.get(slug, set())
-        if slug in csv_functions:
-            chosen = csv_functions[slug]
-            person["functions"] = [item for item in FUNCTION_ORDER if item in chosen]
-            extra = sorted(scheduled - chosen)
-            if extra:
-                notes["csv_vs_schedule"].append(
-                    f"{person['name']}: CSV {', '.join(person['functions'])}; programação também {', '.join(extra)}"
-                )
-        elif scheduled:
-            person["functions"] = [item for item in FUNCTION_ORDER if item in scheduled]
-            notes["from_schedule"].append(
-                f"{person['name']}: {', '.join(person['functions'])}"
-            )
-        else:
-            person["functions"] = []
+        scheduled = schedule_functions.get(person["slug"], set())
+        person["functions"] = [item for item in FUNCTION_ORDER if item in scheduled]
+        if not person["functions"]:
             notes["unclassified"].append(person["name"])
-    for slug, functions in sorted(csv_functions.items()):
-        if slug not in known:
-            labels = ", ".join(item for item in FUNCTION_ORDER if item in functions)
-            notes["csv_without_card"].append(f"{slug} ({labels})")
     return notes
 
 
@@ -612,14 +559,7 @@ def main() -> None:
     print(f"sem foto ({len(missing)}): {', '.join(missing) or '—'}")
     print(f"sem currículo ({len(no_bio)}): {', '.join(no_bio) or '—'}")
     print(f"cards omitidos — só nome ({len(dropped)}): {', '.join(dropped) or '—'}")
-    print(f"CSV diverge da programação ({len(notes['csv_vs_schedule'])}):")
-    for line in notes["csv_vs_schedule"]:
-        print(f"  - {line}")
-    print(f"função só pela programação ({len(notes['from_schedule'])}):")
-    for line in notes["from_schedule"]:
-        print(f"  - {line}")
     print(f"sem função ({len(notes['unclassified'])}): {', '.join(notes['unclassified']) or '—'}")
-    print(f"no CSV sem card ({len(notes['csv_without_card'])}): {', '.join(notes['csv_without_card']) or '—'}")
 
 
 if __name__ == "__main__":

@@ -763,6 +763,61 @@
         object-fit: contain;
       }
 
+      .hero-sponsors-carousel {
+        margin-top: 1.75rem;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: var(--r-lg);
+        padding: 0.9rem 0 1rem;
+        box-shadow: var(--shadow-md);
+        overflow: hidden;
+      }
+      .hero-sponsors-carousel .hero-sponsor-label {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--muted-text);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        margin-bottom: 0.75rem;
+      }
+      .hero-sponsors-carousel .carousel-track {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        animation: hero-sponsors-scroll 42s linear infinite;
+      }
+      .hero-sponsors-carousel .carousel-track:hover {
+        animation-play-state: paused;
+      }
+      .hero-sponsors-carousel .carousel-track img {
+        max-height: 36px;
+        width: auto;
+        margin: 0 1.75rem;
+        object-fit: contain;
+        object-position: center;
+        flex-shrink: 0;
+      }
+      @keyframes hero-sponsors-scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hero-sponsors-carousel .carousel-track {
+          animation: none;
+          flex-wrap: wrap;
+          justify-content: center;
+          width: 100%;
+          row-gap: 0.75rem;
+        }
+        .hero-sponsors-carousel .carousel-track img:nth-child(n + 9) {
+          display: none;
+        }
+      }
+
       .hero-scroll {
         position: absolute;
         bottom: 1.6rem;
@@ -1710,6 +1765,29 @@
         margin-bottom: 1rem;
         font-family: "Outfit", sans-serif;
       }
+      .sponsors-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1.75rem 2rem;
+        margin: 2rem auto 0;
+        align-items: center;
+        max-width: 960px;
+      }
+      .sponsor-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.65rem 1rem;
+      }
+      .sponsor-item img {
+        max-width: 180px;
+        max-height: 68px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+
       .placeholder-card {
         max-width: 640px;
         margin: 2.2rem auto 0;
@@ -2083,6 +2161,18 @@
           max-height: 34px;
           max-width: 108px;
         }
+        .hero-sponsors-carousel {
+          max-width: 100%;
+          padding: 0.75rem 0 0.85rem;
+        }
+        .hero-sponsors-carousel .carousel-track img {
+          max-height: 30px;
+          margin: 0 1.25rem;
+        }
+        .sponsors-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 1.4rem 1rem;
+        }
         .modal-content {
           padding: 2.3rem 1.25rem 1.5rem;
         }
@@ -2191,7 +2281,7 @@
           </a>
           <a href="#guests" class="hero-chip">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            <span data-i18n="hero.chipFaculty">60 convidados especialistas</span>
+            <span data-i18n="hero.chipFaculty">Mais de 60 convidados especialistas</span>
           </a>
         </div>
 
@@ -2206,6 +2296,28 @@
             <img src="organizers/logo-isep.png" alt="ISEP — Instituto Santa Joana Recife de Ensino e Pesquisa" />
             <img src="organizers/logo-hospital-santa-joana.png" alt="Hospital Santa Joana Recife" />
             <img src="organizers/logo-rede-americas.png" alt="Rede Américas" />
+          </div>
+        </div>
+
+        <div class="hero-sponsors-carousel">
+          <div class="hero-sponsor-label" data-i18n="hero.sponsorsLabel">Patrocinadores</div>
+          <div class="carousel-track">
+            <img src="sponsors/astrazeneca.png" alt="AstraZeneca" />
+            <img src="sponsors/servier.png" alt="Servier" />
+            <img src="sponsors/merck.png" alt="Merck" />
+            <img src="sponsors/daiichi-sankyo.png" alt="Daiichi-Sankyo" />
+            <img src="sponsors/roche.png" alt="Roche" />
+            <img src="sponsors/astellas-oncologia.png" alt="Astellas Oncologia" />
+            <img src="sponsors/pfizer.png" alt="Pfizer" />
+            <img src="sponsors/bristol.png" alt="Bristol Myers Squibb" />
+            <img src="sponsors/astrazeneca.png" alt="" aria-hidden="true" />
+            <img src="sponsors/servier.png" alt="" aria-hidden="true" />
+            <img src="sponsors/merck.png" alt="" aria-hidden="true" />
+            <img src="sponsors/daiichi-sankyo.png" alt="" aria-hidden="true" />
+            <img src="sponsors/roche.png" alt="" aria-hidden="true" />
+            <img src="sponsors/astellas-oncologia.png" alt="" aria-hidden="true" />
+            <img src="sponsors/pfizer.png" alt="" aria-hidden="true" />
+            <img src="sponsors/bristol.png" alt="" aria-hidden="true" />
           </div>
         </div>
       </div>
@@ -2293,7 +2405,7 @@
               </span>
               <div>
                 <strong data-i18n="about.factFacultyLabel">Convidados</strong>
-                <span data-i18n="about.factFacultyValue">60 especialistas do Brasil e do exterior</span>
+                <span data-i18n="about.factFacultyValue">Mais de 60 especialistas do Brasil e do exterior</span>
               </div>
             </div>
             <div class="info-row">
@@ -2479,8 +2591,8 @@
 <tr><td>09:05 – 09:20<br /><span class="session-duration">15 min</span></td><td colspan="2" class="session-discussion">Discussão</td></tr>
 <tr><td colspan="3" class="session-header"><span class="session-tag">Mesa 2</span><strong>Esôfago e Estômago — Doença Localizada</strong><div class="session-meta"><span>Presidente</span><span class="session-person">Omar Jacobina <em>Cirurgião</em></span></div><div class="session-meta"><span>Moderadores</span><span class="session-person">Victor Lira <em>Endoscopista</em></span><span class="session-person">Ítalo Cruz <em>Radiologista</em></span><span class="session-person">Tien Chang <em>Medicina Nuclear</em></span></div></td></tr>
 <tr><td>09:30 – 09:40<br /><span class="session-duration">10 min</span></td><td>Biomarcadores no câncer gástrico: quais resultados podem mudar a estratégia?</td><td><span class="speaker-name">Gustavo Ferreira</span><span class="speaker-role">Patologista</span></td></tr>
-<tr><td>09:40 – 09:50<br /><span class="session-duration">10 min</span></td><td>Cirurgia ou preservação de órgão no CEC de esôfago: seleção, vigilância e resgate</td><td><span class="speaker-name">Flávio Fernandes</span><span class="speaker-role">Cirurgião Abdominal</span></td></tr>
-<tr><td>09:50 – 10:00<br /><span class="session-duration">10 min</span></td><td>Imunoterapia no câncer gástrico e de junção ressecável: evidências e seleção de pacientes</td><td><span class="speaker-name">Nildevande Firmino</span><span class="speaker-role">Oncologista Clínico</span></td></tr>
+<tr><td>09:40 – 09:50<br /><span class="session-duration">10 min</span></td><td>Cirurgia ou preservação de órgão no CEC de esôfago: seleção, vigilância e resgate</td><td><span class="speaker-name">Flávio Fernandes</span><span class="speaker-role">Cirurgião</span></td></tr>
+<tr><td>09:50 – 10:00<br /><span class="session-duration">10 min</span></td><td>Imunoterapia no câncer gástrico e de junção ressecável: evidências e seleção de pacientes</td><td><span class="speaker-name">Nildevande Firmino</span><span class="speaker-role">Oncologista</span></td></tr>
 <tr><td>10:00 – 10:15<br /><span class="session-duration">15 min</span></td><td colspan="2" class="session-discussion">Discussão</td></tr>
 <tr><td>10:15 – 10:30<br /><span class="session-duration">15 min</span></td><td>Caso Clínico: neoplasia da junção esofagogástrica e do estômago — doença localizada</td><td><span class="speaker-name">Ilka Rocha</span><span class="speaker-role">Oncologista</span></td></tr>
 <tr><td>10:30 – 10:50<br /><span class="session-duration">20 min</span></td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
@@ -2492,11 +2604,11 @@
 <tr><td>11:40 – 11:55<br /><span class="session-duration">15 min</span></td><td colspan="2" class="session-discussion">Discussão</td></tr>
 <tr><td>12:00 – 13:30<br /><span class="session-duration">1 hora e 30 min</span></td><td colspan="2" class="session-break"><strong>ALMOÇO</strong></td></tr>
 <tr><td colspan="3" class="session-header"><span class="session-tag">Mesa 4</span><strong>Tumores câncer de pâncreas</strong><div class="session-meta"><span>Presidente</span><span class="session-person">Pedro Pinheiro <em>Cirurgião</em></span></div><div class="session-meta"><span>Moderadores</span><span class="session-person">Felipe Coelho <em>Radioterapeuta</em></span><span class="session-person">Norton Nunes <em>Cirurgião</em></span><span class="session-person">Alexandre da Fonte <em>Radiologista</em></span></div></td></tr>
-<tr><td>13:30 – 13:40<br /><span class="session-duration">10 min</span></td><td>Ressecabilidade no câncer de pâncreas: além da anatomia, quem é candidato à cirurgia?</td><td><span class="speaker-name">Roberto Lustosa</span></td></tr>
+<tr><td>13:30 – 13:40<br /><span class="session-duration">10 min</span></td><td>Ressecabilidade no câncer de pâncreas: além da anatomia, quem é candidato à cirurgia?</td><td><span class="speaker-name">Roberto Lustosa</span><span class="speaker-role">Cirurgião</span></td></tr>
 <tr><td>13:40 – 13:50<br /><span class="session-duration">10 min</span></td><td>Insuficiência pancreática pós-cirúrgica: como manejar</td><td><span class="speaker-name">Gustavo Lima</span><span class="speaker-role">Gastroenterologista</span></td></tr>
-<tr><td>13:50 – 14:00<br /><span class="session-duration">10 min</span></td><td>Caso Clínico — cirurgia inicial ou neoadjuvância: como escolher a estratégia e quando operar?</td><td><span class="speaker-name">Diogo Sales</span><span class="speaker-role">Oncologista Clínico</span></td></tr>
+<tr><td>13:50 – 14:00<br /><span class="session-duration">10 min</span></td><td>Caso Clínico — cirurgia inicial ou neoadjuvância: como escolher a estratégia e quando operar?</td><td><span class="speaker-name">Diogo Sales</span><span class="speaker-role">Oncologista</span></td></tr>
 <tr><td>14:00 – 14:15<br /><span class="session-duration">15 min</span></td><td colspan="2" class="session-discussion">Discussão</td></tr>
-<tr><td>14:15 – 15:00<br /><span class="session-duration">45 min</span></td><td colspan="2" class="session-sponsor"><strong>Simpósio Satélite — Servier</strong><div class="session-meta"><span>Chairman</span><span class="session-person">Gustavo Fernandes</span></div><div class="session-speaker-line"><span class="speaker-name">Pedro Uson</span><span class="speaker-role">Oncologista</span></div></td></tr>
+<tr><td>14:15 – 15:00<br /><span class="session-duration">45 min</span></td><td colspan="2" class="session-sponsor"><strong>Simpósio Satélite — Servier</strong><div class="session-meta"><span>Chairman</span><span class="session-person">Gustavo Fernandes <em>Oncologista</em></span></div><div class="session-speaker-line"><span class="speaker-name">Pedro Uson</span><span class="speaker-role">Oncologista</span></div></td></tr>
 <tr><td>15:00 – 15:20<br /><span class="session-duration">20 min</span></td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
 <tr><td>15:20 – 16:05<br /><span class="session-duration">45 min</span></td><td colspan="2" class="session-sponsor"><strong>Simpósio Satélite — AstraZeneca</strong><div class="session-speaker-line"><span class="speaker-name">Tibério Medeiros</span><span class="speaker-role">Gastro Hepatologista</span></div></td></tr>
 <tr><td>16:05 – 16:35<br /><span class="session-duration">30 min</span></td><td colspan="2" class="session-sponsor"><strong>Simpósio Satélite — Bristol (HCC)</strong><div class="session-speaker-line"><span class="speaker-name">Gustavo Fernandes</span><span class="speaker-role">Oncologista</span></div></td></tr>
@@ -2607,11 +2719,12 @@
         <div class="speakers-grid" id="speakers-grid">
 <!-- speakers -->
 <button class="speaker-card" type="button" data-name="Alexandre da Fonte" data-role="Radiologista" data-region="" data-role-en="Radiologist" data-role-es="Radiólogo" data-photo="guests/alexandre-da-fonte-radiologista.jpg" data-specialty="radiologia" data-function="moderador" data-search="alexandre-da-fonte-radiologista" data-bio='[&quot;Coordenador do Jayme da Fonte diagnósticos&quot;, &quot;Membro da comissão científica do colégio brasileiro de radiologia&quot;]'><span class="speaker-photo"><img src="guests/alexandre-da-fonte-radiologista.jpg" alt="Alexandre da Fonte" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Alexandre da Fonte</span><span class="speaker-card-role">Radiologista</span></span></button>
-<button class="speaker-card" type="button" data-name="Amanda Marquim" data-role="Enfermeira" data-region="" data-role-en="Nurse" data-role-es="Enfermera" data-photo="guests/amanda-marquim-enfermeira.jpg" data-specialty="enfermagem" data-function="" data-search="amanda-marquim-enfermeira" data-bio='[&quot;Enfermaria formada pela Universidade de Pernambuco, com experiência em navegação oncológica. Atualmente ocupa o cargo de supervisão das linhas de cuidados do hospital Santa Joana Recife.&quot;, &quot;Possui experiência em gestão de centro cirúrgico no Hospital Universitário Oswaldo Cruz. MBA em central de materiais e esterilização.&quot;]'><span class="speaker-photo"><img src="guests/amanda-marquim-enfermeira.jpg" alt="Amanda Marquim" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Amanda Marquim</span><span class="speaker-card-role">Enfermeira</span></span></button>
 <button class="speaker-card" type="button" data-name="Américo Gusmão" data-role="Cirurgião" data-region="" data-role-en="Surgeon" data-role-es="Cirujano" data-photo="guests/americo-gusmao-cirurgiao.jpeg" data-specialty="cirurgia" data-function="moderador" data-search="americo-gusmao-cirurgiao" data-bio='[&quot;Professor adjunto de cirurgia da Universidade de Pernambuco. Preceptor da Residência em Cirurgia Geral e Digestiva da Universidade de Pernambuco. Cirurgião transplantador de fígado do Hospital Universitário Osvaldo Cruz e do Hospital Nossa Senhora das Neves&quot;]'><span class="speaker-photo"><img src="guests/americo-gusmao-cirurgiao.jpeg" alt="Américo Gusmão" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Américo Gusmão</span><span class="speaker-card-role">Cirurgião</span></span></button>
 <button class="speaker-card" type="button" data-name="Ana Rita Carvalho" data-role="Radiologista" data-region="" data-role-en="Radiologist" data-role-es="Radiólogo" data-photo="guests/ana-rita-carvalho-radiologista.jpg" data-specialty="radiologia" data-function="palestrante" data-search="ana-rita-carvalho-radiologista" data-bio='[&quot;Radiologista Rede D&#x27;Or&quot;, &quot;Coordenadora Radiologia HSE&quot;, &quot;Membro Titular CBR&quot;]'><span class="speaker-photo"><img src="guests/ana-rita-carvalho-radiologista.jpg" alt="Ana Rita Carvalho" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Ana Rita Carvalho</span><span class="speaker-card-role">Radiologista</span></span></button>
 <button class="speaker-card" type="button" data-name="Antônio Douglas" data-role="Oncologista" data-region="" data-role-en="Clinical Oncologist" data-role-es="Oncólogo Clínico" data-photo="guests/antonio-douglas-oncologista.webp" data-specialty="oncologia" data-function="palestrante" data-search="antonio-douglas-oncologista" data-bio='[&quot;Oncologista Clínico Do Hospital Santa Joana – Rede Américas&quot;, &quot;Professor da UPE&quot;]'><span class="speaker-photo"><img src="guests/antonio-douglas-oncologista.webp" alt="Antônio Douglas" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Antônio Douglas</span><span class="speaker-card-role">Oncologista</span></span></button>
+<button class="speaker-card" type="button" data-name="Artur Lima" data-role="Oncologista" data-region="" data-role-en="Clinical Oncologist" data-role-es="Oncólogo Clínico" data-photo="guests/artur-lima.jpeg" data-specialty="oncologia" data-function="moderador" data-search="artur-lima-oncologista" data-bio='[]'><span class="speaker-photo"><img src="guests/artur-lima.jpeg" alt="Artur Lima" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Artur Lima</span><span class="speaker-card-role">Oncologista</span></span></button>
 <button class="speaker-card" type="button" data-name="Beatriz Cavalcanti" data-role="Cirurgiã" data-region="" data-role-en="Surgeon" data-role-es="Cirujana" data-photo="guests/beatriz-cavalcanti-cirurgia.jpeg" data-specialty="cirurgia" data-function="moderador" data-search="beatriz-cavalcanti-cirurgia" data-bio='[&quot;Cirurgiã geral Pela universidade Federal do Rio Grande do Norte - HUOL&quot;, &quot;Cirurgiã oncológica pelo hospital do câncer de Pernambuco&quot;, &quot;Preceptora do serviço de oncoginecologia do Hospital do Câncer de Pernambuco&quot;, &quot;Cirurgiã oncológica do grupo Américas - Hospital Santa Joana&quot;]'><span class="speaker-photo"><img src="guests/beatriz-cavalcanti-cirurgia.jpeg" alt="Beatriz Cavalcanti" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Beatriz Cavalcanti</span><span class="speaker-card-role">Cirurgiã</span></span></button>
+<button class="speaker-card" type="button" data-name="Carlos Abath" data-role="Radiologista" data-region="" data-role-en="Radiologist" data-role-es="Radiólogo" data-photo="guests/carlos-abath.png" data-specialty="radiologia" data-function="palestrante" data-search="carlos-abath-radiologista" data-bio='[&quot;Fundador e diretor geral da Angiorad&quot;, &quot;Fundador e ex-presidente da Sociedade Brasileira de Radiologia&quot;, &quot;Intervencionista e Cirurgião Endovascular&quot;, &quot;Chefe da Radiologia Intervencionista do Real Hospital Português&quot;]'><span class="speaker-photo"><img src="guests/carlos-abath.png" alt="Carlos Abath" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Carlos Abath</span><span class="speaker-card-role">Radiologista</span></span></button>
 <button class="speaker-card" type="button" data-name="Carolina Reis" data-role="Hepatologista" data-region="" data-role-en="Hepatologist" data-role-es="Hepatólogo" data-photo="guests/carolina-reis-hepatologista.png" data-specialty="hepatologia" data-function="moderador" data-search="carolina-reis-hepatologista" data-bio='[&quot;Médica graduada pela Universidade Federal de Pernambuco - UFPE&quot;, &quot;Residência em Clínica médica e Hepatologia&quot;, &quot;Hepatologista do Hospital Santa Joana Recife e Hospital Esperança Recife&quot;, &quot;Preceptora da residência de Clínica médica do Hospital Esperança Recife - rede D’Or&quot;]'><span class="speaker-photo"><img src="guests/carolina-reis-hepatologista.png" alt="Carolina Reis" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Carolina Reis</span><span class="speaker-card-role">Hepatologista</span></span></button>
 <button class="speaker-card" type="button" data-name="Christiane Violet" data-role="Oncologista" data-region="" data-role-en="Clinical Oncologist" data-role-es="Oncólogo Clínico" data-photo="guests/christiane-violet-oncologista.jpeg" data-specialty="oncologia" data-function="presidente" data-search="christiane-violet-oncologista" data-bio='[&quot;Ex residente de oncologia clínica do INCA&quot;, &quot;Oncologista clínico da Onkos&quot;, &quot;Presidente e voluntária do Instituto Cristina Tavares&quot;, &quot;Mãe de Pedro, Luísa e Júlia&quot;, &quot;Avó de Fernanda&quot;]'><span class="speaker-photo"><img src="guests/christiane-violet-oncologista.jpeg" alt="Christiane Violet" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Christiane Violet</span><span class="speaker-card-role">Oncologista</span></span></button>
 <button class="speaker-card" type="button" data-name="Cristiana Tavares" data-role="Oncologista" data-region="" data-role-en="Clinical Oncologist" data-role-es="Oncólogo Clínico" data-photo="guests/cristiana-tavares-oncologista.jpeg" data-specialty="oncologia" data-function="presidente palestrante" data-search="cristiana-tavares-oncologista" data-bio='[&quot;Oncologista do Hospital Santa Joana e do Hospital Universitário Oswaldo Cruz / UPE&quot;, &quot;Preceptora de graduação e pós-graduação da FCM - Faculdade de Ciências Médicas / UPE&quot;, &quot;Mestre pela UPE&quot;, &quot;Doutoranda em medicina translacional pela UNIFESP.&quot;]'><span class="speaker-photo"><img src="guests/cristiana-tavares-oncologista.jpeg" alt="Cristiana Tavares" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Cristiana Tavares</span><span class="speaker-card-role">Oncologista</span></span></button>
@@ -2635,7 +2748,7 @@
 <button class="speaker-card" type="button" data-name="João Paulo Ayub" data-role="Radiologista" data-region="" data-role-en="Radiologist" data-role-es="Radiólogo" data-photo="guests/joao-paulo-ayub-radiologista.jfif" data-specialty="radiologia" data-function="palestrante" data-search="joao-paulo-ayub-radiologista" data-bio='[&quot;Membro Titular da Sociedade Brasileira de Radiologia Intervencionista e Cirurgia Endovascular - SOBRICE&quot;, &quot;Radiologista Intervencionista e Cirurgião Vascular do IMIP, Barão de Lucena e Angiorad&quot;]'><span class="speaker-photo"><img src="guests/joao-paulo-ayub-radiologista.jfif" alt="João Paulo Ayub" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">João Paulo Ayub</span><span class="speaker-card-role">Radiologista</span></span></button>
 <button class="speaker-card" type="button" data-name="Leandro Apolinário" data-role="Oncologista" data-region="" data-role-en="Clinical Oncologist" data-role-es="Oncólogo Clínico" data-photo="guests/leandro-apolinario-oncologista.jpeg" data-specialty="oncologia" data-function="moderador" data-search="leandro-apolinario-oncologista" data-bio='[&quot;Oncologista clínico do Hospital Santa Joana Recife (Americas Oncologia) e do Hospital Universitário Oswaldo Cruz (Universidade de Pernambuco)&quot;, &quot;Ex-research FELLOWSHIP IOSI, Switzerland&quot;]'><span class="speaker-photo"><img src="guests/leandro-apolinario-oncologista.jpeg" alt="Leandro Apolinário" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Leandro Apolinário</span><span class="speaker-card-role">Oncologista</span></span></button>
 <button class="speaker-card" type="button" data-name="Leila Beltrão" data-role="Hepatologista" data-region="" data-role-en="Hepatologist" data-role-es="Hepatólogo" data-photo="guests/leila-beltrao-hepatologista.jpeg" data-specialty="hepatologia" data-function="presidente" data-search="leila-beltrao-hepatologista" data-bio='[&quot;Prof titular de gastroenterologia - FCM/UPE&quot;, &quot;Chefe do serviço de gastrohepatologia - HUOC/UPE&quot;, &quot;Presidente do Instituto e transplantes de PE&quot;]'><span class="speaker-photo"><img src="guests/leila-beltrao-hepatologista.jpeg" alt="Leila Beltrão" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Leila Beltrão</span><span class="speaker-card-role">Hepatologista</span></span></button>
-<button class="speaker-card" type="button" data-name="Lilian Rose Gomes" data-role="Hepatologista" data-region="" data-role-en="Hepatologist" data-role-es="Hepatólogo" data-photo="" data-specialty="hepatologia" data-function="palestrante" data-search="lilian-rose-gomes-hepatologista" data-bio='[&quot;Gastrohepatologista do Hospital Santa Joana&quot;, &quot;Coordenadora da hepatologia do Imip&quot;, &quot;Mestre em Medicina tropical pela UFPE&quot;]'><span class="speaker-photo"><span class="speaker-initials" aria-hidden="true">LR</span></span><span class="speaker-body"><span class="speaker-card-name">Lilian Rose Gomes</span><span class="speaker-card-role">Hepatologista</span></span></button>
+<button class="speaker-card" type="button" data-name="Lilian Rose Gomes" data-role="Hepatologista" data-region="" data-role-en="Hepatologist" data-role-es="Hepatólogo" data-photo="guests/lilian-rose-gomes-hepatologista.jpeg" data-specialty="hepatologia" data-function="palestrante" data-search="lilian-rose-gomes-hepatologista" data-bio='[&quot;Gastrohepatologista do Hospital Santa Joana&quot;, &quot;Coordenadora da hepatologia do Imip&quot;, &quot;Mestre em Medicina tropical pela UFPE&quot;]'><span class="speaker-photo"><img src="guests/lilian-rose-gomes-hepatologista.jpeg" alt="Lilian Rose Gomes" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Lilian Rose Gomes</span><span class="speaker-card-role">Hepatologista</span></span></button>
 <button class="speaker-card" type="button" data-name="Luis Felipe Carvalho" data-role="Oncologista" data-region="" data-role-en="Clinical Oncologist" data-role-es="Oncólogo Clínico" data-photo="guests/luis-felipe-carvalho-oncologista.jpeg" data-specialty="oncologia" data-function="palestrante" data-search="luis-felipe-carvalho-oncologista" data-bio='[&quot;Preceptor da Residência de Oncologia Clínica do IMIP&quot;, &quot;Médico Oncologista da Rede Americas.&quot;, &quot;Médico Oncologista no IONE&quot;]'><span class="speaker-photo"><img src="guests/luis-felipe-carvalho-oncologista.jpeg" alt="Luis Felipe Carvalho" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Luis Felipe Carvalho</span><span class="speaker-card-role">Oncologista</span></span></button>
 <button class="speaker-card" type="button" data-name="Manoel de Andrade" data-role="Cirurgião" data-region="" data-role-en="Surgeon" data-role-es="Cirujano" data-photo="guests/manoel-de-andrade-cirurgiao.jpg" data-specialty="cirurgia" data-function="moderador" data-search="manoel-de-andrade-cirurgiao" data-bio='[&quot;Cirurgião Oncológico&quot;, &quot;Titular da SBCO&quot;, &quot;Preceptor da residência de cirurgia Oncológica IMIP&quot;, &quot;Preceptor de residência Cirurgia Geral Hospital Barão de Lucena&quot;, &quot;Cirurgião Oncológico Rede D’Or São Luiz - Memorial São José e Memorial Star&quot;, &quot;CirurgiãoVideolaparoscópico e Cirugião Robótico&quot;, &quot;Cirurgião Oncológico Santa Joana&quot;]'><span class="speaker-photo"><img src="guests/manoel-de-andrade-cirurgiao.jpg" alt="Manoel de Andrade" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Manoel de Andrade</span><span class="speaker-card-role">Cirurgião</span></span></button>
 <button class="speaker-card" type="button" data-name="Marcella Campos" data-role="Nutricionista" data-region="" data-role-en="Dietitian" data-photo="guests/marcella-campos-nutricionista.jpg" data-specialty="nutricao" data-function="palestrante" data-search="marcella-campos-nutricionista" data-bio='[&quot;Nutricionista pela UFPE&quot;, &quot;Pós graduada em nutrição clínica pelo IMIP&quot;, &quot;Especialista em Nutrição Oncológica pela SBNO&quot;, &quot;Doutoranda e Mestre em Nutrição pela UFPE&quot;, &quot;Nutricionista do ambulatório de oncologia do hospital das clínicas de Pernambuco&quot;, &quot;Atendimento em consultório particular&quot;, &quot;Professora de pós graduação&quot;]'><span class="speaker-photo"><img src="guests/marcella-campos-nutricionista.jpg" alt="Marcella Campos" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Marcella Campos</span><span class="speaker-card-role">Nutricionista</span></span></button>
@@ -2647,10 +2760,10 @@
 <button class="speaker-card" type="button" data-name="Omar Jacobina" data-role="Cirurgião Geral" data-region="" data-role-en="General Surgeon" data-role-es="Cirujano General" data-photo="guests/omar-jacobina-cirurgiao-geral.jpg" data-specialty="cirurgia" data-function="presidente" data-search="omar-jacobina-cirurgiao-geral" data-bio='[&quot;Cirurgião Geral e do Aparelho Digestivo do Hospital Santa Joana Recife&quot;, &quot;Coordenador Médico da Linha Cirúrgica do Hospital Santa Joana.&quot;, &quot;Coordenador médico do Bloco Cirúrgico do Hospital Alfa&quot;]'><span class="speaker-photo"><img src="guests/omar-jacobina-cirurgiao-geral.jpg" alt="Omar Jacobina" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Omar Jacobina</span><span class="speaker-card-role">Cirurgião Geral</span></span></button>
 <button class="speaker-card" type="button" data-name="Paulo Carvalho" data-role="Preparador Físico" data-region="" data-role-en="Exercise Physiologist" data-photo="guests/paulo-carvalho-preparador-fisico.jpg" data-specialty="fisica" data-function="palestrante" data-search="paulo-carvalho-preparador-fisico" data-bio='[&quot;Professor Titular da Universidade Federal de Pernambuco.&quot;, &quot;Pós doutorado em Biologia aplicada a Saúde - LIKA.&quot;, &quot;Chefe do Serviço de Promoção de Saúde e Qualidade de Vida - HC/UFPE/HUBrasil.&quot;, &quot;Membro da COESAS - Sociedade Brasileira de Cirurgia Bariátrica e Metabólica.&quot;, &quot;Docente Permanente do Programas de Pós Graduação em Educação Física e Cirurgia da UFPE.&quot;, &quot;Mais de 30 anos Elabora e Prescreve programas de Treinamento para pessoas portadoras de doenças crônicas não transmissíveis.&quot;, &quot;Especialista em programas de treinamento especializados para redução da inflamação e dor.&quot;]'><span class="speaker-photo"><img src="guests/paulo-carvalho-preparador-fisico.jpg" alt="Paulo Carvalho" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Paulo Carvalho</span><span class="speaker-card-role">Preparador Físico</span></span></button>
 <button class="speaker-card" type="button" data-name="Pedro Paulo" data-role="Cirurgião" data-region="" data-role-en="Surgeon" data-role-es="Cirujano" data-photo="guests/pedro-paulo-cirurgiao.jpg" data-specialty="cirurgia" data-function="palestrante" data-search="pedro-paulo-cirurgiao" data-bio='[&quot;Médico formado pela UPE&quot;, &quot;Residência de Cir Oncologica pelo INCA&quot;, &quot;Coordenador do departamento de cirurgia oncologica do HUOC/ UPE&quot;, &quot;Preceptor no programa de residência do HCP&quot;, &quot;Cirurgião pelo Grupo COP/ Oncologia D&#x27;Or&quot;]'><span class="speaker-photo"><img src="guests/pedro-paulo-cirurgiao.jpg" alt="Pedro Paulo" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Pedro Paulo</span><span class="speaker-card-role">Cirurgião</span></span></button>
-<button class="speaker-card" type="button" data-name="Pedro Pinheiro" data-role="Cirurgião" data-region="" data-role-en="Surgeon" data-role-es="Cirujano" data-photo="" data-specialty="cirurgia" data-function="presidente" data-search="pedro-pinheiro-cirurgiao" data-bio='[&quot;Cirurgião do aparelho digestivo formado na UFPE 1984&quot;, &quot;Cirurgião da Rede Dor São Luiz, Unimed, Américas Santa Joana&quot;]'><span class="speaker-photo"><span class="speaker-initials" aria-hidden="true">PP</span></span><span class="speaker-body"><span class="speaker-card-name">Pedro Pinheiro</span><span class="speaker-card-role">Cirurgião</span></span></button>
-<button class="speaker-card" type="button" data-name="Pedro Uson" data-role="Oncologista" data-region="" data-role-en="Clinical Oncologist" data-role-es="Oncólogo Clínico" data-photo="guests/pedro-uson-oncologista.jpeg" data-specialty="oncologia" data-function="palestrante" data-search="pedro-uson-oncologista" data-bio='[&quot;Oncologista do Einstein Hospital Israelita.&quot;]'><span class="speaker-photo"><img src="guests/pedro-uson-oncologista.jpeg" alt="Pedro Uson" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Pedro Uson</span><span class="speaker-card-role">Oncologista</span></span></button>
+<button class="speaker-card" type="button" data-name="Pedro Pinheiro" data-role="Cirurgião" data-region="" data-role-en="Surgeon" data-role-es="Cirujano" data-photo="guests/pedro-pinheiro.jpeg" data-specialty="cirurgia" data-function="presidente" data-search="pedro-pinheiro-cirurgiao" data-bio='[&quot;Cirurgião do aparelho digestivo formado na UFPE 1984&quot;, &quot;Cirurgião da Rede Dor São Luiz, Unimed, Américas Santa Joana&quot;]'><span class="speaker-photo"><img src="guests/pedro-pinheiro.jpeg" alt="Pedro Pinheiro" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Pedro Pinheiro</span><span class="speaker-card-role">Cirurgião</span></span></button>
+<button class="speaker-card" type="button" data-name="Pedro Uson" data-role="Oncologista" data-region="" data-role-en="Clinical Oncologist" data-role-es="Oncólogo Clínico" data-photo="guests/pedro-uson-oncologista.jpeg" data-specialty="oncologia" data-function="palestrante" data-search="pedro-uson-oncologista" data-bio='[&quot;Oncologista do Einstein Hospital Israelita&quot;]'><span class="speaker-photo"><img src="guests/pedro-uson-oncologista.jpeg" alt="Pedro Uson" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Pedro Uson</span><span class="speaker-card-role">Oncologista</span></span></button>
 <button class="speaker-card" type="button" data-name="Phabllo Rodrigo" data-role="Cirurgião" data-region="" data-role-en="Surgeon" data-role-es="Cirujano" data-photo="guests/phabllo-rodrigo-coloproctologista.png" data-specialty="cirurgia" data-function="moderador" data-search="phabllo-rodrigo-cirurgiao" data-bio='[&quot;Especialista em Cirurgia Geral e Coloproctologia&quot;, &quot;Memorial São José/Star e Unimed&quot;]'><span class="speaker-photo"><img src="guests/phabllo-rodrigo-coloproctologista.png" alt="Phabllo Rodrigo" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Phabllo Rodrigo</span><span class="speaker-card-role">Cirurgião</span></span></button>
-<button class="speaker-card" type="button" data-name="Rafael Caires" data-role="Oncologista" data-region="" data-role-en="Clinical Oncologist" data-role-es="Oncólogo Clínico" data-photo="" data-specialty="oncologia" data-function="moderador" data-search="rafael-caires-oncologista" data-bio='[&quot;Oncologista Clínico da Rede D’Or e Gerente Médico do IDOR Pernambuco&quot;, &quot;Formado pelo ICESP/USP&quot;]'><span class="speaker-photo"><span class="speaker-initials" aria-hidden="true">RC</span></span><span class="speaker-body"><span class="speaker-card-name">Rafael Caires</span><span class="speaker-card-role">Oncologista</span></span></button>
+<button class="speaker-card" type="button" data-name="Rafael Caires" data-role="Oncologista" data-region="" data-role-en="Clinical Oncologist" data-role-es="Oncólogo Clínico" data-photo="guests/rafael-caires.png" data-specialty="oncologia" data-function="moderador" data-search="rafael-caires-oncologista" data-bio='[&quot;Oncologista Clínico da Rede D’Or e Gerente Médico do IDOR Pernambuco&quot;, &quot;Formado pelo ICESP/USP&quot;]'><span class="speaker-photo"><img src="guests/rafael-caires.png" alt="Rafael Caires" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Rafael Caires</span><span class="speaker-card-role">Oncologista</span></span></button>
 <button class="speaker-card" type="button" data-name="Rafael Fontolan" data-role="Cirurgião" data-region="" data-role-en="Surgeon" data-role-es="Cirujano" data-photo="guests/rafael-fontolan-cirurgiao.jpg" data-specialty="cirurgia" data-function="palestrante" data-search="rafael-fontolan-cirurgiao" data-bio='[&quot;Cirurgião do Aparelho Digestivo e transplante de fígado pela FAMERP.&quot;, &quot;Mestrado em cirurgia pela FAMERP.&quot;, &quot;Proctor de cirurgia robótica pelo Colégio Brasileiro de Cirurgiões e Intuitive surgical.&quot;, &quot;Responsável pelo programa de transplante hepático robótico dos hospitais: 9 de julho e beneficência portuguesa.&quot;]'><span class="speaker-photo"><img src="guests/rafael-fontolan-cirurgiao.jpg" alt="Rafael Fontolan" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Rafael Fontolan</span><span class="speaker-card-role">Cirurgião</span></span></button>
 <button class="speaker-card" type="button" data-name="Ricardo Machado" data-role="Medicina Nuclear" data-region="" data-role-en="Nuclear Medicine" data-photo="guests/ricardo-machado-medicina-nuclear.jpg" data-specialty="nuclear" data-function="moderador" data-search="ricardo-machado-medicina-nuclear" data-bio='[&quot;Médico do serviço de Medicina Nuclear do Hospital Santa Joana e do setor de&quot;, &quot;PET/CT do Hospital Memorial Star e da clínica CEMUPE.&quot;, &quot;Coordenador da Residência de medicina nuclear do Hospital IMIP&quot;]'><span class="speaker-photo"><img src="guests/ricardo-machado-medicina-nuclear.jpg" alt="Ricardo Machado" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Ricardo Machado</span><span class="speaker-card-role">Medicina Nuclear</span></span></button>
 <button class="speaker-card" type="button" data-name="Roberto Borges" data-role="Oncologista" data-region="" data-role-en="Clinical Oncologist" data-role-es="Oncólogo Clínico" data-photo="guests/roberto-borges-oncologista.jpg" data-specialty="oncologia" data-function="moderador" data-search="roberto-borges-oncologista" data-bio='[&quot;Oncologista clínico RedeDor, IMIP e Hospital Barao de Lucena&quot;]'><span class="speaker-photo"><img src="guests/roberto-borges-oncologista.jpg" alt="Roberto Borges" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Roberto Borges</span><span class="speaker-card-role">Oncologista</span></span></button>
@@ -2662,7 +2775,7 @@
 <button class="speaker-card" type="button" data-name="Tainã Reis" data-role="Nutricionista" data-region="" data-role-en="Dietitian" data-photo="guests/taina-reis-nutricionista.jpg" data-specialty="nutricao" data-function="moderador" data-search="taina-reis-nutricionista" data-bio='[&quot;Graduada em Nutrição pela UNINASSAU&quot;, &quot;Atuante em Nutrição Clínica hospitalar&quot;, &quot;Atualmente Nutricionista Oncológica no Hospital Santa Joana Recife&quot;]'><span class="speaker-photo"><img src="guests/taina-reis-nutricionista.jpg" alt="Tainã Reis" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Tainã Reis</span><span class="speaker-card-role">Nutricionista</span></span></button>
 <button class="speaker-card" type="button" data-name="Thaís Gelenske" data-role="Endocrinologista" data-region="" data-role-en="Endocrinologist" data-role-es="Endocrinólogo" data-photo="guests/thais-gelenske-endocrinologista.jpg" data-specialty="endocrinologia" data-function="palestrante" data-search="thais-gelenske-endocrinologista" data-bio='[&quot;Preceptora da residencia de clínica medica do HSJ Recife&quot;, &quot;Preceptora da residencia de endocrinologia do IMIP&quot;, &quot;Doutora pela UFPE&quot;, &quot;Membro do departamento de lipodistrofia da ABESO e membro eleito do departamento de dislipidemia da SBEM&quot;]'><span class="speaker-photo"><img src="guests/thais-gelenske-endocrinologista.jpg" alt="Thaís Gelenske" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Thaís Gelenske</span><span class="speaker-card-role">Endocrinologista</span></span></button>
 <button class="speaker-card" type="button" data-name="Thiago Apolinário" data-role="Oncologista" data-region="" data-role-en="Clinical Oncologist" data-role-es="Oncólogo Clínico" data-photo="guests/thiago-apolinario-oncologista.jpeg" data-specialty="oncologia" data-function="palestrante" data-search="thiago-apolinario-oncologista" data-bio='[&quot;Residência em Oncologia Clínica pelo IMIP-PE&quot;, &quot;Oncologista clínico do Hospital Santa Joana&quot;, &quot;Oncologista clínico do Hospital Universitário Oswaldo Cruz - Universidade de Pernambuco&quot;, &quot;Membro ASCO, ESMO e SBOC e GBOT&quot;]'><span class="speaker-photo"><img src="guests/thiago-apolinario-oncologista.jpeg" alt="Thiago Apolinário" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Thiago Apolinário</span><span class="speaker-card-role">Oncologista</span></span></button>
-<button class="speaker-card" type="button" data-name="Tiago Iwanaga" data-role="Cirurgião" data-region="" data-role-en="Surgeon" data-role-es="Cirujano" data-photo="guests/tiago-iwanaga-cirurgiao.jpeg" data-specialty="cirurgia" data-function="palestrante" data-search="tiago-iwanaga-cirurgiao" data-bio='[]'><span class="speaker-photo"><img src="guests/tiago-iwanaga-cirurgiao.jpeg" alt="Tiago Iwanaga" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Tiago Iwanaga</span><span class="speaker-card-role">Cirurgião</span></span></button>
+<button class="speaker-card" type="button" data-name="Tiago Iwanaga" data-role="Cirurgião" data-region="" data-role-en="Surgeon" data-role-es="Cirujano" data-photo="guests/tiago-iwanaga-cirurgiao.jpeg" data-specialty="cirurgia" data-function="palestrante" data-search="tiago-iwanaga-cirurgiao" data-bio='[&quot;Mestre e doutor em Cirurgia pela Universidade de Pernambuco (UPE). Atua como cirurgião geral no Hospital Otávio de Freitas, onde também exerce atividades de preceptoria de residentes e estudantes de Medicina. Possui experiência em cirurgia gastroenterológica e formação complementar em cirurgia robótica e cirurgia minimamente invasiva.&quot;]'><span class="speaker-photo"><img src="guests/tiago-iwanaga-cirurgiao.jpeg" alt="Tiago Iwanaga" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Tiago Iwanaga</span><span class="speaker-card-role">Cirurgião</span></span></button>
 <button class="speaker-card" type="button" data-name="Tibério Medeiros" data-role="Gastro Hepatologista" data-region="" data-role-en="Gastro-Hepatologist" data-role-es="Gastro-Hepatólogo" data-photo="guests/tiberio-medeiros-gastro-hepatologista.jfif" data-specialty="hepatologia" data-function="palestrante" data-search="tiberio-medeiros-gastro-hepatologista" data-bio='[&quot;Médico gastrohepatologista e Coordenador do Instituto do fígado do Hospital Santa Joana.&quot;, &quot;Médico hepatologista do IMIP&quot;, &quot;Professor de Gastroenterologia da Faculdade de Ciências Médicas - PB&quot;]'><span class="speaker-photo"><img src="guests/tiberio-medeiros-gastro-hepatologista.jfif" alt="Tibério Medeiros" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Tibério Medeiros</span><span class="speaker-card-role">Gastro Hepatologista</span></span></button>
 <button class="speaker-card" type="button" data-name="Tien Chang" data-role="Medicina Nuclear" data-region="" data-role-en="Nuclear Medicine" data-photo="guests/tien-chang-medicina-nuclear.jpg" data-specialty="nuclear" data-function="moderador" data-search="tien-chang-medicina-nuclear" data-bio='[&quot;Coordenador do serviço de Medicina Nuclear e PET/CT do IMIP&quot;, &quot;Médico Nuclear dos Hospitais Santa Joana e Memorial Star&quot;]'><span class="speaker-photo"><img src="guests/tien-chang-medicina-nuclear.jpg" alt="Tien Chang" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Tien Chang</span><span class="speaker-card-role">Medicina Nuclear</span></span></button>
 <button class="speaker-card" type="button" data-name="Victor Lira" data-role="Endoscopista" data-region="" data-role-en="Endoscopist" data-photo="guests/victor-lira-endoscopista.jpeg" data-specialty="endoscopia" data-function="moderador" data-search="victor-lira-endoscopista" data-bio='[&quot;Residência em Endoscopia e Fellowship em Endoscopia Avançada pelo HC-FMUSP&quot;, &quot;Preceptor da residência médica de endoscopia do IMIP&quot;, &quot;Endoscopista Colaborador da Endogastro (Hospital Santa Joana)&quot;]'><span class="speaker-photo"><img src="guests/victor-lira-endoscopista.jpeg" alt="Victor Lira" loading="lazy" /></span><span class="speaker-body"><span class="speaker-card-name">Victor Lira</span><span class="speaker-card-role">Endoscopista</span></span></button>
@@ -2759,13 +2872,16 @@
     <!-- ══ PATROCINADORES ══ -->
     <section id="patrocinadores" class="section-light fade-in">
       <div class="container text-center">
-        <span class="section-eyebrow" data-i18n="sponsors.eyebrow">Apoio</span>
         <h2 class="section-title is-centered" data-i18n="sponsors.title">Patrocinadores</h2>
-        <div class="placeholder-card">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          <p data-i18n="sponsors.placeholder">
-            Os patrocinadores desta edição serão divulgados em breve.
-          </p>
+        <div class="sponsors-grid">
+          <div class="sponsor-item"><img src="sponsors/astrazeneca.png" alt="AstraZeneca" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/servier.png" alt="Servier" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/merck.png" alt="Merck" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/daiichi-sankyo.png" alt="Daiichi-Sankyo" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/roche.png" alt="Roche" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/astellas-oncologia.png" alt="Astellas Oncologia" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/pfizer.png" alt="Pfizer" loading="lazy" /></div>
+          <div class="sponsor-item"><img src="sponsors/bristol.png" alt="Bristol Myers Squibb" loading="lazy" /></div>
         </div>
       </div>
     </section>
@@ -3267,10 +3383,11 @@
             "IV Gastrointestinal Oncology Symposium — 16 and 17 October 2026, Recife",
           "hero.chipDate": "16 and 17 October 2026",
           "hero.chipVenue": "JCPM Trade Center — Recife/PE",
-          "hero.chipFaculty": "60 specialist guests",
+          "hero.chipFaculty": "More than 60 specialist guests",
           "hero.ctaProgram": "View programme",
           "hero.ctaRegister": "Register now!",
           "hero.realization": "Organised by",
+          "hero.sponsorsLabel": "Sponsors",
           "about.eyebrow": "About the symposium",
           "about.title": "IV Gastrointestinal Oncology Symposium",
           "about.p1":
@@ -3296,7 +3413,7 @@
           "about.factFormatLabel": "Format",
           "about.factFormatValue": "In person · 8 thematic panels and satellite symposia",
           "about.factFacultyLabel": "Guests",
-          "about.factFacultyValue": "60 specialists from Brazil and abroad",
+          "about.factFacultyValue": "More than 60 specialists from Brazil and abroad",
           "about.factRegLabel": "Registration",
           "countdown.title": "Countdown",
           "countdown.sub": "To the IV Gastrointestinal Oncology Symposium",
@@ -3361,9 +3478,7 @@
           "reg.placeholder":
             "Secure your place. After registering, follow the programme on this site.",
           "reg.cta": "Register now!",
-          "sponsors.eyebrow": "Support",
           "sponsors.title": "Sponsors",
-          "sponsors.placeholder": "This edition's sponsors will be announced soon.",
           "contact.eyebrow": "Get in touch",
           "contact.title": "Contact",
           "contact.intro":
@@ -3408,10 +3523,11 @@
             "IV Simposio de Oncología Gastrointestinal — 16 y 17 de octubre de 2026, Recife",
           "hero.chipDate": "16 y 17 de octubre de 2026",
           "hero.chipVenue": "JCPM Trade Center — Recife/PE",
-          "hero.chipFaculty": "60 invitados especialistas",
+          "hero.chipFaculty": "Más de 60 invitados especialistas",
           "hero.ctaProgram": "Ver programación",
           "hero.ctaRegister": "¡Inscríbase ya!",
           "hero.realization": "Organización",
+          "hero.sponsorsLabel": "Patrocinadores",
           "about.eyebrow": "Sobre el simposio",
           "about.title": "IV Simposio de Oncología Gastrointestinal",
           "about.p1":
@@ -3437,7 +3553,7 @@
           "about.factFormatLabel": "Formato",
           "about.factFormatValue": "Presencial · 8 mesas temáticas y simposios satélites",
           "about.factFacultyLabel": "Invitados",
-          "about.factFacultyValue": "60 especialistas de Brasil y del exterior",
+          "about.factFacultyValue": "Más de 60 especialistas de Brasil y del exterior",
           "about.factRegLabel": "Inscripciones",
           "countdown.title": "Cuenta regresiva",
           "countdown.sub": "Para el IV Simposio de Oncología Gastrointestinal",
@@ -3502,10 +3618,7 @@
           "reg.placeholder":
             "Reserve su plaza. Tras inscribirse, siga la programación en este sitio.",
           "reg.cta": "¡Inscríbase ya!",
-          "sponsors.eyebrow": "Apoyo",
           "sponsors.title": "Patrocinadores",
-          "sponsors.placeholder":
-            "Los patrocinadores de esta edición se divulgarán próximamente.",
           "contact.eyebrow": "Póngase en contacto",
           "contact.title": "Contacto",
           "contact.intro":
@@ -3543,7 +3656,7 @@
 <tr><td>09:05 – 09:20<br /><span class="session-duration">15 min</span></td><td colspan="2" class="session-discussion">Discussion</td></tr>
 <tr><td colspan="3" class="session-header"><span class="session-tag">Panel 2</span><strong>Oesophagus and Stomach — Localised Disease</strong><div class="session-meta"><span>Chair</span><span class="session-person">Omar Jacobina <em>Surgeon</em></span></div><div class="session-meta"><span>Moderators</span><span class="session-person">Victor Lira <em>Endoscopist</em></span><span class="session-person">Ítalo Cruz <em>Radiologist</em></span><span class="session-person">Tien Chang <em>Nuclear Medicine</em></span></div></td></tr>
 <tr><td>09:30 – 09:40<br /><span class="session-duration">10 min</span></td><td>Biomarkers in gastric cancer: which results can change the strategy?</td><td><span class="speaker-name">Gustavo Ferreira</span><span class="speaker-role">Pathologist</span></td></tr>
-<tr><td>09:40 – 09:50<br /><span class="session-duration">10 min</span></td><td>Surgery or organ preservation in oesophageal SCC: selection, surveillance and salvage</td><td><span class="speaker-name">Flávio Fernandes</span><span class="speaker-role">Abdominal Surgeon</span></td></tr>
+<tr><td>09:40 – 09:50<br /><span class="session-duration">10 min</span></td><td>Surgery or organ preservation in oesophageal SCC: selection, surveillance and salvage</td><td><span class="speaker-name">Flávio Fernandes</span><span class="speaker-role">Surgeon</span></td></tr>
 <tr><td>09:50 – 10:00<br /><span class="session-duration">10 min</span></td><td>Immunotherapy in resectable gastric and junctional cancer: evidence and patient selection</td><td><span class="speaker-name">Nildevande Firmino</span><span class="speaker-role">Clinical Oncologist</span></td></tr>
 <tr><td>10:00 – 10:15<br /><span class="session-duration">15 min</span></td><td colspan="2" class="session-discussion">Discussion</td></tr>
 <tr><td>10:15 – 10:30<br /><span class="session-duration">15 min</span></td><td>Clinical case: gastro-oesophageal junction and stomach cancer — localised disease</td><td><span class="speaker-name">Ilka Rocha</span><span class="speaker-role">Clinical Oncologist</span></td></tr>
@@ -3556,11 +3669,11 @@
 <tr><td>11:40 – 11:55<br /><span class="session-duration">15 min</span></td><td colspan="2" class="session-discussion">Discussion</td></tr>
 <tr><td>12:00 – 13:30<br /><span class="session-duration">1 h 30 min</span></td><td colspan="2" class="session-break"><strong>LUNCH</strong></td></tr>
 <tr><td colspan="3" class="session-header"><span class="session-tag">Panel 4</span><strong>Pancreatic cancer</strong><div class="session-meta"><span>Chair</span><span class="session-person">Pedro Pinheiro <em>Surgeon</em></span></div><div class="session-meta"><span>Moderators</span><span class="session-person">Felipe Coelho <em>Radiation Oncologist</em></span><span class="session-person">Norton Nunes <em>Surgeon</em></span><span class="session-person">Alexandre da Fonte <em>Radiologist</em></span></div></td></tr>
-<tr><td>13:30 – 13:40<br /><span class="session-duration">10 min</span></td><td>Resectability in pancreatic cancer: beyond anatomy, who is a surgical candidate?</td><td><span class="speaker-name">Roberto Lustosa</span></td></tr>
+<tr><td>13:30 – 13:40<br /><span class="session-duration">10 min</span></td><td>Resectability in pancreatic cancer: beyond anatomy, who is a surgical candidate?</td><td><span class="speaker-name">Roberto Lustosa</span><span class="speaker-role">Surgeon</span></td></tr>
 <tr><td>13:40 – 13:50<br /><span class="session-duration">10 min</span></td><td>Post-surgical pancreatic insufficiency: how to manage it</td><td><span class="speaker-name">Gustavo Lima</span><span class="speaker-role">Gastroenterologist</span></td></tr>
 <tr><td>13:50 – 14:00<br /><span class="session-duration">10 min</span></td><td>Clinical case — upfront surgery or neoadjuvant therapy: how to choose and when to operate?</td><td><span class="speaker-name">Diogo Sales</span><span class="speaker-role">Clinical Oncologist</span></td></tr>
 <tr><td>14:00 – 14:15<br /><span class="session-duration">15 min</span></td><td colspan="2" class="session-discussion">Discussion</td></tr>
-<tr><td>14:15 – 15:00<br /><span class="session-duration">45 min</span></td><td colspan="2" class="session-sponsor"><strong>Satellite Symposium — Servier</strong><div class="session-meta"><span>Chairman</span><span class="session-person">Gustavo Fernandes</span></div><div class="session-speaker-line"><span class="speaker-name">Pedro Uson</span><span class="speaker-role">Clinical Oncologist</span></div></td></tr>
+<tr><td>14:15 – 15:00<br /><span class="session-duration">45 min</span></td><td colspan="2" class="session-sponsor"><strong>Satellite Symposium — Servier</strong><div class="session-meta"><span>Chairman</span><span class="session-person">Gustavo Fernandes <em>Clinical Oncologist</em></span></div><div class="session-speaker-line"><span class="speaker-name">Pedro Uson</span><span class="speaker-role">Clinical Oncologist</span></div></td></tr>
 <tr><td>15:00 – 15:20<br /><span class="session-duration">20 min</span></td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
 <tr><td>15:20 – 16:05<br /><span class="session-duration">45 min</span></td><td colspan="2" class="session-sponsor"><strong>Satellite Symposium — AstraZeneca</strong><div class="session-speaker-line"><span class="speaker-name">Tibério Medeiros</span><span class="speaker-role">Gastro-Hepatologist</span></div></td></tr>
 <tr><td>16:05 – 16:35<br /><span class="session-duration">30 min</span></td><td colspan="2" class="session-sponsor"><strong>Satellite Symposium — Bristol (HCC)</strong><div class="session-speaker-line"><span class="speaker-name">Gustavo Fernandes</span><span class="speaker-role">Clinical Oncologist</span></div></td></tr>
@@ -3603,7 +3716,7 @@
 <tr><td>09:05 – 09:20<br /><span class="session-duration">15 min</span></td><td colspan="2" class="session-discussion">Discusión</td></tr>
 <tr><td colspan="3" class="session-header"><span class="session-tag">Mesa 2</span><strong>Esófago y Estómago — Enfermedad Localizada</strong><div class="session-meta"><span>Presidente</span><span class="session-person">Omar Jacobina <em>Cirujano</em></span></div><div class="session-meta"><span>Moderadores</span><span class="session-person">Victor Lira <em>Endoscopista</em></span><span class="session-person">Ítalo Cruz <em>Radiólogo</em></span><span class="session-person">Tien Chang <em>Medicina Nuclear</em></span></div></td></tr>
 <tr><td>09:30 – 09:40<br /><span class="session-duration">10 min</span></td><td>Biomarcadores en el cáncer gástrico: ¿qué resultados pueden cambiar la estrategia?</td><td><span class="speaker-name">Gustavo Ferreira</span><span class="speaker-role">Patólogo</span></td></tr>
-<tr><td>09:40 – 09:50<br /><span class="session-duration">10 min</span></td><td>Cirugía o preservación de órgano en el CEC de esófago: selección, vigilancia y rescate</td><td><span class="speaker-name">Flávio Fernandes</span><span class="speaker-role">Cirujano Abdominal</span></td></tr>
+<tr><td>09:40 – 09:50<br /><span class="session-duration">10 min</span></td><td>Cirugía o preservación de órgano en el CEC de esófago: selección, vigilancia y rescate</td><td><span class="speaker-name">Flávio Fernandes</span><span class="speaker-role">Cirujano</span></td></tr>
 <tr><td>09:50 – 10:00<br /><span class="session-duration">10 min</span></td><td>Inmunoterapia en el cáncer gástrico y de unión resecable: evidencia y selección de pacientes</td><td><span class="speaker-name">Nildevande Firmino</span><span class="speaker-role">Oncólogo Clínico</span></td></tr>
 <tr><td>10:00 – 10:15<br /><span class="session-duration">15 min</span></td><td colspan="2" class="session-discussion">Discusión</td></tr>
 <tr><td>10:15 – 10:30<br /><span class="session-duration">15 min</span></td><td>Caso clínico: neoplasia de la unión esofagogástrica y del estómago — enfermedad localizada</td><td><span class="speaker-name">Ilka Rocha</span><span class="speaker-role">Oncólogo Clínico</span></td></tr>
@@ -3616,11 +3729,11 @@
 <tr><td>11:40 – 11:55<br /><span class="session-duration">15 min</span></td><td colspan="2" class="session-discussion">Discusión</td></tr>
 <tr><td>12:00 – 13:30<br /><span class="session-duration">1 h 30 min</span></td><td colspan="2" class="session-break"><strong>ALMUERZO</strong></td></tr>
 <tr><td colspan="3" class="session-header"><span class="session-tag">Mesa 4</span><strong>Cáncer de páncreas</strong><div class="session-meta"><span>Presidente</span><span class="session-person">Pedro Pinheiro <em>Cirujano</em></span></div><div class="session-meta"><span>Moderadores</span><span class="session-person">Felipe Coelho <em>Radioncólogo</em></span><span class="session-person">Norton Nunes <em>Cirujano</em></span><span class="session-person">Alexandre da Fonte <em>Radiólogo</em></span></div></td></tr>
-<tr><td>13:30 – 13:40<br /><span class="session-duration">10 min</span></td><td>Resecabilidad en el cáncer de páncreas: más allá de la anatomía, ¿quién es candidato a cirugía?</td><td><span class="speaker-name">Roberto Lustosa</span></td></tr>
+<tr><td>13:30 – 13:40<br /><span class="session-duration">10 min</span></td><td>Resecabilidad en el cáncer de páncreas: más allá de la anatomía, ¿quién es candidato a cirugía?</td><td><span class="speaker-name">Roberto Lustosa</span><span class="speaker-role">Cirujano</span></td></tr>
 <tr><td>13:40 – 13:50<br /><span class="session-duration">10 min</span></td><td>Insuficiencia pancreática posquirúrgica: cómo manejarla</td><td><span class="speaker-name">Gustavo Lima</span><span class="speaker-role">Gastroenterólogo</span></td></tr>
 <tr><td>13:50 – 14:00<br /><span class="session-duration">10 min</span></td><td>Caso clínico — cirugía inicial o neoadyuvancia: ¿cómo elegir la estrategia y cuándo operar?</td><td><span class="speaker-name">Diogo Sales</span><span class="speaker-role">Oncólogo Clínico</span></td></tr>
 <tr><td>14:00 – 14:15<br /><span class="session-duration">15 min</span></td><td colspan="2" class="session-discussion">Discusión</td></tr>
-<tr><td>14:15 – 15:00<br /><span class="session-duration">45 min</span></td><td colspan="2" class="session-sponsor"><strong>Simposio Satélite — Servier</strong><div class="session-meta"><span>Chairman</span><span class="session-person">Gustavo Fernandes</span></div><div class="session-speaker-line"><span class="speaker-name">Pedro Uson</span><span class="speaker-role">Oncólogo Clínico</span></div></td></tr>
+<tr><td>14:15 – 15:00<br /><span class="session-duration">45 min</span></td><td colspan="2" class="session-sponsor"><strong>Simposio Satélite — Servier</strong><div class="session-meta"><span>Chairman</span><span class="session-person">Gustavo Fernandes <em>Oncólogo Clínico</em></span></div><div class="session-speaker-line"><span class="speaker-name">Pedro Uson</span><span class="speaker-role">Oncólogo Clínico</span></div></td></tr>
 <tr><td>15:00 – 15:20<br /><span class="session-duration">20 min</span></td><td colspan="2" class="session-break"><strong>COFFEE BREAK</strong></td></tr>
 <tr><td>15:20 – 16:05<br /><span class="session-duration">45 min</span></td><td colspan="2" class="session-sponsor"><strong>Simposio Satélite — AstraZeneca</strong><div class="session-speaker-line"><span class="speaker-name">Tibério Medeiros</span><span class="speaker-role">Gastro-Hepatólogo</span></div></td></tr>
 <tr><td>16:05 – 16:35<br /><span class="session-duration">30 min</span></td><td colspan="2" class="session-sponsor"><strong>Simposio Satélite — Bristol (HCC)</strong><div class="session-speaker-line"><span class="speaker-name">Gustavo Fernandes</span><span class="speaker-role">Oncólogo Clínico</span></div></td></tr>

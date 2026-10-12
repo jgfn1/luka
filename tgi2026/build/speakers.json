@@ -17,21 +17,6 @@
     ]
   },
   {
-    "name": "Amanda Marquim",
-    "role": "Enfermeira",
-    "region": "",
-    "photo": "guests/amanda-marquim-enfermeira.jpg",
-    "bio": [
-      "Enfermaria formada pela Universidade de Pernambuco, com experiência em navegação oncológica. Atualmente ocupa o cargo de supervisão das linhas de cuidados do hospital Santa Joana Recife.",
-      "Possui experiência em gestão de centro cirúrgico no Hospital Universitário Oswaldo Cruz. MBA em central de materiais e esterilização."
-    ],
-    "specialties": [
-      "enfermagem"
-    ],
-    "slug": "amanda-marquim",
-    "functions": []
-  },
-  {
     "name": "Américo Gusmão",
     "role": "Cirurgião",
     "region": "",
@@ -83,6 +68,20 @@
     ]
   },
   {
+    "name": "Artur Lima",
+    "role": "Oncologista",
+    "region": "",
+    "photo": "guests/artur-lima.jpeg",
+    "bio": [],
+    "specialties": [
+      "oncologia"
+    ],
+    "slug": "artur-lima",
+    "functions": [
+      "moderador"
+    ]
+  },
+  {
     "name": "Beatriz Cavalcanti",
     "role": "Cirurgiã",
     "region": "",
@@ -99,6 +98,25 @@
     "slug": "beatriz-cavalcanti",
     "functions": [
       "moderador"
+    ]
+  },
+  {
+    "name": "Carlos Abath",
+    "role": "Radiologista",
+    "region": "",
+    "photo": "guests/carlos-abath.png",
+    "bio": [
+      "Fundador e diretor geral da Angiorad",
+      "Fundador e ex-presidente da Sociedade Brasileira de Radiologia",
+      "Intervencionista e Cirurgião Endovascular",
+      "Chefe da Radiologia Intervencionista do Real Hospital Português"
+    ],
+    "specialties": [
+      "radiologia"
+    ],
+    "slug": "carlos-abath",
+    "functions": [
+      "palestrante"
     ]
   },
   {
@@ -522,7 +540,7 @@
     "name": "Lilian Rose Gomes",
     "role": "Hepatologista",
     "region": "",
-    "photo": "",
+    "photo": "guests/lilian-rose-gomes-hepatologista.jpeg",
     "bio": [
       "Gastrohepatologista do Hospital Santa Joana",
       "Coordenadora da hepatologia do Imip",
@@ -750,7 +768,7 @@
     "name": "Pedro Pinheiro",
     "role": "Cirurgião",
     "region": "",
-    "photo": "",
+    "photo": "guests/pedro-pinheiro.jpeg",
     "bio": [
       "Cirurgião do aparelho digestivo formado na UFPE 1984",
       "Cirurgião da Rede Dor São Luiz, Unimed, Américas Santa Joana"
@@ -769,7 +787,7 @@
     "region": "",
     "photo": "guests/pedro-uson-oncologista.jpeg",
     "bio": [
-      "Oncologista do Einstein Hospital Israelita."
+      "Oncologista do Einstein Hospital Israelita"
     ],
     "specialties": [
       "oncologia"
@@ -800,7 +818,7 @@
     "name": "Rafael Caires",
     "role": "Oncologista",
     "region": "",
-    "photo": "",
+    "photo": "guests/rafael-caires.png",
     "bio": [
       "Oncologista Clínico da Rede D’Or e Gerente Médico do IDOR Pernambuco",
       "Formado pelo ICESP/USP"
@@ -1017,7 +1035,9 @@
     "role": "Cirurgião",
     "region": "",
     "photo": "guests/tiago-iwanaga-cirurgiao.jpeg",
-    "bio": [],
+    "bio": [
+      "Mestre e doutor em Cirurgia pela Universidade de Pernambuco (UPE). Atua como cirurgião geral no Hospital Otávio de Freitas, onde também exerce atividades de preceptoria de residentes e estudantes de Medicina. Possui experiência em cirurgia gastroenterológica e formação complementar em cirurgia robótica e cirurgia minimamente invasiva."
+    ],
     "specialties": [
       "cirurgia"
     ],
