@@ -22,6 +22,7 @@ import re
 import unicodedata
 from pathlib import Path
 
+from bios_i18n import BIOS
 from schedule_i18n import LABELS, ROLES, TITLES, lookup
 
 BASE = Path(__file__).resolve().parent.parent
@@ -501,6 +502,22 @@ def render_speakers(people: list[dict]) -> str:
             f'data-function="{" ".join(person["functions"])}"',
             f'data-search="{html.escape(slugify(person["name"] + " " + person["role"]), quote=True)}"',
             "data-bio='" + html.escape(json.dumps(person["bio"], ensure_ascii=False), quote=True) + "'",
+            *(
+                [
+                    f"data-bio-{lang}='"
+                    + html.escape(
+                        json.dumps(
+                            [lookup(BIOS, line, lang) for line in person["bio"]],
+                            ensure_ascii=False,
+                        ),
+                        quote=True,
+                    )
+                    + "'"
+                    for lang in ("en", "es")
+                ]
+                if person["bio"]
+                else []
+            ),
         ]
         if person["photo"]:
             media = (
