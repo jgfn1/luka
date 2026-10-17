@@ -546,12 +546,6 @@
         gap: 0.85rem;
         justify-content: center;
       }
-      [data-i18n="hero.ctaRegister"],
-      [data-i18n="reg.cta"] {
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-      }
-
       .nav-cta {
         display: inline-flex;
         align-items: center;
@@ -573,6 +567,18 @@
         transform: translateY(-2px);
         box-shadow: 0 8px 24px rgba(114, 1, 213, 0.48);
         color: #fff !important;
+      }
+      .nav-cta.nav-cta-disabled {
+        background: rgba(20, 0, 59, 0.08) !important;
+        color: rgba(20, 0, 59, 0.5) !important;
+        box-shadow: none !important;
+        cursor: default;
+        pointer-events: none;
+      }
+      .nav-cta.nav-cta-disabled:hover {
+        transform: none;
+        box-shadow: none !important;
+        color: rgba(20, 0, 59, 0.5) !important;
       }
 
       /* ── HERO ── */
@@ -1765,6 +1771,11 @@
         margin-bottom: 1rem;
         font-family: "Outfit", sans-serif;
       }
+      .status-badge-closed {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.28);
+        color: rgba(255, 255, 255, 0.85);
+      }
       .sponsors-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2273,12 +2284,12 @@
           </select>
         </li>
         <li class="nav-menu-item-cta">
-          <a href="https://www.sympla.com.br/evento/iv-simposio-oncologia-gastro-intestinal/3586542" class="nav-cta" target="_blank" rel="noopener noreferrer" data-i18n="nav.cta">Inscreva-se já!</a>
+          <a href="#inscricao" class="nav-cta nav-cta-disabled" data-i18n="nav.cta" aria-disabled="true" tabindex="-1">Inscrições encerradas</a>
         </li>
       </ul>
 
       <div class="nav-actions">
-        <a class="nav-cta" href="https://www.sympla.com.br/evento/iv-simposio-oncologia-gastro-intestinal/3586542" target="_blank" rel="noopener noreferrer" data-i18n="nav.cta">Inscreva-se já!</a>
+        <a class="nav-cta nav-cta-disabled" href="#inscricao" data-i18n="nav.cta" aria-disabled="true" tabindex="-1">Inscrições encerradas</a>
         <button
           type="button"
           class="mobile-menu-toggle"
@@ -2329,7 +2340,7 @@
 
         <div class="btn-group">
           <a class="btn-outline" href="#programacao" data-i18n="hero.ctaProgram">Ver programação</a>
-          <a class="btn-primary" href="https://www.sympla.com.br/evento/iv-simposio-oncologia-gastro-intestinal/3586542" target="_blank" rel="noopener noreferrer" data-i18n="hero.ctaRegister">Inscreva-se já!</a>
+          <span class="btn-outline" data-i18n="hero.ctaRegister">Inscrições encerradas</span>
         </div>
 
         <div class="hero-orgs">
@@ -2456,7 +2467,7 @@
               </span>
               <div>
                 <strong data-i18n="about.factRegLabel">Inscrições</strong>
-                <span data-i18n="reg.short">Gratuitas</span>
+                <span data-i18n="reg.short">Encerradas</span>
               </div>
             </div>
           </div>
@@ -2886,28 +2897,11 @@
     <!-- ══ INSCRIÇÕES ══ -->
     <section id="inscricao" class="section-deep fade-in">
       <div class="container text-center">
-        <span class="status-badge" data-i18n="reg.badge">Gratuitas e limitadas</span>
+        <span class="status-badge status-badge-closed" data-i18n="reg.badge">Inscrições encerradas</span>
         <h2 class="section-title is-centered" data-i18n="reg.title">Inscrições</h2>
-        <p class="lead is-centered" data-i18n="reg.message">
-          As inscrições para o IV Simpósio de Oncologia Gastrointestinal estão abertas. A participação é
-          gratuita, com vagas limitadas, e deve ser feita pelo Sympla.
+        <p class="lead is-centered" role="status" data-i18n="reg.message">
+          Inscrições encerradas. Agradecemos a participação e até o próximo evento!
         </p>
-        <div class="placeholder-card">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5v2"/><path d="M15 11v2"/><path d="M15 17v2"/><path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4V7a2 2 0 0 1 2-2z"/></svg>
-          <p data-i18n="reg.placeholder">
-            Garanta sua vaga. Após a inscrição, acompanhe a programação neste site.
-          </p>
-          <p style="margin-top: 1.4rem">
-            <a
-              class="btn-primary"
-              href="https://www.sympla.com.br/evento/iv-simposio-oncologia-gastro-intestinal/3586542"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-i18n="reg.cta"
-              >Inscreva-se já!</a
-            >
-          </p>
-        </div>
       </div>
     </section>
 
@@ -3010,8 +3004,8 @@
             <strong>Organização:</strong> Luka Plan Promoções e Eventos.
           </p>
           <p data-i18n="contact.info3">
-            A programação é preliminar e pode sofrer ajustes até a data do evento. As inscrições são
-            gratuitas e limitadas, pelo Sympla.
+            A programação é preliminar e pode sofrer ajustes até a data do evento. As inscrições estão
+            encerradas.
           </p>
         </div>
       </div>
@@ -3470,14 +3464,14 @@
           "nav.sponsors": "Sponsors",
           "nav.gallery": "Gallery",
           "nav.contact": "Contact",
-          "nav.cta": "Register now!",
+          "nav.cta": "Registration closed",
           "hero.title":
             "IV Gastrointestinal Oncology Symposium — 16 and 17 October 2026, Recife",
           "hero.chipDate": "16 and 17 October 2026",
           "hero.chipVenue": "JCPM Trade Center — Recife/PE",
           "hero.chipFaculty": "More than 60 specialist guests",
           "hero.ctaProgram": "View programme",
-          "hero.ctaRegister": "Register now!",
+          "hero.ctaRegister": "Registration closed",
           "hero.realization": "Promoted by",
           "hero.sponsorsLabel": "Sponsors",
           "about.eyebrow": "About the symposium",
@@ -3562,14 +3556,11 @@
           "venue.dateTime":
             "<strong>Date:</strong> 16 and 17 October 2026<br /><strong>Time:</strong> Friday, 8 a.m. to 6 p.m. · Saturday, 8.30 a.m. to 12.30 p.m.",
           "venue.directions": "Open in Google Maps",
-          "reg.short": "Free of charge",
-          "reg.badge": "Free and limited",
+          "reg.short": "Closed",
+          "reg.badge": "Registration closed",
           "reg.title": "Registration",
           "reg.message":
-            "Registration for the IV Gastrointestinal Oncology Symposium is now open. Attendance is free of charge, places are limited, and enrolment is through Sympla.",
-          "reg.placeholder":
-            "Secure your place. After registering, follow the programme on this site.",
-          "reg.cta": "Register now!",
+            "Registration is closed. Thank you for taking part, and see you at the next event!",
           "sponsors.title": "Sponsors",
           "gallery.eyebrow": "Highlights",
           "gallery.title": "Photo gallery",
@@ -3589,7 +3580,7 @@
             "<strong>Promoted by:</strong> Santa Joana Recife Institute of Education and Research (ISEP), Hospital Santa Joana Recife and Rede Américas.",
           "contact.info2": "<strong>Organised by:</strong> Luka Plan Promoções e Eventos.",
           "contact.info3":
-            "The programme is preliminary and may be adjusted until the event date. Registration is free of charge and limited, via Sympla.",
+            "The programme is preliminary and may be adjusted until the event date. Registration is closed.",
           "footer.dateLocation": "16 and 17 October 2026 · Recife/PE",
           "footer.navTitle": "Navigation",
           "footer.venueTitle": "Venue",
@@ -3616,14 +3607,14 @@
           "nav.sponsors": "Patrocinadores",
           "nav.gallery": "Galería",
           "nav.contact": "Contacto",
-          "nav.cta": "¡Inscríbase ya!",
+          "nav.cta": "Inscripciones cerradas",
           "hero.title":
             "IV Simposio de Oncología Gastrointestinal — 16 y 17 de octubre de 2026, Recife",
           "hero.chipDate": "16 y 17 de octubre de 2026",
           "hero.chipVenue": "JCPM Trade Center — Recife/PE",
           "hero.chipFaculty": "Más de 60 invitados especialistas",
           "hero.ctaProgram": "Ver programación",
-          "hero.ctaRegister": "¡Inscríbase ya!",
+          "hero.ctaRegister": "Inscripciones cerradas",
           "hero.realization": "Promoción",
           "hero.sponsorsLabel": "Patrocinadores",
           "about.eyebrow": "Sobre el simposio",
@@ -3708,14 +3699,11 @@
           "venue.dateTime":
             "<strong>Fecha:</strong> 16 y 17 de octubre de 2026<br /><strong>Horario:</strong> viernes, 8h a 18h · sábado, 8h30 a 12h30",
           "venue.directions": "Abrir en Google Maps",
-          "reg.short": "Gratuitas",
-          "reg.badge": "Gratuitas y limitadas",
+          "reg.short": "Cerradas",
+          "reg.badge": "Inscripciones cerradas",
           "reg.title": "Inscripciones",
           "reg.message":
-            "Las inscripciones para el IV Simposio de Oncología Gastrointestinal ya están abiertas. La participación es gratuita, con plazas limitadas, y se realiza a través de Sympla.",
-          "reg.placeholder":
-            "Reserve su plaza. Tras inscribirse, siga la programación en este sitio.",
-          "reg.cta": "¡Inscríbase ya!",
+            "Inscripciones cerradas. ¡Agradecemos su participación y hasta el próximo evento!",
           "sponsors.title": "Patrocinadores",
           "gallery.eyebrow": "Registros",
           "gallery.title": "Galería de fotos",
@@ -3735,7 +3723,7 @@
             "<strong>Promoción:</strong> Instituto Santa Joana Recife de Enseñanza e Investigación (ISEP), Hospital Santa Joana Recife y Rede Américas.",
           "contact.info2": "<strong>Organización:</strong> Luka Plan Promoções e Eventos.",
           "contact.info3":
-            "La programación es preliminar y puede ajustarse hasta la fecha del evento. Las inscripciones son gratuitas y limitadas, a través de Sympla.",
+            "La programación es preliminar y puede ajustarse hasta la fecha del evento. Las inscripciones están cerradas.",
           "footer.dateLocation": "16 y 17 de octubre de 2026 · Recife/PE",
           "footer.navTitle": "Navegación",
           "footer.venueTitle": "Sede",
